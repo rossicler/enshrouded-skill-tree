@@ -7,8 +7,14 @@ export type Node = {
   distance?: number;
 };
 
+export type NodeTypeMetadata = {
+  name: string;
+  description: string[];
+  hasAsset?: boolean;
+};
+
 export type SkillNodesType = {
-  types: unknown;
+  types: { [key: string]: NodeTypeMetadata };
   nodes: Node[];
   edges: { [key: string]: string[] };
 };
@@ -17,7 +23,195 @@ export type SkillNodesType = {
 // 15 45 75 105 135 165 195 225 255 285 315 345
 
 const SkillNodes: SkillNodesType = {
-  types: {},
+  types: {
+    ATTR_SPIRIT: {
+      name: "SPIRIT",
+      description: [
+        "Increases your Spirit attribute by 1",
+        "Increases Mana by 20 per Attribute Point",
+      ],
+    },
+    ATTR_INT: {
+      name: "INTELLIGENCE",
+      description: [
+        "Increases your Intelligence attribute by 1",
+        "Increases Magic damage by 5% per Attribute Point",
+      ],
+    },
+    ATTR_CONS: {
+      name: "CONSTITUTION",
+      description: [
+        "Increases your Constitution attribute by 1",
+        "Increases Health by 50 per Attribute Point",
+      ],
+    },
+    ATTR_STR: {
+      name: "STRENGTH",
+      description: [
+        "Increases your Strength attribute by 1",
+        "Increases Melee damage by 5% per Attribute Point",
+      ],
+    },
+    ATTR_ENDURANCE: {
+      name: "ENDURANCE",
+      description: [
+        "Increases your Endurance attribute by 1",
+        "Increases Stamina by 10 per Attribute Point",
+      ],
+    },
+    ATTR_DEX: {
+      name: "DEXTERITY",
+      description: [
+        "Increases your Dexterity attribute by 1",
+        "Increases Ranged damage by 5% per Attribute Point",
+      ],
+    },
+    WELL_RESTED: {
+      name: "WELL RESTED",
+      description: [
+        "The base duration for the Rested buff is increased by 5 Minutes.",
+        "Increase the Confort in your home to further increase the duration.",
+      ],
+    },
+    SNEAK_ATTACK: {
+      name: "SNEAK ATTACK",
+      description: [
+        "The <strong>Sneak Attack</strong> deals massive 10x damage to unaware enemies.",
+        "To trigger it, sneak up on an enemy and press <strong>[E]</strong>.",
+      ],
+    },
+    UPDRAFT: {
+      name: "UPDRAFT",
+      description: [
+        "Pressing the jump button while gliding will give you a small height boost. This skill can be used once per flight. Cost: 120 mana",
+      ],
+      hasAsset: true,
+    },
+    BEGONE: {
+      name: "BEGONE",
+      description: [
+        "A magic-powered punch that pushes and stuns hit foes.",
+        "Replaces your unarmed attacks as long as you have the necessary mana available: <strong>30 Mana</strong>",
+      ],
+      hasAsset: true,
+    },
+    RADIANT_AURA: {
+      name: "RADIANT AURA",
+      description: [
+        "All Fell foes within 10 meters take 1 fire damage per intelligence per second.",
+      ],
+      hasAsset: true,
+    },
+    WATER_AURA: {
+      name: "WATER AURA",
+      description: [
+        "You emit a healing aura. It heals all injured allies within 15 meters. The healing scales with your intelligence attribute (1 health for every 2 points of intelligence).",
+      ],
+      hasAsset: true,
+    },
+    MARTYR: {
+      name: "MARTYR",
+      description: [
+        "When you are killed by an enemy, all allies within 50 meters will heal 30% of their maximum health.",
+      ],
+      hasAsset: true,
+    },
+    BLINK: {
+      name: "BLINK",
+      description: [
+        "Replaces the Dodge Roll ability with a short range teleport.",
+      ],
+      hasAsset: true,
+    },
+    EVASION_ATTACK: {
+      name: "EVASION ATTACK",
+      description: [
+        "When equipped with a melee weapon, you can perform an evade attack which dashes towards the enemy and deals more weapon damage with <strong>[LMB]</strong>",
+      ],
+      hasAsset: true,
+    },
+    EARTH_AURA: {
+      name: "EARTH AURA",
+      description: [
+        "All damage against players within 10 meters is reduced by 10%",
+      ],
+      hasAsset: true,
+    },
+    NEMESIS: {
+      name: "NEMESIS",
+      description: [
+        "Whenever an ally draws the attention of an enemy, you draw it in equal measures.",
+      ],
+      hasAsset: true,
+    },
+    SHOCKWAVE: {
+      name: "SHOCKWAVE",
+      description: [
+        "Overpower an enemy to trigger a shock-wave that increases nearby enemies stun bar and pushes them back.",
+        "<strong>Overpower</strong><br>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.",
+      ],
+      hasAsset: true,
+    },
+    HEAVY_SPECIALIZATION: {
+      name: "HEAVY SPECIALIZATION",
+      description: ["Allows you to attack faster with two-handed hammers."],
+      hasAsset: true,
+    },
+    BASH: {
+      name: "BASH",
+      description: ["You parry bashes the enemy for 20 blunt damage."],
+      hasAsset: true,
+    },
+    JUMP_ATTACK: {
+      name: "JUMP ATTACK",
+      description: [
+        "When equipped with a melee weapon, you can perform a jump attack which deals 50% more weapon damage in a small blast radius.",
+        "Costs stamina appropriately to the weapon's weight. Does not work with toools.",
+      ],
+      hasAsset: true,
+    },
+    DOUBLE_JUMP: {
+      name: "DOUBLE JUMP",
+      description: ["Allows jumping a second time while airborne."],
+      hasAsset: true,
+    },
+    DESSERT_STOMACH: {
+      name: "DESSERT STOMACH",
+      description: ["You gain one additional food slot"],
+      hasAsset: true,
+    },
+    EAGLE_EYE: {
+      name: "EAGLE EYE",
+      description: [
+        "Greatly increases the zoom while aiming with a bow.",
+        "To aim, gold down the [RMB] while a bow is selected in the Action bar. (Alternatively, gold [Q] to aim your equipped bow.)",
+      ],
+      hasAsset: true,
+    },
+    MULTI_SHOT: {
+      name: "MULTI SHOT",
+      description: [
+        "Adds a 20% chance to spawn a flurry of arrows that spread slightly",
+      ],
+      hasAsset: true,
+    },
+    BEE_STING: {
+      name: "BEE STING",
+      description: [
+        "You can draw and use your bow while gliding. You will fall slowly.",
+        "Cost: 10 stamina per second",
+      ],
+      hasAsset: true,
+    },
+    SHELL_SHOCK: {
+      name: "SHELL SHOCK",
+      description: [
+        "Influse your <i>ranged explosives</i> with mana. They now stun enemies for up to 1 second.",
+        "Mana Cost: 5 per stunned enemy",
+      ],
+      hasAsset: true,
+    },
+  },
   nodes: [
     {
       id: "1",

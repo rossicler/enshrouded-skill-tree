@@ -31,11 +31,11 @@ const SkillNode = ({ node }: PropsType) => {
   const nodeMetadata = Nodes.types[node.type];
 
   const getAsset = useCallback(() => {
-    let assetName = `blue_${node.tier ?? "small"}`;
+    let assetName = `${node.tier ?? "small"}`;
     if (nodeMetadata && nodeMetadata.hasAsset) {
       assetName = node.type;
     }
-    return `./assets/${assetName}.png`;
+    return `./assets/${assetName}_gray.png`;
   }, [node, nodeMetadata]);
 
   const asset = useMemo(() => getAsset(), [getAsset]);

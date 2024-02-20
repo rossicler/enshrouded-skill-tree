@@ -6,6 +6,9 @@ module.exports = {
       scale: {
         25: ".25",
       },
+      dropShadow: {
+        shiny: "0 0 3px rgb(192 132 252)",
+      },
     },
   },
   plugins: [],

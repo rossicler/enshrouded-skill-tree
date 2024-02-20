@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lineto": "^3.3.0",
     "react-scripts": "5.0.1",
     "react-tooltip": "^5.26.3",
     "react-zoom-pan-pinch": "^3.4.2",

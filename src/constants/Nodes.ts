@@ -20,7 +20,9 @@ export type SkillNodesType = {
 };
 
 // ANGLE LINES
-// 15 45 75 105 135 165 195 225 255 285 315 345
+export const LinesAngles = [
+  15, 45, 75, 105, 135, 165, 195, 225, 255, 285, 315, 345,
+];
 
 const SkillNodes: SkillNodesType = {
   types: {

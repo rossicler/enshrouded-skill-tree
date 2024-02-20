@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from "react";
 import { Node } from "../constants/Nodes";
 import Nodes from "../constants/Nodes";
 import SkillTooltip from "./SkillTooltip";
+import LineTo from "react-lineto";
 
 type PropsType = {
   node: Node;
@@ -52,7 +53,7 @@ const SkillNode = ({ node }: PropsType) => {
         }}
       >
         <div
-          className="relative w-0.5 h-0.5"
+          className={`relative w-0.5 h-0.5 node-${node.id}`}
           style={{ marginTop: INIT_DISTANCE + (node.distance ?? 0) }}
         >
           <div
@@ -78,6 +79,16 @@ const SkillNode = ({ node }: PropsType) => {
           </div>
         </div>
       </div>
+      {node.base && (
+        <LineTo
+          key={`base-line-${node.id}`}
+          from={`node-${node.id}`}
+          to={`line-${node.angle}`}
+          within="wrapper"
+          borderColor="#1c1829"
+          delay={100}
+        />
+      )}
     </>
   );
 };

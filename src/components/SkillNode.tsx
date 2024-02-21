@@ -1,9 +1,9 @@
-import { memo, useCallback, useMemo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 
 import { Node } from "../constants/Nodes";
-import Nodes from "../constants/Nodes";
 import SkillTooltip from "./SkillTooltip";
 import LineTo from "react-lineto";
+import { getAsset } from "../utils/assets-utils";
 
 type PropsType = {
   node: Node;
@@ -29,28 +29,16 @@ const SIZE = {
 
 const INIT_DISTANCE = 250;
 
-const SkillNode = ({ node, selected, selectable, onSelect }: PropsType) => {
+const SkillNode = ({
+  node,
+  selected = false,
+  selectable,
+  onSelect,
+}: PropsType) => {
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const nodeSize = SIZE[node.tier ?? "small"];
-  const nodeMetadata = Nodes.types[node.type];
 
-  const getAsset = useCallback(() => {
-    const hasSpecificAsset = nodeMetadata && nodeMetadata.hasAsset;
-    let assetName = `${node.tier ?? "small"}`;
-    if (hasSpecificAsset) {
-      assetName = node.type;
-    } else {
-      assetName = `${node.tier ?? "small"}`;
-    }
-    if (!selected) {
-      assetName = `${assetName.toLowerCase()}_gray`;
-    } else if (!hasSpecificAsset) {
-      assetName = `blue_${assetName}`;
-    }
-    return `./assets/${assetName}.png`;
-  }, [node, nodeMetadata, selected]);
-
-  const asset = useMemo(() => getAsset(), [getAsset]);
+  const asset = useMemo(() => getAsset(node, selected), [node, selected]);
 
   const selectHandler = () => {
     if (onSelect) onSelect(node);

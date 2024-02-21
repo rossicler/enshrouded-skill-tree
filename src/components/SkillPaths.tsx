@@ -20,7 +20,7 @@ const SkillPath = memo(
   )
 );
 
-const SkillPaths = ({ lines, color = "#1c1829" }: PropsType) => {
+const SkillPaths = ({ lines, color = "#251f36" }: PropsType) => {
   const defaultLines = useMemo(() => lines ?? getLinesToDraw(), [lines]);
   return (
     <>

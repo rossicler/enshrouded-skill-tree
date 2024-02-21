@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 
 import { Node } from "../constants/Nodes";
 import Nodes from "../constants/Nodes";
@@ -7,6 +7,9 @@ import LineTo from "react-lineto";
 
 type PropsType = {
   node: Node;
+  selected?: boolean;
+  selectable?: boolean;
+  onSelect?: (node: Node) => void;
 };
 
 const SIZE = {
@@ -26,20 +29,32 @@ const SIZE = {
 
 const INIT_DISTANCE = 250;
 
-const SkillNode = ({ node }: PropsType) => {
+const SkillNode = ({ node, selected, selectable, onSelect }: PropsType) => {
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const nodeSize = SIZE[node.tier ?? "small"];
   const nodeMetadata = Nodes.types[node.type];
 
   const getAsset = useCallback(() => {
+    const hasSpecificAsset = nodeMetadata && nodeMetadata.hasAsset;
     let assetName = `${node.tier ?? "small"}`;
-    if (nodeMetadata && nodeMetadata.hasAsset) {
+    if (hasSpecificAsset) {
       assetName = node.type;
+    } else {
+      assetName = `${node.tier ?? "small"}`;
     }
-    return `./assets/${assetName}_gray.png`;
-  }, [node, nodeMetadata]);
+    if (!selected) {
+      assetName = `${assetName.toLowerCase()}_gray`;
+    } else if (!hasSpecificAsset) {
+      assetName = `blue_${assetName}`;
+    }
+    return `./assets/${assetName}.png`;
+  }, [node, nodeMetadata, selected]);
 
   const asset = useMemo(() => getAsset(), [getAsset]);
+
+  const selectHandler = () => {
+    if (onSelect) onSelect(node);
+  };
 
   if (!node.angle) return null;
 
@@ -70,12 +85,14 @@ const SkillNode = ({ node }: PropsType) => {
               onShow={() => setTooltipOpen(true)}
               onHide={() => setTooltipOpen(false)}
             />
-            <img
-              src={asset}
-              alt={node.type}
-              className="w-full h-auto object-contain"
-              data-tooltip-id={`skill-tooltip-${node.id}`}
-            />
+            <button onClick={selectHandler}>
+              <img
+                src={asset}
+                alt={node.type}
+                className="w-full h-auto object-contain"
+                data-tooltip-id={`skill-tooltip-${node.id}`}
+              />
+            </button>
           </div>
         </div>
       </div>
@@ -93,4 +110,4 @@ const SkillNode = ({ node }: PropsType) => {
   );
 };
 
-export default SkillNode;
+export default memo(SkillNode);

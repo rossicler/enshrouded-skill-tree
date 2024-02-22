@@ -1,6 +1,12 @@
+import { ClassNameValue, twMerge } from "tailwind-merge";
+
 import SkillNodes from "../constants/Nodes";
 
 type LineToDrawType = [string, string];
+
+export const classNames = (...classes: ClassNameValue[]) => {
+  return twMerge(classes);
+};
 
 export const getLinesToDraw = () => {
   const linesSet = new Set<string>();
@@ -19,26 +25,6 @@ export const getLinesToDraw = () => {
   });
   return linesToDraw;
 };
-
-// export const isConnectedToRoot = (selectedList: string[], nodeId: string) => {
-//   const node = SkillNodes.nodes.find((node) => node.id === nodeId);
-//   if (!node || node.base) return true;
-
-//   const edges = SkillNodes.edges[nodeId];
-//   const connectedSelectedIds = edges.filter(
-//     (id) => selectedList.includes(id) && id
-//   );
-//   if (connectedSelectedIds.length === 0) return false;
-
-//   let isConnected = false;
-//   const newSelectedList = selectedList.filter((id) => id !== nodeId);
-//   connectedSelectedIds.forEach((id) => {
-//     if (isConnectedToRoot(newSelectedList, id)) {
-//       isConnected = true;
-//     }
-//   });
-//   return isConnected;
-// };
 
 export const getSubGraphNodes = (
   root: string,
@@ -85,4 +71,14 @@ export const getSkillsToRemove = (
   });
 
   return toRemove;
+};
+
+export const convertHashToJson = (hash: string): string[] => {
+  const decodedString = atob(hash);
+  return JSON.parse(decodedString);
+};
+
+export const convertJsonToHash = (skills: string[]): string => {
+  const jsonString = JSON.stringify(skills);
+  return btoa(jsonString);
 };

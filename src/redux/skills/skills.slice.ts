@@ -16,9 +16,6 @@ const skillsSlice = createSlice({
   reducers: {
     loadSelectedSkills(state, action: PayloadAction<string[]>) {
       state.selectedSkills = action.payload;
-      if (action.payload.length === 0) {
-        state.clearTriggered = true;
-      }
     },
     addSelectedSkill(state, action: PayloadAction<string>) {
       state.selectedSkills.push(action.payload);

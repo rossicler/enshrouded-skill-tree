@@ -1,3 +1,4 @@
+import HUD from "@/components/HUD";
 import SkillTree from "@/components/SkillTree";
 import { classNames } from "@/utils/utils";
 import Image from "next/image";
@@ -17,6 +18,7 @@ export default function Home() {
         className="object-cover object-center"
       />
       <div>
+        <HUD />
         <SkillTree />
       </div>
     </main>

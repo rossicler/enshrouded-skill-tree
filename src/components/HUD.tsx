@@ -1,23 +1,49 @@
-import React from "react";
-import { classNames } from "../utils/utils";
+import React, { useState } from "react";
+import { classNames, convertJsonToHash } from "../utils/utils";
 import HUDButton from "./shared/HUDButton";
+import ImportDialog from "./dialogs/ImportDialog";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import {
+  loadSelectedSkills,
+  setCodeImported,
+} from "@/redux/skills/skills.slice";
 
-type PropsType = {
-  onImport?: () => void;
-  onExport?: () => void;
-};
+const HUD = () => {
+  let [importOpen, setImportOpen] = useState(false);
+  const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
+  const dispatch = useAppDispatch();
 
-const HUD = ({ onImport, onExport }: PropsType) => {
+  const importHandler = (code: string) => {
+    // TODO: implement plastebin import
+    dispatch(setCodeImported(code));
+  };
+
+  const exportHandler = () => {
+    console.log(convertJsonToHash(selectedSkills));
+  };
+
+  const clearHandler = () => {
+    dispatch(loadSelectedSkills([]));
+  };
+
   return (
-    <div
-      className={classNames(
-        "absolute right-0 top-0 w-32 bg-transparent z-50 flex flex-col gap-3",
-        "justify-center items-center py-6"
-      )}
-    >
-      <HUDButton onClick={onImport}>Import</HUDButton>
-      <HUDButton onClick={onExport}>Export</HUDButton>
-    </div>
+    <>
+      <ImportDialog
+        open={importOpen}
+        onClose={() => setImportOpen(false)}
+        onImport={importHandler}
+      />
+      <div
+        className={classNames(
+          "absolute right-0 top-0 w-32 bg-transparent z-50 flex flex-col gap-3",
+          "justify-center items-center py-6"
+        )}
+      >
+        <HUDButton onClick={() => setImportOpen(true)}>Import</HUDButton>
+        <HUDButton onClick={exportHandler}>Export</HUDButton>
+        <HUDButton onClick={clearHandler}>Clear</HUDButton>
+      </div>
+    </>
   );
 };
 

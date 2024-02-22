@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Nodes, { Node } from "../constants/Nodes";
 import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
@@ -9,6 +9,7 @@ type SkillPathsType = [string, string][];
 
 const SkillTree = () => {
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const [selectableSkills, setSelectableSkills] = useState<string[]>([]);
   const [connectedPaths, setConnectedPaths] = useState<SkillPathsType>([]);
 
   const addPaths = (paths: SkillPathsType) => {
@@ -39,6 +40,18 @@ const SkillTree = () => {
     }
   };
 
+  useEffect(() => {
+    let tmpSelectableSkills: string[] = [];
+    selectedSkills.forEach((id) => {
+      tmpSelectableSkills = tmpSelectableSkills.concat(
+        Nodes.edges[id].filter(
+          (connected) => !selectedSkills.includes(connected)
+        )
+      );
+    });
+    setSelectableSkills(Array.from(new Set(tmpSelectableSkills)));
+  }, [selectedSkills]);
+
   return (
     <div className="relative scale-50 z-10">
       <CoreCircle />
@@ -47,6 +60,7 @@ const SkillTree = () => {
           key={skillNode.id}
           node={skillNode}
           selected={selectedSkills.includes(skillNode.id)}
+          selectable={selectableSkills.includes(skillNode.id)}
           onSelect={onSelect}
         />
       ))}

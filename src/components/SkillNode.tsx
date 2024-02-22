@@ -38,7 +38,10 @@ const SkillNode = ({
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const nodeSize = SIZE[node.tier ?? "small"];
 
-  const asset = useMemo(() => getAsset(node, selected), [node, selected]);
+  const asset = useMemo(
+    () => getAsset(node, selected, selectable),
+    [node, selected, selectable]
+  );
 
   const selectHandler = () => {
     if (onSelect) onSelect(node);

@@ -1,5 +1,9 @@
 {
   "name": "enshrouded-skill-planner",
+  "license": "GPL-3.0-or-later",
+  "author": {
+    "name": "Rossicler Junior"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {

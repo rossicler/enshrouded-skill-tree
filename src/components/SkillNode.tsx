@@ -2,8 +2,9 @@ import { memo, useMemo, useState } from "react";
 
 import { Node } from "../constants/Nodes";
 import SkillTooltip from "./SkillTooltip";
-import LineTo from "react-lineto";
 import { getAsset } from "../utils/assets-utils";
+import Image from "next/image";
+import SkillPath from "./shared/SkillPath";
 
 type PropsType = {
   node: Node;
@@ -59,7 +60,8 @@ const SkillNode = ({
         }}
       >
         <div
-          className={`relative w-0.5 h-0.5 node-${node.id}`}
+          id={`node-${node.id}`}
+          className={`relative w-0.5 h-0.5`}
           style={{ marginTop: INIT_DISTANCE + (node.distance ?? 0) }}
         >
           <div
@@ -77,9 +79,11 @@ const SkillNode = ({
               onHide={() => setTooltipOpen(false)}
             />
             <button onClick={selectHandler}>
-              <img
+              <Image
                 src={asset}
                 alt={node.type}
+                width={nodeSize.size}
+                height={nodeSize.size}
                 className="w-full h-auto object-contain"
                 data-tooltip-id={`skill-tooltip-${node.id}`}
               />
@@ -88,13 +92,11 @@ const SkillNode = ({
         </div>
       </div>
       {node.base && (
-        <LineTo
+        <SkillPath
           key={`base-line-${node.id}`}
           from={`node-${node.id}`}
           to={`line-${node.angle}`}
-          within="wrapper"
-          borderColor="#1c1829"
-          delay={100}
+          color="#1c1829"
         />
       )}
     </>

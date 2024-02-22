@@ -11,7 +11,8 @@ const HUD = ({ onImport, onExport }: PropsType) => {
   return (
     <div
       className={classNames(
-        "absolute right-0 top-0 w-32 bg-transparent z-50 flex justify-center items-center py-6"
+        "absolute right-0 top-0 w-32 bg-transparent z-50 flex flex-col gap-3",
+        "justify-center items-center py-6"
       )}
     >
       <HUDButton onClick={onImport}>Import</HUDButton>

@@ -1,24 +1,12 @@
 import { memo, useMemo } from "react";
-import LineTo from "react-lineto";
 
 import { getLinesToDraw } from "../utils/utils";
+import SkillPath from "./shared/SkillPath";
 
 type PropsType = {
   lines?: [string, string][];
   color?: string;
 };
-
-const SkillPath = memo(
-  ({ from, to, color }: { from: string; to: string; color: string }) => (
-    <LineTo
-      from={`node-${from}`}
-      to={`node-${to}`}
-      within="wrapper"
-      borderColor={color}
-      delay={100}
-    />
-  )
-);
 
 const SkillPaths = ({ lines, color = "#251f36" }: PropsType) => {
   const defaultLines = useMemo(() => lines ?? getLinesToDraw(), [lines]);

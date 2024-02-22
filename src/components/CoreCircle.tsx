@@ -6,6 +6,7 @@ const CoreCircle = () => {
       <div className="absolute w-[400px] h-[400px] rounded-full border border-purple-400 border-opacity-30 bg-transparent -left-[200px] -bottom-[200px]" />
       {LinesAngles.map((lineAngle) => (
         <div
+          key={lineAngle}
           className="absolute top-0 left-0 h-full"
           style={{
             transformOrigin: "0% 0%",

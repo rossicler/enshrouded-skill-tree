@@ -33,5 +33,5 @@ export const getAsset = (
   }
 
   if (!assetName.includes(".")) assetName = `${assetName}.png`;
-  return `./assets/${assetName}`;
+  return `/assets/${assetName}`;
 };

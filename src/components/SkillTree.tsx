@@ -54,21 +54,30 @@ const SkillTree = () => {
   }, [selectedSkills]);
 
   return (
-    <div className="relative scale-50 z-10">
-      <CoreCircle />
-      {Nodes.nodes.map((skillNode) => (
-        <SkillNode
-          key={skillNode.id}
-          node={skillNode}
-          selected={selectedSkills.includes(skillNode.id)}
-          selectable={selectableSkills.includes(skillNode.id)}
-          onSelect={onSelect}
-        />
-      ))}
-      {/* Add connected paths */}
-      <SkillPaths lines={connectedPaths} color="#56422b" />
+    <div className="relative w-screen h-screen flex items-center justify-center">
+      <div className="relative scale-50 z-20">
+        <CoreCircle />
+        {Nodes.nodes.map((skillNode) => (
+          <SkillNode
+            key={skillNode.id}
+            node={skillNode}
+            selected={selectedSkills.includes(skillNode.id)}
+            selectable={selectableSkills.includes(skillNode.id)}
+            onSelect={onSelect}
+          />
+        ))}
+      </div>
       {/* Add default paths */}
-      <SkillPaths />
+      <svg id="svg-container" className="absolute inset-0 w-screen h-screen">
+        <SkillPaths />
+      </svg>
+      {/* Add connected paths */}
+      <svg
+        id="svg-connected-container"
+        className="absolute inset-0 w-screen h-screen z-10"
+      >
+        <SkillPaths lines={connectedPaths} color="#56422b" />
+      </svg>
     </div>
   );
 };

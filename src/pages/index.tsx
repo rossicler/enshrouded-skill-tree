@@ -1,11 +1,7 @@
-import HUD from "@/components/HUD";
 import SkillTree from "@/components/SkillTree";
 import { classNames } from "@/utils/utils";
 
 export default function Home() {
-  const importHandler = () => {};
-  const exportHandler = () => {};
-
   return (
     <main
       className={classNames(
@@ -17,7 +13,6 @@ export default function Home() {
       }}
     >
       <div>
-        <HUD onImport={importHandler} onExport={exportHandler} />
         <SkillTree />
       </div>
     </main>

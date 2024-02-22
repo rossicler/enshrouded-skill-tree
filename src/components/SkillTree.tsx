@@ -1,17 +1,31 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 import Nodes, { Node } from "../constants/Nodes";
 import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
 import SkillPaths from "./SkillPaths";
-import { getSkillsToRemove } from "../utils/utils";
+import {
+  convertHashToJson,
+  convertJsonToHash,
+  getSkillsToRemove,
+} from "../utils/utils";
+import HUD from "./HUD";
 
 type SkillPathsType = [string, string][];
 
 const SkillTree = () => {
+  const searchParams = useSearchParams();
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [selectableSkills, setSelectableSkills] = useState<string[]>([]);
   const [connectedPaths, setConnectedPaths] = useState<SkillPathsType>([]);
+  const initHash = searchParams.get("hash");
+
+  const importHandler = () => {};
+
+  const exportHandler = () => {
+    console.log(convertJsonToHash(selectedSkills));
+  };
 
   const addPaths = (paths: SkillPathsType) => {
     setConnectedPaths((prev) => [...prev, ...paths]);
@@ -21,6 +35,34 @@ const SkillTree = () => {
     setConnectedPaths((prev) =>
       prev.filter((paths) => !ids.some((id) => paths.includes(id)))
     );
+  };
+
+  const updateSelectableSkills = () => {
+    let tmpSelectableSkills: string[] = [];
+    selectedSkills.forEach((id) => {
+      tmpSelectableSkills = tmpSelectableSkills.concat(
+        Nodes.edges[id].filter(
+          (connected) => !selectedSkills.includes(connected)
+        )
+      );
+    });
+    setSelectableSkills(Array.from(new Set(tmpSelectableSkills)));
+  };
+
+  const initPathsConnected = (skills: string[]) => {
+    let paths: SkillPathsType = [];
+    const alreadySetObj: { [key: string]: boolean } = {};
+    skills.forEach((id) => {
+      const connectedTo = skills.filter((to) => Nodes.edges[id].includes(to));
+      connectedTo.forEach((to) => {
+        const pathId = id > to ? `${id}-${to}` : `${to}-${id}`;
+        if (!alreadySetObj[pathId]) {
+          paths.push([id, to]);
+          alreadySetObj[pathId] = true;
+        }
+      });
+    });
+    setConnectedPaths(paths);
   };
 
   const onSelect = (node: Node) => {
@@ -42,19 +84,20 @@ const SkillTree = () => {
   };
 
   useEffect(() => {
-    let tmpSelectableSkills: string[] = [];
-    selectedSkills.forEach((id) => {
-      tmpSelectableSkills = tmpSelectableSkills.concat(
-        Nodes.edges[id].filter(
-          (connected) => !selectedSkills.includes(connected)
-        )
-      );
-    });
-    setSelectableSkills(Array.from(new Set(tmpSelectableSkills)));
+    if (initHash) {
+      const initSkills = convertHashToJson(initHash);
+      setSelectedSkills(initSkills);
+      initPathsConnected(initSkills);
+    }
+  }, [initHash]);
+
+  useEffect(() => {
+    updateSelectableSkills();
   }, [selectedSkills]);
 
   return (
     <div className="relative w-screen h-screen flex items-center justify-center">
+      <HUD onImport={importHandler} onExport={exportHandler} />
       <div className="relative scale-50 z-20">
         <CoreCircle />
         {Nodes.nodes.map((skillNode) => (

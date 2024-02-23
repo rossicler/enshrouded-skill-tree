@@ -11,7 +11,8 @@ const PointsHUD = () => {
 
   useEffect(() => {
     const totalCost = selectedSkills.reduce(
-      (acc, id) => acc + SkillNodes.types[SkillNodes.nodes[id].type].cost,
+      (acc, id) =>
+        acc + SkillNodes.types[SkillNodes.nodes[id]?.type]?.cost ?? 0,
       0
     );
     setPointsUsed(totalCost);
@@ -24,7 +25,15 @@ const PointsHUD = () => {
         "flex py-6 px-6 text-lg"
       )}
     >
-      {pointsUsed} / {MAX_POINTS} Points
+      <span
+        className={classNames(
+          "mr-1.5",
+          pointsUsed > MAX_POINTS && "text-red-600"
+        )}
+      >
+        {pointsUsed}
+      </span>
+      <span>/ {MAX_POINTS} Points</span>
     </div>
   );
 };

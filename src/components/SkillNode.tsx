@@ -1,4 +1,4 @@
-import { memo, useMemo, useState } from "react";
+import { MouseEvent, memo, useMemo, useState } from "react";
 
 import { Node } from "../constants/Nodes";
 import SkillTooltip from "./SkillTooltip";
@@ -44,7 +44,9 @@ const SkillNode = ({
     [node, selected, selectable]
   );
 
-  const selectHandler = () => {
+  const selectHandler = (e: MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (onSelect) onSelect(node);
   };
 
@@ -84,7 +86,7 @@ const SkillNode = ({
                 alt={node.type}
                 width={nodeSize.size}
                 height={nodeSize.size}
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain !pointer-events-auto"
                 data-tooltip-id={`skill-tooltip-${node.id}`}
               />
             </button>

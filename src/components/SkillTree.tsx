@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import { toast } from "react-toastify";
 
-import Nodes, { Node } from "../constants/Nodes";
-import CoreCircle from "./CoreCircle";
-import SkillNode from "./SkillNode";
-import SkillPaths from "./SkillPaths";
-import { convertHashToJson, getSkillsToRemove } from "../utils/utils";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   addSelectedSkill,
@@ -13,7 +10,11 @@ import {
   loadSelectedSkills,
   removeSelectedSkill,
 } from "@/redux/skills/skills.slice";
-import { toast } from "react-toastify";
+import Nodes, { Node } from "../constants/Nodes";
+import CoreCircle from "./CoreCircle";
+import SkillNode from "./SkillNode";
+import SkillPaths from "./SkillPaths";
+import { convertHashToJson, getSkillsToRemove } from "../utils/utils";
 
 type SkillPathsType = [string, string][];
 
@@ -106,31 +107,44 @@ const SkillTree = () => {
   }, [selectedSkills]);
 
   return (
-    <div className="relative w-screen h-screen flex items-center justify-center">
-      <div className="relative scale-50 z-20">
-        <CoreCircle />
-        {Object.values(Nodes.nodes).map((skillNode) => (
-          <SkillNode
-            key={skillNode.id}
-            node={skillNode}
-            selected={selectedSkills.includes(skillNode.id)}
-            selectable={selectableSkills.includes(skillNode.id)}
-            onSelect={onSelect}
-          />
-        ))}
-      </div>
-      {/* Add default paths */}
-      <svg id="svg-container" className="absolute inset-0 w-screen h-screen">
-        <SkillPaths />
-      </svg>
-      {/* Add connected paths */}
-      <svg
-        id="svg-connected-container"
-        className="absolute inset-0 w-screen h-screen z-10"
-      >
-        <SkillPaths lines={connectedPaths} color="#56422b" />
-      </svg>
-    </div>
+    <TransformWrapper
+    // initialScale={3}
+    // defaultPositionX={200}
+    // defaultPositionY={100}
+    >
+      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+        <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
+          <div className="relative w-screen h-screen flex items-center justify-center">
+            <div className="relative scale-50 z-20">
+              <CoreCircle />
+              {Object.values(Nodes.nodes).map((skillNode) => (
+                <SkillNode
+                  key={skillNode.id}
+                  node={skillNode}
+                  selected={selectedSkills.includes(skillNode.id)}
+                  selectable={selectableSkills.includes(skillNode.id)}
+                  onSelect={onSelect}
+                />
+              ))}
+            </div>
+            {/* Add default paths */}
+            <svg
+              id="svg-container"
+              className="absolute inset-0 w-screen h-screen"
+            >
+              <SkillPaths />
+            </svg>
+            {/* Add connected paths */}
+            <svg
+              id="svg-connected-container"
+              className="absolute inset-0 w-screen h-screen z-10"
+            >
+              <SkillPaths lines={connectedPaths} color="#56422b" />
+            </svg>
+          </div>
+        </TransformComponent>
+      )}
+    </TransformWrapper>
   );
 };
 

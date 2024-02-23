@@ -21,6 +21,7 @@
     "react-redux": "^9.1.0",
     "react-toastify": "^10.0.4",
     "react-tooltip": "^5.26.3",
+    "react-zoom-pan-pinch": "^3.4.2",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {

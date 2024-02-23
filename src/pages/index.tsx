@@ -1,4 +1,4 @@
-import HUD from "@/components/HUD";
+import HUD from "@/components/hud/HUD";
 import SkillTree from "@/components/SkillTree";
 import { classNames } from "@/utils/utils";
 import Image from "next/image";

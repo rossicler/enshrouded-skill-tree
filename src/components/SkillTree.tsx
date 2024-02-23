@@ -109,7 +109,7 @@ const SkillTree = () => {
     <div className="relative w-screen h-screen flex items-center justify-center">
       <div className="relative scale-50 z-20">
         <CoreCircle />
-        {Nodes.nodes.map((skillNode) => (
+        {Object.values(Nodes.nodes).map((skillNode) => (
           <SkillNode
             key={skillNode.id}
             node={skillNode}

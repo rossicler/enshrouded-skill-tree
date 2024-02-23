@@ -35,7 +35,7 @@ export const getSubGraphNodes = (
   const visited = new Set<string>();
   while (stack.length > 0) {
     const nodeId = stack.pop();
-    const isRoot = SkillNodes.nodes.find((node) => node.id === nodeId)?.base;
+    const isRoot = nodeId && SkillNodes.nodes[nodeId]?.base;
     if (isRoot) {
       return { shouldRemove: false, nodes: [] };
     }

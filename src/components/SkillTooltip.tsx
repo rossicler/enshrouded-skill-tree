@@ -13,7 +13,7 @@ const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {
   return (
     <Tooltip
       id={`skill-tooltip-${node.id}`}
-      className="z-50 p-2"
+      className="z-50 p-2 max-w-sm"
       afterShow={onShow}
       afterHide={onHide}
     >
@@ -28,6 +28,9 @@ const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {
               dangerouslySetInnerHTML={{ __html: html }}
             />
           ))}
+          <div className="w-full text-end">
+            <strong>{metadata.cost}</strong> points
+          </div>
         </div>
       )}
     </Tooltip>

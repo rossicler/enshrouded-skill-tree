@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { classNames, convertJsonToHash } from "../utils/utils";
-import HUDButton from "./shared/HUDButton";
-import ImportDialog from "./dialogs/ImportDialog";
+import { classNames, convertJsonToHash } from "../../utils/utils";
+import HUDButton from "../shared/HUDButton";
+import ImportDialog from "../dialogs/ImportDialog";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   loadSelectedSkills,
   setCodeImported,
 } from "@/redux/skills/skills.slice";
 import { toast } from "react-toastify";
+import PointsHUD from "./Points";
 
 const HUD = () => {
   let [importOpen, setImportOpen] = useState(false);
@@ -38,7 +39,7 @@ const HUD = () => {
       />
       <div
         className={classNames(
-          "absolute right-0 top-0 w-32 bg-transparent z-50 flex flex-col gap-3",
+          "absolute right-0 top-0 w-32 bg-transparent z-40 flex flex-col gap-3",
           "justify-center items-center py-6"
         )}
       >
@@ -46,6 +47,8 @@ const HUD = () => {
         <HUDButton onClick={exportHandler}>Export</HUDButton>
         <HUDButton onClick={clearHandler}>Clear</HUDButton>
       </div>
+
+      <PointsHUD />
     </>
   );
 };

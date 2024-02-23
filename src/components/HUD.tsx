@@ -7,6 +7,7 @@ import {
   loadSelectedSkills,
   setCodeImported,
 } from "@/redux/skills/skills.slice";
+import { toast } from "react-toastify";
 
 const HUD = () => {
   let [importOpen, setImportOpen] = useState(false);
@@ -19,7 +20,9 @@ const HUD = () => {
   };
 
   const exportHandler = () => {
-    console.log(convertJsonToHash(selectedSkills));
+    const code = convertJsonToHash(selectedSkills);
+    navigator.clipboard.writeText(code);
+    toast.success("Code copied successfully");
   };
 
   const clearHandler = () => {

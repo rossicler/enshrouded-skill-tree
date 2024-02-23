@@ -13,6 +13,7 @@ import {
   loadSelectedSkills,
   removeSelectedSkill,
 } from "@/redux/skills/skills.slice";
+import { toast } from "react-toastify";
 
 type SkillPathsType = [string, string][];
 
@@ -92,7 +93,7 @@ const SkillTree = () => {
           dispatch(clearCodeImported());
         }
       } catch {
-        // TODO: add toast with error message
+        toast.error("Invalid code");
       }
     }
   }, [initHash, codeImported]);

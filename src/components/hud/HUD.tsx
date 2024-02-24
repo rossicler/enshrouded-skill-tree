@@ -9,6 +9,7 @@ import {
 } from "@/redux/skills/skills.slice";
 import { toast } from "react-toastify";
 import PointsHUD from "./Points";
+import AboutHUD from "./About";
 
 const HUD = () => {
   let [importOpen, setImportOpen] = useState(false);
@@ -49,6 +50,7 @@ const HUD = () => {
       </div>
 
       <PointsHUD />
+      <AboutHUD />
     </>
   );
 };

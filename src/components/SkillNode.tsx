@@ -5,6 +5,7 @@ import SkillTooltip from "./SkillTooltip";
 import { getAsset } from "../utils/assets-utils";
 import Image from "next/image";
 import SkillPath from "./shared/SkillPath";
+import { classNames } from "@/utils/utils";
 
 type PropsType = {
   node: Node;
@@ -39,7 +40,7 @@ const SkillNode = ({
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const nodeSize = SIZE[node.tier ?? "small"];
 
-  const asset = useMemo(
+  const [lowBritness, asset] = useMemo(
     () => getAsset(node, selected, selectable),
     [node, selected, selectable]
   );
@@ -86,7 +87,10 @@ const SkillNode = ({
                 alt={node.type}
                 width={nodeSize.size}
                 height={nodeSize.size}
-                className="w-full h-auto object-contain !pointer-events-auto"
+                className={classNames(
+                  "w-full h-auto object-contain !pointer-events-auto",
+                  lowBritness && "brightness-50"
+                )}
                 data-tooltip-id={`skill-tooltip-${node.id}`}
               />
             </button>

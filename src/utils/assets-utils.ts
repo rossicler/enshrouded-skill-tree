@@ -4,8 +4,9 @@ export const getAsset = (
   node: Node,
   selected: boolean,
   selectable?: boolean
-) => {
+): [boolean, string] => {
   let assetName = `${node.tier ?? "small"}`;
+  let lowBrithness = false;
   const nodeMetadata = SkillNodes.types[node.type];
   const hasSpecificAsset = nodeMetadata && nodeMetadata.hasAsset;
 
@@ -18,8 +19,7 @@ export const getAsset = (
     }
   } else if (selectable || node.base) {
     if (hasSpecificAsset) {
-      assetName =
-        nodeMetadata.selectableAsset ?? `${node.type.toLowerCase()}_gray`;
+      assetName = nodeMetadata.selectableAsset ?? `${node.type}`;
     } else {
       assetName = `${nodeMetadata?.color ?? "blue"}_${node.tier ?? "small"}_2`;
     }
@@ -32,6 +32,15 @@ export const getAsset = (
     }
   }
 
+  if (
+    node.tier === "large" &&
+    selectable &&
+    hasSpecificAsset &&
+    !nodeMetadata.selectableAsset
+  ) {
+    lowBrithness = true;
+  }
+
   if (!assetName.includes(".")) assetName = `${assetName}.png`;
-  return `/assets/${assetName}`;
+  return [lowBrithness, `/assets/${assetName}`];
 };

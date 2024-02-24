@@ -1,5 +1,7 @@
 import { FormEvent, Fragment, useState } from "react";
+import { toast } from "react-toastify";
 import { Dialog, Transition } from "@headlessui/react";
+
 import { classNames } from "@/utils/utils";
 
 type PropsType = {
@@ -8,15 +10,27 @@ type PropsType = {
   onImport: (code: string) => void;
 };
 
+const CODE_ARG = "code=";
+
 const ImportDialog = ({ open, onClose, onImport }: PropsType) => {
-  const [code, setCode] = useState("");
+  const [url, setUrl] = useState("");
 
   const importHandler = (e: FormEvent) => {
     e.preventDefault();
 
-    onImport(code);
-    setCode("");
-    onClose();
+    let code = "";
+    if (url.includes(CODE_ARG)) {
+      const idx = url.indexOf(CODE_ARG);
+      code = url.substring(idx + CODE_ARG.length);
+    }
+
+    if (code) {
+      onImport(code);
+      setUrl("");
+      onClose();
+    } else {
+      toast.error("Invalid url!");
+    }
   };
 
   return (
@@ -55,8 +69,8 @@ const ImportDialog = ({ open, onClose, onImport }: PropsType) => {
                 <form className="mt-5" onSubmit={importHandler}>
                   <input
                     className="w-full h-10 border border-purple-600 rounded-lg outline-purple-600 text-black py-1 px-2"
-                    value={code}
-                    onChange={(e) => setCode(e.target.value)}
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
                   />
 
                   <div className="mt-4">

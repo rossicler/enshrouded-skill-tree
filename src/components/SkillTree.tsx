@@ -1,34 +1,25 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
-import { toast } from "react-toastify";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   addSelectedSkill,
-  clearCodeImported,
-  loadSelectedSkills,
   removeSelectedSkill,
 } from "@/redux/skills/skills.slice";
 import Nodes, { Node } from "../constants/Nodes";
 import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
 import SkillPaths from "./SkillPaths";
-import { convertHashToJson, getSkillsToRemove } from "../utils/utils";
+import { getSkillsToRemove } from "../utils/utils";
 import HUD from "./hud/HUD";
 
 type SkillPathsType = [string, string][];
 
 const SkillTree = () => {
-  const searchParams = useSearchParams();
-  // const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [selectableSkills, setSelectableSkills] = useState<string[]>([]);
   const [connectedPaths, setConnectedPaths] = useState<SkillPathsType>([]);
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
-  const codeImported = useAppSelector((state) => state.skill.codeImported);
   const dispatch = useAppDispatch();
-
-  const initHash = searchParams.get("hash");
 
   const addPaths = (paths: SkillPathsType) => {
     setConnectedPaths((prev) => [...prev, ...paths]);
@@ -83,22 +74,6 @@ const SkillTree = () => {
       addPaths(connectedTo.map((to) => [node.id, to]));
     }
   };
-
-  useEffect(() => {
-    const code = codeImported ?? initHash;
-    if (code) {
-      try {
-        const initSkills = convertHashToJson(code);
-        dispatch(loadSelectedSkills(initSkills));
-        initPathsConnected(initSkills);
-        if (codeImported) {
-          dispatch(clearCodeImported());
-        }
-      } catch {
-        toast.error("Invalid code");
-      }
-    }
-  }, [initHash, codeImported]);
 
   useEffect(() => {
     updateSelectableSkills();

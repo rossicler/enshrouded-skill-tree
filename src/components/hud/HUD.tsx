@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-import { classNames, convertJsonToHash } from "../../utils/utils";
+import { classNames } from "../../utils/utils";
 import HUDButton from "../shared/HUDButton";
 import ImportDialog from "../dialogs/ImportDialog";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useAppDispatch } from "@/redux/hooks";
 import {
   loadSelectedSkills,
   setCodeImported,
 } from "@/redux/skills/skills.slice";
-import { toast } from "react-toastify";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
 import ResetIcon from "../icons/Reset";
+import ExportDialog from "../dialogs/ExportDialog";
 
 type PropsType = {
   zoomIn: (step?: number) => void;
@@ -22,18 +22,12 @@ const DISCORD_LINK = "https://discord.gg/saazEkNchu";
 
 const HUD = ({ zoomIn, zoomOut }: PropsType) => {
   let [importOpen, setImportOpen] = useState(false);
-  const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
+  let [exportOpen, setExportOpen] = useState(false);
   const dispatch = useAppDispatch();
 
   const importHandler = (code: string) => {
     // TODO: implement plastebin import
     dispatch(setCodeImported(code));
-  };
-
-  const exportHandler = () => {
-    const code = convertJsonToHash(selectedSkills);
-    navigator.clipboard.writeText(code);
-    toast.success("Code copied successfully");
   };
 
   const clearHandler = () => {
@@ -51,6 +45,7 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
         onClose={() => setImportOpen(false)}
         onImport={importHandler}
       />
+      <ExportDialog open={exportOpen} onClose={() => setExportOpen(false)} />
       <div
         className={classNames(
           "absolute right-0 top-0 w-32 bg-transparent z-40 flex flex-col gap-3",
@@ -58,7 +53,7 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
         )}
       >
         <HUDButton onClick={() => setImportOpen(true)}>Import</HUDButton>
-        <HUDButton onClick={exportHandler}>Export</HUDButton>
+        <HUDButton onClick={() => setExportOpen(true)}>Export</HUDButton>
         <HUDButton onClick={clearHandler}>Clear</HUDButton>
 
         <HUDButton className="mt-5" onClick={openDiscordInvite}>
@@ -68,7 +63,7 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
 
       <div
         className={classNames(
-          "absolute top-0 left-0 w-full bg-transparent z-40 flex flex-col gap-3",
+          "absolute top-0 left-0 w-full bg-transparent z-20 flex flex-col gap-3",
           "justify-center items-center py-6 bg-transparent"
         )}
       >

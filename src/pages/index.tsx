@@ -1,10 +1,37 @@
-import CustomHeader from "@/components/CustomHeader";
-import SkillTree from "@/components/SkillTree";
-import { classNames } from "@/utils/utils";
-import Head from "next/head";
+import { GetServerSideProps } from "next";
 import Image from "next/image";
 
-export default function Home() {
+import { classNames } from "@/utils/utils";
+import CustomHeader from "@/components/CustomHeader";
+import SkillTree from "@/components/SkillTree";
+import InitSkills from "@/components/handlers/InitSkills";
+import clientPromise from "@/lib/mongodb";
+import { getCode } from "@/lib/api/code";
+import { useEffect } from "react";
+import { useAppDispatch } from "@/redux/hooks";
+import { setCodeImported } from "@/redux/skills/skills.slice";
+
+type Query = {
+  shortCode?: string;
+  code?: string;
+};
+
+type PropsType = {
+  code?: string;
+  clusterStillProvisioning?: boolean;
+};
+
+export default function Home({ code, clusterStillProvisioning }: PropsType) {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (code) {
+      dispatch(setCodeImported(code));
+    }
+  }, [code]);
+
+  if (clusterStillProvisioning) return null;
+
   return (
     <>
       <CustomHeader />
@@ -22,8 +49,40 @@ export default function Home() {
         />
         <div>
           <SkillTree />
+          <InitSkills />
         </div>
       </main>
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  try {
+    await clientPromise;
+  } catch (e: any) {
+    if (e.code === "ENOTFOUND") {
+      // cluster is still provisioning
+      return {
+        props: {
+          clusterStillProvisioning: true,
+        },
+      };
+    } else {
+      throw new Error("Connection limit reached. Please try again later.");
+    }
+  }
+
+  if (context.query) {
+    const { shortCode, code: fullCode = "" } = context.query as Query;
+    const code = shortCode ? await getCode(shortCode) : fullCode;
+    console.log(code);
+    return {
+      props: {
+        code,
+      },
+    };
+  }
+  return {
+    props: {},
+  };
+};

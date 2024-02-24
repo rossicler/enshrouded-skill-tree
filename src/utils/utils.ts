@@ -26,6 +26,14 @@ export const getLinesToDraw = () => {
   return linesToDraw;
 };
 
+export const getBaseLinesToDraw = () => {
+  const linesToDraw: [string, string][] = [];
+  Object.values(SkillNodes.nodes)
+    .filter((item) => item.base)
+    .forEach((node) => linesToDraw.push([node.id, String(node.angle)]));
+  return linesToDraw;
+};
+
 export const getSubGraphNodes = (
   root: string,
   toExclude: string[],

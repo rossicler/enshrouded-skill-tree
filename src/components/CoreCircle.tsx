@@ -13,7 +13,7 @@ const CoreCircle = () => {
             transform: `rotate(${lineAngle}deg)`,
           }}
         >
-          <div className={`relative mt-[198px] line-${lineAngle}`}>
+          <div id={`line-${lineAngle}`} className={`relative mt-[198px]`}>
             <div
               key={lineAngle}
               className="absolute w-2 h-2 rounded-full bg-purple-400 -left-1 -bottom-1 drop-shadow-shiny"

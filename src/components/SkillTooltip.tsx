@@ -1,6 +1,7 @@
 import { Tooltip } from "react-tooltip";
 
 import SkillNodes, { Node } from "../constants/Nodes";
+import Image from "next/image";
 
 type PropsType = {
   node: Node;
@@ -28,8 +29,14 @@ const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {
               dangerouslySetInnerHTML={{ __html: html }}
             />
           ))}
-          <div className="w-full text-end">
-            <strong>{metadata.cost}</strong> points
+          <div className="w-full flex justify-end items-center gap-2 mt-2">
+            <Image
+              src="/assets/skill_point.png"
+              alt="Skill Point Icon"
+              width={25}
+              height={25}
+            />
+            <strong className="text-xl">{metadata.cost}</strong>
           </div>
         </div>
       )}

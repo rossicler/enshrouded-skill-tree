@@ -34,6 +34,59 @@ const SHROUD_TIME_TEXT =
 
 const SkillNodes: SkillNodesType = {
   types: {
+    SAVIOUR: {
+      name: "SAVIOUR",
+      description: [
+        "You only need 3 instead of 6 seconds to <b>revive an ally</b>.",
+      ],
+      color: "gold",
+      cost: 2,
+    },
+    BACKSTAB_DAMAGE: {
+      name: "BACKSTAB_DAMAGE",
+      description: ["Increase the damage you deal from behind by 25%."],
+      color: "gold",
+      cost: 2,
+    },
+    MINER: {
+      name: "MINER",
+      description: [
+        "When you mine resources, you have a 10% chance to get one additional resource.",
+      ],
+      color: "gold",
+      cost: 4,
+    },
+    LUMBERJACK: {
+      name: "LUMBERJACK",
+      description: [
+        "Felling axes do 30% more dmaage against wooden objects including trees.",
+      ],
+      color: "gold",
+      cost: 2,
+    },
+    QUALITY_GEAR: {
+      name: "QUALITY_GEAR",
+      description: ["All tools lose durability 50% slower."],
+      color: "gold",
+      cost: 2,
+    },
+    MASON: {
+      name: "MASON",
+      description: [
+        "The Pickaxe deals 30% more damage against stone objects, including resource veins.",
+      ],
+      color: "gold",
+      cost: 2,
+    },
+    POWER_PARRY: {
+      name: "POWER_PARRY",
+      description: [
+        "Increases the enemy's stun bar gain on parry attacks.",
+        "<b>Parry</b><br>While equipped with a shield, press <b>[RMB] to block</b>. A well-timed block willl <b>parry</b> the attack.",
+      ],
+      color: "gold",
+      cost: 2,
+    },
     ATTR_SPIRIT: {
       name: "SPIRIT",
       description: [
@@ -100,8 +153,8 @@ const SkillNodes: SkillNodesType = {
     SNEAK_ATTACK: {
       name: "SNEAK ATTACK",
       description: [
-        "The <strong>Sneak Attack</strong> deals massive 10x damage to unaware enemies.",
-        "To trigger it, sneak up on an enemy and press <strong>[E]</strong>.",
+        "The <b>Sneak Attack</b> deals massive 10x damage to unaware enemies.",
+        "To trigger it, sneak up on an enemy and press <b>[E]</b>.",
       ],
       hasAsset: true,
       selectableAsset: "sneak_attack_1.png",
@@ -111,7 +164,10 @@ const SkillNodes: SkillNodesType = {
     },
     MERCILESS_ATTACK: {
       name: "MERCILESS ATTACK",
-      description: [],
+      description: [
+        "Perform a Merciless Attack by pressing [E] to deal massive damage to an enemy you've empowered.",
+        "<b>Overpower</b><br>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.",
+      ],
       hasAsset: true,
       selectableAsset: "merciless_attack_1.png",
       selectedAsset: "merciless_attack_2.png",
@@ -131,7 +187,7 @@ const SkillNodes: SkillNodesType = {
       name: "BEGONE",
       description: [
         "A magic-powered punch that pushes and stuns hit foes.",
-        "Replaces your unarmed attacks as long as you have the necessary mana available: <strong>30 Mana</strong>",
+        "Replaces your unarmed attacks as long as you have the necessary mana available: <b>30 Mana</b>",
       ],
       hasAsset: true,
       color: "blue",
@@ -176,7 +232,7 @@ const SkillNodes: SkillNodesType = {
     EVASION_ATTACK: {
       name: "EVASION ATTACK",
       description: [
-        "When equipped with a melee weapon, you can perform an evade attack which dashes towards the enemy and deals more weapon damage with <strong>[LMB]</strong>",
+        "When equipped with a melee weapon, you can perform an evade attack which dashes towards the enemy and deals more weapon damage with <b>[LMB]</b>",
       ],
       hasAsset: true,
       color: "red",
@@ -204,7 +260,7 @@ const SkillNodes: SkillNodesType = {
       name: "SHOCKWAVE",
       description: [
         "Overpower an enemy to trigger a shock-wave that increases nearby enemies stun bar and pushes them back.",
-        "<strong>Overpower</strong><br>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.",
+        "<b>Overpower</b><br>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.",
       ],
       hasAsset: true,
       color: "red",
@@ -290,7 +346,7 @@ const SkillNodes: SkillNodesType = {
     COUNTERSTRIKE: {
       name: "COUNTERSTRIKE",
       description: [
-        "After receiving damage there is a 20% chance to <strong>reflect</strong> 50% of the damage back to the attacker as fire damage.",
+        "After receiving damage there is a 20% chance to <b>reflect</b> 50% of the damage back to the attacker as fire damage.",
         "This magical attack can trigger other skills.",
       ],
       color: "blue",
@@ -450,7 +506,7 @@ const SkillNodes: SkillNodesType = {
     WATERS_OF_LIFE: {
       name: "WATERS OF LIFE",
       description: [
-        "Increases <strong>Water Aura</strong> healing to 2 health for every 2 points of intelligence.",
+        "Increases <b>Water Aura</b> healing to 2 health for every 2 points of intelligence.",
       ],
       color: "blue",
       cost: 2,
@@ -758,7 +814,7 @@ const SkillNodes: SkillNodesType = {
     WANDERLUST: {
       name: "WANDERLUST",
       description: [
-        "Stamina consumption for <strong>sprinting on dirt roads</strong> is reduced from <strong>90% to 80%</strong>. Stamina consumption for <strong>sprinting on stoone roads</strong> is reduced from <strong>75% to 50%</strong>.",
+        "Stamina consumption for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>. Stamina consumption for <b>sprinting on stoone roads</b> is reduced from <b>75% to 50%</b>.",
       ],
       color: "green",
       cost: 3,
@@ -819,7 +875,7 @@ const SkillNodes: SkillNodesType = {
     SNAKE_EATER: {
       name: "SNAKE_EATER",
       description: [
-        "Increases your <strong>poison resistance</strong> which reduces the damage received from poison by <strong>20%</strong>.",
+        "Increases your <b>poison resistance</b> which reduces the damage received from poison by <b>20%</b>.",
       ],
       color: "green",
       cost: 2,
@@ -827,7 +883,7 @@ const SkillNodes: SkillNodesType = {
     MITHRIDATIST: {
       name: "MITHRIDATIST",
       description: [
-        "Your <strong>poison resistance</strong> is increased by an additional 10%.",
+        "Your <b>poison resistance</b> is increased by an additional 10%.",
         "You also gain a 25% chance to avoid being poisoned.",
       ],
       color: "green",
@@ -844,7 +900,7 @@ const SkillNodes: SkillNodesType = {
     CALM_SPIRIT: {
       name: "CALM_SPIRIT",
       description: [
-        "<strong>Wild animals</strong> within 50 meters will be pacified unless attacked. Does not affect animals corrupted by the Shroud.",
+        "<b>Wild animals</b> within 50 meters will be pacified unless attacked. Does not affect animals corrupted by the Shroud.",
       ],
       color: "green",
       cost: 3,
@@ -852,7 +908,7 @@ const SkillNodes: SkillNodesType = {
     BEAST_MASTER: {
       name: "BEAST MASTER",
       description: [
-        "When you are targeted by an attack, <strong>wild animals</strong> within 50 meters will attack the enemy.",
+        "When you are targeted by an attack, <b>wild animals</b> within 50 meters will attack the enemy.",
       ],
       color: "green",
       cost: 4,

@@ -5,14 +5,23 @@ type PropsType = {
   to: string;
   color: string;
   containerId?: string;
+  prefixFrom?: string;
+  prefixTo?: string;
 };
 
-const SkillPath = ({ from, to, color, containerId }: PropsType) => {
+const SkillPath = ({
+  from,
+  to,
+  color,
+  containerId,
+  prefixFrom = "node",
+  prefixTo = "node",
+}: PropsType) => {
   const lineRef = useRef<SVGLineElement>(null);
 
   useEffect(() => {
-    const fromElement = document.getElementById(`node-${from}`);
-    const toElement = document.getElementById(`node-${to}`);
+    const fromElement = document.getElementById(`${prefixFrom}-${from}`);
+    const toElement = document.getElementById(`${prefixTo}-${to}`);
     const svg = document.getElementById(containerId ?? "svg-container");
 
     if (fromElement && toElement && svg) {

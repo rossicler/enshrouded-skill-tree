@@ -135,12 +135,12 @@ const SkillTree = () => {
               <SkillPaths />
             </svg>
             {/* Add connected paths */}
-            <svg
+            {/* <svg
               id="svg-connected-container"
               className="absolute inset-0 w-screen h-screen z-10"
             >
               <SkillPaths lines={connectedPaths} color="#56422b" />
-            </svg>
+            </svg> */}
           </div>
         </TransformComponent>
       )}

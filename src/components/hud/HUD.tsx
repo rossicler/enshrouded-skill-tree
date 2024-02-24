@@ -18,6 +18,8 @@ type PropsType = {
   zoomOut: (step?: number) => void;
 };
 
+const DISCORD_LINK = "https://discord.gg/saazEkNchu";
+
 const HUD = ({ zoomIn, zoomOut }: PropsType) => {
   let [importOpen, setImportOpen] = useState(false);
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
@@ -38,6 +40,10 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
     dispatch(loadSelectedSkills([]));
   };
 
+  const openDiscordInvite = () => {
+    window?.open(DISCORD_LINK, "_blank")?.focus();
+  };
+
   return (
     <>
       <ImportDialog
@@ -54,6 +60,10 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
         <HUDButton onClick={() => setImportOpen(true)}>Import</HUDButton>
         <HUDButton onClick={exportHandler}>Export</HUDButton>
         <HUDButton onClick={clearHandler}>Clear</HUDButton>
+
+        <HUDButton className="mt-5" onClick={openDiscordInvite}>
+          Discord
+        </HUDButton>
       </div>
 
       <div

@@ -1,12 +1,10 @@
-import Script from "next/script";
-
 const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
   <>
-    <Script
+    <script
       async
       src={`https://www.googletagmanager.com/gtag/js?id=${ga_id}`}
-    ></Script>
-    <Script
+    />
+    <script
       id="google-analytics"
       dangerouslySetInnerHTML={{
         __html: `
@@ -17,7 +15,7 @@ const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
           gtag('config', '${ga_id}');
         `,
       }}
-    ></Script>
+    />
   </>
 );
 export default GoogleAnalytics;

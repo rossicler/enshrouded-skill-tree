@@ -15,6 +15,7 @@ import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
 import SkillPaths from "./SkillPaths";
 import { convertHashToJson, getSkillsToRemove } from "../utils/utils";
+import HUD from "./hud/HUD";
 
 type SkillPathsType = [string, string][];
 
@@ -108,41 +109,49 @@ const SkillTree = () => {
 
   return (
     <TransformWrapper
-    // initialScale={3}
-    // defaultPositionX={200}
-    // defaultPositionY={100}
+      minScale={2}
+      maxScale={5}
+      doubleClick={{
+        disabled: true,
+      }}
+      onInit={(ref) => {
+        ref.zoomIn();
+      }}
     >
-      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
-        <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
-          <div className="relative w-screen h-screen flex items-center justify-center">
-            <div className="relative scale-50 z-20">
-              <CoreCircle />
-              {Object.values(Nodes.nodes).map((skillNode) => (
-                <SkillNode
-                  key={skillNode.id}
-                  node={skillNode}
-                  selected={selectedSkills.includes(skillNode.id)}
-                  selectable={selectableSkills.includes(skillNode.id)}
-                  onSelect={onSelect}
-                />
-              ))}
-            </div>
-            {/* Add default paths */}
-            <svg
-              id="svg-container"
-              className="absolute inset-0 w-screen h-screen"
-            >
-              <SkillPaths />
-            </svg>
-            {/* Add connected paths */}
-            {/* <svg
+      {({ zoomIn, zoomOut }) => (
+        <>
+          <HUD zoomIn={zoomIn} zoomOut={zoomOut} />
+          <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
+            <div className="relative w-screen h-screen flex items-center justify-center">
+              <div className="relative scale-25 z-20">
+                <CoreCircle />
+                {Object.values(Nodes.nodes).map((skillNode) => (
+                  <SkillNode
+                    key={skillNode.id}
+                    node={skillNode}
+                    selected={selectedSkills.includes(skillNode.id)}
+                    selectable={selectableSkills.includes(skillNode.id)}
+                    onSelect={onSelect}
+                  />
+                ))}
+              </div>
+              {/* Add default paths */}
+              <svg
+                id="svg-container"
+                className="absolute inset-0 w-screen h-screen"
+              >
+                <SkillPaths />
+              </svg>
+              {/* Add connected paths */}
+              {/* <svg
               id="svg-connected-container"
               className="absolute inset-0 w-screen h-screen z-10"
             >
               <SkillPaths lines={connectedPaths} color="#56422b" />
             </svg> */}
-          </div>
-        </TransformComponent>
+            </div>
+          </TransformComponent>
+        </>
       )}
     </TransformWrapper>
   );

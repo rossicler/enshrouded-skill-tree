@@ -1,5 +1,4 @@
 import CustomHeader from "@/components/CustomHeader";
-import HUD from "@/components/hud/HUD";
 import SkillTree from "@/components/SkillTree";
 import { classNames } from "@/utils/utils";
 import Head from "next/head";
@@ -22,7 +21,6 @@ export default function Home() {
           className="object-cover object-center"
         />
         <div>
-          <HUD />
           <SkillTree />
         </div>
       </main>

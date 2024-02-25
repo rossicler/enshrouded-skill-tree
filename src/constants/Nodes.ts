@@ -43,7 +43,7 @@ const SkillNodes: SkillNodesType = {
       cost: 2,
     },
     BACKSTAB_DAMAGE: {
-      name: "BACKSTAB_DAMAGE",
+      name: "BACKSTAB DAMAGE",
       description: ["Increase the damage you deal from behind by 25%."],
       color: "gold",
       cost: 2,
@@ -65,7 +65,7 @@ const SkillNodes: SkillNodesType = {
       cost: 2,
     },
     QUALITY_GEAR: {
-      name: "QUALITY_GEAR",
+      name: "QUALITY GEAR",
       description: ["All tools lose durability 50% slower."],
       color: "gold",
       cost: 2,
@@ -79,7 +79,7 @@ const SkillNodes: SkillNodesType = {
       cost: 2,
     },
     POWER_PARRY: {
-      name: "POWER_PARRY",
+      name: "POWER PARRY",
       description: [
         "Increases the enemy's stun bar gain on parry attacks.",
         "<b>Parry</b><br>While equipped with a shield, press <b>[RMB] to block</b>. A well-timed block willl <b>parry</b> the attack.",
@@ -481,7 +481,7 @@ const SkillNodes: SkillNodesType = {
       cost: 2,
     },
     HEALER_II: {
-      name: "HEALER_II",
+      name: "HEALER II",
       description: ["Health gain from healing spells will be increased by 20%"],
       color: "blue",
       cost: 2,
@@ -572,7 +572,7 @@ const SkillNodes: SkillNodesType = {
       cost: 3,
     },
     LIFE_BURST: {
-      name: "LIFE_BURST",
+      name: "LIFE BURST",
       description: [
         "When killing an enemy with a magic weapon all players within 15 meters of the target gain health equal to 3 times yoour Intelligence.",
       ],
@@ -580,7 +580,7 @@ const SkillNodes: SkillNodesType = {
       cost: 4,
     },
     BLOOD_MAGIC: {
-      name: "BLOOD_MAGIC",
+      name: "BLOOD MAGIC",
       description: [
         "When your mana drops below 20%, your restore 20% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
       ],
@@ -602,7 +602,7 @@ const SkillNodes: SkillNodesType = {
       cost: 4,
     },
     SOUL_LEECH: {
-      name: "SOUL_LEECH",
+      name: "SOUL LEECH",
       description: [
         "When killing an enemy with a melee weapon all players within 15 meters of the target gain 20 mana.",
       ],
@@ -610,13 +610,13 @@ const SkillNodes: SkillNodesType = {
       cost: 4,
     },
     SHINY_PLATES: {
-      name: "SHINY_PLATES",
+      name: "SHINY PLATES",
       description: ["Physical armor gains 10% more armor points."],
       color: "red",
       cost: 2,
     },
     HEAVY_PLATES: {
-      name: "HEAVY_PLATES",
+      name: "HEAVY PLATES",
       description: [
         "The maximum amount of physical damage your armor is able to mitigate is increased by 10%",
       ],
@@ -640,7 +640,7 @@ const SkillNodes: SkillNodesType = {
       cost: 3,
     },
     ARCH_NEMESIS: {
-      name: "ARCH_NEMESIS",
+      name: "ARCH NEMESIS",
       description: [
         "Whenever an ally draws the attention of an enemy, you draw twice as much.",
       ],
@@ -735,7 +735,7 @@ const SkillNodes: SkillNodesType = {
       cost: 3,
     },
     HEAVY_HANDED: {
-      name: "HEAVY_HANDED",
+      name: "HEAVY HANDED",
       description: [
         "An enemy's stun bar is increased by an additional 20% when attacking into their block with a melee weapon.",
       ],
@@ -781,7 +781,7 @@ const SkillNodes: SkillNodesType = {
       cost: 2,
     },
     BLOOD_WARRIOR: {
-      name: "BLOOD_WARRIOR",
+      name: "BLOOD WARRIOR",
       description: [
         "Spawn a health orb after defeating an enemy with a Sneak Attack or Merciless Attack.",
         "Gathering the orbs replenishes 10% of your health.",
@@ -820,7 +820,7 @@ const SkillNodes: SkillNodesType = {
       cost: 3,
     },
     GOOD_METABOLISM: {
-      name: "GOOD_METABOLISM",
+      name: "GOOD METABOLISM",
       description: [
         "Health, mana and stamina Orbs restore 30% instead of 10% of their respective resource.",
         "Mana and Health Potions restore 20% more.",
@@ -864,7 +864,7 @@ const SkillNodes: SkillNodesType = {
       cost: 2,
     },
     RELENTLESS_FLAME: {
-      name: "RELENTLESS_FLAME",
+      name: "RELENTLESS FLAME",
       description: [
         "Maximum <i>Shroud Time</i> increased by 5 minutes, allowing you to explore for longer.",
         SHROUD_TIME_TEXT,
@@ -873,7 +873,7 @@ const SkillNodes: SkillNodesType = {
       cost: 4,
     },
     SNAKE_EATER: {
-      name: "SNAKE_EATER",
+      name: "SNAKE EATER",
       description: [
         "Increases your <b>poison resistance</b> which reduces the damage received from poison by <b>20%</b>.",
       ],
@@ -898,7 +898,7 @@ const SkillNodes: SkillNodesType = {
       cost: 3,
     },
     CALM_SPIRIT: {
-      name: "CALM_SPIRIT",
+      name: "CALM SPIRIT",
       description: [
         "<b>Wild animals</b> within 50 meters will be pacified unless attacked. Does not affect animals corrupted by the Shroud.",
       ],
@@ -1020,7 +1020,7 @@ const SkillNodes: SkillNodesType = {
       cost: 4,
     },
     GRACEFUL_STRIDE: {
-      name: "GRACEFUL_STRIDE",
+      name: "GRACEFUL STRIDE",
       description: [
         "You will gain one dexterity for every two levels of the Flame.",
       ],
@@ -1036,7 +1036,7 @@ const SkillNodes: SkillNodesType = {
       cost: 5,
     },
     ARCANE_CONCENTRATION: {
-      name: "ARCANE_CONCENTRATION",
+      name: "ARCANE CONCENTRATION",
       description: [
         "You will gain one spirit for every two levels of the Flame.",
       ],
@@ -1052,7 +1052,7 @@ const SkillNodes: SkillNodesType = {
       cost: 5,
     },
     THICK_SKIN: {
-      name: "THICK_SKIN",
+      name: "THICK SKIN",
       description: [
         "You will gain one constitution for each two levels of the Flame.",
       ],

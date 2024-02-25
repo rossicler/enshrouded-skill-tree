@@ -2,23 +2,29 @@ import { memo, useCallback, useMemo } from "react";
 
 import { getBaseLinesToDraw, getLinesToDraw } from "../utils/utils";
 import SkillPath from "./shared/SkillPath";
+import { useAppSelector } from "@/redux/hooks";
 
 type PropsType = {
   lines?: [string, string][];
-  color?: string;
 };
 
 const DEFAULT_COLOR = "#251f36";
 const CONNECTED_COLOR = "#8e6d08";
 
-const SkillPaths = ({ lines, color = "#251f36" }: PropsType) => {
+const SkillPaths = ({ lines }: PropsType) => {
   const defaultLines = useMemo(() => getLinesToDraw(), []);
   const baseLines = useMemo(() => getBaseLinesToDraw(), []);
+  const skillsSelected = useAppSelector((state) => state.skill.selectedSkills);
 
   const isConnected = useCallback(
     (from: string, to: string) =>
       lines && lines.some((arr) => arr.includes(to) && arr.includes(from)),
     [lines]
+  );
+
+  const isBaseConnected = useCallback(
+    (id: string) => skillsSelected.includes(id),
+    [skillsSelected]
   );
 
   return (
@@ -36,7 +42,7 @@ const SkillPaths = ({ lines, color = "#251f36" }: PropsType) => {
           key={`${from}-${to}`}
           from={from}
           to={to}
-          color={color}
+          color={isBaseConnected(from) ? CONNECTED_COLOR : DEFAULT_COLOR}
           prefixTo="line"
         />
       ))}

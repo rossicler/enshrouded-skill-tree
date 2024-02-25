@@ -61,6 +61,17 @@ const AboutDialog = ({ open, onClose }: PropsType) => {
                     </a>{" "}
                     or you can join our discord server and reach out.
                   </p>
+                  <p>
+                    Special thanks to{" "}
+                    <a
+                      className="text-purple-600 underline"
+                      href="https://www.youtube.com/@Glitchiz"
+                      target="_blank"
+                    >
+                      @Glitchiz
+                    </a>{" "}
+                    for giving me some of the assets used in this tool.
+                  </p>
 
                   <div className="w-full flex justify-end">
                     <button

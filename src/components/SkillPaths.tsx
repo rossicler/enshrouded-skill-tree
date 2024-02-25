@@ -9,7 +9,7 @@ type PropsType = {
 };
 
 const DEFAULT_COLOR = "#251f36";
-const CONNECTED_COLOR = "#56422b";
+const CONNECTED_COLOR = "#8e6d08";
 
 const SkillPaths = ({ lines, color = "#251f36" }: PropsType) => {
   const defaultLines = useMemo(() => getLinesToDraw(), []);

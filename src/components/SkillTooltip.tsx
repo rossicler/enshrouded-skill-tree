@@ -11,10 +11,10 @@ type PropsType = {
 };
 
 const BG_COLOR: { [key: string]: string } = {
-  red: "!bg-red",
-  green: "!bg-green",
-  blue: "!bg-blue",
-  gold: "!bg-gold",
+  red: "!bg-ig-red",
+  green: "!bg-ig-green",
+  blue: "!bg-ig-blue",
+  gold: "!bg-ig-gold",
 };
 
 const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {

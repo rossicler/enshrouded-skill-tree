@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        red: "#a11f1f",
-        green: "#8ebe00",
-        blue: "#0081dd",
-        gold: "#ca9803",
+        "ig-red": "#a11f1f",
+        "ig-green": "#8ebe00",
+        "ig-blue": "#0081dd",
+        "ig-gold": "#ca9803",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

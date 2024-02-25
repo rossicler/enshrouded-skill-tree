@@ -2,6 +2,7 @@ import { Tooltip } from "react-tooltip";
 
 import SkillNodes, { Node } from "../constants/Nodes";
 import Image from "next/image";
+import { classNames } from "@/utils/utils";
 
 type PropsType = {
   node: Node;
@@ -9,12 +10,22 @@ type PropsType = {
   onHide?: () => void;
 };
 
+const BG_COLOR: { [key: string]: string } = {
+  red: "!bg-red",
+  green: "!bg-green",
+  blue: "!bg-blue",
+  gold: "!bg-gold",
+};
+
 const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
   return (
     <Tooltip
       id={`skill-tooltip-${node.id}`}
-      className="z-50 p-2 max-w-sm"
+      className={classNames(
+        "z-50 p-2 max-w-sm !bg-opacity-60 border-2 border-white !rounded-lg",
+        BG_COLOR[metadata.color] ?? "!bg-purple-600"
+      )}
       afterShow={onShow}
       afterHide={onHide}
     >

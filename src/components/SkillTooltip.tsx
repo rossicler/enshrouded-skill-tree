@@ -29,7 +29,7 @@ const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {
       afterShow={onShow}
       afterHide={onHide}
     >
-      <span className="uppercase text-xl text-white">
+      <span className="uppercase text-xl text-white font-bold">
         {metadata ? metadata.name : node.type}
       </span>
       {metadata && (

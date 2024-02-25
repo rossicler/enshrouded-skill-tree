@@ -3,7 +3,10 @@ import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
+  addConnectedPaths,
   addSelectedSkill,
+  loadConnectedPaths,
+  removePathsConnectedTo,
   removeSelectedSkill,
 } from "@/redux/skills/skills.slice";
 import Nodes, { Node } from "../constants/Nodes";
@@ -12,24 +15,13 @@ import SkillNode from "./SkillNode";
 import SkillPaths from "./SkillPaths";
 import { getSkillsToRemove } from "../utils/utils";
 import HUD from "./hud/HUD";
-
-type SkillPathsType = [string, string][];
+import TreeLabels from "./TreeLabels";
 
 const SkillTree = () => {
   const [selectableSkills, setSelectableSkills] = useState<string[]>([]);
-  const [connectedPaths, setConnectedPaths] = useState<SkillPathsType>([]);
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
+  const connectedPaths = useAppSelector((state) => state.skill.connectedPaths);
   const dispatch = useAppDispatch();
-
-  const addPaths = (paths: SkillPathsType) => {
-    setConnectedPaths((prev) => [...prev, ...paths]);
-  };
-
-  const removePathsConnectedTo = (ids: string[]) => {
-    setConnectedPaths((prev) =>
-      prev.filter((paths) => !ids.some((id) => paths.includes(id)))
-    );
-  };
 
   const updateSelectableSkills = () => {
     let tmpSelectableSkills: string[] = [];
@@ -43,22 +35,6 @@ const SkillTree = () => {
     setSelectableSkills(Array.from(new Set(tmpSelectableSkills)));
   };
 
-  const initPathsConnected = (skills: string[]) => {
-    let paths: SkillPathsType = [];
-    const alreadySetObj: { [key: string]: boolean } = {};
-    skills.forEach((id) => {
-      const connectedTo = skills.filter((to) => Nodes.edges[id].includes(to));
-      connectedTo.forEach((to) => {
-        const pathId = id > to ? `${id}-${to}` : `${to}-${id}`;
-        if (!alreadySetObj[pathId]) {
-          paths.push([id, to]);
-          alreadySetObj[pathId] = true;
-        }
-      });
-    });
-    setConnectedPaths(paths);
-  };
-
   const onSelect = (node: Node) => {
     const connectedTo = selectedSkills.filter((id) =>
       Nodes.edges[id].includes(node.id)
@@ -68,17 +44,17 @@ const SkillTree = () => {
     if (selectedIndex !== -1) {
       const skillsToRemove = getSkillsToRemove(node.id, selectedSkills);
       dispatch(removeSelectedSkill(skillsToRemove));
-      removePathsConnectedTo(skillsToRemove);
+      dispatch(removePathsConnectedTo(skillsToRemove));
     } else {
       dispatch(addSelectedSkill(node.id));
-      addPaths(connectedTo.map((to) => [node.id, to]));
+      dispatch(addConnectedPaths(connectedTo.map((to) => [node.id, to])));
     }
   };
 
   useEffect(() => {
     updateSelectableSkills();
     if (selectedSkills.length === 0) {
-      setConnectedPaths([]);
+      dispatch(loadConnectedPaths([]));
     }
   }, [selectedSkills]);
 
@@ -109,21 +85,14 @@ const SkillTree = () => {
                     onSelect={onSelect}
                   />
                 ))}
+                <TreeLabels />
               </div>
-              {/* Add default paths */}
               <svg
                 id="svg-container"
                 className="absolute inset-0 w-screen h-screen"
               >
-                <SkillPaths />
+                <SkillPaths lines={connectedPaths} />
               </svg>
-              {/* Add connected paths */}
-              {/* <svg
-              id="svg-connected-container"
-              className="absolute inset-0 w-screen h-screen z-10"
-            >
-              <SkillPaths lines={connectedPaths} color="#56422b" />
-            </svg> */}
             </div>
           </TransformComponent>
         </>

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   clearCodeImported,
+  initConnectedPaths,
   loadSelectedSkills,
 } from "@/redux/skills/skills.slice";
 import { convertHashToJson } from "@/utils/utils";
@@ -18,7 +19,7 @@ const InitSkills = () => {
       try {
         const initSkills = convertHashToJson(code);
         dispatch(loadSelectedSkills(initSkills));
-        // initPathsConnected(initSkills);
+        dispatch(initConnectedPaths(initSkills));
         if (code) {
           dispatch(clearCodeImported());
         }

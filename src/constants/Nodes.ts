@@ -1,3 +1,5 @@
+import { NodeStatsType } from "./Stats";
+
 export type Node = {
   id: string;
   type: string;
@@ -16,6 +18,7 @@ export type NodeTypeMetadata = {
   selectedAsset?: string;
   color: string;
   cost: number;
+  stats?: NodeStatsType;
 };
 
 export type SkillNodesType = {
@@ -95,6 +98,7 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "blue",
       cost: 1,
+      stats: { SPIRIT: 1 },
     },
     ATTR_INT: {
       name: "INTELLIGENCE",
@@ -104,6 +108,7 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "blue",
       cost: 1,
+      stats: { INT: 1 },
     },
     ATTR_CONS: {
       name: "CONSTITUTION",
@@ -113,6 +118,7 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "red",
       cost: 1,
+      stats: { CONS: 1 },
     },
     ATTR_STR: {
       name: "STRENGTH",
@@ -122,6 +128,7 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "red",
       cost: 1,
+      stats: { STR: 1 },
     },
     ATTR_ENDURANCE: {
       name: "ENDURANCE",
@@ -131,6 +138,7 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "green",
       cost: 1,
+      stats: { ENDURANCE: 1 },
     },
     ATTR_DEX: {
       name: "DEXTERITY",
@@ -140,6 +148,7 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "green",
       cost: 1,
+      stats: { DEX: 1 },
     },
     WELL_RESTED: {
       name: "WELL RESTED",

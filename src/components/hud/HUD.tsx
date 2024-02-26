@@ -12,6 +12,7 @@ import PointsHUD from "./Points";
 import AboutHUD from "./About";
 import ResetIcon from "../icons/Reset";
 import ExportDialog from "../dialogs/ExportDialog";
+import Stats from "./Stats";
 
 type PropsType = {
   zoomIn: (step?: number) => void;
@@ -69,7 +70,8 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
       >
         <div
           className={classNames(
-            "flex border border-purple-600 rounded-xl px-2 divide-x divide-purple-600"
+            "flex border border-purple-600 rounded-xl px-2 divide-x divide-purple-600",
+            "bg-black"
           )}
         >
           <button className="w-12" onClick={() => zoomIn(0.5)}>

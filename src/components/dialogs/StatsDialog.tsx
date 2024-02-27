@@ -54,7 +54,7 @@ const StatsDialog = ({ open, onClose }: PropsType) => {
                 <div className="mt-5 text-black flex gap-5 w-full">
                   <div className="flex flex-col gap-5 w-full">
                     <h3 className="font-medium">Basic</h3>
-                    <div className="grid grid-cols-2 gap-x-5 gap-y-1 w-full text-sm justify-between">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-1 w-full text-sm justify-between">
                       {Object.keys(BasicStats).map((stat) => (
                         <div key={stat} className="flex justify-between">
                           <span>{BasicStats[stat as StatsType].name}</span>

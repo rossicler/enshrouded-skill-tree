@@ -583,7 +583,7 @@ const SkillNodes: SkillNodesType = {
     LIFE_BURST: {
       name: "LIFE BURST",
       description: [
-        "When killing an enemy with a magic weapon all players within 15 meters of the target gain health equal to 3 times yoour Intelligence.",
+        "When killing an enemy with a magic weapon all players within 15 meters of the target gain health equal to 3 times your Intelligence.",
       ],
       color: "blue",
       cost: 4,
@@ -975,6 +975,10 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "green",
       cost: 5,
+      stats: {
+        DEX: 2,
+        ENDURANCE: 2,
+      },
     },
     SILENT_STRIDE: {
       name: "SILENT STRIDE",

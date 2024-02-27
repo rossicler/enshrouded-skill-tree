@@ -23,6 +23,7 @@
     "react-toastify": "^10.0.4",
     "react-tooltip": "^5.26.3",
     "react-zoom-pan-pinch": "^3.4.2",
+    "redux-persist": "^6.0.0",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {

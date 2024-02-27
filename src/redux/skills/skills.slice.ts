@@ -1,6 +1,8 @@
 import SkillNodes from "@/constants/Nodes";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { persistReducer } from "redux-persist";
+import storageSession from "redux-persist/lib/storage/session";
 
 type SkillPathsType = [string, string][];
 
@@ -79,4 +81,12 @@ export const {
   removePathsConnectedTo,
   initConnectedPaths,
 } = skillsSlice.actions;
-export default skillsSlice.reducer;
+
+const persistConfig = {
+  key: "skills",
+  version: 1,
+  storage: storageSession,
+  whitelist: ["selectedSkills", "connectedPaths"],
+};
+
+export default persistReducer(persistConfig, skillsSlice.reducer);

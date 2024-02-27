@@ -1,27 +1,18 @@
 import { BasicStats, StatsType } from "@/constants/Stats";
 import { useAppSelector } from "@/redux/hooks";
 import { getStatsFromSkills } from "@/utils/stats";
+import React, { useState } from "react";
 import { classNames } from "@/utils/utils";
-import React, { useMemo } from "react";
+import HUDButton from "../shared/HUDButton";
+import StatsDialog from "../dialogs/StatsDialog";
 
 const Stats = () => {
-  const skillsSelected = useAppSelector((state) => state.skill.selectedSkills);
-  const stats = useMemo(
-    () => getStatsFromSkills(skillsSelected),
-    [skillsSelected]
-  );
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className={classNames("flex flex-col gap-1.5 ")}>
-      <h3 className="font-bold text-xl">Stats</h3>
-      <div className="text-sm">
-        {Object.keys(BasicStats).map((stat) => (
-          <p>
-            +{stats[stat as StatsType] ?? 20}{" "}
-            {BasicStats[stat as StatsType].name}
-          </p>
-        ))}
-      </div>
+    <div className={classNames("flex flex-col gap-1.5 mt-5")}>
+      <HUDButton onClick={() => setOpen(true)}>Stats</HUDButton>
+      <StatsDialog open={open} onClose={() => setOpen(false)} />
     </div>
   );
 };

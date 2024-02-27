@@ -13,6 +13,7 @@ import AboutHUD from "./About";
 import ResetIcon from "../icons/Reset";
 import ExportDialog from "../dialogs/ExportDialog";
 import Stats from "./Stats";
+import { useRouter } from "next/router";
 
 type PropsType = {
   zoomIn: (step?: number) => void;
@@ -25,6 +26,7 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
   let [importOpen, setImportOpen] = useState(false);
   let [exportOpen, setExportOpen] = useState(false);
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const importHandler = (code: string) => {
     // TODO: implement plastebin import
@@ -33,6 +35,7 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
 
   const clearHandler = () => {
     dispatch(loadSelectedSkills([]));
+    router.replace("/", undefined, { shallow: true });
   };
 
   const openDiscordInvite = () => {

@@ -1,3 +1,4 @@
+import useScreenSize from "@/hooks/useScreenSize";
 import React, { memo, useEffect, useRef } from "react";
 
 type PropsType = {

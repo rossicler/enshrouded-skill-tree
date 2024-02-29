@@ -6,6 +6,7 @@ import { getAsset } from "../utils/assets-utils";
 import Image from "next/image";
 import SkillPath from "./shared/SkillPath";
 import { classNames } from "@/utils/utils";
+import { useAppSelector } from "@/redux/hooks";
 
 type PropsType = {
   node: Node;
@@ -38,6 +39,9 @@ const SkillNode = ({
   onSelect,
 }: PropsType) => {
   const [tooltipOpen, setTooltipOpen] = useState(false);
+  const isSearched = useAppSelector((state) =>
+    state.skill.searchSkillResults.includes(node.type)
+  );
   const nodeSize = SIZE[node.tier ?? "small"];
 
   const [lowBritness, asset] = useMemo(
@@ -68,7 +72,11 @@ const SkillNode = ({
           style={{ marginTop: INIT_DISTANCE + (node.distance ?? 0) }}
         >
           <div
-            className={`absolute rounded-full ${nodeSize.className}`}
+            className={classNames(
+              "absolute rounded-full flex items-center justify-center",
+              nodeSize.className,
+              isSearched && "ring-4 ring-purple-600"
+            )}
             style={{
               left: -nodeSize.size / 2,
               bottom: -nodeSize.size / 2,

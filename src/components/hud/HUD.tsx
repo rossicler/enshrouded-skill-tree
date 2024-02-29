@@ -14,15 +14,17 @@ import ResetIcon from "../icons/Reset";
 import ExportDialog from "../dialogs/ExportDialog";
 import Stats from "./Stats";
 import { useRouter } from "next/router";
+import SearchHUD from "./Search";
 
 type PropsType = {
   zoomIn: (step?: number) => void;
   zoomOut: (step?: number) => void;
+  centerView: (scale?: number) => void;
 };
 
 const DISCORD_LINK = "https://discord.gg/saazEkNchu";
 
-const HUD = ({ zoomIn, zoomOut }: PropsType) => {
+const HUD = ({ zoomIn, zoomOut, centerView }: PropsType) => {
   let [importOpen, setImportOpen] = useState(false);
   let [exportOpen, setExportOpen] = useState(false);
   const dispatch = useAppDispatch();
@@ -67,30 +69,32 @@ const HUD = ({ zoomIn, zoomOut }: PropsType) => {
 
       <div
         className={classNames(
-          "absolute top-0 left-0 w-full bg-transparent z-20 flex flex-col gap-3",
-          "justify-center items-center py-6 bg-transparent"
+          "absolute right-0 top-[50%] translate-y-[-50%] bg-transparent z-20 flex flex-col gap-3",
+          "justify-center items-center px-6 bg-transparent"
         )}
       >
         <div
           className={classNames(
-            "flex border border-purple-600 rounded-xl px-2 divide-x divide-purple-600",
+            "flex flex-col border border-purple-600 rounded-xl divide-y divide-purple-600",
             "bg-black"
           )}
         >
-          <button className="w-12" onClick={() => zoomIn(0.5)}>
+          <button className="h-12 w-8" onClick={() => zoomIn(0.5)}>
             +
           </button>
-          <button className="w-12" onClick={() => zoomOut(0.5)}>
+          <button className="h-12 w-8" onClick={() => zoomOut(0.5)}>
             -
           </button>
           <button
-            className="w-12 flex justify-center items-center"
-            onClick={() => zoomOut(5)}
+            className="h-12 w-8 flex justify-center items-center"
+            onClick={() => centerView(2)}
           >
             <ResetIcon className="w-3" />
           </button>
         </div>
       </div>
+
+      <SearchHUD />
 
       <PointsHUD />
       <AboutHUD />

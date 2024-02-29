@@ -10,11 +10,13 @@ interface SkillsState {
   selectedSkills: string[];
   codeImported?: string;
   connectedPaths: SkillPathsType;
+  searchSkillResults: string[];
 }
 
 const initialState = {
   selectedSkills: [],
   connectedPaths: [],
+  searchSkillResults: [],
 } satisfies SkillsState as SkillsState;
 
 const skillsSlice = createSlice({
@@ -67,6 +69,9 @@ const skillsSlice = createSlice({
       });
       state.connectedPaths = paths;
     },
+    setSearchSkillResults(state, action: PayloadAction<string[]>) {
+      state.searchSkillResults = action.payload;
+    },
   },
 });
 
@@ -80,6 +85,7 @@ export const {
   addConnectedPaths,
   removePathsConnectedTo,
   initConnectedPaths,
+  setSearchSkillResults,
 } = skillsSlice.actions;
 
 const persistConfig = {

@@ -69,9 +69,9 @@ const SkillTree = () => {
         ref.zoomIn();
       }}
     >
-      {({ zoomIn, zoomOut }) => (
+      {({ zoomIn, zoomOut, centerView }) => (
         <>
-          <HUD zoomIn={zoomIn} zoomOut={zoomOut} />
+          <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} />
           <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
             <div className="relative w-screen h-screen flex items-center justify-center">
               <div className="relative scale-25 z-20">

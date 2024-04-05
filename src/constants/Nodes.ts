@@ -326,7 +326,8 @@ const SkillNodes: SkillNodesType = {
     MULTI_SHOT: {
       name: "MULTI SHOT",
       description: [
-        "Adds a 20% chance to spawn a flurry of arrows that spread slightly",
+        "When using regular arrows there is a 20% chance to spawn a flurry of arrows that spread slightly.",
+        "This will cost additional arrows, but will not trigger on special arrows.",
       ],
       hasAsset: true,
       color: "green",

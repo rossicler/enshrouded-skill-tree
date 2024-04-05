@@ -506,7 +506,7 @@ const SkillNodes: SkillNodesType = {
     SHROUD_FILTER: {
       name: "SHROUD FILTER",
       description: [
-        "Dealing magic weapon damage has a 15% chance to trigger a small flmae brust that restores 30 seconds of <i>Shroud Time</i> to you and your allies within 20 meters.",
+        "Dealing magic weapon damage has a 15% chance to trigger a small flame burst that restores 30 seconds of <i>Shroud Time</i> to you and your allies within 20 meters.",
         SHROUD_TIME_TEXT,
       ],
       color: "blue",

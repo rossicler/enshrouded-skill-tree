@@ -86,8 +86,8 @@ const labels: Labels[] = [
   },
   {
     name: "Beastmaster",
-    angle: 168,
-    distance: 520,
+    angle: 170,
+    distance: 605,
     asset: "BEASTMASTER",
     width: 490,
     height: 112,

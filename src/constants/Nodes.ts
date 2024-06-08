@@ -33,7 +33,11 @@ export const LinesAngles = [
 ];
 
 const SHROUD_TIME_TEXT =
-  "<h4>Shroud Time</h4><br>Should this time run out, the Shroud will consume you.";
+  "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you.";
+const BLOCK_BREAKER =
+  "<b>Block Breaker</b><br/>This special attack increases an enemy's stun bar twice as much when hit.";
+const OVERPOWER =
+  "<b>Overpower</b><br/>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.";
 
 const SkillNodes: SkillNodesType = {
   types: {
@@ -50,6 +54,14 @@ const SkillNodes: SkillNodesType = {
       description: ["Increase the damage you deal from behind by 25%."],
       color: "gold",
       cost: 2,
+    },
+    OPPORTUNITY: {
+      name: "OPPORTUNITY",
+      description: [
+        "Increases the Multiplier of the Merciless Attack and the Sneak Attack by 100%.",
+      ],
+      color: "gold",
+      cost: 3,
     },
     MINER: {
       name: "MINER",
@@ -175,7 +187,7 @@ const SkillNodes: SkillNodesType = {
       name: "MERCILESS ATTACK",
       description: [
         "Perform a Merciless Attack by pressing [E] to deal massive damage to an enemy you've empowered.",
-        "<b>Overpower</b><br>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.",
+        OVERPOWER,
       ],
       hasAsset: true,
       selectableAsset: "merciless_attack_1.png",
@@ -242,6 +254,7 @@ const SkillNodes: SkillNodesType = {
       name: "EVASION ATTACK",
       description: [
         "When equipped with a melee weapon, you can perform an evade attack which dashes towards the enemy and deals more weapon damage with <b>[LMB]</b>",
+        BLOCK_BREAKER,
       ],
       hasAsset: true,
       color: "red",
@@ -268,8 +281,9 @@ const SkillNodes: SkillNodesType = {
     SHOCKWAVE: {
       name: "SHOCKWAVE",
       description: [
-        "Overpower an enemy to trigger a shock-wave that increases nearby enemies stun bar and pushes them back.",
-        "<b>Overpower</b><br>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.",
+        "Trigger a shockwave when you parry an attack or overpower an enemy.",
+        "The shockwave pushes back nearby enemies. It also increases their stun bar, scaling with your strength attribute.",
+        OVERPOWER,
       ],
       hasAsset: true,
       color: "red",
@@ -284,7 +298,9 @@ const SkillNodes: SkillNodesType = {
     },
     BASH: {
       name: "BASH",
-      description: ["You parry bashes the enemy for 20 blunt damage."],
+      description: [
+        "Your parry bashes the enemy for 20 blunt damage. The damage is increased by your strength attribute.",
+      ],
       hasAsset: true,
       color: "red",
       cost: 5,
@@ -293,7 +309,8 @@ const SkillNodes: SkillNodesType = {
       name: "JUMP ATTACK",
       description: [
         "When equipped with a melee weapon, you can perform a jump attack which deals 50% more weapon damage in a small blast radius.",
-        "Costs stamina appropriately to the weapon's weight. Does not work with toools.",
+        "The jump attack costs stamina according to the weapon's weight. Does not work with tools.",
+        BLOCK_BREAKER,
       ],
       hasAsset: true,
       color: "red",
@@ -333,10 +350,28 @@ const SkillNodes: SkillNodesType = {
       color: "green",
       cost: 3,
     },
+    MULTI_SHOT_SPREAD: {
+      name: "MULTI SHOT SPREAD",
+      description: [
+        `Adds a 25% chance to spawn an additional projectile to your "flurry of arrows" from the "Multi Shot" skill.`,
+        "This additional projectiles does not subtract from your stach of ammunition.",
+      ],
+      color: "green",
+      cost: 3,
+    },
+    MULTI_SHOT_TRIGGER: {
+      name: "MULTI SHOT TRIGGER",
+      description: [
+        `ALL arrows, including special arrows, can trigger "Multi Shot".`,
+        "The special Multi Shot projectiles will subtract from your stach of ammunition.",
+      ],
+      color: "green",
+      cost: 3,
+    },
     BEE_STING: {
       name: "BEE STING",
       description: [
-        "You can draw and use your bow while gliding. You will fall slowly.",
+        "When you draw your bow while in the air, your fall is slowed down for a short time. Every shot gives you a small push to get more air time.",
         "Cost: 10 stamina per second",
       ],
       hasAsset: true,
@@ -547,16 +582,26 @@ const SkillNodes: SkillNodesType = {
     UNITY: {
       name: "UNITY",
       description: [
-        "Damaging enemies with wands has a 24$ chance to recover 2% mana.",
+        "Damaging enemies with wands has a 24% chance to recover 4% mana.",
       ],
       color: "blue",
       cost: 3,
     },
     WAND_MASTER: {
       name: "WAND MASTER",
-      description: ["30% Chance to spawn an additional wand projectile."],
+      description: [
+        "Attacking with a wand has a 30% chance to spawn an additional wand projectile that deals 50% damage.",
+      ],
       color: "blue",
       cost: 2,
+    },
+    ETERNAL_SPARK: {
+      name: "ETERNAL SPARK",
+      description: [
+        "Wand projectiles have a 25% chance not to consume durability.",
+      ],
+      color: "blue",
+      cost: 3,
     },
     STING: {
       name: "STING",
@@ -592,7 +637,8 @@ const SkillNodes: SkillNodesType = {
     BLOOD_MAGIC: {
       name: "BLOOD MAGIC",
       description: [
-        "When your mana drops below 20%, your restore 20% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
+        "When your mana drops below 20%, your restore 35% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
+        "<b>Cooldown</b><br />This takes 2 minutes before it can trigger again.",
       ],
       color: "blue",
       cost: 4,
@@ -752,10 +798,19 @@ const SkillNodes: SkillNodesType = {
       color: "red",
       cost: 2,
     },
+    STEADFAST: {
+      name: "STEADFAST",
+      description: [
+        "Defeating an enemy with a melee weapon restores 1 durability to that weapon.",
+      ],
+      color: "red",
+      cost: 3,
+    },
     BREACH: {
       name: "BREACH",
       description: [
-        "When you break a block with melee attacks, the target will suffer 100% more melee damage for 2 seconds.",
+        "An overpowered enemy suffers 100% more melee damage for 3 seconds.",
+        OVERPOWER,
       ],
       color: "red",
       cost: 3,
@@ -798,6 +853,14 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "red",
       cost: 6,
+    },
+    FINESSE: {
+      name: "FINESSE",
+      description: [
+        "One-handed melee weapons and daggers have a 20% chance not to lose durability.",
+      ],
+      color: "red",
+      cost: 3,
     },
     JUMP_ATTACK_II: {
       name: "JUMP ATTACK II",
@@ -898,6 +961,20 @@ const SkillNodes: SkillNodesType = {
       ],
       color: "green",
       cost: 3,
+    },
+    DAGGER_MASTER: {
+      name: "DAGGER MASTER",
+      description: ["Increases damage dealt with daggers by 15%."],
+      color: "green",
+      cost: 4,
+    },
+    SLICE_AND_DICE: {
+      name: "SLICE AND DICE",
+      description: [
+        "Increases the damage of your next bow attack by 50% after a dagger crit.",
+      ],
+      color: "green",
+      cost: 4,
     },
     VUKAH_LANGUAGE: {
       name: "VUKAH LANGUAGE",
@@ -1096,6 +1173,13 @@ const SkillNodes: SkillNodesType = {
       type: "BACKSTAB_DAMAGE",
       tier: "medium",
       distance: -190,
+      angle: 225,
+    },
+    "181": {
+      id: "181",
+      type: "OPPORTUNITY",
+      tier: "medium",
+      distance: -250,
       angle: 225,
     },
     "4": {
@@ -1462,14 +1546,21 @@ const SkillNodes: SkillNodesType = {
       type: "STING",
       tier: "medium",
       distance: 270,
-      angle: 340,
+      angle: 350,
     },
     "71": {
       id: "71",
       type: "WAND_MASTER",
       tier: "medium",
       distance: 270,
-      angle: 350,
+      angle: 340,
+    },
+    "180": {
+      id: "180",
+      type: "ETERNAL_SPARK",
+      tier: "medium",
+      distance: 350,
+      angle: 340,
     },
     "73": { id: "73", type: "ATTR_SPIRIT", distance: 350, angle: 345 },
     "74": { id: "74", type: "ATTR_INT", distance: 420, angle: 345 },
@@ -1605,6 +1696,13 @@ const SkillNodes: SkillNodesType = {
       distance: 70,
       angle: 75,
     },
+    "183": {
+      id: "183",
+      type: "STEADFAST",
+      tier: "medium",
+      distance: 120,
+      angle: 90,
+    },
     "105": { id: "105", type: "ATTR_STR", distance: 140, angle: 75 },
     "106": {
       id: "106",
@@ -1678,6 +1776,13 @@ const SkillNodes: SkillNodesType = {
       id: "120",
       type: "BLOOD_WARRIOR",
       tier: "medium",
+      distance: 340,
+      angle: 105,
+    },
+    "182": {
+      id: "182",
+      type: "FINESSE",
+      tier: "medium",
       distance: 260,
       angle: 110,
     },
@@ -1695,7 +1800,7 @@ const SkillNodes: SkillNodesType = {
       distance: 260,
       angle: 100,
     },
-    "122": { id: "122", type: "ATTR_CONS", distance: 330, angle: 105 },
+    "122": { id: "122", type: "ATTR_CONS", distance: 470, angle: 105 },
     "123": { id: "123", type: "ATTR_CONS", distance: 400, angle: 110 },
     "124": { id: "124", type: "ATTR_STR", distance: 400, angle: 100 },
     "125": { id: "125", type: "BASH", tier: "large", distance: 310, angle: 90 },
@@ -1784,18 +1889,32 @@ const SkillNodes: SkillNodesType = {
       angle: 165,
     },
     "144": { id: "144", type: "ATTR_ENDURANCE", distance: 210, angle: 165 },
+    "184": {
+      id: "184",
+      type: "DAGGER_MASTER",
+      tier: "medium",
+      distance: 280,
+      angle: 160,
+    },
+    "185": {
+      id: "185",
+      type: "SLICE_AND_DICE",
+      tier: "medium",
+      distance: 280,
+      angle: 170,
+    },
     "145": {
       id: "145",
       type: "VUKAH_LANGUAGE",
       tier: "medium",
-      distance: 280,
+      distance: 420,
       angle: 170,
     },
     "146": {
       id: "146",
       type: "CALM_SPIRIT",
       tier: "medium",
-      distance: 280,
+      distance: 420,
       angle: 160,
     },
     "179": {
@@ -1805,27 +1924,27 @@ const SkillNodes: SkillNodesType = {
       distance: 330,
       angle: 150,
     },
-    "147": { id: "147", type: "ATTR_DEX", distance: 310, angle: 165 },
-    "148": { id: "148", type: "ATTR_ENDURANCE", distance: 310, angle: 175 },
+    "147": { id: "147", type: "ATTR_DEX", distance: 350, angle: 168 },
+    "148": { id: "148", type: "ATTR_ENDURANCE", distance: 350, angle: 162 },
     "149": {
       id: "149",
       type: "VUKAH_CULTURE",
       tier: "medium",
-      distance: 370,
+      distance: 510,
       angle: 170,
     },
     "150": {
       id: "150",
       type: "BEAST_MASTER",
       tier: "medium",
-      distance: 370,
+      distance: 510,
       angle: 160,
     },
-    "151": { id: "151", type: "ATTR_DEX", distance: 400, angle: 175 },
+    "151": { id: "151", type: "ATTR_DEX", distance: 465, angle: 165 },
     "152": {
       id: "152",
       type: "ENDURANCE_OF_THE_FLAME",
-      distance: 440,
+      distance: 580,
       angle: 165,
     },
     "153": { id: "153", type: "ATTR_DEX", base: true, angle: 195 },
@@ -1890,6 +2009,20 @@ const SkillNodes: SkillNodesType = {
       type: "MULTI_SHOT",
       tier: "large",
       distance: 400,
+      angle: 185,
+    },
+    "186": {
+      id: "186",
+      type: "MULTI_SHOT_SPREAD",
+      tier: "medium",
+      distance: 470,
+      angle: 183,
+    },
+    "187": {
+      id: "187",
+      type: "MULTI_SHOT_TRIGGER",
+      tier: "medium",
+      distance: 530,
       angle: 185,
     },
     "163": { id: "163", type: "ATTR_DEX", base: true, angle: 225 },
@@ -1965,13 +2098,14 @@ const SkillNodes: SkillNodesType = {
   edges: {
     "1": [],
     "2": ["3"],
-    "3": ["2"],
+    "3": ["2", "181"],
+    "181": ["3", "9"],
     "4": ["5", "6"],
     "5": ["4", "7"],
     "6": ["4", "7"],
     "7": ["5", "6"],
     "8": ["9"],
-    "9": ["8"],
+    "9": ["8", "181"],
     "10": [],
     "11": ["12"],
     "12": ["11", "13", "14", "20", "165"],
@@ -2033,7 +2167,7 @@ const SkillNodes: SkillNodesType = {
     "68": ["66"],
     "69": ["59", "70"],
     "70": ["69", "72", "73", "71"],
-    "71": ["70"],
+    "71": ["70", "180"],
     "72": ["70"],
     "73": ["70", "74"],
     "74": ["73"],
@@ -2066,7 +2200,8 @@ const SkillNodes: SkillNodesType = {
     "101": ["98", "102"],
     "102": ["101"],
     "103": ["104"],
-    "104": ["103", "106", "105"],
+    "104": ["103", "106", "105", "183"],
+    "183": ["104", "116"],
     "105": ["104", "107"],
     "106": ["104", "89"],
     "107": ["105", "108", "109"],
@@ -2078,15 +2213,16 @@ const SkillNodes: SkillNodesType = {
     "113": ["112", "114"],
     "114": ["113"],
     "115": ["116"],
-    "116": ["115", "117", "119"],
+    "116": ["115", "117", "119", "183"],
     "117": ["116", "118", "128"],
     "118": ["117"],
-    "119": ["116", "120", "121"],
-    "120": ["119", "178", "122"],
-    "121": ["119", "122", "125"],
-    "122": ["120", "121", "123", "124"],
-    "123": ["122"],
-    "124": ["122"],
+    "119": ["116", "182", "121"],
+    "120": ["182", "121", "123", "124"],
+    "182": ["119", "178", "120"],
+    "121": ["119", "125", "120"],
+    "122": ["123", "124"],
+    "123": ["122", "120"],
+    "124": ["122", "120"],
     "125": ["121", "108", "126"],
     "126": ["125"],
     "127": ["128"],
@@ -2106,14 +2242,16 @@ const SkillNodes: SkillNodesType = {
     "141": ["140", "129", "143", "142"],
     "142": ["141", "154"],
     "143": ["141", "144"],
-    "144": ["143", "145", "146"],
-    "145": ["144", "148", "149", "147"],
-    "146": ["144", "147", "150", "179"],
-    "147": ["145", "146"],
-    "148": ["145"],
-    "149": ["145", "151", "152"],
+    "144": ["143", "185", "184"],
+    "184": ["144", "148", "179"],
+    "185": ["144", "147"],
+    "145": ["147", "151", "149"],
+    "146": ["148", "151", "150"],
+    "147": ["145", "185"],
+    "148": ["184", "146"],
+    "149": ["145", "152"],
     "150": ["146", "152"],
-    "151": ["149"],
+    "151": ["145", "146"],
     "152": ["149", "150"],
     "153": ["154"],
     "154": ["153", "142", "155", "156", "157"],
@@ -2124,7 +2262,9 @@ const SkillNodes: SkillNodesType = {
     "159": ["156", "161", "162"],
     "160": ["158"],
     "161": ["158", "159"],
-    "162": ["159"],
+    "162": ["159", "186"],
+    "186": ["162", "187"],
+    "187": ["186"],
     "163": ["164"],
     "164": ["163", "165", "166", "155"],
     "165": ["164", "12"],
@@ -2140,8 +2280,9 @@ const SkillNodes: SkillNodesType = {
     "175": ["174", "177"],
     "176": ["174"],
     "177": ["175"],
-    "178": ["120", "133"],
-    "179": ["132", "146"],
+    "178": ["182", "133"],
+    "179": ["132", "184"],
+    "180": ["71"],
   },
 };
 

@@ -357,7 +357,7 @@ const SkillNodes: SkillNodesType = {
         "This additional projectiles does not subtract from your stach of ammunition.",
       ],
       color: "green",
-      cost: 3,
+      cost: 5,
     },
     MULTI_SHOT_TRIGGER: {
       name: "MULTI SHOT TRIGGER",
@@ -366,7 +366,7 @@ const SkillNodes: SkillNodesType = {
         "The special Multi Shot projectiles will subtract from your stach of ammunition.",
       ],
       color: "green",
-      cost: 3,
+      cost: 5,
     },
     BEE_STING: {
       name: "BEE STING",

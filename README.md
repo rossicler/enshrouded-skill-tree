@@ -4,4 +4,4 @@ This tool was created solely to aid Enshrouded players in sharing skill trees an
 
 Special thanks to [@Glitchiz](https://www.youtube.com/@Glitchiz) for providing some of the assets used for this project.
 
-Access the live version [here](https://enshrouded-skill-tree.vercel.app)
+Access the live version [here](https://enshrouded-skill-tree.com/)

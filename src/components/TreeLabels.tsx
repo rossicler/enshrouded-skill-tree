@@ -39,7 +39,7 @@ const labels: Labels[] = [
   {
     name: "Battlemage",
     angle: 347,
-    distance: 480,
+    distance: 540,
     asset: "BATTLEMAGE",
     width: 443,
     height: 112,
@@ -70,8 +70,8 @@ const labels: Labels[] = [
   },
   {
     name: "Athlete",
-    angle: 106,
-    distance: 480,
+    angle: 108,
+    distance: 550,
     asset: "ATHLETE",
     width: 313,
     height: 112,

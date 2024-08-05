@@ -852,7 +852,7 @@ const SkillNodes: SkillNodesType = {
         "Gathering the orbs replenishes 10% of your health.",
       ],
       color: "red",
-      cost: 6,
+      cost: 3,
     },
     FINESSE: {
       name: "FINESSE",

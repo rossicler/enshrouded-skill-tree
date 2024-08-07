@@ -334,7 +334,7 @@ const SkillNodes: SkillNodesType = {
       name: "EAGLE EYE",
       description: [
         "Greatly increases the zoom while aiming with a bow.",
-        "To aim, gold down the [RMB] while a bow is selected in the Action bar. (Alternatively, gold [Q] to aim your equipped bow.)",
+        "To aim, hold down the [RMB] while a bow is selected in the Action bar. (Alternatively, hold [Q] to aim your equipped bow.)",
       ],
       hasAsset: true,
       color: "green",

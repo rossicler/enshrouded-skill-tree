@@ -74,7 +74,7 @@ const SkillNodes: SkillNodesType = {
     LUMBERJACK: {
       name: "LUMBERJACK",
       description: [
-        "Felling axes do 30% more dmaage against wooden objects including trees.",
+        "Felling axes do 30% more damage against wooden objects including trees.",
       ],
       color: "gold",
       cost: 2,
@@ -97,7 +97,7 @@ const SkillNodes: SkillNodesType = {
       name: "POWER PARRY",
       description: [
         "Increases the enemy's stun bar gain on parry attacks.",
-        "<b>Parry</b><br>While equipped with a shield, press <b>[RMB] to block</b>. A well-timed block willl <b>parry</b> the attack.",
+        "<b>Parry</b><br>While equipped with a shield, press <b>[RMB] to block</b>. A well-timed block will <b>parry</b> the attack.",
       ],
       color: "gold",
       cost: 2,
@@ -166,7 +166,7 @@ const SkillNodes: SkillNodesType = {
       name: "WELL RESTED",
       description: [
         "The base duration for the Rested buff is increased by 5 Minutes.",
-        "Increase the Confort in your home to further increase the duration.",
+        "Increase the Comfort in your home to further increase the duration.",
       ],
       color: "gold",
       cost: 1,
@@ -354,7 +354,7 @@ const SkillNodes: SkillNodesType = {
       name: "MULTI SHOT SPREAD",
       description: [
         `Adds a 25% chance to spawn an additional projectile to your "flurry of arrows" from the "Multi Shot" skill.`,
-        "This additional projectiles does not subtract from your stach of ammunition.",
+        "This additional projectile does not subtract from your stack of ammunition.",
       ],
       color: "green",
       cost: 5,
@@ -363,7 +363,7 @@ const SkillNodes: SkillNodesType = {
       name: "MULTI SHOT TRIGGER",
       description: [
         `ALL arrows, including special arrows, can trigger "Multi Shot".`,
-        "The special Multi Shot projectiles will subtract from your stach of ammunition.",
+        "The special Multi Shot projectiles will subtract from your stack of ammunition.",
       ],
       color: "green",
       cost: 5,
@@ -381,7 +381,7 @@ const SkillNodes: SkillNodesType = {
     SHELL_SHOCK: {
       name: "SHELL SHOCK",
       description: [
-        "Influse your <i>ranged explosives</i> with mana. They now stun enemies for up to 1 second.",
+        "Infuse your <i>ranged explosives</i> with mana. They now stun enemies for up to 1 second.",
         "Mana Cost: 5 per stunned enemy",
       ],
       hasAsset: true,
@@ -593,7 +593,7 @@ const SkillNodes: SkillNodesType = {
         "Attacking with a wand has a 30% chance to spawn an additional wand projectile that deals 50% damage.",
       ],
       color: "blue",
-      cost: 2,
+      cost: 3,
     },
     ETERNAL_SPARK: {
       name: "ETERNAL SPARK",
@@ -607,7 +607,7 @@ const SkillNodes: SkillNodesType = {
       name: "STING",
       description: ["Repeated wand damage is increased by 20%."],
       color: "blue",
-      cost: 2,
+      cost: 3,
     },
     BATTLE_HEAL: {
       name: "BATTLE HEAL",
@@ -637,7 +637,7 @@ const SkillNodes: SkillNodesType = {
     BLOOD_MAGIC: {
       name: "BLOOD MAGIC",
       description: [
-        "When your mana drops below 20%, your restore 35% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
+        "When your mana drops below 20%, you restore 35% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
         "<b>Cooldown</b><br />This takes 2 minutes before it can trigger again.",
       ],
       color: "blue",
@@ -682,7 +682,7 @@ const SkillNodes: SkillNodesType = {
     WARDEN: {
       name: "WARDEN",
       description: [
-        "When there are three or more enemies within 20 meters yoou suffer 15% less magical damage.",
+        "When there are three or more enemies within 20 meters you suffer 15% less magical damage.",
       ],
       color: "red",
       cost: 3,
@@ -834,7 +834,7 @@ const SkillNodes: SkillNodesType = {
     BLOOD_RAGE: {
       name: "BLOOD RAGE",
       description: [
-        "When an enemy is killed within 10 meters with a melee weapon, the damage done with a melee weapons is increased by 20% for 10 seconds.",
+        "When an enemy is killed within 10 meters with a melee weapon, the damage done with melee weapons is increased by 20% for 10 seconds.",
       ],
       color: "red",
       cost: 5,
@@ -879,7 +879,7 @@ const SkillNodes: SkillNodesType = {
     RUNNER: {
       name: "RUNNER",
       description: [
-        "Sprinting speed increaased by 10% and stamina consumption decreased by 10%",
+        "Sprinting speed increased by 10% and stamina consumption decreased by 10%",
       ],
       color: "green",
       cost: 2,
@@ -887,7 +887,7 @@ const SkillNodes: SkillNodesType = {
     WANDERLUST: {
       name: "WANDERLUST",
       description: [
-        "Stamina consumption for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>. Stamina consumption for <b>sprinting on stoone roads</b> is reduced from <b>75% to 50%</b>.",
+        "Stamina consumption for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>. Stamina consumption for <b>sprinting on stone roads</b> is reduced from <b>75% to 50%</b>.",
       ],
       color: "green",
       cost: 3,
@@ -895,7 +895,7 @@ const SkillNodes: SkillNodesType = {
     GOOD_METABOLISM: {
       name: "GOOD METABOLISM",
       description: [
-        "Health, mana and stamina Orbs restore 30% instead of 10% of their respective resource.",
+        "Health, mana, and stamina Orbs restore 30% instead of 10% of their respective resource.",
         "Mana and Health Potions restore 20% more.",
       ],
       color: "green",
@@ -911,7 +911,7 @@ const SkillNodes: SkillNodesType = {
     },
     SWEET_TOOTH: {
       name: "SWEET TOOTH",
-      description: ["The stamiina regeneration of sweets is increased by 50%"],
+      description: ["The stamina regeneration of sweets is increased by 50%"],
       color: "green",
       cost: 3,
     },
@@ -1137,7 +1137,7 @@ const SkillNodes: SkillNodesType = {
     EXALTED: {
       name: "EXALTED",
       description: [
-        "You will gain oone intelligence for every two levels of the Flame.",
+        "You will gain one intelligence for every two levels of the Flame.",
       ],
       color: "blue",
       cost: 5,

@@ -974,7 +974,7 @@ const SkillNodes: SkillNodesType = {
         "Increases the damage of your next bow attack by 50% after a dagger crit.",
       ],
       color: "green",
-      cost: 4,
+      cost: 3,
     },
     VUKAH_LANGUAGE: {
       name: "VUKAH LANGUAGE",

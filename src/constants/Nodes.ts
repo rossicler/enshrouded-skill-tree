@@ -1613,7 +1613,7 @@ const SkillNodes: SkillNodesType = {
     "78": {
       id: "78",
       type: "ATTR_CONS",
-      tier: "medium",
+      tier: "small",
       distance: 210,
       angle: 15,
     },

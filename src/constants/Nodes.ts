@@ -1052,7 +1052,7 @@ const SkillNodes: SkillNodesType = {
         "+2 Endurance<br>+2 Dexterity<br>+5 Stamina Recharge<br>+5% Critical Chance<br>+5% Critical Damage",
       ],
       color: "green",
-      cost: 5,
+      cost: 4,
       stats: {
         DEX: 2,
         ENDURANCE: 2,

@@ -263,7 +263,7 @@ const SkillNodes: SkillNodesType = {
     EARTH_AURA: {
       name: "EARTH AURA",
       description: [
-        "All damage against players within 10 meters is reduced by 10%",
+        "Shields allies and yourself, reducing incoming damage by 10%",
       ],
       hasAsset: true,
       color: "red",

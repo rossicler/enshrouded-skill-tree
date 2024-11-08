@@ -41,6 +41,26 @@ const OVERPOWER =
 
 const SkillNodes: SkillNodesType = {
   types: {
+    GIANT_SLAYER_HOOK: {
+      name: "GIANT SLAYER HOOK",
+      description: [
+        "Use your Grappling Hook to pull yourself towards large enemies during combat.",
+      ],
+      hasAsset: true,
+      selectableAsset: "giant_slayer_hook_1.png",
+      selectedAsset: "giant_slayer_hook_2.png",
+      color: "gold",
+      cost: 5,
+    },
+    GROUNDING_HOOK: {
+      name: "GROUNDING HOOK",
+      description: [
+        "Use your Grappling Hook to pull flying enemies towards you during combat.",
+      ],
+      hasAsset: true,
+      color: "gold",
+      cost: 2,
+    },
     SAVIOUR: {
       name: "SAVIOUR",
       description: [
@@ -2161,6 +2181,21 @@ const SkillNodes: SkillNodesType = {
       distance: 560,
       angle: 225,
     },
+    "192": {
+      id: "192",
+      type: "GIANT_SLAYER_HOOK",
+      base: true,
+      tier: "large",
+      distance: -100,
+      angle: 285,
+    },
+    "193": {
+      id: "193",
+      type: "GROUNDING_HOOK",
+      tier: "large",
+      distance: -180,
+      angle: 295,
+    },
   },
   edges: {
     "1": [],
@@ -2354,6 +2389,8 @@ const SkillNodes: SkillNodesType = {
     "189": ["184", "190"],
     "190": ["189"],
     "191": ["185"],
+    "192": ["193"],
+    "193": ["192"],
   },
 };
 

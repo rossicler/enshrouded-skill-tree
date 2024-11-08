@@ -1,6 +1,6 @@
-import { classNames } from "@/utils/utils";
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import { classNames } from "@/utils/utils";
 
 type Labels = {
   name: string;

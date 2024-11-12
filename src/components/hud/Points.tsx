@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Stats from "./Stats";
 
-const MAX_POINTS = 138;
+const MAX_POINTS = 149;
 
 const PointsHUD = () => {
   const [pointsUsed, setPointsUsed] = useState(0);

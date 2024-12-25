@@ -33,18 +33,18 @@ export const LinesAngles = [
 ];
 
 const SHROUD_TIME_TEXT =
-  "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you.";
+  "<b>Shroud Time</b><br/>Nếu thời gian này hết, màn sương sẽ thiêu rụi bạn.";
 const BLOCK_BREAKER =
-  "<b>Block Breaker</b><br/>This special attack increases an enemy's stun bar twice as much when hit.";
+  "<b>Block Breaker</b><br/>Đòn tấn công đặc biệt này làm tăng thanh choáng của kẻ địch gấp đôi khi bị trúng đòn..";
 const OVERPOWER =
-  "<b>Overpower</b><br/>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.";
+  "<b>Overpower</b><br/>Để làm choáng 1 kẻ địch, hãy lấp đầy thanh choáng của chúng bằng cách tấn công khi chúng đỡ đòn hoặc phản đòn tấn công của chúng.";
 
 const SkillNodes: SkillNodesType = {
   types: {
     GIANT_SLAYER_HOOK: {
       name: "GIANT SLAYER HOOK",
       description: [
-        "Use your Grappling Hook to pull yourself towards large enemies during combat.",
+        "Sử dụng Grappling Hook để kéo bản thân về phía kẻ địch to.",
       ],
       hasAsset: true,
       selectableAsset: "giant_slayer_hook_1.png",
@@ -55,7 +55,7 @@ const SkillNodes: SkillNodesType = {
     GROUNDING_HOOK: {
       name: "GROUNDING HOOK",
       description: [
-        "Use your Grappling Hook to pull flying enemies towards you during combat.",
+        "Sử dụng Grappling Hook để kéo bản thân về phía kẻ địch bay.",
       ],
       hasAsset: true,
       color: "gold",
@@ -64,21 +64,21 @@ const SkillNodes: SkillNodesType = {
     SAVIOUR: {
       name: "SAVIOUR",
       description: [
-        "You only need 3 instead of 6 seconds to <b>revive an ally</b>.",
+        "Bạn chỉ cần 3s thay vì 6s để <b>cứu đồng đội</b>.",
       ],
       color: "gold",
       cost: 2,
     },
     BACKSTAB_DAMAGE: {
       name: "BACKSTAB DAMAGE",
-      description: ["Increase the damage you deal from behind by 25%."],
+      description: ["Tăng 25% sát thương khi tấn công từ phía sau."],
       color: "gold",
       cost: 2,
     },
     OPPORTUNITY: {
       name: "OPPORTUNITY",
       description: [
-        "Increases the Multiplier of the Merciless Attack and the Sneak Attack by 100%.",
+        "Tăng hệ số tấn công Thô Bạo và Lén Lún lên 100%.",
       ],
       color: "gold",
       cost: 3,
@@ -86,7 +86,7 @@ const SkillNodes: SkillNodesType = {
     MINER: {
       name: "MINER",
       description: [
-        "When you mine resources, you have a 10% chance to get one additional resource.",
+        "Khi bạn khai thác tài nguyên, có 10% cơ hội nhận thêm 1 tài nguyên đó.",
       ],
       color: "gold",
       cost: 4,
@@ -94,21 +94,21 @@ const SkillNodes: SkillNodesType = {
     LUMBERJACK: {
       name: "LUMBERJACK",
       description: [
-        "Felling axes do 30% more damage against wooden objects including trees.",
+        "Rìu chặt gây thêm 30% tổn hại lên các vật bằng gỗ.",
       ],
       color: "gold",
       cost: 2,
     },
     QUALITY_GEAR: {
       name: "QUALITY GEAR",
-      description: ["All tools lose durability 50% slower."],
+      description: ["Tất cả công cụ giảm 50% tiêu hao độ bền."],
       color: "gold",
       cost: 2,
     },
     MASON: {
       name: "MASON",
       description: [
-        "The Pickaxe deals 30% more damage against stone objects, including resource veins.",
+        "Cuốc chim gây thêm 30% tổn hại lên các vật bằng đá, bao gồm cả quặng .",
       ],
       color: "gold",
       cost: 2,
@@ -116,8 +116,8 @@ const SkillNodes: SkillNodesType = {
     POWER_PARRY: {
       name: "POWER PARRY",
       description: [
-        "Increases the enemy's stun bar gain on parry attacks.",
-        "<b>Parry</b><br>While equipped with a shield, press <b>[RMB] to block</b>. A well-timed block will <b>parry</b> the attack.",
+        "Tăng thời gian bị choáng của địch khi phản đòn thành công.",
+        "<b>Parry</b><br>Khi trang bị khiên, ấn <b>[RMB] để đỡ</b>. Đỡ đòn đúng lúc sẽ <b>phản đòn</b> tấn công của địch.",
       ],
       color: "gold",
       cost: 2,
@@ -125,8 +125,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_SPIRIT: {
       name: "SPIRIT",
       description: [
-        "Increases your Spirit attribute by 1",
-        "Increases Mana by 20 per Attribute Point",
+        "Tăng thuộc tính Tinh Thần của bạn thêm 1",
+        "Tăng thêm 20 năng lượng cho mỗi Điểm thuộc tính",
       ],
       color: "blue",
       cost: 1,
@@ -135,8 +135,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_INT: {
       name: "INTELLIGENCE",
       description: [
-        "Increases your Intelligence attribute by 1",
-        "Increases Magic damage by 5% per Attribute Point",
+        "Tăng thuộc tính Trí Tuệ của bạn thêm 1",
+        "Tăng thêm 5% sát thương phép thuật cho mỗi Điểm thuộc tính",
       ],
       color: "blue",
       cost: 1,
@@ -145,8 +145,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_CONS: {
       name: "CONSTITUTION",
       description: [
-        "Increases your Constitution attribute by 1",
-        "Increases Health by 50 per Attribute Point",
+        "Tăng thuộc tính Sinh Lực của bạn thêm 1",
+        "Tăng thêm 50 Máu cho mỗi Điểm thuộc tính",
       ],
       color: "red",
       cost: 1,
@@ -155,8 +155,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_STR: {
       name: "STRENGTH",
       description: [
-        "Increases your Strength attribute by 1",
-        "Increases Melee damage by 5% per Attribute Point",
+        "Tăng thuộc tính Sức Mạnh của bạn thêm 1",
+        "Tăng thêm 5% sát thương cận chiến cho mỗi Điểm thuộc tính",
       ],
       color: "red",
       cost: 1,
@@ -165,8 +165,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_ENDURANCE: {
       name: "ENDURANCE",
       description: [
-        "Increases your Endurance attribute by 1",
-        "Increases Stamina by 10 per Attribute Point",
+        "Tăng thuộc tính Sức Bền của bạn thêm 1",
+        "Tăng thêm 10 thể lực cho mỗi Điểm thuộc tính",
       ],
       color: "green",
       cost: 1,
@@ -175,8 +175,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_DEX: {
       name: "DEXTERITY",
       description: [
-        "Increases your Dexterity attribute by 1",
-        "Increases Ranged damage by 5% per Attribute Point",
+        "Tăng thuộc tính Khéo Léo của bạn thêm 1",
+        "Tăng thêm 5% sát thương tầm xa cho mỗi Điểm thuộc tính",
       ],
       color: "green",
       cost: 1,
@@ -185,8 +185,8 @@ const SkillNodes: SkillNodesType = {
     WELL_RESTED: {
       name: "WELL RESTED",
       description: [
-        "The base duration for the Rested buff is increased by 5 Minutes.",
-        "Increase the Comfort in your home to further increase the duration.",
+        "Thời gian cơ bản cho hiệu ứng Nghỉ ngơi được tăng thêm 5 phút.",
+        "Tăng mức độ Thoải mái trong nhà của bạn để tăng thêm thời gian hiệu quả.",
       ],
       color: "gold",
       cost: 1,
@@ -194,8 +194,8 @@ const SkillNodes: SkillNodesType = {
     SNEAK_ATTACK: {
       name: "SNEAK ATTACK",
       description: [
-        "The <b>Sneak Attack</b> deals massive 10x damage to unaware enemies.",
-        "To trigger it, sneak up on an enemy and press <b>[E]</b>.",
+        "<b>Tấn công lén lút</b> gây ra lượng sát thương lớn gấp 10 lần lên kẻ địch không hề hay biết.",
+        "Để kích hoạt, hãy lẻn đến gần kẻ địch và nhấn <b>[E]</b>.",
       ],
       hasAsset: true,
       selectableAsset: "sneak_attack_1.png",
@@ -206,7 +206,7 @@ const SkillNodes: SkillNodesType = {
     MERCILESS_ATTACK: {
       name: "MERCILESS ATTACK",
       description: [
-        "Perform a Merciless Attack by pressing [E] to deal massive damage to an enemy you've empowered.",
+        "Thực hiện 1 đòn Tấn công thô bạo bằng cách nhấn [E] để gây sát thương lớn lên kẻ địch.",
         OVERPOWER,
       ],
       hasAsset: true,
@@ -218,7 +218,7 @@ const SkillNodes: SkillNodesType = {
     UPDRAFT: {
       name: "UPDRAFT",
       description: [
-        "Pressing the jump button while gliding will give you a small height boost. This skill can be used once per flight. Cost: 120 mana",
+        "Nhấn nút nhảy trong khi lướt sẽ giúp bạn tăng độ cao một chút. Kỹ năng này có thể sử dụng một lần cho mỗi lượt bay. Tiêu hao: 120 năng lượng",
       ],
       hasAsset: true,
       color: "green",
@@ -227,8 +227,8 @@ const SkillNodes: SkillNodesType = {
     BEGONE: {
       name: "BEGONE",
       description: [
-        "A magic-powered punch that pushes and stuns hit foes.",
-        "Replaces your unarmed attacks as long as you have the necessary mana available: <b>30 Mana</b>",
+        "Một cú đấm có sức mạnh ma thuật đẩy và làm choáng kẻ địch trúng đòn.",
+        "Thay thế các đòn tấn công không vũ khí của bạn miễn là bạn có đủ năng lượng cần thiết: <b>30 năng lượng</b>",
       ],
       hasAsset: true,
       color: "blue",
@@ -237,7 +237,7 @@ const SkillNodes: SkillNodesType = {
     RADIANT_AURA: {
       name: "RADIANT AURA",
       description: [
-        "All Fell foes within 10 meters take 1 fire damage per intelligence per second.",
+        "Tất cả kẻ địch xung quanh trong bán kính 10 mét nhận 1 sát thương lửa với mỗi điểm trí tuệ theo từng giây.",
       ],
       hasAsset: true,
       color: "blue",
@@ -246,7 +246,7 @@ const SkillNodes: SkillNodesType = {
     WATER_AURA: {
       name: "WATER AURA",
       description: [
-        "You emit a healing aura. It heals all injured allies within 15 meters. The healing scales with your intelligence attribute (1 health for every 2 points of intelligence).",
+        "Bạn phát ra hào quang chữa lành. Nó chữa lành tất cả đồng minh bị thương trong phạm vi 15 mét. Hiệu ứng chữa lành tỷ lệ thuận với thuộc tính Trí Tuệ của bạn (1 máu cho mỗi 2 điểm Trí Tuệ).",
       ],
       hasAsset: true,
       color: "blue",
@@ -255,7 +255,7 @@ const SkillNodes: SkillNodesType = {
     MARTYR: {
       name: "MARTYR",
       description: [
-        "When you are killed by an enemy, all allies within 50 meters will heal 30% of their maximum health.",
+        "Khi bạn bị kẻ địch hạ gục, tất cả đồng minh trong phạm vi 50 mét sẽ được hồi 30% máu tối đa.",
       ],
       hasAsset: true,
       color: "blue",
@@ -264,7 +264,7 @@ const SkillNodes: SkillNodesType = {
     BLINK: {
       name: "BLINK",
       description: [
-        "Replaces the Dodge Roll ability with a short range teleport.",
+        "Thay thế khả năng Né tránh bằng khả năng dịch chuyển tức thời tầm ngắn.",
       ],
       hasAsset: true,
       color: "blue",
@@ -273,7 +273,7 @@ const SkillNodes: SkillNodesType = {
     EVASION_ATTACK: {
       name: "EVASION ATTACK",
       description: [
-        "When equipped with a melee weapon, you can perform an evade attack which dashes towards the enemy and deals more weapon damage with <b>[LMB]</b>",
+        "Khi trang bị vũ khí cận chiến, bạn có thể thực hiện đòn tấn công lao về phía kẻ địch và gây thêm sát thương bằng cách nhấn <b>[LMB]</b>",
         BLOCK_BREAKER,
       ],
       hasAsset: true,
@@ -283,7 +283,7 @@ const SkillNodes: SkillNodesType = {
     EARTH_AURA: {
       name: "EARTH AURA",
       description: [
-        "Shields allies and yourself, reducing incoming damage by 10%",
+        "Bảo vệ đồng minh và bản thân, giảm 10% sát thương nhận vào",
       ],
       hasAsset: true,
       color: "red",
@@ -292,7 +292,7 @@ const SkillNodes: SkillNodesType = {
     NEMESIS: {
       name: "NEMESIS",
       description: [
-        "Whenever an ally draws the attention of an enemy, you draw it in equal measures.",
+        "Bạn thu hút kẻ địch khi 1 đồng minh khác bị chú ý.",
       ],
       hasAsset: true,
       color: "red",
@@ -301,8 +301,8 @@ const SkillNodes: SkillNodesType = {
     SHOCKWAVE: {
       name: "SHOCKWAVE",
       description: [
-        "Trigger a shockwave when you parry an attack or overpower an enemy.",
-        "The shockwave pushes back nearby enemies. It also increases their stun bar, scaling with your strength attribute.",
+        "Kích hoạt sóng xung kích khi bạn đỡ đòn tấn công hoặc chế ngự kẻ địch.",
+        "Sóng xung kích đẩy lùi kẻ địch ở gần. Nó cũng tăng thời gian choáng của chúng theo thuộc tính Sức Mạnh của bạn.",
         OVERPOWER,
       ],
       hasAsset: true,
@@ -311,7 +311,7 @@ const SkillNodes: SkillNodesType = {
     },
     HEAVY_SPECIALIZATION: {
       name: "HEAVY SPECIALIZATION",
-      description: ["Allows you to attack faster with two-handed hammers."],
+      description: ["Cho phép bạn tấn công nhanh hơn với búa cầm hai tay."],
       hasAsset: true,
       color: "red",
       cost: 5,
@@ -319,7 +319,7 @@ const SkillNodes: SkillNodesType = {
     BASH: {
       name: "BASH",
       description: [
-        "Your parry bashes the enemy for 20 blunt damage. The damage is increased by your strength attribute.",
+        "Phản đòn gây 20 sát thương. Sát thương được tăng lên theo thuộc tính Sức Mạnh của bạn",
       ],
       hasAsset: true,
       color: "red",
@@ -328,8 +328,8 @@ const SkillNodes: SkillNodesType = {
     JUMP_ATTACK: {
       name: "JUMP ATTACK",
       description: [
-        "When equipped with a melee weapon, you can perform a jump attack which deals 50% more weapon damage in a small blast radius.",
-        "The jump attack costs stamina according to the weapon's weight. Does not work with tools.",
+        "Khi trang bị vũ khí cận chiến, nhảy lên tấn công gây thêm 50% sát thương trong phạm vi nhỏ",
+        "Đòn tấn công nhảy tốn thể lực theo trọng lượng của vũ khí. Không có tác dụng với công cụ",
         BLOCK_BREAKER,
       ],
       hasAsset: true,
@@ -338,14 +338,14 @@ const SkillNodes: SkillNodesType = {
     },
     DOUBLE_JUMP: {
       name: "DOUBLE JUMP",
-      description: ["Allows jumping a second time while airborne."],
+      description: ["Cho phép bạn nhảy 2 lần."],
       hasAsset: true,
       color: "green",
       cost: 4,
     },
     DESSERT_STOMACH: {
       name: "DESSERT STOMACH",
-      description: ["You gain one additional food slot"],
+      description: ["Bạn nhận thêm 1 ô chứa thức ăn"],
       hasAsset: true,
       color: "green",
       cost: 4,
@@ -353,8 +353,8 @@ const SkillNodes: SkillNodesType = {
     EAGLE_EYE: {
       name: "EAGLE EYE",
       description: [
-        "Greatly increases the zoom while aiming with a bow.",
-        "To aim, hold down the [RMB] while a bow is selected in the Action bar. (Alternatively, hold [Q] to aim your equipped bow.)",
+        "Tăng đáng kể khả năng phóng to khi ngắm bằng cung.",
+        "Để ngắm, giữ phím [RMB]. (Hoặc giữ phím [Q] để ngắm cung đã trang bị của bạn.)",
       ],
       hasAsset: true,
       color: "green",
@@ -363,8 +363,8 @@ const SkillNodes: SkillNodesType = {
     MULTI_SHOT: {
       name: "MULTI SHOT",
       description: [
-        "When using regular arrows there is a 20% chance to spawn a flurry of arrows that spread slightly.",
-        "This will cost additional arrows, but will not trigger on special arrows.",
+        "Khi sử dụng mũi tên thường, có 20% khả năng tạo ra một loạt mũi tên trong phạm vi nhỏ.",
+        "Điều này sẽ tốn thêm mũi tên, nhưng sẽ không kích hoạt trên mũi tên đặc biệt.",
       ],
       hasAsset: true,
       color: "green",
@@ -373,8 +373,8 @@ const SkillNodes: SkillNodesType = {
     MULTI_SHOT_SPREAD: {
       name: "MULTI SHOT SPREAD",
       description: [
-        `Adds a 25% chance to spawn an additional projectile to your "flurry of arrows" from the "Multi Shot" skill.`,
-        "This additional projectile does not subtract from your stack of ammunition.",
+        `Thêm 25% cơ hội tạo ra 1 mũi tên bổ sung vào "loạt tên" của bạn từ kỹ năng "Multi Shot".`,
+        "Mũi tên bổ sung không tiêu hao số mũi tên của bạn",
       ],
       color: "green",
       cost: 4,
@@ -382,8 +382,8 @@ const SkillNodes: SkillNodesType = {
     MULTI_SHOT_TRIGGER: {
       name: "MULTI SHOT TRIGGER",
       description: [
-        `ALL arrows, including special arrows, can trigger "Multi Shot".`,
-        "The special Multi Shot projectiles will subtract from your stack of ammunition.",
+        `TẤT CẢ các mũi tên, bao gồm cả mũi tên đặc biệt, đều có thể kích hoạt "MULTI SHOT".`,
+        "Multi Shot sẽ trừ vào số mũi tên của bạn.",
       ],
       color: "green",
       cost: 3,
@@ -391,8 +391,8 @@ const SkillNodes: SkillNodesType = {
     BEE_STING: {
       name: "BEE STING",
       description: [
-        "When you draw your bow while in the air, your fall is slowed down for a short time. Every shot gives you a small push to get more air time.",
-        "Cost: 10 stamina per second",
+        "Bạn kéo cung khi đang ở trên không sẽ khiến bạn rơi chậm lại trong một thời gian ngắn. Mỗi cú bắn sẽ tạo lực đẩy để bạn có thêm thời gian ở trên không.",
+        "Tiêu hao: 10 thể lực mỗi giây",
       ],
       hasAsset: true,
       color: "green",
@@ -401,8 +401,8 @@ const SkillNodes: SkillNodesType = {
     SHELL_SHOCK: {
       name: "SHELL SHOCK",
       description: [
-        "Infuse your <i>ranged explosives</i> with mana. They now stun enemies for up to 1 second.",
-        "Mana Cost: 5 per stunned enemy",
+        "Truyền năng lượng vào <i>chất nổ tầm xa</i>. Chúng giờ đây có thể làm choáng kẻ địch trong 1 giây.",
+        "Tiêu hao: 5 năng lượng cho mỗi kẻ địch bị choáng",
       ],
       hasAsset: true,
       color: "green",
@@ -411,8 +411,8 @@ const SkillNodes: SkillNodesType = {
     COUNTERSTRIKE: {
       name: "COUNTERSTRIKE",
       description: [
-        "After receiving damage there is a 20% chance to <b>reflect</b> 50% of the damage back to the attacker as fire damage.",
-        "This magical attack can trigger other skills.",
+        "Sau khi nhận sát thương, có 20% cơ hội phản lại 50% sát thương cho kẻ tấn công dưới dạng thiêu đốt.",
+        "Đòn tấn công ma thuật này có thể kích hoạt các kỹ năng khác.",
       ],
       color: "blue",
       cost: 2,
@@ -420,7 +420,7 @@ const SkillNodes: SkillNodesType = {
     TERROR: {
       name: "TERROR",
       description: [
-        "On a critical hit with a spell, the target will be stunned for 4 seconds.",
+        "Khi đòn phép thuật chí mạng, mục tiêu sẽ bị choáng trong 4 giây.",
       ],
       color: "blue",
       cost: 4,
@@ -428,7 +428,7 @@ const SkillNodes: SkillNodesType = {
     QUICK_CHARGE: {
       name: "QUICK CHARGE",
       description: [
-        "Reduces the time Staffs require to charge-up a spell by 50%.",
+        "Giảm 50% thời gian cần thiết để Gậy tích tụ 1 phép thuật",
       ],
       color: "blue",
       cost: 3,
@@ -436,59 +436,59 @@ const SkillNodes: SkillNodesType = {
     THIS_IS_THE_WAY: {
       name: "THIS IS THE WAY",
       description: [
-        "When attacking with a magical weapon all damage is increased by 10%.",
+        "Khi tấn công bằng vũ khí phép thuật, tăng thêm 10% sát thương",
       ],
       color: "blue",
       cost: 2,
     },
     ARSONIST: {
       name: "ARSONIST",
-      description: ["All fire damage is increased by an additional 10%."],
+      description: ["Tăng thêm 10% sát thương thiêu đốt."],
       color: "blue",
       cost: 2,
     },
     PYROMANIAC: {
       name: "PYROMANIAC",
-      description: ["All fire damage is increased by an additional 20%."],
+      description: ["Tăng thêm 20% sát thương thiêu đốt."],
       color: "blue",
       cost: 3,
     },
     SUN_AURA: {
       name: "SUN AURA",
       description: [
-        "All Fell foes within 10 meters take 1 additional fire damage per intelligence per second.",
+        "Tất cả kẻ địch trong phạm vi 10 mét phải chịu thêm 1 sát thương thiêu đốt với mỗi điểm Trí Tuệ theo từng giây",
       ],
       color: "blue",
       cost: 2,
     },
     THUNDER: {
       name: "THUNDER",
-      description: ["All shock damage is increased by an additional 10%."],
+      description: ["Tăng thêm 10% sát thương giật điện."],
       color: "blue",
       cost: 2,
     },
     LIGHTNING: {
       name: "LIGHTNING",
-      description: ["All shock damage is increased by an additional 20%."],
+      description: ["Tăng thêm 20% sát thương giật điện."],
       color: "blue",
       cost: 3,
     },
     ICEMAN: {
       name: "ICEMAN",
-      description: ["All ice damage is increased by an additional 10%."],
+      description: ["Tăng thêm 10% sát thương băng."],
       color: "blue",
       cost: 2,
     },
     SUBZERO: {
       name: "SUBZERO",
-      description: ["All ice damage is increased by an additional 20%."],
+      description: ["Tăng thêm 20% sát thương băng."],
       color: "blue",
       cost: 3,
     },
     FROST: {
       name: "FROST",
       description: [
-        "When receiving melee damage, the attacker will be slowed down for 3 seconds.",
+        "Khi nhận sát thương cận chiến, kẻ tấn công sẽ bị làm chậm trong 3 giây.",
       ],
       color: "blue",
       cost: 3,
@@ -496,27 +496,27 @@ const SkillNodes: SkillNodesType = {
     WIZARD: {
       name: "WIZARD",
       description: [
-        "When attacking with a magical weapon your critical hit chance is increased by 10%",
+        "Khi tấn công bằng vũ khí phép thuật, cơ hội chí mạng của bạn tăng thêm 10%.",
       ],
       color: "blue",
       cost: 3,
     },
     DARK_ARTS: {
       name: "DARK ARTS",
-      description: ["All Shrouded damage is increased by an additional 10%."],
+      description: ["Tăng thêm 10% sát thương màn sương."],
       color: "blue",
       cost: 3,
     },
     ABYSS: {
       name: "ABYSS",
-      description: ["All Shrouded damage is increased by an additional 20%."],
+      description: ["Tăng thêm 20% sát thương màn sương."],
       color: "blue",
       cost: 4,
     },
     CHAIN_HIT: {
       name: "CHAIN HIT",
       description: [
-        "On a critical hit with a magical weapon, the attack will automatically hit a second enemy within 15 meters for 5 Shock damage per intelligence.",
+        "Khi gây chí mạng bằng vũ khí ma thuật, sẽ tự động tấn công thêm kẻ địch thứ hai trong phạm vi 15 mét, gây 5 sát thương giật điện cho mỗi chỉ số Trí Tuệ.",
       ],
       color: "blue",
       cost: 3,
@@ -524,7 +524,7 @@ const SkillNodes: SkillNodesType = {
     MASS_DESTRUCTION: {
       name: "MASS DESTRUCTION",
       description: [
-        "A critical attack with a magic weapon will hit all enemies within 20 meters of the target for 2 Shock damage per intelligence.",
+        "Khi gây chí mạng bằng vũ khí ma thuật, sẽ tự động tấn công tất cả kẻ địch trong phạm vi 20 mét, gây 2 sát thương giật điện cho mỗi chỉ số Trí Tuệ.",
       ],
       color: "blue",
       cost: 4,
@@ -532,7 +532,7 @@ const SkillNodes: SkillNodesType = {
     NECROMANCER: {
       name: "NECROMANCER",
       description: [
-        "When killing an enemy with a magic weapon, you have a 10% chance to summon a friendly skull companion.",
+        "Khi giết kẻ địch bằng vũ khí ma thuật, có 10% cơ hội triệu hồi 1 quái vật xương.",
       ],
       color: "blue",
       cost: 3,
@@ -540,21 +540,21 @@ const SkillNodes: SkillNodesType = {
     HEALER: {
       name: "HEALER",
       description: [
-        "Health gain from healing spells will be increased by 10%.",
+        "Lượng máu nhận được từ phép thuật chữa lành sẽ tăng thêm 10%.",
       ],
       color: "blue",
       cost: 2,
     },
     HEALER_II: {
       name: "HEALER II",
-      description: ["Health gain from healing spells will be increased by 20%"],
+      description: ["Lượng máu nhận được từ phép thuật chữa lành sẽ tăng thêm 20%"],
       color: "blue",
       cost: 2,
     },
     HEALING_REVIVE: {
       name: "HEALING REVIVE",
       description: [
-        "Revived players will heal 25% of their health instead of 10%.",
+        "Người chơi được cứu sẽ hồi phục 25% lượng máu thay vì 10%.",
       ],
       color: "blue",
       cost: 2,
@@ -562,7 +562,7 @@ const SkillNodes: SkillNodesType = {
     SHROUD_FILTER: {
       name: "SHROUD FILTER",
       description: [
-        "Dealing magic weapon damage has a 15% chance to trigger a small flame burst that restores 30 seconds of <i>Shroud Time</i> to you and your allies within 20 meters.",
+        "Gây sát thương bằng vũ khí phép thuật có 15% cơ hội kích hoạt một vụ nổ nhỏ giúp phục hồi 30 giây <i>thời gian ảnh hưởng của màn sương</i> cho bạn và đồng minh trong phạm vi 20 mét.",
         SHROUD_TIME_TEXT,
       ],
       color: "blue",
@@ -571,7 +571,7 @@ const SkillNodes: SkillNodesType = {
     WATERS_OF_LIFE: {
       name: "WATERS OF LIFE",
       description: [
-        "Increases <b>Water Aura</b> healing to 2 health for every 2 points of intelligence.",
+        "Tăng khả năng hồi phục của <b>Water Aura</b> lên 2 máu cho mỗi 2 chỉ số Trí Tuệ.",
       ],
       color: "blue",
       cost: 2,
@@ -579,7 +579,7 @@ const SkillNodes: SkillNodesType = {
     EMERGENCY_BLINK: {
       name: "EMERGENCY BLINK",
       description: [
-        "You can blink while being stunned. This will break the stunned state.",
+        "Bạn có thể dịch chuyển khi bị choáng. Thao tác này sẽ giải trạng thái bị choáng.",
       ],
       color: "blue",
       cost: 2,
@@ -587,22 +587,22 @@ const SkillNodes: SkillNodesType = {
     BLINK_ATTACK: {
       name: "BLINK ATTACK",
       description: [
-        "Blinking into an enemy triggers an explosion which deals fire damage in a small range.",
-        "Damage and mana cost scale with the intelligence attribute.",
+        "Dịch chuyển tới kẻ địch sẽ kích hoạt một vụ nổ gây sát thương lửa trong phạm vi nhỏ.",
+        "Sát thương và tiêu hao năng lượng tỷ lệ với chỉ số Trí Tuệ",
       ],
       color: "blue",
       cost: 2,
     },
     ARCANE_DEFLECTION: {
       name: "ARCANE DEFLECTION",
-      description: ["On a successful parry, gain 20 mana."],
+      description: ["Phản đòn thành công, hồi lại 20 Năng lượng."],
       color: "blue",
       cost: 3,
     },
     UNITY: {
       name: "UNITY",
       description: [
-        "Damaging enemies with wands has a 24% chance to recover 4% mana.",
+        "Gây sát thương cho kẻ địch bằng đũa phép có 24% cơ hội hồi phục 4% Năng lượng.",
       ],
       color: "blue",
       cost: 3,
@@ -610,7 +610,7 @@ const SkillNodes: SkillNodesType = {
     WAND_MASTER: {
       name: "WAND MASTER",
       description: [
-        "Attacking with a wand has a 30% chance to spawn an additional wand projectile that deals 50% damage.",
+        "Tấn công bằng đũa phép có 30% cơ hội phóng ra thêm 1 đạn phép gây 50% sát thương.",
       ],
       color: "blue",
       cost: 3,
@@ -618,21 +618,21 @@ const SkillNodes: SkillNodesType = {
     ETERNAL_SPARK: {
       name: "ETERNAL SPARK",
       description: [
-        "Wand projectiles have a 25% chance not to consume durability.",
+        "Đạn phép có 25% cơ hội không tiêu hao độ bền.",
       ],
       color: "blue",
       cost: 3,
     },
     STING: {
       name: "STING",
-      description: ["Repeated wand damage is increased by 20%."],
+      description: ["Sát thương của đũa phép tăng 20% khi sử dụng liên tục."],
       color: "blue",
       cost: 3,
     },
     BATTLE_HEAL: {
       name: "BATTLE HEAL",
       description: [
-        "When dealing critical damage with a melee weapon, you will heal 5% of your maximum health.",
+        "Khi gây sát thương chí mạng bằng vũ khí cận chiến, hồi phục 5% lượng máu tối đa.",
       ],
       color: "red",
       cost: 3,
@@ -640,8 +640,8 @@ const SkillNodes: SkillNodesType = {
     BLOODLETTING: {
       name: "BLOODLETTING",
       description: [
-        "When scoring a critical hit with a magical weapon, there is a 50% chance to spawn 2 health, mana, and/or stamina Orbs.",
-        "Gathering the Orb replenishes 10% of the respective resource.",
+        "Khi tung đòn chí mạng bằng vũ khí phép thuật, có 50% cơ hội tạo ra 2 quả cầu máu, năng lượng hoặc thể lực.",
+        "Thu thập quả cầu sẽ bổ sung 10% tài nguyên tương ứng.",
       ],
       color: "blue",
       cost: 3,
@@ -649,7 +649,7 @@ const SkillNodes: SkillNodesType = {
     LIFE_BURST: {
       name: "LIFE BURST",
       description: [
-        "When killing an enemy with a magic weapon all players within 15 meters of the target gain health equal to 3 times your Intelligence.",
+        "Khi tiêu diệt kẻ địch bằng vũ khí phép thuật, tất cả người chơi trong phạm vi 15 mét tính từ mục tiêu sẽ nhận được lượng máu bằng 3 lần chỉ số Trí Tuệ của bạn.",
       ],
       color: "blue",
       cost: 4,
@@ -657,8 +657,8 @@ const SkillNodes: SkillNodesType = {
     BLOOD_MAGIC: {
       name: "BLOOD MAGIC",
       description: [
-        "When your mana drops below 20%, you restore 35% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
-        "<b>Cooldown</b><br />This takes 2 minutes before it can trigger again.",
+        "Khi Năng lượng của bạn giảm xuống dưới 20%, bạn sẽ phục hồi lại 35% lượng Năng lượng tối đa của mình với chi phí là 1 máu cho mỗi Năng lượng. Quá trình này sẽ dừng lại ở 1 máu",
+        "<b>Thời gian hồi chiêu</b><br />Quá trình này mất 2 phút trước khi có thể kích hoạt lại.",
       ],
       color: "blue",
       cost: 4,
@@ -666,35 +666,35 @@ const SkillNodes: SkillNodesType = {
     ABSORB: {
       name: "ABSORB",
       description: [
-        "When you suffer magical damage, you have a 10% chance to generate 1 mana for each health point lost.",
+        "Khi bạn chịu sát thương phép thuật, bạn có 10% cơ hội tạo ra 1 Năng lượng cho mỗi điểm máu bị mất.",
       ],
       color: "red",
       cost: 3,
     },
     SNAP: {
       name: "SNAP",
-      description: ["Restores 10% mana when triggering the Merciless Attack."],
+      description: ["Phục hồi 10% Năng lượng khi kích hoạt đòn tấn công thô bạo."],
       color: "red",
       cost: 4,
     },
     SOUL_LEECH: {
       name: "SOUL LEECH",
       description: [
-        "When killing an enemy with a melee weapon all players within 15 meters of the target gain 20 mana.",
+        "Khi tiêu diệt kẻ địch bằng vũ khí cận chiến, tất cả người chơi trong phạm vi 15 mét tính từ mục tiêu sẽ nhận được 20 Năng lượng.",
       ],
       color: "red",
       cost: 4,
     },
     SHINY_PLATES: {
       name: "SHINY PLATES",
-      description: ["Physical armor gains 10% more armor points."],
+      description: ["Tăng 10% chỉ số giáp vật lý"],
       color: "red",
       cost: 2,
     },
     HEAVY_PLATES: {
       name: "HEAVY PLATES",
       description: [
-        "The maximum amount of physical damage your armor is able to mitigate is increased by 10%",
+        "Lượng sát thương vật lý tối đa mà áo giáp của bạn có thể chịu đựng được tăng thêm 10%",
       ],
       color: "red",
       cost: 2,
@@ -702,7 +702,7 @@ const SkillNodes: SkillNodesType = {
     WARDEN: {
       name: "WARDEN",
       description: [
-        "When there are three or more enemies within 20 meters you suffer 15% less magical damage.",
+        "Khi có 3 kẻ địch trở lên trong phạm vi 20 mét, giảm 15% sát thương phép thuật nhận phải.",
       ],
       color: "red",
       cost: 3,
@@ -710,7 +710,7 @@ const SkillNodes: SkillNodesType = {
     TOWER: {
       name: "TOWER",
       description: [
-        "When there are three or more enemies within 20 meters you suffer 10% less physical damage.",
+        "Khi có 3 kẻ địch trở lên trong phạm vi 20 mét, giảm 10% sát thương vật lý nhận phải.",
       ],
       color: "red",
       cost: 3,
@@ -718,7 +718,7 @@ const SkillNodes: SkillNodesType = {
     ARCH_NEMESIS: {
       name: "ARCH NEMESIS",
       description: [
-        "Whenever an ally draws the attention of an enemy, you draw twice as much.",
+        "Bạn sẽ tăng mạnh khả năng thu hút kẻ địch khi đồng minh bị chú ý",
       ],
       color: "red",
       cost: 3,
@@ -726,7 +726,7 @@ const SkillNodes: SkillNodesType = {
     PURIFICATION: {
       name: "PURIFICATION",
       description: [
-        "After defeating a Shroud infested foe with a melee weapon you replenish +5 seconds of Shroud Time.",
+        "Sau khi đánh bại kẻ địch bị màn sương xâm chiếm bằng vũ khí cận chiến, bạn sẽ được hồi lại 5 giây Thời gian bị màn sương ảnh hưởng.",
         SHROUD_TIME_TEXT,
       ],
       color: "red",
@@ -735,7 +735,7 @@ const SkillNodes: SkillNodesType = {
     WARRIOR_PATH: {
       name: "THE WARRIOR'S PATH",
       description: [
-        "When attacking with a melee weapon all damage is increased by 10%.",
+        "Khi tấn công bằng vũ khí cận chiến, toàn bộ sát thương sẽ tăng thêm 10%.",
       ],
       color: "red",
       cost: 2,
@@ -743,7 +743,7 @@ const SkillNodes: SkillNodesType = {
     THRUST: {
       name: "THRUST",
       description: [
-        "All melee piercing damage is increased by an additional 10%.",
+        "Tăng 10% sát thương đâm",
       ],
       color: "red",
       cost: 2,
@@ -751,7 +751,7 @@ const SkillNodes: SkillNodesType = {
     PIERCE: {
       name: "PIERCE",
       description: [
-        "All melee piercing damage is increased by an additional 20%.",
+        "Tăng 20% sát thương đâm.",
       ],
       color: "red",
       cost: 3,
@@ -759,7 +759,7 @@ const SkillNodes: SkillNodesType = {
     BRUTE: {
       name: "BRUTE",
       description: [
-        "All melee blunt damage is increased by an additional 10%.",
+        "Tăng 10% sát thương đập.",
       ],
       color: "red",
       cost: 2,
@@ -767,7 +767,7 @@ const SkillNodes: SkillNodesType = {
     HAMMER_TIME: {
       name: "HAMMER TIME",
       description: [
-        "All melee blunt damage is increased by an additional 20%.",
+        "Tăng 20% sát thương đập.",
       ],
       color: "red",
       cost: 3,
@@ -775,7 +775,7 @@ const SkillNodes: SkillNodesType = {
     SLASHER: {
       name: "SLASHER",
       description: [
-        "All melee cutting damage is increased by an additional 10%.",
+        "Tăng 10% sát thương chém.",
       ],
       color: "red",
       cost: 2,
@@ -783,7 +783,7 @@ const SkillNodes: SkillNodesType = {
     BUTCHER: {
       name: "BUTCHER",
       description: [
-        "All melee cutting damage is increased by an additional 20%.",
+        "Tăng 20% sát thương chém.",
       ],
       color: "red",
       cost: 3,
@@ -791,7 +791,7 @@ const SkillNodes: SkillNodesType = {
     VETERAN: {
       name: "VETERAN",
       description: [
-        "When attacking with a melee weapon your critical hit chance is increased by 10%.",
+        "Khi tấn công bằng vũ khí cận chiến, tăng thêm 10% cơ hội chí mạng.",
       ],
       color: "red",
       cost: 4,
@@ -799,21 +799,21 @@ const SkillNodes: SkillNodesType = {
     SWIFT_BLADES: {
       name: "SWIFT BLADES",
       description: [
-        "Allows you to attack faster with one-handed swords and axes.",
+        "Cho phép bạn tấn công nhanh hơn bằng kiếm và rìu một tay.",
       ],
       color: "red",
       cost: 5,
     },
     FEAST: {
       name: "FEAST",
-      description: ["Meat now increases health by an additional 15%."],
+      description: ["Thịt tăng thêm 15% máu."],
       color: "red",
       cost: 3,
     },
     HEAVY_HANDED: {
       name: "HEAVY HANDED",
       description: [
-        "An enemy's stun bar is increased by an additional 20% when attacking into their block with a melee weapon.",
+        "Tăng thêm 20% thời gian choáng khi tấn công bằng vũ khí cận chiến vào kẻ địch đang đỡ đòn.",
       ],
       color: "red",
       cost: 2,
@@ -821,7 +821,7 @@ const SkillNodes: SkillNodesType = {
     STEADFAST: {
       name: "STEADFAST",
       description: [
-        "Defeating an enemy with a melee weapon restores 1 durability to that weapon.",
+        "Đánh bại kẻ địch bằng vũ khí cận chiến sẽ phục hồi 1 độ bền cho vũ khí đó.",
       ],
       color: "red",
       cost: 3,
@@ -829,7 +829,7 @@ const SkillNodes: SkillNodesType = {
     BREACH: {
       name: "BREACH",
       description: [
-        "An overpowered enemy suffers 100% more melee damage for 3 seconds.",
+        "Kẻ địch quá mạnh sẽ phải chịu thêm 100% sát thương cận chiến trong 3 giây.",
         OVERPOWER,
       ],
       color: "red",
@@ -838,7 +838,7 @@ const SkillNodes: SkillNodesType = {
     RELENTLESS: {
       name: "RELENTLESS",
       description: [
-        "Dealing critical damage with a two-handed weapon increases your critical chance by another 10% for the next hit.",
+        "Gây sát thương chí mạng bằng vũ khí cầm hai tay sẽ tăng thêm 10% cơ hội chí mạng cho đòn đánh tiếp theo.",
       ],
       color: "red",
       cost: 5,
@@ -846,7 +846,7 @@ const SkillNodes: SkillNodesType = {
     BARBARIAN: {
       name: "BARBARIAN",
       description: [
-        "You will gain one strength level for every two levels of the Flame.",
+        "Bạn sẽ tăng 1 cấp độ Sức Mạnh với mỗi 2 cấp độ của Ngọn lửa.",
       ],
       color: "red",
       cost: 5,
@@ -854,22 +854,22 @@ const SkillNodes: SkillNodesType = {
     BLOOD_RAGE: {
       name: "BLOOD RAGE",
       description: [
-        "When an enemy is killed within 10 meters with a melee weapon, the damage done with melee weapons is increased by 20% for 10 seconds.",
+        "Khi tiêu diệt kẻ địch trong phạm vi 10 mét bằng vũ khí cận chiến, sát thương gây ra bằng vũ khí cận chiến sẽ tăng 20% ​​trong 10 giây.",
       ],
       color: "red",
       cost: 5,
     },
     VIGOROUS_DEFLECTION: {
       name: "VIGOROUS DEFLECTION",
-      description: ["You gain 30 stamina when you parry an enemy's attack."],
+      description: ["Bạn nhận được 30 thể lực khi phản đòn thành công."],
       color: "red",
       cost: 2,
     },
     BLOOD_WARRIOR: {
       name: "BLOOD WARRIOR",
       description: [
-        "Spawn a health orb after defeating an enemy with a Sneak Attack or Merciless Attack.",
-        "Gathering the orbs replenishes 10% of your health.",
+        "Tạo ra một quả cầu Máu sau khi đánh bại kẻ địch bằng đòn tấn công lén lút hoặc tấn công thô bạo.",
+        "Thu thập các quả cầu sẽ hồi phục 10% máu của bạn.",
       ],
       color: "red",
       cost: 3,
@@ -877,7 +877,7 @@ const SkillNodes: SkillNodesType = {
     FINESSE: {
       name: "FINESSE",
       description: [
-        "One-handed melee weapons and daggers have a 20% chance not to lose durability.",
+        "Vũ khí cận chiến một tay và dao găm có 20% cơ hội không bị mất độ bền.",
       ],
       color: "red",
       cost: 3,
@@ -885,21 +885,21 @@ const SkillNodes: SkillNodesType = {
     JUMP_ATTACK_II: {
       name: "JUMP ATTACK II",
       description: [
-        "When equipped with a melee weapon, attacking from a double jump deals an additional 20% of weapon damage.",
+        "Khi trang bị vũ khí cận chiến, tấn công bằng cú nhảy kép sẽ gây thêm 20% sát thương.",
       ],
       color: "green",
       cost: 3,
     },
     BACKSTAB_MASTERY: {
       name: "BACKSTAB MASTERY",
-      description: ["All damage done from the back is increased by 30%."],
+      description: ["Tăng 30% sát thương gây ra từ phía sau."],
       color: "green",
       cost: 4,
     },
     RUNNER: {
       name: "RUNNER",
       description: [
-        "Sprinting speed increased by 10% and stamina consumption decreased by 10%",
+        "Tốc độ chạy tăng 10% và tiêu hao thể lực giảm 10%",
       ],
       color: "green",
       cost: 2,
@@ -907,7 +907,7 @@ const SkillNodes: SkillNodesType = {
     WANDERLUST: {
       name: "WANDERLUST",
       description: [
-        "Stamina consumption for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>. Stamina consumption for <b>sprinting on stone roads</b> is reduced from <b>75% to 50%</b>.",
+        "Tiêu hao thể lực khi <b>chạy trên đường đất</b> giảm từ <b>90% xuống 80%</b>. Tiêu hao thể lực <b>chạy trên đường đá</b> giảm từ <b>75% xuống 50%</b>.",
       ],
       color: "green",
       cost: 3,
@@ -915,8 +915,8 @@ const SkillNodes: SkillNodesType = {
     GOOD_METABOLISM: {
       name: "GOOD METABOLISM",
       description: [
-        "Health, mana, and stamina Orbs restore 30% instead of 10% of their respective resource.",
-        "Mana and Health Potions restore 20% more.",
+        "Quả cầu máu, năng lượng và thể lực phục hồi 30% thay vì 10%.",
+        "Bình năng lượng và máu phục hồi tăng thêm 20%.",
       ],
       color: "green",
       cost: 3,
@@ -924,33 +924,33 @@ const SkillNodes: SkillNodesType = {
     SWIFTSHOT_SUSTENANCE: {
       name: "SWIFTSHOT SUSTENANCE",
       description: [
-        "30% chance to spawn a stamina orb when defeating an enemy with a bow.",
+        "30% cơ hội tạo ra quả cầu thể lực khi đánh bại kẻ địch bằng cung.",
       ],
       color: "green",
       cost: 2,
     },
     SWEET_TOOTH: {
       name: "SWEET TOOTH",
-      description: ["The stamina regeneration of sweets is increased by 50%"],
+      description: ["Khả năng phục hồi thể lực của đồ ngọt tăng 50%"],
       color: "green",
       cost: 3,
     },
     ARACHNOID: {
       name: "ARACHNOID",
-      description: ["Stamina consumption while climbing is reduced by 50%"],
+      description: ["Tiêu hao thể lực khi leo trèo giảm 50%"],
       color: "green",
       cost: 3,
     },
     REBOUND: {
       name: "REBOUND",
-      description: ["Increase base stamina regeneration by 50%"],
+      description: ["Tăng khả năng phục hồi thể lực cơ bản lên 50%"],
       color: "green",
       cost: 4,
     },
     INNER_FIRES: {
       name: "INNER FIRES",
       description: [
-        "Maximum <i>Shroud Time</i> increased by 2 minutes, allowing you to explore for longer.",
+        "<i>Thời gian ảnh hưởng từ màn sương</i> tăng thêm 2 phút, cho phép bạn khám phá lâu hơn.",
         SHROUD_TIME_TEXT,
       ],
       color: "green",
@@ -959,7 +959,7 @@ const SkillNodes: SkillNodesType = {
     RELENTLESS_FLAME: {
       name: "RELENTLESS FLAME",
       description: [
-        "Maximum <i>Shroud Time</i> increased by 5 minutes, allowing you to explore for longer.",
+        "<i>Thời gian ảnh hưởng từ màn sương</i> tăng thêm 5 phút, cho phép bạn khám phá lâu hơn.",
         SHROUD_TIME_TEXT,
       ],
       color: "green",
@@ -968,7 +968,7 @@ const SkillNodes: SkillNodesType = {
     SNAKE_EATER: {
       name: "SNAKE EATER",
       description: [
-        "Increases your <b>poison resistance</b> which reduces the damage received from poison by <b>20%</b>.",
+        "Tăng <b>kháng độc</b>, giúp giảm <b>20%</b> sát thương độc.",
       ],
       color: "green",
       cost: 2,
@@ -976,22 +976,22 @@ const SkillNodes: SkillNodesType = {
     MITHRIDATIST: {
       name: "MITHRIDATIST",
       description: [
-        "Your <b>poison resistance</b> is increased by an additional 10%.",
-        "You also gain a 25% chance to avoid being poisoned.",
+        "<b>Khả năng kháng độc</b> tăng thêm 10%.",
+        "Bạn cũng có thêm 25% cơ hội tránh bị nhiễm độc.",
       ],
       color: "green",
       cost: 3,
     },
     DAGGER_MASTER: {
       name: "DAGGER MASTER",
-      description: ["Increases damage dealt with daggers by 15%."],
+      description: ["Tăng 15% sát thương của dao găm."],
       color: "green",
       cost: 4,
     },
     SLICE_AND_DICE: {
       name: "SLICE AND DICE",
       description: [
-        "Increases the damage of your next bow attack by 50% after a dagger crit.",
+        "Sau khi gây chí mạng bằng dao găm, đòn tấn công tiếp theo bằng cung sẽ tăng 50% sát thương.",
       ],
       color: "green",
       cost: 3,
@@ -999,7 +999,7 @@ const SkillNodes: SkillNodesType = {
     VUKAH_LANGUAGE: {
       name: "VUKAH LANGUAGE",
       description: [
-        "Vukah within 50 meters will no longer attack you unless provoked.",
+        "Vukah trong phạm vi 50 mét sẽ không tấn công bạn trừ khi bị khiêu khích.",
       ],
       color: "green",
       cost: 3,
@@ -1007,7 +1007,7 @@ const SkillNodes: SkillNodesType = {
     CALM_SPIRIT: {
       name: "CALM SPIRIT",
       description: [
-        "<b>Wild animals</b> within 50 meters will be pacified unless attacked. Does not affect animals corrupted by the Shroud.",
+        "<b>Động vật hoang dã</b> trong phạm vi 50 mét sẽ được xoa dịu trừ khi bị tấn công. Không ảnh hưởng đến động vật bị xâm chiếm bởi màn sương.",
       ],
       color: "green",
       cost: 3,
@@ -1015,7 +1015,7 @@ const SkillNodes: SkillNodesType = {
     BEAST_MASTER: {
       name: "BEAST MASTER",
       description: [
-        "When you are targeted by an attack, <b>wild animals</b> within 50 meters will attack the enemy.",
+        "Khi bạn bị tấn công, <b>động vật hoang dã</b> trong phạm vi 50 mét sẽ tấn công kẻ địch.",
       ],
       color: "green",
       cost: 4,
@@ -1023,7 +1023,7 @@ const SkillNodes: SkillNodesType = {
     VUKAH_CULTURE: {
       name: "VUKAH CULTURE",
       description: [
-        "When you are targeted by an attack, Vukah within 50 meters will attack the enemy.",
+        "Khi bạn bị nhắm tới, Vukah trong phạm vi 50 mét sẽ tấn công kẻ địch.",
       ],
       color: "green",
       cost: 4,
@@ -1031,45 +1031,45 @@ const SkillNodes: SkillNodesType = {
     ENDURANCE_OF_THE_FLAME: {
       name: "ENDURANCE OF THE FLAME",
       description: [
-        "You will gain one endurance for every two levels of the Flame.",
+        "Bạn sẽ nhận được 1 điểm Sức Bền với mỗi 2 cấp độ của Ngọn lửa.",
       ],
       color: "green",
       cost: 5,
     },
     MARKSMAN: {
       name: "MARKSMAN",
-      description: ["All damage dealt with ranged weapons is increased by 10%"],
+      description: ["Tất cả sát thương tầm xa được tăng thêm 20%"],
       color: "green",
       cost: 2,
     },
     SHARPSHOOTER: {
       name: "SHARPSHOOTER",
-      description: ["All ranged damage is increased by an additional 20%"],
+      description: ["Tất cả sát thương tầm xa được tăng thêm 20%"],
       color: "green",
       cost: 2,
     },
     COUNTER_BATTERY: {
       name: "COUNTER BATTERY",
-      description: ["+15% damage to ranged enemies."],
+      description: ["Tăng 15% sát thương lên kẻ địch đánh xa."],
       color: "green",
       cost: 2,
     },
     EAGLES_BANE: {
       name: "EAGLES BANE",
-      description: ["Damage against flying enemies increased by 30%."],
+      description: ["Tăng 30% sát thương đối vẻ kẻ địch bay."],
       color: "green",
       cost: 3,
     },
     SKILL_SHOT: {
       name: "SKILL SHOT",
-      description: ["All damage dealt to an enemy's head is increased by 20%."],
+      description: ["Tăng 20% sát thương."],
       color: "green",
       cost: 3,
     },
     RANGER: {
       name: "RANGER",
       description: [
-        "+2 Endurance<br>+2 Dexterity<br>+5 Stamina Recharge<br>+5% Critical Chance<br>+5% Critical Damage",
+        "+2 Sức Bền<br>+2 Khéo Léo<br>+5 Phục hồi thể lực<br>+5% Tỉ lệ chí mạng<br>+5% Sát thương chí mạng",
       ],
       color: "green",
       cost: 4,
@@ -1080,20 +1080,20 @@ const SkillNodes: SkillNodesType = {
     },
     SILENT_STRIDE: {
       name: "SILENT STRIDE",
-      description: ["Increases your movement speed while sneaking."],
+      description: ["Tăng tốc độ di chuyển của bạn khi lén lút."],
       color: "green",
       cost: 3,
     },
     AIRBORNE: {
       name: "AIRBORNE",
-      description: ["Gliders consume 30% less stamina"],
+      description: ["Giảm 30% thể lực khi lướt."],
       color: "green",
       cost: 2,
     },
     SNIPER: {
       name: "SNIPER",
       description: [
-        "When attacking with a ranged weapon your critical hit chance is increased by 10%.",
+        "Khi tấn công bằng vũ khí tầm xa, tăng thêm 10% cơ hội chí mạng.",
       ],
       color: "green",
       cost: 2,
@@ -1101,7 +1101,7 @@ const SkillNodes: SkillNodesType = {
     VITALITY_SURGE: {
       name: "VITALITY SURGE",
       description: [
-        "Dealing a critical strike with a ranged weapon restores 5 stamina.",
+        "Khi gây đòn chí mạng bằng vũ khí tầm xa sẽ hồi lại 5 điểm thể lực.",
       ],
       color: "green",
       cost: 3,
@@ -1109,7 +1109,7 @@ const SkillNodes: SkillNodesType = {
     BLESSED_ARROWS: {
       name: "BLESSED ARROWS",
       description: [
-        "When scoring a critical hit with a bow, you will regenerate 20 mana.",
+        "Khi gây đòn chí mạng bằng cung, bạn sẽ hồi lại 20 năng lượng.",
       ],
       color: "green",
       cost: 3,
@@ -1117,7 +1117,7 @@ const SkillNodes: SkillNodesType = {
     BOUNTY_BONANZA: {
       name: "BOUNTY BONANZA",
       description: [
-        "After defeating a Fell enemy with a headshot your group gains an additional 5 Experience Points.",
+        "Sau khi đánh bại kẻ địch bằng một phát bắn vào đầu, nhóm của bạn sẽ nhận thêm 5 Điểm kinh nghiệm.",
       ],
       color: "green",
       cost: 3,
@@ -1125,7 +1125,7 @@ const SkillNodes: SkillNodesType = {
     RICOCHETS: {
       name: "RICOCHETS",
       description: [
-        "For every target you hit with an Exploding Arrow, its damage is increased by 1%.",
+        "Với mỗi mục tiêu bạn bắn trúng bằng Mũi tên nổ, sát thương của nó sẽ tăng thêm 1%..",
       ],
       color: "green",
       cost: 4,
@@ -1133,7 +1133,7 @@ const SkillNodes: SkillNodesType = {
     GRACEFUL_STRIDE: {
       name: "GRACEFUL STRIDE",
       description: [
-        "You will gain one dexterity for every two levels of the Flame.",
+        "Bạn sẽ nhận được 1 điểm Khéo Léo với mỗi 2 cấp độ của Ngọn lửa.",
       ],
       color: "green",
       cost: 5,
@@ -1141,7 +1141,7 @@ const SkillNodes: SkillNodesType = {
     CHAIN_REACTION: {
       name: "CHAIN REACTION",
       description: [
-        "Every enemy hit with an Exploding Arrow has a 20% chance to trigger a secondary explosion for 50% damage in a small radius.",
+        "Mỗi kẻ địch bị trúng Mũi tên nổ có 20% khả năng kích hoạt một vụ nổ thứ 2 gây 50% sát thương trong phạm vi nhỏ.",
       ],
       color: "green",
       cost: 5,
@@ -1149,7 +1149,7 @@ const SkillNodes: SkillNodesType = {
     ARCANE_CONCENTRATION: {
       name: "ARCANE CONCENTRATION",
       description: [
-        "You will gain one spirit for every two levels of the Flame.",
+        "Bạn sẽ nhận được 1 điểm Tinh Thần với mỗi 2 cấp độ của Ngọn lửa.",
       ],
       color: "blue",
       cost: 5,
@@ -1157,7 +1157,7 @@ const SkillNodes: SkillNodesType = {
     EXALTED: {
       name: "EXALTED",
       description: [
-        "You will gain one intelligence for every two levels of the Flame.",
+        "Bạn sẽ nhận được 1 điểm Trí Tuệ với mỗi 2 cấp độ của Ngọn lửa.",
       ],
       color: "blue",
       cost: 5,
@@ -1165,7 +1165,7 @@ const SkillNodes: SkillNodesType = {
     THICK_SKIN: {
       name: "THICK SKIN",
       description: [
-        "You will gain one constitution for each two levels of the Flame.",
+        "Bạn sẽ nhận được 1 điểm Sinh Lực với mỗi 2 cấp độ của Ngọn lửa.",
       ],
       color: "red",
       cost: 5,
@@ -1173,7 +1173,7 @@ const SkillNodes: SkillNodesType = {
     LIFE_ESSENCES: {
       name: "LIFE ESSENCES",
       description: [
-        "Your maximum health is increased fivehold by your intelligence attribute.",
+        "Máu tối đa của bạn được tăng gấp 5 lần tùy theo chỉ số Trí Tuệ của bạn.",
       ],
       color: "blue",
       hasAsset: true,
@@ -1182,7 +1182,7 @@ const SkillNodes: SkillNodesType = {
     POISONED_BLADES: {
       name: "POISONED BLADES",
       description: [
-        "Increases the chance to poison enemies to 25% when using daggers with the Poisoned Blades perk.",
+        "Tăng cơ hội đầu độc kẻ địch lên 25% khi sử dụng dao găm có đặc tính độc.",
       ],
       color: "green",
       cost: 3,
@@ -1190,7 +1190,7 @@ const SkillNodes: SkillNodesType = {
     POISON_MASTERY: {
       name: "POISON MASTERY",
       description: [
-        "Increases the damage dealt with the Poisoned Blades dagger perk by 100%.",
+        "Dao găm tăng 100% sát thương gây ra khi kích hoạt Poisoned Blades.",
       ],
       color: "green",
       cost: 4,
@@ -1198,7 +1198,7 @@ const SkillNodes: SkillNodesType = {
     QUICK_REFLEX_BLOCK: {
       name: "QUICK REFLEX BLOCK",
       description: [
-        "Briefly enhances your block value when blocking with the dual daggers, ensuring a near-miss parry reduces stamina minimally.",
+        "Tăng hiệu quả đỡ đòn của bạn trong thời gian ngắn khi chặn bằng dao găm đôi, giảm thể lực tiêu hao khi phản đòn thành công.",
       ],
       color: "green",
       cost: 4,

@@ -32,11 +32,12 @@ const Search = () => {
   return (
     <div
       className={classNames(
-        "absolute top-0 left-[50%] translate-x-[-50%] bg-transparent z-20 flex flex-col gap-3",
-        "justify-center items-center my-6 bg-transparent "
+        "absolute top-0 bg-transparent z-20 flex flex-col gap-3",
+        "justify-center items-center my-6 bg-transparent inset-x-0",
+        "px-5"
       )}
     >
-      <div className="w-72 p-0.5 bg-purple-600 rounded-lg relative">
+      <div className="w-full md:w-72 max-w-sm p-0.5 bg-purple-600 rounded-lg relative">
         <input
           className={classNames(
             "shadow appearance-none  rounded-md w-full",

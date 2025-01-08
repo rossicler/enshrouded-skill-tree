@@ -12,7 +12,7 @@ const HUDButton = ({ children, onClick, className, ...props }: PropsType) => {
     <button
       onClick={onClick}
       className={classNames(
-        "py-1 px-2 rounded-lg border w-24 border-purple-600 text-sm hover:ring-1 hover:ring-purple-600 bg-black",
+        "py-1 px-2 rounded-lg border w-24 border-purple-600 text-xs md:text-sm hover:ring-1 hover:ring-purple-600 bg-black",
         className
       )}
       {...props}

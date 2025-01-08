@@ -23,8 +23,9 @@ const PointsHUD = () => {
   return (
     <div
       className={classNames(
-        "absolute left-0 top-0 bg-transparent z-40",
-        "py-6 px-6 flex flex-col gap-5"
+        "absolute left-0 bg-transparent z-40",
+        "py-6 px-6 flex flex-col gap-5",
+        "top-14 md:top-0"
       )}
     >
       <div className={classNames("flex text-xl gap-1.5 items-center")}>

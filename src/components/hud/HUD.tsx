@@ -55,7 +55,7 @@ const HUD = ({ zoomIn, zoomOut, centerView }: PropsType) => {
       <div
         className={classNames(
           "absolute right-0 top-0 w-32 bg-transparent z-40 flex flex-col gap-3",
-          "justify-center items-center py-6"
+          "justify-center items-center py-6 top-14 md:top-0"
         )}
       >
         <HUDButton onClick={() => setImportOpen(true)}>Import</HUDButton>

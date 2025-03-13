@@ -38,7 +38,7 @@ const FlameLevel = () => {
         />
         <div
           className={classNames(
-            "flex flex-row items-center mt-3 border border-purple-600 text-base",
+            "flex flex-row items-center mt-3.5 border border-purple-600 text-base",
             "rounded-xl divide-x divide-purple-600 bg-black [&>*]:py-1"
           )}
         >

@@ -406,7 +406,7 @@ const SkillNodes: SkillNodesType = {
       ],
       hasAsset: true,
       color: "green",
-      cost: 5,
+      cost: 3,
     },
     COUNTERSTRIKE: {
       name: "COUNTERSTRIKE",
@@ -986,7 +986,7 @@ const SkillNodes: SkillNodesType = {
       name: "DAGGER MASTER",
       description: ["Increases damage dealt with daggers by 15%."],
       color: "green",
-      cost: 4,
+      cost: 3,
     },
     SLICE_AND_DICE: {
       name: "SLICE AND DICE",

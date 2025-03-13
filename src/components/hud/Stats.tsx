@@ -10,7 +10,7 @@ const Stats = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={classNames("flex flex-col gap-1.5 mt-1 md:mt-5")}>
+    <div className={classNames("flex flex-col gap-1.5 mt-3 md:mt-5")}>
       <HUDButton onClick={() => setOpen(true)}>Stats</HUDButton>
       <StatsDialog open={open} onClose={() => setOpen(false)} />
     </div>

@@ -4,6 +4,7 @@ import { classNames } from "@/utils/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Stats from "./Stats";
+import FlameLevel from "./FlameLevel";
 
 const MAX_POINTS = 149;
 
@@ -24,7 +25,7 @@ const PointsHUD = () => {
     <div
       className={classNames(
         "absolute left-0 bg-transparent z-40",
-        "py-6 px-6 flex flex-col gap-5",
+        "py-6 px-6 flex flex-col gap-2",
         "top-14 md:top-0"
       )}
     >
@@ -42,6 +43,7 @@ const PointsHUD = () => {
         <span>/ {MAX_POINTS}</span>
       </div>
 
+      <FlameLevel />
       <Stats />
     </div>
   );

@@ -3,7 +3,11 @@ import { Dialog, Transition } from "@headlessui/react";
 
 import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
-import { getStatsFromSkills } from "@/utils/stats";
+import {
+  getStatsFromFlameAltar,
+  getStatsFromSkills,
+  sumStats,
+} from "@/utils/stats";
 import { BasicStats, StatsType } from "@/constants/Stats";
 
 type PropsType = {
@@ -13,9 +17,14 @@ type PropsType = {
 
 const StatsDialog = ({ open, onClose }: PropsType) => {
   const skillsSelected = useAppSelector((state) => state.skill.selectedSkills);
+  const flameLevel = useAppSelector((state) => state.skill.flameLevel ?? 1);
   const stats = useMemo(
-    () => getStatsFromSkills(skillsSelected),
-    [skillsSelected]
+    () =>
+      sumStats([
+        getStatsFromSkills(skillsSelected),
+        getStatsFromFlameAltar(flameLevel),
+      ]),
+    [skillsSelected, flameLevel]
   );
 
   return (

@@ -1,5 +1,5 @@
 import SkillNodes from "@/constants/Nodes";
-import { NodeStatsType } from "@/constants/Stats";
+import { BasicStats, NodeStatsType } from "@/constants/Stats";
 
 export const getStatsFromSkills = (skills: string[]) => {
   const stats: Record<string, number> = {};
@@ -14,4 +14,24 @@ export const getStatsFromSkills = (skills: string[]) => {
   });
 
   return stats as NodeStatsType;
+};
+
+export const getStatsFromFlameAltar = (flameLevel: number) => {
+  const stats: Record<string, number> = {};
+  Object.keys(BasicStats).forEach((stat) => {
+    stats[stat] = flameLevel - 1;
+  });
+
+  return stats as NodeStatsType;
+};
+
+export const sumStats = (stats: NodeStatsType[]) => {
+  const sum: Record<string, number> = {};
+  stats.forEach((stat) => {
+    Object.entries(stat).forEach(([key, value]) => {
+      sum[key] = sum[key] ? sum[key] + value : value;
+    });
+  });
+
+  return sum as NodeStatsType;
 };

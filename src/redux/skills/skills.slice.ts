@@ -11,12 +11,14 @@ interface SkillsState {
   codeImported?: string;
   connectedPaths: SkillPathsType;
   searchSkillResults: string[];
+  flameLevel?: number;
 }
 
 const initialState = {
   selectedSkills: [],
   connectedPaths: [],
   searchSkillResults: [],
+  flameLevel: 0,
 } satisfies SkillsState as SkillsState;
 
 const skillsSlice = createSlice({
@@ -72,6 +74,9 @@ const skillsSlice = createSlice({
     setSearchSkillResults(state, action: PayloadAction<string[]>) {
       state.searchSkillResults = action.payload;
     },
+    setFlameLevel(state, action: PayloadAction<number>) {
+      state.flameLevel = action.payload;
+    },
   },
 });
 
@@ -86,6 +91,7 @@ export const {
   removePathsConnectedTo,
   initConnectedPaths,
   setSearchSkillResults,
+  setFlameLevel,
 } = skillsSlice.actions;
 
 const persistConfig = {

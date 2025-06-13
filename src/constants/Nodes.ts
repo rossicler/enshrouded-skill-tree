@@ -176,7 +176,7 @@ const SkillNodes: SkillNodesType = {
       name: "DEXTERITY",
       description: [
         "Increases your Dexterity attribute by 1",
-        "Increases Ranged damage by 5% per Attribute Point",
+        "Increases Bow and Dagger damage by 5% per Attribute Point",
       ],
       color: "green",
       cost: 1,

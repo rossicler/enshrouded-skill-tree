@@ -206,7 +206,7 @@ const SkillNodes: SkillNodesType = {
     MERCILESS_ATTACK: {
       name: "MERCILESS ATTACK",
       description: [
-        "Perform a Merciless Attack by pressing [E] to deal massive damage to an enemy you've empowered.",
+        "Perform a Merciless Attack by pressing [E] to deal massive damage to an enemy you've overpowered.",
         OVERPOWER,
       ],
       hasAsset: true,

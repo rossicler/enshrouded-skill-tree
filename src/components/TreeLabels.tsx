@@ -71,7 +71,7 @@ const labels: Labels[] = [
   {
     name: "Athlete",
     angle: 108,
-    distance: 550,
+    distance: 680,
     asset: "ATHLETE",
     width: 313,
     height: 112,

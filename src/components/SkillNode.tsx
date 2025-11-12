@@ -17,8 +17,8 @@ type PropsType = {
 
 const SIZE = {
   small: {
-    className: "w-[30px] h-[30px]",
-    size: 30,
+    className: "w-[25px] h-[25px]",
+    size: 25,
   },
   medium: {
     className: "w-[40px] h-[40px]",

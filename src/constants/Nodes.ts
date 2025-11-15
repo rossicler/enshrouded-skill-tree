@@ -1079,6 +1079,12 @@ const SkillNodes: SkillNodesType = {
       name: "REBOUND",
       description: ["Increase base stamina regeneration by 50%"],
       color: "green",
+      cost: 2,
+    },
+    REBOUND_II: {
+      name: "REBOUND",
+      description: ["Increase base stamina regeneration by 50%"],
+      color: "green",
       cost: 4,
     },
     INNER_FIRES: {
@@ -2225,7 +2231,7 @@ const SkillNodes: SkillNodesType = {
     },
     "134": { id: "134", type: "REBOUND", distance: 300, angle: 135 },
     "197": { id: "197", type: "REBOUND", distance: 340, angle: 135 },
-    "198": { id: "198", type: "REBOUND", distance: 380, angle: 135 },
+    "198": { id: "198", type: "REBOUND_II", distance: 380, angle: 135 },
     "135": {
       id: "135",
       type: "SWEET_TOOTH",

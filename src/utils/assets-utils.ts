@@ -20,6 +20,9 @@ export const getAsset = (
   } else if (selectable || node.base) {
     if (hasSpecificAsset) {
       assetName = nodeMetadata.selectableAsset ?? `${node.type}`;
+    } else if (node.tier === "large" && nodeMetadata.color === "green") {
+      assetName = `green_large`;
+      lowBrithness = true;
     } else {
       assetName = `${nodeMetadata?.color ?? "blue"}_${node.tier ?? "small"}_2`;
     }

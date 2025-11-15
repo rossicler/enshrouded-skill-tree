@@ -340,7 +340,7 @@ const SkillNodes: SkillNodesType = {
     },
     HEAVY_SPECIALIZATION: {
       name: "HEAVY SPECIALIZATION",
-      description: ["Allows you to attack faster with two-handed hammers."],
+      description: ["Allows you to attack faster with Two-Handed weapons."],
       hasAsset: true,
       color: "red",
       cost: 5,

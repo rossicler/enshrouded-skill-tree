@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import Stats from "./Stats";
 import FlameLevel from "./FlameLevel";
 
-const MAX_POINTS = 185;
+const MAX_POINTS = 184;
 
 const PointsHUD = () => {
   const [pointsUsed, setPointsUsed] = useState(0);

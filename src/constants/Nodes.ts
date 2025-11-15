@@ -117,6 +117,15 @@ const SkillNodes: SkillNodesType = {
       color: "gold",
       cost: 2,
     },
+    FISHERMANS_RESOLVE: {
+      name: "FISHERMAN'S RESOLVE",
+      description: [
+        "Increases your Fishing Endurance by <b>30%</b>.",
+        "Allows for extended battles with hooked fish.",
+      ],
+      color: "gold",
+      cost: 5,
+    },
     POWER_PARRY: {
       name: "POWER PARRY",
       description: [
@@ -348,7 +357,7 @@ const SkillNodes: SkillNodesType = {
     WHIRLWIND_CRESCENDO: {
       name: "WHIRLWIND CRESCENDO",
       description: [
-        "When equipped with a Two-Handed weapon, trigger a whirl attach at the end of an attach chain.",
+        "When equipped with a Two-Handed weapon, trigger a whirl attack at the end of an attack chain.",
         "<b>Cost</b>: 75 Stamina",
       ],
       color: "red",
@@ -1402,6 +1411,14 @@ const SkillNodes: SkillNodesType = {
       tier: "medium",
       distance: -120,
       angle: 75,
+    },
+    "220": {
+      id: "220",
+      type: "FISHERMANS_RESOLVE",
+      base: true,
+      tier: "medium",
+      distance: -120,
+      angle: 45,
     },
     "8": {
       id: "8",
@@ -2647,8 +2664,8 @@ const SkillNodes: SkillNodesType = {
     "130": ["128", "131"],
     "131": ["130", "132", "133"],
     "132": ["131", "135", "134"],
-    "133": ["131", "136", "178"],
-    "134": ["132", "197"],
+    "133": ["131", "136", "178", "134"],
+    "134": ["132", "197", "133"],
     "135": ["132", "137"],
     "136": ["133", "137"],
     "137": ["135", "136", "138"],

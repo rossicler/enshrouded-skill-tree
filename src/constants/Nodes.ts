@@ -1021,9 +1021,9 @@ const SkillNodes: SkillNodesType = {
       cost: 3,
     },
     JUMP_ATTACK_II: {
-      name: "JUMP ATTACK II",
+      name: "CRASH DOWN: FORCE",
       description: [
-        "When equipped with a melee weapon, attacking from a double jump deals an additional 20% of weapon damage.",
+        "When attacking from a double jump, <b>Crash Down</b> deals <b>20%</b> more weapon damage.",
       ],
       color: "green",
       cost: 3,

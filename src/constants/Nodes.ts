@@ -2016,14 +2016,14 @@ const SkillNodes: SkillNodesType = {
     },
     "98": {
       id: "98",
-      type: "VETERAN",
+      type: "TITAN_EDGE",
       tier: "medium",
       distance: 350,
       angle: 50,
     },
     "204": {
       id: "204",
-      type: "TITAN_EDGE",
+      type: "VETERAN",
       tier: "medium",
       distance: 350,
       angle: 40,

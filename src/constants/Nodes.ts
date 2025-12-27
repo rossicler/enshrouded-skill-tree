@@ -1414,7 +1414,13 @@ const SkillNodes: SkillNodesType = {
       distance: -120,
       angle: 120,
     },
-    "6": { id: "6", type: "MINER", tier: "medium", distance: -190, angle: 120 },
+    "6": {
+      id: "6",
+      type: "MINER",
+      tier: "medium",
+      distance: -190,
+      angle: 120
+    },
     "7": {
       id: "7",
       type: "MASON",
@@ -1559,7 +1565,12 @@ const SkillNodes: SkillNodesType = {
       distance: 120,
       angle: 270,
     },
-    "21": { id: "21", type: "ATTR_SPIRIT", base: true, angle: 285 },
+    "21": {
+      id: "21",
+      type: "ATTR_SPIRIT",
+      base: true,
+      angle: 285
+    },
     "22": {
       id: "22",
       type: "THIS_IS_THE_WAY",
@@ -1574,7 +1585,12 @@ const SkillNodes: SkillNodesType = {
       distance: 120,
       angle: 300,
     },
-    "24": { id: "24", type: "ATTR_SPIRIT", distance: 140, angle: 285 },
+    "24": {
+      id: "24",
+      type: "ATTR_SPIRIT",
+      distance: 140,
+      angle: 285
+    },
     "25": {
       id: "25",
       type: "ARSONIST",
@@ -1645,7 +1661,12 @@ const SkillNodes: SkillNodesType = {
       distance: 630,
       angle: 271,
     },
-    "31": { id: "31", type: "ATTR_SPIRIT", distance: 490, angle: 276 },
+    "31": {
+      id: "31",
+      type: "ATTR_SPIRIT",
+      distance: 490,
+      angle: 276
+    },
     "32": {
       id: "32",
       type: "LIGHTNING",
@@ -1681,7 +1702,12 @@ const SkillNodes: SkillNodesType = {
       distance: 390,
       angle: 300,
     },
-    "35": { id: "35", type: "ATTR_INT", distance: 350, angle: 285 },
+    "35": {
+      id: "35",
+      type: "ATTR_INT",
+      distance: 350,
+      angle: 285
+    },
     "36": {
       id: "36",
       type: "WIZARD",
@@ -1717,8 +1743,18 @@ const SkillNodes: SkillNodesType = {
       distance: 560,
       angle: 288,
     },
-    "41": { id: "41", type: "ATTR_INT", distance: 630, angle: 285 },
-    "42": { id: "42", type: "ATTR_INT", base: true, angle: 315 },
+    "41": {
+      id: "41",
+      type: "ATTR_INT",
+      distance: 630,
+      angle: 285
+    },
+    "42": {
+      id: "42",
+      type: "ATTR_INT",
+      base: true,
+      angle: 315
+    },
     "43": {
       id: "43",
       type: "HEALER",
@@ -1733,7 +1769,12 @@ const SkillNodes: SkillNodesType = {
       distance: 140,
       angle: 315,
     },
-    "45": { id: "45", type: "ATTR_INT", distance: 210, angle: 315 },
+    "45": {
+      id: "45",
+      type: "ATTR_INT",
+      distance: 210,
+      angle: 315
+    },
     "46": {
       id: "46",
       type: "WATER_AURA",
@@ -1790,9 +1831,24 @@ const SkillNodes: SkillNodesType = {
       distance: 600,
       angle: 330,
     },
-    "50": { id: "50", type: "ATTR_SPIRIT", distance: 340, angle: 306 },
-    "51": { id: "51", type: "ATTR_INT", distance: 410, angle: 312 },
-    "52": { id: "52", type: "ATTR_SPIRIT", distance: 410, angle: 318 },
+    "50": {
+      id: "50",
+      type: "ATTR_SPIRIT",
+      distance: 340,
+      angle: 306
+    },
+    "51": {
+      id: "51",
+      type: "ATTR_INT",
+      distance: 410,
+      angle: 312
+    },
+    "52": {
+      id: "52",
+      type: "ATTR_SPIRIT",
+      distance: 410,
+      angle: 318
+    },
     "53": {
       id: "53",
       type: "MARTYR",
@@ -1814,7 +1870,13 @@ const SkillNodes: SkillNodesType = {
       distance: 560,
       angle: 315,
     },
-    "55": { id: "55", type: "BLINK", tier: "large", distance: 120, angle: 330 },
+    "55": {
+      id: "55",
+      type: "BLINK",
+      tier: "large",
+      distance: 120,
+      angle: 330
+    },
     "56": {
       id: "56",
       type: "EMERGENCY_BLINK",
@@ -1829,8 +1891,18 @@ const SkillNodes: SkillNodesType = {
       distance: 180,
       angle: 333,
     },
-    "62": { id: "62", type: "ATTR_SPIRIT", distance: 240, angle: 330 },
-    "58": { id: "58", type: "ATTR_INT", base: true, angle: 345 },
+    "62": {
+      id: "62",
+      type: "ATTR_SPIRIT",
+      distance: 240,
+      angle: 330
+    },
+    "58": {
+      id: "58",
+      type: "ATTR_INT",
+      base: true,
+      angle: 345
+    },
     "59": {
       id: "59",
       type: "ARCANE_DEFLECTION",
@@ -1852,8 +1924,19 @@ const SkillNodes: SkillNodesType = {
       distance: 190,
       angle: 360,
     },
-    "69": { id: "69", type: "ATTR_INT", distance: 140, angle: 345 },
-    "70": { id: "70", type: "UNITY", tier: "large", distance: 210, angle: 345 },
+    "69": {
+      id: "69",
+      type: "ATTR_INT",
+      distance: 140,
+      angle: 345
+    },
+    "70": {
+      id: "70",
+      type: "UNITY",
+      tier: "large",
+      distance: 210,
+      angle: 345
+    },
     "72": {
       id: "72",
       type: "STING",
@@ -1882,8 +1965,18 @@ const SkillNodes: SkillNodesType = {
       distance: 330,
       angle: 336,
     },
-    "73": { id: "73", type: "ATTR_SPIRIT", distance: 350, angle: 348 },
-    "74": { id: "74", type: "ATTR_INT", distance: 350, angle: 342 },
+    "73": {
+      id: "73",
+      type: "ATTR_SPIRIT",
+      distance: 350,
+      angle: 348
+    },
+    "74": {
+      id: "74",
+      type: "ATTR_INT",
+      distance: 350,
+      angle: 342
+    },
     "188": {
       id: "188",
       type: "LIFE_ESSENCES",
@@ -1891,8 +1984,18 @@ const SkillNodes: SkillNodesType = {
       distance: 420,
       angle: 345,
     },
-    "54": { id: "54", type: "EXALTED", distance: 490, angle: 345 },
-    "75": { id: "75", type: "ATTR_CONS", base: true, angle: 15 },
+    "54": {
+      id: "54",
+      type: "EXALTED",
+      distance: 490,
+      angle: 345
+    },
+    "75": {
+      id: "75",
+      type: "ATTR_CONS",
+      base: true,
+      angle: 15
+    },
     "76": {
       id: "76",
       type: "SHINY_PLATES",
@@ -1914,7 +2017,13 @@ const SkillNodes: SkillNodesType = {
       distance: 210,
       angle: 15,
     },
-    "79": { id: "79", type: "TOWER", tier: "medium", distance: 280, angle: 20 },
+    "79": {
+      id: "79",
+      type: "TOWER",
+      tier: "medium",
+      distance: 280,
+      angle: 20
+    },
     "80": {
       id: "80",
       type: "WARDEN",
@@ -1929,7 +2038,13 @@ const SkillNodes: SkillNodesType = {
       distance: 350,
       angle: 5,
     },
-    "65": { id: "65", type: "SNAP", tier: "medium", distance: 420, angle: 5 },
+    "65": {
+      id: "65",
+      type: "SNAP",
+      tier: "medium",
+      distance: 420,
+      angle: 5
+    },
     "67": {
       id: "67",
       type: "SOUL_LEECH",
@@ -1937,9 +2052,24 @@ const SkillNodes: SkillNodesType = {
       distance: 490,
       angle: 5,
     },
-    "81": { id: "81", type: "ATTR_STR", distance: 350, angle: 25 },
-    "82": { id: "82", type: "ATTR_STR", distance: 350, angle: 18 },
-    "83": { id: "83", type: "ATTR_CONS", distance: 350, angle: 12 },
+    "81": {
+      id: "81",
+      type: "ATTR_STR",
+      distance: 350,
+      angle: 25
+    },
+    "82": {
+      id: "82",
+      type: "ATTR_STR",
+      distance: 350,
+      angle: 18
+    },
+    "83": {
+      id: "83",
+      type: "ATTR_CONS",
+      distance: 350,
+      angle: 12
+    },
     "84": {
       id: "84",
       type: "NEMESIS",
@@ -1961,8 +2091,18 @@ const SkillNodes: SkillNodesType = {
       distance: 480,
       angle: 15,
     },
-    "87": { id: "87", type: "THICK_SKIN", distance: 550, angle: 15 },
-    "88": { id: "88", type: "ATTR_CONS", base: true, angle: 45 },
+    "87": {
+      id: "87",
+      type: "THICK_SKIN",
+      distance: 550,
+      angle: 15
+    },
+    "88": {
+      id: "88",
+      type: "ATTR_CONS",
+      base: true,
+      angle: 45
+    },
     "89": {
       id: "89",
       type: "WARRIOR_PATH",
@@ -1977,7 +2117,12 @@ const SkillNodes: SkillNodesType = {
       distance: 120,
       angle: 30,
     },
-    "91": { id: "91", type: "ATTR_STR", distance: 140, angle: 45 },
+    "91": {
+      id: "91",
+      type: "ATTR_STR",
+      distance: 140,
+      angle: 45
+    },
     "92": {
       id: "92",
       type: "SLASHER",
@@ -1985,7 +2130,13 @@ const SkillNodes: SkillNodesType = {
       distance: 210,
       angle: 55,
     },
-    "93": { id: "93", type: "BRUTE", tier: "medium", distance: 210, angle: 45 },
+    "93": {
+      id: "93",
+      type: "BRUTE",
+      tier: "medium",
+      distance: 210,
+      angle: 45
+    },
     "94": {
       id: "94",
       type: "THRUST",
@@ -2028,8 +2179,18 @@ const SkillNodes: SkillNodesType = {
       distance: 350,
       angle: 40,
     },
-    "99": { id: "99", type: "ATTR_CONS", distance: 420, angle: 50 },
-    "100": { id: "100", type: "ATTR_STR", distance: 420, angle: 40 },
+    "99": {
+      id: "99",
+      type: "ATTR_CONS",
+      distance: 420,
+      angle: 50
+    },
+    "100": {
+      id: "100",
+      type: "ATTR_STR",
+      distance: 420,
+      angle: 40
+    },
     "101": {
       id: "101",
       type: "SWIFT_BLADES",
@@ -2037,8 +2198,18 @@ const SkillNodes: SkillNodesType = {
       distance: 490,
       angle: 45,
     },
-    "102": { id: "102", type: "ATTR_CONS", distance: 560, angle: 45 },
-    "103": { id: "103", type: "ATTR_STR", base: true, angle: 75 },
+    "102": {
+      id: "102",
+      type: "ATTR_CONS",
+      distance: 560,
+      angle: 45
+    },
+    "103": {
+      id: "103",
+      type: "ATTR_STR",
+      base: true,
+      angle: 75
+    },
     "104": {
       id: "104",
       type: "HEAVY_HANDED",
@@ -2060,7 +2231,12 @@ const SkillNodes: SkillNodesType = {
       distance: 190,
       angle: 90,
     },
-    "105": { id: "105", type: "ATTR_STR", distance: 140, angle: 75 },
+    "105": {
+      id: "105",
+      type: "ATTR_STR",
+      distance: 140,
+      angle: 75
+    },
     "106": {
       id: "106",
       type: "FEAST",
@@ -2068,7 +2244,12 @@ const SkillNodes: SkillNodesType = {
       distance: 120,
       angle: 60,
     },
-    "107": { id: "107", type: "ATTR_CONS", distance: 210, angle: 75 },
+    "107": {
+      id: "107",
+      type: "ATTR_CONS",
+      distance: 210,
+      angle: 75
+    },
     "108": {
       id: "108",
       type: "RELENTLESS",
@@ -2090,7 +2271,12 @@ const SkillNodes: SkillNodesType = {
       distance: 350,
       angle: 60,
     },
-    "111": { id: "111", type: "ATTR_CONS", distance: 380, angle: 75 },
+    "111": {
+      id: "111",
+      type: "ATTR_CONS",
+      distance: 380,
+      angle: 75
+    },
     "112": {
       id: "112",
       type: "HEAVY_SPECIALIZATION",
@@ -2098,7 +2284,12 @@ const SkillNodes: SkillNodesType = {
       distance: 450,
       angle: 75,
     },
-    "113": { id: "113", type: "BARBARIAN", distance: 520, angle: 75 },
+    "113": {
+      id: "113",
+      type: "BARBARIAN",
+      distance: 520,
+      angle: 75
+    },
     "114": {
       id: "114",
       type: "BLOOD_RAGE",
@@ -2106,7 +2297,12 @@ const SkillNodes: SkillNodesType = {
       distance: 590,
       angle: 75,
     },
-    "115": { id: "115", type: "ATTR_STR", base: true, angle: 105 },
+    "115": {
+      id: "115",
+      type: "ATTR_STR",
+      base: true,
+      angle: 105
+    },
     "116": {
       id: "116",
       type: "CRASH_DOWN_ATTACK",
@@ -2128,7 +2324,12 @@ const SkillNodes: SkillNodesType = {
       distance: 190,
       angle: 120,
     },
-    "119": { id: "119", type: "ATTR_STR", distance: 190, angle: 105 },
+    "119": {
+      id: "119",
+      type: "ATTR_STR",
+      distance: 190,
+      angle: 105
+    },
     "120": {
       id: "120",
       type: "BLOOD_WARRIOR",
@@ -2178,11 +2379,37 @@ const SkillNodes: SkillNodesType = {
       distance: 260,
       angle: 100,
     },
-    "122": { id: "122", type: "ATTR_CONS", distance: 620, angle: 105 },
-    "123": { id: "123", type: "ATTR_CONS", distance: 400, angle: 110 },
-    "124": { id: "124", type: "ATTR_STR", distance: 400, angle: 100 },
-    "125": { id: "125", type: "BASH", tier: "large", distance: 310, angle: 90 },
-    "126": { id: "126", type: "ATTR_STR", distance: 380, angle: 90 },
+    "122": {
+      id: "122",
+      type: "ATTR_CONS",
+      distance: 620,
+      angle: 105
+    },
+    "123": {
+      id: "123",
+      type: "ATTR_CONS",
+      distance: 400,
+      angle: 110
+    },
+    "124": {
+      id: "124",
+      type: "ATTR_STR",
+      distance: 400,
+      angle: 100
+    },
+    "125": {
+      id: "125",
+      type: "BASH",
+      tier: "large",
+      distance: 310,
+      angle: 90
+    },
+    "126": {
+      id: "126",
+      type: "ATTR_STR",
+      distance: 380,
+      angle: 90
+    },
     "203": {
       id: "203",
       type: "WHIRLWIND_CRESCENDO",
@@ -2190,7 +2417,12 @@ const SkillNodes: SkillNodesType = {
       distance: 480,
       angle: 90,
     },
-    "127": { id: "127", type: "ATTR_ENDURANCE", base: true, angle: 135 },
+    "127": {
+      id: "127",
+      type: "ATTR_ENDURANCE",
+      base: true,
+      angle: 135
+    },
     "128": {
       id: "128",
       type: "RUNNER",
@@ -2212,7 +2444,12 @@ const SkillNodes: SkillNodesType = {
       distance: 190,
       angle: 150,
     },
-    "130": { id: "130", type: "ATTR_ENDURANCE", distance: 140, angle: 135 },
+    "130": {
+      id: "130",
+      type: "ATTR_ENDURANCE",
+      distance: 140,
+      angle: 135
+    },
     "131": {
       id: "131",
       type: "WANDERLUST",
@@ -2234,9 +2471,24 @@ const SkillNodes: SkillNodesType = {
       distance: 280,
       angle: 130,
     },
-    "134": { id: "134", type: "REBOUND", distance: 300, angle: 135 },
-    "197": { id: "197", type: "REBOUND", distance: 340, angle: 135 },
-    "198": { id: "198", type: "REBOUND_II", distance: 380, angle: 135 },
+    "134": {
+      id: "134",
+      type: "REBOUND",
+      distance: 300,
+      angle: 135
+    },
+    "197": {
+      id: "197",
+      type: "REBOUND",
+      distance: 340,
+      angle: 135
+    },
+    "198": {
+      id: "198",
+      type: "REBOUND_II",
+      distance: 380,
+      angle: 135
+    },
     "135": {
       id: "135",
       type: "SWEET_TOOTH",
@@ -2251,7 +2503,12 @@ const SkillNodes: SkillNodesType = {
       distance: 370,
       angle: 130,
     },
-    "137": { id: "137", type: "ATTR_DEX", distance: 440, angle: 135 },
+    "137": {
+      id: "137",
+      type: "ATTR_DEX",
+      distance: 440,
+      angle: 135
+    },
     "138": {
       id: "138",
       type: "DESSERT_STOMACH",
@@ -2266,8 +2523,18 @@ const SkillNodes: SkillNodesType = {
       distance: 510,
       angle: 130,
     },
-    "139": { id: "139", type: "ATTR_ENDURANCE", distance: 580, angle: 135 },
-    "140": { id: "140", type: "ATTR_ENDURANCE", base: true, angle: 165 },
+    "139": {
+      id: "139",
+      type: "ATTR_ENDURANCE",
+      distance: 580,
+      angle: 135
+    },
+    "140": {
+      id: "140",
+      type: "ATTR_ENDURANCE",
+      base: true,
+      angle: 165
+    },
     "141": {
       id: "141",
       type: "SNAKE_EATER",
@@ -2289,7 +2556,12 @@ const SkillNodes: SkillNodesType = {
       distance: 140,
       angle: 165,
     },
-    "144": { id: "144", type: "ATTR_ENDURANCE", distance: 210, angle: 165 },
+    "144": {
+      id: "144",
+      type: "ATTR_ENDURANCE",
+      distance: 210,
+      angle: 165
+    },
     "184": {
       id: "184",
       type: "DAGGER_MASTER",
@@ -2346,8 +2618,18 @@ const SkillNodes: SkillNodesType = {
       distance: 420,
       angle: 160,
     },
-    "147": { id: "147", type: "ATTR_DEX", distance: 350, angle: 168 },
-    "148": { id: "148", type: "ATTR_ENDURANCE", distance: 350, angle: 162 },
+    "147": {
+      id: "147",
+      type: "ATTR_DEX",
+      distance: 350,
+      angle: 168
+    },
+    "148": {
+      id: "148",
+      type: "ATTR_ENDURANCE",
+      distance: 350,
+      angle: 162
+    },
     "149": {
       id: "149",
       type: "VUKAH_CULTURE",
@@ -2362,14 +2644,24 @@ const SkillNodes: SkillNodesType = {
       distance: 510,
       angle: 160,
     },
-    "151": { id: "151", type: "ATTR_DEX", distance: 465, angle: 165 },
+    "151": {
+      id: "151",
+      type: "ATTR_DEX",
+      distance: 465,
+      angle: 165
+    },
     "152": {
       id: "152",
       type: "ENDURANCE_OF_THE_FLAME",
       distance: 580,
       angle: 165,
     },
-    "153": { id: "153", type: "ATTR_DEX", base: true, angle: 195 },
+    "153": {
+      id: "153",
+      type: "ATTR_DEX",
+      base: true,
+      angle: 195
+    },
     "154": {
       id: "154",
       type: "MARKSMAN",
@@ -2454,7 +2746,12 @@ const SkillNodes: SkillNodesType = {
       distance: 530,
       angle: 185,
     },
-    "163": { id: "163", type: "ATTR_DEX", base: true, angle: 225 },
+    "163": {
+      id: "163",
+      type: "ATTR_DEX",
+      base: true,
+      angle: 225
+    },
     "164": {
       id: "164",
       type: "AIRBORNE",
@@ -2469,7 +2766,12 @@ const SkillNodes: SkillNodesType = {
       distance: 120,
       angle: 240,
     },
-    "166": { id: "166", type: "ATTR_ENDURANCE", distance: 140, angle: 225 },
+    "166": {
+      id: "166",
+      type: "ATTR_ENDURANCE",
+      distance: 140,
+      angle: 225
+    },
     "167": {
       id: "167",
       type: "SNIPER",
@@ -2491,7 +2793,12 @@ const SkillNodes: SkillNodesType = {
       distance: 280,
       angle: 220,
     },
-    "170": { id: "170", type: "ATTR_DEX", distance: 350, angle: 235 },
+    "170": {
+      id: "170",
+      type: "ATTR_DEX",
+      distance: 350,
+      angle: 235
+    },
     "171": {
       id: "171",
       type: "SHELL_SHOCK",
@@ -2506,7 +2813,12 @@ const SkillNodes: SkillNodesType = {
       distance: 350,
       angle: 225,
     },
-    "173": { id: "173", type: "ATTR_DEX", distance: 350, angle: 215 },
+    "173": {
+      id: "173",
+      type: "ATTR_DEX",
+      distance: 350,
+      angle: 215
+    },
     "174": {
       id: "174",
       type: "RICOCHETS",
@@ -2514,8 +2826,18 @@ const SkillNodes: SkillNodesType = {
       distance: 420,
       angle: 225,
     },
-    "175": { id: "175", type: "GRACEFUL_STRIDE", distance: 490, angle: 225 },
-    "176": { id: "176", type: "ATTR_ENDURANCE", distance: 490, angle: 220 },
+    "175": {
+      id: "175",
+      type: "GRACEFUL_STRIDE",
+      distance: 490,
+      angle: 225
+    },
+    "176": {
+      id: "176",
+      type: "ATTR_ENDURANCE",
+      distance: 490,
+      angle: 220
+    },
     "177": {
       id: "177",
       type: "CHAIN_REACTION",
@@ -2638,10 +2960,10 @@ const SkillNodes: SkillNodesType = {
     "95": ["92", "98"],
     "96": ["93", "98", "204"],
     "97": ["94", "204"],
-    "98": ["95", "96", "99", "101"],
+    "98": ["95", "96", "99"],
     "99": ["98"],
     "100": ["204"],
-    "101": ["98", "102", "204"],
+    "101": ["102", "204"],
     "102": ["101"],
     "103": ["104"],
     "104": ["103", "106", "105", "183"],

@@ -1,10 +1,12 @@
 import React from "react";
 import Head from "next/head";
-
-const title = "Enshrouded Skill Planner";
-const description = "A skill tree planner for the game Enshrouded.";
+import { useTranslation } from "next-i18next";
 
 const CustomHeader = () => {
+  const { t } = useTranslation("common");
+  const title = t("meta.title");
+  const description = t("meta.description");
+
   return (
     <Head>
       <title>{title}</title>

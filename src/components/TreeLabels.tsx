@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 import { classNames } from "@/utils/utils";
 
 type Labels = {
-  name: string;
+  nameKey: string;
   asset: string;
   width: number;
   height: number;
@@ -13,7 +14,7 @@ type Labels = {
 
 const labels: Labels[] = [
   {
-    name: "Trickster",
+    nameKey: "trickster",
     angle: 257,
     distance: 530,
     asset: "TRICKSTER",
@@ -21,7 +22,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Wizard",
+    nameKey: "wizard",
     angle: 286,
     distance: 700,
     asset: "WIZARD",
@@ -29,7 +30,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Healer",
+    nameKey: "healer",
     angle: 316,
     distance: 610,
     asset: "HEALER",
@@ -37,7 +38,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Battlemage",
+    nameKey: "battlemage",
     angle: 347,
     distance: 540,
     asset: "BATTLEMAGE",
@@ -45,7 +46,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Tank",
+    nameKey: "tank",
     angle: 16,
     distance: 590,
     asset: "TANK",
@@ -53,7 +54,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Warrior",
+    nameKey: "warrior",
     angle: 50,
     distance: 630,
     asset: "WARRIOR",
@@ -61,7 +62,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Barbarian",
+    nameKey: "barbarian",
     angle: 78,
     distance: 670,
     asset: "BARBARIAN",
@@ -69,7 +70,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Athlete",
+    nameKey: "athlete",
     angle: 108,
     distance: 680,
     asset: "ATHLETE",
@@ -77,7 +78,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Survivor",
+    nameKey: "survivor",
     angle: 136,
     distance: 650,
     asset: "SURVIVOR",
@@ -85,7 +86,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Beastmaster",
+    nameKey: "beastmaster",
     angle: 170,
     distance: 605,
     asset: "BEASTMASTER",
@@ -93,7 +94,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Ranger",
+    nameKey: "ranger",
     angle: 196,
     distance: 520,
     asset: "RANGER",
@@ -101,7 +102,7 @@ const labels: Labels[] = [
     height: 112,
   },
   {
-    name: "Assassin",
+    nameKey: "assassin",
     angle: 227,
     distance: 630,
     asset: "ASSASSIN",
@@ -114,12 +115,13 @@ const INIT_DISTANCE = 250;
 const TO_SCALE_DOWN = 0.3;
 
 const TreeLabels = () => {
+  const { t } = useTranslation("common");
   return (
     <>
       <div className="absolute rounded-full border border-purple-400 border-opacity-30 bg-transparent -left-[200px] -bottom-[200px]" />
       {labels.map((label) => (
         <div
-          key={label.name}
+          key={label.nameKey}
           className="absolute top-0 left-0 h-full"
           style={{
             transformOrigin: "0% 0%",
@@ -141,7 +143,7 @@ const TreeLabels = () => {
             >
               <Image
                 src={`/assets/labels/${label.asset}.png`}
-                alt={label.name}
+                alt={t(`treeLabels.${label.nameKey}`)}
                 height={label.height * TO_SCALE_DOWN}
                 width={label.width * TO_SCALE_DOWN}
               />

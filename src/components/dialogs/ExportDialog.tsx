@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Dialog, Transition } from "@headlessui/react";
+import { useTranslation } from "next-i18next";
 
 import { classNames, convertJsonToHash } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
@@ -18,6 +19,7 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
   const [shareURL, setShareURL] = useState("");
   const [shortURL, setShortURL] = useState("");
   const [copied, setCopied] = useState("");
+  const { t } = useTranslation("common");
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
 
   const exportHandler = () => {
@@ -25,7 +27,7 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
     const url = `${BASE_URL}?code=${tmpCode}`;
     setShareURL(url);
     navigator.clipboard.writeText(url);
-    toast.success("Share URL copied successfully");
+    toast.success(t("toasts.shareUrlCopied"));
     setCopied("code");
   };
 
@@ -40,7 +42,7 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
     const url = `${BASE_URL}?shortCode=${result.code}`;
     setShortURL(url);
     navigator.clipboard.writeText(url);
-    toast.success("Share URL copied successfully");
+    toast.success(t("toasts.shareUrlCopied"));
     setCopied("api");
   };
 
@@ -48,7 +50,7 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
     if (open) {
       if (copied) return;
       if (selectedSkills.length === 0) {
-        toast.error("No skills allocated!");
+        toast.error(t("toasts.noSkillsAllocated"));
         onClose();
       } else {
         exportHandler();
@@ -87,18 +89,18 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
-                  Export skills
+                  {t("dialogs.export.title")}
                 </Dialog.Title>
                 <div className="mt-5 flex flex-col gap-3">
                   <CopyInput
-                    label="Default Url"
+                    label={t("dialogs.export.defaultUrl")}
                     copied={copied === "code"}
                     onCopy={() => setCopied("code")}
                     value={shareURL}
                   />
                   {shortURL ? (
                     <CopyInput
-                      label="Short Url"
+                      label={t("dialogs.export.shortUrl")}
                       copied={copied === "api"}
                       onCopy={() => setCopied("api")}
                       value={shortURL}
@@ -111,7 +113,7 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
                       )}
                       onClick={exportAPIHandler}
                     >
-                      Generate short URL
+                      {t("dialogs.export.generateShortUrl")}
                     </button>
                   )}
 
@@ -125,7 +127,7 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
                       )}
                       onClick={onClose}
                     >
-                      Close
+                      {t("dialogs.export.close")}
                     </button>
                   </div>
                 </div>

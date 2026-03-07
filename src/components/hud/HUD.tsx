@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
 
 import { classNames } from "../../utils/utils";
 import HUDButton from "../shared/HUDButton";
@@ -27,6 +28,7 @@ const DISCORD_LINK = "https://discord.gg/saazEkNchu";
 const HUD = ({ zoomIn, zoomOut, centerView }: PropsType) => {
   let [importOpen, setImportOpen] = useState(false);
   let [exportOpen, setExportOpen] = useState(false);
+  const { t } = useTranslation("common");
   const dispatch = useAppDispatch();
   const router = useRouter();
 
@@ -58,12 +60,12 @@ const HUD = ({ zoomIn, zoomOut, centerView }: PropsType) => {
           "justify-center items-center py-6 top-14 md:top-0"
         )}
       >
-        <HUDButton onClick={() => setImportOpen(true)}>Import</HUDButton>
-        <HUDButton onClick={() => setExportOpen(true)}>Export</HUDButton>
-        <HUDButton onClick={clearHandler}>Clear</HUDButton>
+        <HUDButton onClick={() => setImportOpen(true)}>{t("hud.import")}</HUDButton>
+        <HUDButton onClick={() => setExportOpen(true)}>{t("hud.export")}</HUDButton>
+        <HUDButton onClick={clearHandler}>{t("hud.clear")}</HUDButton>
 
         <HUDButton className="mt-5" onClick={openDiscordInvite}>
-          Discord
+          {t("hud.discord")}
         </HUDButton>
       </div>
 

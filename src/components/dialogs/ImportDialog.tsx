@@ -1,6 +1,7 @@
 import { FormEvent, Fragment, useState } from "react";
 import { toast } from "react-toastify";
 import { Dialog, Transition } from "@headlessui/react";
+import { useTranslation } from "next-i18next";
 
 import { classNames } from "@/utils/utils";
 
@@ -14,6 +15,7 @@ const CODE_ARG = "code=";
 
 const ImportDialog = ({ open, onClose, onImport }: PropsType) => {
   const [url, setUrl] = useState("");
+  const { t } = useTranslation("common");
 
   const importHandler = (e: FormEvent) => {
     e.preventDefault();
@@ -29,7 +31,7 @@ const ImportDialog = ({ open, onClose, onImport }: PropsType) => {
       setUrl("");
       onClose();
     } else {
-      toast.error("Invalid url!");
+      toast.error(t("toasts.invalidUrl"));
     }
   };
 
@@ -64,7 +66,7 @@ const ImportDialog = ({ open, onClose, onImport }: PropsType) => {
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
-                  Import skills
+                  {t("dialogs.import.title")}
                 </Dialog.Title>
                 <form className="mt-5" onSubmit={importHandler}>
                   <input
@@ -83,7 +85,7 @@ const ImportDialog = ({ open, onClose, onImport }: PropsType) => {
                         "focus-visible:ring-purple-500 focus-visible:ring-offset-2"
                       )}
                     >
-                      Import
+                      {t("dialogs.import.import")}
                     </button>
                   </div>
                 </form>

@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Enshrouded - Planificateur de compétences",
+    "description": "Un planificateur d'arbre de compétences pour le jeu Enshrouded."
+  },
+  "hud": {
+    "import": "Importer",
+    "export": "Exporter",
+    "clear": "Réinitialiser",
+    "discord": "Discord",
+    "about": "À propos",
+    "stats": "Stats",
+    "search": {
+      "placeholder": "Rechercher"
+    }
+  },
+  "dialogs": {
+    "about": {
+      "title": "À propos",
+      "description1": "Cet outil a été créé uniquement pour aider les joueurs d'Enshrouded à partager leurs arbres de compétences et builds facilement. Je ne suis pas affilié à Keen Games et ne détiens aucun droit sur le jeu Enshrouded.",
+      "description2": "Cet outil est open source et disponible pour quiconque souhaite contribuer. Si vous souhaitez contribuer, vous pouvez visiter le <link>dépôt GitHub</link> ou rejoindre notre serveur Discord.",
+      "description3": "Un merci spécial à <link>@Glitchiz</link> pour m'avoir fourni certains des assets utilisés dans cet outil.",
+      "close": "Fermer"
+    },
+    "export": {
+      "title": "Exporter les compétences",
+      "defaultUrl": "URL par défaut",
+      "shortUrl": "URL courte",
+      "generateShortUrl": "Générer une URL courte",
+      "close": "Fermer"
+    },
+    "import": {
+      "title": "Importer des compétences",
+      "import": "Importer"
+    },
+    "stats": {
+      "title": "Résumé des statistiques",
+      "basic": "Base",
+      "close": "Fermer"
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "URL de partage copiée avec succès",
+    "noSkillsAllocated": "Aucune compétence allouée !",
+    "invalidUrl": "URL invalide !",
+    "invalidCode": "Code invalide"
+  },
+  "treeLabels": {
+    "trickster": "Trickster",
+    "wizard": "Wizard",
+    "healer": "Healer",
+    "battlemage": "Battlemage",
+    "tank": "Tank",
+    "warrior": "Warrior",
+    "barbarian": "Barbarian",
+    "athlete": "Athlete",
+    "survivor": "Survivor",
+    "beastmaster": "Beastmaster",
+    "ranger": "Ranger",
+    "assassin": "Assassin"
+  },
+  "stats": {
+    "constitution": "Constitution",
+    "strength": "Force",
+    "endurance": "Endurance",
+    "dexterity": "Dextérité",
+    "spirit": "Esprit",
+    "intelligence": "Intelligence"
+  },
+  "accessibility": {
+    "skillPointIcon": "Icône de point de compétence",
+    "backgroundAlt": "Fond de fumée violette"
+  }
+}

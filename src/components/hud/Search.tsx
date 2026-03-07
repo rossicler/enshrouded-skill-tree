@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 
 import { classNames } from "@/utils/utils";
 import { useAppDispatch } from "@/redux/hooks";
@@ -9,25 +10,32 @@ import { setSearchSkillResults } from "@/redux/skills/skills.slice";
 
 const Search = () => {
   const [searchText, setSearchText] = useState("");
+  const { t } = useTranslation(["common", "nodes"]);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (searchText) {
       const lSearchText = searchText.toLowerCase();
       const results = Object.entries(SkillNodes.types)
-        .filter(
-          ([_, skill]) =>
-            skill.name.toLowerCase().includes(lSearchText) ||
-            skill.description.some((desc) =>
+        .filter(([key]) => {
+          const name = t(`${key}.name`, { ns: "nodes" });
+          const description = t(`${key}.description`, {
+            ns: "nodes",
+            returnObjects: true,
+          }) as string[];
+          return (
+            name.toLowerCase().includes(lSearchText) ||
+            description.some((desc) =>
               desc.toLowerCase().includes(lSearchText)
             )
-        )
+          );
+        })
         .map(([key]) => key);
       dispatch(setSearchSkillResults(results));
     } else {
       dispatch(setSearchSkillResults([]));
     }
-  }, [searchText]);
+  }, [searchText, t]);
 
   return (
     <div
@@ -44,7 +52,7 @@ const Search = () => {
             "py-1.5 px-3 text-white leading-tight focus:outline-none",
             "focus:shadow-outline bg-gray-900"
           )}
-          placeholder="Search"
+          placeholder={t("hud.search.placeholder", { ns: "common" })}
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />

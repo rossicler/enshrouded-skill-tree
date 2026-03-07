@@ -1,5 +1,7 @@
 import { GetServerSideProps } from "next";
 import Image from "next/image";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 import { classNames } from "@/utils/utils";
 import CustomHeader from "@/components/CustomHeader";
@@ -23,6 +25,7 @@ type PropsType = {
 
 export default function Home({ code, clusterStillProvisioning }: PropsType) {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     if (code) {
@@ -43,7 +46,7 @@ export default function Home({ code, clusterStillProvisioning }: PropsType) {
       >
         <Image
           src="/assets/Enshrouded_Skill_Tree_BG.png"
-          alt="Purple smoke background"
+          alt={t("accessibility.backgroundAlt")}
           fill
           className="object-cover object-center"
         />
@@ -57,6 +60,8 @@ export default function Home({ code, clusterStillProvisioning }: PropsType) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const locale = context.locale ?? "en";
+
   try {
     await clientPromise;
   } catch (e: any) {
@@ -64,6 +69,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       // cluster is still provisioning
       return {
         props: {
+          ...(await serverSideTranslations(locale, ["common", "nodes"])),
           clusterStillProvisioning: true,
         },
       };
@@ -77,11 +83,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const code = shortCode ? await getCode(shortCode) : fullCode;
     return {
       props: {
+        ...(await serverSideTranslations(locale, ["common", "nodes"])),
         code,
       },
     };
   }
   return {
-    props: {},
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "nodes"])),
+    },
   };
 };

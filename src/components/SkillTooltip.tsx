@@ -1,4 +1,5 @@
 import { Tooltip } from "react-tooltip";
+import { useTranslation } from "next-i18next";
 
 import SkillNodes, { Node } from "../constants/Nodes";
 import Image from "next/image";
@@ -19,6 +20,13 @@ const BG_COLOR: { [key: string]: string } = {
 
 const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
+  const { t } = useTranslation(["nodes", "common"]);
+  const name = t(`${node.type}.name`, { ns: "nodes" });
+  const description = t(`${node.type}.description`, {
+    ns: "nodes",
+    returnObjects: true,
+  }) as string[];
+
   return (
     <Tooltip
       id={`skill-tooltip-${node.id}`}
@@ -30,11 +38,11 @@ const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {
       afterHide={onHide}
     >
       <span className="uppercase text-xl text-white font-bold">
-        {metadata ? metadata.name : node.type}
+        {name}
       </span>
       {metadata && (
         <div className="flex flex-col gap-2 mt-2">
-          {metadata.description.map((html, i) => (
+          {description.map((html, i) => (
             <div
               key={`${node.id}-p${i}`}
               dangerouslySetInnerHTML={{ __html: html }}
@@ -43,7 +51,7 @@ const SkillTooltip = ({ node, onShow, onHide }: PropsType) => {
           <div className="w-full flex justify-end items-center gap-2 mt-2">
             <Image
               src="/assets/skill_point.png"
-              alt="Skill Point Icon"
+              alt={t("accessibility.skillPointIcon", { ns: "common" })}
               width={25}
               height={25}
             />

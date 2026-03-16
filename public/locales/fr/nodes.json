@@ -1,1014 +1,1040 @@
 {
   "GIANT_SLAYER_HOOK": {
-    "name": "GIANT SLAYER HOOK",
+    "name": "CROCHET DE TUEUR GÉANT",
     "description": [
-      "Use your Grappling Hook to pull yourself towards large enemies during combat."
+      "Utilisez votre <b>crochet de grappin</b> pour vous hisser vers les ennemis les plus imposants pendant le combat.",
+      "<b>Coût</b> : 50 points d'endurance."
     ]
   },
   "GROUNDING_HOOK": {
-    "name": "PENIS POIL",
+    "name": "GRAPPIN DE MISE À LA TERRE",
     "description": [
-      "Use your Grappling Hook to pull flying enemies towards you during combat."
+      "Utilisez votre <b>crochet de grappin</b> pour attirer les ennemis <b>volants</b> vers vous pendant le combat.",
+      "<b>Coût</b> : 50 points d'endurance."
     ]
   },
   "SAVIOUR": {
-    "name": "SAVIOUR",
+    "name": "SAUVEUR",
     "description": [
-      "You only need 3 instead of 6 seconds to <b>revive an ally</b>."
+      "Le temps nécessaire à la résurrection d'un allié est réduit de <b>6</b> à <b>3</b> secondes."
     ]
   },
   "BACKSTAB_DAMAGE": {
-    "name": "BACKSTAB DAMAGE",
+    "name": "DÉGÂTS DANS LE DOS",
     "description": [
-      "Increase the damage you deal from behind by 25%."
+      "Augmentation de <b>25%</b> de tous les dégats infligés par l'<b>attaque surnoise</b>."
     ]
   },
   "OPPORTUNITY": {
-    "name": "OPPORTUNITY",
+    "name": "OPPORTUNITÉ",
     "description": [
-      "Increases the Multiplier of the Merciless Attack and the Sneak Attack by 100%."
+      "Augmente le multiplicateur de dégâts des <b>Attaques impitoyables</b> et des <b>Attaques furtives</b> de <b>+100%</b>."
     ]
   },
   "MINER": {
-    "name": "MINER",
+    "name": "MINEUR",
     "description": [
-      "When you mine resources, you have a 10% chance to get one additional resource."
+      "L'extraction des ressources donne <b>10%</b> de chance d'obtenir une ressource de plus."
     ]
   },
   "LUMBERJACK": {
-    "name": "LUMBERJACK",
+    "name": "BÛCHERON",
     "description": [
-      "Felling axes do 30% more damage against wooden objects including trees."
+      "Les haches d'abattage infligent <b>30%</b> de dégâts augmentés contre le bois, y compris les arbres."
     ]
   },
   "QUALITY_GEAR": {
-    "name": "QUALITY GEAR",
+    "name": "ÉQUIPEMENT DE QUALITÉ",
     "description": [
-      "All tools lose durability 50% slower."
+      "Tous les outils perdent leur durabilité <b>50%</b> plus lentement."
     ]
   },
   "MASON": {
-    "name": "MASON",
+    "name": "MAÇON",
     "description": [
-      "The Pickaxe deals 30% more damage against stone objects, including resource veins."
+      "Les pioches infligent <b>30%</b> de dégâts augmentés contre les pierres, y compris les veines de ressources."
     ]
   },
   "FISHERMANS_RESOLVE": {
-    "name": "FISHERMAN'S RESOLVE",
+    "name": "RÉSOLUTION DU PÊCHEUR",
     "description": [
-      "Increases your Fishing Endurance by <b>30%</b>.",
-      "Allows for extended battles with hooked fish."
+      "Augmente votre endurance de pêche de <b>30%</b>.",
+      "Permet des combats prolongés avec les poissons ferrés."
     ]
   },
   "POWER_PARRY": {
-    "name": "POWER PARRY",
+    "name": "PARADE DE PUISSANCE",
     "description": [
-      "Increases the enemy's stun bar gain on parry attacks."
+      "Le remplissage des <i>barres d'étourdissement</i> ennemies avec des <b>parades</b> est augmenté de <b>30%</b>."
     ]
   },
   "ATTR_SPIRIT": {
-    "name": "SPIRIT",
+    "name": "ESPRIT",
     "description": [
-      "Increases your Spirit attribute by 1",
-      "Increases Mana by 20 per Attribute Point"
+      "Augmente votre attribut Esprit de 1.",
+      "Augmente le mana de 20 par point d'attribut."
     ]
   },
   "ATTR_INT": {
     "name": "INTELLIGENCE",
     "description": [
-      "Increases your Intelligence attribute by 1",
-      "Increases Magic damage by 5% per Attribute Point"
+      "Augmente votre Intelligence par 1.",
+      "Augmentez les dégâts magiques de 5% par point d'attribut."
     ]
   },
   "ATTR_CONS": {
     "name": "CONSTITUTION",
     "description": [
-      "Increases your Constitution attribute by 1",
-      "Increases Health by 50 per Attribute Point"
+      "Augmente ton attribut Constitution de 1.",
+      "Augmente la santé de 50 par point d'attribut."
     ]
   },
   "ATTR_STR": {
-    "name": "STRENGTH",
+    "name": "FORCE",
     "description": [
-      "Increases your Strength attribute by 1",
-      "Increases Melee damage by 5% per Attribute Point"
+      "Augmente votre Force de 1.",
+      "Augmente les dégâts de mêlée de 5% par point d'attribut."
     ]
   },
   "ATTR_ENDURANCE": {
-    "name": "ENDURANCE",
+    "name": "RÉSISTANCE",
     "description": [
-      "Increases your Endurance attribute by 1",
-      "Increases Stamina by 10 per Attribute Point"
+      "Augmente votre attribut Résistance de 1.",
+      "Augmente l'endurance de 10 par point d'attribut."
     ]
   },
   "ATTR_DEX": {
-    "name": "DEXTERITY",
+    "name": "DEXTÉRITÉ",
     "description": [
-      "Increases your Dexterity attribute by 1",
-      "Increases Bow and Dagger damage by 5% per Attribute Point"
+      "Augmente votre Dextérité par 1.",
+      "Augmente les dégâts de l'arc et de la dague de 5% par point d'attribut."
     ]
   },
   "WELL_RESTED": {
-    "name": "WELL RESTED",
+    "name": "BIEN REPOSÉ",
     "description": [
-      "The base duration for the Rested buff is increased by 5 Minutes.",
-      "Increase the Comfort in your home to further increase the duration."
+      "La durée de base du buff Reposé est augmentée de <b>5</b> minutes.",
+      "Un confort plus élevé dans votre maison augmente encore la durée."
     ]
   },
   "SNEAK_ATTACK": {
-    "name": "SNEAK ATTACK",
+    "name": "ATTAQUE FURTIVE",
     "description": [
-      "The <b>Sneak Attack</b> deals massive 10x damage to unaware enemies."
+      "Effectuez une <b>Attaque furtive</b> en vous approchant furtivement d'un ennemi qui ne se doute de rien en appuyant sur <b>[E]</b>.",
+      "<b>Attaque furtive</b> inflige <b>+900%</b> de dégâts augmentés."
     ]
   },
   "MERCILESS_ATTACK": {
-    "name": "MERCILESS ATTACK",
-    "description": []
+    "name": "ATTAQUE IMPITOYABLE",
+    "description": [
+      "Effectuez une <b>Attaque impitoyable</b> en appuyant sur <b>[E]</b> pour infliger <b>+500%</b> de dégâts sur un ennemi <b>surpassé</b>."
+    ]
   },
   "UPDRAFT": {
-    "name": "UPDRAFT",
+    "name": "COURANT ASCENDANT",
     "description": [
-      "Pressing the jump button while gliding will give you a small height boost. This skill can be used once per flight. Cost: 120 mana"
+      "Sauter tout en planant vous fait monter, vous octroyant un boost de hauteur. Cette compétence peut être utilisée une fois par vol.",
+      "<b>Coût</b> : 100 mana"
     ]
   },
   "BEGONE": {
-    "name": "BEGONE",
+    "name": "VA-T'EN !",
     "description": [
-      "A magic-powered punch that pushes and stuns hit foes.",
-      "Replaces your unarmed attacks as long as you have the necessary mana available: <b>30 Mana</b>"
+      "Un coup de poing magique qui repousse et étourdit les ennemis touchés.",
+      "Remplace vos attaques à mains nues tant que vous disposez du mana nécessaire.",
+      "<b>Coût</b> : 30 Mana"
     ]
   },
   "RADIANT_AURA": {
-    "name": "RADIANT AURA",
+    "name": "AURA RADIEUSE",
     "description": [
-      "All Fell foes within 10 meters take 1 fire damage per intelligence per second."
+      "Tous les ennemis <b>Déchu</b> dans un rayon de <b>5</b> mètres subissent <b>1 dégât de feu</b> par intelligence par seconde."
     ]
   },
   "WATER_AURA": {
-    "name": "WATER AURA",
+    "name": "AURA DE L'EAU",
     "description": [
-      "You emit a healing aura. It heals all injured allies within 15 meters. The healing scales with your intelligence attribute (1 health for every 2 points of intelligence)."
+      "Vous émettez une aura de guérison qui vous soigne, vous et tous les alliés blessés dans un rayon de <b>15</b> mètres.",
+      "La guérison évolue en fonction de votre attribut Intelligence et restaure <b>1</b> point de santé par <b>2</b> points d'Intelligence."
     ]
   },
   "MARTYR": {
     "name": "MARTYR",
     "description": [
-      "When you are killed by an enemy, all allies within 50 meters will heal 30% of their maximum health."
+      "Lorsque vous êtes tué(e) par un ennemi, tous les alliés situés dans un rayon de <b>30</b> mètres sont soignés <b>50%</b> de leurs points de vie maximum.",
+      "De plus, ils reçoivent un buff <b>Bénédiction finale</b>, qui augmente leur Santé maximum de <b>100</b> pendant <b>15</b> minutes."
     ]
   },
   "DIVINE_SURGE": {
-    "name": "DIVINE SURGE",
+    "name": "DÉFERLEMENT DIVIN",
     "description": [
-      "Healing spells can perform Critical Strikes that scale with your Critical Strike Damage."
+      "Les sorts de guérison peuvent infliger des coups critiques dont la puissance dépend de vos dégâts de coups critiques."
     ]
   },
   "RIGHTEOUS_FIRE": {
-    "name": "RIGHTEOUS FIRE",
+    "name": "FEU VERTUEUX",
     "description": [
-      "Healing any target with a spell triggers a burst of fire that deals <b>50%</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies."
+      "Soigner n'importe quelle cible avec un sort déclenche une explosion de feu qui inflige <b>50%</b> de la quantité de soins sous forme de dégâts de <b>feu</b> aux ennemis <b>Déchus</b> proches."
     ]
   },
   "BLINK": {
-    "name": "BLINK",
+    "name": "FLASH",
     "description": [
-      "Replaces the Dodge Roll ability with a short range teleport."
+      "Remplace la capacité Esquive en roulate par une téléportation de courte portée."
     ]
   },
   "EVASION_ATTACK": {
-    "name": "EVASION ATTACK",
-    "description": []
+    "name": "ATTAQUE D'ÉVASION",
+    "description": [
+      "Lorsque vous êtes équipé(e) d'une arme de mêlée, vous pouvez effectuer une attaque d'évasion qui fonce sur l'ennemi et lui inflige plus de dégâts d'arme avec <b>[BSG]</b>.",
+      "<b>Coût</b> : 20 points d'endurance"
+    ]
   },
   "EARTH_AURA": {
-    "name": "EARTH AURA",
+    "name": "AURA DE LA TERRE",
     "description": [
-      "Shields allies and yourself, reducing incoming damage by 10%"
+      "Vous émettez une aura protectrice qui réduit tous les dégâts subis de <b>10%</b> pour vos alliés et vous dans un rayon de <b>10</b> mètres."
     ]
   },
   "NEMESIS": {
-    "name": "NEMESIS",
+    "name": "NÉMÉSIS",
     "description": [
-      "Whenever an ally draws the attention of an enemy, you draw it in equal measures."
+      "Lorsqu'un allié attire l'attention d'un ennemi, vous attirez son attention d'autant."
     ]
   },
   "SHOCKWAVE": {
-    "name": "SHOCKWAVE",
+    "name": "ONDE DE CHOC",
     "description": [
-      "Trigger a shockwave when you parry an attack or overpower an enemy.",
-      "The shockwave pushes back nearby enemies. It also increases their stun bar, scaling with your strength attribute.",
-      "<b>Overpower</b><br/>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks."
+      "Déclenche une onde de choc lorsque vous parez une attaque ou que vous <b>dominez</b> un ennemi.",
+      "L'onde de choc repousse les ennemis proches. Elle remplit également leur <i>barre d'étourdissement</i>, en fonction de votre attribut de force.",
+      "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>. Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
     ]
   },
   "HEAVY_SPECIALIZATION": {
-    "name": "HEAVY SPECIALIZATION",
+    "name": "SPÉCIALISATION LOURDE",
     "description": [
-      "Allows you to attack faster with Two-Handed weapons."
+      "Permet d'attaquer plus rapidement avec des armes à deux mains."
     ]
   },
   "BASH": {
-    "name": "BASH",
+    "name": "LE CAMBRIOLAGE",
     "description": [
-      "Your parry bashes the enemy for 20 blunt damage. The damage is increased by your strength attribute."
+      "Votre parade inflige à l'ennemi <b>20 points de dégâts contondants</b>. Les dégâts causés par un <b>coup violent</b> sont augmentés par votre attribut de force."
     ]
   },
   "WHIRLWIND_CRESCENDO": {
-    "name": "WHIRLWIND CRESCENDO",
+    "name": "TOURBILLON CRESCENDO",
     "description": [
-      "When equipped with a Two-Handed weapon, trigger a whirl attack at the end of an attack chain.",
-      "<b>Cost</b>: 75 Stamina"
+      "Quand vous êtes équipé(e) d'une arme à deux mains, déclenche une attaque tourbillonnante à la fin d'une chaîne d'attaques.",
+      "<b>Coût</b> : 75 points d'endurance"
     ]
   },
   "CRASH_DOWN_ATTACK": {
-    "name": "CRASH DOWN ATTACK",
+    "name": "ATTAQUE FRACASSANTE",
     "description": [
-      "When equipped with a Melee weapon, you can perform a jump attack during the descent of your jump.",
-      "Crash Down deals 50% more weapon damage in a small blast radius and costs Stamina according to the weapon's weight.",
-      "<b>Cost</b>: 35-60 Stamina",
-      "<b>Block Breaker</b><br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit."
+      "Lorsque vous êtes équipé(e) d'une arme de mêlée, vous pouvez effectuer une attaque sautée en phase descendante de votre saut.",
+      "Fracas inflige 50% de dégâts d'arme supplémentaires dans un petit rayon et coûte de l'endurance en fonction du poids de l'arme.",
+      "<b>Coût</b> : 35-60 points d'endurance",
+      "<b>Briseur de bloc</b><br/>Cette attaque spéciale multiplie par deux la <i>barre d'étourdissement</i> de l'ennemi lorsqu'il est touché."
     ]
   },
   "DOUBLE_JUMP": {
-    "name": "DOUBLE JUMP",
+    "name": "DOUBLE SAUT",
     "description": [
-      "Allows jumping a second time while airborne."
+      "Permet de sauter une deuxième fois quand vous êtes en l'air.",
+      "<b>Coût</b> : 10 points d'endurance."
     ]
   },
   "DESSERT_STOMACH": {
-    "name": "DESSERT STOMACH",
+    "name": "ESTOMAC SECONDAIRE",
     "description": [
-      "You gain one additional food slot"
+      "Vous gagnez un emplacement nourriture supplémentaire."
     ]
   },
   "LAST_MEAL": {
-    "name": "LAST MEAL",
+    "name": "DERNIER REPAS",
     "description": [
-      "Your Food buffs persist through death, but they last half as long."
+      "Vos buffs alimentaires persistent après la mort, mais leur durée est réduite de moitié."
     ]
   },
   "EAGLE_EYE": {
-    "name": "EAGLE EYE",
+    "name": "OEIL D'AIGLE",
     "description": [
-      "Greatly increases the zoom while aiming with a bow."
+      "Augmente considérablement le zoom lors de la visée avec des arcs.",
+      "Pour viser, maintenez la touche <b>[BSD]</b> enfoncée lorsqu'un arc est sélectionné dans la barre d'actions. (Sinon, maintenez [Q] pour viser votre arc équipé.)"
     ]
   },
   "MULTI_SHOT": {
-    "name": "MULTI SHOT",
+    "name": "MULTI-TIRS",
     "description": [
-      "When using regular arrows there is a 20% chance to spawn a flurry of arrows that spread slightly.",
-      "This will cost additional arrows, but will not trigger on special arrows."
+      "Tirer des <i>flèches ordinaires</i> a <b>20%</b> de chance de générer une <b>rafale de flèches</b> qui se disperse légèrement.",
+      "Les <i>flèches ordinaires</i> tirées de cette manière seront déduites de vos munitions.",
+      "<b>La rafale de flèches</b> ne se déclenche pas avec les <i>flèches spéciales</i>."
     ]
   },
   "MULTI_SHOT_SPREAD": {
-    "name": "MULTI SHOT SPREAD",
+    "name": "RÉPARTITION MULTI-TIRS",
     "description": [
-      "Adds a 25% chance to spawn an additional projectile to your \"flurry of arrows\" from the \"Multi Shot\" skill.",
-      "This additional projectile does not subtract from your stack of ammunition."
+      "Ajoute 25% de chance de générer une <i>flèche ordinaire</i> supplémentaire avec votre <b>rafale de flèches</b> de la compétence <b>Multi-tirs</b>.",
+      "Cette <i>flèche ordinaire</i> supplémentaire n'est pas déduite de vos munitions."
     ]
   },
   "MULTI_SHOT_TRIGGER": {
-    "name": "MULTI SHOT TRIGGER",
+    "name": "DÉCLENCHEUR MULTI-TIRS",
     "description": [
-      "ALL arrows, including special arrows, can trigger \"Multi Shot\".",
-      "The special Multi Shot projectiles will subtract from your stack of ammunition."
+      "Tirer des <i>flèches spéciales</i> déclenche maintenant une <b>rafale de flèches</b> à partir de la compétence <b>Multi-tirs</b>",
+      "Les <i>flèches spéciales</i> tirées de cette manière seront déduites de vos munitions."
     ]
   },
   "BEE_STING": {
-    "name": "BEE STING",
+    "name": "PIQÛRE D'ABEILLE",
     "description": [
-      "When you draw your bow while in the air, your fall is slowed down for a short time. Every shot gives you a small push to get more air time.",
-      "Cost: 10 stamina per second"
+      "Tirer ou viser avec votre arc pendant que vous êtes en l'air ralentit birèvement votre chute. Chaque tir vous soulève légèrement, vous accordant plus de temps dans les airs.",
+      "<b>Coût</b> : 10 points d'endurance par seconde"
     ]
   },
   "SHELL_SHOCK": {
-    "name": "SHELL SHOCK",
+    "name": "SOUS LE CHOC",
     "description": [
-      "Infuse your <i>ranged explosives</i> with mana. They now stun enemies for up to 1 second.",
-      "Mana Cost: 5 per stunned enemy"
+      "Infusez du mana dans vos <b>Explosifs de longue portée</b>. Ils étourdissent désormais les ennemis pendant <b>1</b> seconde.",
+      "<b>Coût</b> : 5 Mana par ennemi étourdi"
     ]
   },
   "COUNTERSTRIKE": {
-    "name": "COUNTERSTRIKE",
+    "name": "CONTRE-ATTAQUE",
     "description": [
-      "After receiving damage there is a 20% chance to <b>reflect</b> 50% of the damage back to the attacker as fire damage.",
-      "This magical attack can trigger other skills."
+      "Après avoir reçu du dégât, il y a 20% de chances que <b>reflète</b> 50% des dégâts à l'attaquant sous forme de dégâts de feu.",
+      "Cette attaque magique peut déclencher d'autres compétences."
     ]
   },
   "TERROR": {
-    "name": "TERROR",
+    "name": "TERREUR",
     "description": [
-      "On a critical hit with a spell, the target will be stunned for 4 seconds."
+      "Les coups critiques avec des sorts étourdissent la cible pendant <b>4</b> secondes."
     ]
   },
   "SHOCK_RESISTANCE": {
-    "name": "SHOCK RESISTANCE",
+    "name": "RÉSISTANCE AUX CHOCS",
     "description": [
-      "Increases your <b>Shock Resistance</b> by <b>5%</b> which reduces the amount of <b>Shock</b> damage received."
+      "Augmente votre <b>résistance au choc</b> de <b>5%</b>, ce qui réduit la quantité des dégâts de <b>choc</b> subis."
     ]
   },
   "QUICK_CHARGE": {
-    "name": "QUICK CHARGE",
+    "name": "CHARGE RAPIDE",
     "description": [
-      "Reduces the time Staffs require to charge-up a spell by 50%."
+      "Réduit de <b>50%</b> le temps nécessaire aux douelles (bâtons) pour charger un sort."
     ]
   },
   "THIS_IS_THE_WAY": {
-    "name": "THIS IS THE WAY",
+    "name": "APPRENTISSAGE DE MAGE",
     "description": [
-      "When attacking with a magical weapon all damage is increased by 10%."
+      "Tous les dégâts d'armes magiques sont augmentés de <b>10%</b>."
     ]
   },
   "ARSONIST": {
-    "name": "ARSONIST",
+    "name": "PYROMANE",
     "description": [
-      "All fire damage is increased by an additional 10%."
+      "Tous les dégâts de <b>feu</b> sont augmentés de <b>10%</b>."
     ]
   },
   "PYROMANIAC": {
-    "name": "PYROMANIAC",
+    "name": "PYROMANE",
     "description": [
-      "All fire damage is increased by an additional 20%."
+      "Tous les dégâts de <b>feu</b> sont augmentés de <b>20%</b>."
     ]
   },
   "SUN_AURA": {
-    "name": "SUN AURA",
+    "name": "AURA DU SOLEIL",
     "description": [
-      "All Fell foes within 10 meters take 1 additional fire damage per intelligence per second."
+      "Améliore l'<b>aura radieuse</b> pour infliger <b>2 dégats de feu</b> par intelligence."
     ]
   },
   "FIRE_RESISTANCE": {
-    "name": "FIRE RESISTANCE",
+    "name": "RÉSISTANCE AU FEU",
     "description": [
-      "Increases your <b>Fire Resistance</b> by <b>5%</b> which reduces the amount of <b>Fire</b> damage received."
+      "Augmente votre <b>résistance au feu</b> de <b>5%</b> ce qui réduit la quantité de dégâts de <b>feu</b> subis."
     ]
   },
   "THUNDER": {
-    "name": "THUNDER",
+    "name": "TONNERRE",
     "description": [
-      "All shock damage is increased by an additional 10%."
+      "Tous les dégâts de <b>choc</b> sont augmentés de <b>10%</b>."
     ]
   },
   "LIGHTNING": {
-    "name": "LIGHTNING",
+    "name": "FOUDRE",
     "description": [
-      "All shock damage is increased by an additional 20%."
+      "Tous les dégâts de <b>choc</b> sont augmentés de <b>20%</b>."
     ]
   },
   "ICEMAN": {
-    "name": "ICEMAN",
+    "name": "HOMME DE GLACE",
     "description": [
-      "All ice damage is increased by an additional 10%."
+      "Tous les dégâts de <b>glace</b> sont augmentés de <b>10%</b>."
     ]
   },
   "SUBZERO": {
-    "name": "SUBZERO",
+    "name": "NÉGATIF",
     "description": [
-      "All ice damage is increased by an additional 20%."
+      "Tous les dégâts de <b>glace</b> sont augmentés de <b>20%</b>."
     ]
   },
   "FROST": {
-    "name": "FROST",
+    "name": "GEL",
     "description": [
-      "When receiving melee damage, the attacker will be slowed down for 3 seconds."
+      "Lorsque vous subissez des dégâts de mêlée, votre attaquant est ralenti pendant <b>5</b> secondes."
     ]
   },
   "ICE_RESISTANCE": {
-    "name": "ICE RESISTANCE",
+    "name": "RÉSISTANCE À LA GLACE",
     "description": [
-      "Increases your <b>Ice Resistance</b> by <b>5%</b> which reduces the amount of <b>Ice</b> damage received."
+      "Augmente votre <b>résistance à la glace</b> de <b>5%</b>, ce qui réduit la quantité des dégâts de <b>glace</b> subis."
     ]
   },
   "WIZARD": {
-    "name": "WIZARD",
+    "name": "MAGICIEN",
     "description": [
-      "When attacking with a magical weapon your critical hit chance is increased by 10%"
+      "Les chances de coup critique avec des armes magiques sont augmentés de <b>10%</b>."
     ]
   },
   "DARK_ARTS": {
-    "name": "DARK ARTS",
+    "name": "ARTS OBSCURS",
     "description": [
-      "All Shrouded damage is increased by an additional 10%."
+      "Tous les dégâts de Brume sont augmentés de <b>10%</b>."
     ]
   },
   "ABYSS": {
-    "name": "ABYSS",
+    "name": "ABYSSE",
     "description": [
-      "All Shrouded damage is increased by an additional 20%."
+      "Tous les dégâts de Brume sont augmentés de <b>20%</b>."
     ]
   },
   "CHAIN_HIT": {
-    "name": "CHAIN HIT",
+    "name": "COUPS ENCHAÎNÉS",
     "description": [
-      "On a critical hit with a magical weapon, the attack will automatically hit a second enemy within 15 meters for 5 Shock damage per intelligence."
+      "En cas de coup critique avec des armes magiques, l'attaque touche automatiquement un second ennemi dans un rayon de <b>15</b> mètres infligeant <b>5 dégâts de choc</b> par intelligence."
     ]
   },
   "MASS_DESTRUCTION": {
-    "name": "MASS DESTRUCTION",
+    "name": "DESTRUCTION DE MASSE",
     "description": [
-      "A critical attack with a magic weapon will hit all enemies within 20 meters of the target for 2 Shock damage per intelligence."
+      "Une attaque critique avec une arme magique touche tous les ennemis situés dans un rayon de <b>20</b> mètres de la cible et leur inflige <b>2 dégâts de choc</b> par intelligence."
     ]
   },
   "NECROMANCER": {
-    "name": "NECROMANCER",
+    "name": "NÉCROMANCIEN",
     "description": [
-      "When killing an enemy with a magic weapon, you have a 10% chance to summon a friendly skull companion."
+      "Lorsque vous tuez un ennemi avec une arme magique, vous avez <b>10%</b> de chance d'invoquer un <b>compagnon crâne</b> ami."
     ]
   },
   "HEALER": {
-    "name": "HEALER",
+    "name": "GUÉRISSEUR",
     "description": [
-      "Health gain from healing spells will be increased by 10%."
+      "Les points de vie rendus lors des sorts de guérison augmentent de <b>10%</b>."
     ]
   },
   "HEALER_II": {
-    "name": "HEALER II",
+    "name": "GUÉRISSEUR II",
     "description": [
-      "Health gain from healing spells will be increased by 20%"
+      "Les points de vie rendus lors des sorts de guérison augmentent de <b>20%</b>."
     ]
   },
   "HEALING_REVIVE": {
-    "name": "HEALING REVIVE",
+    "name": "RÉSURRECTION",
     "description": [
-      "Revived players will heal 25% of their health instead of 10%."
+      "Les joueurs réssuscitent avec <b>25%</b> de leurs points de vie au lieu de <b>10%</b>."
     ]
   },
   "SHROUD_FILTER": {
-    "name": "SHROUD FILTER",
+    "name": "FILTRE DE BRUME",
     "description": [
-      "Dealing magic weapon damage has a 15% chance to trigger a small flame burst that restores 30 seconds of <i>Shroud Time</i> to you and your allies within 20 meters.",
-      "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you."
+      "Infliger des dégâts avec une arme magique a <b>15%</b> de chance de déclencher une petite explosion de feu qui restaure <b>30</b> secondes du <b>Temps dans la Brume</b> sur vous et vos alliés dans un rayon de <b>20</b> mètres.",
+      "<b>Temps dans la Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
     ]
   },
   "WATERS_OF_LIFE": {
-    "name": "WATERS OF LIFE",
+    "name": "EAUX DE LA VIE",
     "description": [
-      "Increases <b>Water Aura</b> healing to 2 Health per 2 points of Intelligence."
+      "Augmente les soins prodigués par l'<b>Aura de l'eau</b> à <b>2</b> points de santé par <b>2</b> points d'Intelligence."
     ]
   },
   "SHROUD_RESISTANCE": {
-    "name": "SHROUD RESISTANCE",
+    "name": "RÉSISTANCE AU BRUME",
     "description": [
-      "Increases <b>Shroud Resistance</b> by <b>5%</b> which reduces the amount of <b>Shroud</b> damage received."
+      "Augmente votre <b>résistance au Shroud</b> de <b>5%</b>, ce qui réduit la quantité de dégâts de <b>Shroud</b> subis."
     ]
   },
   "SHROUD_MISTERY": {
-    "name": "SHROUD MYSTERY",
+    "name": "MISÈRE PARTAGÉE",
     "description": [
-      "When you receive <b>Shroud</b> damage, all players within <b>20</b>-meters receive <b>15%</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds."
+      "Lorsque vous subissez des dégâts de <b>Shroud</b>, tous les joueurs situés dans un rayon de <b>20</b> mètres reçoivent une augmentation de <b>15%</b> de leur <b>résistance au Shroud</b> pendant <b>30</b> secondes."
     ]
   },
   "EMERGENCY_BLINK": {
-    "name": "EMERGENCY BLINK",
+    "name": "FLASH D'URGENCE",
     "description": [
-      "You can blink while being stunned. This will break the stunned state."
+      "Vous pouvez flasher tout en étant étourdi. Cela interrompt l'étourdissement."
     ]
   },
   "BLINK_ATTACK": {
-    "name": "BLINK ATTACK",
+    "name": "ATTAQUE FLASH",
     "description": [
-      "Blinking into an enemy triggers an explosion which deals fire damage in a small range.",
-      "Damage and mana cost scale with the intelligence attribute."
+      "Flashez un ennemi déclenche une explosion qui inflige des dégâts de <b>feu</b> dans un petit rayon.",
+      "Les dégâts et le coût du mana augmentent en fonction de l'attribut Intelligence."
     ]
   },
   "ARCANE_DEFLECTION": {
-    "name": "ARCANE DEFLECTION",
+    "name": "DÉVIATION DES ARCANES",
     "description": [
-      "On a successful parry, gain 20 mana."
+      "Réussir à parer l'attaque d'un ennemi restaure <b>20</b> points de mana."
     ]
   },
   "UNITY": {
-    "name": "UNITY",
+    "name": "UNITÉ",
     "description": [
-      "Damaging enemies with wands has a 24% chance to recover 4% mana."
+      "Infliger des dégâts aux ennemis avec des baguettes donne <b>24%</b> de chance de récupérer <b>4%</b> de mana."
     ]
   },
   "WAND_MASTER": {
-    "name": "WAND MASTER",
+    "name": "MAÎTRE DE LA BAGUETTE",
     "description": [
-      "Attacking with a wand has a 30% chance to spawn an additional wand projectile that deals 50% damage."
+      "Les attaques de baguette ont <b>30%</b> de chance de générer deux fois plus de projectiles. Les projectiles supplémentaires générés infligent <b>50%</b> de dégâts en moins."
     ]
   },
   "ETERNAL_SPARK": {
-    "name": "ETERNAL SPARK",
+    "name": "ÉTINCELLE ÉTERNELLE",
     "description": [
-      "Wand projectiles have a 25% chance not to consume durability."
+      "Les projectiles de la baguette ont <b>25%</b> de chance de ne pas consommer de durabilité."
     ]
   },
   "STING": {
-    "name": "STING",
+    "name": "PIQÛRE",
     "description": [
-      "Repeated wand damage is increased by 20%."
+      "Augmentation de <b>20%</b> des dégâts répétés par la baguette."
     ]
   },
   "BATTLE_HEAL": {
-    "name": "BATTLE HEAL",
+    "name": "SOINS DE COMBAT",
     "description": [
-      "When dealing critical damage with a melee weapon, you will heal 5% of your maximum health."
+      "Les coups critiques avec des armes de mêlée vous soignent à la hauteur de 5% de votre santé maximale."
     ]
   },
   "BLOODLETTING": {
-    "name": "BLOODLETTING",
+    "name": "SAIGNÉE",
     "description": [
-      "When scoring a critical hit with a magical weapon, there is a 50% chance to spawn 2 health, mana, and/or stamina Orbs.",
-      "Gathering the Orb replenishes 10% of the respective resource."
+      "Les coups critiques ingligés par les sorts ont <b>50%</b> de chance de faire apparaître deux Orbes de santé, de mana et/ou d'endurance.",
+      "Récupérer un Orbe restaure <b>10%</b> de la ressource correspondante."
     ]
   },
   "LIFE_BURST": {
-    "name": "LIFE BURST",
+    "name": "EXPLOSION DE VIE",
     "description": [
-      "When killing an enemy with a magic weapon all players within 15 meters of the target gain health equal to 3 times your Intelligence."
+      "Tuer un ennemi avec une arme magique restaure un gain de vie correspondant à <b>3</b> fois votre Intelligence à tous les joueurs dans un rayon de <b>15</b> mètres de la cible."
     ]
   },
   "BLOOD_MAGIC": {
-    "name": "BLOOD MAGIC",
+    "name": "MAGIE DU SANG",
     "description": [
-      "When your mana drops below 20%, you restore 35% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
-      "<b>Cooldown</b><br />This takes 2 minutes before it can trigger again."
+      "Lorsque votre mana tombe en dessous de <b>20%</b>, vous restaurez jusqu'à <b>25%</b> de votre mana maxiumm au coût de 1 point de santé par mana.",
+      "Cet effet s'arrête à <b>1</b> point de santé.",
+      "<b>Temps de récupération</b> : 2 minutes"
     ]
   },
   "ABSORB": {
-    "name": "ABSORB",
+    "name": "ABSORBPTION",
     "description": [
-      "When you suffer magical damage, you have a 10% chance to generate 1 mana for each health point lost."
+      "Lorsque vous subissez des dégâts <b>magiques</b>, vous avez <b>10%</b> de chance de générer <b>1</b> point de mana pour chaque point de vie perdu."
     ]
   },
   "SNAP": {
-    "name": "SNAP",
+    "name": "CRAQUAGE",
     "description": [
-      "Restores 10% mana when triggering the Merciless Attack."
+      "Déclencher une <b>Attaque impitoyable</b> restaure <b>10%</b> de mana."
     ]
   },
   "SOUL_LEECH": {
-    "name": "SOUL LEECH",
+    "name": "ABSORBPTION D'ÂME",
     "description": [
-      "When killing an enemy with a melee weapon all players within 15 meters of the target gain 20 mana."
+      "Lorsque vous tuez un ennemi avec une arme de mêlée, tous les joueurs dans un rayon de 15 mètres autour de la cible gagnent 20 de mana."
     ]
   },
   "SHINY_PLATES": {
-    "name": "SHINY PLATES",
+    "name": "PLAQUES BRILLANTES",
     "description": [
-      "Physical armor gains 10% more armor points."
+      "L'armure équipée octroie <b>10%</b> d'armure physique augmentée."
     ]
   },
   "HEAVY_PLATES": {
-    "name": "HEAVY PLATES",
+    "name": "PLAQUES RENFORCÉES",
     "description": [
-      "The maximum amount of physical damage your armor is able to mitigate is increased by 10%"
+      "La quantité maximale de dégâts physiques que votre armure est capable de limiter est augmentée de <b>10%</b>."
     ]
   },
   "WARDEN": {
-    "name": "WARDEN",
+    "name": "GARDIEN",
     "description": [
-      "When there are three or more enemies within 20 meters you suffer 15% less magical damage."
+      "Lorsqu'il y a trois ennemis ou plus dans un rayon de 20 mètres, vous subissez 15% de dégâts magiques en moins."
     ]
   },
   "TOWER": {
-    "name": "TOWER",
+    "name": "TOUR",
     "description": [
-      "When there are three or more enemies within 20 meters you suffer 10% less physical damage."
+      "Lorsqu'il y a au moins trois ennemis dans un rayon de 20 mètres, vous subissez 10% de dégâts physiques en moins."
     ]
   },
   "ARCH_NEMESIS": {
-    "name": "ARCH NEMESIS",
+    "name": "ENNEMI JURÉ",
     "description": [
-      "Whenever an ally draws the attention of an enemy, you draw twice as much."
+      "Lorsqu'un allié attire l'attention d'un ennemi, vous l'attirez deux fois plus."
     ]
   },
   "PURIFICATION": {
     "name": "PURIFICATION",
     "description": [
-      "After defeating a Shroud infested foe with a melee weapon you replenish +5 seconds of Shroud Time.",
-      "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you."
+      "Tuer un ennemi infesté par la Brume à l'aide d'une arme de mêlée restaure <b>5</b> secondes du <b>Temps dans la Brume</b>.",
+      "<b>Temps dans la Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
     ]
   },
   "WARRIOR_PATH": {
-    "name": "THE WARRIOR'S PATH",
+    "name": "LA VOIE DU GUERRIER",
     "description": [
-      "When attacking with a melee weapon all damage is increased by 10%."
+      "Tous les dégâts d'arme de mêlée sont augmentés de <b>10%</b>."
     ]
   },
   "THRUST": {
-    "name": "THRUST",
+    "name": "ESTOCADE",
     "description": [
-      "All melee piercing damage is increased by an additional 10%."
+      "Tous les dégâts <b>perforants</b> de mêlée sont augmentés de <b>10%</b>."
     ]
   },
   "PIERCE": {
-    "name": "PIERCE",
+    "name": "PERFORATION",
     "description": [
-      "All melee piercing damage is increased by an additional 20%."
+      "Tous les dégâts <b>perforants</b> de mêlée sont augmentés de <b>20%</b> additionnels."
     ]
   },
   "BRUTE": {
     "name": "BRUTE",
     "description": [
-      "All melee blunt damage is increased by an additional 10%."
+      "Tous les dégâts <b>contondants</b> de mêlée sont augmentés de <b>10%</b>."
     ]
   },
   "HAMMER_TIME": {
-    "name": "HAMMER TIME",
+    "name": "SI J'AVAIS UN MARTEAU",
     "description": [
-      "All melee blunt damage is increased by an additional 20%."
+      "Tous les dégâts <b>contondants</b> de mêlée sont augmentés de <b>20%</b> additionnels."
     ]
   },
   "SLASHER": {
-    "name": "SLASHER",
+    "name": "COUPE-JARRET",
     "description": [
-      "All melee cutting damage is increased by an additional 10%."
+      "Tous les dégâts <b>tranchants</b> de mêlée sont augmentés de <b>10%</b>."
     ]
   },
   "BUTCHER": {
-    "name": "BUTCHER",
+    "name": "BOUCHER",
     "description": [
-      "All melee cutting damage is increased by an additional 20%."
+      "Tous les dégâts <b>tranchants</b> de mêlée sont augmentés de <b>20%</b> additionnels."
     ]
   },
   "VETERAN": {
-    "name": "VETERAN",
+    "name": "VÉTÉRAN",
     "description": [
-      "When attacking with a melee weapon your critical hit chance is increased by 10%."
+      "Les chances de coup critique des armes de mêlée sont augmentés de <b>10%</b>."
     ]
   },
   "TITAN_EDGE": {
-    "name": "TITAN EDGE",
+    "name": "BORD EN TITANE",
     "description": [
-      "Greatswords damage is increased by <b>10%</b>."
+      "Les dégâts de la grande épée sont augmentés de <b>10%</b>."
     ]
   },
   "SWIFT_BLADES": {
-    "name": "SWIFT BLADES",
+    "name": "LAMES RAPIDES",
     "description": [
-      "Allows you to attack faster with one-handed swords and axes."
+      "Permet d'attaquer plus rapidement avec des haches et des épées à une main."
     ]
   },
   "FEAST": {
-    "name": "FEAST",
+    "name": "FESTIN",
     "description": [
-      "Meat now increases health by an additional 15%."
+      "La viande augmente la santé de <b>15%</b> supplémentaire."
     ]
   },
   "HEAVY_HANDED": {
-    "name": "HEAVY HANDED",
+    "name": "MAIN LOURDE",
     "description": [
-      "An enemy's stun bar is increased by an additional 20% when attacking into their block with a melee weapon."
+      "Le remplissage des <i>barres d'étourdissement</i> ennemies avec des parades est augmenté de <b>20%</b> lors de l'attaque des ennemis qui bloquent avec des armes de mêlée."
     ]
   },
   "STEADFAST": {
-    "name": "STEADFAST",
+    "name": "INÉBRANLABLE",
     "description": [
-      "Defeating an enemy with a melee weapon restores 1 durability to that weapon."
+      "Tuer un ennemi avec une arme de mêlée restaure <b>1</b> durabilité à cette arme."
     ]
   },
   "UPWARDS_SLASH_ATTACK": {
-    "name": "UPWARDS SLASH ATTACK",
+    "name": "ATTAQUE EN COUP VERS LE HAUT",
     "description": [
-      "When equipped with a Melee weapon, launch a powerful upward strike during the ascent of your jump.",
-      "Use this skill to rapidly close the distance on <b>flying</b> enemies.",
-      "<b>Cost</b>: 25 Stamina"
+      "Lorsque vous êtes équipé d'une arme de mêlée, lancez une puissante attaque vers le haut pendant la phase ascendante de votre saut.",
+      "Utilisez cette compétence pour réduire rapidement la distance qui vous sépare des ennemis <b>volants</b>.",
+      "<b>Coût</b> : 25 points d'endurance"
     ]
   },
   "BREACH": {
-    "name": "BREACH",
+    "name": "BRÈCHE",
     "description": [
-      "An overpowered enemy suffers 100% more melee damage for 3 seconds.",
-      "<b>Overpower</b><br/>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks."
+      "Les ennemis <b>Surpuissants</b> reçoivent <b>100%</b> des dégâts de mêlée augmentés pendant <b>3</b> secondes.",
+      "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>. Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
     ]
   },
   "RELENTLESS": {
-    "name": "RELENTLESS",
+    "name": "ACHARNÉ",
     "description": [
-      "Dealing critical damage with a two-handed weapon increases your critical chance by another 10% for the next hit."
+      "Les coups critiques avec une arme à deux mains augmentent vos chances de coup critique de <b>10%</b> au prochain coup."
     ]
   },
   "BARBARIAN": {
-    "name": "BARBARIAN",
+    "name": "BARBARE",
     "description": [
-      "You will gain one strength level for every two levels of the Flame."
+      "Gagnez un point de force tous les 2 niveaux de Flamme."
     ]
   },
   "BLOOD_RAGE": {
-    "name": "BLOOD RAGE",
+    "name": "RAGE SANGUINAIRE",
     "description": [
-      "When an enemy is killed within 10 meters with a melee weapon, the damage done with melee weapons is increased by 20% for 10 seconds."
+      "Lorsqu'un ennemi est tué dans un rayon de <b>10</b> mètres par une arme de mêlée, vous entrez dans un état de <b>Rage sanguinaire</b>.",
+      "<b>Rage sanguinaire</b><br/>Augmente les dégâts d'arme de mêlée de <b>20% pendant 10 secondes</b>."
     ]
   },
   "VIGOROUS_DEFLECTION": {
-    "name": "VIGOROUS DEFLECTION",
+    "name": "DÉFLEXION RIGOUREUSE",
     "description": [
-      "You gain 30 stamina when you parry an enemy's attack."
+      "Réussir à parer l'attaque d'un ennemi restaure 30 points d'endurance.",
+      "<b>Parer</b><br/>Lorsque vous êtes équipé(e) d'un bouclier, un blocage placé au bon moment permet de <b>parer</b> l'attaque."
     ]
   },
   "BLOOD_WARRIOR": {
-    "name": "BLOOD WARRIOR",
+    "name": "GUERRIER SANGUINAIRE",
     "description": [
-      "Spawn a health orb after defeating an enemy with a Sneak Attack or Merciless Attack.",
-      "Gathering the orbs replenishes 10% of your health."
+      "Tuer un ennemi avec une <b>Attaque furtive</b> ou <b>Attaque impitoyable</b> génère une orbe de santé.",
+      "Récupérer une Orbe restaure <b>10%</b> de la ressource correspondante."
     ]
   },
   "WET_DOG": {
-    "name": "WET DOG",
+    "name": "CHIEN MOUILLÉ",
     "description": [
-      "Weakens the effect of the <b>Wet</b> and <b>Soaked</b> debuffs.",
-      "Stamina and Stamina Regeneration are reduced by <b>20%</b> instead of <b>30%</b>.",
-      "<b>Wet</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>15</b> minutes. Warmth reduces the remaining duration.",
-      "<b>Soaked</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>30</b> seconds. Also reduces <b>Ice and Shock Resistances</b> by <b>30%</b> but increases <b>Fire Resistances</b> by <b>30%</b>.<br><b>Soaked</b> can be applied to enemies. <br><b>Soaked</b> duration can not be reduced by warmth and <b>Wet</b> debuff starts after it is over."
+      "Affaiblit l'effet des debuff <b>Mouillé</b> et <b>Trempé</b>.",
+      "L'endurance et la regénération d'endurance sont réduites de <b>20%</b> au lieu de <b>30%</b>.",
+      "<b>Mouillé</b><br/>Réduit l'endurance et la regénération d'endurance de <b>30%</b> pendant <b>15</b> minutes. La chaleur réduit la durée restante.",
+      "<b>Trempé</b><br/>Réduit l'endurance et la regénération d'endurance de 30% pendant 30 secondes. Réduit également les Résistance au choc et à la glace de 30% mais augmente la Résistance au feu de 30%.<br><b>Trempé</b> peut s'appliquer aux ennemis. La durée de <b>Trempé</b> ne peut pas être réduite par la chaleur et se transforme en debuff <b>Mouillé</b> une fois terminé."
     ]
   },
   "SOAKED_DOG": {
-    "name": "SOAKED DOG",
+    "name": "CHIEN TREMPÉ",
     "description": [
-      "Weakens the effect of the <b>Wet</b> and <b>Soaked</b> debuffs.",
-      "Stamina and Stamina Regeneration are reduced by <b>10%</b> instead of <b>20%</b>.",
-      "<b>Wet</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>15</b> minutes. Warmth reduces the remaining duration.",
-      "<b>Soaked</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>30</b> seconds. Also reduces <b>Ice and Shock Resistances</b> by <b>30%</b> but increases <b>Fire Resistances</b> by <b>30%</b>.<br><b>Soaked</b> can be applied to enemies. <br><b>Soaked</b> duration can not be reduced by warmth and <b>Wet</b> debuff starts after it is over."
+      "Affaiblit l'effet des debuff <b>Mouillé</b> et <b>Trempé</b>.",
+      "L'endurance et la regénération d'endurance sont réduites de <b>10%</b> au lieu de <b>20%</b>.",
+      "<b>Mouillé</b><br/>Réduit l'endurance et la regénération d'endurance de <b>30%</b> pendant <b>15</b> minutes. La chaleur réduit la durée restante.",
+      "<b>Trempé</b><br/>Réduit l'endurance et la regénération d'endurance de 30% pendant 30 secondes. Réduit également les Résistance au choc et à la glace de 30% mais augmente la Résistance au feu de 30%.<br><b>Trempé</b> peut s'appliquer aux ennemis. La durée de <b>Trempé</b> ne peut pas être réduite par la chaleur et se transforme en debuff <b>Mouillé</b> une fois terminé."
     ]
   },
   "SPLASH_DASH": {
-    "name": "SPLASH DASH",
+    "name": "ESQUIVE PLONGÉE",
     "description": [
-      "Allows you to perform an evasive dash while swimming or diving.",
-      "<b>Cost</b>: 80 Stamina"
+      "Vous permet d'effectuer une esquive rapide lorsque vous nagez ou plongez.",
+      "<b>Coût</b> : 40 points d'endurance"
     ]
   },
   "FINESSE": {
     "name": "FINESSE",
     "description": [
-      "One-handed melee weapons and daggers have a 20% chance not to lose durability."
+      "Les armes de mêlée à une main et les dagues ont <b>20%</b> de chance de ne pas perdre leur durabilité."
     ]
   },
   "JUMP_ATTACK_II": {
-    "name": "CRASH DOWN: FORCE",
+    "name": "FRACAS: FORCE",
     "description": [
-      "When attacking from a double jump, <b>Crash Down</b> deals <b>20%</b> more weapon damage."
+      "Lors d'une attaque à partir d'un double saut, <b>Fracas</b> inflige <b>20%</b> de dégât d'arme supplémentaire."
     ]
   },
   "BACKSTAB_MASTERY": {
-    "name": "BACKSTAB MASTERY",
+    "name": "COUP DE GRÂCE",
     "description": [
-      "All damage done from the back is increased by 30%."
+      "Augmentation de <b>30%</b> de tous les dégâts infligés par l'attaque surnoise."
     ]
   },
   "RUNNER": {
-    "name": "RUNNER",
+    "name": "COUREUR",
     "description": [
-      "Sprinting speed increased by 10% and stamina consumption decreased by 10%"
+      "La vitesse de sprint est augmentée de <b>10%</b> et le coût d'endurance est diminué de <b>10%</b>."
     ]
   },
   "WANDERLUST": {
-    "name": "WANDERLUST",
+    "name": "ENVIE D'ÉVASION",
     "description": [
-      "Stamina consumption for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>. Stamina consumption for <b>sprinting on stone roads</b> is reduced from <b>75% to 50%</b>."
+      "Le coût en endurance pour les sprints sur les chemins de terre passe de <b>90%</b> à <b>80%</b>.",
+      "Le coût en endurance pour les sprints sur des routes de pierre passe de <b>75%</b> à <b>50%</b>."
     ]
   },
   "GOOD_METABOLISM": {
-    "name": "GOOD METABOLISM",
+    "name": "BON MÉTABOLISME",
     "description": [
-      "Health, mana, and stamina Orbs restore 30% instead of 10% of their respective resource.",
-      "Mana and Health Potions restore 20% more."
+      "Les Orbes de santé, de mana et d'endurance restaurent <b>30%</b> au lieu de <b>10%</b> de leurs ressources respectives.",
+      "Les potions de mana et de santé restaurent <b>20%</b> de ressources en plus."
     ]
   },
   "SWIFTSHOT_SUSTENANCE": {
-    "name": "SWIFTSHOT SUSTENANCE",
+    "name": "TIR DE RÉCUP. RAPIDE",
     "description": [
-      "30% chance to spawn a stamina orb when defeating an enemy with a bow."
+      "Tuer un ennemi avec un arc a <b>30%</b> de chance de générer un Orbe d'endurance",
+      "Récupérer un Orbe restaure <b>10%</b> de la ressource correspondante."
     ]
   },
   "SWEET_TOOTH": {
-    "name": "SWEET TOOTH",
+    "name": "GOURMAND",
     "description": [
-      "The stamina regeneration of sweets is increased by 50%"
+      "La regénération d'endurance des friandises est augmentée de <b>50%</b>."
     ]
   },
   "ARACHNOID": {
-    "name": "ARACHNOID",
+    "name": "ARACHNOÏDE",
     "description": [
-      "Stamina consumption while climbing is reduced by 50%"
+      "Le coût en endurance pendant l'escalade est réduite de <b>50%</b>."
     ]
   },
   "REBOUND": {
-    "name": "REBOUND",
+    "name": "REBOND",
     "description": [
-      "Increase base stamina regeneration by 50%"
+      "La regénération de l'endurance de base est augmentée de <b>10%</b>."
     ]
   },
   "REBOUND_II": {
-    "name": "REBOUND",
+    "name": "REBOND",
     "description": [
-      "Increase base stamina regeneration by 50%"
+      "La regénération de l'endurance de base est augmentée de <b>10%</b>."
     ]
   },
   "INNER_FIRES": {
-    "name": "INNER FIRES",
+    "name": "FLAMMES INTÉRIEURES",
     "description": [
-      "Maximum <i>Shroud Time</i> increased by 2 minutes, allowing you to explore for longer.",
-      "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you."
+      "<b>Temps dans la Brume</b> augmenté de <b>2</b> minutes, permettant une exploration plus longue.",
+      "<b>Temps dans la Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
     ]
   },
   "RELENTLESS_FLAME": {
-    "name": "RELENTLESS FLAME",
+    "name": "FLAMME ACHARNÉE",
     "description": [
-      "Maximum <i>Shroud Time</i> increased by 5 minutes, allowing you to explore for longer.",
-      "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you."
+      "<b>Temps dans la Brume</b> augmenté de <b>5</b> minutes, permettant une exploration plus longue.",
+      "<b>Temps dans la Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
     ]
   },
   "SNAKE_EATER": {
-    "name": "SNAKE EATER",
+    "name": "MANGEUR DE SERPENT",
     "description": [
-      "Increases your <b>poison resistance</b> which reduces the damage received from poison by <b>20%</b>."
+      "Augmente votre <b>résistance aux poisons</b> de <b>5%</b>, ce qui réduit la quantité des dégâts de <b>poison</b> subis."
     ]
   },
   "MITHRIDATIST": {
-    "name": "MITHRIDATIST",
+    "name": "IMMUNISÉ",
     "description": [
-      "Your <b>poison resistance</b> is increased by an additional 10%.",
-      "You also gain a 25% chance to avoid being poisoned."
+      "Augmente votre <b>résistance aux poisons</b> de <b>10%</b>, ce qui réduit la quantité des dégâts de <b>poison</b> subis.",
+      "Vous gagnez également <b>25%</b> de chances d'éviter d'être empoisonné."
     ]
   },
   "DAGGER_MASTER": {
-    "name": "DAGGER MASTER",
+    "name": "MAÎTRE DE LA DAGUE",
     "description": [
-      "Increases damage dealt with daggers by 15%."
+      "Les dégâts de dague sont augmentés de <b>15%</b>."
     ]
   },
   "SLICE_AND_DICE": {
-    "name": "SLICE AND DICE",
+    "name": "TRANCHER ET DÉCOUPER",
     "description": [
-      "Increases the damage of your next bow attack by 50% after a dagger crit."
+      "Après un coup critique avec une dague, les dégâts de votre prochaine attaque à l'arc sont augmentés de <b>50%</b>."
     ]
   },
   "VUKAH_LANGUAGE": {
-    "name": "VUKAH LANGUAGE",
+    "name": "LANGUE VUKAH",
     "description": [
-      "Vukah within 50 meters will no longer attack you unless provoked."
+      "Les <b>Vukah</b> dans un rayon de <b>50</b> mètres n'attaquent pas, sauf si les joueurs attaquent."
     ]
   },
   "CALM_SPIRIT": {
-    "name": "CALM SPIRIT",
+    "name": "ESPRIT CALME",
     "description": [
-      "<b>Wild animals</b> within 50 meters will be pacified unless attacked. Does not affect animals corrupted by the Shroud."
+      "Les <b>Animaux sauvages</b> dans un rayon de <b>50</b> mètres n'attaquent pas, sauf si les joueurs attaquent.",
+      "Sans effet sur les animaux corrompus par la Brume."
     ]
   },
   "BEAST_MASTER": {
-    "name": "BEAST MASTER",
+    "name": "MAÎTRE DES BÊTES",
     "description": [
-      "When you are targeted by an attack, <b>wild animals</b> within 50 meters will attack the enemy."
+      "Lorsque vous êtes visé(e) par une attaque, les <b>Animaux Sauvages</b> dans un rayon de <b>50</b> mètres attaquent l'ennemi."
     ]
   },
   "VUKAH_CULTURE": {
-    "name": "VUKAH CULTURE",
+    "name": "CULTURE VUKAH",
     "description": [
-      "When you are targeted by an attack, Vukah within 50 meters will attack the enemy."
+      "Lorsque vous êtes visé(e) par une attaque, les <b>Vukah</b> dans un rayon de <b>50</b> mètres attaquent l'ennemi."
     ]
   },
   "ENDURANCE_OF_THE_FLAME": {
-    "name": "ENDURANCE OF THE FLAME",
+    "name": "L'ENDURANCE DE LA FLAMME",
     "description": [
-      "You will gain one endurance for every two levels of the Flame."
+      "Gagnez un point d'endurance tous les <b>2</b> niveaux de Flamme."
     ]
   },
   "MARKSMAN": {
-    "name": "MARKSMAN",
+    "name": "TIREUR D'ÉLITE",
     "description": [
-      "All damage dealt with ranged weapons is increased by 10%"
+      "Tous les dégâts d'arme à distance sont augmentés de <b>10%</b>."
     ]
   },
   "SHARPSHOOTER": {
-    "name": "SHARPSHOOTER",
+    "name": "TIREUR D'ÉLITE",
     "description": [
-      "All ranged damage is increased by an additional 20%"
+      "Tous les dégâts d'arme à distance sont augmentés de <b>20%</b>."
     ]
   },
   "COUNTER_BATTERY": {
-    "name": "COUNTER BATTERY",
+    "name": "CONTRE-BATTERIE",
     "description": [
-      "+15% damage to ranged enemies."
+      "Les dégâts infligés aux ennemis <b>à distance</b> augmentent de <b>15%</b>."
     ]
   },
   "EAGLES_BANE": {
-    "name": "EAGLES BANE",
+    "name": "LE FAUVE DE L'AIGLE",
     "description": [
-      "Damage against flying enemies increased by 30%."
+      "Les dégâts infligés aux ennemis <b>volants</b> sont augmentés de <b>30%</b>."
     ]
   },
   "SKILL_SHOT": {
-    "name": "SKILL SHOT",
+    "name": "COUP D'ADRESSE",
     "description": [
-      "All damage dealt to an enemy's head is increased by 20%."
+      "Les dégâts infligés par le <b>tir de précision</b> sont augmentés de <b>20%</b>."
     ]
   },
   "RANGER": {
-    "name": "RANGER",
+    "name": "ARCHER",
     "description": [
-      "+2 Endurance<br>+2 Dexterity<br>+5 Stamina Recharge<br>+5% Critical Chance<br>+5% Critical Damage"
+      "<b>+2</b> Résistance",
+      "<b>+2</b> Dextérité",
+      "<b>+5</b> Regénération de l'endurance",
+      "<b>+5%</b> Chance de coup critique",
+      "<b>+5%</b> Dégâts critique"
     ]
   },
   "SILENT_STRIDE": {
-    "name": "SILENT STRIDE",
+    "name": "LA FOULÉE SILENCIEUSE",
     "description": [
-      "Increases your movement speed while sneaking."
+      "Augmente votre vitesse de déplacement lorsque vous vous <b>faufilez</b>."
     ]
   },
   "KICK": {
-    "name": "KICK",
+    "name": "COUP DE PIED",
     "description": [
-      "When equipped with a Melee weapon you can perform a Kick by attacking while blocking.",
-      "Kick deals little damage but hits the target with massive force to fill up the enemies <i>Stun Bar</i> and pushes them back.",
-      "<i>Stun Bar</i> increase scales with Dexterity. Stun time depends on the enemy's size.",
-      "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks."
+      "Lorsque vous êtes équipé(e) d'une arme de mêlée, vous pouvez effectuer un coup de pied en attaquant tout en bloquant.",
+      "Le coup de pied inflige de petits dégâts mais touche la cible avec une force massive et la repousse pour remplir la <i>barre d'étourdissement</i> des ennemis.",
+      "La <i>barre d'étourdissement</i> augmente proportionnellement à la dextérité. La durée de l'étourdissement dépend de la taille de l'ennemi.",
+      "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>. Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
     ]
   },
   "AIRBORNE": {
-    "name": "AIRBORNE",
+    "name": "AÉRIEN",
     "description": [
-      "Gliders consume 30% less stamina"
+      "Les planeurs consomment <b>30%</b> d'endurance en moins."
     ]
   },
   "SNIPER": {
     "name": "SNIPER",
     "description": [
-      "When attacking with a ranged weapon your critical hit chance is increased by 10%."
+      "Les chances de coup critique des armes à distance sont augmentées de <b>10%</b>."
     ]
   },
   "VITALITY_SURGE": {
-    "name": "VITALITY SURGE",
+    "name": "SURCROÎT DE VITALITÉ",
     "description": [
-      "Dealing a critical strike with a ranged weapon restores 5 stamina."
+      "Infligez un coup critique avec une arme à distance restaure <b>5</b> points d'endurance."
     ]
   },
   "BLESSED_ARROWS": {
-    "name": "BLESSED ARROWS",
+    "name": "FLÈCHES ENCHANTÉES",
     "description": [
-      "When scoring a critical hit with a bow, you will regenerate 20 mana."
+      "Les coups critiques infligés par un arc restaurent <b>20</b> points de mana."
     ]
   },
   "BOUNTY_BONANZA": {
-    "name": "BOUNTY BONANZA",
+    "name": "BONUS DE PRIME",
     "description": [
-      "After defeating a Fell enemy with a headshot your group gains an additional 5 Experience Points."
+      "Après avoir vaincu un ennemi Déchu avec un <b>tir de précision</b>, votre groupe gagne <b>5</b> points d'expérience supplémentaires.",
+      "<b>Tir de précision</b><br>Frapper les points faibles de l'ennemi, tels que la tête ou le coeur exposé, est considéré comme un Tir de précision."
     ]
   },
   "RICOCHETS": {
     "name": "RICOCHETS",
     "description": [
-      "For every target you hit with an Exploding Arrow, its damage is increased by 1%."
+      "Les dégâts faits aux cibles touchées par une <b>Flèche explosive</b> augmentent de <b>1%</b>."
     ]
   },
   "GRACEFUL_STRIDE": {
-    "name": "GRACEFUL STRIDE",
+    "name": "LA FOULÉE GRACIEUSE",
     "description": [
-      "You will gain one dexterity for every two levels of the Flame."
+      "Gagnez un point de dextérité tous les <b>2</b> niveaux de Flamme."
     ]
   },
   "CHAIN_REACTION": {
-    "name": "CHAIN REACTION",
+    "name": "RÉACTION EN CHAÎNE",
     "description": [
-      "Every enemy hit with an Exploding Arrow has a 20% chance to trigger a secondary explosion for 50% damage in a small radius."
+      "Chaque ennemi touché par une <b>Flèche explosive</b> a <b>20%</b> de chances de déclencher une explosion secondaire infligeant <b>50%</b> de dégâts dans un petit rayon."
     ]
   },
   "ARCANE_CONCENTRATION": {
-    "name": "ARCANE CONCENTRATION",
+    "name": "CONCENTRATION D'ARCANE",
     "description": [
-      "You will gain one spirit for every two levels of the Flame."
+      "Gagnez un point de l'esprit tous les <b>2</b> niveaux de Flamme."
     ]
   },
   "EXALTED": {
-    "name": "EXALTED",
+    "name": "EXALTÉ",
     "description": [
-      "You will gain one intelligence for every two levels of the Flame."
+      "Gagnez <b>1</b> Intelligence tous les <b>2</b> niveaux de Flamme."
     ]
   },
   "THICK_SKIN": {
-    "name": "THICK SKIN",
+    "name": "PEAU DURE",
     "description": [
-      "You will gain one constitution for each two levels of the Flame."
+      "Vous gagnerez un point de constitution tous les deux niveaux de Flamme."
     ]
   },
   "LIFE_ESSENCES": {
-    "name": "LIFE ESSENCES",
+    "name": "ESSENCES DE VIE",
     "description": [
-      "Your maximum health is increased fivehold by your intelligence attribute."
+      "Votre santé maximale est multipliée par cinq fois le montant de votre attribut Intelligence."
     ]
   },
   "POISONED_BLADES": {
-    "name": "POISONED BLADES",
+    "name": "LAMES VENIMEUSES",
     "description": [
-      "Increases the chance to poison enemies to 25% when using daggers with the Poisoned Blades perk."
+      "Augmente la chance d'empoisonner les ennemis de <b>25%</b> lors de l'utilisation de dagues avec l'avantage <b>Lames venimeuses</b>."
     ]
   },
   "POISON_MASTERY": {
-    "name": "POISON MASTERY",
+    "name": "MAÎTRISE DU VENIN",
     "description": [
-      "Increases the damage dealt with the Poisoned Blades dagger perk by 100%."
+      "Augmente les dégâts infligés par l'avantage de la dague <b>Lames venimeuses</b> de <b>100%</b>."
     ]
   },
   "QUICK_REFLEX_BLOCK": {
-    "name": "QUICK REFLEX BLOCK",
+    "name": "BLOC RÉFLEXE RAPIDE",
     "description": [
-      "Briefly enhances your block value when blocking with the dual daggers, ensuring a near-miss parry reduces stamina minimally."
+      "Augmente brièvement votre valeur de blocage lorsque vous bloquez avec des dagues, garantissant qu'une parade presque manquée ne réduise que très peu l'endurance."
     ]
   },
   "EXPOSE_WEAKNESS": {
-    "name": "EXPOSE WEAKNESS",
+    "name": "EXPOSEZ LES FAIBLESSES",
     "description": [
-      "Critical Strikes with Daggers increase damage dealt to the enemy by <b>25%</b> for <b>3</b> seconds."
+      "Les frappes critiques avec les dagues augmentent les dégâts infligés à l'ennemi de <b>25%</b> pendant <b>3</b> secondes."
     ]
   }
 }

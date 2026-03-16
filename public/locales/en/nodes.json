@@ -123,7 +123,10 @@
   },
   "MERCILESS_ATTACK": {
     "name": "MERCILESS ATTACK",
-    "description": []
+    "description": [
+      "Perform a Merciless Attack by pressing [E] to deal massive damage to an enemy you've empowered.",
+      "<b>Overpower</b><br/>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks."
+    ]
   },
   "UPDRAFT": {
     "name": "UPDRAFT",
@@ -176,7 +179,10 @@
   },
   "EVASION_ATTACK": {
     "name": "EVASION ATTACK",
-    "description": []
+    "description": [
+      "When equipped with a melee weapon, you can perform an evade attack which dashes towards the enemy and deals more weapon damage with <b>[LMB]</b>",
+      "<b>Block Breaker</b><br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit."
+    ]
   },
   "EARTH_AURA": {
     "name": "EARTH AURA",

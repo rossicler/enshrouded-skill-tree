@@ -18,8 +18,8 @@
     "about": {
       "title": "À propos",
       "description1": "Cet outil a été créé uniquement pour aider les joueurs d'Enshrouded à partager leurs arbres de compétences et builds facilement. Je ne suis pas affilié à Keen Games et ne détiens aucun droit sur le jeu Enshrouded.",
-      "description2": "Cet outil est open source et disponible pour quiconque souhaite contribuer. Si vous souhaitez contribuer, vous pouvez visiter le <link>dépôt GitHub</link> ou rejoindre notre serveur Discord.",
-      "description3": "Un merci spécial à <link>@Glitchiz</link> pour m'avoir fourni certains des assets utilisés dans cet outil.",
+      "description2": "Cet outil est open source et disponible pour quiconque souhaite contribuer. Si vous souhaitez contribuer, vous pouvez visiter le <a href=\"https://github.com/rossicler/enshrouded-skill-tree\" target=\"_blank\" rel=\"noopener noreferrer\">dépôt GitHub</a> ou rejoindre notre <a href=\"https://discord.gg/pEeZwqaWyj\" target=\"_blank\" rel=\"noopener noreferrer\">Serveur Discord</a>.",
+      "description3": "Un merci spécial à <a href=\"https://www.youtube.com/@Glitchiz\" target=\"_blank\" rel=\"noopener noreferrer\">@Glitchiz</a> pour m'avoir fourni certains des assets utilisés dans cet outil.",
       "close": "Fermer"
     },
     "export": {

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
+import { useTranslation } from "next-i18next";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
@@ -12,6 +13,7 @@ import { convertHashToJson } from "@/utils/utils";
 
 const InitSkills = () => {
   const code = useAppSelector((state) => state.skill.codeImported);
+  const { t } = useTranslation("common");
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const InitSkills = () => {
           dispatch(clearCodeImported());
         }
       } catch {
-        toast.error("Invalid code");
+        toast.error(t("toasts.invalidCode"));
       }
     }
   }, [code]);

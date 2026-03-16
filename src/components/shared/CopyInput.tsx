@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 import { classNames } from "@/utils/utils";
 import CopyCheckIcon from "../icons/CopyCheck";
@@ -13,9 +14,10 @@ type PropsType = {
 };
 
 const CopyInput = ({ copied, value, label, onCopy }: PropsType) => {
+  const { t } = useTranslation("common");
   const copyHandler = () => {
     navigator.clipboard.writeText(value);
-    toast.success("Share URL copied successfully");
+    toast.success(t("toasts.shareUrlCopied"));
     if (onCopy) onCopy();
   };
 

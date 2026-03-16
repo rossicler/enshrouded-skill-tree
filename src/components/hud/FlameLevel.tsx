@@ -3,11 +3,13 @@ import { setFlameLevel } from "@/redux/skills/skills.slice";
 import { classNames } from "@/utils/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 
 const MAX_POINTS = 9;
 
 const FlameLevel = () => {
   const [level, setLevel] = useState(1);
+  const { t } = useTranslation("common");
   const dispatch = useAppDispatch();
 
   const increaseLevel = () => {
@@ -31,7 +33,7 @@ const FlameLevel = () => {
       <div className={classNames("flex text-xl gap-1.5 items-center")}>
         <Image
           src="/assets/flame.png"
-          alt="Skill Point Icon"
+          alt={t("accessibility.skillPointIcon")}
           className="mr-1.5 pt-0.5"
           width={45}
           height={45}

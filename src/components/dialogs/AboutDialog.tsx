@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { Trans, useTranslation } from "next-i18next";
 import { classNames } from "@/utils/utils";
 
 type PropsType = {
@@ -8,6 +9,8 @@ type PropsType = {
 };
 
 const AboutDialog = ({ open, onClose }: PropsType) => {
+  const { t } = useTranslation("common");
+
   return (
     <Transition appear show={open} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -39,38 +42,48 @@ const AboutDialog = ({ open, onClose }: PropsType) => {
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
-                  About
+                  {t("dialogs.about.title")}
                 </Dialog.Title>
-                <div className="mt-5 text-black flex flex-col gap-5">
+                <div className="mt-5 text-black flex flex-col gap-5 [&_a]:text-purple-600 [&_a]:underline">
+                  <p>{t("dialogs.about.description1")}</p>
                   <p>
-                    This tool was created solely to aid Enshrouded players in
-                    sharing skill trees and builds conveniently. I'm not
-                    affiliated with Keen Games and do not hold any rights to the
-                    Enshrouded game.
+                    <Trans
+                      i18nKey="dialogs.about.description2"
+                      ns="common"
+                      t={t}
+                      components={{
+                        githubLink: (
+                          <a
+                            href="https://github.com/rossicler/enshrouded-skill-tree"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        ),
+                        discordLink: (
+                          <a
+                            href="https://discord.gg/pEeZwqaWyj"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        ),
+                      }}
+                    />
                   </p>
                   <p>
-                    This tool is open source and availble for anyone who wants
-                    to contribute. If you're looking to contribute, you can go
-                    to the{" "}
-                    <a
-                      className="text-purple-600 underline"
-                      href="https://github.com/rossicler/enshrouded-skill-tree"
-                      target="_blank"
-                    >
-                      GitHub repository
-                    </a>{" "}
-                    or you can join our discord server and reach out.
-                  </p>
-                  <p>
-                    Special thanks to{" "}
-                    <a
-                      className="text-purple-600 underline"
-                      href="https://www.youtube.com/@Glitchiz"
-                      target="_blank"
-                    >
-                      @Glitchiz
-                    </a>{" "}
-                    for giving me some of the assets used in this tool.
+                    <Trans
+                      i18nKey="dialogs.about.description3"
+                      ns="common"
+                      t={t}
+                      components={{
+                        glitchizLink: (
+                          <a
+                            href="https://www.youtube.com/@Glitchiz"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        ),
+                      }}
+                    />
                   </p>
 
                   <div className="w-full flex justify-end">
@@ -83,7 +96,7 @@ const AboutDialog = ({ open, onClose }: PropsType) => {
                       )}
                       onClick={onClose}
                     >
-                      Close
+                      {t("dialogs.about.close")}
                     </button>
                   </div>
                 </div>

@@ -3,6 +3,7 @@ import { useAppSelector } from "@/redux/hooks";
 import { classNames } from "@/utils/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 import Stats from "./Stats";
 import FlameLevel from "./FlameLevel";
 
@@ -10,6 +11,7 @@ const MAX_POINTS = 184;
 
 const PointsHUD = () => {
   const [pointsUsed, setPointsUsed] = useState(0);
+  const { t } = useTranslation("common");
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ const PointsHUD = () => {
       <div className={classNames("flex text-xl gap-1.5 items-center")}>
         <Image
           src="/assets/skill_point_2.png"
-          alt="Skill Point Icon"
+          alt={t("accessibility.skillPointIcon")}
           className="mr-1.5 pt-0.5"
           width={35}
           height={35}

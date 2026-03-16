@@ -1,5 +1,6 @@
 import { Fragment, useMemo } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { useTranslation } from "next-i18next";
 
 import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
@@ -15,7 +16,17 @@ type PropsType = {
   onClose: () => void;
 };
 
+const STAT_KEYS: Record<string, string> = {
+  CONS: "stats.constitution",
+  STR: "stats.strength",
+  ENDURANCE: "stats.endurance",
+  DEX: "stats.dexterity",
+  SPIRIT: "stats.spirit",
+  INT: "stats.intelligence",
+};
+
 const StatsDialog = ({ open, onClose }: PropsType) => {
+  const { t } = useTranslation("common");
   const skillsSelected = useAppSelector((state) => state.skill.selectedSkills);
   const flameLevel = useAppSelector((state) => state.skill.flameLevel ?? 1);
   const stats = useMemo(
@@ -58,15 +69,15 @@ const StatsDialog = ({ open, onClose }: PropsType) => {
                   as="h3"
                   className="text-lg font-semibold leading-6 text-gray-900"
                 >
-                  Stats summary
+                  {t("dialogs.stats.title")}
                 </Dialog.Title>
                 <div className="mt-5 text-black flex gap-5 w-full">
                   <div className="flex flex-col gap-5 w-full">
-                    <h3 className="font-medium">Basic</h3>
+                    <h3 className="font-medium">{t("dialogs.stats.basic")}</h3>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-1 w-full text-sm justify-between">
                       {Object.keys(BasicStats).map((stat) => (
                         <div key={stat} className="flex justify-between">
-                          <span>{BasicStats[stat as StatsType].name}</span>
+                          <span>{t(STAT_KEYS[stat])}</span>
                           <span>{stats[stat as StatsType] ?? 0} </span>
                         </div>
                       ))}
@@ -83,7 +94,7 @@ const StatsDialog = ({ open, onClose }: PropsType) => {
                     )}
                     onClick={onClose}
                   >
-                    Close
+                    {t("dialogs.stats.close")}
                   </button>
                 </div>
               </Dialog.Panel>

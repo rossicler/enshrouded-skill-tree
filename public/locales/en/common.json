@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Enshrouded Skill Planner",
+    "description": "A skill tree planner for the game Enshrouded."
+  },
+  "hud": {
+    "import": "Import",
+    "export": "Export",
+    "clear": "Clear",
+    "discord": "Discord",
+    "about": "About",
+    "stats": "Stats",
+    "search": {
+      "placeholder": "Search"
+    }
+  },
+  "dialogs": {
+    "about": {
+      "title": "About",
+      "description1": "This tool was created solely to aid Enshrouded players in sharing skill trees and builds conveniently. I'm not affiliated with Keen Games and do not hold any rights to the Enshrouded game.",
+      "description2": "This tool is open source and available for anyone who wants to contribute. If you're looking to contribute, you can go to the <githubLink>GitHub repository</githubLink> or you can join our <discordLink>Discord server</discordLink>.",
+      "description3": "Special thanks to <glitchizLink>@Glitchiz</glitchizLink> for giving me some of the assets used in this tool.",
+      "close": "Close"
+    },
+    "export": {
+      "title": "Export skills",
+      "defaultUrl": "Default Url",
+      "shortUrl": "Short Url",
+      "generateShortUrl": "Generate short URL",
+      "close": "Close"
+    },
+    "import": {
+      "title": "Import skills",
+      "import": "Import"
+    },
+    "stats": {
+      "title": "Stats summary",
+      "basic": "Basic",
+      "close": "Close"
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "Share URL copied successfully",
+    "noSkillsAllocated": "No skills allocated!",
+    "invalidUrl": "Invalid url!",
+    "invalidCode": "Invalid code"
+  },
+  "treeLabels": {
+    "trickster": "Trickster",
+    "wizard": "Wizard",
+    "healer": "Healer",
+    "battlemage": "Battlemage",
+    "tank": "Tank",
+    "warrior": "Warrior",
+    "barbarian": "Barbarian",
+    "athlete": "Athlete",
+    "survivor": "Survivor",
+    "beastmaster": "Beastmaster",
+    "ranger": "Ranger",
+    "assassin": "Assassin"
+  },
+  "stats": {
+    "constitution": "Constitution",
+    "strength": "Strength",
+    "endurance": "Endurance",
+    "dexterity": "Dexterity",
+    "spirit": "Spirit",
+    "intelligence": "Intelligence"
+  },
+  "accessibility": {
+    "skillPointIcon": "Skill Point Icon",
+    "backgroundAlt": "Purple smoke background"
+  }
+}

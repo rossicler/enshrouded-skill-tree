@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
 import { classNames } from "@/utils/utils";
 import InfoIcon from "../icons/Info";
 import HUDButton from "../shared/HUDButton";
 import AboutDialog from "../dialogs/AboutDialog";
 
 const About = () => {
+  const { t } = useTranslation("common");
   let [aboutOpen, setAboutOpen] = useState(false);
 
   return (
@@ -18,7 +20,7 @@ const About = () => {
       <HUDButton className="w-fit" onClick={() => setAboutOpen(true)}>
         <div className="flex gap-1 items-center">
           <InfoIcon className="w-5 h-5 md:w-6 md:h-6" />
-          About
+          {t("hud.about")}
         </div>
       </HUDButton>
     </div>

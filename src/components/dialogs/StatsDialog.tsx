@@ -2,7 +2,6 @@ import { Fragment, useMemo } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
 
-import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
 import {
   getStatsFromFlameAltar,
@@ -10,6 +9,8 @@ import {
   sumStats,
 } from "@/utils/stats";
 import { BasicStats, StatsType } from "@/constants/Stats";
+import GamePanel from "../shared/GamePanel";
+import GameButton from "../shared/GameButton";
 
 type PropsType = {
   open: boolean;
@@ -50,7 +51,7 @@ const StatsDialog = ({ open, onClose }: PropsType) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black/25" />
+          <div className="fixed inset-0 bg-black/50" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -64,39 +65,39 @@ const StatsDialog = ({ open, onClose }: PropsType) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-xs transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <Dialog.Title
-                  as="h3"
-                  className="text-lg font-semibold leading-6 text-gray-900"
-                >
-                  {t("dialogs.stats.title")}
-                </Dialog.Title>
-                <div className="mt-5 text-black flex gap-5 w-full">
-                  <div className="flex flex-col gap-5 w-full">
-                    <h3 className="font-medium">{t("dialogs.stats.basic")}</h3>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-1 w-full text-sm justify-between">
-                      {Object.keys(BasicStats).map((stat) => (
-                        <div key={stat} className="flex justify-between">
-                          <span>{t(STAT_KEYS[stat])}</span>
-                          <span>{stats[stat as StatsType] ?? 0} </span>
+              <Dialog.Panel className="w-full max-w-xs transform overflow-visible text-left align-middle transition-all">
+                <GamePanel onClose={onClose}>
+                  <div className="px-10 py-6">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-lg font-semibold leading-6 text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]"
+                    >
+                      {t("dialogs.stats.title")}
+                    </Dialog.Title>
+                    <div className="mt-5 text-[#c0b89a] flex gap-5 w-full">
+                      <div className="flex flex-col gap-5 w-full">
+                        <h3 className="font-medium text-[#e8d5a3]">
+                          {t("dialogs.stats.basic")}
+                        </h3>
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-1 w-full text-sm justify-between">
+                          {Object.keys(BasicStats).map((stat) => (
+                            <div key={stat} className="flex justify-between">
+                              <span>{t(STAT_KEYS[stat])}</span>
+                              <span className="text-[#e8d5a3]">
+                                {stats[stat as StatsType] ?? 0}
+                              </span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </div>
+                    </div>
+                    <div className="w-full flex justify-end mt-6">
+                      <GameButton onClick={onClose}>
+                        {t("dialogs.stats.close")}
+                      </GameButton>
                     </div>
                   </div>
-                </div>
-                <div className="w-full flex justify-end mt-6">
-                  <button
-                    className={classNames(
-                      "inline-flex justify-center rounded-md border border-transparent",
-                      "bg-purple-600 px-4 py-2 text-sm font-medium text-white",
-                      "hover:bg-purple-400 focus:outline-none focus-visible:ring-2",
-                      "focus-visible:ring-purple-500 focus-visible:ring-offset-2"
-                    )}
-                    onClick={onClose}
-                  >
-                    {t("dialogs.stats.close")}
-                  </button>
-                </div>
+                </GamePanel>
               </Dialog.Panel>
             </Transition.Child>
           </div>

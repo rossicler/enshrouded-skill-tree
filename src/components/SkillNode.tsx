@@ -7,6 +7,7 @@ import Image from "next/image";
 import SkillPath from "./shared/SkillPath";
 import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
+import { playSound } from "@/utils/sounds";
 
 type PropsType = {
   node: Node;
@@ -52,7 +53,9 @@ const SkillNode = ({
   const selectHandler = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (onSelect) onSelect(node);
+    if (onSelect) {
+      onSelect(node);
+    }
   };
 
   const iconSize =
@@ -78,7 +81,7 @@ const SkillNode = ({
             className={classNames(
               "absolute rounded-full flex items-center justify-center",
               nodeSize.className,
-              isSearched && "ring-4 ring-purple-600"
+              isSearched && "animate-flame-radiance"
             )}
             style={{
               left: -nodeSize.size / 2,
@@ -92,7 +95,7 @@ const SkillNode = ({
               onShow={() => setTooltipOpen(true)}
               onHide={() => setTooltipOpen(false)}
             />
-            <button className="relative" onClick={selectHandler}>
+            <button className="relative" onClick={selectHandler} onMouseEnter={() => playSound("node-hover", 0.2)}>
               {iconAsset && (
                 <div
                   className="absolute inset-0 flex items-center justify-center z-10"

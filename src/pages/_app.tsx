@@ -9,7 +9,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <StoreProvider>
       <Component {...pageProps} />
-      <ToastContainer position="bottom-center" theme="dark" />
+      <ToastContainer position="bottom-center" theme="dark" hideProgressBar icon={false} />
     </StoreProvider>
   );
 }

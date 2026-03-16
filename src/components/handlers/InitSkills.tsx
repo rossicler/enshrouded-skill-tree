@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { toast } from "react-toastify";
+import { gameToast } from "@/utils/gameToast";
 import { useTranslation } from "next-i18next";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
@@ -26,7 +26,7 @@ const InitSkills = () => {
           dispatch(clearCodeImported());
         }
       } catch {
-        toast.error(t("toasts.invalidCode"));
+        gameToast.error(t("toasts.invalidCode"));
       }
     }
   }, [code]);

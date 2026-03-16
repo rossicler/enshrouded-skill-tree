@@ -12,6 +12,10 @@
     "stats": "Stats",
     "search": {
       "placeholder": "Search"
+    },
+    "tooltips": {
+      "skillPoints": "Skill Points",
+      "flameLevel": "Flame Level"
     }
   },
   "dialogs": {
@@ -24,19 +28,39 @@
     },
     "export": {
       "title": "Export skills",
-      "defaultUrl": "Default Url",
-      "shortUrl": "Short Url",
-      "generateShortUrl": "Generate short URL",
+      "shortUrl": "Share URL",
+      "generating": "Generating share URL...",
+      "exportJson": "Export JSON",
+      "exportJsonTitle": "Export as JSON",
+      "buildName": "Build name",
+      "download": "Download",
       "close": "Close"
     },
     "import": {
       "title": "Import skills",
-      "import": "Import"
+      "urlLabel": "Import from URL",
+      "import": "Import URL",
+      "importJson": "Import JSON"
     },
     "stats": {
       "title": "Stats summary",
       "basic": "Basic",
       "close": "Close"
+    },
+    "settings": {
+      "title": "Settings",
+      "sounds": "Sound effects"
+    },
+    "refundConfirm": {
+      "title": "Refund skills",
+      "message": "This will also refund {{count}} connected skill(s). Continue?",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "skillCap": {
+      "title": "Skill point cap reached",
+      "message": "You have reached the maximum number of skill points. Refund some skills before unlocking new ones.",
+      "ok": "OK"
     }
   },
   "toasts": {

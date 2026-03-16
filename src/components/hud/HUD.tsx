@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
+import { ZoomOut, Crosshair, ZoomIn, Download, Upload, RotateCcw } from "lucide-react";
 
 import { classNames } from "../../utils/utils";
-import HUDButton from "../shared/HUDButton";
+import { playSound } from "../../utils/sounds";
+import GameButton from "../shared/GameButton";
+import GameButtonGroup from "../shared/GameButtonGroup";
 import ImportDialog from "../dialogs/ImportDialog";
 import { useAppDispatch } from "@/redux/hooks";
 import {
@@ -11,7 +14,6 @@ import {
 } from "@/redux/skills/skills.slice";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
-import ResetIcon from "../icons/Reset";
 import ExportDialog from "../dialogs/ExportDialog";
 import Stats from "./Stats";
 import { useRouter } from "next/router";
@@ -21,29 +23,29 @@ type PropsType = {
   zoomIn: (step?: number) => void;
   zoomOut: (step?: number) => void;
   centerView: (scale?: number) => void;
+  zoomToElement: (node: HTMLElement | string, scale?: number, animationTime?: number, animationType?: "easeOut" | "linear" | "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint") => void;
 };
 
-const DISCORD_LINK = "https://discord.gg/saazEkNchu";
-
-const HUD = ({ zoomIn, zoomOut, centerView }: PropsType) => {
+const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement }: PropsType) => {
   let [importOpen, setImportOpen] = useState(false);
   let [exportOpen, setExportOpen] = useState(false);
+  const [searchFocused, setSearchFocused] = useState(false);
   const { t } = useTranslation("common");
   const dispatch = useAppDispatch();
   const router = useRouter();
 
   const importHandler = (code: string) => {
-    // TODO: implement plastebin import
     dispatch(setCodeImported(code));
   };
 
-  const clearHandler = () => {
-    dispatch(loadSelectedSkills([]));
-    router.replace("/", undefined, { shallow: true });
+  const importSkillsHandler = (skills: string[]) => {
+    dispatch(loadSelectedSkills(skills));
   };
 
-  const openDiscordInvite = () => {
-    window?.open(DISCORD_LINK, "_blank")?.focus();
+  const clearHandler = () => {
+    playSound("node-refund", 0.4);
+    dispatch(loadSelectedSkills([]));
+    router.replace("/", undefined, { shallow: true });
   };
 
   return (
@@ -52,54 +54,69 @@ const HUD = ({ zoomIn, zoomOut, centerView }: PropsType) => {
         open={importOpen}
         onClose={() => setImportOpen(false)}
         onImport={importHandler}
+        onImportSkills={importSkillsHandler}
       />
       <ExportDialog open={exportOpen} onClose={() => setExportOpen(false)} />
-      <div
-        className={classNames(
-          "absolute right-0 top-0 w-32 bg-transparent z-40 flex flex-col gap-3",
-          "justify-center items-center py-6 top-14 md:top-0"
-        )}
-      >
-        <HUDButton onClick={() => setImportOpen(true)}>{t("hud.import")}</HUDButton>
-        <HUDButton onClick={() => setExportOpen(true)}>{t("hud.export")}</HUDButton>
-        <HUDButton onClick={clearHandler}>{t("hud.clear")}</HUDButton>
 
-        <HUDButton className="mt-5" onClick={openDiscordInvite}>
-          {t("hud.discord")}
-        </HUDButton>
-      </div>
+      {/* Search — always visible, full width on mobile */}
+      <SearchHUD zoomToElement={zoomToElement} onFocusChange={setSearchFocused} />
 
-      <div
-        className={classNames(
-          "absolute right-0 top-[50%] translate-y-[-50%] bg-transparent z-20 flex flex-col gap-3",
-          "justify-center items-center px-6 bg-transparent"
-        )}
-      >
+      {/* Other HUD elements — hidden on mobile when search is focused */}
+      <div className={searchFocused ? "hidden md:contents" : "contents"}>
         <div
           className={classNames(
-            "flex flex-col border border-purple-600 rounded-xl divide-y divide-purple-600",
-            "bg-black"
+            "absolute right-0 top-0 bg-transparent z-40 flex flex-row gap-3",
+            "items-center py-6 px-6 top-14 md:top-0"
           )}
         >
-          <button className="h-12 w-8" onClick={() => zoomIn(0.5)}>
-            +
-          </button>
-          <button className="h-12 w-8" onClick={() => zoomOut(0.5)}>
-            -
-          </button>
-          <button
-            className="h-12 w-8 flex justify-center items-center"
-            onClick={() => centerView(2)}
-          >
-            <ResetIcon className="w-3" />
-          </button>
+          <GameButtonGroup>
+            <GameButton grouped className="!min-w-0 !px-4 !pl-8 md:!min-w-[140px] md:!px-8 md:!pl-8" onClick={() => setImportOpen(true)}>
+              <Download size={16} className="md:hidden" />
+              <span className="hidden md:inline">{t("hud.import")}</span>
+            </GameButton>
+            <GameButton grouped className="!min-w-0 !px-4 md:!min-w-[140px] md:!px-8" onClick={() => setExportOpen(true)}>
+              <Upload size={16} className="md:hidden" />
+              <span className="hidden md:inline">{t("hud.export")}</span>
+            </GameButton>
+            <GameButton grouped className="!min-w-0 !px-4 !pr-8 md:!min-w-[140px] md:!px-8 md:!pr-8" onClick={clearHandler}>
+              <RotateCcw size={16} className="md:hidden" />
+              <span className="hidden md:inline">{t("hud.clear")}</span>
+            </GameButton>
+          </GameButtonGroup>
         </div>
+
+        <div
+          className={classNames(
+            "absolute bottom-0 bg-transparent z-20",
+            "flex items-center pb-6",
+            "left-0 px-6 md:left-1/2 md:-translate-x-1/2 md:px-0"
+          )}
+        >
+          {/* Mobile: reset view only */}
+          <div className="md:hidden">
+            <GameButton className="!min-w-0 !px-3" onClick={() => centerView(2)}>
+              <Crosshair size={16} />
+            </GameButton>
+          </div>
+          {/* Desktop: full zoom controls */}
+          <div className="hidden md:block">
+            <GameButtonGroup>
+              <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={() => zoomOut(0.5)}>
+                <ZoomOut size={16} />
+              </GameButton>
+              <GameButton grouped className="!min-w-0 !px-4" onClick={() => centerView(2)}>
+                <Crosshair size={16} />
+              </GameButton>
+              <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={() => zoomIn(0.5)}>
+                <ZoomIn size={16} />
+              </GameButton>
+            </GameButtonGroup>
+          </div>
+        </div>
+
+        <PointsHUD />
+        <AboutHUD />
       </div>
-
-      <SearchHUD />
-
-      <PointsHUD />
-      <AboutHUD />
     </>
   );
 };

@@ -16,6 +16,10 @@
   }
 }
 
+*, *::before, *::after {
+  cursor: url('/assets/cursor.png'), auto;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

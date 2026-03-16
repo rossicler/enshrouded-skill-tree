@@ -4,7 +4,7 @@ import { getStatsFromSkills } from "@/utils/stats";
 import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { classNames } from "@/utils/utils";
-import HUDButton from "../shared/HUDButton";
+import GameButton from "../shared/GameButton";
 import StatsDialog from "../dialogs/StatsDialog";
 
 const Stats = () => {
@@ -13,7 +13,7 @@ const Stats = () => {
 
   return (
     <div className={classNames("flex flex-col gap-1.5 mt-3 md:mt-5")}>
-      <HUDButton onClick={() => setOpen(true)}>{t("hud.stats")}</HUDButton>
+      <GameButton onClick={() => setOpen(true)}>{t("hud.stats")}</GameButton>
       <StatsDialog open={open} onClose={() => setOpen(false)} />
     </div>
   );

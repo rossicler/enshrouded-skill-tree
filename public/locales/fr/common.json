@@ -12,6 +12,10 @@
     "stats": "Stats",
     "search": {
       "placeholder": "Rechercher"
+    },
+    "tooltips": {
+      "skillPoints": "Points de compétence",
+      "flameLevel": "Niveau de flamme"
     }
   },
   "dialogs": {
@@ -24,19 +28,39 @@
     },
     "export": {
       "title": "Exporter les compétences",
-      "defaultUrl": "URL par défaut",
-      "shortUrl": "URL courte",
-      "generateShortUrl": "Générer une URL courte",
+      "shortUrl": "URL de partage",
+      "generating": "Génération de l'URL de partage...",
+      "exportJson": "Exporter JSON",
+      "exportJsonTitle": "Exporter en JSON",
+      "buildName": "Nom du build",
+      "download": "Télécharger",
       "close": "Fermer"
     },
     "import": {
       "title": "Importer des compétences",
-      "import": "Importer"
+      "urlLabel": "Importer depuis une URL",
+      "import": "Importer URL",
+      "importJson": "Importer JSON"
     },
     "stats": {
       "title": "Résumé des statistiques",
       "basic": "Base",
       "close": "Fermer"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "sounds": "Effets sonores"
+    },
+    "refundConfirm": {
+      "title": "Rembourser les compétences",
+      "message": "Cela remboursera également {{count}} compétence(s) connectée(s). Continuer ?",
+      "confirm": "Confirmer",
+      "cancel": "Annuler"
+    },
+    "skillCap": {
+      "title": "Limite de points atteinte",
+      "message": "Vous avez atteint le nombre maximum de points de compétence. Remboursez des compétences avant d'en débloquer de nouvelles.",
+      "ok": "OK"
     }
   },
   "toasts": {

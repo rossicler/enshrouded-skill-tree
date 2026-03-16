@@ -1,10 +1,9 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
+import { Copy, Check } from "lucide-react";
 
 import { classNames } from "@/utils/utils";
-import CopyCheckIcon from "../icons/CopyCheck";
-import CopyIcon from "../icons/Copy";
-import { toast } from "react-toastify";
+import { gameToast } from "@/utils/gameToast";
 
 type PropsType = {
   copied?: boolean;
@@ -17,12 +16,12 @@ const CopyInput = ({ copied, value, label, onCopy }: PropsType) => {
   const { t } = useTranslation("common");
   const copyHandler = () => {
     navigator.clipboard.writeText(value);
-    toast.success(t("toasts.shareUrlCopied"));
+    gameToast.success(t("toasts.shareUrlCopied"));
     if (onCopy) onCopy();
   };
 
   return (
-    <div className="flex flex-col gap-1 text-black">
+    <div className="flex flex-col gap-1 text-[#c0b89a]">
       {label && (
         <div>
           <span>{label}</span>
@@ -30,25 +29,25 @@ const CopyInput = ({ copied, value, label, onCopy }: PropsType) => {
       )}
       <div
         className={classNames(
-          "w-full h-10 border rounded-lg",
+          "w-full h-10 border rounded-sm",
           "py-1 px-2 flex items-center relative overflow-hidden",
           copied
-            ? "border-green-600 outline-green-600"
-            : "border-purple-600 outline-purple-600"
+            ? "border-[#8fad6a] bg-[#2a2a35]"
+            : "border-[#5a5a60] bg-[#2a2a35]"
         )}
       >
-        <input className="flex-grow mr-8" value={value} disabled />
+        <input className="flex-grow mr-8 bg-transparent text-[#e8d5a3] outline-none" value={value} disabled />
         <button
           className={classNames(
             "absolute right-0 w-8 h-full flex items-center justify-center border-l",
-            copied ? "border-green-600" : "border-purple-600"
+            copied ? "border-[#8fad6a]" : "border-[#5a5a60]"
           )}
           onClick={copyHandler}
         >
           {copied ? (
-            <CopyCheckIcon className="w-4 text-green-600" />
+            <Check size={16} className="text-[#8fad6a]" />
           ) : (
-            <CopyIcon className="w-4 text-purple-600" />
+            <Copy size={16} className="text-[#e8d5a3]" />
           )}
         </button>
       </div>

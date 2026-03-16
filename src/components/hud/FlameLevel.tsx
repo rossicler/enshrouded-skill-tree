@@ -1,15 +1,15 @@
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useAppDispatch } from "@/redux/hooks";
 import { setFlameLevel } from "@/redux/skills/skills.slice";
 import { classNames } from "@/utils/utils";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "next-i18next";
+import { Minus, Plus } from "lucide-react";
+import GameButton from "../shared/GameButton";
+import GameButtonGroup from "../shared/GameButtonGroup";
 
 const MAX_POINTS = 9;
 
 const FlameLevel = () => {
   const [level, setLevel] = useState(1);
-  const { t } = useTranslation("common");
   const dispatch = useAppDispatch();
 
   const increaseLevel = () => {
@@ -31,27 +31,33 @@ const FlameLevel = () => {
   return (
     <div>
       <div className={classNames("flex text-xl gap-1.5 items-center")}>
-        <Image
-          src="/assets/flame.png"
-          alt={t("accessibility.skillPointIcon")}
-          className="mr-1.5 pt-0.5"
-          width={45}
-          height={45}
-        />
-        <div
-          className={classNames(
-            "flex flex-row items-center mt-3.5 border border-purple-600 text-base",
-            "rounded-xl divide-x divide-purple-600 bg-black [&>*]:py-1"
-          )}
-        >
-          <button className="px-2" onClick={decreaseLevel}>
-            {"-"}
-          </button>
-          <span className="px-3">{level}</span>
-          <button className="px-2" onClick={increaseLevel}>
-            {"+"}
-          </button>
-        </div>
+        <GameButtonGroup>
+          <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={decreaseLevel} disabled={level <= 1}>
+            <Minus size={14} />
+          </GameButton>
+          <input
+            type="number"
+            min={1}
+            max={MAX_POINTS}
+            value={level}
+            onChange={(e) => {
+              const val = parseInt(e.target.value, 10);
+              if (!isNaN(val) && val >= 1 && val <= MAX_POINTS) {
+                setLevel(val);
+              }
+            }}
+            className={classNames(
+              "relative z-10 w-10 text-center bg-transparent",
+              "px-1 py-2.5 text-sm font-semibold tracking-wide",
+              "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
+              "focus:outline-none",
+              "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            )}
+          />
+          <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={increaseLevel} disabled={level >= MAX_POINTS}>
+            <Plus size={14} />
+          </GameButton>
+        </GameButtonGroup>
       </div>
     </div>
   );

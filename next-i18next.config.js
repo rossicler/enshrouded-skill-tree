@@ -3,4 +3,7 @@ module.exports = {
     locales: ['en', 'fr'],
     defaultLocale: 'en',
   },
+  interpolation: {
+    escapeValue: false,
+  },
 };

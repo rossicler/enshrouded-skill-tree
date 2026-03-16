@@ -10,6 +10,7 @@ type PropsType = {
 
 const AboutDialog = ({ open, onClose }: PropsType) => {
   const { t } = useTranslation("common");
+
   return (
     <Transition appear show={open} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -43,18 +44,26 @@ const AboutDialog = ({ open, onClose }: PropsType) => {
                 >
                   {t("dialogs.about.title")}
                 </Dialog.Title>
-                <div className="mt-5 text-black flex flex-col gap-5">
+                <div className="mt-5 text-black flex flex-col gap-5 [&_a]:text-purple-600 [&_a]:underline">
                   <p>{t("dialogs.about.description1")}</p>
                   <p>
                     <Trans
                       i18nKey="dialogs.about.description2"
                       ns="common"
+                      t={t}
                       components={{
-                        link: (
+                        githubLink: (
                           <a
-                            className="text-purple-600 underline"
                             href="https://github.com/rossicler/enshrouded-skill-tree"
                             target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        ),
+                        discordLink: (
+                          <a
+                            href="https://discord.gg/pEeZwqaWyj"
+                            target="_blank"
+                            rel="noopener noreferrer"
                           />
                         ),
                       }}
@@ -64,12 +73,13 @@ const AboutDialog = ({ open, onClose }: PropsType) => {
                     <Trans
                       i18nKey="dialogs.about.description3"
                       ns="common"
+                      t={t}
                       components={{
-                        link: (
+                        glitchizLink: (
                           <a
-                            className="text-purple-600 underline"
                             href="https://www.youtube.com/@Glitchiz"
                             target="_blank"
+                            rel="noopener noreferrer"
                           />
                         ),
                       }}

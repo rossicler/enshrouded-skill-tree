@@ -57,6 +57,12 @@
       "confirm": "Confirmer",
       "cancel": "Annuler"
     },
+    "resetConfirm": {
+      "title": "Réinitialiser l'arbre",
+      "message": "Cela supprimera toutes les compétences sélectionnées. Êtes-vous sûr ?",
+      "confirm": "Réinitialiser",
+      "cancel": "Annuler"
+    },
     "skillCap": {
       "title": "Limite de points atteinte",
       "message": "Vous avez atteint le nombre maximum de points de compétence. Remboursez des compétences avant d'en débloquer de nouvelles.",
@@ -94,5 +100,11 @@
   "accessibility": {
     "skillPointIcon": "Icône de point de compétence",
     "backgroundAlt": "Fond de fumée violette"
+  },
+  "skillTooltip": {
+    "unlocked": "Déverrouillée",
+    "unlock": "Déverrouiller",
+    "outOfRange": "Hors de portée",
+    "cost": "Coût"
   }
 }

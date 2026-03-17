@@ -1,7 +1,7 @@
-import { MouseEvent, memo, useMemo, useState } from "react";
+import { MouseEvent, memo, useMemo } from "react";
 
 import { Node } from "../constants/Nodes";
-import SkillTooltip from "./SkillTooltip";
+
 import { getAsset } from "../utils/assets-utils";
 import Image from "next/image";
 import SkillPath from "./shared/SkillPath";
@@ -39,7 +39,6 @@ const SkillNode = ({
   selectable,
   onSelect,
 }: PropsType) => {
-  const [tooltipOpen, setTooltipOpen] = useState(false);
   const isSearched = useAppSelector((state) =>
     state.skill.searchSkillResults.includes(node.type)
   );
@@ -66,7 +65,7 @@ const SkillNode = ({
   return (
     <>
       <div
-        className={`absolute top-0 left-0 h-full ${tooltipOpen ? "z-50" : ""}`}
+        className="absolute top-0 left-0 h-full"
         style={{
           transformOrigin: "0% 0%",
           transform: `rotate(${node.angle}deg)`,
@@ -74,7 +73,7 @@ const SkillNode = ({
       >
         <div
           id={`node-${node.id}`}
-          className={`relative w-0.5 h-0.5`}
+          className="relative w-0.5 h-0.5"
           style={{ marginTop: INIT_DISTANCE + (node.distance ?? 0) }}
         >
           <div
@@ -90,16 +89,17 @@ const SkillNode = ({
               transform: `rotate(-${node.angle}deg)`,
             }}
           >
-            <SkillTooltip
-              node={node}
-              onShow={() => setTooltipOpen(true)}
-              onHide={() => setTooltipOpen(false)}
-            />
-            <button className="relative" onClick={selectHandler} onMouseEnter={() => playSound("node-hover", 0.2)}>
+            <button
+              className="relative"
+              data-tooltip-id={`skill-tooltip-${node.id}`}
+              onClick={selectHandler}
+              onMouseEnter={() => {
+                playSound("node-hover", 0.2);
+              }}
+            >
               {iconAsset && (
                 <div
                   className="absolute inset-0 flex items-center justify-center z-10"
-                  data-tooltip-id={`skill-tooltip-${node.id}`}
                 >
                   <Image
                     className={classNames(
@@ -122,7 +122,6 @@ const SkillNode = ({
                   "w-full h-auto object-contain !pointer-events-auto",
                   lowBritness && "brightness-50"
                 )}
-                data-tooltip-id={`skill-tooltip-${node.id}`}
               />
             </button>
           </div>

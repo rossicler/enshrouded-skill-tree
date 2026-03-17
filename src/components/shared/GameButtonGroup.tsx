@@ -4,19 +4,20 @@ import { classNames } from "../../utils/utils";
 type PropsType = {
   children: ReactNode;
   className?: string;
+  vertical?: boolean;
 };
 
 const DECORATION_FILTER =
   "[filter:brightness(0)_saturate(100%)_invert(88%)_sepia(15%)_saturate(500%)_hue-rotate(10deg)_brightness(95%)]";
 
-const GameButtonGroup = ({ children, className }: PropsType) => {
+const GameButtonGroup = ({ children, className, vertical }: PropsType) => {
   const id = useId();
   const filterId = `rugged-group-${id}`;
 
   return (
     <div
       className={classNames(
-        "relative flex flex-col",
+        "relative flex flex-col overflow-hidden",
         className
       )}
     >
@@ -57,29 +58,34 @@ const GameButtonGroup = ({ children, className }: PropsType) => {
         <span className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.4)] to-transparent" />
       </span>
 
-      {/* Left decoration */}
+      {/* Left decoration — hidden on mobile */}
       <img
         src="/assets/decorations/button-decoration.svg"
         alt=""
         className={classNames(
-          "absolute left-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none",
-          "opacity-80",
+          "absolute left-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none opacity-80 hidden md:block",
           DECORATION_FILTER
         )}
       />
-      {/* Right decoration (mirrored) */}
+      {/* Right decoration (mirrored) — hidden on mobile */}
       <img
         src="/assets/decorations/button-decoration.svg"
         alt=""
         className={classNames(
-          "absolute right-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none",
-          "opacity-80 -scale-x-100",
+          "absolute right-0 top-1/2 -translate-y-1/2 -scale-x-100 h-full w-auto pointer-events-none opacity-80 hidden md:block",
           DECORATION_FILTER
         )}
       />
 
       {/* Buttons with dividers */}
-      <div className="relative z-10 flex flex-row divide-x divide-[#5a5a60]/40">
+      <div
+        className={classNames(
+          "relative z-10 flex",
+          vertical
+            ? "flex-col divide-y divide-[#5a5a60]/40"
+            : "flex-row divide-x divide-[#5a5a60]/40"
+        )}
+      >
         {children}
       </div>
     </div>

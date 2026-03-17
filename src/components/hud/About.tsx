@@ -21,8 +21,9 @@ const About = () => {
   return (
     <div
       className={classNames(
-        "absolute right-0 bottom-0 bg-transparent z-40",
-        "flex py-6 px-6 items-center gap-3"
+        "absolute left-0 bg-transparent z-40",
+        "flex px-6 items-center gap-3",
+        "bottom-[98px] md:bottom-0 md:py-6"
       )}
     >
       <AboutDialog open={aboutOpen} onClose={() => setAboutOpen(false)} />
@@ -30,21 +31,32 @@ const About = () => {
         open={settingsOpen}
         onClose={() => setSettingsOpen(false)}
       />
-      <GameButtonGroup>
-        <GameButton grouped className="!min-w-0 !px-4 !pl-8 md:!min-w-[140px] md:!px-8 md:!pl-8" onClick={openDiscordInvite}>
-          <MessageCircle size={16} className="md:hidden" />
-          <span className="hidden md:inline">{t("hud.discord")}</span>
+      {/* Mobile: vertical */}
+      <GameButtonGroup vertical className="md:hidden">
+        <GameButton grouped className="!min-w-0 !px-4" onClick={openDiscordInvite}>
+          <MessageCircle size={16} />
         </GameButton>
-        <GameButton grouped className="!min-w-0 !px-4 md:!min-w-[140px] md:!px-8" onClick={() => setAboutOpen(true)}>
-          <Info size={16} className="md:hidden" />
-          <span className="hidden md:inline">{t("hud.about")}</span>
+        <GameButton grouped className="!min-w-0 !px-4" onClick={() => setAboutOpen(true)}>
+          <Info size={16} />
         </GameButton>
+        <GameButton grouped className="!min-w-0 !px-4" onClick={() => setSettingsOpen(true)}>
+          <Settings size={16} />
+        </GameButton>
+      </GameButtonGroup>
+      {/* Desktop: horizontal — reversed order (settings on left/outside) */}
+      <GameButtonGroup className="hidden md:flex">
         <GameButton
           grouped
-          className="!min-w-0 !px-4 !pr-8"
+          className="!min-w-0 !px-4 !pl-8"
           onClick={() => setSettingsOpen(true)}
         >
           <Settings size={18} />
+        </GameButton>
+        <GameButton grouped className="!min-w-[140px] !px-8" onClick={() => setAboutOpen(true)}>
+          {t("hud.about")}
+        </GameButton>
+        <GameButton grouped className="!min-w-[140px] !px-8 !pr-8" onClick={openDiscordInvite}>
+          {t("hud.discord")}
         </GameButton>
       </GameButtonGroup>
     </div>

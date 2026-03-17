@@ -12,6 +12,7 @@ import {
 import Nodes, { Node } from "../constants/Nodes";
 import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
+import SkillTooltip from "./SkillTooltip";
 import SkillPaths from "./SkillPaths";
 import { getSkillsToRemove } from "../utils/utils";
 import { playSound } from "../utils/sounds";
@@ -126,6 +127,7 @@ const SkillTree = () => {
       <TransformWrapper
         minScale={2}
         maxScale={5}
+        wheel={{ step: 2 }}
         doubleClick={{
           disabled: true,
         }}
@@ -140,7 +142,9 @@ const SkillTree = () => {
           <>
             <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} zoomToElement={zoomToElement} />
             <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
-              <div className="relative w-screen h-screen flex items-center justify-center">
+              <div
+                className="relative w-screen h-screen flex items-center justify-center"
+              >
                 <div className="relative scale-25 z-20">
                   <CoreCircle />
                   {Object.values(Nodes.nodes).map((skillNode) => (
@@ -162,6 +166,14 @@ const SkillTree = () => {
                 </svg>
               </div>
             </TransformComponent>
+            {Object.values(Nodes.nodes).map((skillNode) => (
+              <SkillTooltip
+                key={`tooltip-${skillNode.id}`}
+                node={skillNode}
+                selected={selectedSkills.includes(skillNode.id)}
+                selectable={selectableSkills.includes(skillNode.id)}
+              />
+            ))}
           </>
         )}
       </TransformWrapper>

@@ -26,56 +26,121 @@ const PointsHUD = () => {
   }, [selectedSkills]);
 
   return (
-    <div
-      className={classNames(
-        "absolute left-0 z-40",
-        "py-6 px-6 flex flex-col gap-3",
-        "top-14 md:top-0"
-      )}
-    >
-      <GamePanel>
-        <div
-          className={classNames(
-            "px-4 py-3",
-            "grid grid-cols-[45px_1fr] gap-x-2 gap-y-3 items-center"
-          )}
-        >
-          <Tooltip text={t("hud.tooltips.skillPoints")} position="bottom" className="flex justify-center">
-            <Image
-              src="/assets/skill_point_2.png"
-              alt={t("accessibility.skillPointIcon")}
-              width={30}
-              height={30}
-            />
-          </Tooltip>
-          <div className={classNames("flex text-lg gap-1.5 items-center")}>
-            <span
-              className={classNames(
-                "font-semibold tracking-wide",
-                "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
-                pointsUsed >= MAX_POINTS && "!text-red-500"
-              )}
-            >
-              {pointsUsed}
-            </span>
-            <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
-              / {MAX_POINTS}
-            </span>
-          </div>
+    <>
+      {/* Mobile: Stats button top-left */}
+      <div
+        className={classNames(
+          "absolute left-0 top-14 z-40",
+          "py-6 px-6",
+          "md:hidden"
+        )}
+      >
+        <Stats />
+      </div>
 
-          <Tooltip text={t("hud.tooltips.flameLevel")} position="bottom" className="flex justify-center">
-            <Image
-              src="/assets/flame.png"
-              alt={t("accessibility.flameIcon")}
-              width={45}
-              height={45}
-            />
-          </Tooltip>
-          <FlameLevel />
-        </div>
-      </GamePanel>
-      <Stats />
-    </div>
+      {/* Mobile: full-width bottom bar, pushed down to hide bottom border */}
+      <div
+        className={classNames(
+          "absolute bottom-0 left-0 right-0 z-40 pb-[-4px]",
+          "md:hidden"
+        )}
+        style={{ bottom: "-4px" }}
+      >
+        <GamePanel>
+          <div
+            className={classNames(
+              "px-4 py-2",
+              "flex items-center justify-between flex-wrap gap-y-1"
+            )}
+          >
+            <div className="flex items-center gap-2">
+              <Image
+                src="/assets/skill_point_2.png"
+                alt={t("accessibility.skillPointIcon")}
+                width={24}
+                height={24}
+              />
+              <div className="flex text-base gap-1 items-center">
+                <span
+                  className={classNames(
+                    "font-semibold tracking-wide",
+                    "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
+                    pointsUsed >= MAX_POINTS && "!text-red-500"
+                  )}
+                >
+                  {pointsUsed}
+                </span>
+                <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
+                  / {MAX_POINTS}
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Image
+                src="/assets/flame.png"
+                alt={t("accessibility.flameIcon")}
+                width={30}
+                height={30}
+              />
+              <FlameLevel />
+            </div>
+          </div>
+        </GamePanel>
+      </div>
+
+      {/* Desktop: top-left panel */}
+      <div
+        className={classNames(
+          "absolute left-0 z-40",
+          "py-6 px-6 flex-col gap-3",
+          "top-0 hidden md:flex"
+        )}
+      >
+        <GamePanel>
+          <div
+            className={classNames(
+              "px-4 py-3",
+              "grid grid-cols-[45px_1fr] gap-x-2 gap-y-3 items-center"
+            )}
+          >
+            <Tooltip text={t("hud.tooltips.skillPoints")} position="bottom" className="flex justify-center">
+              <Image
+                src="/assets/skill_point_2.png"
+                alt={t("accessibility.skillPointIcon")}
+                width={30}
+                height={30}
+              />
+            </Tooltip>
+            <div className={classNames("flex text-lg gap-1.5 items-center")}>
+              <span
+                className={classNames(
+                  "font-semibold tracking-wide",
+                  "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
+                  pointsUsed >= MAX_POINTS && "!text-red-500"
+                )}
+              >
+                {pointsUsed}
+              </span>
+              <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
+                / {MAX_POINTS}
+              </span>
+            </div>
+
+            <Tooltip text={t("hud.tooltips.flameLevel")} position="bottom" className="flex justify-center">
+              <Image
+                src="/assets/flame.png"
+                alt={t("accessibility.flameIcon")}
+                width={45}
+                height={45}
+              />
+            </Tooltip>
+            <FlameLevel />
+          </div>
+        </GamePanel>
+        <Stats />
+      </div>
+    </>
   );
 };
 

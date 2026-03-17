@@ -61,9 +61,11 @@ const Search = ({ zoomToElement, onFocusChange }: PropsType) => {
     dispatch(setSearchSkillResults(results.map((r) => r.key)));
   }, [results, dispatch]);
 
+  const hasActiveResults = focused && searchText.length >= 3 && results.length > 0;
+
   useEffect(() => {
-    onFocusChange?.(focused);
-  }, [focused, onFocusChange]);
+    onFocusChange?.(hasActiveResults);
+  }, [hasActiveResults, onFocusChange]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -88,7 +90,15 @@ const Search = ({ zoomToElement, onFocusChange }: PropsType) => {
       (n) => n.type === typeKey
     );
     if (matchingNodes.length === 1) {
-      zoomToElement(`node-${matchingNodes[0].id}`, 5, 300, "easeOut");
+      const nodeId = matchingNodes[0].id;
+      zoomToElement(`node-${nodeId}`, 5, 300, "easeOut");
+      // Trigger tooltip via synthetic mouseenter after zoom completes
+      setTimeout(() => {
+        const el = document.querySelector(`[data-tooltip-id="skill-tooltip-${nodeId}"]`);
+        if (el) {
+          el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+        }
+      }, 350);
     }
   }, [t, zoomToElement]);
 
@@ -116,10 +126,11 @@ const Search = ({ zoomToElement, onFocusChange }: PropsType) => {
       className={classNames(
         "flex flex-col",
         "justify-center items-center",
-        "absolute top-0 z-20 my-6 inset-x-0 px-5"
+        "absolute top-0 z-20 inset-x-0",
+        "my-0 px-0 md:my-6 md:px-5"
       )}
     >
-      <div className="relative w-full md:w-72 max-w-sm">
+      <div className="relative w-full md:w-72 md:max-w-sm">
         <GameInput
           ref={inputRef}
           placeholder={t("hud.search.placeholder", { ns: "common" })}
@@ -127,6 +138,7 @@ const Search = ({ zoomToElement, onFocusChange }: PropsType) => {
           onChange={(e) => setSearchText(e.target.value)}
           onFocus={() => setFocused(true)}
           onKeyDown={handleKeyDown}
+          hideDecorationsClassName="hidden md:block"
         />
         {searchText ? (
           <button
@@ -153,8 +165,8 @@ const Search = ({ zoomToElement, onFocusChange }: PropsType) => {
       {showResults && (
         <div
           className={classNames(
-            "mt-1",
-            "w-full md:w-72 max-w-sm",
+            "mt-0 md:mt-1",
+            "w-full md:w-72 md:max-w-sm",
             "bg-[#414255]/95 border border-[#5a5a60]/50 border-t-[#b8941f]/60",
             "rounded-sm overflow-y-auto max-h-60",
             "shadow-[0_3px_6px_rgba(0,0,0,0.4)]"

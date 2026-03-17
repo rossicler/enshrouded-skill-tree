@@ -31,7 +31,7 @@ const GameButton = ({
         onMouseEnter={() => !disabled && playSound("button-hover", 0.3)}
         className={classNames(
           "group/btn relative flex items-center justify-center",
-          "px-8 py-2.5 min-w-[140px]",
+          "px-8 py-2.5 min-h-[40px] min-w-[140px]",
           "transition-all duration-150",
           disabled && "cursor-not-allowed opacity-40",
           className
@@ -65,8 +65,8 @@ const GameButton = ({
       disabled={disabled}
       onMouseEnter={() => !disabled && playSound("button-hover", 0.3)}
       className={classNames(
-        "group relative inline-flex items-center justify-center",
-        "px-8 py-2.5 min-w-[140px]",
+        "group relative inline-flex items-center justify-center overflow-hidden",
+        "px-8 py-2.5 min-h-[40px] min-w-[140px]",
         "transition-all duration-150",
         disabled && "cursor-not-allowed opacity-40",
         className
@@ -118,7 +118,7 @@ const GameButton = ({
         src="/assets/decorations/button-decoration.svg"
         alt=""
         className={classNames(
-          "absolute -left-3 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none",
+          "absolute -left-3 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none hidden md:block",
           "opacity-80 group-hover:opacity-100 transition-opacity",
           DECORATION_FILTER
         )}
@@ -127,7 +127,7 @@ const GameButton = ({
         src="/assets/decorations/button-decoration.svg"
         alt=""
         className={classNames(
-          "absolute -right-3 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none",
+          "absolute -right-3 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none hidden md:block",
           "opacity-80 group-hover:opacity-100 transition-opacity -scale-x-100",
           DECORATION_FILTER
         )}

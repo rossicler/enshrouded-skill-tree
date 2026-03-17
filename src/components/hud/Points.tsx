@@ -19,7 +19,7 @@ const PointsHUD = () => {
   useEffect(() => {
     const totalCost = selectedSkills.reduce(
       (acc, id) =>
-        acc + SkillNodes.types[SkillNodes.nodes[id]?.type]?.cost ?? 0,
+        acc + (SkillNodes.types[SkillNodes.nodes[id]?.type]?.cost ?? 0),
       0
     );
     setPointsUsed(totalCost);

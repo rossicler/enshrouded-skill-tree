@@ -8,18 +8,14 @@ Access the live version [here](https://enshrouded-skill-tree.com/)
 
 <a href="https://www.buymeacoffee.com/rossicler" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
----
-
 ## Features
 
-- Interactive skill tree with zoom, pan and node selection
-- Build sharing via short URLs and JSON import/export
-- Skill point and flame level tracking
-- Stats summary
-- Skill search with highlight
-- Sound effects
-- Localization (English, French)
-- Mobile-friendly UI
+- ℹ️ Stats summary
+- 🔎 Skill search with highlight
+- 🔥 Skill point and flame level tracking
+- 📨 Build sharing via short URLs and JSON import/export
+- 🎥 Interactive skill tree with zoom, pan and node selection
+- 🗣️ Localization (English, French)
 
 ## Getting Started
 
@@ -61,12 +57,12 @@ cp .env.example .env.local
 
 MongoDB is used to store shared build codes (the share URL feature). You can use either:
 
-- [MongoDB Atlas](https://www.mongodb.com/atlas) (free tier available) — create a cluster and grab the connection string
+- [MongoDB Atlas](https://www.mongodb.com/atlas) (free tier available); create a cluster and grab the connection string
 - A local MongoDB instance
 
 The app will automatically create the `skill-planner` database and `codes` collection on first use.
 
-> **Note:** The app runs fine without MongoDB — the share URL feature simply won't work.
+> **Note:** The app runs fine without MongoDB, the share URL feature simply won't work.
 
 ### Running
 
@@ -81,22 +77,6 @@ Open [http://localhost:3000](http://localhost:3000).
 ```bash
 npm run build
 npm start
-```
-
-## Project Structure
-
-```
-src/
-  components/     # React components (SkillTree, HUD, dialogs, shared UI)
-  constants/      # Skill node definitions, edges, metadata
-  lib/            # MongoDB client, API helpers
-  pages/          # Next.js pages and API routes
-  redux/          # Redux store and slices
-  styles/         # Global CSS
-  utils/          # Utility functions (assets, sounds, etc.)
-public/
-  assets/         # Skill icons, decorations, sounds
-  locales/        # Translation files (en, fr)
 ```
 
 ## Contributing

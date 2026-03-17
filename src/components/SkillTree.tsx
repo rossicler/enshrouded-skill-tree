@@ -41,6 +41,13 @@ const SkillTree = () => {
 
   const updateSelectableSkills = () => {
     let tmpSelectableSkills: string[] = [];
+    // Base nodes are always selectable
+    Object.values(Nodes.nodes).forEach((node) => {
+      if (node.base && !selectedSkills.includes(node.id)) {
+        tmpSelectableSkills.push(node.id);
+      }
+    });
+    // Neighbors of selected nodes are selectable
     selectedSkills.forEach((id) => {
       tmpSelectableSkills = tmpSelectableSkills.concat(
         Nodes.edges[id].filter(
@@ -60,7 +67,11 @@ const SkillTree = () => {
     const connectedTo = selectedSkills.filter((id) =>
       Nodes.edges[id].includes(node.id)
     );
-    if (!node.base && connectedTo.length === 0) return;
+    if (!node.base && connectedTo.length === 0) {
+      playSound("node-out-of-range", 0.4);
+      window.dispatchEvent(new CustomEvent("skill-out-of-range", { detail: node.id }));
+      return;
+    }
     const selectedIndex = selectedSkills.findIndex((id) => id === node.id);
     if (selectedIndex !== -1) {
       const skillsToRemove = getSkillsToRemove(node.id, selectedSkills);

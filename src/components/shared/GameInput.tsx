@@ -3,15 +3,32 @@ import { classNames } from "../../utils/utils";
 
 type PropsType = {
   className?: string;
+  variant?: "decorated" | "plain";
   hideDecorationsClassName?: string;
 } & Omit<JSX.IntrinsicElements["input"], "className">;
 
 const DECORATION_FILTER =
   "[filter:brightness(0)_saturate(100%)_invert(88%)_sepia(15%)_saturate(500%)_hue-rotate(10deg)_brightness(95%)]";
 
-const GameInput = forwardRef<HTMLInputElement, PropsType>(({ className, hideDecorationsClassName, ...props }, ref) => {
+const GameInput = forwardRef<HTMLInputElement, PropsType>(({ className, variant = "decorated", hideDecorationsClassName, ...props }, ref) => {
   const id = useId();
   const filterId = `rugged-input-${id}`;
+
+  if (variant === "plain") {
+    return (
+      <input
+        className={classNames(
+          "w-full h-10 border border-[#5a5a60] rounded-sm",
+          "bg-[#2a2a35] text-[#e8d5a3] py-1 px-3",
+          "outline-none focus:border-[#C8B169] transition-colors",
+          "text-sm",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
 
   return (
     <div className={classNames("relative", className)}>

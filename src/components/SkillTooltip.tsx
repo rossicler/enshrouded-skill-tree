@@ -1,6 +1,6 @@
 import { Tooltip } from "react-tooltip";
 import { useTranslation } from "next-i18next";
-import { useId } from "react";
+import { useEffect, useId, useState } from "react";
 import { Check } from "lucide-react";
 
 import SkillNodes, { Node } from "../constants/Nodes";
@@ -30,6 +30,18 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
   }) as string[];
   const id = useId();
   const filterId = `rugged-tooltip-${id}`;
+  const [flash, setFlash] = useState(false);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      if ((e as CustomEvent).detail === node.id) {
+        setFlash(true);
+        setTimeout(() => setFlash(false), 600);
+      }
+    };
+    window.addEventListener("skill-out-of-range", handler);
+    return () => window.removeEventListener("skill-out-of-range", handler);
+  }, [node.id]);
 
   const colors = GRADIENT_COLORS[metadata.color] ?? GRADIENT_COLORS.green;
   const gradient = `linear-gradient(187deg, ${colors.light} 0%, ${colors.dark} 100%)`;
@@ -37,11 +49,9 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
   return (
     <Tooltip
       anchorSelect={`[data-tooltip-id="skill-tooltip-${node.id}"]`}
-      className="!p-0 !bg-transparent !opacity-100 !border-0 !rounded-none !transition-none"
+      className="!p-0 !bg-transparent !border-0 !rounded-none"
       style={{ zIndex: 9999 }}
       noArrow
-      delayShow={0}
-      delayHide={0}
     >
       <div className="relative max-w-sm min-w-[260px]">
         {/* SVG filter for rugged edges */}
@@ -100,7 +110,7 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
           </div>
 
           {/* Divider */}
-          <div className="w-full h-[1px] bg-white/20 mt-2 mb-3" />
+          <img src="/assets/decorations/divider.svg" alt="" className="w-full mt-2 mb-3" />
 
           {/* Bottom row: cost left, status right */}
           <div className="flex items-center justify-between mt-4">
@@ -128,7 +138,10 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
                 {t("skillTooltip.unlock", { ns: "common" })}
               </span>
             ) : (
-              <span className="text-red-400 text-sm font-semibold uppercase tracking-wide">
+              <span className={classNames(
+                "text-red-400 text-sm font-semibold uppercase tracking-wide transition-all duration-300",
+                flash && "text-red-300 drop-shadow-[0_0_8px_rgba(248,113,113,0.8)] scale-110"
+              )}>
                 {t("skillTooltip.outOfRange", { ns: "common" })}
               </span>
             )}

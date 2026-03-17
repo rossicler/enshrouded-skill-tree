@@ -30,8 +30,8 @@ const PointsHUD = () => {
       {/* Mobile: Stats button top-left */}
       <div
         className={classNames(
-          "absolute left-0 top-14 z-40",
-          "py-6 px-6",
+          "absolute left-0 top-[44px] max-[380px]:top-7 z-40",
+          "py-6 px-6 max-[380px]:px-2",
           "md:hidden"
         )}
       >

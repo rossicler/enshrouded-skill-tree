@@ -90,7 +90,7 @@ const AboutDialog = ({ open, onClose }: PropsType) => {
                       </p>
 
                       <div className="w-full flex justify-end">
-                        <GameButton onClick={onClose}>
+                        <GameButton variant="text" onClick={onClose}>
                           {t("dialogs.about.close")}
                         </GameButton>
                       </div>

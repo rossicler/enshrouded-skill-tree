@@ -4,6 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
 import GamePanel from "../shared/GamePanel";
 import GameButton from "../shared/GameButton";
+import GameInput from "../shared/GameInput";
 
 type PropsType = {
   open: boolean;
@@ -16,6 +17,7 @@ const CODE_ARG = "code=";
 
 const ImportDialog = ({ open, onClose, onImport, onImportSkills }: PropsType) => {
   const [url, setUrl] = useState("");
+  const isValidUrl = /^https?:\/\/.+\..+/.test(url.trim());
   const { t } = useTranslation("common");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -102,14 +104,17 @@ const ImportDialog = ({ open, onClose, onImport, onImportSkills }: PropsType) =>
                       <label className="block text-sm text-[#c0b89a] mb-1">
                         {t("dialogs.import.urlLabel")}
                       </label>
-                      <input
-                        className="w-full h-10 border border-[#5a5a60] rounded-sm bg-[#2a2a35] text-[#e8d5a3] py-1 px-3 outline-none focus:border-[#C8B169] transition-colors"
+                      <GameInput
+                        variant="plain"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                       />
 
-                      <div className="mt-4 flex gap-3">
-                        <GameButton type="submit">
+                      <p className="mt-3 text-xs text-[#c0b89a]/60">
+                        {t("dialogs.import.warning")}
+                      </p>
+                      <div className="mt-4 flex justify-end gap-3">
+                        <GameButton type="submit" disabled={!isValidUrl}>
                           {t("dialogs.import.import")}
                         </GameButton>
                         <GameButton onClick={importJSONHandler} type="button">

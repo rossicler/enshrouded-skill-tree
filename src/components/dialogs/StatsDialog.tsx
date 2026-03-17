@@ -92,7 +92,7 @@ const StatsDialog = ({ open, onClose }: PropsType) => {
                       </div>
                     </div>
                     <div className="w-full flex justify-end mt-6">
-                      <GameButton onClick={onClose}>
+                      <GameButton variant="text" onClick={onClose}>
                         {t("dialogs.stats.close")}
                       </GameButton>
                     </div>

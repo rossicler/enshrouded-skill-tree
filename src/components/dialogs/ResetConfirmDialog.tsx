@@ -52,7 +52,7 @@ const ResetConfirmDialog = ({ open, onConfirm, onCancel }: PropsType) => {
                       <p>{t("dialogs.resetConfirm.message")}</p>
                     </div>
                     <div className="mt-5 flex justify-end gap-3">
-                      <GameButton onClick={onCancel}>
+                      <GameButton variant="text" onClick={onCancel}>
                         {t("dialogs.resetConfirm.cancel")}
                       </GameButton>
                       <GameButton onClick={onConfirm}>

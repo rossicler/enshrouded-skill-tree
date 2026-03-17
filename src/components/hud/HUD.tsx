@@ -75,8 +75,8 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement }: PropsType) => {
         <div
           className={classNames(
             "absolute right-0 top-0 bg-transparent z-40",
-            "flex py-6 px-6 items-center",
-            "top-14 md:top-0"
+            "flex py-6 px-6 max-[380px]:px-2 items-center",
+            "top-14 max-[380px]:top-10 md:top-0"
           )}
         >
           {/* Mobile: vertical */}
@@ -108,8 +108,8 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement }: PropsType) => {
         <div
           className={classNames(
             "absolute right-0 bg-transparent z-20",
-            "flex items-center px-6",
-            "bottom-[98px] md:bottom-0 md:pb-6"
+            "flex items-center px-6 max-[380px]:px-2",
+            "bottom-[98px] max-[380px]:bottom-[114px] md:bottom-0 md:pb-6"
           )}
         >
           {/* Mobile: vertical */}

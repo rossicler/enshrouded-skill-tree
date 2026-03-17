@@ -8,6 +8,7 @@ import { useAppSelector } from "@/redux/hooks";
 import CopyInput from "../shared/CopyInput";
 import GamePanel from "../shared/GamePanel";
 import GameButton from "../shared/GameButton";
+import GameInput from "../shared/GameInput";
 
 type PropsType = {
   open: boolean;
@@ -120,8 +121,8 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
                         <label className="block text-sm text-[#c0b89a]">
                           {t("dialogs.export.buildName")}
                         </label>
-                        <input
-                          className="w-full h-10 border border-[#5a5a60] rounded-sm bg-[#2a2a35] text-[#e8d5a3] py-1 px-3 outline-none focus:border-[#C8B169] transition-colors"
+                        <GameInput
+                          variant="plain"
                           value={buildName}
                           onChange={(e) => setBuildName(e.target.value)}
                           onKeyDown={(e) => {
@@ -133,7 +134,7 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
                           autoFocus
                         />
                         <div className="mt-2 w-full flex justify-end gap-3">
-                          <GameButton onClick={() => setShowJsonExport(false)}>
+                          <GameButton variant="text" onClick={() => setShowJsonExport(false)}>
                             {t("dialogs.refundConfirm.cancel")}
                           </GameButton>
                           <GameButton onClick={downloadJSON}>
@@ -157,11 +158,11 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
                         ) : null}
 
                         <div className="mt-4 w-full flex justify-end gap-3">
+                          <GameButton variant="text" onClick={onClose}>
+                            {t("dialogs.export.close")}
+                          </GameButton>
                           <GameButton onClick={() => setShowJsonExport(true)}>
                             {t("dialogs.export.exportJson")}
-                          </GameButton>
-                          <GameButton onClick={onClose}>
-                            {t("dialogs.export.close")}
                           </GameButton>
                         </div>
                       </div>

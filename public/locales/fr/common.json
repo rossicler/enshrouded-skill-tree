@@ -40,7 +40,8 @@
       "title": "Importer des compétences",
       "urlLabel": "Importer depuis une URL",
       "import": "Importer URL",
-      "importJson": "Importer JSON"
+      "importJson": "Importer JSON",
+      "warning": "N'importez que des builds provenant de sources fiables."
     },
     "stats": {
       "title": "Résumé des statistiques",

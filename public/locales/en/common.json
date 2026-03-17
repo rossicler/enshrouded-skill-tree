@@ -40,7 +40,8 @@
       "title": "Import skills",
       "urlLabel": "Import from URL",
       "import": "Import URL",
-      "importJson": "Import JSON"
+      "importJson": "Import JSON",
+      "warning": "Only import builds from sources you trust."
     },
     "stats": {
       "title": "Stats summary",

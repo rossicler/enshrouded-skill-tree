@@ -53,7 +53,7 @@ const RefundConfirmDialog = ({ open, count, onConfirm, onCancel }: PropsType) =>
                       <p>{t("dialogs.refundConfirm.message", { count })}</p>
                     </div>
                     <div className="mt-5 flex justify-end gap-3">
-                      <GameButton onClick={onCancel}>
+                      <GameButton variant="text" onClick={onCancel}>
                         {t("dialogs.refundConfirm.cancel")}
                       </GameButton>
                       <GameButton onClick={onConfirm}>

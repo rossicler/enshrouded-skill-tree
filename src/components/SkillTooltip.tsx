@@ -24,10 +24,11 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
   const { t } = useTranslation(["nodes", "common"]);
   const name = t(`${node.type}.name`, { ns: "nodes" });
-  const description = t(`${node.type}.description`, {
+  const rawDescription = t(`${node.type}.description`, {
     ns: "nodes",
     returnObjects: true,
-  }) as string[];
+  });
+  const description = Array.isArray(rawDescription) ? rawDescription : [rawDescription];
   const id = useId();
   const filterId = `rugged-tooltip-${id}`;
   const [flash, setFlash] = useState(false);

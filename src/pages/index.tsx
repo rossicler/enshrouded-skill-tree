@@ -85,7 +85,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   if (context.query) {
-    const { shortCode, code: fullCode = "" } = context.query as Query;
+    const { shortCode, code: rawCode = "" } = context.query as Query;
+    const fullCode = Array.isArray(rawCode) ? rawCode[0] : rawCode;
     const code = shortCode ? await getCode(shortCode) : fullCode;
     return {
       props: {

@@ -20,6 +20,7 @@ const InitSkills = () => {
     if (code) {
       try {
         const initSkills = convertHashToJson(code);
+        if (!Array.isArray(initSkills)) throw new Error("Invalid code");
         dispatch(loadSelectedSkills(initSkills));
         dispatch(initConnectedPaths(initSkills));
         if (code) {

@@ -11,11 +11,12 @@ type PropsType = {
   onClose: () => void;
   onImport: (code: string) => void;
   onImportSkills: (skills: string[]) => void;
+  dbAvailable?: boolean;
 };
 
 const CODE_ARG = "code=";
 
-const ImportDialog = ({ open, onClose, onImport, onImportSkills }: PropsType) => {
+const ImportDialog = ({ open, onClose, onImport, onImportSkills, dbAvailable = false }: PropsType) => {
   const [url, setUrl] = useState("");
   const isValidUrl = /^https?:\/\/.+\..+/.test(url.trim());
   const { t } = useTranslation("common");
@@ -100,28 +101,36 @@ const ImportDialog = ({ open, onClose, onImport, onImportSkills }: PropsType) =>
                     >
                       {t("dialogs.import.title")}
                     </Dialog.Title>
-                    <form className="mt-5" onSubmit={importHandler}>
-                      <label className="block text-sm text-[#c0b89a] mb-1">
-                        {t("dialogs.import.urlLabel")}
-                      </label>
-                      <GameInput
-                        variant="plain"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                      />
+                    {dbAvailable ? (
+                      <form className="mt-5" onSubmit={importHandler}>
+                        <label className="block text-sm text-[#c0b89a] mb-1">
+                          {t("dialogs.import.urlLabel")}
+                        </label>
+                        <GameInput
+                          variant="plain"
+                          value={url}
+                          onChange={(e) => setUrl(e.target.value)}
+                        />
 
-                      <p className="mt-3 text-xs text-[#c0b89a]/60">
-                        {t("dialogs.import.warning")}
-                      </p>
-                      <div className="mt-4 flex justify-end gap-3">
-                        <GameButton type="submit" disabled={!isValidUrl}>
-                          {t("dialogs.import.import")}
-                        </GameButton>
-                        <GameButton onClick={importJSONHandler} type="button">
+                        <p className="mt-3 text-xs text-[#c0b89a]/60">
+                          {t("dialogs.import.warning")}
+                        </p>
+                        <div className="mt-4 flex justify-end gap-3">
+                          <GameButton type="submit" disabled={!isValidUrl}>
+                            {t("dialogs.import.import")}
+                          </GameButton>
+                          <GameButton onClick={importJSONHandler} type="button">
+                            {t("dialogs.import.importJson")}
+                          </GameButton>
+                        </div>
+                      </form>
+                    ) : (
+                      <div className="mt-5 flex justify-end">
+                        <GameButton onClick={importJSONHandler}>
                           {t("dialogs.import.importJson")}
                         </GameButton>
                       </div>
-                    </form>
+                    )}
                     <input
                       ref={fileInputRef}
                       type="file"

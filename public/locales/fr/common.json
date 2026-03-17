@@ -107,5 +107,9 @@
     "unlock": "Déverrouiller",
     "outOfRange": "Hors de portée",
     "cost": "Coût"
+  },
+  "errors": {
+    "serverError": "Erreur serveur",
+    "notFound": "Page non trouvée"
   }
 }

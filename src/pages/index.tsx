@@ -21,9 +21,10 @@ type Query = {
 type PropsType = {
   code?: string;
   clusterStillProvisioning?: boolean;
+  dbAvailable?: boolean;
 };
 
-export default function Home({ code, clusterStillProvisioning }: PropsType) {
+export default function Home({ code, clusterStillProvisioning, dbAvailable = false }: PropsType) {
   const dispatch = useAppDispatch();
   const { t } = useTranslation("common");
 
@@ -51,7 +52,7 @@ export default function Home({ code, clusterStillProvisioning }: PropsType) {
           className="object-cover object-center"
         />
         <div>
-          <SkillTree />
+          <SkillTree dbAvailable={dbAvailable} />
           <InitSkills />
         </div>
       </main>
@@ -74,7 +75,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         },
       };
     } else {
-      throw new Error("Connection limit reached. Please try again later.");
+      // Connection limit or other DB error — render the page without DB features
+      return {
+        props: {
+          ...(await serverSideTranslations(locale, ["common", "nodes"])),
+        },
+      };
     }
   }
 
@@ -85,12 +91,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       props: {
         ...(await serverSideTranslations(locale, ["common", "nodes"])),
         code,
+        dbAvailable: true,
       },
     };
   }
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "nodes"])),
+      dbAvailable: true,
     },
   };
 };

@@ -107,5 +107,9 @@
     "unlock": "Unlock",
     "outOfRange": "Out of range",
     "cost": "Cost"
+  },
+  "errors": {
+    "serverError": "Server Error",
+    "notFound": "Page Not Found"
   }
 }

@@ -24,9 +24,10 @@ type PropsType = {
   zoomOut: (step?: number) => void;
   centerView: (scale?: number) => void;
   zoomToElement: (node: HTMLElement | string, scale?: number, animationTime?: number, animationType?: "easeOut" | "linear" | "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint") => void;
+  dbAvailable?: boolean;
 };
 
-const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement }: PropsType) => {
+const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false }: PropsType) => {
   let [importOpen, setImportOpen] = useState(false);
   let [exportOpen, setExportOpen] = useState(false);
   const [resetOpen, setResetOpen] = useState(false);
@@ -59,8 +60,9 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement }: PropsType) => {
         onClose={() => setImportOpen(false)}
         onImport={importHandler}
         onImportSkills={importSkillsHandler}
+        dbAvailable={dbAvailable}
       />
-      <ExportDialog open={exportOpen} onClose={() => setExportOpen(false)} />
+      <ExportDialog open={exportOpen} onClose={() => setExportOpen(false)} dbAvailable={dbAvailable} />
       <ResetConfirmDialog
         open={resetOpen}
         onConfirm={clearHandler}

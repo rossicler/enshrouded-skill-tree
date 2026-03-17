@@ -13,12 +13,13 @@ import GameInput from "../shared/GameInput";
 type PropsType = {
   open: boolean;
   onClose: () => void;
+  dbAvailable?: boolean;
 };
 
 const BASE_URL =
   process.env.BASE_URL || "https://enshrouded-skill-tree.vercel.app/";
 
-const ExportDialog = ({ open, onClose }: PropsType) => {
+const ExportDialog = ({ open, onClose, dbAvailable = false }: PropsType) => {
   const [shortURL, setShortURL] = useState("");
   const [copied, setCopied] = useState("");
   const [loading, setLoading] = useState(false);
@@ -63,12 +64,13 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
 
   useEffect(() => {
     if (open) {
-      if (shortURL) return;
       if (selectedSkills.length === 0) {
         gameToast.error(t("toasts.noSkillsAllocated"));
         onClose();
+      } else if (dbAvailable) {
+        if (!shortURL) exportAPIHandler();
       } else {
-        exportAPIHandler();
+        setShowJsonExport(true);
       }
     } else {
       setShortURL("");
@@ -134,9 +136,11 @@ const ExportDialog = ({ open, onClose }: PropsType) => {
                           autoFocus
                         />
                         <div className="mt-2 w-full flex justify-end gap-3">
-                          <GameButton variant="text" onClick={() => setShowJsonExport(false)}>
-                            {t("dialogs.refundConfirm.cancel")}
-                          </GameButton>
+                          {dbAvailable && (
+                            <GameButton variant="text" onClick={() => setShowJsonExport(false)}>
+                              {t("dialogs.refundConfirm.cancel")}
+                            </GameButton>
+                          )}
                           <GameButton onClick={downloadJSON}>
                             {t("dialogs.export.download")}
                           </GameButton>

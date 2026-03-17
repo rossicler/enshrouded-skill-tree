@@ -24,7 +24,11 @@ import SkillCapDialog from "./dialogs/SkillCapDialog";
 const REFUND_CONFIRM_THRESHOLD = 2;
 const MAX_SKILL_POINTS = 184;
 
-const SkillTree = () => {
+type SkillTreeProps = {
+  dbAvailable?: boolean;
+};
+
+const SkillTree = ({ dbAvailable = false }: SkillTreeProps) => {
   const [selectableSkills, setSelectableSkills] = useState<string[]>([]);
   const [pendingRefund, setPendingRefund] = useState<string[] | null>(null);
   const [showCapWarning, setShowCapWarning] = useState(false);
@@ -151,7 +155,7 @@ const SkillTree = () => {
       >
         {({ zoomIn, zoomOut, centerView, zoomToElement }) => (
           <>
-            <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} zoomToElement={zoomToElement} />
+            <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} zoomToElement={zoomToElement} dbAvailable={dbAvailable} />
             <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
               <div
                 className="relative w-screen h-screen flex items-center justify-center"

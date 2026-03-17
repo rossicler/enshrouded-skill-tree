@@ -89,9 +89,6 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
             {name}
           </h3>
 
-          {/* Divider */}
-          <div className="w-full h-[1px] bg-white/20 mt-2 mb-3" />
-
           {/* Description */}
           <div className="flex flex-col gap-1.5 text-sm text-white/90 leading-relaxed">
             {description.map((html, i) => (
@@ -101,6 +98,9 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
               />
             ))}
           </div>
+
+          {/* Divider */}
+          <div className="w-full h-[1px] bg-white/20 mt-2 mb-3" />
 
           {/* Bottom row: cost left, status right */}
           <div className="flex items-center justify-between mt-4">

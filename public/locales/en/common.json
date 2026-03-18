@@ -20,7 +20,8 @@
     "biomeBudget": {
       "title": "Biome Budget",
       "playerLevel": "Player Level",
-      "total": "Total SP"
+      "total": "Total SP",
+      "reset": "Unlock all"
     }
   },
   "biomes": {

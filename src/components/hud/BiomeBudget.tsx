@@ -31,6 +31,17 @@ const BiomeBudgetDialog = ({ open, onClose }: PropsType) => {
   const levelingSP = computeLevelingPoints(playerLevel);
   const maxSP = computeMaxSkillPoints(playerLevel, unlockedBiomes);
 
+  const isDefault =
+    playerLevel === MAX_PLAYER_LEVEL &&
+    unlockedBiomes.length === BIOMES.length &&
+    BIOMES.every((b) => unlockedBiomes.includes(b.id));
+
+  const resetToDefault = () => {
+    playSound("node-unlock", 0.4);
+    dispatch(setPlayerLevel(MAX_PLAYER_LEVEL));
+    dispatch(setUnlockedBiomes(BIOMES.map((b) => b.id)));
+  };
+
   const toggleBiome = (id: string) => {
     const isChecked = unlockedBiomes.includes(id);
     playSound(isChecked ? "node-refund" : "node-unlock", 0.4);
@@ -165,6 +176,12 @@ const BiomeBudgetDialog = ({ open, onClose }: PropsType) => {
                     <div className="mt-4 pt-3 border-t border-[#5a5a60]/50 flex justify-between items-center">
                       <span className="text-sm text-[#c0b89a]">{t("hud.biomeBudget.total")}</span>
                       <span className="text-sm font-semibold text-[#e8d5a3] tabular-nums">{maxSP}</span>
+                    </div>
+
+                    <div className="flex justify-end mt-3">
+                      <GameButton variant="text" onClick={resetToDefault} disabled={isDefault}>
+                        {t("hud.biomeBudget.reset")}
+                      </GameButton>
                     </div>
                   </div>
                 </GamePanel>

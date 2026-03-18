@@ -20,7 +20,8 @@
     "biomeBudget": {
       "title": "Budget par biome",
       "playerLevel": "Niveau du joueur",
-      "total": "Points de compétences totaux"
+      "total": "Points de compétences totaux",
+      "reset": "Tout débloquer"
     }
   },
   "biomes": {

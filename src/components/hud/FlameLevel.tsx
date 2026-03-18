@@ -32,7 +32,7 @@ const FlameLevel = () => {
     <div>
       <div className={classNames("flex text-xl gap-1.5 items-center")}>
         <GameButtonGroup>
-          <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={decreaseLevel} disabled={level <= 1}>
+          <GameButton grouped className="!min-w-0 !px-4 md:!pl-8" onClick={decreaseLevel} disabled={level <= 1}>
             <Minus size={14} />
           </GameButton>
           <input
@@ -54,7 +54,7 @@ const FlameLevel = () => {
               "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             )}
           />
-          <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={increaseLevel} disabled={level >= MAX_POINTS}>
+          <GameButton grouped className="!min-w-0 !px-4 md:!pr-8" onClick={increaseLevel} disabled={level >= MAX_POINTS}>
             <Plus size={14} />
           </GameButton>
         </GameButtonGroup>

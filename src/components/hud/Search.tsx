@@ -133,7 +133,7 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
       className={classNames(
         "flex flex-col",
         "justify-center items-center",
-        "absolute top-0 z-20 inset-x-0",
+        "absolute top-0 z-40 inset-x-0",
         "my-0 px-0 md:my-6 md:px-5"
       )}
     >

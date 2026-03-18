@@ -20,7 +20,7 @@ const About = () => {
   return (
     <div
       className={classNames(
-        "absolute left-0 bg-transparent z-40",
+        "absolute left-0 bg-transparent z-30",
         "flex px-6 max-[380px]:px-2 items-center gap-3",
         "bottom-[98px] max-[380px]:bottom-[114px] md:bottom-0 md:py-6"
       )}

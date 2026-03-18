@@ -63,21 +63,23 @@ const PointsHUD = () => {
                 width={24}
                 height={24}
               />
-              <div className="flex text-base gap-1 items-center">
-                <span
-                  className={classNames(
-                    "font-semibold tracking-wide",
-                    "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
-                    pointsUsed >= maxPoints && "!text-red-500"
-                  )}
-                >
-                  {pointsUsed}
-                </span>
-                <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
-                  / {maxPoints}
-                </span>
+              <div className="flex text-base gap-1 items-center justify-between w-full">
+                <div className="flex gap-1 items-center">
+                  <span
+                    className={classNames(
+                      "font-semibold tracking-wide",
+                      "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
+                      pointsUsed >= maxPoints && "!text-red-500"
+                    )}
+                  >
+                    {pointsUsed}
+                  </span>
+                  <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
+                    / {maxPoints}
+                  </span>
+                </div>
+                <BiomeBudget />
               </div>
-              <BiomeBudget />
             </div>
 
             <div className="flex items-center gap-2">
@@ -116,19 +118,21 @@ const PointsHUD = () => {
                 height={30}
               />
             </Tooltip>
-            <div className={classNames("flex text-lg gap-1.5 items-center")}>
-              <span
-                className={classNames(
-                  "font-semibold tracking-wide",
-                  "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
-                  pointsUsed >= maxPoints && "!text-red-500"
-                )}
-              >
-                {pointsUsed}
-              </span>
-              <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
-                / {maxPoints}
-              </span>
+            <div className={classNames("flex text-lg gap-1.5 items-center justify-between")}>
+              <div className="flex gap-1.5 items-center">
+                <span
+                  className={classNames(
+                    "font-semibold tracking-wide",
+                    "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
+                    pointsUsed >= maxPoints && "!text-red-500"
+                  )}
+                >
+                  {pointsUsed}
+                </span>
+                <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
+                  / {maxPoints}
+                </span>
+              </div>
               <BiomeBudget />
             </div>
 

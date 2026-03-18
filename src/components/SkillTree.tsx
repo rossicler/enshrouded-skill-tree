@@ -151,7 +151,6 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
       <TransformWrapper
         minScale={2}
         maxScale={5}
-        limitToBounds={false}
         wheel={{ step: 2 }}
         doubleClick={{
           disabled: true,

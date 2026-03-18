@@ -11,7 +11,7 @@ const Stats = () => {
 
   return (
     <div className={classNames("flex flex-col gap-1.5 mt-3 md:mt-5")}>
-      <GameButton className="!min-w-0 !px-3 md:!min-w-[140px] md:!px-8" onClick={() => setOpen(true)}>
+      <GameButton className="!min-w-0 !px-4 md:!min-w-[140px] md:!px-8" onClick={() => setOpen(true)}>
         <BarChart3 size={16} className="md:hidden" />
         <span className="hidden md:inline">{t("hud.stats")}</span>
       </GameButton>

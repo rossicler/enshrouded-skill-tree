@@ -20,6 +20,10 @@
   cursor: url('/assets/cursor.png'), auto !important;
 }
 
+html, body {
+  overflow: hidden;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

@@ -4,17 +4,18 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
 import { ChevronDown } from "lucide-react";
 
-import { convertJsonToHash } from "@/utils/utils";
+import { convertJsonToHash, BuildData } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
 import CopyInput from "../shared/CopyInput";
 import GamePanel from "../shared/GamePanel";
 import GameButton from "../shared/GameButton";
 import { classNames } from "@/utils/utils";
+import { BIOMES, MAX_PLAYER_LEVEL } from "@/constants/Biomes";
 
 type PropsType = {
   open: boolean;
   onClose: () => void;
-  onImportSkills: (skills: string[]) => void;
+  onImportSkills: (build: BuildData) => void;
   dbAvailable?: boolean;
 };
 
@@ -30,6 +31,10 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { t } = useTranslation("common");
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
+  const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? MAX_PLAYER_LEVEL);
+  const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes ?? BIOMES.map((b) => b.id));
+
+  const buildData: BuildData = { skills: selectedSkills, playerLevel, unlockedBiomes };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -37,14 +42,20 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
     const reader = new FileReader();
     reader.onload = (event) => {
       try {
-        const skills = JSON.parse(event.target?.result as string);
-        if (Array.isArray(skills) && skills.every((s) => typeof s === "string")) {
-          onImportSkills(skills);
-          gameToast.success(t("toasts.buildImported", { name: file.name.replace(/\.json$/i, "") }));
-          onClose();
+        const parsed = JSON.parse(event.target?.result as string);
+        // Support both old format (string[]) and new format ({ skills, playerLevel, unlockedBiomes })
+        let build: BuildData;
+        if (Array.isArray(parsed) && parsed.every((s) => typeof s === "string")) {
+          build = { skills: parsed };
+        } else if (parsed && Array.isArray(parsed.skills)) {
+          build = parsed as BuildData;
         } else {
           gameToast.error(t("toasts.invalidCode"));
+          return;
         }
+        onImportSkills(build);
+        gameToast.success(t("toasts.buildImported", { name: file.name.replace(/\.json$/i, "") }));
+        onClose();
       } catch {
         gameToast.error(t("toasts.invalidCode"));
       }
@@ -56,7 +67,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
   const exportAPIHandler = async () => {
     setLoading(true);
     try {
-      const tmpCode = convertJsonToHash(selectedSkills);
+      const tmpCode = convertJsonToHash(buildData);
       const response = await fetch("/api/code", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -76,7 +87,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
 
   const downloadJSON = () => {
     const name = shortCode || "enshrouded-build";
-    const json = JSON.stringify(selectedSkills, null, 2);
+    const json = JSON.stringify(buildData, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -197,8 +208,6 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
                           </div>
                         )}
                       </div>
-
-
                     </div>
                   </div>
                 </GamePanel>

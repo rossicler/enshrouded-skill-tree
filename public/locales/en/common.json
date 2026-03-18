@@ -16,7 +16,20 @@
     "tooltips": {
       "skillPoints": "Skill Points",
       "flameLevel": "Flame Level"
+    },
+    "biomeBudget": {
+      "title": "Biome Budget",
+      "playerLevel": "Player Level",
+      "total": "Total SP"
     }
+  },
+  "biomes": {
+    "springlands": "Springlands",
+    "revelwood": "Revelwood",
+    "nomad_highlands": "Nomad Highlands",
+    "kindlewastes": "Kindlewastes",
+    "albaneve_summits": "Albaneve Summits",
+    "veilwater_basin": "Veilwater Basin"
   },
   "dialogs": {
     "advancedSharing": "Advanced sharing",

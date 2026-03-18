@@ -8,6 +8,8 @@ import {
   clearCodeImported,
   initConnectedPaths,
   loadSelectedSkills,
+  setPlayerLevel,
+  setUnlockedBiomes,
 } from "@/redux/skills/skills.slice";
 import { convertHashToJson } from "@/utils/utils";
 
@@ -19,13 +21,13 @@ const InitSkills = () => {
   useEffect(() => {
     if (code) {
       try {
-        const initSkills = convertHashToJson(code);
-        if (!Array.isArray(initSkills)) throw new Error("Invalid code");
-        dispatch(loadSelectedSkills(initSkills));
-        dispatch(initConnectedPaths(initSkills));
-        if (code) {
-          dispatch(clearCodeImported());
-        }
+        const build = convertHashToJson(code);
+        if (!Array.isArray(build.skills)) throw new Error("Invalid code");
+        dispatch(loadSelectedSkills(build.skills));
+        dispatch(initConnectedPaths(build.skills));
+        if (build.playerLevel != null) dispatch(setPlayerLevel(build.playerLevel));
+        if (build.unlockedBiomes != null) dispatch(setUnlockedBiomes(build.unlockedBiomes));
+        dispatch(clearCodeImported());
       } catch {
         gameToast.error(t("toasts.invalidCode"));
       }

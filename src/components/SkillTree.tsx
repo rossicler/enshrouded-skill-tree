@@ -11,6 +11,7 @@ import {
   removeSelectedSkill,
 } from "@/redux/skills/skills.slice";
 import Nodes, { Node } from "../constants/Nodes";
+import { computeMaxSkillPoints } from "../constants/Biomes";
 import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
 import SkillTooltip from "./SkillTooltip";
@@ -23,7 +24,6 @@ import RefundConfirmDialog from "./dialogs/RefundConfirmDialog";
 import SkillCapDialog from "./dialogs/SkillCapDialog";
 
 const REFUND_CONFIRM_THRESHOLD = 2;
-const MAX_SKILL_POINTS = 184;
 
 type SkillTreeProps = {
   dbAvailable?: boolean;
@@ -41,6 +41,9 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
   const transformRef = useRef<ReactZoomPanPinchRef | null>(null);
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
   const connectedPaths = useAppSelector((state) => state.skill.connectedPaths);
+  const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
+  const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? 45);
+  const maxSkillPoints = computeMaxSkillPoints(playerLevel, unlockedBiomes);
   const dispatch = useAppDispatch();
 
   const getPointsUsed = () =>
@@ -93,7 +96,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
       }
     } else {
       const nodeCost = Nodes.types[node.type]?.cost ?? 0;
-      if (getPointsUsed() + nodeCost > MAX_SKILL_POINTS) {
+      if (getPointsUsed() + nodeCost > maxSkillPoints) {
         playSound("node-refund", 0.4);
         setShowCapWarning(true);
         return;

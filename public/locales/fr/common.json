@@ -16,7 +16,20 @@
     "tooltips": {
       "skillPoints": "Points de compétence",
       "flameLevel": "Niveau de flamme"
+    },
+    "biomeBudget": {
+      "title": "Budget par biome",
+      "playerLevel": "Niveau du joueur",
+      "total": "Points de compétences totaux"
     }
+  },
+  "biomes": {
+    "springlands": "Hautes pâtures",
+    "revelwood": "Bois envoutés",
+    "nomad_highlands": "Plateaux nomades",
+    "kindlewastes": "Regs exaltés",
+    "albaneve_summits": "Sommets d'Albaneve",
+    "veilwater_basin": "Bassin de Veilwater"
   },
   "dialogs": {
     "advancedSharing": "Partage avancé",

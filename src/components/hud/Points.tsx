@@ -8,13 +8,16 @@ import Stats from "./Stats";
 import FlameLevel from "./FlameLevel";
 import GamePanel from "../shared/GamePanel";
 import Tooltip from "../shared/Tooltip";
-
-const MAX_POINTS = 184;
+import BiomeBudget from "./BiomeBudget";
+import { computeMaxSkillPoints } from "@/constants/Biomes";
 
 const PointsHUD = () => {
   const [pointsUsed, setPointsUsed] = useState(0);
   const { t } = useTranslation("common");
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
+  const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
+  const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? 45);
+  const maxPoints = computeMaxSkillPoints(playerLevel, unlockedBiomes);
 
   useEffect(() => {
     const totalCost = selectedSkills.reduce(
@@ -65,15 +68,16 @@ const PointsHUD = () => {
                   className={classNames(
                     "font-semibold tracking-wide",
                     "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
-                    pointsUsed >= MAX_POINTS && "!text-red-500"
+                    pointsUsed >= maxPoints && "!text-red-500"
                   )}
                 >
                   {pointsUsed}
                 </span>
                 <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
-                  / {MAX_POINTS}
+                  / {maxPoints}
                 </span>
               </div>
+              <BiomeBudget />
             </div>
 
             <div className="flex items-center gap-2">
@@ -117,14 +121,15 @@ const PointsHUD = () => {
                 className={classNames(
                   "font-semibold tracking-wide",
                   "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
-                  pointsUsed >= MAX_POINTS && "!text-red-500"
+                  pointsUsed >= maxPoints && "!text-red-500"
                 )}
               >
                 {pointsUsed}
               </span>
               <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
-                / {MAX_POINTS}
+                / {maxPoints}
               </span>
+              <BiomeBudget />
             </div>
 
             <Tooltip text={t("hud.tooltips.flameLevel")} position="bottom" className="flex justify-center">

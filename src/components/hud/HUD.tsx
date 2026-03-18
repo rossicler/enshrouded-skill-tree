@@ -10,7 +10,10 @@ import { useAppDispatch } from "@/redux/hooks";
 import {
   loadSelectedSkills,
   initConnectedPaths,
+  setPlayerLevel,
+  setUnlockedBiomes,
 } from "@/redux/skills/skills.slice";
+import { BuildData } from "@/utils/utils";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
 import BuildShareDialog from "../dialogs/BuildShareDialog";
@@ -33,10 +36,12 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
   const dispatch = useAppDispatch();
   const router = useRouter();
 
-  const importSkillsHandler = (skills: string[]) => {
+  const importSkillsHandler = (build: BuildData) => {
     playSound("node-unlock", 0.4);
-    dispatch(loadSelectedSkills(skills));
-    dispatch(initConnectedPaths(skills));
+    dispatch(loadSelectedSkills(build.skills));
+    dispatch(initConnectedPaths(build.skills));
+    if (build.playerLevel != null) dispatch(setPlayerLevel(build.playerLevel));
+    if (build.unlockedBiomes != null) dispatch(setUnlockedBiomes(build.unlockedBiomes));
   };
 
   const clearHandler = () => {

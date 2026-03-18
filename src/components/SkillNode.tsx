@@ -52,6 +52,8 @@ const SkillNode = ({
   const selectHandler = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouchDevice) return;
     if (onSelect) onSelect(node);
   };
 

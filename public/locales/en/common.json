@@ -20,7 +20,7 @@
     "biomeBudget": {
       "title": "Biome Budget",
       "playerLevel": "Player Level",
-      "total": "Total SP",
+      "total": "Total Skill Points",
       "reset": "Unlock all"
     }
   },

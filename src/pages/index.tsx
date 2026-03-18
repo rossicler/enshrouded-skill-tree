@@ -16,15 +16,17 @@ import { setCodeImported } from "@/redux/skills/skills.slice";
 type Query = {
   shortCode?: string;
   code?: string;
+  focus?: string;
 };
 
 type PropsType = {
   code?: string;
+  focusNodeId?: string;
   clusterStillProvisioning?: boolean;
   dbAvailable?: boolean;
 };
 
-export default function Home({ code, clusterStillProvisioning, dbAvailable = false }: PropsType) {
+export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAvailable = false }: PropsType) {
   const dispatch = useAppDispatch();
   const { t } = useTranslation("common");
 
@@ -52,7 +54,7 @@ export default function Home({ code, clusterStillProvisioning, dbAvailable = fal
           className="object-cover object-center"
         />
         <div>
-          <SkillTree dbAvailable={dbAvailable} />
+          <SkillTree dbAvailable={dbAvailable} focusNodeId={focusNodeId} />
           <InitSkills />
         </div>
       </main>
@@ -85,13 +87,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   if (context.query) {
-    const { shortCode, code: rawCode = "" } = context.query as Query;
+    const { shortCode, code: rawCode = "", focus } = context.query as Query;
     const fullCode = Array.isArray(rawCode) ? rawCode[0] : rawCode;
     const code = shortCode ? await getCode(shortCode) : fullCode;
+    const focusNodeId = Array.isArray(focus) ? focus[0] : focus;
     return {
       props: {
         ...(await serverSideTranslations(locale, ["common", "nodes"])),
         code,
+        ...(focusNodeId ? { focusNodeId } : {}),
         dbAvailable: true,
       },
     };

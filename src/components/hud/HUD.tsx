@@ -25,9 +25,10 @@ type PropsType = {
   centerView: (scale?: number) => void;
   zoomToElement: (node: HTMLElement | string, scale?: number, animationTime?: number, animationType?: "easeOut" | "linear" | "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint") => void;
   dbAvailable?: boolean;
+  initialSearchText?: string;
 };
 
-const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false }: PropsType) => {
+const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, initialSearchText }: PropsType) => {
   let [importOpen, setImportOpen] = useState(false);
   let [exportOpen, setExportOpen] = useState(false);
   const [resetOpen, setResetOpen] = useState(false);
@@ -70,7 +71,7 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false }
       />
 
       {/* Search — always visible, full width on mobile */}
-      <SearchHUD zoomToElement={zoomToElement} onFocusChange={setSearchFocused} />
+      <SearchHUD zoomToElement={zoomToElement} onFocusChange={setSearchFocused} initialSearchText={initialSearchText} />
 
       {/* Other HUD elements — hidden on mobile when search is focused */}
       <div className={searchFocused ? "hidden md:contents" : "contents"}>

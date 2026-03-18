@@ -8,6 +8,7 @@ type PropsType = {
   className?: string;
   grouped?: boolean;
   variant?: "default" | "text";
+  noDecorations?: boolean;
 } & JSX.IntrinsicElements["button"];
 
 const DECORATION_FILTER =
@@ -19,6 +20,7 @@ const GameButton = ({
   className,
   grouped,
   variant = "default",
+  noDecorations = false,
   disabled,
   ...props
 }: PropsType) => {
@@ -172,26 +174,30 @@ const GameButton = ({
         <span className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.4)] to-transparent" />
       </span>
 
-      <img
-        src="/assets/decorations/button-decoration.svg"
-        alt=""
-        className={classNames(
-          "absolute left-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none hidden md:block",
-          disabled ? "opacity-80" : "opacity-80 group-hover:opacity-100",
-          "transition-opacity",
-          DECORATION_FILTER
-        )}
-      />
-      <img
-        src="/assets/decorations/button-decoration.svg"
-        alt=""
-        className={classNames(
-          "absolute right-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none hidden md:block",
-          disabled ? "opacity-80" : "opacity-80 group-hover:opacity-100",
-          "transition-opacity -scale-x-100",
-          DECORATION_FILTER
-        )}
-      />
+      {!noDecorations && (
+        <img
+          src="/assets/decorations/button-decoration.svg"
+          alt=""
+          className={classNames(
+            "absolute left-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none hidden md:block",
+            disabled ? "opacity-80" : "opacity-80 group-hover:opacity-100",
+            "transition-opacity",
+            DECORATION_FILTER
+          )}
+        />
+      )}
+      {!noDecorations && (
+        <img
+          src="/assets/decorations/button-decoration.svg"
+          alt=""
+          className={classNames(
+            "absolute right-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none hidden md:block",
+            disabled ? "opacity-80" : "opacity-80 group-hover:opacity-100",
+            "transition-opacity -scale-x-100",
+            DECORATION_FILTER
+          )}
+        />
+      )}
 
       <span
         className={classNames(

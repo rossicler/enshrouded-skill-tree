@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { TransformComponent, TransformWrapper, ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
+import { useTranslation } from "next-i18next";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
@@ -26,9 +27,14 @@ const MAX_SKILL_POINTS = 184;
 
 type SkillTreeProps = {
   dbAvailable?: boolean;
+  focusNodeId?: string;
 };
 
-const SkillTree = ({ dbAvailable = false }: SkillTreeProps) => {
+const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
+  const { t } = useTranslation("nodes");
+  const focusNodeName = focusNodeId
+    ? t(`${Nodes.nodes[focusNodeId]?.type}.name`)
+    : undefined;
   const [selectableSkills, setSelectableSkills] = useState<string[]>([]);
   const [pendingRefund, setPendingRefund] = useState<string[] | null>(null);
   const [showCapWarning, setShowCapWarning] = useState(false);
@@ -149,13 +155,20 @@ const SkillTree = ({ dbAvailable = false }: SkillTreeProps) => {
         onInit={(ref) => {
           transformRef.current = ref;
           setTimeout(() => {
+            if (focusNodeId) {
+              const el = document.getElementById(`node-${focusNodeId}`);
+              if (el) {
+                ref.zoomToElement(el, 5, 0);
+                return;
+              }
+            }
             ref.centerView(2, 0);
           }, 0);
         }}
       >
         {({ zoomIn, zoomOut, centerView, zoomToElement }) => (
           <>
-            <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} zoomToElement={zoomToElement} dbAvailable={dbAvailable} />
+            <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} zoomToElement={zoomToElement} dbAvailable={dbAvailable} initialSearchText={focusNodeName} />
             <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
               <div
                 className="relative w-screen h-screen flex items-center justify-center"
@@ -187,6 +200,7 @@ const SkillTree = ({ dbAvailable = false }: SkillTreeProps) => {
                 node={skillNode}
                 selected={selectedSkills.includes(skillNode.id)}
                 selectable={selectableSkills.includes(skillNode.id)}
+                onSelect={() => onSelect(skillNode)}
               />
             ))}
           </>

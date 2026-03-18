@@ -1,16 +1,19 @@
 import { Tooltip } from "react-tooltip";
 import { useTranslation } from "next-i18next";
 import { useEffect, useId, useState } from "react";
-import { Check } from "lucide-react";
+import { Link2 } from "lucide-react";
 
 import SkillNodes, { Node } from "../constants/Nodes";
 import Image from "next/image";
 import { classNames } from "@/utils/utils";
+import { gameToast } from "@/utils/gameToast";
+import GameButton from "./shared/GameButton";
 
 type PropsType = {
   node: Node;
   selected?: boolean;
   selectable?: boolean;
+  onSelect?: () => void;
 };
 
 const GRADIENT_COLORS: Record<string, { light: string; dark: string }> = {
@@ -20,7 +23,7 @@ const GRADIENT_COLORS: Record<string, { light: string; dark: string }> = {
   gold: { light: "#BE8400", dark: "#402C01" },
 };
 
-const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
+const SkillTooltip = ({ node, selected, selectable, onSelect }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
   const { t } = useTranslation(["nodes", "common"]);
   const name = t(`${node.type}.name`, { ns: "nodes" });
@@ -47,12 +50,20 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
   const colors = GRADIENT_COLORS[metadata.color] ?? GRADIENT_COLORS.green;
   const gradient = `linear-gradient(187deg, ${colors.light} 0%, ${colors.dark} 100%)`;
 
+  const handleShare = () => {
+    const url = `${window.location.origin}${window.location.pathname}?focus=${node.id}`;
+    navigator.clipboard.writeText(url).then(() => {
+      gameToast.success(t("toasts.shareUrlCopied", { ns: "common" }));
+    });
+  };
+
   return (
     <Tooltip
       anchorSelect={`[data-tooltip-id="skill-tooltip-${node.id}"]`}
       className="!p-0 !bg-transparent !border-0 !rounded-none"
       style={{ zIndex: 9999 }}
       noArrow
+      clickable
     >
       <div className="relative max-w-sm min-w-[260px]">
         {/* SVG filter for rugged edges */}
@@ -129,23 +140,28 @@ const SkillTooltip = ({ node, selected, selectable }: PropsType) => {
             </div>
 
             {/* Status */}
-            {selected ? (
-              <div className="flex items-center gap-1.5 text-white/80 text-sm font-semibold uppercase tracking-wide">
-                <Check size={16} className="text-white/80" />
-                {t("skillTooltip.unlocked", { ns: "common" })}
-              </div>
-            ) : selectable ? (
-              <span className="text-white/70 text-sm font-semibold uppercase tracking-wide">
-                {t("skillTooltip.unlock", { ns: "common" })}
-              </span>
-            ) : (
-              <span className={classNames(
-                "text-red-400 text-sm font-semibold uppercase tracking-wide transition-all duration-300",
-                flash && "text-red-300 drop-shadow-[0_0_8px_rgba(248,113,113,0.8)] scale-110"
-              )}>
-                {t("skillTooltip.outOfRange", { ns: "common" })}
-              </span>
-            )}
+            <div className="flex items-center">
+              <GameButton variant="text" onClick={handleShare} title={t("skillTooltip.share", { ns: "common" })}>
+                <Link2 size={14} />
+              </GameButton>
+              <span className="w-px h-4 bg-white/20 mx-1 shrink-0" />
+              {selected ? (
+                <GameButton variant="text" onClick={onSelect}>
+                  {t("skillTooltip.refund", { ns: "common" })}
+                </GameButton>
+              ) : selectable ? (
+                <GameButton variant="text" onClick={onSelect}>
+                  {t("skillTooltip.unlock", { ns: "common" })}
+                </GameButton>
+              ) : (
+                <span className={classNames(
+                  "text-red-400 text-sm font-semibold uppercase tracking-wide transition-all duration-300",
+                  flash && "text-red-300 drop-shadow-[0_0_8px_rgba(248,113,113,0.8)] scale-110"
+                )}>
+                  {t("skillTooltip.outOfRange", { ns: "common" })}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>

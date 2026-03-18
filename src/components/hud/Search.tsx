@@ -18,10 +18,11 @@ type PropsType = {
     animationType?: "easeOut" | "linear" | "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint"
   ) => void;
   onFocusChange?: (focused: boolean) => void;
+  initialSearchText?: string;
 };
 
-const Search = ({ zoomToElement, onFocusChange }: PropsType) => {
-  const [searchText, setSearchText] = useState("");
+const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) => {
+  const [searchText, setSearchText] = useState(initialSearchText ?? "");
   const [focused, setFocused] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -35,16 +36,7 @@ const Search = ({ zoomToElement, onFocusChange }: PropsType) => {
     return Object.entries(SkillNodes.types)
       .filter(([key]) => {
         const name = t(`${key}.name`, { ns: "nodes" });
-        const description = t(`${key}.description`, {
-          ns: "nodes",
-          returnObjects: true,
-        }) as string[];
-        return (
-          name.toLowerCase().includes(lSearchText) ||
-          description.some((desc) =>
-            desc.toLowerCase().includes(lSearchText)
-          )
-        );
+        return name.toLowerCase().includes(lSearchText);
       })
       .map(([key, meta]) => {
         const node = Object.values(SkillNodes.nodes).find((n) => n.type === key);

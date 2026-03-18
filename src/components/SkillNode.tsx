@@ -52,9 +52,7 @@ const SkillNode = ({
   const selectHandler = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (onSelect) {
-      onSelect(node);
-    }
+    if (onSelect) onSelect(node);
   };
 
   const iconSize =

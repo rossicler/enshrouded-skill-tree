@@ -106,7 +106,9 @@
     "unlocked": "Unlocked",
     "unlock": "Unlock",
     "outOfRange": "Out of range",
-    "cost": "Cost"
+    "cost": "Cost",
+    "share": "Share link to this skill",
+    "refund": "Refund"
   },
   "errors": {
     "serverError": "Server Error",

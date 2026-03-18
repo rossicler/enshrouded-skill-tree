@@ -106,7 +106,9 @@
     "unlocked": "Déverrouillée",
     "unlock": "Déverrouiller",
     "outOfRange": "Hors de portée",
-    "cost": "Coût"
+    "cost": "Coût",
+    "share": "Partager un lien vers cette compétence",
+    "refund": "Rembourser"
   },
   "errors": {
     "serverError": "Erreur serveur",

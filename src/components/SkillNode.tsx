@@ -1,4 +1,4 @@
-import { MouseEvent, memo, useMemo } from "react";
+import { MouseEvent, memo, useMemo, useRef } from "react";
 
 import { Node } from "../constants/Nodes";
 
@@ -49,11 +49,24 @@ const SkillNode = ({
     [node, selected, selectable]
   );
 
+  const tapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const selectHandler = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouchDevice) return;
+    if (isTouchDevice) {
+      if (tapTimer.current) {
+        clearTimeout(tapTimer.current);
+        tapTimer.current = null;
+        if (onSelect) onSelect(node);
+      } else {
+        tapTimer.current = setTimeout(() => {
+          tapTimer.current = null;
+        }, 300);
+      }
+      return;
+    }
     if (onSelect) onSelect(node);
   };
 

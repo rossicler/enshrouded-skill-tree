@@ -17,7 +17,7 @@
 }
 
 *, *::before, *::after {
-  cursor: url('/assets/cursor.png'), auto;
+  cursor: url('/assets/cursor.png'), auto !important;
 }
 
 body {

@@ -32,13 +32,13 @@ const GameButton = ({
       <button
         onClick={onClick}
         disabled={disabled}
-        onMouseEnter={() => !disabled && playSound("button-hover", 0.3)}
+        onMouseEnter={() => !disabled && playSound("node-hover", 0.3)}
         className={classNames(
           "group relative inline-flex items-center justify-center overflow-hidden",
           "px-4 py-2 min-h-[40px]",
           "text-sm font-semibold tracking-wide",
           "transition-all duration-150",
-          disabled && "cursor-not-allowed opacity-40",
+          disabled && "opacity-40",
           className
         )}
         {...props}
@@ -88,12 +88,12 @@ const GameButton = ({
       <button
         onClick={onClick}
         disabled={disabled}
-        onMouseEnter={() => !disabled && playSound("button-hover", 0.3)}
+        onMouseEnter={() => !disabled && playSound("node-hover", 0.3)}
         className={classNames(
           "group/btn relative flex items-center justify-center",
           "px-8 py-2.5 min-h-[40px] min-w-[140px]",
           "transition-all duration-150",
-          disabled && "cursor-not-allowed opacity-40",
+          disabled && "opacity-40",
           className
         )}
         {...props}
@@ -123,12 +123,12 @@ const GameButton = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      onMouseEnter={() => !disabled && playSound("button-hover", 0.3)}
+      onMouseEnter={() => !disabled && playSound("node-hover", 0.3)}
       className={classNames(
         "group relative inline-flex items-center justify-center overflow-hidden",
         "px-8 py-2.5 min-h-[40px] min-w-[140px]",
         "transition-all duration-150",
-        disabled && "cursor-not-allowed opacity-40",
+        disabled && "opacity-40",
         className
       )}
       {...props}

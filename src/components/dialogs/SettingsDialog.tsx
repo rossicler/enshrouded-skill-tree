@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import GamePanel from "../shared/GamePanel";
 import { classNames } from "@/utils/utils";
 import { isSoundEnabled, setSoundEnabled, playSound } from "@/utils/sounds";
@@ -12,14 +13,23 @@ type PropsType = {
 
 const SettingsDialog = ({ open, onClose }: PropsType) => {
   const { t } = useTranslation("common");
+  const router = useRouter();
   const [soundOn, setSoundOn] = useState(isSoundEnabled);
+  const [audioBlocked, setAudioBlocked] = useState(false);
 
-  const toggleSound = () => {
+  const switchLocale = (locale: string) => {
+    router.push(router.asPath, undefined, { locale, scroll: false });
+  };
+
+  const toggleSound = async () => {
     const next = !soundOn;
     setSoundOn(next);
     setSoundEnabled(next);
     if (next) {
-      playSound("node-unlock", 0.4);
+      const played = await playSound("node-unlock", 0.4);
+      setAudioBlocked(!played);
+    } else {
+      setAudioBlocked(false);
     }
   };
 
@@ -65,6 +75,7 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                         </span>
                         <button
                           onClick={toggleSound}
+                          onMouseEnter={() => playSound("node-hover", 0.3)}
                           className={classNames(
                             "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
                             soundOn
@@ -79,6 +90,33 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                             )}
                           />
                         </button>
+                      </div>
+                      {audioBlocked && (
+                        <p className="text-xs text-amber-400/80 leading-relaxed">
+                          {t("dialogs.settings.audioBlocked")}
+                        </p>
+                      )}
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-[#c0b89a]">
+                          {t("dialogs.settings.language")}
+                        </span>
+                        <div className="flex rounded overflow-hidden border border-[#5a5a60]">
+                          {["en", "fr"].map((locale) => (
+                            <button
+                              key={locale}
+                              onClick={() => switchLocale(locale)}
+                              onMouseEnter={() => playSound("node-hover", 0.3)}
+                              className={classNames(
+                                "px-3 py-1 text-sm font-semibold uppercase transition-colors",
+                                router.locale === locale
+                                  ? "bg-[#C8B169] text-black"
+                                  : "bg-[#35353a] text-[#c0b89a] hover:bg-[#4a4a50]"
+                              )}
+                            >
+                              {locale}
+                            </button>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>

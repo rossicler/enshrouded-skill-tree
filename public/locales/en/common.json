@@ -19,6 +19,7 @@
     }
   },
   "dialogs": {
+    "advancedSharing": "Advanced sharing",
     "about": {
       "title": "About",
       "description1": "This tool was created solely to aid Enshrouded players in sharing skill trees and builds conveniently. I'm not affiliated with Keen Games and do not hold any rights to the Enshrouded game.",
@@ -27,9 +28,10 @@
       "close": "Close"
     },
     "export": {
-      "title": "Export skills",
+      "title": "Share Your Build",
       "shortUrl": "Share URL",
       "generating": "Generating share URL...",
+      "noSkills": "Unlock skills in the tree to generate a share link.",
       "exportJson": "Export JSON",
       "exportJsonTitle": "Export as JSON",
       "buildName": "Build name",
@@ -50,7 +52,9 @@
     },
     "settings": {
       "title": "Settings",
-      "sounds": "Sound effects"
+      "sounds": "Sound effects",
+      "language": "Language",
+      "audioBlocked": "Audio was blocked by your browser. Allow audio for this site in your browser settings and try again."
     },
     "refundConfirm": {
       "title": "Refund skills",
@@ -72,6 +76,7 @@
   },
   "toasts": {
     "shareUrlCopied": "Share URL copied successfully",
+    "buildImported": "Build \"{{name}}\" imported successfully",
     "noSkillsAllocated": "No skills allocated!",
     "invalidUrl": "Invalid url!",
     "invalidCode": "Invalid code"

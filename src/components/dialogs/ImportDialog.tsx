@@ -2,9 +2,11 @@ import { FormEvent, Fragment, useRef, useState } from "react";
 import { gameToast } from "@/utils/gameToast";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
+import { ChevronDown } from "lucide-react";
 import GamePanel from "../shared/GamePanel";
 import GameButton from "../shared/GameButton";
 import GameInput from "../shared/GameInput";
+import { classNames } from "@/utils/utils";
 
 type PropsType = {
   open: boolean;
@@ -18,6 +20,7 @@ const CODE_ARG = "code=";
 
 const ImportDialog = ({ open, onClose, onImport, onImportSkills, dbAvailable = false }: PropsType) => {
   const [url, setUrl] = useState("");
+  const [advancedOpen, setAdvancedOpen] = useState(false);
   const isValidUrl = /^https?:\/\/.+\..+/.test(url.trim());
   const { t } = useTranslation("common");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -101,43 +104,63 @@ const ImportDialog = ({ open, onClose, onImport, onImportSkills, dbAvailable = f
                     >
                       {t("dialogs.import.title")}
                     </Dialog.Title>
-                    {dbAvailable ? (
-                      <form className="mt-5" onSubmit={importHandler}>
-                        <label className="block text-sm text-[#c0b89a] mb-1">
-                          {t("dialogs.import.urlLabel")}
-                        </label>
-                        <GameInput
-                          variant="plain"
-                          value={url}
-                          onChange={(e) => setUrl(e.target.value)}
-                        />
 
-                        <p className="mt-3 text-xs text-[#c0b89a]/60">
-                          {t("dialogs.import.warning")}
-                        </p>
-                        <div className="mt-4 flex justify-end gap-3">
-                          <GameButton type="submit" disabled={!isValidUrl}>
-                            {t("dialogs.import.import")}
-                          </GameButton>
-                          <GameButton onClick={importJSONHandler} type="button">
-                            {t("dialogs.import.importJson")}
-                          </GameButton>
-                        </div>
-                      </form>
-                    ) : (
-                      <div className="mt-5 flex justify-end">
-                        <GameButton onClick={importJSONHandler}>
-                          {t("dialogs.import.importJson")}
+                    <div className="mt-5 flex flex-col gap-3">
+                      {/* Advanced sharing accordion */}
+                      <div className="border-t border-white/10">
+                        <button
+                          onClick={() => setAdvancedOpen((v) => !v)}
+                          className="flex items-center justify-between w-full py-3 text-sm text-[#c0b89a] hover:text-[#e8d5a3] transition-colors"
+                        >
+                          {t("dialogs.advancedSharing")}
+                          <ChevronDown
+                            size={16}
+                            className={classNames(
+                              "transition-transform duration-200",
+                              advancedOpen && "rotate-180"
+                            )}
+                          />
+                        </button>
+
+                        {advancedOpen && (
+                          dbAvailable ? (
+                            <form className="flex flex-col gap-3 pb-2" onSubmit={importHandler}>
+                              <label className="block text-sm text-[#c0b89a]">
+                                {t("dialogs.import.urlLabel")}
+                              </label>
+                              <GameInput
+                                variant="plain"
+                                value={url}
+                                onChange={(e) => setUrl(e.target.value)}
+                              />
+                              <p className="text-xs text-[#c0b89a]/60">
+                                {t("dialogs.import.warning")}
+                              </p>
+                              <div className="flex justify-end gap-3">
+                                <GameButton type="submit" disabled={!isValidUrl}>
+                                  {t("dialogs.import.import")}
+                                </GameButton>
+                                <GameButton onClick={importJSONHandler} type="button">
+                                  {t("dialogs.import.importJson")}
+                                </GameButton>
+                              </div>
+                            </form>
+                          ) : (
+                            <div className="flex justify-end pb-2">
+                              <GameButton onClick={importJSONHandler}>
+                                {t("dialogs.import.importJson")}
+                              </GameButton>
+                            </div>
+                          )
+                        )}
+                      </div>
+
+                      <div className="flex justify-end">
+                        <GameButton variant="text" onClick={onClose}>
+                          {t("dialogs.export.close")}
                         </GameButton>
                       </div>
-                    )}
-                    <input
-                      ref={fileInputRef}
-                      type="file"
-                      accept=".json"
-                      className="hidden"
-                      onChange={handleFileChange}
-                    />
+                    </div>
                   </div>
                 </GamePanel>
               </Dialog.Panel>

@@ -1,32 +1,57 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { gameToast } from "@/utils/gameToast";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
+import { ChevronDown } from "lucide-react";
 
 import { convertJsonToHash } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
 import CopyInput from "../shared/CopyInput";
 import GamePanel from "../shared/GamePanel";
 import GameButton from "../shared/GameButton";
-import GameInput from "../shared/GameInput";
+import { classNames } from "@/utils/utils";
 
 type PropsType = {
   open: boolean;
   onClose: () => void;
+  onImportSkills: (skills: string[]) => void;
   dbAvailable?: boolean;
 };
 
 const BASE_URL =
   process.env.BASE_URL || "https://enshrouded-skill-tree.vercel.app/";
 
-const ExportDialog = ({ open, onClose, dbAvailable = false }: PropsType) => {
+const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }: PropsType) => {
   const [shortURL, setShortURL] = useState("");
+  const [shortCode, setShortCode] = useState("");
   const [copied, setCopied] = useState("");
   const [loading, setLoading] = useState(false);
-  const [showJsonExport, setShowJsonExport] = useState(false);
-  const [buildName, setBuildName] = useState("enshrouded-build");
+  const [advancedOpen, setAdvancedOpen] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const { t } = useTranslation("common");
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const skills = JSON.parse(event.target?.result as string);
+        if (Array.isArray(skills) && skills.every((s) => typeof s === "string")) {
+          onImportSkills(skills);
+          gameToast.success(t("toasts.buildImported", { name: file.name.replace(/\.json$/i, "") }));
+          onClose();
+        } else {
+          gameToast.error(t("toasts.invalidCode"));
+        }
+      } catch {
+        gameToast.error(t("toasts.invalidCode"));
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = "";
+  };
 
   const exportAPIHandler = async () => {
     setLoading(true);
@@ -39,6 +64,7 @@ const ExportDialog = ({ open, onClose, dbAvailable = false }: PropsType) => {
       });
       const result = await response.json();
       const url = `${BASE_URL}?shortCode=${result.code}`;
+      setShortCode(result.code);
       setShortURL(url);
       navigator.clipboard.writeText(url);
       gameToast.success(t("toasts.shareUrlCopied"));
@@ -49,7 +75,7 @@ const ExportDialog = ({ open, onClose, dbAvailable = false }: PropsType) => {
   };
 
   const downloadJSON = () => {
-    const name = buildName.trim() || "enshrouded-build";
+    const name = shortCode || "enshrouded-build";
     const json = JSON.stringify(selectedSkills, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -58,25 +84,21 @@ const ExportDialog = ({ open, onClose, dbAvailable = false }: PropsType) => {
     a.download = `${name}.json`;
     a.click();
     URL.revokeObjectURL(url);
-    setShowJsonExport(false);
     onClose();
   };
 
   useEffect(() => {
     if (open) {
-      if (selectedSkills.length === 0) {
-        gameToast.error(t("toasts.noSkillsAllocated"));
-        onClose();
-      } else if (dbAvailable) {
-        if (!shortURL) exportAPIHandler();
+      if (dbAvailable) {
+        if (selectedSkills.length > 0 && !shortURL) exportAPIHandler();
       } else {
-        setShowJsonExport(true);
+        setAdvancedOpen(true);
       }
     } else {
       setShortURL("");
+      setShortCode("");
       setCopied("");
-      setShowJsonExport(false);
-      setBuildName("enshrouded-build");
+      setAdvancedOpen(false);
     }
   }, [open]);
 
@@ -113,42 +135,16 @@ const ExportDialog = ({ open, onClose, dbAvailable = false }: PropsType) => {
                       as="h3"
                       className="text-lg font-semibold leading-6 text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]"
                     >
-                      {showJsonExport
-                        ? t("dialogs.export.exportJsonTitle")
-                        : t("dialogs.export.title")}
+                      {t("dialogs.export.title")}
                     </Dialog.Title>
 
-                    {showJsonExport ? (
-                      <div className="mt-5 flex flex-col gap-3">
-                        <label className="block text-sm text-[#c0b89a]">
-                          {t("dialogs.export.buildName")}
-                        </label>
-                        <GameInput
-                          variant="plain"
-                          value={buildName}
-                          onChange={(e) => setBuildName(e.target.value)}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter") {
-                              e.preventDefault();
-                              downloadJSON();
-                            }
-                          }}
-                          autoFocus
-                        />
-                        <div className="mt-2 w-full flex justify-end gap-3">
-                          {dbAvailable && (
-                            <GameButton variant="text" onClick={() => setShowJsonExport(false)}>
-                              {t("dialogs.refundConfirm.cancel")}
-                            </GameButton>
-                          )}
-                          <GameButton onClick={downloadJSON}>
-                            {t("dialogs.export.download")}
-                          </GameButton>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="mt-5 flex flex-col gap-3">
-                        {loading ? (
+                    <div className="mt-5 flex flex-col gap-3">
+                      {dbAvailable && (
+                        selectedSkills.length === 0 ? (
+                          <p className="text-sm text-[#c0b89a] italic">
+                            {t("dialogs.export.noSkills")}
+                          </p>
+                        ) : loading ? (
                           <div className="text-sm text-[#c0b89a]">
                             {t("dialogs.export.generating")}
                           </div>
@@ -159,18 +155,51 @@ const ExportDialog = ({ open, onClose, dbAvailable = false }: PropsType) => {
                             onCopy={() => setCopied("url")}
                             value={shortURL}
                           />
-                        ) : null}
+                        ) : null
+                      )}
 
-                        <div className="mt-4 w-full flex justify-end gap-3">
-                          <GameButton variant="text" onClick={onClose}>
-                            {t("dialogs.export.close")}
-                          </GameButton>
-                          <GameButton onClick={() => setShowJsonExport(true)}>
-                            {t("dialogs.export.exportJson")}
-                          </GameButton>
-                        </div>
+                      {/* Advanced sharing accordion */}
+                      <div className="mt-2 border-t border-white/10">
+                        <button
+                          onClick={() => setAdvancedOpen((v) => !v)}
+                          className="flex items-center justify-between w-full py-3 text-sm text-[#c0b89a] hover:text-[#e8d5a3] transition-colors"
+                        >
+                          {t("dialogs.advancedSharing")}
+                          <ChevronDown
+                            size={16}
+                            className={classNames(
+                              "transition-transform duration-200",
+                              advancedOpen && "rotate-180"
+                            )}
+                          />
+                        </button>
+
+                        {advancedOpen && (
+                          <div className="flex flex-col gap-3 pb-2">
+                            <div className="flex gap-3">
+                              <GameButton className="flex-1" onClick={() => fileInputRef.current?.click()}>
+                                {t("dialogs.import.importJson")}
+                              </GameButton>
+                              <GameButton className="flex-1" onClick={downloadJSON} disabled={selectedSkills.length === 0}>
+                                {t("dialogs.export.exportJson")}
+                              </GameButton>
+                            </div>
+                            <p className="text-sm text-[#c0b89a] italic">
+                              {t("dialogs.import.warning")}
+                            </p>
+                            <input
+                              ref={fileInputRef}
+                              type="file"
+                              accept=".json"
+                              className="hidden"
+                              onChange={handleFileChange}
+                            />
+                          </div>
+                        )}
                       </div>
-                    )}
+
+
+                    </div>
                   </div>
                 </GamePanel>
               </Dialog.Panel>
@@ -182,4 +211,4 @@ const ExportDialog = ({ open, onClose, dbAvailable = false }: PropsType) => {
   );
 };
 
-export default ExportDialog;
+export default BuildShareDialog;

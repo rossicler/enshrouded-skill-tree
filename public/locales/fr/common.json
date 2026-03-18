@@ -19,6 +19,7 @@
     }
   },
   "dialogs": {
+    "advancedSharing": "Partage avancé",
     "about": {
       "title": "À propos",
       "description1": "Cet outil a été créé uniquement pour aider les joueurs d'Enshrouded à partager leurs arbres de compétences et builds facilement. Je ne suis pas affilié à Keen Games et ne détiens aucun droit sur le jeu Enshrouded.",
@@ -27,9 +28,10 @@
       "close": "Fermer"
     },
     "export": {
-      "title": "Exporter les compétences",
+      "title": "Partager votre build",
       "shortUrl": "URL de partage",
       "generating": "Génération de l'URL de partage...",
+      "noSkills": "Débloquez des compétences dans l'arbre pour générer un lien de partage.",
       "exportJson": "Exporter JSON",
       "exportJsonTitle": "Exporter en JSON",
       "buildName": "Nom du build",
@@ -50,7 +52,9 @@
     },
     "settings": {
       "title": "Paramètres",
-      "sounds": "Effets sonores"
+      "sounds": "Effets sonores",
+      "language": "Langue",
+      "audioBlocked": "L'audio a été bloqué par votre navigateur. Autorisez l'audio pour ce site dans les paramètres de votre navigateur et réessayez."
     },
     "refundConfirm": {
       "title": "Rembourser les compétences",
@@ -72,6 +76,7 @@
   },
   "toasts": {
     "shareUrlCopied": "URL de partage copiée avec succès",
+    "buildImported": "Build \"{{name}}\" importé avec succès",
     "noSkillsAllocated": "Aucune compétence allouée !",
     "invalidUrl": "URL invalide !",
     "invalidCode": "Code invalide"

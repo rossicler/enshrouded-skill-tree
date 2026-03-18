@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import { ZoomOut, Crosshair, ZoomIn, Download, Upload, RotateCcw } from "lucide-react";
+import { ZoomOut, Crosshair, ZoomIn, Share2, RotateCcw } from "lucide-react";
 
 import { classNames } from "../../utils/utils";
 import { playSound } from "../../utils/sounds";
 import GameButton from "../shared/GameButton";
 import GameButtonGroup from "../shared/GameButtonGroup";
-import ImportDialog from "../dialogs/ImportDialog";
 import ResetConfirmDialog from "../dialogs/ResetConfirmDialog";
 import { useAppDispatch } from "@/redux/hooks";
 import {
   loadSelectedSkills,
-  setCodeImported,
   initConnectedPaths,
 } from "@/redux/skills/skills.slice";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
-import ExportDialog from "../dialogs/ExportDialog";
+import BuildShareDialog from "../dialogs/BuildShareDialog";
 import { useRouter } from "next/router";
 import SearchHUD from "./Search";
 
@@ -29,17 +27,11 @@ type PropsType = {
 };
 
 const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, initialSearchText }: PropsType) => {
-  let [importOpen, setImportOpen] = useState(false);
-  let [exportOpen, setExportOpen] = useState(false);
+  const [exportOpen, setExportOpen] = useState(false);
   const [resetOpen, setResetOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
   const dispatch = useAppDispatch();
   const router = useRouter();
-
-  const importHandler = (code: string) => {
-    playSound("node-unlock", 0.4);
-    dispatch(setCodeImported(code));
-  };
 
   const importSkillsHandler = (skills: string[]) => {
     playSound("node-unlock", 0.4);
@@ -56,14 +48,12 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
 
   return (
     <>
-      <ImportDialog
-        open={importOpen}
-        onClose={() => setImportOpen(false)}
-        onImport={importHandler}
+      <BuildShareDialog
+        open={exportOpen}
+        onClose={() => setExportOpen(false)}
         onImportSkills={importSkillsHandler}
         dbAvailable={dbAvailable}
       />
-      <ExportDialog open={exportOpen} onClose={() => setExportOpen(false)} dbAvailable={dbAvailable} />
       <ResetConfirmDialog
         open={resetOpen}
         onConfirm={clearHandler}
@@ -84,11 +74,8 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
         >
           {/* Mobile: vertical */}
           <GameButtonGroup vertical className="md:hidden">
-            <GameButton grouped className="!min-w-0 !px-4" onClick={() => setImportOpen(true)}>
-              <Download size={16} />
-            </GameButton>
             <GameButton grouped className="!min-w-0 !px-4" onClick={() => setExportOpen(true)}>
-              <Upload size={16} />
+              <Share2 size={16} />
             </GameButton>
             <GameButton grouped className="!min-w-0 !px-4" onClick={() => setResetOpen(true)}>
               <RotateCcw size={16} />
@@ -96,11 +83,8 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
           </GameButtonGroup>
           {/* Desktop: horizontal, icon-only */}
           <GameButtonGroup className="hidden md:flex">
-            <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={() => setImportOpen(true)}>
-              <Download size={16} />
-            </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4" onClick={() => setExportOpen(true)}>
-              <Upload size={16} />
+            <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={() => setExportOpen(true)}>
+              <Share2 size={16} />
             </GameButton>
             <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={() => setResetOpen(true)}>
               <RotateCcw size={16} />

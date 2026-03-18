@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { Search as SearchIcon, X } from "lucide-react";
+import { useRouter } from "next/router";
 
 import { classNames } from "@/utils/utils";
 import { useAppDispatch } from "@/redux/hooks";
@@ -22,13 +23,24 @@ type PropsType = {
 };
 
 const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) => {
+  const router = useRouter();
   const [searchText, setSearchText] = useState(initialSearchText ?? "");
   const [focused, setFocused] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const routerRef = useRef(router);
+  useEffect(() => { routerRef.current = router; }, [router]);
   const { t } = useTranslation(["common", "nodes"]);
   const dispatch = useAppDispatch();
+
+  const exactMatch = !!router.query.focus;
+
+  const clearExactMatch = useCallback(() => {
+    const { focus, ...rest } = routerRef.current.query;
+    if (!focus) return;
+    routerRef.current.replace({ query: rest }, undefined, { shallow: true });
+  }, []);
 
   const results = useMemo(() => {
     if (!searchText || searchText.length < 3) return [];
@@ -36,7 +48,9 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
     return Object.entries(SkillNodes.types)
       .filter(([key]) => {
         const name = t(`${key}.name`, { ns: "nodes" });
-        return name.toLowerCase().includes(lSearchText);
+        return exactMatch
+          ? name.toLowerCase() === lSearchText
+          : name.toLowerCase().includes(lSearchText);
       })
       .map(([key, meta]) => {
         const node = Object.values(SkillNodes.nodes).find((n) => n.type === key);
@@ -76,6 +90,7 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
   const handleResultClick = useCallback((typeKey: string) => {
     const name = t(`${typeKey}.name`, { ns: "nodes" });
     setSearchText(name);
+    clearExactMatch();
     setFocused(false);
     inputRef.current?.blur();
     const matchingNodes = Object.values(SkillNodes.nodes).filter(
@@ -127,14 +142,14 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
           ref={inputRef}
           placeholder={t("hud.search.placeholder", { ns: "common" })}
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          onFocus={() => setFocused(true)}
+          onChange={(e) => { clearExactMatch(); setSearchText(e.target.value); }}
+          onFocus={() => { clearExactMatch(); setFocused(true); }}
           onKeyDown={handleKeyDown}
           hideDecorationsClassName="hidden md:block"
         />
         {searchText ? (
           <button
-            onClick={() => setSearchText("")}
+            onClick={() => { clearExactMatch(); setSearchText(""); }}
             className={classNames(
               "absolute inset-y-0 right-8 text-[#e8d5a3]/60 hover:text-[#e8d5a3] h-full z-20",
               "flex items-center justify-center transition-colors"

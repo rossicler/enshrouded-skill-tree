@@ -46,6 +46,12 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
   const maxSkillPoints = computeMaxSkillPoints(playerLevel, unlockedBiomes);
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    if (!focusNodeId || !transformRef.current) return;
+    const el = document.getElementById(`node-${focusNodeId}`);
+    if (el) transformRef.current.zoomToElement(el, 5, 0);
+  }, [focusNodeId]);
+
   const getPointsUsed = () =>
     selectedSkills.reduce(
       (acc, id) => acc + (Nodes.types[Nodes.nodes[id]?.type]?.cost ?? 0),
@@ -157,22 +163,9 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
         }}
         onInit={(ref) => {
           transformRef.current = ref;
-          let attempts = 0;
-          const tryFocus = () => {
-            if (focusNodeId) {
-              const el = document.getElementById(`node-${focusNodeId}`);
-              if (el) {
-                ref.zoomToElement(el, 5, 0);
-                return;
-              }
-              if (++attempts < 30) {
-                requestAnimationFrame(tryFocus);
-                return;
-              }
-            }
-            ref.centerView(2, 0);
-          };
-          requestAnimationFrame(tryFocus);
+          if (!focusNodeId) {
+            requestAnimationFrame(() => ref.centerView(2, 0));
+          }
         }}
       >
         {({ zoomIn, zoomOut, centerView, zoomToElement }) => (

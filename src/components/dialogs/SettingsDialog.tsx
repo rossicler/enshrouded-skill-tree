@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import { APP_VERSION } from "@/constants/version";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
@@ -119,6 +120,7 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                         </div>
                       </div>
                     </div>
+                    <p className="mt-5 text-xs text-[#c0b89a]/50 text-right">v{APP_VERSION}</p>
                   </div>
                 </GamePanel>
               </Dialog.Panel>

@@ -64,46 +64,38 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const locale = context.locale ?? "en";
+  const translations = await serverSideTranslations(locale, ["common", "nodes"]);
+  const { shortCode, code: rawCode = "", focus } = context.query as Query;
+  const focusNodeId = Array.isArray(focus) ? focus[0] : focus;
+
+  let dbAvailable = false;
+  let code: string | undefined;
 
   try {
     await clientPromise;
+    dbAvailable = true;
+    const fullCode = Array.isArray(rawCode) ? rawCode[0] : rawCode;
+    code = shortCode ? await getCode(shortCode) : fullCode;
   } catch (e: any) {
     if (e.code === "ENOTFOUND") {
       // cluster is still provisioning
       return {
         props: {
-          ...(await serverSideTranslations(locale, ["common", "nodes"])),
+          ...translations,
           clusterStillProvisioning: true,
-        },
-      };
-    } else {
-      // Connection limit or other DB error — render the page without DB features
-      return {
-        props: {
-          ...(await serverSideTranslations(locale, ["common", "nodes"])),
+          ...(focusNodeId ? { focusNodeId } : {}),
         },
       };
     }
+    // Connection limit or other DB error — render without DB features
   }
 
-  if (context.query) {
-    const { shortCode, code: rawCode = "", focus } = context.query as Query;
-    const fullCode = Array.isArray(rawCode) ? rawCode[0] : rawCode;
-    const code = shortCode ? await getCode(shortCode) : fullCode;
-    const focusNodeId = Array.isArray(focus) ? focus[0] : focus;
-    return {
-      props: {
-        ...(await serverSideTranslations(locale, ["common", "nodes"])),
-        code,
-        ...(focusNodeId ? { focusNodeId } : {}),
-        dbAvailable: true,
-      },
-    };
-  }
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "nodes"])),
-      dbAvailable: true,
+      ...translations,
+      dbAvailable,
+      ...(code ? { code } : {}),
+      ...(focusNodeId ? { focusNodeId } : {}),
     },
   };
 };

@@ -157,16 +157,22 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
         }}
         onInit={(ref) => {
           transformRef.current = ref;
-          setTimeout(() => {
+          let attempts = 0;
+          const tryFocus = () => {
             if (focusNodeId) {
               const el = document.getElementById(`node-${focusNodeId}`);
               if (el) {
                 ref.zoomToElement(el, 5, 0);
                 return;
               }
+              if (++attempts < 30) {
+                requestAnimationFrame(tryFocus);
+                return;
+              }
             }
             ref.centerView(2, 0);
-          }, 0);
+          };
+          requestAnimationFrame(tryFocus);
         }}
       >
         {({ zoomIn, zoomOut, centerView, zoomToElement }) => (

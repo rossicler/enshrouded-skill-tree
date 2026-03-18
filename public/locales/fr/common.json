@@ -46,6 +46,7 @@
       "shortUrl": "URL de partage",
       "generating": "Génération de l'URL de partage...",
       "noSkills": "Débloquez des compétences dans l'arbre pour générer un lien de partage.",
+      "dbUnavailable": "Les liens de partage sont temporairement indisponibles. Utilisez l'export JSON pour partager votre build.",
       "exportJson": "Exporter JSON",
       "exportJsonTitle": "Exporter en JSON",
       "buildName": "Nom du build",

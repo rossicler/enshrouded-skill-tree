@@ -150,6 +150,11 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
                     </Dialog.Title>
 
                     <div className="mt-5 flex flex-col gap-3">
+                      {!dbAvailable && (
+                        <p className="text-sm text-amber-400/80 italic">
+                          {t("dialogs.export.dbUnavailable")}
+                        </p>
+                      )}
                       {dbAvailable && (
                         selectedSkills.length === 0 ? (
                           <p className="text-sm text-[#c0b89a] italic">

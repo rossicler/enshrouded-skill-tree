@@ -46,6 +46,7 @@
       "shortUrl": "Share URL",
       "generating": "Generating share URL...",
       "noSkills": "Unlock skills in the tree to generate a share link.",
+      "dbUnavailable": "Share links are currently unavailable. Use JSON export to share your build.",
       "exportJson": "Export JSON",
       "exportJsonTitle": "Export as JSON",
       "buildName": "Build name",

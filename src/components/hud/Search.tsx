@@ -133,11 +133,11 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
       className={classNames(
         "flex flex-col",
         "justify-center items-center",
-        "absolute top-0 z-40 inset-x-0",
+        "absolute top-0 z-40 inset-x-0 pointer-events-none",
         "my-0 px-0 md:my-6 md:px-5"
       )}
     >
-      <div className="relative w-full md:w-72 md:max-w-sm">
+      <div className="relative w-full md:w-72 md:max-w-sm pointer-events-auto">
         <GameInput
           ref={inputRef}
           placeholder={t("hud.search.placeholder", { ns: "common" })}

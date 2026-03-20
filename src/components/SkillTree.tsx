@@ -173,7 +173,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
             <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} zoomToElement={zoomToElement} dbAvailable={dbAvailable} initialSearchText={focusNodeName} />
             <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
               <div
-                className="relative w-screen h-screen flex items-center justify-center"
+                className="relative w-screen h-[100dvh] flex items-center justify-center"
               >
                 <div className="relative scale-25 z-20">
                   <CoreCircle />
@@ -190,7 +190,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
                 </div>
                 <svg
                   id="svg-container"
-                  className="absolute inset-0 w-screen h-screen"
+                  className="absolute inset-0 w-screen h-[100dvh]"
                 >
                   <SkillPaths lines={connectedPaths} />
                 </svg>

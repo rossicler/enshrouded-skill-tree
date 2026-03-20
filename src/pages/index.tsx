@@ -43,7 +43,7 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
       <CustomHeader />
       <main
         className={classNames(
-          "h-screen w-screen max-h-screen max-w-full relative bg-gray-600 flex",
+          "h-[100dvh] w-screen max-h-[100dvh] max-w-full relative bg-gray-600 flex",
           "items-center justify-center text-white"
         )}
       >

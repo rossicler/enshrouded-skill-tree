@@ -8,6 +8,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "validate-translations": "node scripts/validate-translations.js",
+    "generate-version": "node scripts/generate-version.js",
+    "prebuild": "npm run validate-translations && npm run generate-version",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +19,7 @@
     "@headlessui/react": "^1.7.18",
     "@reduxjs/toolkit": "^2.2.1",
     "i18next": "^25.8.18",
+    "lucide-react": "^0.577.0",
     "mongodb": "^6.3.0",
     "next": "14.1.0",
     "next-i18next": "^15.4.3",
@@ -38,6 +42,7 @@
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "zod": "^4.3.6"
   }
 }

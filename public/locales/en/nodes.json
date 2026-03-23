@@ -63,7 +63,7 @@
   "POWER_PARRY": {
     "name": "POWER PARRY",
     "description": [
-      "Increases the enemy's stun bar gain on parry attacks."
+      "Enemy <i>Stun Bar</i> gain from <b>parries</b> is increased by <b>30%</b>."
     ]
   },
   "ATTR_SPIRIT": {
@@ -118,17 +118,22 @@
   "SNEAK_ATTACK": {
     "name": "SNEAK ATTACK",
     "description": [
-      "The <b>Sneak Attack</b> deals massive 10x damage to unaware enemies."
+      "Perform a <b>Sneak Attack</b> by sneaking up to an unsuspecting enemy and pressing <b>[E]</b>.",
+      "<b>Sneak Attack</b> deals <b>+900%</b> increased damage."
     ]
   },
   "MERCILESS_ATTACK": {
     "name": "MERCILESS ATTACK",
-    "description": []
+    "description": [
+      "Perform a Merciless Attack by pressing [E] to deal massive damage to an enemy you've empowered.",
+      "<b>Overpower</b><br/>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks."
+    ]
   },
   "UPDRAFT": {
     "name": "UPDRAFT",
     "description": [
-      "Pressing the jump button while gliding will give you a small height boost. This skill can be used once per flight. Cost: 120 mana"
+      "Jumping while gliding gives you a height boost. This skill can be used once per flight.",
+      "<b>Cost</b>: 100 Mana"
     ]
   },
   "BEGONE": {
@@ -141,7 +146,7 @@
   "RADIANT_AURA": {
     "name": "RADIANT AURA",
     "description": [
-      "All Fell foes within 10 meters take 1 fire damage per intelligence per second."
+      "All <b>Fell</b> foes within <b>5</b> meters take <b>1 fire damage</b> per intelligence per second."
     ]
   },
   "WATER_AURA": {
@@ -153,7 +158,8 @@
   "MARTYR": {
     "name": "MARTYR",
     "description": [
-      "When you are killed by an enemy, all allies within 50 meters will heal 30% of their maximum health."
+      "When you are killed by an enemy, all allies within <b>30</b> meters are healed <b>50%</b> of their maximum health.",
+      "Additionally, they receive a <b>Final Blessing</b> buff, which increases their maximum Health by <b>100</b> for <b>15</b> minutes."
     ]
   },
   "DIVINE_SURGE": {
@@ -176,12 +182,15 @@
   },
   "EVASION_ATTACK": {
     "name": "EVASION ATTACK",
-    "description": []
+    "description": [
+      "When equipped with a melee weapon, you can perform an evade attack which dashes towards the enemy and deals more weapon damage with <b>[LMB]</b>.",
+      "<b>Cost</b>: 20 Stamina"
+    ]
   },
   "EARTH_AURA": {
     "name": "EARTH AURA",
     "description": [
-      "Shields allies and yourself, reducing incoming damage by 10%"
+      "You emit a protective aura that reduces all incoming damage by <b>10%</b> for you and allies within <b>10</b> meters."
     ]
   },
   "NEMESIS": {
@@ -331,7 +340,7 @@
   "SUN_AURA": {
     "name": "SUN AURA",
     "description": [
-      "All Fell foes within 10 meters take 1 additional fire damage per intelligence per second."
+      "Upgrades <b>Radiant Aura</b> to deal <b>2 fire damage</b> per intelligence."
     ]
   },
   "FIRE_RESISTANCE": {
@@ -367,7 +376,7 @@
   "FROST": {
     "name": "FROST",
     "description": [
-      "When receiving melee damage, the attacker will be slowed down for 3 seconds."
+      "When receiving melee damage, the attacker will be slowed down for <b>5</b> seconds."
     ]
   },
   "ICE_RESISTANCE": {
@@ -520,8 +529,9 @@
   "BLOOD_MAGIC": {
     "name": "BLOOD MAGIC",
     "description": [
-      "When your mana drops below 20%, you restore 35% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
-      "<b>Cooldown</b><br />This takes 2 minutes before it can trigger again."
+      "When your mana drops below <b>20%</b>, you restore up to <b>25%</b> of your max mana at the cost of 1 health per mana.",
+      "This effect stops at <b>1</b> health.",
+      "<b>Cooldown</b>: 2 minutes"
     ]
   },
   "ABSORB": {
@@ -725,7 +735,7 @@
     "name": "SPLASH DASH",
     "description": [
       "Allows you to perform an evasive dash while swimming or diving.",
-      "<b>Cost</b>: 80 Stamina"
+      "<b>Cost</b>: 40 Stamina"
     ]
   },
   "FINESSE": {
@@ -786,13 +796,13 @@
   "REBOUND": {
     "name": "REBOUND",
     "description": [
-      "Increase base stamina regeneration by 50%"
+      "Base stamina regeneration is increased by <b>10%</b>."
     ]
   },
   "REBOUND_II": {
     "name": "REBOUND",
     "description": [
-      "Increase base stamina regeneration by 50%"
+      "Base stamina regeneration is increased by <b>10%</b>."
     ]
   },
   "INNER_FIRES": {
@@ -812,7 +822,7 @@
   "SNAKE_EATER": {
     "name": "SNAKE EATER",
     "description": [
-      "Increases your <b>poison resistance</b> which reduces the damage received from poison by <b>20%</b>."
+      "Increases your <b>poison resistance</b> by <b>5%</b>, which reduces the amount of <b>poison</b> damage received."
     ]
   },
   "MITHRIDATIST": {

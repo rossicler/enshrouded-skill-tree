@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import { useTranslation } from "next-i18next";
+import { ZoomOut, Crosshair, ZoomIn, Share2, RotateCcw } from "lucide-react";
 
 import { classNames } from "../../utils/utils";
-import HUDButton from "../shared/HUDButton";
-import ImportDialog from "../dialogs/ImportDialog";
+import { playSound } from "../../utils/sounds";
+import GameButton from "../shared/GameButton";
+import GameButtonGroup from "../shared/GameButtonGroup";
+import ResetConfirmDialog from "../dialogs/ResetConfirmDialog";
 import { useAppDispatch } from "@/redux/hooks";
 import {
   loadSelectedSkills,
-  setCodeImported,
+  initConnectedPaths,
+  setPlayerLevel,
+  setUnlockedBiomes,
 } from "@/redux/skills/skills.slice";
+import { BuildData } from "@/utils/utils";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
-import ResetIcon from "../icons/Reset";
-import ExportDialog from "../dialogs/ExportDialog";
-import Stats from "./Stats";
+import BuildShareDialog from "../dialogs/BuildShareDialog";
 import { useRouter } from "next/router";
 import SearchHUD from "./Search";
 
@@ -21,85 +24,115 @@ type PropsType = {
   zoomIn: (step?: number) => void;
   zoomOut: (step?: number) => void;
   centerView: (scale?: number) => void;
+  zoomToElement: (node: HTMLElement | string, scale?: number, animationTime?: number, animationType?: "easeOut" | "linear" | "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint") => void;
+  dbAvailable?: boolean;
+  initialSearchText?: string;
 };
 
-const DISCORD_LINK = "https://discord.gg/saazEkNchu";
-
-const HUD = ({ zoomIn, zoomOut, centerView }: PropsType) => {
-  let [importOpen, setImportOpen] = useState(false);
-  let [exportOpen, setExportOpen] = useState(false);
-  const { t } = useTranslation("common");
+const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, initialSearchText }: PropsType) => {
+  const [exportOpen, setExportOpen] = useState(false);
+  const [resetOpen, setResetOpen] = useState(false);
+  const [searchFocused, setSearchFocused] = useState(false);
   const dispatch = useAppDispatch();
   const router = useRouter();
 
-  const importHandler = (code: string) => {
-    // TODO: implement plastebin import
-    dispatch(setCodeImported(code));
+  const importSkillsHandler = (build: BuildData) => {
+    playSound("node-unlock", 0.4);
+    dispatch(loadSelectedSkills(build.skills));
+    dispatch(initConnectedPaths(build.skills));
+    if (build.playerLevel != null) dispatch(setPlayerLevel(build.playerLevel));
+    if (build.unlockedBiomes != null) dispatch(setUnlockedBiomes(build.unlockedBiomes));
   };
 
   const clearHandler = () => {
+    playSound("node-refund", 0.4);
     dispatch(loadSelectedSkills([]));
     router.replace("/", undefined, { shallow: true });
-  };
-
-  const openDiscordInvite = () => {
-    window?.open(DISCORD_LINK, "_blank")?.focus();
+    setResetOpen(false);
   };
 
   return (
     <>
-      <ImportDialog
-        open={importOpen}
-        onClose={() => setImportOpen(false)}
-        onImport={importHandler}
+      <BuildShareDialog
+        open={exportOpen}
+        onClose={() => setExportOpen(false)}
+        onImportSkills={importSkillsHandler}
+        dbAvailable={dbAvailable}
       />
-      <ExportDialog open={exportOpen} onClose={() => setExportOpen(false)} />
-      <div
-        className={classNames(
-          "absolute right-0 top-0 w-32 bg-transparent z-40 flex flex-col gap-3",
-          "justify-center items-center py-6 top-14 md:top-0"
-        )}
-      >
-        <HUDButton onClick={() => setImportOpen(true)}>{t("hud.import")}</HUDButton>
-        <HUDButton onClick={() => setExportOpen(true)}>{t("hud.export")}</HUDButton>
-        <HUDButton onClick={clearHandler}>{t("hud.clear")}</HUDButton>
+      <ResetConfirmDialog
+        open={resetOpen}
+        onConfirm={clearHandler}
+        onCancel={() => setResetOpen(false)}
+      />
 
-        <HUDButton className="mt-5" onClick={openDiscordInvite}>
-          {t("hud.discord")}
-        </HUDButton>
-      </div>
+      {/* Search — always visible, full width on mobile */}
+      <SearchHUD zoomToElement={zoomToElement} onFocusChange={setSearchFocused} initialSearchText={initialSearchText} />
 
-      <div
-        className={classNames(
-          "absolute right-0 top-[50%] translate-y-[-50%] bg-transparent z-20 flex flex-col gap-3",
-          "justify-center items-center px-6 bg-transparent"
-        )}
-      >
+      {/* Other HUD elements — hidden on mobile when search is focused */}
+      <div className={searchFocused ? "hidden md:contents" : "contents"}>
         <div
           className={classNames(
-            "flex flex-col border border-purple-600 rounded-xl divide-y divide-purple-600",
-            "bg-black"
+            "absolute right-0 top-0 bg-transparent z-30",
+            "flex py-6 px-6 max-[380px]:px-2 items-center",
+            "top-14 max-[380px]:top-10 md:top-0"
           )}
         >
-          <button className="h-12 w-8" onClick={() => zoomIn(0.5)}>
-            +
-          </button>
-          <button className="h-12 w-8" onClick={() => zoomOut(0.5)}>
-            -
-          </button>
-          <button
-            className="h-12 w-8 flex justify-center items-center"
-            onClick={() => centerView(2)}
-          >
-            <ResetIcon className="w-3" />
-          </button>
+          {/* Mobile: vertical */}
+          <GameButtonGroup vertical className="md:hidden">
+            <GameButton grouped className="!min-w-0 !px-4" onClick={() => setExportOpen(true)}>
+              <Share2 size={16} />
+            </GameButton>
+            <GameButton grouped className="!min-w-0 !px-4" onClick={() => setResetOpen(true)}>
+              <RotateCcw size={16} />
+            </GameButton>
+          </GameButtonGroup>
+          {/* Desktop: horizontal, icon-only */}
+          <GameButtonGroup className="hidden md:flex">
+            <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={() => setExportOpen(true)}>
+              <Share2 size={16} />
+            </GameButton>
+            <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={() => setResetOpen(true)}>
+              <RotateCcw size={16} />
+            </GameButton>
+          </GameButtonGroup>
         </div>
+
+        <div
+          className={classNames(
+            "absolute right-0 bg-transparent z-30",
+            "flex items-center px-6 max-[380px]:px-2",
+            "bottom-[98px] max-[380px]:bottom-[114px] md:bottom-0 md:pb-6"
+          )}
+        >
+          {/* Mobile: vertical */}
+          <GameButtonGroup vertical className="md:hidden">
+            <GameButton grouped className="!min-w-0 !px-4" onClick={() => zoomIn(0.5)}>
+              <ZoomIn size={16} />
+            </GameButton>
+            <GameButton grouped className="!min-w-0 !px-4" onClick={() => centerView(2)}>
+              <Crosshair size={16} />
+            </GameButton>
+            <GameButton grouped className="!min-w-0 !px-4" onClick={() => zoomOut(0.5)}>
+              <ZoomOut size={16} />
+            </GameButton>
+          </GameButtonGroup>
+          {/* Desktop: horizontal */}
+          <GameButtonGroup className="hidden md:flex">
+            <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={() => zoomOut(0.5)}>
+              <ZoomOut size={16} />
+            </GameButton>
+            <GameButton grouped className="!min-w-0 !px-4" onClick={() => centerView(2)}>
+              <Crosshair size={16} />
+            </GameButton>
+            <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={() => zoomIn(0.5)}>
+              <ZoomIn size={16} />
+            </GameButton>
+          </GameButtonGroup>
+        </div>
+
+        <PointsHUD />
+        <AboutHUD />
       </div>
-
-      <SearchHUD />
-
-      <PointsHUD />
-      <AboutHUD />
     </>
   );
 };

@@ -12,9 +12,28 @@
     "stats": "Stats",
     "search": {
       "placeholder": "Search"
+    },
+    "tooltips": {
+      "skillPoints": "Skill Points",
+      "flameLevel": "Flame Level"
+    },
+    "biomeBudget": {
+      "title": "Biome Budget",
+      "playerLevel": "Player Level",
+      "total": "Total Skill Points",
+      "reset": "Unlock all"
     }
   },
+  "biomes": {
+    "springlands": "Springlands",
+    "revelwood": "Revelwood",
+    "nomad_highlands": "Nomad Highlands",
+    "kindlewastes": "Kindlewastes",
+    "albaneve_summits": "Albaneve Summits",
+    "veilwater_basin": "Veilwater Basin"
+  },
   "dialogs": {
+    "advancedSharing": "Advanced sharing",
     "about": {
       "title": "About",
       "description1": "This tool was created solely to aid Enshrouded players in sharing skill trees and builds conveniently. I'm not affiliated with Keen Games and do not hold any rights to the Enshrouded game.",
@@ -23,24 +42,56 @@
       "close": "Close"
     },
     "export": {
-      "title": "Export skills",
-      "defaultUrl": "Default Url",
-      "shortUrl": "Short Url",
-      "generateShortUrl": "Generate short URL",
+      "title": "Share Your Build",
+      "shortUrl": "Share URL",
+      "generating": "Generating share URL...",
+      "noSkills": "Unlock skills in the tree to generate a share link.",
+      "dbUnavailable": "Share links are currently unavailable. Use JSON export to share your build.",
+      "exportJson": "Export JSON",
+      "exportJsonTitle": "Export as JSON",
+      "buildName": "Build name",
+      "download": "Download",
       "close": "Close"
     },
     "import": {
       "title": "Import skills",
-      "import": "Import"
+      "urlLabel": "Import from URL",
+      "import": "Import URL",
+      "importJson": "Import JSON",
+      "warning": "Only import builds from sources you trust."
     },
     "stats": {
       "title": "Stats summary",
       "basic": "Basic",
       "close": "Close"
+    },
+    "settings": {
+      "title": "Settings",
+      "sounds": "Sound effects",
+      "language": "Language",
+      "audioBlocked": "Audio was blocked by your browser. Allow audio for this site in your browser settings and try again."
+    },
+    "refundConfirm": {
+      "title": "Refund skills",
+      "message": "This will also refund {{count}} connected skill(s). Continue?",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "resetConfirm": {
+      "title": "Reset skill tree",
+      "message": "This will remove all selected skills. Are you sure?",
+      "confirm": "Reset",
+      "cancel": "Cancel"
+    },
+    "skillCap": {
+      "title": "Skill point cap reached",
+      "message": "You have reached the maximum number of skill points. Refund some skills before unlocking new ones.",
+      "ok": "OK"
     }
   },
   "toasts": {
     "shareUrlCopied": "Share URL copied successfully",
+    "buildImported": "Build \"{{name}}\" imported successfully",
     "noSkillsAllocated": "No skills allocated!",
     "invalidUrl": "Invalid url!",
     "invalidCode": "Invalid code"
@@ -70,5 +121,17 @@
   "accessibility": {
     "skillPointIcon": "Skill Point Icon",
     "backgroundAlt": "Purple smoke background"
+  },
+  "skillTooltip": {
+    "unlocked": "Unlocked",
+    "unlock": "Unlock",
+    "outOfRange": "Out of range",
+    "cost": "Cost",
+    "share": "Share link to this skill",
+    "refund": "Refund"
+  },
+  "errors": {
+    "serverError": "Server Error",
+    "notFound": "Page Not Found"
   }
 }

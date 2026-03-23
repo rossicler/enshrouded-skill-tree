@@ -1,4 +1,5 @@
 import SkillNodes from "@/constants/Nodes";
+import { BIOMES, MAX_PLAYER_LEVEL } from "@/constants/Biomes";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
@@ -12,6 +13,8 @@ interface SkillsState {
   connectedPaths: SkillPathsType;
   searchSkillResults: string[];
   flameLevel?: number;
+  unlockedBiomes: string[];
+  playerLevel: number;
 }
 
 const initialState = {
@@ -19,6 +22,8 @@ const initialState = {
   connectedPaths: [],
   searchSkillResults: [],
   flameLevel: 0,
+  unlockedBiomes: BIOMES.map((b) => b.id),
+  playerLevel: MAX_PLAYER_LEVEL,
 } satisfies SkillsState as SkillsState;
 
 const skillsSlice = createSlice({
@@ -77,6 +82,12 @@ const skillsSlice = createSlice({
     setFlameLevel(state, action: PayloadAction<number>) {
       state.flameLevel = action.payload;
     },
+    setUnlockedBiomes(state, action: PayloadAction<string[]>) {
+      state.unlockedBiomes = action.payload;
+    },
+    setPlayerLevel(state, action: PayloadAction<number>) {
+      state.playerLevel = Math.max(1, Math.min(MAX_PLAYER_LEVEL, action.payload));
+    },
   },
 });
 
@@ -92,13 +103,15 @@ export const {
   initConnectedPaths,
   setSearchSkillResults,
   setFlameLevel,
+  setUnlockedBiomes,
+  setPlayerLevel,
 } = skillsSlice.actions;
 
 const persistConfig = {
   key: "skills",
   version: 1,
   storage: storageSession,
-  whitelist: ["selectedSkills", "connectedPaths"],
+  whitelist: ["selectedSkills", "connectedPaths", "unlockedBiomes", "playerLevel"],
 };
 
 export default persistReducer(persistConfig, skillsSlice.reducer);

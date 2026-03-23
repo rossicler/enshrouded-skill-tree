@@ -16,14 +16,17 @@ import { setCodeImported } from "@/redux/skills/skills.slice";
 type Query = {
   shortCode?: string;
   code?: string;
+  focus?: string;
 };
 
 type PropsType = {
   code?: string;
+  focusNodeId?: string;
   clusterStillProvisioning?: boolean;
+  dbAvailable?: boolean;
 };
 
-export default function Home({ code, clusterStillProvisioning }: PropsType) {
+export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAvailable = false }: PropsType) {
   const dispatch = useAppDispatch();
   const { t } = useTranslation("common");
 
@@ -40,7 +43,7 @@ export default function Home({ code, clusterStillProvisioning }: PropsType) {
       <CustomHeader />
       <main
         className={classNames(
-          "h-screen w-screen max-h-screen max-w-full relative bg-gray-600 flex",
+          "h-[100dvh] w-screen max-h-[100dvh] max-w-full relative bg-gray-600 flex",
           "items-center justify-center text-white"
         )}
       >
@@ -51,7 +54,7 @@ export default function Home({ code, clusterStillProvisioning }: PropsType) {
           className="object-cover object-center"
         />
         <div>
-          <SkillTree />
+          <SkillTree dbAvailable={dbAvailable} focusNodeId={focusNodeId} />
           <InitSkills />
         </div>
       </main>
@@ -61,36 +64,38 @@ export default function Home({ code, clusterStillProvisioning }: PropsType) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const locale = context.locale ?? "en";
+  const translations = await serverSideTranslations(locale, ["common", "nodes"]);
+  const { shortCode, code: rawCode = "", focus } = context.query as Query;
+  const focusNodeId = Array.isArray(focus) ? focus[0] : focus;
+
+  let dbAvailable = false;
+  let code: string | undefined;
 
   try {
     await clientPromise;
+    dbAvailable = true;
+    const fullCode = Array.isArray(rawCode) ? rawCode[0] : rawCode;
+    code = shortCode ? await getCode(shortCode) : fullCode;
   } catch (e: any) {
     if (e.code === "ENOTFOUND") {
       // cluster is still provisioning
       return {
         props: {
-          ...(await serverSideTranslations(locale, ["common", "nodes"])),
+          ...translations,
           clusterStillProvisioning: true,
+          ...(focusNodeId ? { focusNodeId } : {}),
         },
       };
-    } else {
-      throw new Error("Connection limit reached. Please try again later.");
     }
+    // Connection limit or other DB error — render without DB features
   }
 
-  if (context.query) {
-    const { shortCode, code: fullCode = "" } = context.query as Query;
-    const code = shortCode ? await getCode(shortCode) : fullCode;
-    return {
-      props: {
-        ...(await serverSideTranslations(locale, ["common", "nodes"])),
-        code,
-      },
-    };
-  }
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "nodes"])),
+      ...translations,
+      dbAvailable,
+      ...(code ? { code } : {}),
+      ...(focusNodeId ? { focusNodeId } : {}),
     },
   };
 };

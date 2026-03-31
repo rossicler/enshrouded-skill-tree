@@ -85,12 +85,19 @@ export const getSkillsToRemove = (
   return toRemove;
 };
 
-export const convertHashToJson = (hash: string): string[] => {
-  const decodedString = atob(hash);
-  return JSON.parse(decodedString);
+export type BuildData = {
+  skills: string[];
+  playerLevel?: number;
+  unlockedBiomes?: string[];
 };
 
-export const convertJsonToHash = (skills: string[]): string => {
-  const jsonString = JSON.stringify(skills);
-  return btoa(jsonString);
+export const convertHashToJson = (hash: string): BuildData => {
+  const parsed = JSON.parse(atob(hash));
+  // Backward compat: old format was a plain string[]
+  if (Array.isArray(parsed)) return { skills: parsed };
+  return parsed as BuildData;
+};
+
+export const convertJsonToHash = (build: BuildData): string => {
+  return btoa(JSON.stringify(build));
 };

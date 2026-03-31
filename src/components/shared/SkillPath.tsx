@@ -1,5 +1,4 @@
-import useScreenSize from "@/hooks/useScreenSize";
-import React, { memo, useEffect, useRef } from "react";
+import React, { memo, useCallback, useEffect, useRef } from "react";
 
 type PropsType = {
   from: string;
@@ -20,7 +19,7 @@ const SkillPath = ({
 }: PropsType) => {
   const lineRef = useRef<SVGLineElement>(null);
 
-  useEffect(() => {
+  const updatePosition = useCallback(() => {
     const fromElement = document.getElementById(`${prefixFrom}-${from}`);
     const toElement = document.getElementById(`${prefixTo}-${to}`);
     const svg = document.getElementById(containerId ?? "svg-container");
@@ -47,7 +46,15 @@ const SkillPath = ({
         line.setAttribute("y2", String(toY));
       }
     }
-  }, [from, to, containerId]);
+  }, [from, to, containerId, prefixFrom, prefixTo]);
+
+  useEffect(() => {
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+    };
+  }, [updatePosition]);
 
   return (
     <line

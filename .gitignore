@@ -27,3 +27,7 @@ yarn-error.log*
 
 .env
 .env.*
+!.env.example
+
+# agentic assistant
+.claude/

@@ -1,12 +1,13 @@
-import { MouseEvent, memo, useMemo, useState } from "react";
+import { MouseEvent, memo, useMemo, useRef } from "react";
 
 import { Node } from "../constants/Nodes";
-import SkillTooltip from "./SkillTooltip";
+
 import { getAsset } from "../utils/assets-utils";
 import Image from "next/image";
 import SkillPath from "./shared/SkillPath";
 import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
+import { playSound } from "@/utils/sounds";
 
 type PropsType = {
   node: Node;
@@ -38,7 +39,6 @@ const SkillNode = ({
   selectable,
   onSelect,
 }: PropsType) => {
-  const [tooltipOpen, setTooltipOpen] = useState(false);
   const isSearched = useAppSelector((state) =>
     state.skill.searchSkillResults.includes(node.type)
   );
@@ -49,9 +49,24 @@ const SkillNode = ({
     [node, selected, selectable]
   );
 
+  const tapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const selectHandler = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouchDevice) {
+      if (tapTimer.current) {
+        clearTimeout(tapTimer.current);
+        tapTimer.current = null;
+        if (onSelect) onSelect(node);
+      } else {
+        tapTimer.current = setTimeout(() => {
+          tapTimer.current = null;
+        }, 300);
+      }
+      return;
+    }
     if (onSelect) onSelect(node);
   };
 
@@ -63,7 +78,7 @@ const SkillNode = ({
   return (
     <>
       <div
-        className={`absolute top-0 left-0 h-full ${tooltipOpen ? "z-50" : ""}`}
+        className="absolute top-0 left-0 h-full"
         style={{
           transformOrigin: "0% 0%",
           transform: `rotate(${node.angle}deg)`,
@@ -71,14 +86,14 @@ const SkillNode = ({
       >
         <div
           id={`node-${node.id}`}
-          className={`relative w-0.5 h-0.5`}
+          className="relative w-0.5 h-0.5"
           style={{ marginTop: INIT_DISTANCE + (node.distance ?? 0) }}
         >
           <div
             className={classNames(
               "absolute rounded-full flex items-center justify-center",
               nodeSize.className,
-              isSearched && "ring-4 ring-purple-600"
+              isSearched && "animate-flame-radiance"
             )}
             style={{
               left: -nodeSize.size / 2,
@@ -87,16 +102,17 @@ const SkillNode = ({
               transform: `rotate(-${node.angle}deg)`,
             }}
           >
-            <SkillTooltip
-              node={node}
-              onShow={() => setTooltipOpen(true)}
-              onHide={() => setTooltipOpen(false)}
-            />
-            <button className="relative" onClick={selectHandler}>
+            <button
+              className="relative"
+              data-tooltip-id={`skill-tooltip-${node.id}`}
+              onClick={selectHandler}
+              onMouseEnter={() => {
+                playSound("node-hover", 0.2);
+              }}
+            >
               {iconAsset && (
                 <div
                   className="absolute inset-0 flex items-center justify-center z-10"
-                  data-tooltip-id={`skill-tooltip-${node.id}`}
                 >
                   <Image
                     className={classNames(
@@ -119,7 +135,6 @@ const SkillNode = ({
                   "w-full h-auto object-contain !pointer-events-auto",
                   lowBritness && "brightness-50"
                 )}
-                data-tooltip-id={`skill-tooltip-${node.id}`}
               />
             </button>
           </div>

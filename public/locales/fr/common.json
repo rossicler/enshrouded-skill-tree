@@ -12,9 +12,28 @@
     "stats": "Stats",
     "search": {
       "placeholder": "Rechercher"
+    },
+    "tooltips": {
+      "skillPoints": "Points de compétence",
+      "flameLevel": "Niveau de flamme"
+    },
+    "biomeBudget": {
+      "title": "Budget par biome",
+      "playerLevel": "Niveau du joueur",
+      "total": "Points de compétences totaux",
+      "reset": "Tout débloquer"
     }
   },
+  "biomes": {
+    "springlands": "Hautes pâtures",
+    "revelwood": "Bois envoutés",
+    "nomad_highlands": "Plateaux nomades",
+    "kindlewastes": "Regs exaltés",
+    "albaneve_summits": "Sommets d'Albaneve",
+    "veilwater_basin": "Bassin de Veilwater"
+  },
   "dialogs": {
+    "advancedSharing": "Partage avancé",
     "about": {
       "title": "À propos",
       "description1": "Cet outil a été créé uniquement pour aider les joueurs d'Enshrouded à partager leurs arbres de compétences et builds facilement. Je ne suis pas affilié à Keen Games et ne détiens aucun droit sur le jeu Enshrouded.",
@@ -23,24 +42,56 @@
       "close": "Fermer"
     },
     "export": {
-      "title": "Exporter les compétences",
-      "defaultUrl": "URL par défaut",
-      "shortUrl": "URL courte",
-      "generateShortUrl": "Générer une URL courte",
+      "title": "Partager votre build",
+      "shortUrl": "URL de partage",
+      "generating": "Génération de l'URL de partage...",
+      "noSkills": "Débloquez des compétences dans l'arbre pour générer un lien de partage.",
+      "dbUnavailable": "Les liens de partage sont temporairement indisponibles. Utilisez l'export JSON pour partager votre build.",
+      "exportJson": "Exporter JSON",
+      "exportJsonTitle": "Exporter en JSON",
+      "buildName": "Nom du build",
+      "download": "Télécharger",
       "close": "Fermer"
     },
     "import": {
       "title": "Importer des compétences",
-      "import": "Importer"
+      "urlLabel": "Importer depuis une URL",
+      "import": "Importer URL",
+      "importJson": "Importer JSON",
+      "warning": "N'importez que des builds provenant de sources fiables."
     },
     "stats": {
       "title": "Résumé des statistiques",
       "basic": "Base",
       "close": "Fermer"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "sounds": "Effets sonores",
+      "language": "Langue",
+      "audioBlocked": "L'audio a été bloqué par votre navigateur. Autorisez l'audio pour ce site dans les paramètres de votre navigateur et réessayez."
+    },
+    "refundConfirm": {
+      "title": "Rembourser les compétences",
+      "message": "Cela remboursera également {{count}} compétence(s) connectée(s). Continuer ?",
+      "confirm": "Confirmer",
+      "cancel": "Annuler"
+    },
+    "resetConfirm": {
+      "title": "Réinitialiser l'arbre",
+      "message": "Cela supprimera toutes les compétences sélectionnées. Êtes-vous sûr ?",
+      "confirm": "Réinitialiser",
+      "cancel": "Annuler"
+    },
+    "skillCap": {
+      "title": "Limite de points atteinte",
+      "message": "Vous avez atteint le nombre maximum de points de compétence. Remboursez des compétences avant d'en débloquer de nouvelles.",
+      "ok": "OK"
     }
   },
   "toasts": {
     "shareUrlCopied": "URL de partage copiée avec succès",
+    "buildImported": "Build \"{{name}}\" importé avec succès",
     "noSkillsAllocated": "Aucune compétence allouée !",
     "invalidUrl": "URL invalide !",
     "invalidCode": "Code invalide"
@@ -70,5 +121,17 @@
   "accessibility": {
     "skillPointIcon": "Icône de point de compétence",
     "backgroundAlt": "Fond de fumée violette"
+  },
+  "skillTooltip": {
+    "unlocked": "Déverrouillée",
+    "unlock": "Déverrouiller",
+    "outOfRange": "Hors de portée",
+    "cost": "Coût",
+    "share": "Partager un lien vers cette compétence",
+    "refund": "Rembourser"
+  },
+  "errors": {
+    "serverError": "Erreur serveur",
+    "notFound": "Page non trouvée"
   }
 }

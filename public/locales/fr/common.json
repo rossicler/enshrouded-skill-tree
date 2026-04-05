@@ -69,6 +69,7 @@
       "title": "Paramètres",
       "sounds": "Effets sonores",
       "language": "Langue",
+      "hardcap": "Limite de points de compétence",
       "audioBlocked": "L'audio a été bloqué par votre navigateur. Autorisez l'audio pour ce site dans les paramètres de votre navigateur et réessayez."
     },
     "refundConfirm": {
@@ -86,7 +87,8 @@
     "skillCap": {
       "title": "Limite de points atteinte",
       "message": "Vous avez atteint le nombre maximum de points de compétence. Remboursez des compétences avant d'en débloquer de nouvelles.",
-      "ok": "OK"
+      "ok": "OK",
+      "hardcapHint": "Vous pouvez désactiver cette limite dans les Paramètres."
     }
   },
   "toasts": {

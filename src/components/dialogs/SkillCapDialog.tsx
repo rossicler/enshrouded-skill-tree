@@ -49,6 +49,9 @@ const SkillCapDialog = ({ open, onClose }: PropsType) => {
                     </Dialog.Title>
                     <div className="mt-4 text-sm text-[#c0b89a]">
                       <p>{t("dialogs.skillCap.message")}</p>
+                      <p className="mt-2 text-xs text-[#c0b89a]/60 italic">
+                        {t("dialogs.skillCap.hardcapHint")}
+                      </p>
                     </div>
                     <div className="mt-5 flex justify-end">
                       <GameButton onClick={onClose}>

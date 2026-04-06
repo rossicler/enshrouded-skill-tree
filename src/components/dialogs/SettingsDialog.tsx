@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import GamePanel from "../shared/GamePanel";
 import { classNames } from "@/utils/utils";
 import { isSoundEnabled, setSoundEnabled, playSound } from "@/utils/sounds";
+import { isHardcapEnabled, setHardcapEnabled } from "@/utils/settings";
 
 type PropsType = {
   open: boolean;
@@ -17,9 +18,17 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
   const router = useRouter();
   const [soundOn, setSoundOn] = useState(isSoundEnabled);
   const [audioBlocked, setAudioBlocked] = useState(false);
+  const [hardcapOn, setHardcapOn] = useState(isHardcapEnabled);
 
   const switchLocale = (locale: string) => {
     router.push(router.asPath, undefined, { locale, scroll: false });
+  };
+
+  const toggleHardcap = () => {
+    const next = !hardcapOn;
+    setHardcapOn(next);
+    setHardcapEnabled(next);
+    playSound("node-hover", 0.3);
   };
 
   const toggleSound = async () => {
@@ -69,6 +78,28 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                     >
                       {t("dialogs.settings.title")}
                     </Dialog.Title>
+                    <div className="mt-5 flex items-center justify-between">
+                        <span className="text-sm text-[#c0b89a]">
+                          {t("dialogs.settings.hardcap")}
+                        </span>
+                        <button
+                          onClick={toggleHardcap}
+                          onMouseEnter={() => playSound("node-hover", 0.3)}
+                          className={classNames(
+                            "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
+                            hardcapOn
+                              ? "bg-[#C8B169]"
+                              : "bg-[#5a5a60]"
+                          )}
+                        >
+                          <span
+                            className={classNames(
+                              "inline-block h-4 w-4 rounded-full bg-white transition-transform",
+                              hardcapOn ? "translate-x-6" : "translate-x-1"
+                            )}
+                          />
+                        </button>
+                      </div>
                     <div className="mt-5 space-y-4">
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-[#c0b89a]">

@@ -69,6 +69,7 @@
       "title": "Settings",
       "sounds": "Sound effects",
       "language": "Language",
+      "hardcap": "Skill points hard cap",
       "audioBlocked": "Audio was blocked by your browser. Allow audio for this site in your browser settings and try again."
     },
     "refundConfirm": {
@@ -86,7 +87,8 @@
     "skillCap": {
       "title": "Skill point cap reached",
       "message": "You have reached the maximum number of skill points. Refund some skills before unlocking new ones.",
-      "ok": "OK"
+      "ok": "OK",
+      "hardcapHint": "You can disable this limit in Settings."
     }
   },
   "toasts": {

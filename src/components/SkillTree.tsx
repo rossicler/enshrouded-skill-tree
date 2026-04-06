@@ -18,6 +18,7 @@ import SkillTooltip from "./SkillTooltip";
 import SkillPaths from "./SkillPaths";
 import { getSkillsToRemove } from "../utils/utils";
 import { playSound } from "../utils/sounds";
+import { isHardcapEnabled } from "../utils/settings";
 import HUD from "./hud/HUD";
 import TreeLabels from "./TreeLabels";
 import RefundConfirmDialog from "./dialogs/RefundConfirmDialog";
@@ -102,7 +103,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
       }
     } else {
       const nodeCost = Nodes.types[node.type]?.cost ?? 0;
-      if (getPointsUsed() + nodeCost > maxSkillPoints) {
+      if (isHardcapEnabled() && getPointsUsed() + nodeCost > maxSkillPoints) {
         playSound("node-refund", 0.4);
         setShowCapWarning(true);
         return;

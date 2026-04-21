@@ -18,8 +18,8 @@ export default async function handler(
       console.log("result", result);
       return res.status(200).json({ code: result });
     } catch (e: any) {
-      console.log(e);
-      return res.status(500).json({ error: e.toString() });
+      console.error("Error saving code:", e);
+      return res.status(500).json({ error: "Failed to save code. Please try again later." });
     }
   } else {
     return res.status(405).end(`Method ${req.method} Not Allowed`);

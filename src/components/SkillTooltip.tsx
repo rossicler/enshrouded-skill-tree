@@ -5,7 +5,9 @@ import { Link2 } from "lucide-react";
 
 import SkillNodes, { Node } from "../constants/Nodes";
 import Image from "next/image";
+import DOMPurify from "dompurify";
 import { classNames } from "@/utils/utils";
+
 import { gameToast } from "@/utils/gameToast";
 import GameButton from "./shared/GameButton";
 
@@ -116,7 +118,7 @@ const SkillTooltip = ({ node, selected, selectable, onSelect }: PropsType) => {
             {description.map((html, i) => (
               <div
                 key={`${node.id}-p${i}`}
-                dangerouslySetInnerHTML={{ __html: html }}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
               />
             ))}
           </div>

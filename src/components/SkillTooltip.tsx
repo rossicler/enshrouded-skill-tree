@@ -66,7 +66,7 @@ const SkillTooltip = ({ node, selected, selectable, onSelect }: PropsType) => {
       style={{ zIndex: 9999 }}
       noArrow
       clickable
-      delayShow={750}
+      delayShow={500}
       delayHide={0}
     >
       <div className="relative max-w-sm min-w-[260px]">

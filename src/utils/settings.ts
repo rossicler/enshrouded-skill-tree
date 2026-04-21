@@ -12,7 +12,7 @@ function writeCookie(name: string, value: boolean) {
 
 // Skill points hard cap
 const HARDCAP_COOKIE = "sp_hardcap";
-let hardcapEnabled = readCookie(HARDCAP_COOKIE, true);
+let hardcapEnabled = readCookie(HARDCAP_COOKIE, false);
 
 export function isHardcapEnabled() {
   return hardcapEnabled;

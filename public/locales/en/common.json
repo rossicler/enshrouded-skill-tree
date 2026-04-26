@@ -130,7 +130,11 @@
     "outOfRange": "Out of range",
     "cost": "Cost",
     "share": "Share link to this skill",
-    "refund": "Refund"
+    "refund": "Refund",
+    "levelHeader": "Level {{current}} / {{max}}",
+    "levelUp": "Level Up",
+    "refundOne": "Refund 1",
+    "refundAll": "Refund All"
   },
   "errors": {
     "serverError": "Server Error",

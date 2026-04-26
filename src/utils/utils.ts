@@ -87,6 +87,7 @@ export const getSkillsToRemove = (
 
 export type BuildData = {
   skills: string[];
+  skillLevels?: { [id: string]: number };
   playerLevel?: number;
   unlockedBiomes?: string[];
 };
@@ -100,4 +101,19 @@ export const convertHashToJson = (hash: string): BuildData => {
 
 export const convertJsonToHash = (build: BuildData): string => {
   return btoa(JSON.stringify(build));
+};
+
+export const buildToSelectedSkills = (
+  build: BuildData
+): { [id: string]: number } => {
+  const out: { [id: string]: number } = {};
+  build.skills.forEach((id) => {
+    out[id] = 1;
+  });
+  if (build.skillLevels) {
+    Object.entries(build.skillLevels).forEach(([id, lvl]) => {
+      if (out[id] != null) out[id] = Math.max(1, Math.floor(lvl));
+    });
+  }
+  return out;
 };

@@ -130,7 +130,11 @@
     "outOfRange": "Hors de portée",
     "cost": "Coût",
     "share": "Partager un lien vers cette compétence",
-    "refund": "Rembourser"
+    "refund": "Rembourser",
+    "levelHeader": "Niveau {{current}} / {{max}}",
+    "levelUp": "Améliorer",
+    "refundOne": "Rembourser 1",
+    "refundAll": "Tout rembourser"
   },
   "errors": {
     "serverError": "Erreur serveur",

@@ -21,6 +21,8 @@ export type NodeTypeMetadata = {
   color: string;
   cost: number;
   stats?: NodeStatsType;
+  maxLevel?: number;
+  levelValues?: { [varName: string]: (number | string)[] };
 };
 
 export type SkillNodesType = {
@@ -1245,6 +1247,7 @@ const SkillNodes: SkillNodesType = {
       description: ["Gliders consume 30% less stamina"],
       color: "green",
       cost: 2,
+      maxLevel: 3,
     },
     SNIPER: {
       name: "SNIPER",
@@ -3086,3 +3089,6 @@ const SkillNodes: SkillNodesType = {
 };
 
 export default SkillNodes;
+
+export const getMaxLevel = (typeId: string): number =>
+  SkillNodes.types[typeId]?.maxLevel ?? 1;

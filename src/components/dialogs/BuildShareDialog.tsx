@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { gameToast } from "@/utils/gameToast";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
@@ -34,7 +34,19 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
   const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? MAX_PLAYER_LEVEL);
   const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes ?? BIOMES.map((b) => b.id));
 
-  const buildData: BuildData = { skills: selectedSkills, playerLevel, unlockedBiomes };
+  const selectedSkillIds = useMemo(
+    () => Object.keys(selectedSkills),
+    [selectedSkills]
+  );
+  const buildData: BuildData = useMemo(() => {
+    const hasMultiLevel = Object.values(selectedSkills).some((l) => l > 1);
+    return {
+      skills: selectedSkillIds,
+      ...(hasMultiLevel ? { skillLevels: selectedSkills } : {}),
+      playerLevel,
+      unlockedBiomes,
+    };
+  }, [selectedSkills, selectedSkillIds, playerLevel, unlockedBiomes]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -101,7 +113,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
   useEffect(() => {
     if (open) {
       if (dbAvailable) {
-        if (selectedSkills.length > 0 && !shortURL) exportAPIHandler();
+        if (selectedSkillIds.length > 0 && !shortURL) exportAPIHandler();
       } else {
         setAdvancedOpen(true);
       }
@@ -156,7 +168,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
                         </p>
                       )}
                       {dbAvailable && (
-                        selectedSkills.length === 0 ? (
+                        selectedSkillIds.length === 0 ? (
                           <p className="text-sm text-[#c0b89a] italic">
                             {t("dialogs.export.noSkills")}
                           </p>
@@ -196,7 +208,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
                               <GameButton className="flex-1" onClick={() => fileInputRef.current?.click()}>
                                 {t("dialogs.import.importJson")}
                               </GameButton>
-                              <GameButton className="flex-1" onClick={downloadJSON} disabled={selectedSkills.length === 0}>
+                              <GameButton className="flex-1" onClick={downloadJSON} disabled={selectedSkillIds.length === 0}>
                                 {t("dialogs.export.exportJson")}
                               </GameButton>
                             </div>

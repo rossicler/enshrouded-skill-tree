@@ -1,14 +1,19 @@
 import SkillNodes from "@/constants/Nodes";
 import { BasicStats, NodeStatsType } from "@/constants/Stats";
 
-export const getStatsFromSkills = (skills: string[]) => {
+export const getStatsFromSkills = (
+  skills: { [id: string]: number } | string[]
+) => {
+  const entries: Array<[string, number]> = Array.isArray(skills)
+    ? skills.map((id) => [id, 1])
+    : Object.entries(skills);
   const stats: Record<string, number> = {};
-  skills.forEach((id) => {
-    const skillType = SkillNodes.nodes[id].type;
-    const skillStats = SkillNodes.types[skillType].stats;
+  entries.forEach(([id, level]) => {
+    const skillType = SkillNodes.nodes[id]?.type;
+    const skillStats = skillType ? SkillNodes.types[skillType]?.stats : undefined;
     if (skillStats) {
       Object.entries(skillStats).forEach(([stat, value]) => {
-        stats[stat] = stats[stat] ? stats[stat] + value : value;
+        stats[stat] = (stats[stat] ?? 0) + value * level;
       });
     }
   });

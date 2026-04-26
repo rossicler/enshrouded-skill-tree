@@ -1,4 +1,4 @@
-import { MouseEvent, memo, useMemo, useRef } from "react";
+import { MouseEvent, TouchEvent, memo, useMemo, useRef } from "react";
 
 import { Node } from "../constants/Nodes";
 
@@ -8,13 +8,18 @@ import SkillPath from "./shared/SkillPath";
 import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
 import { playSound } from "@/utils/sounds";
+import type { SkillAction } from "./SkillTree";
 
 type PropsType = {
   node: Node;
   selected?: boolean;
   selectable?: boolean;
-  onSelect?: (node: Node) => void;
+  level?: number;
+  maxLevel?: number;
+  onSelect?: (node: Node, action: SkillAction) => void;
 };
+
+const LONG_PRESS_MS = 500;
 
 const SIZE = {
   small: {
@@ -22,8 +27,8 @@ const SIZE = {
     size: 25,
   },
   medium: {
-    className: "w-[40px] h-[40px]",
-    size: 40,
+    className: "w-[35px] h-[35px]",
+    size: 35,
   },
   large: {
     className: "w-[60px] h-[60px]",
@@ -37,29 +42,37 @@ const SkillNode = ({
   node,
   selected = false,
   selectable,
+  level = 0,
+  maxLevel = 1,
   onSelect,
 }: PropsType) => {
   const isSearched = useAppSelector((state) =>
-    state.skill.searchSkillResults.includes(node.type)
+    state.skill.searchSkillResults.includes(node.type),
   );
   const nodeSize = SIZE[node.tier ?? "small"];
 
   const [lowBritness, asset, iconAsset, iconOffset] = useMemo(
     () => getAsset(node, selected, selectable),
-    [node, selected, selectable]
+    [node, selected, selectable],
   );
 
   const tapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const suppressClick = useRef(false);
 
   const selectHandler = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (suppressClick.current) {
+      suppressClick.current = false;
+      return;
+    }
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     if (isTouchDevice) {
       if (tapTimer.current) {
         clearTimeout(tapTimer.current);
         tapTimer.current = null;
-        if (onSelect) onSelect(node);
+        if (onSelect) onSelect(node, "primary");
       } else {
         tapTimer.current = setTimeout(() => {
           tapTimer.current = null;
@@ -67,8 +80,32 @@ const SkillNode = ({
       }
       return;
     }
-    if (onSelect) onSelect(node);
+    if (onSelect) onSelect(node, "primary");
   };
+
+  const contextMenuHandler = (e: MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onSelect) onSelect(node, "secondary");
+  };
+
+  const cancelLongPress = () => {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current);
+      longPressTimer.current = null;
+    }
+  };
+
+  const touchStartHandler = (_e: TouchEvent) => {
+    cancelLongPress();
+    longPressTimer.current = setTimeout(() => {
+      longPressTimer.current = null;
+      suppressClick.current = true;
+      if (onSelect) onSelect(node, "secondary");
+    }, LONG_PRESS_MS);
+  };
+
+  const showBadge = maxLevel > 1;
 
   const iconSize =
     nodeSize.size - (selected || selectable ? 15 : 20) - (iconOffset ?? 0);
@@ -93,7 +130,7 @@ const SkillNode = ({
             className={classNames(
               "absolute rounded-full flex items-center justify-center",
               nodeSize.className,
-              isSearched && "animate-flame-radiance"
+              isSearched && "animate-flame-radiance",
             )}
             style={{
               left: -nodeSize.size / 2,
@@ -106,18 +143,21 @@ const SkillNode = ({
               className="relative"
               data-tooltip-id={`skill-tooltip-${node.id}`}
               onClick={selectHandler}
+              onContextMenu={contextMenuHandler}
+              onTouchStart={touchStartHandler}
+              onTouchEnd={cancelLongPress}
+              onTouchMove={cancelLongPress}
+              onTouchCancel={cancelLongPress}
               onMouseEnter={() => {
                 playSound("node-hover", 0.2);
               }}
             >
               {iconAsset && (
-                <div
-                  className="absolute inset-0 flex items-center justify-center z-10"
-                >
+                <div className="absolute inset-0 flex items-center justify-center z-10">
                   <Image
                     className={classNames(
                       "object-contain !pointer-events-auto",
-                      lowBritness && "brightness-50"
+                      lowBritness && "brightness-50",
                     )}
                     src={iconAsset}
                     alt={node.type}
@@ -133,10 +173,22 @@ const SkillNode = ({
                 height={nodeSize.size}
                 className={classNames(
                   "w-full h-auto object-contain !pointer-events-auto",
-                  lowBritness && "brightness-50"
+                  lowBritness && "brightness-50",
                 )}
               />
             </button>
+            {showBadge && (
+              <span
+                className={classNames(
+                  "absolute top-full left-1/2 -translate-x-1/2 -mt-2.5",
+                  "text-lg font-bold whitespace-nowrap pointer-events-none",
+                  "drop-shadow-[0_0_4px_rgba(0,0,0,0.95)]",
+                  level > 0 ? "text-[#e8d5a3]" : "text-[#c0b89a]/70",
+                )}
+              >
+                {level}/{maxLevel}
+              </span>
+            )}
           </div>
         </div>
       </div>

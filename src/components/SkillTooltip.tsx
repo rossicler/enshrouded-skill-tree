@@ -10,12 +10,15 @@ import { classNames } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
 import GameButton from "./shared/GameButton";
+import type { SkillAction } from "./SkillTree";
 
 type PropsType = {
   node: Node;
   selected?: boolean;
   selectable?: boolean;
-  onSelect?: () => void;
+  level?: number;
+  maxLevel?: number;
+  onSelect?: (action: SkillAction) => void;
 };
 
 const GRADIENT_COLORS: Record<string, { light: string; dark: string }> = {
@@ -25,13 +28,34 @@ const GRADIENT_COLORS: Record<string, { light: string; dark: string }> = {
   gold: { light: "#BE8400", dark: "#402C01" },
 };
 
-const SkillTooltip = ({ node, selected, selectable, onSelect }: PropsType) => {
+const SkillTooltip = ({
+  node,
+  selected,
+  selectable,
+  level = 0,
+  maxLevel = 1,
+  onSelect,
+}: PropsType) => {
   const metadata = SkillNodes.types[node.type];
   const { t } = useTranslation(["nodes", "common"]);
   const name = t(`${node.type}.name`, { ns: "nodes" });
+
+  // Preview level-1 values when not yet selected; otherwise show current-level values.
+  // Interpolated values are eventually sanitized by DOMPurify below, which is the
+  // last step in the pipeline (i18next has escapeValue: false in next-i18next.config.js).
+  const displayLevel = level > 0 ? level : 1;
+  const interpolation: Record<string, number | string> = {};
+  if (metadata?.levelValues) {
+    Object.entries(metadata.levelValues).forEach(([k, arr]) => {
+      const v = arr[displayLevel - 1] ?? arr[arr.length - 1];
+      if (v != null) interpolation[k] = v;
+    });
+  }
+
   const rawDescription = t(`${node.type}.description`, {
     ns: "nodes",
     returnObjects: true,
+    ...interpolation,
   });
   const description = Array.isArray(rawDescription) ? rawDescription : [rawDescription];
   const id = useId();
@@ -115,6 +139,17 @@ const SkillTooltip = ({ node, selected, selectable, onSelect }: PropsType) => {
             {name}
           </h3>
 
+          {/* Level header */}
+          {maxLevel > 1 && (
+            <div className="text-xs text-[#e8d5a3]/80 font-semibold tracking-wide mt-0.5 mb-1">
+              {t("skillTooltip.levelHeader", {
+                ns: "common",
+                current: level,
+                max: maxLevel,
+              })}
+            </div>
+          )}
+
           {/* Description */}
           <div className="flex flex-col gap-1.5 text-sm text-white/90 leading-relaxed">
             {description.map((html, i) => (
@@ -149,21 +184,43 @@ const SkillTooltip = ({ node, selected, selectable, onSelect }: PropsType) => {
                 <Link2 size={14} />
               </GameButton>
               <span className="w-px h-4 bg-white/20 mx-1 shrink-0" />
-              {selected ? (
-                <GameButton variant="text" onClick={onSelect}>
-                  {t("skillTooltip.refund", { ns: "common" })}
-                </GameButton>
-              ) : selectable ? (
-                <GameButton variant="text" onClick={onSelect}>
+              {level === 0 && selectable && (
+                <GameButton variant="text" onClick={() => onSelect?.("primary")}>
                   {t("skillTooltip.unlock", { ns: "common" })}
                 </GameButton>
-              ) : (
+              )}
+              {level === 0 && !selectable && (
                 <span className={classNames(
                   "text-red-400 text-sm font-semibold uppercase tracking-wide transition-all duration-300",
                   flash && "text-red-300 drop-shadow-[0_0_8px_rgba(248,113,113,0.8)] scale-110"
                 )}>
                   {t("skillTooltip.outOfRange", { ns: "common" })}
                 </span>
+              )}
+              {level > 0 && level < maxLevel && (
+                <>
+                  <GameButton variant="text" onClick={() => onSelect?.("secondary")}>
+                    {t("skillTooltip.refundOne", { ns: "common" })}
+                  </GameButton>
+                  <GameButton variant="text" onClick={() => onSelect?.("primary")}>
+                    {t("skillTooltip.levelUp", { ns: "common" })}
+                  </GameButton>
+                </>
+              )}
+              {level > 0 && level === maxLevel && maxLevel > 1 && (
+                <>
+                  <GameButton variant="text" onClick={() => onSelect?.("secondary")}>
+                    {t("skillTooltip.refundOne", { ns: "common" })}
+                  </GameButton>
+                  <GameButton variant="text" onClick={() => onSelect?.("primary")}>
+                    {t("skillTooltip.refundAll", { ns: "common" })}
+                  </GameButton>
+                </>
+              )}
+              {level > 0 && maxLevel === 1 && (
+                <GameButton variant="text" onClick={() => onSelect?.("primary")}>
+                  {t("skillTooltip.refund", { ns: "common" })}
+                </GameButton>
               )}
             </div>
           </div>

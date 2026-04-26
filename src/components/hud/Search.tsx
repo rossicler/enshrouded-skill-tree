@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { Search as SearchIcon, X } from "lucide-react";
@@ -16,13 +22,31 @@ type PropsType = {
     node: HTMLElement | string,
     scale?: number,
     animationTime?: number,
-    animationType?: "easeOut" | "linear" | "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint"
+    animationType?:
+      | "easeOut"
+      | "linear"
+      | "easeInQuad"
+      | "easeOutQuad"
+      | "easeInOutQuad"
+      | "easeInCubic"
+      | "easeOutCubic"
+      | "easeInOutCubic"
+      | "easeInQuart"
+      | "easeOutQuart"
+      | "easeInOutQuart"
+      | "easeInQuint"
+      | "easeOutQuint"
+      | "easeInOutQuint",
   ) => void;
   onFocusChange?: (focused: boolean) => void;
   initialSearchText?: string;
 };
 
-const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) => {
+const Search = ({
+  zoomToElement,
+  onFocusChange,
+  initialSearchText,
+}: PropsType) => {
   const router = useRouter();
   const [searchText, setSearchText] = useState(initialSearchText ?? "");
   const [focused, setFocused] = useState(false);
@@ -30,7 +54,9 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const routerRef = useRef(router);
-  useEffect(() => { routerRef.current = router; }, [router]);
+  useEffect(() => {
+    routerRef.current = router;
+  }, [router]);
   const { t } = useTranslation(["common", "nodes"]);
   const dispatch = useAppDispatch();
 
@@ -53,7 +79,9 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
           : name.toLowerCase().includes(lSearchText);
       })
       .map(([key, meta]) => {
-        const node = Object.values(SkillNodes.nodes).find((n) => n.type === key);
+        const node = Object.values(SkillNodes.nodes).find(
+          (n) => n.type === key,
+        );
         return { key, meta, tier: node?.tier ?? "small" };
       });
   }, [searchText, t]);
@@ -67,7 +95,8 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
     dispatch(setSearchSkillResults(results.map((r) => r.key)));
   }, [results, dispatch]);
 
-  const hasActiveResults = focused && searchText.length >= 3 && results.length > 0;
+  const hasActiveResults =
+    focused && searchText.length >= 3 && results.length > 0;
 
   useEffect(() => {
     onFocusChange?.(hasActiveResults);
@@ -87,27 +116,32 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleResultClick = useCallback((typeKey: string) => {
-    const name = t(`${typeKey}.name`, { ns: "nodes" });
-    setSearchText(name);
-    clearExactMatch();
-    setFocused(false);
-    inputRef.current?.blur();
-    const matchingNodes = Object.values(SkillNodes.nodes).filter(
-      (n) => n.type === typeKey
-    );
-    if (matchingNodes.length === 1) {
-      const nodeId = matchingNodes[0].id;
-      zoomToElement(`node-${nodeId}`, 5, 300, "easeOut");
-      // Trigger tooltip via synthetic mouseenter after zoom completes
-      setTimeout(() => {
-        const el = document.querySelector(`[data-tooltip-id="skill-tooltip-${nodeId}"]`);
-        if (el) {
-          el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
-        }
-      }, 350);
-    }
-  }, [t, zoomToElement]);
+  const handleResultClick = useCallback(
+    (typeKey: string) => {
+      const name = t(`${typeKey}.name`, { ns: "nodes" });
+      setSearchText(name);
+      clearExactMatch();
+      setFocused(false);
+      inputRef.current?.blur();
+      const matchingNodes = Object.values(SkillNodes.nodes).filter(
+        (n) => n.type === typeKey,
+      );
+      if (matchingNodes.length === 1) {
+        const nodeId = matchingNodes[0].id;
+        zoomToElement(`node-${nodeId}`, 5, 300, "easeOut");
+        // Trigger tooltip via synthetic mouseenter after zoom completes
+        setTimeout(() => {
+          const el = document.querySelector(
+            `[data-tooltip-id="skill-tooltip-${nodeId}"]`,
+          );
+          if (el) {
+            el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+          }
+        }, 350);
+      }
+    },
+    [t, zoomToElement],
+  );
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!results.length) return;
@@ -134,7 +168,7 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
         "flex flex-col",
         "justify-center items-center",
         "absolute top-0 z-40 inset-x-0 pointer-events-none",
-        "my-0 px-0 md:my-6 md:px-5"
+        "my-0 px-0 md:my-6 md:px-5",
       )}
     >
       <div className="relative w-full md:w-72 md:max-w-sm pointer-events-auto">
@@ -142,17 +176,26 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
           ref={inputRef}
           placeholder={t("hud.search.placeholder", { ns: "common" })}
           value={searchText}
-          onChange={(e) => { clearExactMatch(); setSearchText(e.target.value); }}
-          onFocus={() => { clearExactMatch(); setFocused(true); }}
+          onChange={(e) => {
+            clearExactMatch();
+            setSearchText(e.target.value);
+          }}
+          onFocus={() => {
+            clearExactMatch();
+            setFocused(true);
+          }}
           onKeyDown={handleKeyDown}
           hideDecorationsClassName="hidden md:block"
         />
         {searchText ? (
           <button
-            onClick={() => { clearExactMatch(); setSearchText(""); }}
+            onClick={() => {
+              clearExactMatch();
+              setSearchText("");
+            }}
             className={classNames(
               "absolute inset-y-0 right-8 text-[#e8d5a3]/60 hover:text-[#e8d5a3] h-full z-20",
-              "flex items-center justify-center transition-colors"
+              "flex items-center justify-center transition-colors",
             )}
           >
             <X size={18} />
@@ -161,7 +204,7 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
           <div
             className={classNames(
               "absolute inset-y-0 right-8 text-[#e8d5a3]/60 h-full z-20",
-              "flex items-center justify-center pointer-events-none"
+              "flex items-center justify-center pointer-events-none",
             )}
           >
             <SearchIcon size={20} />
@@ -176,11 +219,12 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
             "w-full md:w-72 md:max-w-sm",
             "bg-[#414255]/95 border border-[#5a5a60]/50 border-t-[#b8941f]/60",
             "rounded-sm overflow-y-auto max-h-60",
-            "shadow-[0_3px_6px_rgba(0,0,0,0.4)]"
+            "shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
           )}
         >
           {results.map(({ key, meta, tier }, index) => {
-            const iconSize = tier === "large" ? 22 : tier === "medium" ? 18 : 14;
+            const iconSize =
+              tier === "large" ? 22 : tier === "medium" ? 18 : 14;
             return (
               <button
                 key={key}
@@ -191,7 +235,7 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
                   "border-b border-[#5a5a60]/20 last:border-b-0",
                   "text-sm text-[#c0b89a]",
                   "hover:bg-white/[0.06] transition-colors",
-                  index === selectedIndex && "bg-white/[0.08]"
+                  index === selectedIndex && "bg-white/[0.08]",
                 )}
               >
                 <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
@@ -216,7 +260,7 @@ const Search = ({ zoomToElement, onFocusChange, initialSearchText }: PropsType) 
                 <span
                   className={classNames(
                     "text-[#e8d5a3] truncate",
-                    meta.hasIcon && "font-semibold"
+                    meta.hasIcon && "font-semibold",
                   )}
                 >
                   {t(`${key}.name`, { ns: "nodes" })}

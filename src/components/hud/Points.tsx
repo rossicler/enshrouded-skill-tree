@@ -20,9 +20,9 @@ const PointsHUD = () => {
   const maxPoints = computeMaxSkillPoints(playerLevel, unlockedBiomes);
 
   useEffect(() => {
-    const totalCost = selectedSkills.reduce(
-      (acc, id) =>
-        acc + (SkillNodes.types[SkillNodes.nodes[id]?.type]?.cost ?? 0),
+    const totalCost = Object.entries(selectedSkills).reduce(
+      (acc, [id, level]) =>
+        acc + (SkillNodes.types[SkillNodes.nodes[id]?.type]?.cost ?? 0) * level,
       0
     );
     setPointsUsed(totalCost);

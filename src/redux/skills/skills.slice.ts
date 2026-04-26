@@ -1,14 +1,16 @@
-import SkillNodes from "@/constants/Nodes";
+import SkillNodes, { getMaxLevel } from "@/constants/Nodes";
 import { BIOMES, MAX_PLAYER_LEVEL } from "@/constants/Biomes";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { persistReducer } from "redux-persist";
+import { createMigrate, persistReducer } from "redux-persist";
+import type { PersistedState } from "redux-persist";
 import storageSession from "redux-persist/lib/storage/session";
 
 type SkillPathsType = [string, string][];
+type SelectedSkillsMap = { [id: string]: number };
 
 interface SkillsState {
-  selectedSkills: string[];
+  selectedSkills: SelectedSkillsMap;
   codeImported?: string;
   connectedPaths: SkillPathsType;
   searchSkillResults: string[];
@@ -18,7 +20,7 @@ interface SkillsState {
 }
 
 const initialState = {
-  selectedSkills: [],
+  selectedSkills: {},
   connectedPaths: [],
   searchSkillResults: [],
   flameLevel: 0,
@@ -26,20 +28,50 @@ const initialState = {
   playerLevel: MAX_PLAYER_LEVEL,
 } satisfies SkillsState as SkillsState;
 
+const normalizeToMap = (
+  payload: SelectedSkillsMap | string[]
+): SelectedSkillsMap => {
+  if (Array.isArray(payload)) {
+    const out: SelectedSkillsMap = {};
+    payload.forEach((id) => {
+      out[id] = 1;
+    });
+    return out;
+  }
+  return payload;
+};
+
 const skillsSlice = createSlice({
   name: "skills",
   initialState,
   reducers: {
-    loadSelectedSkills(state, action: PayloadAction<string[]>) {
-      state.selectedSkills = action.payload;
+    loadSelectedSkills(
+      state,
+      action: PayloadAction<SelectedSkillsMap | string[]>
+    ) {
+      state.selectedSkills = normalizeToMap(action.payload);
     },
-    addSelectedSkill(state, action: PayloadAction<string>) {
-      state.selectedSkills.push(action.payload);
+    incrementSelectedSkill(state, action: PayloadAction<string>) {
+      const id = action.payload;
+      const node = SkillNodes.nodes[id];
+      if (!node) return;
+      const max = getMaxLevel(node.type);
+      const current = state.selectedSkills[id] ?? 0;
+      state.selectedSkills[id] = Math.min(max, current + 1);
+    },
+    decrementSelectedSkill(state, action: PayloadAction<string>) {
+      const id = action.payload;
+      const current = state.selectedSkills[id] ?? 0;
+      if (current <= 1) {
+        delete state.selectedSkills[id];
+      } else {
+        state.selectedSkills[id] = current - 1;
+      }
     },
     removeSelectedSkill(state, action: PayloadAction<string[]>) {
-      state.selectedSkills = state.selectedSkills.filter(
-        (id) => !action.payload.includes(id)
-      );
+      action.payload.forEach((id) => {
+        delete state.selectedSkills[id];
+      });
     },
     setCodeImported(state, action: PayloadAction<string>) {
       state.codeImported = action.payload;
@@ -93,7 +125,8 @@ const skillsSlice = createSlice({
 
 export const {
   loadSelectedSkills,
-  addSelectedSkill,
+  incrementSelectedSkill,
+  decrementSelectedSkill,
   removeSelectedSkill,
   setCodeImported,
   clearCodeImported,
@@ -107,11 +140,32 @@ export const {
   setPlayerLevel,
 } = skillsSlice.actions;
 
+export const selectSelectedSkillIds = createSelector(
+  [(state: { skill: SkillsState }) => state.skill.selectedSkills],
+  (skills) => Object.keys(skills)
+);
+
+const migrations = {
+  2: (state: PersistedState): PersistedState => {
+    if (!state) return state;
+    const anyState = state as unknown as { selectedSkills?: unknown };
+    if (Array.isArray(anyState.selectedSkills)) {
+      const obj: SelectedSkillsMap = {};
+      (anyState.selectedSkills as string[]).forEach((id) => {
+        obj[id] = 1;
+      });
+      return { ...state, selectedSkills: obj } as PersistedState;
+    }
+    return state;
+  },
+};
+
 const persistConfig = {
   key: "skills",
-  version: 1,
+  version: 2,
   storage: storageSession,
   whitelist: ["selectedSkills", "connectedPaths", "unlockedBiomes", "playerLevel"],
+  migrate: createMigrate(migrations, { debug: false }),
 };
 
 export default persistReducer(persistConfig, skillsSlice.reducer);

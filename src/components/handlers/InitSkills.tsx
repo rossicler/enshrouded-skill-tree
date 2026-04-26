@@ -11,7 +11,7 @@ import {
   setPlayerLevel,
   setUnlockedBiomes,
 } from "@/redux/skills/skills.slice";
-import { convertHashToJson } from "@/utils/utils";
+import { buildToSelectedSkills, convertHashToJson } from "@/utils/utils";
 import SkillNodes from "@/constants/Nodes";
 
 
@@ -26,13 +26,17 @@ const InitSkills = () => {
         const build = convertHashToJson(code);
         if (!Array.isArray(build.skills)) throw new Error("Invalid code");
 
-        // Validate skill IDs
-        const validSkills = build.skills.filter(
-          (id) => SkillNodes.nodes[id] !== undefined
-        );
+        // Validate skill IDs before building the level map
+        const validBuild = {
+          ...build,
+          skills: build.skills.filter(
+            (id) => SkillNodes.nodes[id] !== undefined
+          ),
+        };
+        const map = buildToSelectedSkills(validBuild);
 
-        dispatch(loadSelectedSkills(validSkills));
-        dispatch(initConnectedPaths(validSkills));
+        dispatch(loadSelectedSkills(map));
+        dispatch(initConnectedPaths(Object.keys(map)));
         if (build.playerLevel != null)
           dispatch(setPlayerLevel(build.playerLevel));
         if (build.unlockedBiomes != null)

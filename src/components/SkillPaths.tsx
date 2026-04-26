@@ -23,7 +23,7 @@ const SkillPaths = ({ lines }: PropsType) => {
   );
 
   const isBaseConnected = useCallback(
-    (id: string) => skillsSelected.includes(id),
+    (id: string) => skillsSelected[id] != null,
     [skillsSelected]
   );
 

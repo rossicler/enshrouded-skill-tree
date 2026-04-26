@@ -1,16 +1,19 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { TransformComponent, TransformWrapper, ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
 import { useTranslation } from "next-i18next";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   addConnectedPaths,
-  addSelectedSkill,
+  decrementSelectedSkill,
+  incrementSelectedSkill,
   loadConnectedPaths,
   removePathsConnectedTo,
   removeSelectedSkill,
 } from "@/redux/skills/skills.slice";
-import Nodes, { Node } from "../constants/Nodes";
+import Nodes, { Node, getMaxLevel } from "../constants/Nodes";
+
+export type SkillAction = "primary" | "secondary";
 import { computeMaxSkillPoints } from "../constants/Biomes";
 import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
@@ -41,6 +44,10 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
   const [showCapWarning, setShowCapWarning] = useState(false);
   const transformRef = useRef<ReactZoomPanPinchRef | null>(null);
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
+  const selectedSkillIds = useMemo(
+    () => Object.keys(selectedSkills),
+    [selectedSkills]
+  );
   const connectedPaths = useAppSelector((state) => state.skill.connectedPaths);
   const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
   const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? 45);
@@ -54,8 +61,9 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
   }, [focusNodeId]);
 
   const getPointsUsed = () =>
-    selectedSkills.reduce(
-      (acc, id) => acc + (Nodes.types[Nodes.nodes[id]?.type]?.cost ?? 0),
+    Object.entries(selectedSkills).reduce(
+      (acc, [id, level]) =>
+        acc + (Nodes.types[Nodes.nodes[id]?.type]?.cost ?? 0) * level,
       0
     );
 
@@ -63,15 +71,15 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
     let tmpSelectableSkills: string[] = [];
     // Base nodes are always selectable
     Object.values(Nodes.nodes).forEach((node) => {
-      if (node.base && !selectedSkills.includes(node.id)) {
+      if (node.base && selectedSkills[node.id] == null) {
         tmpSelectableSkills.push(node.id);
       }
     });
     // Neighbors of selected nodes are selectable
-    selectedSkills.forEach((id) => {
+    selectedSkillIds.forEach((id) => {
       tmpSelectableSkills = tmpSelectableSkills.concat(
         Nodes.edges[id].filter(
-          (connected) => !selectedSkills.includes(connected)
+          (connected) => selectedSkills[connected] == null
         )
       );
     });
@@ -83,25 +91,45 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
     dispatch(removePathsConnectedTo(skillsToRemove));
   };
 
-  const onSelect = (node: Node) => {
-    const connectedTo = selectedSkills.filter((id) =>
+  const cascadeRefund = (nodeId: string) => {
+    const skillsToRemove = getSkillsToRemove(nodeId, selectedSkillIds);
+    if (skillsToRemove.length >= REFUND_CONFIRM_THRESHOLD) {
+      setPendingRefund(skillsToRemove);
+    } else {
+      playSound("node-refund", 0.4);
+      executeRefund(skillsToRemove);
+    }
+  };
+
+  const onSelect = (node: Node, action: SkillAction = "primary") => {
+    const currentLevel = selectedSkills[node.id] ?? 0;
+    const max = getMaxLevel(node.type);
+    const connectedTo = selectedSkillIds.filter((id) =>
       Nodes.edges[id].includes(node.id)
     );
-    if (!node.base && connectedTo.length === 0) {
-      playSound("node-out-of-range", 0.4);
-      window.dispatchEvent(new CustomEvent("skill-out-of-range", { detail: node.id }));
+
+    if (action === "secondary") {
+      if (currentLevel === 0) return;
+      if (currentLevel > 1) {
+        playSound("node-refund", 0.4);
+        dispatch(decrementSelectedSkill(node.id));
+        return;
+      }
+      // currentLevel === 1: removing the last level disconnects neighbors
+      cascadeRefund(node.id);
       return;
     }
-    const selectedIndex = selectedSkills.findIndex((id) => id === node.id);
-    if (selectedIndex !== -1) {
-      const skillsToRemove = getSkillsToRemove(node.id, selectedSkills);
-      if (skillsToRemove.length >= REFUND_CONFIRM_THRESHOLD) {
-        setPendingRefund(skillsToRemove);
-      } else {
-        playSound("node-refund", 0.4);
-        executeRefund(skillsToRemove);
+
+    // primary
+    if (currentLevel === 0) {
+      // Only the 0 → 1 transition cares about reachability
+      if (!node.base && connectedTo.length === 0) {
+        playSound("node-out-of-range", 0.4);
+        window.dispatchEvent(
+          new CustomEvent("skill-out-of-range", { detail: node.id })
+        );
+        return;
       }
-    } else {
       const nodeCost = Nodes.types[node.type]?.cost ?? 0;
       if (isHardcapEnabled() && getPointsUsed() + nodeCost > maxSkillPoints) {
         playSound("node-refund", 0.4);
@@ -113,14 +141,30 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
       } else {
         playSound("node-select", 0.4);
       }
-      dispatch(addSelectedSkill(node.id));
+      dispatch(incrementSelectedSkill(node.id));
       dispatch(addConnectedPaths(connectedTo.map((to) => [node.id, to])));
+      return;
     }
+
+    if (currentLevel < max) {
+      const nodeCost = Nodes.types[node.type]?.cost ?? 0;
+      if (isHardcapEnabled() && getPointsUsed() + nodeCost > maxSkillPoints) {
+        playSound("node-refund", 0.4);
+        setShowCapWarning(true);
+        return;
+      }
+      playSound("node-unlock", 0.4);
+      dispatch(incrementSelectedSkill(node.id));
+      return;
+    }
+
+    // currentLevel === max: wrap to 0 = full cascade refund
+    cascadeRefund(node.id);
   };
 
   useEffect(() => {
     updateSelectableSkills();
-    if (selectedSkills.length === 0) {
+    if (selectedSkillIds.length === 0) {
       dispatch(loadConnectedPaths([]));
     }
   }, [selectedSkills]);
@@ -182,8 +226,10 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
                     <SkillNode
                       key={skillNode.id}
                       node={skillNode}
-                      selected={selectedSkills.includes(skillNode.id)}
+                      selected={selectedSkills[skillNode.id] != null}
                       selectable={selectableSkills.includes(skillNode.id)}
+                      level={selectedSkills[skillNode.id] ?? 0}
+                      maxLevel={getMaxLevel(skillNode.type)}
                       onSelect={onSelect}
                     />
                   ))}
@@ -201,9 +247,11 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
               <SkillTooltip
                 key={`tooltip-${skillNode.id}`}
                 node={skillNode}
-                selected={selectedSkills.includes(skillNode.id)}
+                selected={selectedSkills[skillNode.id] != null}
                 selectable={selectableSkills.includes(skillNode.id)}
-                onSelect={() => onSelect(skillNode)}
+                level={selectedSkills[skillNode.id] ?? 0}
+                maxLevel={getMaxLevel(skillNode.type)}
+                onSelect={(action) => onSelect(skillNode, action)}
               />
             ))}
           </>

@@ -13,7 +13,7 @@ import {
   setPlayerLevel,
   setUnlockedBiomes,
 } from "@/redux/skills/skills.slice";
-import { BuildData } from "@/utils/utils";
+import { BuildData, buildToSelectedSkills } from "@/utils/utils";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
 import BuildShareDialog from "../dialogs/BuildShareDialog";
@@ -38,15 +38,16 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
 
   const importSkillsHandler = (build: BuildData) => {
     playSound("node-unlock", 0.4);
-    dispatch(loadSelectedSkills(build.skills));
-    dispatch(initConnectedPaths(build.skills));
+    const map = buildToSelectedSkills(build);
+    dispatch(loadSelectedSkills(map));
+    dispatch(initConnectedPaths(Object.keys(map)));
     if (build.playerLevel != null) dispatch(setPlayerLevel(build.playerLevel));
     if (build.unlockedBiomes != null) dispatch(setUnlockedBiomes(build.unlockedBiomes));
   };
 
   const clearHandler = () => {
     playSound("node-refund", 0.4);
-    dispatch(loadSelectedSkills([]));
+    dispatch(loadSelectedSkills({}));
     router.replace("/", undefined, { shallow: true });
     setResetOpen(false);
   };

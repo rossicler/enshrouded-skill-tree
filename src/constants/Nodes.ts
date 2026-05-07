@@ -39,58 +39,72 @@ const SHROUD_TIME_TEXT =
 const BLOCK_BREAKER =
   "<b>Block Breaker</b><br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit.";
 const OVERPOWER =
-  "<b>Overpower</b><br/>To overpower an enemy, fill their stun bar by attacking while they block or by parrying their attacks.";
+  "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks.";
 const WET =
   "<b>Wet</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>15</b> minutes. Warmth reduces the remaining duration.";
 const SOAKED =
   "<b>Soaked</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>30</b> seconds. Also reduces <b>Ice and Shock Resistances</b> by <b>30%</b> but increases <b>Fire Resistances</b> by <b>30%</b>.<br><b>Soaked</b> can be applied to enemies. <br><b>Soaked</b> duration can not be reduced by warmth and <b>Wet</b> debuff starts after it is over.";
-
+const CHARGE =
+  "<b>Charge</b><br/>As the Updraft charges before activation, the resulting lift is increased. a full charge grants you an additional boost. The charge is accelerated while inside your base.";
+const BLOODRAGE =
+  "<b>Blood Rage</b><br/>Increases Melee weapon damage by <b>15%</b> for <b>10</b> seconds.";
+canst SKILLSHOT =
+  "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot.";
 const SkillNodes: SkillNodesType = {
   types: {
     GIANT_SLAYER_HOOK: {
       name: "GIANT SLAYER HOOK",
       description: [
-        "Use your Grappling Hook to pull yourself towards large enemies during combat.",
+        "Use your <b>Grappling Hook</b> to pull yourself towards large enemies during combat."
+		"<b>Cost:</b> 50 Stamina",
       ],
       hasIcon: true,
       color: "gold",
-      cost: 5,
+      cost: 3,
     },
     GROUNDING_HOOK: {
       name: "GROUNDING HOOK",
       description: [
-        "Use your Grappling Hook to pull flying enemies towards you during combat.",
+        "Use your <b>Grappling Hook</b> to pull <b>flying</b> enemies towards you during combat."
+		"<b>Cost:</b> 50 Stamina",
       ],
       hasIcon: true,
       color: "gold",
-      cost: 2,
+      cost: 4,
     },
     SAVIOUR: {
       name: "SAVIOUR",
       description: [
-        "You only need 3 instead of 6 seconds to <b>revive an ally</b>.",
+        "Time to revive an ally is reduced by <b>-1</b> seconds.",
+		"Default revive time is <b>6</b> seconds. ",
       ],
       color: "gold",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>-1</b> seconds per level",
+	  level: 3,
     },
     BACKSTAB_DAMAGE: {
-      name: "BACKSTAB DAMAGE",
-      description: ["Increase the damage you deal from behind by 25%."],
-      color: "gold",
-      cost: 2,
-    },
+      name: "BACKSTAB Mastery",
+      description: ["<b>Backstab</b> damage is increased by 20%"],
+      color: "green",
+      cost: 1,
+ 	  leveldescription: "<b>20%</b> damage per level",
+	  level: 3,
+   },
     OPPORTUNITY: {
       name: "OPPORTUNITY",
       description: [
-        "Increases the Multiplier of the Merciless Attack and the Sneak Attack by 100%.",
+        "Increases the damage multiplier of <b>Merciless Attacks</b> by 40%.",
       ],
       color: "gold",
-      cost: 3,
+      cost: 1,
+ 	  leveldescription: "<b>40%</b> damage per level",
+	  level: 3,
     },
     MINER: {
       name: "MINER",
       description: [
-        "When you mine resources, you have a 10% chance to get one additional resource.",
+        "Mining resources has a <b>10%</b> chance to grant one additional resource.",
       ],
       color: "gold",
       cost: 4,
@@ -98,48 +112,59 @@ const SkillNodes: SkillNodesType = {
     LUMBERJACK: {
       name: "LUMBERJACK",
       description: [
-        "Felling axes do 30% more damage against wooden objects including trees.",
+        "Tool deal <b>10%</b> increased damage against wood.",
+		"This includes trees an wooden terrain.",
       ],
       color: "gold",
-      cost: 2,
+      cost: 1,
+ 	  leveldescription: "<b>10%</b> damage per level",
+	  level: 3,
     },
     QUALITY_GEAR: {
       name: "QUALITY GEAR",
-      description: ["All tools lose durability 50% slower."],
+      description: ["Tools have a <b>20%</b> chance to restore <b>1</b> durability point"],
       color: "gold",
       cost: 2,
     },
     MASON: {
       name: "MASON",
       description: [
-        "The Pickaxe deals 30% more damage against stone objects, including resource veins.",
+        "Tools deal <b>10%</b> increased damage against stone.",
+		"This includes stone terrain and gemstone veins.",
       ],
       color: "gold",
-      cost: 2,
+      cost: 1,
+ 	  leveldescription: "<b>10%</b> damage per level",
+	  level: 3,
     },
     FISHERMANS_RESOLVE: {
       name: "FISHERMAN'S RESOLVE",
       description: [
-        "Increases your Fishing Endurance by <b>30%</b>.",
+        "Increases your Fishing Endurance by <b>5</b>.",
         "Allows for extended battles with hooked fish.",
       ],
       color: "gold",
-      cost: 5,
+      cost: 2,
+ 	  leveldescription: "<b>5</b> Fishing Endurance per level",
+	  level: 3,
     },
     POWER_PARRY: {
       name: "POWER PARRY",
       description: [
-        "Increases the enemy's stun bar gain on parry attacks.",
-        "<b>Parry</b><br>While equipped with a shield, press <b>[RMB] to block</b>. A well-timed block will <b>parry</b> the attack.",
+        "Your Parry Power is increased by <b>10%</b>.",
+        "<b>Parry</b><br>A ell-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
+		OVERPOWER
       ],
       color: "gold",
-      cost: 2,
-    },
+      cost: 1,
+  	  leveldescription: "<b>10%</b> Parry Power per level",
+	  level: 3,
+   },
     ATTR_SPIRIT: {
       name: "SPIRIT",
       description: [
-        "Increases your Spirit attribute by 1",
-        "Increases Mana by 20 per Attribute Point",
+        "Increases your Spirit attribute by 1.",
+        "Increases Mana by 20 per Attribute Point.",
       ],
       color: "blue",
       cost: 1,
@@ -148,8 +173,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_INT: {
       name: "INTELLIGENCE",
       description: [
-        "Increases your Intelligence attribute by 1",
-        "Increases Magic damage by 5% per Attribute Point",
+        "Increases your Intelligence attribute by 1.",
+        "Increases Magic damage by 5% per Attribute Point.",
       ],
       color: "blue",
       cost: 1,
@@ -158,8 +183,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_CONS: {
       name: "CONSTITUTION",
       description: [
-        "Increases your Constitution attribute by 1",
-        "Increases Health by 50 per Attribute Point",
+        "Increases your Constitution attribute by 1.",
+        "Increases Health by 50 per Attribute Point.",
       ],
       color: "red",
       cost: 1,
@@ -168,8 +193,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_STR: {
       name: "STRENGTH",
       description: [
-        "Increases your Strength attribute by 1",
-        "Increases Melee damage by 5% per Attribute Point",
+        "Increases your Strength attribute by 1.",
+        "Increases Melee damage by 5% per Attribute Point.",
       ],
       color: "red",
       cost: 1,
@@ -178,8 +203,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_ENDURANCE: {
       name: "ENDURANCE",
       description: [
-        "Increases your Endurance attribute by 1",
-        "Increases Stamina by 10 per Attribute Point",
+        "Increases your Endurance attribute by 1.",
+        "Increases Stamina by 10 per Attribute Point.",
       ],
       color: "green",
       cost: 1,
@@ -188,8 +213,8 @@ const SkillNodes: SkillNodesType = {
     ATTR_DEX: {
       name: "DEXTERITY",
       description: [
-        "Increases your Dexterity attribute by 1",
-        "Increases Bow and Dagger damage by 5% per Attribute Point",
+        "Increases your Dexterity attribute by 1.",
+        "Increases Bow and Dagger damage by 5% per Attribute Point.",
       ],
       color: "green",
       cost: 1,
@@ -198,17 +223,22 @@ const SkillNodes: SkillNodesType = {
     WELL_RESTED: {
       name: "WELL RESTED",
       description: [
-        "The base duration for the Rested buff is increased by 5 Minutes.",
-        "Increase the Comfort in your home to further increase the duration.",
+        "The base duration for the Rested buff is increased by <b>2</b> minutes.",
+        "<b>Rested</b><br>The Rested buff increases your Stamina Maximum and Regeneration significantly.",
+		"It requires <b>shelter, sitting or sleeping,</b> as well as <b>warmth</b> from a heat source.",
+		"The buff can be refreshed <b>anywhere.</b>"
+		"Surrounding comfort items further increase its duration."
       ],
       color: "gold",
       cost: 1,
+  	  leveldescription: "<b>2</b> minutes per level",
+	  level: 3,
     },
     SNEAK_ATTACK: {
       name: "SNEAK ATTACK",
       description: [
-        "The <b>Sneak Attack</b> deals massive 10x damage to unaware enemies.",
-        "To trigger it, sneak up on an enemy and press <b>[E]</b>.",
+        "Perform a <b>Sneak Attack</b> by sneaking up to an unaware enemy and pressing <b>[E]</b>.",
+        "<b>Sneak Attack</b> deals <b>+900%</b> increased damage.",
       ],
       hasIcon: true,
       color: "gold",
@@ -217,7 +247,7 @@ const SkillNodes: SkillNodesType = {
     MERCILESS_ATTACK: {
       name: "MERCILESS ATTACK",
       description: [
-        "Perform a Merciless Attack by pressing [E] to deal massive damage to an enemy you've empowered.",
+        "Perform a <b>Merciless Attack</b> by pressing <b>[E]</b> to deal <b>+500%</b> damage to an <b>overpowered</b> enemy.",
         OVERPOWER,
       ],
       hasIcon: true,
@@ -227,17 +257,20 @@ const SkillNodes: SkillNodesType = {
     UPDRAFT: {
       name: "UPDRAFT",
       description: [
-        "Pressing the jump button while gliding will give you a small height boost. This skill can be used once per flight. Cost: 120 mana",
+        "Jumping with [SPACE] while gliding lifts you upwards. Can be used once per flight.",
+		CHARGE,
+		"<b>Cost:</b> 100 Mana"
       ],
       hasIcon: true,
       color: "green",
       cost: 4,
     },
     BEGONE: {
-      name: "BEGONE",
+      name: "BEGONE!",
       description: [
-        "A magic-powered punch that pushes and stuns hit foes.",
-        "Replaces your unarmed attacks as long as you have the necessary mana available: <b>30 Mana</b>",
+        "A magic-powered punch that pushes back and stuns enemies.",
+        "Replaces your unarmed attacks as long as you have the necessary Mana available.",
+		"<b>Cost:</b> 30 Mana",
       ],
       hasIcon: true,
       color: "blue",
@@ -246,34 +279,40 @@ const SkillNodes: SkillNodesType = {
     RADIANT_AURA: {
       name: "RADIANT AURA",
       description: [
-        "All Fell foes within 10 meters take 1 fire damage per intelligence per second.",
+        "All <b>Fell</b> enemies within <b>2</b> meters take <b>1 Fire</b> damage per Intelligence per second.",
       ],
       hasIcon: true,
       color: "blue",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>2</b> meters range and <b>1 Fire</b> damage per Intelligence per level",
+	  level: 1,
     },
     WATER_AURA: {
       name: "WATER AURA",
       description: [
-        "You emit a healing aura. It heals all injured allies within 15 meters. The healing scales with your intelligence attribute (1 health for every 2 points of intelligence).",
+        "You emit a healing aura that heals you and all injured allies within <b>5</b> meters.",
+		"The healing scales with your intelligence attribute and restores <b>1</b> Health per <b>2</b> points of intelligence.",
       ],
       hasIcon: true,
       color: "blue",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>5</b> meters per level",
+	  level: 3,
     },
     MARTYR: {
       name: "MARTYR",
       description: [
-        "When you are killed by an enemy, all allies within 50 meters will heal 30% of their maximum health.",
+        "When you are killed by an enemy, all allies within 30 meters are healed for <b>50%</b> of their maximum health.",
+		"They also receive a <b>Final Blessing</b> buff, increasing their maximum Health by <b>100</b> points for <b>15</b> minutes.",
       ],
       hasIcon: true,
-      color: "blue",
-      cost: 5,
+      color: "red",
+      cost: 3,
     },
     DIVINE_SURGE: {
       name: "DIVINE SURGE",
       description: [
-        "Healing spells can perform Critical Strikes that scale with your Critical Strike Damage.",
+        "Healing spells can perform Critical Strikes that scale with your Critical Strike damage.",
       ],
       color: "blue",
       cost: 5,
@@ -281,15 +320,19 @@ const SkillNodes: SkillNodesType = {
     RIGHTEOUS_FIRE: {
       name: "RIGHTEOUS FIRE",
       description: [
-        "Healing any target with a spell triggers a burst of fire that deals <b>50%</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies.",
+        "Healing any target with a spell triggers a burst of fire that deals <b>20%</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies.",
       ],
       color: "blue",
-      cost: 5,
+      cost: 2,
+	  leveldescription: "<b>20% Fire</b> damage per level",
+	  level: 3,
     },
     BLINK: {
       name: "BLINK",
       description: [
-        "Replaces the Dodge Roll ability with a short range teleport.",
+        "Replaces the Dodge Roll ability with a short-range teleport.",
+		"Blink also replaces the sideways Dodge Roll of the Strategig Maneuver skill",
+		"<b>Cost:</b> 20 Stamina"
       ],
       hasIcon: true,
       color: "blue",
@@ -298,7 +341,8 @@ const SkillNodes: SkillNodesType = {
     EVASION_ATTACK: {
       name: "EVASION ATTACK",
       description: [
-        "When equipped with a melee weapon, you can perform an evade attack which dashes towards the enemy and deals more weapon damage with <b>[LMB]</b>",
+        "When equipped with a Melee weapon, you can perform an evade attack, which dashes towards the enemy and deals more weapon damage with <b>[LMB]</b>",
+		"<b>Cost:</b> 20 Stamina",
         BLOCK_BREAKER,
       ],
       hasIcon: true,
@@ -308,26 +352,31 @@ const SkillNodes: SkillNodesType = {
     EARTH_AURA: {
       name: "EARTH AURA",
       description: [
-        "Shields allies and yourself, reducing incoming damage by 10%",
+        "You emit a protective aura that increases Physical an Magical Resistances by <b>10%</b> for you and all allies within <b>4</b> meters.",
       ],
       hasIcon: true,
       color: "red",
-      cost: 5,
+      cost: 2,
+	  leveldescription: "<b>4</b>" meters range per level;
+	  level: 3,
     },
     NEMESIS: {
       name: "NEMESIS",
       description: [
-        "Whenever an ally draws the attention of an enemy, you draw it in equal measures.",
+        "Increase the attention you draw from enemies by <b>5%</b>.",
       ],
       hasIcon: true,
       color: "red",
-      cost: 5,
+      cost: 2,
+	  leveldescription: "<b>5%</b> attention drawn per level",
+	  level: 3,
     },
     SHOCKWAVE: {
       name: "SHOCKWAVE",
       description: [
-        "Trigger a shockwave when you parry an attack or overpower an enemy.",
-        "The shockwave pushes back nearby enemies. It also increases their stun bar, scaling with your strength attribute.",
+        "Trigger a Shockwave when you parry an attack or <b>overpower</b> an enemy.",
+        "The Shockwave pushes back nearby enemies. It also fills their <i>Stun Bar</i>, scaling with your Strength attribute.",
+		PARRY,
         OVERPOWER,
       ],
       hasIcon: true,
@@ -335,8 +384,8 @@ const SkillNodes: SkillNodesType = {
       cost: 3,
     },
     HEAVY_SPECIALIZATION: {
-      name: "HEAVY SPECIALIZATION",
-      description: ["Allows you to attack faster with Two-Handed weapons."],
+      name: "HEAVY HITTER",
+      description: ["Increases the attack speed of all Two-Handed Melee weapons by <b>10%</b>."],
       hasIcon: true,
       color: "red",
       cost: 5,
@@ -344,11 +393,14 @@ const SkillNodes: SkillNodesType = {
     BASH: {
       name: "BASH",
       description: [
-        "Your parry bashes the enemy for 20 blunt damage. The damage is increased by your strength attribute.",
+        "Parrying enemy attacks bashes them for <b>30 Blunt</b> damage. Bash damage is increased by your Strength attribute.",
+		PARRY,
       ],
       hasIcon: true,
       color: "red",
-      cost: 5,
+      cost: 2,
+	  leveldescription: "<b>10 Blunt</b> damage per level",
+	  level: 3,
     },
     WHIRLWIND_CRESCENDO: {
       name: "WHIRLWIND CRESCENDO",
@@ -363,8 +415,8 @@ const SkillNodes: SkillNodesType = {
     CRASH_DOWN_ATTACK: {
       name: "CRASH DOWN ATTACK",
       description: [
-        "When equipped with a Melee weapon, you can perform a jump attack during the descent of your jump.",
-        "Crash Down deals 50% more weapon damage in a small blast radius and costs Stamina according to the weapon's weight.",
+        "When equipped with a Melee weapon, you can perform a special attack by holding <b>[LMB]</b> during a jump.",
+        "Crash Down deals 50% more weapon damage in a small blast radius and costs Stamina depending on weapon type used.",
         "<b>Cost</b>: 35-60 Stamina",
         BLOCK_BREAKER,
       ],
@@ -376,15 +428,18 @@ const SkillNodes: SkillNodesType = {
     },
     DOUBLE_JUMP: {
       name: "DOUBLE JUMP",
-      description: ["Allows jumping a second time while airborne."],
+      description: [
+		"Allows jumping a second time while airborne.",
+		"<b>Cost:</b> 10 Stamina",
+		],
       hasIcon: true,
       iconOffset: 10,
-      color: "green",
+      color: "gold",
       cost: 4,
     },
     DESSERT_STOMACH: {
       name: "DESSERT STOMACH",
-      description: ["You gain one additional food slot"],
+      description: ["You gain one additional Food slot"],
       hasIcon: true,
       color: "green",
       cost: 4,
@@ -400,7 +455,7 @@ const SkillNodes: SkillNodesType = {
     EAGLE_EYE: {
       name: "EAGLE EYE",
       description: [
-        "Greatly increases the zoom while aiming with a bow.",
+        "Greatly increases the zoom while aiming with Bows.",
         "To aim, hold down the [RMB] while a bow is selected in the Action bar. (Alternatively, hold [Q] to aim your equipped bow.)",
       ],
       hasIcon: true,
@@ -410,27 +465,28 @@ const SkillNodes: SkillNodesType = {
     MULTI_SHOT: {
       name: "MULTI SHOT",
       description: [
-        "When using regular arrows there is a 20% chance to spawn a flurry of arrows that spread slightly.",
-        "This will cost additional arrows, but will not trigger on special arrows.",
+        "Shooting <i>Regular Arrows</i> has a <b>20%</b> chance to spawn a <b>Flurry of <b>Arrows</b> that spreads slightly.",
+		"<i>Regular Arrows</i> fired this way will substract from your ammunition.",
+        "<b>Flurry of <b>Arrows</b> does not trigger on <i>Special Arrows</i>.",
       ],
       hasIcon: true,
       color: "green",
-      cost: 3,
+      cost: 4,
     },
     MULTI_SHOT_SPREAD: {
       name: "MULTI SHOT SPREAD",
       description: [
-        `Adds a 25% chance to spawn an additional projectile to your "flurry of arrows" from the "Multi Shot" skill.`,
-        "This additional projectile does not subtract from your stack of ammunition.",
+        "Adds a <b>25%</b> chance to spawn an additional <i>Regular Arrow</i> with your <b>Flurry of <b>Arrows</b> from the <b>Multi Shot</b> skill.",
+        "This additional <i>Regular Arrow</i> does not subtract from your ammunition.",
       ],
       color: "green",
-      cost: 4,
+      cost: 3,
     },
     MULTI_SHOT_TRIGGER: {
       name: "MULTI SHOT TRIGGER",
       description: [
-        `ALL arrows, including special arrows, can trigger "Multi Shot".`,
-        "The special Multi Shot projectiles will subtract from your stack of ammunition.",
+        "Shooting <i>Special Arrows</i> now triggers a <b>Flurry of <b>Arrows</b> from the <b>Multi Shot</b> skill.",
+        "<i>Special Arrows</i> fired this way will subtract from your ammunition.",
       ],
       color: "green",
       cost: 3,
@@ -438,8 +494,8 @@ const SkillNodes: SkillNodesType = {
     BEE_STING: {
       name: "BEE STING",
       description: [
-        "When you draw your bow while in the air, your fall is slowed down for a short time. Every shot gives you a small push to get more air time.",
-        "Cost: 10 stamina per second",
+        "Firing or aiming your Bow while airborne slowes down your fall briefly. Every shot lifts you slightly, granting more airtime.",
+        "<b>Cost:</b> 10 stamina per second",
       ],
       hasIcon: true,
       color: "green",
@@ -448,8 +504,8 @@ const SkillNodes: SkillNodesType = {
     SHELL_SHOCK: {
       name: "SHELL SHOCK",
       description: [
-        "Infuse your <i>ranged explosives</i> with mana. They now stun enemies for up to 1 second.",
-        "Mana Cost: 5 per stunned enemy",
+        "Infuse your <b>Ranged Explosives</b> with Mana. They now stun enemies for 2 seconds.",
+        "<b>Cost:</b> 8 Mana per stunned enemy",
       ],
       hasIcon: true,
       color: "green",
@@ -458,136 +514,147 @@ const SkillNodes: SkillNodesType = {
     COUNTERSTRIKE: {
       name: "COUNTERSTRIKE",
       description: [
-        "After receiving damage there is a 20% chance to <b>reflect</b> 50% of the damage back to the attacker as fire damage.",
+        "After receiving damage, there is a <b>8%</b> chance to reflect <b>20%</b> of the damage back to the attacker as <b>Fire</b> damage.",
         "This magical attack can trigger other skills.",
       ],
       color: "blue",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>8%</b> chance and <b>20%</b> reflected damage per level",
+	  level: 3,
     },
     TERROR: {
       name: "TERROR",
       description: [
-        "On a critical hit with a spell, the target will be stunned for 4 seconds.",
+        "Critical Strikes with spells have a <b>15%</b> chance to stun the target for <b>2</b> seconds.",
       ],
       color: "blue",
-      cost: 4,
+      cost: 2,
+	  leveldescription: "<b>15%</b> chance per level",
+	  level: 3,
     },
     SHOCK_RESISTANCE: {
       name: "SHOCK RESISTANCE",
       description: [
-        "Increases your <b>Shock Resistance</b> by <b>5%</b> which reduces the amount of <b>Shock</b> damage received.",
+        "Increases your <b>Shock Resistance</b> by <b>4%</b> which reduces the amount of <b>Shock</b> damage received.",
       ],
       color: "blue",
       cost: 2,
+	  leveldescription: "<b>4%</b> Resistance per level",
+	  level: 3,
     },
     QUICK_CHARGE: {
       name: "QUICK CHARGE",
       description: [
-        "Reduces the time Staffs require to charge-up a spell by 50%.",
+        "Cast Time of spells is reduced by <b>-15%</b>.",
       ],
       color: "blue",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>-15%</b> Cast Time per level",
+	  level: 3,
     },
     THIS_IS_THE_WAY: {
-      name: "THIS IS THE WAY",
+      name: "MAGE APPRENTICE",
       description: [
-        "When attacking with a magical weapon all damage is increased by 10%.",
+        "Magic weapon damage is increased by <b>5%</b>.",
       ],
       color: "blue",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>5%</b> damage per level",
+	  level: 3,
     },
     ARSONIST: {
       name: "ARSONIST",
-      description: ["All fire damage is increased by an additional 10%."],
+      description: ["All <b>Fire</b> damage is increased by <b>10%</b>."],
       color: "blue",
       cost: 2,
+	  leveldescription:"<b>10%</b> damage per level",
+	  level: 3,
     },
-    PYROMANIAC: {
-      name: "PYROMANIAC",
-      description: ["All fire damage is increased by an additional 20%."],
-      color: "blue",
-      cost: 3,
+    PYROMANIAC: {NaN
     },
     SUN_AURA: {
-      name: "SUN AURA",
+      name: "RADIANT AURA",
       description: [
-        "All Fell foes within 10 meters take 1 additional fire damage per intelligence per second.",
+        "All <b>Fell</b> enemies within <b>2</b> meters take <b>1 Fire</b> damage per Intelligence per second.",
       ],
       color: "blue",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>2</b> meters range and <b>1 Fire</b> damage per Intelligence per level",
+	  level: 3,
     },
     FIRE_RESISTANCE: {
       name: "FIRE RESISTANCE",
       description: [
-        "Increases your <b>Fire Resistance</b> by <b>5%</b> which reduces the amount of <b>Fire</b> damage received.",
+        "Increases your <b>Fire Resistance</b> by <b>4%</b>, which reduces the amount of <b>Fire</b> damage received.",
       ],
       color: "blue",
       cost: 2,
+	  leveldescription: "<b>4%</b> Resistance per level",
+	  level: 3,
     },
     THUNDER: {
       name: "THUNDER",
-      description: ["All shock damage is increased by an additional 10%."],
+      description: ["All <b>Shock</b> damage is increased by <b>10%</b>."],
       color: "blue",
       cost: 2,
+	  leveldescription:"<b>10%</b> damage per level",
+	  level: 3,
     },
-    LIGHTNING: {
-      name: "LIGHTNING",
-      description: ["All shock damage is increased by an additional 20%."],
-      color: "blue",
-      cost: 3,
+    LIGHTNING: {NaN
     },
     ICEMAN: {
       name: "ICEMAN",
-      description: ["All ice damage is increased by an additional 10%."],
+      description: ["All <b>Ice</b> damage is increased by <b>10%</b>."],
       color: "blue",
       cost: 2,
+	  leveldescription: "<b>10%</b> damage per level",
+	  level: 3,
     },
-    SUBZERO: {
-      name: "SUBZERO",
-      description: ["All ice damage is increased by an additional 20%."],
-      color: "blue",
-      cost: 3,
+    SUBZERO: {NaN
     },
     FROST: {
       name: "FROST",
       description: [
-        "When receiving melee damage, the attacker will be slowed down for 3 seconds.",
+        "When receiving Melee damage, the attacker will be slowed down for 3 seconds.",
       ],
       color: "blue",
-      cost: 3,
+      cost: 2,
+	  leveldescription:"<b>3s</b> per level",
     },
     ICE_RESISTANCE: {
       name: "ICE RESISTANCE",
       description: [
-        "Increases your <b>Ice Resistance</b> by <b>5%</b> which reduces the amount of <b>Ice</b> damage received.",
+        "Increases your <b>Ice Resistance</b> by <b>4%</b> which reduces the amount of <b>Ice</b> damage received.",
       ],
       color: "blue",
       cost: 2,
+	  leveldescription:"<b>4%</b> Resistance per level",
+	  level: 3,
     },
     WIZARD: {
       name: "WIZARD",
       description: [
-        "When attacking with a magical weapon your critical hit chance is increased by 10%",
+        "Magic weapon Critical Strike chance is increased by <b>2%</b>.",
       ],
       color: "blue",
-      cost: 3,
+      cost: 2,
+	  leveldescription:"<b>2%</b> Critical Strike chance per level",
+	  level: 3,
     },
     DARK_ARTS: {
       name: "DARK ARTS",
-      description: ["All Shrouded damage is increased by an additional 10%."],
+      description: ["All <b>Shroud damage</b> is increased by <b>10%</b>."],
       color: "blue",
-      cost: 3,
+      cost: 2,
+	  leveldescription: "<b>10%</b> damage per level",
+	  level: 3,
     },
-    ABYSS: {
-      name: "ABYSS",
-      description: ["All Shrouded damage is increased by an additional 20%."],
-      color: "blue",
-      cost: 4,
+    ABYSS: {NaN
     },
     CHAIN_HIT: {
       name: "CHAIN HIT",
       description: [
-        "On a critical hit with a magical weapon, the attack will automatically hit a second enemy within 15 meters for 5 Shock damage per intelligence.",
+        "Critical Strikes with Magic weapon will automatically hit a second enemy within <b>15</b> meters for <b>5 Shock</b> damage per intelligence.",
       ],
       color: "blue",
       cost: 3,
@@ -595,54 +662,60 @@ const SkillNodes: SkillNodesType = {
     MASS_DESTRUCTION: {
       name: "MASS DESTRUCTION",
       description: [
-        "A critical attack with a magic weapon will hit all enemies within 20 meters of the target for 2 Shock damage per intelligence.",
+        "Critical Strikes with a Magic weapons deal <b>2 Shock</b> damage per intelligence to all enemies whithin <b>5</b> meters of the target.",
       ],
       color: "blue",
-      cost: 4,
+      cost: 2,
+	  leveldescription: "<b>5</b> meters range per level",
+	  level: 3,
     },
     NECROMANCER: {
       name: "NECROMANCER",
       description: [
-        "When killing an enemy with a magic weapon, you have a 10% chance to summon a friendly skull companion.",
+        "When killing an enemy with a Magic weapon, you have a <b>5%</b> chance to summon a friendly <b>Skull Companion</b>.",
       ],
       color: "blue",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>5%</b> chance per level",
+	  level: 3,
     },
     HEALER: {
       name: "HEALER",
       description: [
-        "Health gain from healing spells will be increased by 10%.",
+        "Health gain from healing spells and skills is increased by <b>15%</b>.",
       ],
       color: "blue",
       cost: 2,
+	  leveldescription: "<b>15%</b> healing per level",
+	  level: 3,
     },
-    HEALER_II: {
-      name: "HEALER II",
-      description: ["Health gain from healing spells will be increased by 20%"],
-      color: "blue",
-      cost: 2,
+    HEALER_II: {NaN
     },
     HEALING_REVIVE: {
       name: "HEALING REVIVE",
       description: [
-        "Revived players will heal 25% of their health instead of 10%.",
+        "Revive players with <b>8%</b> increased Health.",
+		"default Health of revived players is <b>10%</b>.",
       ],
       color: "blue",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>8%</b> Health per level",
     },
     SHROUD_FILTER: {
       name: "SHROUD FILTER",
       description: [
-        "Dealing magic weapon damage has a 15% chance to trigger a small flame burst that restores 30 seconds of <i>Shroud Time</i> to you and your allies within 20 meters.",
+        "Dealing damage with a Magic weapon has a <b>5%</b> chance to trigger a small flame burst that restores <b>9</b> seconds of <b>Time in the Shroud</b> to you and your allies within <b>20</b> meters.",
         SHROUD_TIME_TEXT,
       ],
       color: "blue",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>5%</b> chance per level",
+	  level: 3,
     },
     WATERS_OF_LIFE: {
       name: "WATERS OF LIFE",
       description: [
-        "Increases <b>Water Aura</b> healing to 2 Health per 2 points of Intelligence.",
+        "Increases <b>Water Aura</b> healing to <b>2</b> Health per <b>2</b> points of Intelligence.",
       ],
       color: "blue",
       cost: 2,
@@ -650,18 +723,22 @@ const SkillNodes: SkillNodesType = {
     SHROUD_RESISTANCE: {
       name: "SHROUD RESISTANCE",
       description: [
-        "Increases <b>Shroud Resistance</b> by <b>5%</b> which reduces the amount of <b>Shroud</b> damage received.",
+        "Increases your <b>Shroud Resistance</b> by <b>4%</b> which reduces the amount of <b>Shroud</b> damage received.",
       ],
       color: "blue",
       cost: 2,
+	  leveldescription: "<b>4%</b> Resistance per level",
+	  level: 3,
     },
     SHROUD_MISTERY: {
-      name: "SHROUD MYSTERY",
+      name: "SHARED MISERY",
       description: [
-        "When you receive <b>Shroud</b> damage, all players within <b>20</b>-meters receive <b>15%</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds.",
+        "When you receive <b>Shroud</b> damage, all players within <b>5</b>-meters receive <b>15%</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds.",
       ],
       color: "blue",
-      cost: 6,
+      cost: 2,
+	  leveldescription: "<b>5</b> meters per level",
+	  level: 3,
     },
     EMERGENCY_BLINK: {
       name: "EMERGENCY BLINK",
@@ -674,31 +751,38 @@ const SkillNodes: SkillNodesType = {
     BLINK_ATTACK: {
       name: "BLINK ATTACK",
       description: [
-        "Blinking into an enemy triggers an explosion which deals fire damage in a small range.",
-        "Damage and mana cost scale with the intelligence attribute.",
+        "Blinking into an enemy triggers an explosion which deals <b>Fire</b> damage in a small radius.",
+        "Damage and Mana cost scale with the Intelligence attribute.",
       ],
       color: "blue",
       cost: 2,
     },
     ARCANE_DEFLECTION: {
       name: "ARCANE DEFLECTION",
-      description: ["On a successful parry, gain 20 mana."],
+      description: [
+	  "Successfully parrying an enemy's attack restores <b>10</b> Mana."
+	  PARRY,
+	  ],
       color: "blue",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>10</b> Mana per level",
+	  level: 3,
     },
     UNITY: {
       name: "UNITY",
       description: [
-        "Damaging enemies with wands has a 24% chance to recover 4% mana.",
+        "Damaging enemies with Wands has a <b>10%</b> chance to restore 2% of your maximum Mana.",
       ],
       hasIcon: true,
       color: "blue",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>10%</b> chance and <b>2%</b> of maximum Mana per level",
+	  level: 3,
     },
     WAND_MASTER: {
-      name: "WAND MASTER",
+      name: "ARCANE PROLIFERATION",
       description: [
-        "Attacking with a wand has a 30% chance to spawn an additional wand projectile that deals 50% damage.",
+        "Wand attacks have a <b>30%</b> chance to spawn double the amount of projectiles. Extra projectilea spawned deal <b>50%</b> less damage.",
       ],
       color: "blue",
       cost: 3,
@@ -706,38 +790,44 @@ const SkillNodes: SkillNodesType = {
     ETERNAL_SPARK: {
       name: "ETERNAL SPARK",
       description: [
-        "Wand projectiles have a 25% chance not to consume durability.",
+        "Dealing damage with Wand projectiles has a <b>10%</b> chance to restore 1 durability to that weapon.",
       ],
       color: "blue",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>10%</b> chance per level",
+	  level: 3,
     },
     STING: {
       name: "STING",
-      description: ["Repeated wand damage is increased by 20%."],
+      description: ["Repeated Wand damage is increased by <b>20%</b>."],
       color: "blue",
       cost: 3,
     },
     BATTLE_HEAL: {
       name: "BATTLE HEAL",
       description: [
-        "When dealing critical damage with a melee weapon, you will heal 5% of your maximum health.",
+        "Critical Strikes with Melee weapon heal you for <b>1%</b> of your maximum Health.",
       ],
       color: "red",
-      cost: 3,
+      cost: 2,
+	  leveldescription: "<b>1%</b> of maximum Health per level",
+	  level: 3,
     },
     BLOODLETTING: {
       name: "BLOODLETTING",
       description: [
-        "When scoring a critical hit with a magical weapon, there is a 50% chance to spawn 2 health, mana, and/or stamina Orbs.",
-        "Gathering the Orb replenishes 10% of the respective resource.",
+        "Critical Strikes with spells have a <b>15%</b> chance to spawn 2 Health, Mana, and/or Stamina Orbs.",
+        "Gathering an Orb restores <b>10%</b> of the respective resource.",
       ],
       color: "blue",
-      cost: 3,
+      cost: 2,
+	  leveldescription: "<b>15%</b> chance per level",
+	  level: 3,
     },
     LIFE_BURST: {
       name: "LIFE BURST",
       description: [
-        "When killing an enemy with a magic weapon all players within 15 meters of the target gain health equal to 3 times your Intelligence.",
+        "Defeating an enemy with a Magic weapon restores Health equal to <b>3</b> times your Intelligence to all players within <b>15</b> meters of the target..",
       ],
       color: "blue",
       cost: 4,
@@ -745,8 +835,9 @@ const SkillNodes: SkillNodesType = {
     BLOOD_MAGIC: {
       name: "BLOOD MAGIC",
       description: [
-        "When your mana drops below 20%, you restore 35% of your max mana at the cost of 1 health per mana. This will stop at 1 health.",
-        "<b>Cooldown</b><br />This takes 2 minutes before it can trigger again.",
+        "When your Mana drops below <b>20%</b>, you restore up to <b>35%</b> of your maximum Mana at the cost of <b>1</b> Health per Mana restored."
+		"This effect stops at 1 Health.",
+        "<b>Cooldown:</b> 2 minutes",
       ],
       color: "blue",
       cost: 4,
@@ -754,43 +845,51 @@ const SkillNodes: SkillNodesType = {
     ABSORB: {
       name: "ABSORB",
       description: [
-        "When you suffer magical damage, you have a 10% chance to generate 1 mana for each health point lost.",
+        "When you receive <b>Magic</b> damage, you have a <b>4%</b> chance to restore 1 Mana per Health point lost.",
       ],
       color: "red",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>4%</b> chance per level",
+	  level: 3,
     },
     SNAP: {
       name: "SNAP",
-      description: ["Restores 10% mana when triggering the Merciless Attack."],
+      description: ["Triggering a <b>Merciless Attack</b> restores <b>10%</b> Mana."],
       color: "red",
-      cost: 4,
+      cost: 3,
     },
     SOUL_LEECH: {
       name: "SOUL LEECH",
       description: [
-        "When killing an enemy with a melee weapon all players within 15 meters of the target gain 20 mana.",
+        "When killing an enemy with a Melee weapon, all players within <b>5</b> meters of the target restore <b>15</b> Mana.",
       ],
       color: "red",
-      cost: 4,
+      cost: 2,
+	  leveldescription: "<b>5</b> meters range and <b>15</b> Mana per level",
+	  level: 3,
     },
     SHINY_PLATES: {
       name: "SHINY PLATES",
-      description: ["Physical armor gains 10% more armor points."],
+      description: ["Equipped armor grants <b>4%</b> increased Magical Armor"],
       color: "red",
-      cost: 2,
+      cost: 1,
+	  leveldescription; "<b>4%</b> increased Magical Armor per level",
+	  level: 3,
     },
     HEAVY_PLATES: {
       name: "HEAVY PLATES",
       description: [
-        "The maximum amount of physical damage your armor is able to mitigate is increased by 10%",
+        "Equipped armor grants <b>4%</b> increased Physical Armor",
       ],
       color: "red",
-      cost: 2,
-    },
+      cost: 1,
+ 	  leveldescription; "<b>4%</b> increased Physical Armor per level",
+	  level: 3,
+   },
     WARDEN: {
       name: "WARDEN",
       description: [
-        "When there are three or more enemies within 20 meters you suffer 15% less magical damage.",
+        "While there are three or more enemies within <b>20</b> meters, you receive <b>10%</b> increased <b>Magical Resistance</b>.",
       ],
       color: "red",
       cost: 3,
@@ -798,128 +897,109 @@ const SkillNodes: SkillNodesType = {
     TOWER: {
       name: "TOWER",
       description: [
-        "When there are three or more enemies within 20 meters you suffer 10% less physical damage.",
+        "While there are three or more enemies within <b>20</b> meters, you receive <b>10%</b> increased <b>Physical Resistance<b/>",
       ],
       color: "red",
       cost: 3,
     },
-    ARCH_NEMESIS: {
-      name: "ARCH NEMESIS",
-      description: [
-        "Whenever an ally draws the attention of an enemy, you draw twice as much.",
-      ],
-      color: "red",
-      cost: 3,
+    ARCH_NEMESIS: {NaN
     },
     PURIFICATION: {
       name: "PURIFICATION",
       description: [
-        "After defeating a Shroud infested foe with a melee weapon you replenish +5 seconds of Shroud Time.",
+        "Defeating a Shroud infested enemy with a Melee weapon restore <b>3</b> seconds of <b>Time in the Shrous</b>.",
         SHROUD_TIME_TEXT,
       ],
       color: "red",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>3</b> seconds per level",
+	  level: 3,
     },
     WARRIOR_PATH: {
-      name: "THE WARRIOR'S PATH",
+      name: "WARRIOR'S PATH",
       description: [
-        "When attacking with a melee weapon all damage is increased by 10%.",
+        "One-Handed Melee weapon damage is increased by <b>5%</b>.",
       ],
       color: "red",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>5%</b> damage per level",
+	  level: 3
     },
     THRUST: {
       name: "THRUST",
       description: [
-        "All melee piercing damage is increased by an additional 10%.",
+        "Mlee <b>Piercing</b> damage is increased by <b>10%</b>.",
       ],
       color: "red",
       cost: 2,
+	  leveldescription: "<b>10%</b> damage per level",
+	  level: 3,
     },
-    PIERCE: {
-      name: "PIERCE",
-      description: [
-        "All melee piercing damage is increased by an additional 20%.",
-      ],
-      color: "red",
-      cost: 3,
+    PIERCE: {NaN
     },
     BRUTE: {
       name: "BRUTE",
       description: [
-        "All melee blunt damage is increased by an additional 10%.",
+        "Melee <b>Blunt</b> damage is increased by <b>10%</b>.",
       ],
       color: "red",
       cost: 2,
+	  leveldescription: "<b>10%</b> damage per level",
+	  level: 3,
     },
-    HAMMER_TIME: {
-      name: "HAMMER TIME",
-      description: [
-        "All melee blunt damage is increased by an additional 20%.",
-      ],
-      color: "red",
-      cost: 3,
+    HAMMER_TIME: {NaN
     },
     SLASHER: {
       name: "SLASHER",
       description: [
-        "All melee cutting damage is increased by an additional 10%.",
+        "Melee <b>Cutting</b> damage is increased by <b>10%</b>.",
       ],
       color: "red",
       cost: 2,
+	  leveldescription: "<b>10%</b> damage per level",
+	  level: 3,
     },
-    BUTCHER: {
-      name: "BUTCHER",
-      description: [
-        "All melee cutting damage is increased by an additional 20%.",
-      ],
-      color: "red",
-      cost: 3,
+    BUTCHER: {NaN
     },
     VETERAN: {
       name: "VETERAN",
       description: [
-        "When attacking with a melee weapon your critical hit chance is increased by 10%.",
+        "Melee weapon Critical Strike chance is increased by <b>2%</b>.",
       ],
       color: "red",
-      cost: 4,
+      cost: 2,
+	  leveldescription: "<b>2%</b> Critical Strike chance per level",
+	  level: 3,
     },
     TITAN_EDGE: {
       name: "TITAN EDGE",
-      description: ["Greatswords damage is increased by <b>10%</b>."],
+      description: ["Two-Handed Greatsword damage is increased by <b>5%</b>."],
       color: "red",
-      cost: 4,
+      cost: 2,
+	  leveldescription: "<b>5%</b> damage per level",
+	  level: 3,
     },
     SWIFT_BLADES: {
       name: "SWIFT BLADES",
       description: [
-        "Allows you to attack faster with one-handed swords and axes.",
+        "Increase the attack speed of all One-Handed Melee weapons by <b>15%</b>.",
       ],
       hasIcon: true,
       color: "red",
       cost: 5,
     },
-    FEAST: {
-      name: "FEAST",
-      description: ["Meat now increases health by an additional 15%."],
-      color: "red",
-      cost: 3,
+    FEAST: {NaN
     },
-    HEAVY_HANDED: {
-      name: "HEAVY HANDED",
-      description: [
-        "An enemy's stun bar is increased by an additional 20% when attacking into their block with a melee weapon.",
-      ],
-      color: "red",
-      cost: 2,
+    HEAVY_HANDED: {NaN
     },
     STEADFAST: {
       name: "STEADFAST",
       description: [
-        "Defeating an enemy with a melee weapon restores 1 durability to that weapon.",
+        "Defeating an enemy with a melee weapon restores <b>1</b> durability to that weapon.",
       ],
       color: "red",
-      cost: 3,
+      cost: 2,
+	  leveldescription: "<b>1</b> Durability per level",
     },
     UPWARDS_SLASH_ATTACK: {
       name: "UPWARDS SLASH ATTACK",
@@ -935,7 +1015,7 @@ const SkillNodes: SkillNodesType = {
     BREACH: {
       name: "BREACH",
       description: [
-        "An overpowered enemy suffers 100% more melee damage for 3 seconds.",
+        "<b>Overpowered</b> enemies receive <b>+100%</b> increased Melee physical damage for <b>3</b> seconds.",
         OVERPOWER,
       ],
       color: "red",
@@ -944,7 +1024,7 @@ const SkillNodes: SkillNodesType = {
     RELENTLESS: {
       name: "RELENTLESS",
       description: [
-        "Dealing critical damage with a two-handed weapon increases your critical chance by another 10% for the next hit.",
+        "Critical Strikes with Two-Handed weapons increase your Critical Strike chance by <b>8%</b> for the next hit.",
       ],
       color: "red",
       cost: 5,
@@ -952,7 +1032,7 @@ const SkillNodes: SkillNodesType = {
     BARBARIAN: {
       name: "BARBARIAN",
       description: [
-        "You will gain one strength level for every two levels of the Flame.",
+        "Gain one point of Strength for every two levels of the Flame.",
       ],
       color: "red",
       cost: 5,
@@ -960,22 +1040,30 @@ const SkillNodes: SkillNodesType = {
     BLOOD_RAGE: {
       name: "BLOOD RAGE",
       description: [
-        "When an enemy is killed within 10 meters with a melee weapon, the damage done with melee weapons is increased by 20% for 10 seconds.",
+        "When an enemy within <b>5</b> meters is killed by a Melee weapon, you fall into <b>Blood Rage</b>",
+		BLOODRAGE,
       ],
+	  leveldescription: "<b>5</b> meters per level",
+	  level; 3.
       color: "red",
-      cost: 5,
+      cost: 2,
     },
     VIGOROUS_DEFLECTION: {
       name: "VIGOROUS DEFLECTION",
-      description: ["You gain 30 stamina when you parry an enemy's attack."],
+      description: [
+	  "Succesfully parrying an enemy's attack restore <b>15</b> Stamina.",
+	  PARRY,
+	  ],
+	  leveldescription: "<b>15</b> Stamina per level",
+	  level: 3,
       color: "red",
-      cost: 2,
+      cost: 1,
     },
     BLOOD_WARRIOR: {
       name: "BLOOD WARRIOR",
       description: [
-        "Spawn a health orb after defeating an enemy with a Sneak Attack or Merciless Attack.",
-        "Gathering the orbs replenishes 10% of your health.",
+        "Defeating an enemy with a <b>Sneak Attack</b> or <b>Merciless Attack</b> spawns a Health Orb.",
+        "Gathering an Orb restores <b>10%</b> of the respective resource.",
       ],
       color: "red",
       cost: 3,
@@ -984,12 +1072,12 @@ const SkillNodes: SkillNodesType = {
       name: "WET DOG",
       description: [
         "Weakens the effect of the <b>Wet</b> and <b>Soaked</b> debuffs.",
-        "Stamina and Stamina Regeneration are reduced by <b>20%</b> instead of <b>30%</b>.",
+        "Stamina and Stamina Regeneration is reduced by <b>20%</b> instead of <b>30%</b>.",
         WET,
         SOAKED,
       ],
       color: "red",
-      cost: 4,
+      cost: 3,
     },
     SOAKED_DOG: {
       name: "SOAKED DOG",
@@ -1000,13 +1088,13 @@ const SkillNodes: SkillNodesType = {
         SOAKED,
       ],
       color: "red",
-      cost: 2,
+      cost: 3,
     },
     SPLASH_DASH: {
       name: "SPLASH DASH",
       description: [
         "Allows you to perform an evasive dash while swimming or diving.",
-        "<b>Cost</b>: 80 Stamina",
+        "<b>Cost</b>: 40 Stamina",
       ],
       hasIcon: true,
       color: "red",
@@ -1015,37 +1103,42 @@ const SkillNodes: SkillNodesType = {
     FINESSE: {
       name: "FINESSE",
       description: [
-        "One-handed melee weapons and daggers have a 20% chance not to lose durability.",
+        "Dealing damage with One-Handed Melee weapons and daggers has a <b>10%</b> chance to restore <b>1</b> durability to that weapon.",
       ],
       color: "red",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>10%</b> chance per level",
+	  level: 3,
     },
     JUMP_ATTACK_II: {
       name: "CRASH DOWN: FORCE",
       description: [
         "When attacking from a double jump, <b>Crash Down</b> deals <b>20%</b> more weapon damage.",
       ],
-      color: "green",
+      color: "red",
       cost: 3,
     },
     BACKSTAB_MASTERY: {
       name: "BACKSTAB MASTERY",
-      description: ["All damage done from the back is increased by 30%."],
+      description: ["<b>Backstab</b> damage is increased by <b>20%</b>."],
       color: "green",
-      cost: 4,
+      cost: 1,
+	  leveldescription: "<b>20%</b> per level",
+	  level: 3,
     },
     RUNNER: {
       name: "RUNNER",
       description: [
-        "Sprinting speed increased by 10% and stamina consumption decreased by 10%",
+        "Sprint Speed is increased by <b>5%</b> and Stamina cost while sprinting is decreased by <b>5%</b>.",
       ],
       color: "green",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>5%</b> Speed and <b>5%</b> cost reduction per level",
     },
     WANDERLUST: {
       name: "WANDERLUST",
       description: [
-        "Stamina consumption for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>. Stamina consumption for <b>sprinting on stone roads</b> is reduced from <b>75% to 50%</b>.",
+        "Stamina cost for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>. Stamina cost for <b>sprinting on stone roads</b> is reduced from <b>75% to 50%</b>.",
       ],
       color: "green",
       cost: 3,
@@ -1053,8 +1146,8 @@ const SkillNodes: SkillNodesType = {
     GOOD_METABOLISM: {
       name: "GOOD METABOLISM",
       description: [
-        "Health, mana, and stamina Orbs restore 30% instead of 10% of their respective resource.",
-        "Mana and Health Potions restore 20% more.",
+        "Health, Mana, and Stamina Orbs restore <b>30%</b> instead of <b>10%</b> of their respective resource.",
+        "Health and Mana Potions restore <b>20%</b> more resources.",
       ],
       color: "green",
       cost: 3,
@@ -1062,80 +1155,74 @@ const SkillNodes: SkillNodesType = {
     SWIFTSHOT_SUSTENANCE: {
       name: "SWIFTSHOT SUSTENANCE",
       description: [
-        "30% chance to spawn a stamina orb when defeating an enemy with a bow.",
+        "Defeating an enemy with a Bow has a <b>12%</b> chance to spawn a Stamina Orb."
+		"Gathering an Orb restores <b>10%</b> of the respective resource.",
       ],
       color: "green",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>12%</b> chance per level",
+	  level: 3,
     },
     SWEET_TOOTH: {
       name: "SWEET TOOTH",
-      description: ["The stamina regeneration of sweets is increased by 50%"],
+      description: ["Stamina Regeneration of sweets is increased by <b>50%</b>."],
       color: "green",
       cost: 3,
     },
     ARACHNOID: {
       name: "ARACHNOID",
-      description: ["Stamina consumption while climbing is reduced by 50%"],
+      description: ["Stamina cost while climbing is reduced by <b>20%</b>."],
       color: "green",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>20%</b> cost reduction per level",
     },
     REBOUND: {
       name: "REBOUND",
-      description: ["Increase base stamina regeneration by 50%"],
+      description: ["Base Stamina Regeneration is increased <b>10%</b>."],
       color: "green",
       cost: 2,
+	  leveldescription: "<b>10%</b> Stamina Regeneration per level",
+	  level: 3,
     },
-    REBOUND_II: {
-      name: "REBOUND",
-      description: ["Increase base stamina regeneration by 50%"],
-      color: "green",
-      cost: 4,
+    REBOUND_II: {NaN
     },
     INNER_FIRES: {
       name: "INNER FIRES",
       description: [
-        "Maximum <i>Shroud Time</i> increased by 2 minutes, allowing you to explore for longer.",
+        "<i>Time in the Shroud</i> is increased by <b>2 min</b>, allowing you to explore for longer.",
         SHROUD_TIME_TEXT,
       ],
       color: "green",
       cost: 2,
+	  leveldescription: "<b>2 min</b> per level",
+	  level: 3,
     },
-    RELENTLESS_FLAME: {
-      name: "RELENTLESS FLAME",
-      description: [
-        "Maximum <i>Shroud Time</i> increased by 5 minutes, allowing you to explore for longer.",
-        SHROUD_TIME_TEXT,
-      ],
-      color: "green",
-      cost: 4,
+    RELENTLESS_FLAME: {NaN
     },
     SNAKE_EATER: {
       name: "SNAKE EATER",
       description: [
-        "Increases your <b>poison resistance</b> which reduces the damage received from poison by <b>20%</b>.",
+        "Increases your <b>Poison Resistance</b> by <b>4%</b>, which reduces the amount of <b>Poison</b> damage received.",
       ],
       color: "green",
       cost: 2,
+	  leveldescription: "<b>4%</b> Resistance per level",
+	  level: 3,
     },
     MITHRIDATIST: {
       name: "MITHRIDATIST",
       description: [
-        "Your <b>poison resistance</b> is increased by an additional 10%.",
-        "You also gain a 25% chance to avoid being poisoned.",
+        "Gain a <b>25%</b> chance to avoid being poisoned.",
       ],
       color: "green",
-      cost: 3,
+      cost: 2,
     },
-    DAGGER_MASTER: {
-      name: "DAGGER MASTER",
-      description: ["Increases damage dealt with daggers by 15%."],
-      color: "green",
-      cost: 3,
+    DAGGER_MASTER: {NaN
     },
     SLICE_AND_DICE: {
       name: "SLICE AND DICE",
       description: [
-        "Increases the damage of your next bow attack by 50% after a dagger crit.",
+        "After a Critical Strike with a Dagger, the base damage of your next Bow attack within 20 seconds is increased by <b>50%</b>.",
       ],
       color: "green",
       cost: 3,
@@ -1143,7 +1230,7 @@ const SkillNodes: SkillNodesType = {
     VUKAH_LANGUAGE: {
       name: "VUKAH LANGUAGE",
       description: [
-        "Vukah within 50 meters will no longer attack you unless provoked.",
+        "<b>Vukah</b> within <b>50</b> meters will no longer attack you unless provoked.",
       ],
       color: "green",
       cost: 3,
@@ -1151,7 +1238,8 @@ const SkillNodes: SkillNodesType = {
     CALM_SPIRIT: {
       name: "CALM SPIRIT",
       description: [
-        "<b>Wild animals</b> within 50 meters will be pacified unless attacked. Does not affect animals corrupted by the Shroud.",
+        "<b>Wild Animals</b> within <b>50</b> meters will be no longer attack you unless provoked.",
+		"Does not affect animals corrupted by the Shroud.",
       ],
       color: "green",
       cost: 3,
@@ -1159,7 +1247,7 @@ const SkillNodes: SkillNodesType = {
     BEAST_MASTER: {
       name: "BEAST MASTER",
       description: [
-        "When you are targeted by an attack, <b>wild animals</b> within 50 meters will attack the enemy.",
+        "When you are targeted by an attack, <b>Wild Animals</b> within <b>50</b> meters will attack the enemy.",
       ],
       color: "green",
       cost: 4,
@@ -1167,7 +1255,7 @@ const SkillNodes: SkillNodesType = {
     VUKAH_CULTURE: {
       name: "VUKAH CULTURE",
       description: [
-        "When you are targeted by an attack, Vukah within 50 meters will attack the enemy.",
+        "When you are targeted by an attack, <b>Vukah</b> within <b>50</b> meters will attack the enemy.",
       ],
       color: "green",
       cost: 4,
@@ -1175,66 +1263,80 @@ const SkillNodes: SkillNodesType = {
     ENDURANCE_OF_THE_FLAME: {
       name: "ENDURANCE OF THE FLAME",
       description: [
-        "You will gain one endurance for every two levels of the Flame.",
+        "Gain one point of Endurance for every two levels of the Flame.",
       ],
       color: "green",
       cost: 5,
     },
     MARKSMAN: {
       name: "MARKSMAN",
-      description: ["All damage dealt with ranged weapons is increased by 10%"],
+      description: ["Damage with Bows is increased by <b>5%</b>"],
       color: "green",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>5%</b> damage per level",
     },
-    SHARPSHOOTER: {
-      name: "SHARPSHOOTER",
-      description: ["All ranged damage is increased by an additional 20%"],
-      color: "green",
-      cost: 2,
+    SHARPSHOOTER: {NaN
     },
     COUNTER_BATTERY: {
       name: "COUNTER BATTERY",
-      description: ["+15% damage to ranged enemies."],
+      description: ["Damage against <b>ranged</b> enemies is increased by <b>8%</b>."],
       color: "green",
-      cost: 2,
+      cost: 1,
+	  leveldescription: "<b>8%</b> damage per level",
+	  level: 3,
     },
     EAGLES_BANE: {
       name: "EAGLES BANE",
-      description: ["Damage against flying enemies increased by 30%."],
+      description: ["Damage against <b>flying</b> enemies is increased by <b>10%</b>."],
       color: "green",
-      cost: 3,
-    },
+      cost: 1,
+	  leveldescription: "<b>10%</b> damage per level",
+      level; 3,
+	},
     SKILL_SHOT: {
       name: "SKILL SHOT",
-      description: ["All damage dealt to an enemy's head is increased by 20%."],
+      description: [
+		"<b>Skillshot</b> damage is increased by <b>20%</b>.",
+		SKILLSHOT,
+	  ],
       color: "green",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>20%</b> damage per level",
+	  level: 3,
     },
     RANGER: {
       name: "RANGER",
       description: [
-        "+2 Endurance<br>+2 Dexterity<br>+5 Stamina Recharge<br>+5% Critical Chance<br>+5% Critical Damage",
+        "Increases your Dexterity and Endurace attributes by <b>1</b>.",
+		"Base Stamina Regeneration is increased by <b>5</b>,",
       ],
       color: "green",
-      cost: 4,
+      cost: 2,
       stats: {
-        DEX: 2,
-        ENDURANCE: 2,
+        DEX: 1,
+        ENDURANCE: 1,
       },
+	  leveldescription: [
+	    "<b>1</b> Dexterity and Endurance per level.",
+	    "<b>5</b> Stamina Regeneration per lavel.",
+	  ]
+	  level: 3,
     },
     SILENT_STRIDE: {
       name: "SILENT STRIDE",
-      description: ["Increases your movement speed while sneaking."],
+      description: ["Increases your movement speed while <b>sneaking</b> by <b>20%</b>."],
       color: "green",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>20%</b> movement speed per level",
+	  level: 3,
     },
     KICK: {
       name: "KICK",
       description: [
         "When equipped with a Melee weapon you can perform a Kick by attacking while blocking.",
-        "Kick deals little damage but hits the target with massive force to fill up the enemies <i>Stun Bar</i> and pushes them back.",
+        "Kick deals little damage but hits the target with massive force and pushes them back, filling their <i>Stun Bar</i>.",
         "<i>Stun Bar</i> increase scales with Dexterity. Stun time depends on the enemy's size.",
-        "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks.",
+		OVERPOWER,
       ],
       color: "green",
       hasIcon: true,
@@ -1242,46 +1344,55 @@ const SkillNodes: SkillNodesType = {
     },
     AIRBORNE: {
       name: "AIRBORNE",
-      description: ["Gliders consume 30% less stamina"],
+      description: ["Gliders consume <b>12%</b> less Stamina"],
       color: "green",
       cost: 2,
+	  leveldescription: "<b>12%</b> cost reduction per level",
+	  level: 3,
     },
     SNIPER: {
       name: "SNIPER",
       description: [
-        "When attacking with a ranged weapon your critical hit chance is increased by 10%.",
+        "Ranged weapon Critical Strike chance is increased by <b>2%</b>.",
       ],
       color: "green",
       cost: 2,
+	  leveldescription: "<b>2%</b> Critical Strike chance per level",
+	  level: 3,
     },
     VITALITY_SURGE: {
       name: "VITALITY SURGE",
       description: [
-        "Dealing a critical strike with a ranged weapon restores 5 stamina.",
+        "Critical Strikea with Ranged weapons restore <b>3</b> Stamina.",
       ],
       color: "green",
       cost: 3,
+	  leveldescription: "<b>3</b> Stamina per level",
+	  level: 3,
     },
     BLESSED_ARROWS: {
       name: "BLESSED ARROWS",
       description: [
-        "When scoring a critical hit with a bow, you will regenerate 20 mana.",
+        "Critical Strikes with Bowsrestore <b>8</b> mana.",
       ],
       color: "green",
-      cost: 3,
+      cost: 1,
+	  leveldescription: "<b>8</b> mana per level",
+	  level: 3,
     },
     BOUNTY_BONANZA: {
       name: "BOUNTY BONANZA",
       description: [
-        "After defeating a Fell enemy with a headshot your group gains an additional 5 Experience Points.",
+        "After defeating a <b>Fell</b> enemy with a <b>Skillshot</b>, your group gains an additional <b>+5</b> Experience Points.",
+		SKILLSHOT,
       ],
       color: "green",
-      cost: 3,
+      cost: 2,
     },
     RICOCHETS: {
       name: "RICOCHETS",
       description: [
-        "For every target you hit with an Exploding Arrow, its damage is increased by 1%.",
+        "For every target you hit with an <b>Explosive Arrow</b>, its damage is increased by <b>1%</b>.",
       ],
       color: "green",
       cost: 4,
@@ -1289,7 +1400,7 @@ const SkillNodes: SkillNodesType = {
     GRACEFUL_STRIDE: {
       name: "GRACEFUL STRIDE",
       description: [
-        "You will gain one dexterity for every two levels of the Flame.",
+        "Gain one point of Dexterity for every two levels of the Flame.",
       ],
       color: "green",
       cost: 5,
@@ -1297,7 +1408,7 @@ const SkillNodes: SkillNodesType = {
     CHAIN_REACTION: {
       name: "CHAIN REACTION",
       description: [
-        "Every enemy hit with an Exploding Arrow has a 20% chance to trigger a secondary explosion for 50% damage in a small radius.",
+        "Every enemy hit with an <b>Explosive Arrow</b> has a <b>20%</b> chance to trigger a secondary explosion for <b>50%</b> damage in a small radius.",
       ],
       color: "green",
       cost: 5,
@@ -1305,7 +1416,7 @@ const SkillNodes: SkillNodesType = {
     ARCANE_CONCENTRATION: {
       name: "ARCANE CONCENTRATION",
       description: [
-        "You will gain one spirit for every two levels of the Flame.",
+        "Gain one point of Spirit for every two levels of the Flame.",
       ],
       color: "blue",
       cost: 5,
@@ -1313,7 +1424,7 @@ const SkillNodes: SkillNodesType = {
     EXALTED: {
       name: "EXALTED",
       description: [
-        "You will gain one intelligence for every two levels of the Flame.",
+        "Gain one point of Intelligence for every two levels of the Flame.",
       ],
       color: "blue",
       cost: 5,
@@ -1321,7 +1432,7 @@ const SkillNodes: SkillNodesType = {
     THICK_SKIN: {
       name: "THICK SKIN",
       description: [
-        "You will gain one constitution for each two levels of the Flame.",
+        "Gain one point of Constitution for every two levels of the Flame.",
       ],
       color: "red",
       cost: 5,
@@ -1329,24 +1440,26 @@ const SkillNodes: SkillNodesType = {
     LIFE_ESSENCES: {
       name: "LIFE ESSENCES",
       description: [
-        "Your maximum health is increased fivehold by your intelligence attribute.",
+        "Increase your maximum Health by <b>2</b> times your Intelligence attribute.",
       ],
       color: "blue",
       hasIcon: true,
-      cost: 5,
+	  cost: 2
+	  leveldescription: "<b>2</b> times per level",
+	  level: 3,
     },
     POISONED_BLADES: {
-      name: "POISONED BLADES",
+      name: "VENOMOUS BLADES",
       description: [
-        "Increases the chance to poison enemies to 25% when using daggers with the Poisoned Blades perk.",
+        "Increases the chance to poison enemies to <b>25%</b> when using Daggers with the <b>Venomous Blades</b> perk.",
       ],
       color: "green",
       cost: 3,
     },
     POISON_MASTERY: {
-      name: "POISON MASTERY",
+      name: "VENOM MASTERY",
       description: [
-        "Increases the damage dealt with the Poisoned Blades dagger perk by 100%.",
+        "Increases the damage dealt with the <b>Venomous Blades</b> Dagger perk by <b>100%</b>.",
       ],
       color: "green",
       cost: 4,
@@ -1354,20 +1467,21 @@ const SkillNodes: SkillNodesType = {
     QUICK_REFLEX_BLOCK: {
       name: "QUICK REFLEX BLOCK",
       description: [
-        "Briefly enhances your block value when blocking with the dual daggers, ensuring a near-miss parry reduces stamina minimally.",
+        "Briefly enhances your block value when blocking with Daggers, ensuring a near-miss parry reduces stamina minimally.",
       ],
       color: "green",
-      cost: 4,
+      cost: 3,
     },
     EXPOSE_WEAKNESS: {
       name: "EXPOSE WEAKNESS",
       description: [
-        "Critical Strikes with Daggers increase damage dealt to the enemy by <b>25%</b> for <b>3</b> seconds.",
+        "Critical Strikes with Daggers increase damage dealt to the enemy by <b>25%</b> for <b>5</b> seconds.",
       ],
       color: "green",
       cost: 4,
     },
   },
+
   nodes: {
     "1": {
       id: "1",

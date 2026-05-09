@@ -36,6 +36,18 @@ export type SkillNodesType = {
     edges: { [key: string]: string[] };
 };
 
+export type SeedNode = Omit<Node, "id">;
+
+// First id is connected to every following id. Use 2 ids for a simple pair,
+// or 3+ for a hub-and-spoke (e.g. ["HUB", "A", "B", "C"] = HUB-A, HUB-B, HUB-C).
+export type SeedEdge = readonly [string, string, ...string[]];
+
+export type SkillTreeSeed = {
+    types: { [typeKey: string]: NodeTypeMetadata };
+    nodes: { [nodeId: string]: SeedNode };
+    edges: ReadonlyArray<SeedEdge>;
+};
+
 // ANGLE LINES
 export const LinesAngles = [
     15, 45, 75, 105, 135, 165, 195, 225, 255, 285, 315, 345,
@@ -58,7 +70,7 @@ const BLOODRAGE =
 const SKILLSHOT =
     "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot.";
 
-const SkillNodes: SkillNodesType = {
+const skillTreeSeed: SkillTreeSeed = {
     types: {
         GIANT_SLAYER_HOOK: {
             name: "GIANT SLAYER HOOK",
@@ -1771,8 +1783,30 @@ const SkillNodes: SkillNodesType = {
         },
     },
     nodes: {},
-    edges: {},
+    edges: [],
 };
+
+export const buildSkillNodes = (seed: SkillTreeSeed): SkillNodesType => {
+    const nodes: SkillNodesType["nodes"] = {};
+    for (const [id, node] of Object.entries(seed.nodes)) {
+        nodes[id] = { ...node, id };
+    }
+    const edges: SkillNodesType["edges"] = {};
+    const ensure = (id: string) => (edges[id] ??= []);
+    for (const [first, ...rest] of seed.edges) {
+        for (const other of rest) {
+            if (first === other) continue;
+            const a = ensure(first);
+            const b = ensure(other);
+            if (!a.includes(other)) a.push(other);
+            if (!b.includes(first)) b.push(first);
+        }
+    }
+    for (const id of Object.keys(nodes)) ensure(id);
+    return { types: seed.types, nodes, edges };
+};
+
+const SkillNodes: SkillNodesType = buildSkillNodes(skillTreeSeed);
 
 export default SkillNodes;
 

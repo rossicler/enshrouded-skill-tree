@@ -23,17 +23,18 @@ const LONG_PRESS_MS = 500;
 
 const SIZE = {
   small: {
+    className: "w-[20px] h-[20px]",
+    size: 20,
+  },
+  medium: {
     className: "w-[25px] h-[25px]",
     size: 25,
   },
-  medium: {
-    className: "w-[35px] h-[35px]",
-    size: 35,
-  },
   large: {
-    className: "w-[60px] h-[60px]",
-    size: 60,
+    className: "w-[45px] h-[45px]",
+    size: 45,
   },
+  label: "text-sm",
 };
 
 const INIT_DISTANCE = 250;
@@ -181,8 +182,9 @@ const SkillNode = ({
               <span
                 className={classNames(
                   "absolute top-full left-1/2 -translate-x-1/2 -mt-2.5",
-                  "text-lg font-bold whitespace-nowrap pointer-events-none",
+                  "font-bold whitespace-nowrap pointer-events-none",
                   "drop-shadow-[0_0_4px_rgba(0,0,0,0.95)]",
+                  SIZE.label,
                   level > 0 ? "text-[#e8d5a3]" : "text-[#c0b89a]/70",
                 )}
               >

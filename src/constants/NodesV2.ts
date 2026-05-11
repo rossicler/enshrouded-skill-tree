@@ -1907,7 +1907,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "Two-Handed Specialization",
       description: [
         "Unlocks Special Abilities of Two-Handed Melee weapons.\n" +
-          UNLEASH_FOCUS,
+        UNLEASH_FOCUS,
         FOCUS,
       ],
       color: "red",
@@ -2105,7 +2105,6 @@ const skillTreeSeed: SkillTreeSeed = {
   nodes: {
     "1": {
       type: "OPPORTUNITY",
-      base: true,
       tier: "medium",
       distance: BASE_INNER,
       angle: Q12,
@@ -2157,6 +2156,7 @@ const skillTreeSeed: SkillTreeSeed = {
     },
     "9": {
       type: "LUMBERJACK",
+      base: true,
       tier: "medium",
       distance: BASE_INNER,
       angle: Q6,
@@ -2169,30 +2169,35 @@ const skillTreeSeed: SkillTreeSeed = {
     },
     "11": {
       type: "FISHERMANS_RESOLVE",
+      base: true,
       tier: "medium",
       distance: BASE_INNER,
       angle: Q7,
     },
     "12": {
       type: "DOUBLE_JUMP",
+      base: true,
       tier: "large",
       distance: BASE_INNER,
       angle: Q8,
     },
     "13": {
       type: "WELL_RESTED",
+      base: true,
       tier: "medium",
       distance: BASE_INNER,
       angle: Q9,
     },
     "14": {
       type: "GIANT_SLAYER_HOOK",
+      base: true,
       tier: "large",
       distance: BASE_INNER,
       angle: Q10,
     },
     "15": {
       type: "SAVIOUR",
+      base: true,
       tier: "medium",
       distance: BASE_INNER,
       angle: Q11,

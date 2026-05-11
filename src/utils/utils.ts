@@ -8,6 +8,13 @@ export const classNames = (...classes: ClassNameValue[]) => {
   return twMerge(classes);
 };
 
+export const humanizeKey = (key: string): string =>
+  key
+    .toLowerCase()
+    .split("_")
+    .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : w))
+    .join(" ");
+
 export const getLinesToDraw = () => {
   const linesSet = new Set<string>();
   Object.entries(SkillNodes.edges).forEach(([from, toList]) => {

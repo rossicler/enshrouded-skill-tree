@@ -7,7 +7,7 @@ const localesDir = path.join(__dirname, '../public/locales');
 
 // Define the schema for a single skill node translation
 const nodeTranslationSchema = z.object({
-    name: z.string().min(1, "Name is required"),
+    name: z.string().min(1, "Name must be a non-empty string when present").optional(),
     description: z.array(z.string()).min(1, "Description must be a non-empty array of strings"),
 }).strict(); // Disallow extra keys to keep translation files lean
 

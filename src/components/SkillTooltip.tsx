@@ -6,7 +6,7 @@ import { Link2 } from "lucide-react";
 import SkillNodes, { Node } from "../constants/Nodes";
 import Image from "next/image";
 import DOMPurify from "dompurify";
-import { classNames } from "@/utils/utils";
+import { classNames, humanizeKey } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
 import GameButton from "./shared/GameButton";
@@ -38,7 +38,10 @@ const SkillTooltip = ({
 }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
   const { t } = useTranslation(["nodes", "common"]);
-  const name = t(`${node.type}.name`, { ns: "nodes" });
+  const name = t(`${node.type}.name`, {
+    ns: "nodes",
+    defaultValue: humanizeKey(node.type),
+  });
 
   // Preview level-1 values when not yet selected; otherwise show current-level values.
   // Interpolated values are eventually sanitized by DOMPurify below, which is the
@@ -51,6 +54,23 @@ const SkillTooltip = ({
       if (v != null) interpolation[k] = v;
     });
   }
+  if (metadata?.perLevel) {
+    const { value, value2 } = metadata.perLevel;
+    interpolation.value = typeof value === "number" ? value * displayLevel : value;
+    if (value2 != null) {
+      interpolation.value2 =
+        typeof value2 === "number" ? value2 * displayLevel : value2;
+    }
+  }
+
+  const perLevelLabel = metadata?.perLevel
+    ? t(`${node.type}.perLevelLabel`, {
+        ns: "nodes",
+        defaultValue: metadata.perLevel.label,
+        value: metadata.perLevel.value,
+        value2: metadata.perLevel.value2,
+      })
+    : null;
 
   const rawDescription = t(`${node.type}.description`, {
     ns: "nodes",
@@ -159,6 +179,14 @@ const SkillTooltip = ({
               />
             ))}
           </div>
+
+          {/* Per-level label */}
+          {perLevelLabel && (
+            <div
+              className="text-xs text-[#e8d5a3]/80 italic mt-2"
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(perLevelLabel) }}
+            />
+          )}
 
           {/* Divider */}
           <img src="/assets/decorations/divider.svg" alt="" className="w-full mt-2 mb-3" />

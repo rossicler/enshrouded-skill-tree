@@ -14,6 +14,9 @@
 # next
 .next
 
+# ts
+tsconfig.tsbuildinfo
+
 # misc
 .DS_Store
 .env.local

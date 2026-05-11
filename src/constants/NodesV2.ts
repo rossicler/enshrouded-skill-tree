@@ -86,6 +86,8 @@ const UNLEASH_FOCUS =
   "Press <b>[R]</b> to unleash a powerful Special Ability after generating enough Focus.";
 const FOCUS =
   "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons.";
+const PARRY =
+  "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.";
 
 const skillTreeSeed: SkillTreeSeed = {
   types: {
@@ -158,8 +160,8 @@ const skillTreeSeed: SkillTreeSeed = {
     LUMBERJACK: {
       name: "LUMBERJACK",
       description: [
-        "Tool deal <b>{{value}}%</b> increased damage against wood.",
-        "This includes trees an wooden terrain.",
+        "Tool deals <b>{{value}}%</b> increased damage against wood.",
+        "This includes trees and wooden terrain.",
       ],
       color: "gold",
       cost: 1,
@@ -209,7 +211,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "POWER PARRY",
       description: [
         "Your Parry Power is increased by <b>{{value}}%</b>.",
-        "<b>Parry</b><br>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
+        PARRY,
         OVERPOWER,
       ],
       color: "gold",
@@ -504,6 +506,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "BASH",
       description: [
         "Parrying enemy attacks bashes them for <b>{{value}} Blunt</b> damage. Bash damage is increased by your Strength attribute.",
+        PARRY
       ],
       hasIcon: true,
       color: "red",
@@ -965,6 +968,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "ARCANE DEFLECTION",
       description: [
         "Successfully parrying an enemy's attack restores <b>{{value}}</b> Mana.",
+        PARRY,
       ],
       color: "blue",
       cost: 1,
@@ -1369,6 +1373,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "VIGOROUS DEFLECTION",
       description: [
         "Succesfully parrying an enemy's attack restore <b>{{value}}</b> Stamina.",
+        PARRY,
       ],
       color: "red",
       cost: 1,
@@ -1703,8 +1708,8 @@ const skillTreeSeed: SkillTreeSeed = {
     RANGER: {
       name: "RANGER",
       description: [
-        "Increases your Dexterity and Endurace attributes by <b>1</b>.",
-        "Base Stamina Regeneration is increased by <b>5</b>,",
+        "Increases your Dexterity and Endurace attributes by <b>{{value}}</b>.",
+        "Base Stamina Regeneration is increased by <b>{{value2}}</b>,",
       ],
       color: "green",
       cost: 2,
@@ -1713,6 +1718,11 @@ const skillTreeSeed: SkillTreeSeed = {
         ENDURANCE: 1,
       },
       maxLevel: 3,
+      perLevel: {
+        value: 1,
+        value2: 5,
+        label: "<b>{{value}}</b> Dexterity and Endurance per level.\n<b>{{value2}}</b> Stamina Regeneration per level"
+      }
     },
     SILENT_STRIDE: {
       name: "SILENT STRIDE",

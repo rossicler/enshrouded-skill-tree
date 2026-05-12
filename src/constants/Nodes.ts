@@ -380,7 +380,7 @@ const skillTreeSeed: SkillTreeSeed = {
       hasIcon: true,
       color: "blue",
       cost: 1,
-      maxLevel: 1,
+      maxLevel: 3,
       perLevel: {
         value: 2,
         value2: 1,

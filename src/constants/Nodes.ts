@@ -1755,7 +1755,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "AIRBORNE",
       description: ["Gliders consume <b>{{value}}%</b> less Stamina"],
       color: "green",
-      cost: 2,
+      cost: 1,
       maxLevel: 3,
       perLevel: {
         value: 12,

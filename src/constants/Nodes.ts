@@ -2425,13 +2425,13 @@ const skillTreeSeed: SkillTreeSeed = {
       angle: Q2 + BASE_ANGLE_DIST / 2,
     },
     "51": {
-      type: "ATTR_CONS",
+      type: "ATTR_STR",
       tier: "small",
       distance: BASE_OUTER + 5 * BASE_DIST,
       angle: Q2 + BASE_ANGLE_DIST / 2 - 5,
     },
     "52": {
-      type: "ATTR_STR",
+      type: "ATTR_CONS",
       tier: "small",
       distance: BASE_OUTER + 5 * BASE_DIST,
       angle: Q2 + BASE_ANGLE_DIST / 2 + 5,

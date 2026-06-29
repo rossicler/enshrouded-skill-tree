@@ -1781,7 +1781,7 @@ const skillTreeSeed: SkillTreeSeed = {
         "Critical Strikea with Ranged weapons restore <b>{{value}}</b> Stamina.",
       ],
       color: "green",
-      cost: 3,
+      cost: 1,
       maxLevel: 3,
       perLevel: {
         value: 3,

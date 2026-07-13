@@ -9,6 +9,7 @@ import DOMPurify from "dompurify";
 import { classNames, humanizeKey } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
+import { getSkillInterpolationValues } from "@/utils/skillInterpolation";
 import GameButton from "./shared/GameButton";
 import type { SkillAction } from "./SkillTree";
 
@@ -47,21 +48,7 @@ const SkillTooltip = ({
   // Interpolated values are eventually sanitized by DOMPurify below, which is the
   // last step in the pipeline (i18next has escapeValue: false in next-i18next.config.js).
   const displayLevel = level > 0 ? level : 1;
-  const interpolation: Record<string, number | string> = {};
-  if (metadata?.levelValues) {
-    Object.entries(metadata.levelValues).forEach(([k, arr]) => {
-      const v = arr[displayLevel - 1] ?? arr[arr.length - 1];
-      if (v != null) interpolation[k] = v;
-    });
-  }
-  if (metadata?.perLevel) {
-    const { value, value2 } = metadata.perLevel;
-    interpolation.value = typeof value === "number" ? value * displayLevel : value;
-    if (value2 != null) {
-      interpolation.value2 =
-        typeof value2 === "number" ? value2 * displayLevel : value2;
-    }
-  }
+  const interpolation = getSkillInterpolationValues(metadata, displayLevel);
 
   const perLevelLabel = metadata?.perLevel
     ? t(`${node.type}.perLevelLabel`, {

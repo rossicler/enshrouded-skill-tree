@@ -231,6 +231,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "gold",
       cost: 3,
+      hasIcon: true,
     },
     PICKAXE_SPECIALIZATION: {
       description: [
@@ -239,6 +240,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "gold",
       cost: 3,
+      hasIcon: true,
     },
     PROSPECTOR: {
       description: [
@@ -508,7 +510,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "BASH",
       description: [
         "Parrying enemy attacks bashes them for <b>{{value}} Blunt</b> damage. Bash damage is increased by your Strength attribute.",
-        PARRY
+        PARRY,
       ],
       hasIcon: true,
       color: "red",
@@ -1137,6 +1139,7 @@ const skillTreeSeed: SkillTreeSeed = {
         FOCUS,
       ],
       color: "red",
+      hasIcon: true,
       cost: 3,
     },
     WARDEN: {
@@ -1723,8 +1726,9 @@ const skillTreeSeed: SkillTreeSeed = {
       perLevel: {
         value: 1,
         value2: 5,
-        label: "<b>{{value}}</b> Dexterity and Endurance per level.\n<b>{{value2}}</b> Stamina Regeneration per level"
-      }
+        label:
+          "<b>{{value}}</b> Dexterity and Endurance per level.\n<b>{{value2}}</b> Stamina Regeneration per level",
+      },
     },
     SILENT_STRIDE: {
       name: "SILENT STRIDE",
@@ -1919,11 +1923,12 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "Two-Handed Specialization",
       description: [
         "Unlocks Special Abilities of Two-Handed Melee weapons.\n" +
-        UNLEASH_FOCUS,
+          UNLEASH_FOCUS,
         FOCUS,
       ],
       color: "red",
       cost: 3,
+      hasIcon: true,
     },
     ATHLETE: {
       description: [
@@ -1936,6 +1941,7 @@ const skillTreeSeed: SkillTreeSeed = {
         value: 2,
         label: "<b>{{value}}</b> times per level",
       },
+      hasIcon: true,
     },
     STRATEGIC_MANEUVER: {
       description: [
@@ -1946,6 +1952,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "green",
       cost: 1,
+      hasIcon: true,
     },
     PRIMAL_FORCE: {
       description: ["Damage against Vukah is increased by <b>{{value}}</b>."],
@@ -1990,6 +1997,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "green",
       cost: 3,
+      hasIcon: true,
     },
     CUTTHROAT: {
       description: ["Sneak Attack Damage is increased by <b>{{value}}</b>."],
@@ -2008,6 +2016,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "green",
       cost: 3,
+      hasIcon: true,
     },
     VEILED_VIGOR: {
       description: [
@@ -2020,6 +2029,7 @@ const skillTreeSeed: SkillTreeSeed = {
         value: 2,
         label: "<b>{{value}}</b> times per level",
       },
+      hasIcon: true,
     },
     VILE_CONCOCTION: {
       description: ["Throwable damage is increased by <b>{{value}}%</b>."],
@@ -2102,6 +2112,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "blue",
       cost: 3,
+      hasIcon: true,
     },
     WAND_MASTERY: {
       description: ["Wand damage is increased by <b>{{value}}%</b>."],

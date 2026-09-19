@@ -1,12 +1,11 @@
 import { NodeStatsType } from "./Stats";
+import type { PositionedNode } from "../utils/nodePosition";
 
-export type Node = {
+export type Node = PositionedNode & {
   id: string;
   type: string;
   base?: boolean;
   tier?: "small" | "medium" | "large";
-  angle?: number;
-  distance?: number;
 };
 
 export type NodeTypeMetadata = {

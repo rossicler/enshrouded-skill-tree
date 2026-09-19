@@ -37,7 +37,7 @@ export const getBaseLinesToDraw = () => {
   const linesToDraw: [string, string][] = [];
   Object.values(SkillNodes.nodes)
     .filter((item) => item.base)
-    .forEach((node) => linesToDraw.push([node.id, String(node.angle)]));
+    .forEach((node) => linesToDraw.push([node.id, `base-${node.id}`]));
   return linesToDraw;
 };
 

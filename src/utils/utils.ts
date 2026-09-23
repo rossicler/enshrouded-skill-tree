@@ -94,6 +94,7 @@ export const getSkillsToRemove = (
 
 export type BuildData = {
   skills: string[];
+  treeContentHash?: string;
   skillLevels?: { [id: string]: number };
   playerLevel?: number;
   unlockedBiomes?: string[];

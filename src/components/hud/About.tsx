@@ -6,10 +6,13 @@ import GameButton from "../shared/GameButton";
 import GameButtonGroup from "../shared/GameButtonGroup";
 import AboutDialog from "../dialogs/AboutDialog";
 import SettingsDialog from "../dialogs/SettingsDialog";
+import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@/constants/skillTreeVersion";
+import { useTranslation } from "next-i18next";
 
 const DISCORD_LINK = "https://discord.gg/saazEkNchu";
 
 const About = () => {
+  const { t } = useTranslation("common");
   let [aboutOpen, setAboutOpen] = useState(false);
   let [settingsOpen, setSettingsOpen] = useState(false);
 
@@ -54,6 +57,9 @@ const About = () => {
           <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.888 7.335a5.134 5.134 0 0 0-2.893-2.418a9.144 9.144 0 0 0-2.275-.508a9.963 9.963 0 0 0-.508 1.038a15.039 15.039 0 0 0-4.56 0a11.372 11.372 0 0 0-.519-1.038c-.752.082-1.493.249-2.208.497a5.123 5.123 0 0 0-2.904 2.44a16.176 16.176 0 0 0-1.91 9.717a16.562 16.562 0 0 0 4.98 2.528a4.339 4.339 0 0 0 1.104-1.777c-.54-.202-1.06-.45-1.557-.74c-.089-.122.254-.32.364-.354a11.826 11.826 0 0 0 10.037 0c.1 0 .453.232.364.354c-.441.342-1.424.585-1.59.828a7.4 7.4 0 0 0 1.105 1.69a16.628 16.628 0 0 0 4.99-2.53a16.232 16.232 0 0 0-2.02-9.727M8.669 14.7a1.943 1.943 0 0 1-1.92-1.955a1.943 1.943 0 0 1 1.92-1.91a1.942 1.942 0 0 1 1.933 1.965a1.943 1.943 0 0 1-1.933 1.9m6.625 0a1.943 1.943 0 0 1-1.932-1.944a1.932 1.932 0 1 1 3.865.034a1.932 1.932 0 0 1-1.933 1.899z"/></svg>
         </GameButton>
       </GameButtonGroup>
+      <span className="hidden lg:inline text-xs text-[#c0b89a]/70" title={`${t("dialogs.settings.gameBuild")} ${SKILL_TREE_GAME_BUILD} · ${SKILL_TREE_REVISION}`}>
+        {t("dialogs.settings.treeVersion")} · {SKILL_TREE_UPDATE ? `${t("dialogs.settings.gameUpdate")} ${SKILL_TREE_UPDATE}` : `${t("dialogs.settings.gameBuild")} ${SKILL_TREE_GAME_BUILD}`}
+      </span>
     </div>
   );
 };

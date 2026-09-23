@@ -4508,5 +4508,8 @@
         "Tools deal <b>{{gameValue1}}</b> increased damage against metal.<br/>This includes metal ore veins."
       ]
     }
+  },
+  "treeVersion": {
+    "contentHash": "d3a5f8d81799b06e22d0de348ad288ee43d0fe334732899255953227eb146bd3"
   }
 }

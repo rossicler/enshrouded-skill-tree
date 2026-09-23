@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import i18next from "i18next";
-import { formatValue, renderText, buildTextTemplate, resolveArgument, loadAuthoredTree, buildCandidate } from "./skill-data.mjs";
+import { formatValue, renderText, buildTextTemplate, resolveArgument, loadAuthoredTree, buildCandidate, treeContentHash } from "./skill-data.mjs";
 import { getGameInterpolationValues } from "../src/utils/skillInterpolation";
+import { isDifferentTreeVersion, SKILL_TREE_CONTENT_HASH, SKILL_TREE_GAME_BUILD, SKILL_TREE_UPDATE } from "../src/constants/skillTreeVersion";
 import runtime from "../src/constants/gameSkillData.json";
 import locale from "../public/locales/en/nodes.json";
 import mapping from "./skill-data-mapping.json";
@@ -56,6 +57,18 @@ describe("game argument formatting", () => {
 
 describe("committed import compatibility", () => {
   const authored = loadAuthoredTree();
+  it("uses a stable content revision independent of object key order", () => {
+    expect(treeContentHash({ nodes: { b: 2, a: 1 }, types: [] })).toBe(
+      treeContentHash({ types: [], nodes: { a: 1, b: 2 } }));
+    expect(treeContentHash({ nodes: { a: 1 } })).not.toBe(treeContentHash({ nodes: { a: 2 } }));
+    expect(runtime.treeVersion.contentHash).toMatch(/^[a-f0-9]{64}$/);
+    expect(SKILL_TREE_CONTENT_HASH).toBe(runtime.treeVersion.contentHash);
+    expect(SKILL_TREE_GAME_BUILD).toBe("1076226");
+    expect(SKILL_TREE_UPDATE).toBe("8");
+    expect(isDifferentTreeVersion({})).toBe(false); // pre-versioned builds remain supported
+    expect(isDifferentTreeVersion({ treeContentHash: SKILL_TREE_CONTENT_HASH })).toBe(false);
+    expect(isDifferentTreeVersion({ treeContentHash: "older-tree" })).toBe(true);
+  });
   it("preserves all 222 IDs and a one-to-one source mapping", () => {
     expect(Object.keys(runtime.nodes).sort()).toEqual(Object.keys(authored.nodes).sort());
     expect(Object.keys(mapping)).toHaveLength(222);
@@ -89,7 +102,8 @@ describe("committed import compatibility", () => {
   });
   it.runIf(Boolean(process.env.SKILL_DATA_EXPORT))("reproduces all English levels with i18next and rejects graph drift", async () => {
     const source = JSON.parse(fs.readFileSync(process.env.SKILL_DATA_EXPORT, "utf8"));
-    const { report } = buildCandidate(source, authored, locale, inputs);
+    const { report, candidate } = buildCandidate(source, authored, locale, inputs);
+    expect(candidate.treeVersion).toEqual(runtime.treeVersion);
     expect(report.mapping).toEqual(mapping);
     expect(report.unresolvedText).toEqual([]);
     expect(report.retainedText.map((entry) => entry.type)).toEqual(["FROST"]);

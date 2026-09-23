@@ -82,6 +82,22 @@ locale changes belong in source control; raw game exports and local reports do
 not. Regenerate both outputs with the command, not by hand. No new PNG assets
 are copied: current asset names and presentation overrides remain in use.
 
+## Tree versioning
+
+The checked import records the source game build and a SHA-256 revision of the
+imported node positions, type metadata and English text. This content revision
+ignores export timestamps, parser provenance and JSON key order; it changes
+when the imported tree changes. The app shows the game update/build and short
+revision in Settings, plus the update on wider tree layouts. This is distinct
+from the app's package version. New share codes and JSON builds carry the full
+content hash. Older unversioned builds still import; a build bearing a
+different hash imports with a warning, since its IDs/levels may need review.
+
+This is version identification, **not** a historical tree selector. Rendering
+an older tree would require retaining its complete nodes, edges, assets and
+translations as a separately selectable snapshot, plus migration rules for
+builds. That can be added after the update workflow is reviewed.
+
 ## Follow-up: agentic update skill
 
 After reviewing this PR, create an agentic skill for the full game-update

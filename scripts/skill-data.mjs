@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
@@ -19,6 +20,15 @@ export function loadAuthoredTree() {
 }
 
 const normalize = (value) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+// Hash the imported tree content, not the export time, parser revision or game
+// build. Key ordering in a source export must not create a new tree revision.
+export function treeContentHash(content) {
+  const canonical = (value) => Array.isArray(value) ? value.map(canonical)
+    : value && typeof value === "object" ? Object.fromEntries(Object.keys(value).sort()
+      .map((key) => [key, canonical(value[key])])) : value;
+  return createHash("sha256").update(JSON.stringify(canonical(content))).digest("hex");
+}
 
 export function matchNodes(data, app, locale) {
   if (data.schemaVersion !== "1.0.0" || !Array.isArray(data.issues) || data.issues.length || data.raw.trees.length !== 1 || !data.provenance?.gameBuild) {
@@ -263,6 +273,7 @@ export function buildCandidate(data, app, locale, inputLabels = {}) {
     if (candidate.types[type] && JSON.stringify(candidate.types[type]) !== JSON.stringify(metadata)) throw new Error(`Conflicting shared type ${type}`);
     candidate.types[type] = metadata;
   }
+  candidate.treeVersion = { contentHash: treeContentHash({ nodes: candidate.nodes, types: candidate.types, english: candidate.english }) };
   return { report, candidate };
 }
 

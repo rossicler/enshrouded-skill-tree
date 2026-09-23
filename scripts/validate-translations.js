@@ -2,13 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const { z } = require('zod');
 
-const nodesFile = path.join(__dirname, '../src/constants/Nodes.ts');
+const nodesFile = path.join(__dirname, '../src/constants/LegacyNodes.ts');
 const localesDir = path.join(__dirname, '../public/locales');
 
 // Define the schema for a single skill node translation
 const nodeTranslationSchema = z.object({
     name: z.string().min(1, "Name must be a non-empty string when present").optional(),
     description: z.array(z.string()).min(1, "Description must be a non-empty array of strings"),
+    game: z.object({
+        name: z.string().min(1),
+        description: z.array(z.string()).min(1),
+        perLevelLabel: z.string().optional(),
+    }).strict().optional(),
 }).strict(); // Disallow extra keys to keep translation files lean
 
 // Define the schema for the entire nodes.json file

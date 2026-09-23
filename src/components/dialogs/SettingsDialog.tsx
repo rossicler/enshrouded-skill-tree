@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import { APP_VERSION } from "@/constants/version";
+import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@/constants/skillTreeVersion";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
@@ -151,7 +152,10 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                         </div>
                       </div>
                     </div>
-                    <p className="mt-5 text-xs text-[#c0b89a]/50 text-right">v{APP_VERSION}</p>
+                    <div className="mt-5 text-xs text-[#c0b89a]/60 text-right">
+                      <p>{t("dialogs.settings.treeVersion")}: {SKILL_TREE_UPDATE ? `${t("dialogs.settings.gameUpdate")} ${SKILL_TREE_UPDATE} · ` : ""}{t("dialogs.settings.gameBuild")} {SKILL_TREE_GAME_BUILD} · {SKILL_TREE_REVISION}</p>
+                      <p>{t("dialogs.settings.appVersion")}: v{APP_VERSION}</p>
+                    </div>
                   </div>
                 </GamePanel>
               </Dialog.Panel>

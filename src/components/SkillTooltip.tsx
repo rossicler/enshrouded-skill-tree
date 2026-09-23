@@ -9,7 +9,7 @@ import DOMPurify from "dompurify";
 import { classNames, humanizeKey } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
-import { getSkillInterpolationValues } from "@/utils/skillInterpolation";
+import { getGameInterpolationValues, getSkillInterpolationValues } from "@/utils/skillInterpolation";
 import GameButton from "./shared/GameButton";
 import type { SkillAction } from "./SkillTree";
 
@@ -38,8 +38,9 @@ const SkillTooltip = ({
   onSelect,
 }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
-  const { t } = useTranslation(["nodes", "common"]);
-  const name = t(`${node.type}.name`, {
+  const { t, i18n } = useTranslation(["nodes", "common"]);
+  const useImportedEnglish = metadata.importedEnglish && (i18n.resolvedLanguage ?? i18n.language).split("-")[0] === "en";
+  const name = t(`${node.type}.${useImportedEnglish ? "game.name" : "name"}`, {
     ns: "nodes",
     defaultValue: humanizeKey(node.type),
   });
@@ -48,9 +49,17 @@ const SkillTooltip = ({
   // Interpolated values are eventually sanitized by DOMPurify below, which is the
   // last step in the pipeline (i18next has escapeValue: false in next-i18next.config.js).
   const displayLevel = level > 0 ? level : 1;
-  const interpolation = getSkillInterpolationValues(metadata, displayLevel);
+  const interpolation = useImportedEnglish
+    ? getGameInterpolationValues(metadata, displayLevel)
+    : getSkillInterpolationValues(metadata, displayLevel);
 
-  const perLevelLabel = metadata?.perLevel
+  const perLevelLabel = useImportedEnglish
+    ? t(`${node.type}.game.perLevelLabel`, {
+        ns: "nodes",
+        defaultValue: "",
+        ...metadata.gamePerLevelValues,
+      })
+    : metadata?.perLevel
     ? t(`${node.type}.perLevelLabel`, {
         ns: "nodes",
         defaultValue: metadata.perLevel.label,
@@ -59,7 +68,9 @@ const SkillTooltip = ({
       })
     : null;
 
-  const rawDescription = t(`${node.type}.description`, {
+  const rawDescription = t(useImportedEnglish
+    ? `${node.type}.game.description`
+    : `${node.type}.description`, {
     ns: "nodes",
     returnObjects: true,
     ...interpolation,

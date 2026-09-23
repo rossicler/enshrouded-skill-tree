@@ -147,6 +147,28 @@ export function renderText(text, node, interpreted, data, level, inputLabels) {
   return rendered.trim().split(/\n\s*\n/).map((paragraph) => paragraph.trim().replace(/\n/g, "<br/>"));
 }
 
+export function buildTextTemplate(text, node, interpreted, data, maxLevel, inputLabels, keyPrefix = "gameValue") {
+  if (text.status === "absent") return undefined;
+  if (text.status !== "resolved-template") throw new Error("Unresolved localization template");
+  const values = {};
+  let index = 0;
+  const rendered = text.template.replace(/%%|%k/g, (token) => {
+    if (token === "%%") return "%";
+    const argument = text.arguments[index++];
+    if (!argument) throw new Error("Missing placeholder argument");
+    const key = `${keyPrefix}${index}`;
+    values[key] = Array.from({ length: maxLevel }, (_, level) =>
+      resolveArgument(argument, node, interpreted, data, level + 1, inputLabels));
+    return `{{${key}}}`;
+  });
+  if (index !== text.arguments.length) throw new Error("Unused placeholder arguments");
+  if (/%[a-z]/i.test(rendered)) throw new Error("Unknown text placeholder");
+  return {
+    template: rendered.trim().split(/\n\s*\n/).map((paragraph) => paragraph.trim().replace(/\n/g, "<br/>")),
+    values,
+  };
+}
+
 export function buildCandidate(data, app, locale, inputLabels = {}) {
   const report = inspect(data, app, locale);
   if (report.unresolved.length || report.duplicateAppIds.length ||
@@ -206,18 +228,29 @@ export function buildCandidate(data, app, locale, inputLabels = {}) {
       report.retainedStats.push({ appId, gameId, type, stats: original.stats, reason: "Effect-program stat contribution remains app-owned" });
     }
     if (!Number.isInteger(metadata.cost) || metadata.cost < 0 || !Number.isInteger(metadata.maxLevel) || metadata.maxLevel < 1) throw new Error(`Invalid cost/levels for ${gameId}`);
-    if (candidate.types[type] && JSON.stringify(candidate.types[type]) !== JSON.stringify(metadata)) throw new Error(`Conflicting shared type ${type}`);
-    candidate.types[type] = metadata;
     candidate.nodes[appId] = { gameNodeId: gameId, position: { kind: "cartesian", ...xy(node.uiPosition) }, ...(anchors[gameId] ? { baseAnchor: anchors[gameId] } : {}) };
     if (original.cost !== metadata.cost || (original.maxLevel ?? 1) !== metadata.maxLevel) {
       report.changes.push({ appId, type, before: { cost: original.cost, maxLevel: original.maxLevel ?? 1 }, after: metadata });
     }
     try {
+      const description = buildTextTemplate(interpreted.texts.description, node, interpreted, data, metadata.maxLevel, inputLabels);
+      const perLevelLabel = buildTextTemplate(interpreted.texts.perLevelEffectDescription, node, interpreted, data, 1, inputLabels, "gamePerLevelValue");
       const english = {
         name: interpreted.texts.name.template,
-        descriptionsByLevel: Array.from({ length: metadata.maxLevel }, (_, i) => renderText(interpreted.texts.description, node, interpreted, data, i + 1, inputLabels)),
-        perLevelLabel: renderText(interpreted.texts.perLevelEffectDescription, node, interpreted, data, 1, inputLabels)?.join("<br/>"),
+        description: description.template,
+        ...(perLevelLabel ? { perLevelLabel: perLevelLabel.template.join("<br/>") } : {}),
       };
+      metadata.gameValues = {};
+      metadata.gameLevelValues = {};
+      for (const [key, levelValues] of Object.entries(description.values)) {
+        if (levelValues.every((value) => value === levelValues[0])) metadata.gameValues[key] = levelValues[0];
+        else metadata.gameLevelValues[key] = levelValues;
+      }
+      if (!Object.keys(metadata.gameValues).length) delete metadata.gameValues;
+      if (!Object.keys(metadata.gameLevelValues).length) delete metadata.gameLevelValues;
+      const perLevelValues = Object.fromEntries(Object.entries(perLevelLabel?.values ?? {})
+        .map(([key, values]) => [key, values[0]]));
+      if (Object.keys(perLevelValues).length) metadata.gamePerLevelValues = perLevelValues;
       if (candidate.english[type] && JSON.stringify(candidate.english[type]) !== JSON.stringify(english)) throw new Error(`Conflicting shared text ${type}`);
       candidate.english[type] = english;
     } catch (error) {
@@ -227,6 +260,8 @@ export function buildCandidate(data, app, locale, inputLabels = {}) {
         report.retainedText.push(entry);
       } else report.unresolvedText.push(entry);
     }
+    if (candidate.types[type] && JSON.stringify(candidate.types[type]) !== JSON.stringify(metadata)) throw new Error(`Conflicting shared type ${type}`);
+    candidate.types[type] = metadata;
   }
   return { report, candidate };
 }
@@ -261,7 +296,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       metadata.importedEnglish = Boolean(english[type]);
       if (english[type]) {
         metadata.name = english[type].name;
-        metadata.description = english[type].descriptionsByLevel[0];
+        metadata.description = english[type].description;
       }
       // Keep existing translations and their interpolation intact for other locales.
       locale[type] ??= {};

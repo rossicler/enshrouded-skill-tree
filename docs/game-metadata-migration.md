@@ -53,8 +53,11 @@ is the average of the 12 game roots; scale fits their mean radius to 198 app
 units. The transform and original game provenance are retained in generated JSON.
 
 The same import writes English text to each locale record's `game` section.
-Descriptions are evaluated at every purchased level; per-level labels are
-separate, so old interpolation cannot overwrite imported values. Original
+Descriptions are stored once as i18next templates. Numeric substitutions live
+in app metadata: `gameValues` for constants, `gameLevelValues` for values that
+change with purchased level, and `gamePerLevelValues` for the per-level label.
+Per-level labels have a separate template, so old interpolation cannot
+overwrite imported values. Original
 locale fields and French text remain intact. Imported text still passes through
 DOMPurify. `scripts/skill-data-inputs.json` contains app-owned action labels,
 not claimed game bindings; `--inputs=path.json` can supply different labels.
@@ -78,6 +81,16 @@ Costs/max levels are unchanged for this build. Generated JSON and English
 locale changes belong in source control; raw game exports and local reports do
 not. Regenerate both outputs with the command, not by hand. No new PNG assets
 are copied: current asset names and presentation overrides remain in use.
+
+## Follow-up: agentic update skill
+
+After reviewing this PR, create an agentic skill for the full game-update
+workflow: verify the installed game build; export and validate icons and rich
+metadata with enshrouded-tools; preview the checked ID/graph/text mapping;
+review changed costs, effects, labels, and icon names with the maintainer;
+apply the approved import and assets; run tests and visual checks; then prepare
+a reviewable PR. Keep explicit stops for new or ambiguous game data. This is a
+future task, not part of the current import change.
 
 Detailed source findings and examples are in the toolkit's
 [metadata assessment](https://github.com/rossicler/enshrouded-tools/blob/main/docs/skill-metadata-assessment.md)

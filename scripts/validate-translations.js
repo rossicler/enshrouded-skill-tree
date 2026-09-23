@@ -11,7 +11,7 @@ const nodeTranslationSchema = z.object({
     description: z.array(z.string()).min(1, "Description must be a non-empty array of strings"),
     game: z.object({
         name: z.string().min(1),
-        descriptionsByLevel: z.array(z.array(z.string()).min(1)).min(1),
+        description: z.array(z.string()).min(1),
         perLevelLabel: z.string().optional(),
     }).strict().optional(),
 }).strict(); // Disallow extra keys to keep translation files lean

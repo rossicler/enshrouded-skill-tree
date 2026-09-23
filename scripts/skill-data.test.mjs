@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
-import { formatValue, renderText, resolveArgument, loadAuthoredTree, buildCandidate } from "./skill-data.mjs";
+import i18next from "i18next";
+import { formatValue, renderText, buildTextTemplate, resolveArgument, loadAuthoredTree, buildCandidate } from "./skill-data.mjs";
+import { getGameInterpolationValues } from "../src/utils/skillInterpolation";
 import runtime from "../src/constants/gameSkillData.json";
 import locale from "../public/locales/en/nodes.json";
 import mapping from "./skill-data-mapping.json";
@@ -45,6 +47,10 @@ describe("game argument formatting", () => {
     expect(renderText(text, node, interpreted, data, 2)).toEqual(["Gain 20%.<br/>Next line.", "100%"]);
     expect(() => renderText({ ...text, arguments: [] }, node, interpreted, data, 1)).toThrow();
     expect(() => renderText({ ...text, template: "No placeholder" }, node, interpreted, data, 1)).toThrow();
+    expect(buildTextTemplate(text, node, interpreted, data, 3)).toEqual({
+      template: ["Gain {{gameValue1}}.<br/>Next line.", "100%"],
+      values: { gameValue1: ["10%", "20%", "30%"] },
+    });
   });
 });
 
@@ -70,22 +76,40 @@ describe("committed import compatibility", () => {
   it("keeps metadata and generated English levels in sync", () => {
     for (const [type, metadata] of Object.entries(runtime.types)) {
       if (!metadata.importedEnglish) continue;
-      expect(locale[type].game.descriptionsByLevel).toHaveLength(metadata.maxLevel);
-      expect(locale[type].game.descriptionsByLevel[0]).toEqual(metadata.description);
-      expect(JSON.stringify(locale[type].game)).not.toMatch(/%k|\{\{/);
+      expect(locale[type].game.description).toEqual(metadata.description);
+      expect(JSON.stringify(locale[type].game)).not.toMatch(/%k|descriptionsByLevel/);
+      for (const values of Object.values(metadata.gameLevelValues ?? {})) expect(values).toHaveLength(metadata.maxLevel);
     }
-    expect(locale.LIFE_ESSENCES.game.descriptionsByLevel[2][0]).toContain("<b>6</b>");
-    expect(locale.MASON.game.descriptionsByLevel[2][0]).toContain("<b>30%</b>");
+    expect(locale.LIFE_ESSENCES.game.description[0]).toContain("<b>{{gameValue1}}</b>");
+    expect(runtime.types.LIFE_ESSENCES.gameLevelValues.gameValue1).toEqual(["2", "4", "6"]);
+    expect(locale.MASON.game.description[0]).toContain("<b>{{gameValue1}}</b>");
+    expect(runtime.types.MASON.gameLevelValues.gameValue1).toEqual(["10%", "20%", "30%"]);
     expect(runtime.types.FROST.importedEnglish).toBe(false);
     expect(locale.FROST.game).toBeUndefined();
   });
-  it.runIf(Boolean(process.env.SKILL_DATA_EXPORT))("reproduces the mapping and rejects graph drift from a local export", () => {
+  it.runIf(Boolean(process.env.SKILL_DATA_EXPORT))("reproduces all English levels with i18next and rejects graph drift", async () => {
     const source = JSON.parse(fs.readFileSync(process.env.SKILL_DATA_EXPORT, "utf8"));
     const { report } = buildCandidate(source, authored, locale, inputs);
     expect(report.mapping).toEqual(mapping);
     expect(report.unresolvedText).toEqual([]);
     expect(report.retainedText.map((entry) => entry.type)).toEqual(["FROST"]);
     expect(report.retainedStats.map((entry) => entry.type)).toEqual(["RANGER"]);
+    const t = i18next.createInstance();
+    await t.init({ lng: "en", ns: ["nodes"], defaultNS: "nodes", resources: { en: { nodes: locale } },
+      interpolation: { escapeValue: false }, initImmediate: false });
+    const interpreted = new Map(source.interpreted.nodes.map((entry) => [entry.gameNodeId, entry]));
+    for (const raw of source.raw.trees[0].data.nodes.filter((entry) => entry.type !== "Root")) {
+      const id = String(raw.id.value), type = report.mapping[id].type, metadata = runtime.types[type];
+      if (!metadata.importedEnglish) continue;
+      for (let level = 1; level <= metadata.maxLevel; level++) {
+        expect(t.t(`${type}.game.description`, { returnObjects: true,
+          ...getGameInterpolationValues(metadata, level) })).toEqual(
+          renderText(interpreted.get(id).texts.description, raw, interpreted.get(id), source, level, inputs));
+      }
+      const rawLabel = renderText(interpreted.get(id).texts.perLevelEffectDescription,
+        raw, interpreted.get(id), source, 1, inputs)?.join("<br/>");
+      if (rawLabel) expect(t.t(`${type}.game.perLevelLabel`, { ...metadata.gamePerLevelValues })).toBe(rawLabel);
+    }
     source.raw.trees[0].data.links.pop();
     expect(() => buildCandidate(source, authored, locale, inputs)).toThrow();
   });

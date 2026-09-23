@@ -1884,10 +1884,20 @@
     "WELL_RESTED": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "2",
+          "4",
+          "6"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "2"
+      },
       "importedEnglish": true,
       "name": "Well Rested",
       "description": [
-        "The base duration for the Rested buff is increased by <b>2</b> minutes.",
+        "The base duration for the Rested buff is increased by <b>{{gameValue1}}</b> minutes.",
         "<b>Rested</b><br/>The Rested buff increases your Stamina Maximum and Regeneration significantly.",
         "It requires <b>shelter, sitting or sleeping,</b> as well as <b>warmth</b> from a heat source.",
         "The buff can be refreshed <b>anywhere.</b>",
@@ -1897,19 +1907,39 @@
     "MASON": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Mason",
       "description": [
-        "Tools deal <b>10%</b> increased damage against stone.<br/>This includes stone terrain and gemstone veins."
+        "Tools deal <b>{{gameValue1}}</b> increased damage against stone.<br/>This includes stone terrain and gemstone veins."
       ]
     },
     "LUMBERJACK": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Lumberjack",
       "description": [
-        "Tools deal <b>10%</b> increased damage against wood.<br/>This includes trees and wooden terrain."
+        "Tools deal <b>{{gameValue1}}</b> increased damage against wood.<br/>This includes trees and wooden terrain."
       ]
     },
     "MINER": {
@@ -1924,29 +1954,39 @@
     "QUALITY_GEAR": {
       "cost": 2,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "20%"
+      },
       "importedEnglish": true,
       "name": "Quality Gear",
       "description": [
-        "Tools have a <b>20%</b> chance to restore <b>1</b> durability on hit."
+        "Tools have a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability on hit."
       ]
     },
     "MERCILESS_ATTACK": {
       "cost": 2,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Interact]",
+        "gameValue2": "+500%"
+      },
       "importedEnglish": true,
       "name": "Merciless Attack",
       "description": [
-        "Perform a <b>Merciless Attack</b> by pressing <b>[Interact]</b> to deal <b>+500%</b> damage to an <b>overpowered</b> enemy.",
+        "Perform a <b>Merciless Attack</b> by pressing <b>{{gameValue1}}</b> to deal <b>{{gameValue2}}</b> damage to an <b>overpowered</b> enemy.",
         "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
       ]
     },
     "SNEAK_ATTACK": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Interact]"
+      },
       "importedEnglish": true,
       "name": "Sneak Attack",
       "description": [
-        "Perform a <b>Sneak Attack</b> by sneaking up to an unaware enemy and pressing <b>[Interact]</b>.",
+        "Perform a <b>Sneak Attack</b> by sneaking up to an unaware enemy and pressing <b>{{gameValue1}}</b>.",
         "<b>Sneak Attack</b> deals <b>+900%</b> increased damage."
       ]
     },
@@ -1966,10 +2006,20 @@
     "HEALER_REVIVE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "8%",
+          "16%",
+          "24%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "8%"
+      },
       "importedEnglish": true,
       "name": "Healing Revive",
       "description": [
-        "Revive players with <b>8%</b> increased Health.",
+        "Revive players with <b>{{gameValue1}}</b> increased Health.",
         "Default Health of revived players is <b>10%</b>."
       ]
     },
@@ -1985,37 +2035,77 @@
     "MAGE_APPRENTICE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Mage Apprentice",
       "description": [
-        "Magic weapon damage is increased by <b>5%</b>."
+        "Magic weapon damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "ARSONIST": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Arsonist",
       "description": [
-        "All <b>Fire</b> damage is increased by <b>10%</b>."
+        "All <b>Fire</b> damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "DARK_ARTS": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Dark Arts",
       "description": [
-        "All <b>Shroud</b> damage is increased by <b>10%</b>."
+        "All <b>Shroud</b> damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "ICEMAN": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Iceman",
       "description": [
-        "All <b>Ice</b> damage is increased by <b>10%</b>."
+        "All <b>Ice</b> damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "FROST": {
@@ -2029,20 +2119,33 @@
       "stats": {
         "SPIRIT": 1
       },
+      "gameValues": {
+        "gameValue1": "20"
+      },
       "importedEnglish": true,
       "name": "Spirit",
       "description": [
         "Increases your Spirit attribute by 1.",
-        "Increases Mana by 20 per Attribute Point."
+        "Increases Mana by {{gameValue1}} per Attribute Point."
       ]
     },
     "QUICK_CHARGE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "-15%",
+          "-30%",
+          "-45%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "-15%"
+      },
       "importedEnglish": true,
       "name": "Quick Charge",
       "description": [
-        "Cast Time of spells is reduced by <b>-15%</b>."
+        "Cast Time of spells is reduced by <b>{{gameValue1}}</b>."
       ]
     },
     "BLINK_ATTACK": {
@@ -2067,10 +2170,26 @@
     "COUNTERSTRIKE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "8%",
+          "16%",
+          "24%"
+        ],
+        "gameValue2": [
+          "20%",
+          "40%",
+          "60%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "8%",
+        "gamePerLevelValue2": "20%"
+      },
       "importedEnglish": true,
       "name": "Counterstrike",
       "description": [
-        "After receiving damage, there is a <b>8%</b> chance to reflect <b>20%</b> of the damage back to the attacker as <b>Fire</b> damage.",
+        "After receiving damage, there is a <b>{{gameValue1}}</b> chance to reflect <b>{{gameValue2}}</b> of the damage back to the attacker as <b>Fire</b> damage.",
         "This magical attack can trigger other skills."
       ]
     },
@@ -2089,20 +2208,33 @@
       "stats": {
         "ENDURANCE": 1
       },
+      "gameValues": {
+        "gameValue1": "10"
+      },
       "importedEnglish": true,
       "name": "Endurance",
       "description": [
         "Increases your Endurance attribute by 1.",
-        "Increases Stamina by 10 per Attribute Point."
+        "Increases Stamina by {{gameValue1}} per Attribute Point."
       ]
     },
     "WIZARD": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "2%",
+          "4%",
+          "6%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "2%"
+      },
       "importedEnglish": true,
       "name": "Wizard",
       "description": [
-        "Magic weapon Critical Strike chance is increased by <b>2%</b>."
+        "Magic weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "CHAIN_HIT": {
@@ -2117,10 +2249,20 @@
     "MASS_DESTRUCTION": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5",
+          "10",
+          "15"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5"
+      },
       "importedEnglish": true,
       "name": "Mass Destruction",
       "description": [
-        "Critical Strikes with Magic weapons deal <b>2 Shock</b> damage per Intelligence to all enemies within <b>5</b> meters of the target."
+        "Critical Strikes with Magic weapons deal <b>2 Shock</b> damage per Intelligence to all enemies within <b>{{gameValue1}}</b> meters of the target."
       ]
     },
     "BLOOD_MAGIC": {
@@ -2137,37 +2279,77 @@
     "NECROMANCER": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Necromancer",
       "description": [
-        "When killing an enemy with a Magic weapon, you have a <b>5%</b> chance to summon a friendly <b>Skull Companion</b>."
+        "When killing an enemy with a Magic weapon, you have a <b>{{gameValue1}}</b> chance to summon a friendly <b>Skull Companion</b>."
       ]
     },
     "TERROR": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "15%",
+          "30%",
+          "45%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "15%"
+      },
       "importedEnglish": true,
       "name": "Terror",
       "description": [
-        "Critical Strikes with spells have a <b>15%</b> chance to stun the target for <b>2</b> seconds."
+        "Critical Strikes with spells have a <b>{{gameValue1}}</b> chance to stun the target for <b>2</b> seconds."
       ]
     },
     "AIRBORNE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "12%",
+          "24%",
+          "36%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "12%"
+      },
       "importedEnglish": true,
       "name": "Airborne",
       "description": [
-        "Gliders consume <b>12%</b> less Stamina."
+        "Gliders consume <b>{{gameValue1}}</b> less Stamina."
       ]
     },
     "MARKSMAN": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Marksman",
       "description": [
-        "Damage with Bows is increased by <b>5%</b>."
+        "Damage with Bows is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "CALM_SPIRIT": {
@@ -2183,29 +2365,65 @@
     "SNAKE_EATER": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "4%",
+          "8%",
+          "12%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4%"
+      },
       "importedEnglish": true,
       "name": "Snake Eater",
       "description": [
-        "Increases your <b>Poison Resistance</b> by <b>4%</b>, which reduces the amount of <b>Poison</b> damage received.",
+        "Increases your <b>Poison Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Poison</b> damage received.",
         "<b>Poison</b> damage bypasses armor and can only be mitigated by <b>Poison Resistance</b>."
       ]
     },
     "RUNNER": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ],
+        "gameValue2": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%",
+        "gamePerLevelValue2": "5%"
+      },
       "importedEnglish": true,
       "name": "Runner",
       "description": [
-        "Sprint Speed is increased by <b>5%</b> and Stamina cost while sprinting is decreased by <b>5%</b>."
+        "Sprint Speed is increased by <b>{{gameValue1}}</b> and Stamina cost while sprinting is decreased by <b>{{gameValue2}}</b>."
       ]
     },
     "COUNTER_BATTERY": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "8%",
+          "16%",
+          "24%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "8%"
+      },
       "importedEnglish": true,
       "name": "Counter Battery",
       "description": [
-        "Damage against <b>ranged</b> enemies is increased by <b>8%</b>."
+        "Damage against <b>ranged</b> enemies is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "VUKAH_LANGUAGE": {
@@ -2220,10 +2438,13 @@
     "UPDRAFT": {
       "cost": 4,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Jump]"
+      },
       "importedEnglish": true,
       "name": "Updraft",
       "description": [
-        "Jumping with [Jump] while gliding lifts you upwards. Can be used once per flight.",
+        "Jumping with {{gameValue1}} while gliding lifts you upwards. Can be used once per flight.",
         "<b>Charge</b><br/>As the Updraft charges before activation, the resulting lift is increased. A full charge grants you an additional boost. The charge is accelerated while inside your base.",
         "<b>Cost:</b> 100 Mana"
       ]
@@ -2272,11 +2493,27 @@
     "RANGER": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "1",
+          "2",
+          "3"
+        ],
+        "gameValue2": [
+          "5",
+          "10",
+          "15"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "1",
+        "gamePerLevelValue2": "5"
+      },
       "importedEnglish": true,
       "name": "Ranger",
       "description": [
-        "Increases your Dexterity and Endurance attributes by <b>1</b>.",
-        "Base Stamina Regeneration is increased by <b>5</b>."
+        "Increases your Dexterity and Endurance attributes by <b>{{gameValue1}}</b>.",
+        "Base Stamina Regeneration is increased by <b>{{gameValue2}}</b>."
       ]
     },
     "MITHRIDATIST": {
@@ -2291,20 +2528,33 @@
     "BOUNTY_BONANZA": {
       "cost": 2,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "+5"
+      },
       "importedEnglish": true,
       "name": "Bounty Bonanza",
       "description": [
-        "After defeating a <b>Fell</b> enemy with a <b>Skillshot</b>, your group gains an additional <b>+5</b> Experience Points.",
+        "After defeating a <b>Fell</b> enemy with a <b>Skillshot</b>, your group gains an additional <b>{{gameValue1}}</b> Experience Points.",
         "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
       ]
     },
     "SNIPER": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "2%",
+          "4%",
+          "6%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "2%"
+      },
       "importedEnglish": true,
       "name": "Sniper",
       "description": [
-        "Ranged weapon Critical Strike chance is increased by <b>2%</b>."
+        "Ranged weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "RICOCHETS": {
@@ -2328,10 +2578,20 @@
     "BLESSED_ARROWS": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "8",
+          "16",
+          "24"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "8"
+      },
       "importedEnglish": true,
       "name": "Blessed Arrows",
       "description": [
-        "Critical Strikes with Bows restore <b>8</b> Mana."
+        "Critical Strikes with Bows restore <b>{{gameValue1}}</b> Mana."
       ]
     },
     "ATTR_STR": {
@@ -2353,20 +2613,26 @@
       "stats": {
         "CONS": 1
       },
+      "gameValues": {
+        "gameValue1": "50"
+      },
       "importedEnglish": true,
       "name": "Constitution",
       "description": [
         "Increases your Constitution attribute by 1.",
-        "Increases Health by 50 per Attribute Point."
+        "Increases Health by {{gameValue1}} per Attribute Point."
       ]
     },
     "EVASION_ATTACK": {
       "cost": 4,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Attack]"
+      },
       "importedEnglish": true,
       "name": "Evasion Attack",
       "description": [
-        "When equipped with a Melee weapon, you can perform an evade attack, which dashes towards the enemy and deals more weapon damage with <b>[Attack]</b>.",
+        "When equipped with a Melee weapon, you can perform an evade attack, which dashes towards the enemy and deals more weapon damage with <b>{{gameValue1}}</b>.",
         "<b>Cost:</b> 20 Stamina",
         "<b>Block Breaker</b> <br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit."
       ]
@@ -2383,84 +2649,167 @@
     "WARRIOR_PATH": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Warrior's Path",
       "description": [
-        "One-Handed Melee weapon damage is increased by <b>5%</b>."
+        "One-Handed Melee weapon damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "SHINY_PLATES": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "4%",
+          "8%",
+          "12%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4%"
+      },
       "importedEnglish": true,
       "name": "Shiny Plates",
       "description": [
-        "Equipped armor grants <b>4%</b> increased Magical Armor."
+        "Equipped armor grants <b>{{gameValue1}}</b> increased Magical Armor."
       ]
     },
     "HEAVY_PLATES": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "4%",
+          "8%",
+          "12%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4%"
+      },
       "importedEnglish": true,
       "name": "Heavy Plates",
       "description": [
-        "Equipped armor grants <b>4%</b> increased Physical Armor."
+        "Equipped armor grants <b>{{gameValue1}}</b> increased Physical Armor."
       ]
     },
     "SLASHER": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Slasher",
       "description": [
-        "Melee <b>Cutting</b> damage is increased by <b>10%</b>."
+        "Melee <b>Cutting</b> damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "BRUTE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Brute",
       "description": [
-        "Melee <b>Blunt</b> damage is increased by <b>10%</b>."
+        "Melee <b>Blunt</b> damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "THRUST": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Thrust",
       "description": [
-        "Melee <b>Piercing</b> damage is increased by <b>10%</b>."
+        "Melee <b>Piercing</b> damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "HEAVY_HANDED": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Heavy Handed",
       "description": [
-        "Filling up enemy <i>Stun Bars</i> is increased by <b>10%</b> when attacking blocking enemies with Melee weapons.",
+        "Filling up enemy <i>Stun Bars</i> is increased by <b>{{gameValue1}}</b> when attacking blocking enemies with Melee weapons.",
         "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
       ]
     },
     "BREACH": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "+100%"
+      },
       "importedEnglish": true,
       "name": "Breach",
       "description": [
-        "<b>Overpowered</b> enemies receive <b>+100%</b> increased Melee physical damage for <b>3</b> seconds.",
+        "<b>Overpowered</b> enemies receive <b>{{gameValue1}}</b> increased Melee physical damage for <b>3</b> seconds.",
         "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
       ]
     },
     "VETERAN": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "2%",
+          "4%",
+          "6%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "2%"
+      },
       "importedEnglish": true,
       "name": "Veteran",
       "description": [
-        "Melee weapon Critical Strike chance is increased by <b>2%</b>."
+        "Melee weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "CRASH_DOWN_FORCE": {
@@ -2475,56 +2824,105 @@
     "BACKSTAB_MASTERY": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "20%",
+          "40%",
+          "60%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "20%"
+      },
       "importedEnglish": true,
       "name": "Backstab Mastery",
       "description": [
-        "<b>Backstab</b> damage is increased by <b>20%</b>."
+        "<b>Backstab</b> damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "TOWER": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Tower",
       "description": [
-        "While there are three or more enemies within <b>20</b> meters, you receive <b>10%</b> increased <b>Physical Resistance</b>."
+        "While there are three or more enemies within <b>20</b> meters, you receive <b>{{gameValue1}}</b> increased <b>Physical Resistance</b>."
       ]
     },
     "WARDEN": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Warden",
       "description": [
-        "While there are three or more enemies within <b>20</b> meters, you receive <b>10%</b> increased <b>Magical Resistance</b>."
+        "While there are three or more enemies within <b>20</b> meters, you receive <b>{{gameValue1}}</b> increased <b>Magical Resistance</b>."
       ]
     },
     "ABSORB": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "4%",
+          "8%",
+          "12%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4%"
+      },
       "importedEnglish": true,
       "name": "Absorb",
       "description": [
-        "When you receive <b>Magic</b> damage, you have a <b>4%</b> chance to restore <b>1</b> Mana per Health point lost."
+        "When you receive <b>Magic</b> damage, you have a <b>{{gameValue1}}</b> chance to restore <b>1</b> Mana per Health point lost."
       ]
     },
     "BLOOD_RAGE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameValues": {
+        "gameValue2": "15%"
+      },
+      "gameLevelValues": {
+        "gameValue1": [
+          "5",
+          "10",
+          "15"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5"
+      },
       "importedEnglish": true,
       "name": "Blood Rage",
       "description": [
-        "When an enemy within <b>5</b> meters is killed by a Melee weapon, you fall into <b>Blood Rage</b>.",
-        "<b>Blood Rage</b><br/>Increases Melee weapon damage by <b>15%</b> for <b>10</b> seconds."
+        "When an enemy within <b>{{gameValue1}}</b> meters is killed by a Melee weapon, you fall into <b>Blood Rage</b>.",
+        "<b>Blood Rage</b><br/>Increases Melee weapon damage by <b>{{gameValue2}}</b> for <b>10</b> seconds."
       ]
     },
     "BLOODLETTING": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "15%",
+          "30%",
+          "45%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "15%"
+      },
       "importedEnglish": true,
       "name": "Bloodletting",
       "description": [
-        "Critical Strikes with spells have a <b>15%</b> chance to spawn two Health, Mana, and/or Stamina Orbs.",
+        "Critical Strikes with spells have a <b>{{gameValue1}}</b> chance to spawn two Health, Mana, and/or Stamina Orbs.",
         "Gathering an Orb restores <b>10%</b> of the respective resource."
       ]
     },
@@ -2540,28 +2938,57 @@
     "SOUL_LEECH": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5",
+          "10",
+          "15"
+        ],
+        "gameValue2": [
+          "15",
+          "30",
+          "45"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5",
+        "gamePerLevelValue2": "15"
+      },
       "importedEnglish": true,
       "name": "Soul Leech",
       "description": [
-        "When killing an enemy with a Melee weapon, all players within <b>5</b> meters of the target restore <b>15</b> Mana."
+        "When killing an enemy with a Melee weapon, all players within <b>{{gameValue1}}</b> meters of the target restore <b>{{gameValue2}}</b> Mana."
       ]
     },
     "BATTLE_HEAL": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "1%",
+          "2%",
+          "3%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "1%"
+      },
       "importedEnglish": true,
       "name": "Battle Heal",
       "description": [
-        "Critical Strikes with Melee weapons heal you for <b>1%</b> of your maximum Health."
+        "Critical Strikes with Melee weapons heal you for <b>{{gameValue1}}</b> of your maximum Health."
       ]
     },
     "RELENTLESS": {
       "cost": 5,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "8%"
+      },
       "importedEnglish": true,
       "name": "Relentless",
       "description": [
-        "Critical Strikes with Two-Handed weapons increase your Critical Strike chance by <b>8%</b> for the next hit."
+        "Critical Strikes with Two-Handed weapons increase your Critical Strike chance by <b>{{gameValue1}}</b> for the next hit."
       ]
     },
     "DOUBLE_JUMP": {
@@ -2577,10 +3004,13 @@
     "CRASH_DOWN_ATTACK": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Attack]"
+      },
       "importedEnglish": true,
       "name": "Crash Down Attack",
       "description": [
-        "When equipped with a Melee weapon, you can perform a special attack by holding <b>[Attack]</b> during a jump.",
+        "When equipped with a Melee weapon, you can perform a special attack by holding <b>{{gameValue1}}</b> during a jump.",
         "Crash Down deals 50% more weapon damage in a small blast radius and costs Stamina depending on weapon type used.",
         "<b>Cost:</b> 35 - 60 Stamina",
         "<b>Block Breaker</b> <br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit.."
@@ -2610,10 +3040,20 @@
     "POWER_PARRY": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Power Parry",
       "description": [
-        "Your Parry Power is increased by <b>10%</b>.",
+        "Your Parry Power is increased by <b>{{gameValue1}}</b>.",
         "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
         "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
       ]
@@ -2621,30 +3061,64 @@
     "INNER_FIRES": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "120 seconds",
+          "240 seconds",
+          "360 seconds"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "120 seconds"
+      },
       "importedEnglish": true,
       "name": "Inner Fires",
       "description": [
-        "<b>Time in the Shroud</b> is increased by <b>120 seconds</b>, allowing you to explore for longer.",
+        "<b>Time in the Shroud</b> is increased by <b>{{gameValue1}}</b>, allowing you to explore for longer.",
         "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
       ]
     },
     "PURIFICATION": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "3",
+          "6",
+          "9"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "3"
+      },
       "importedEnglish": true,
       "name": "Purification",
       "description": [
-        "Defeating a Shroud infested enemy with a Melee weapon restores <b>3</b> seconds of <b>Time in the Shroud</b>.",
+        "Defeating a Shroud infested enemy with a Melee weapon restores <b>{{gameValue1}}</b> seconds of <b>Time in the Shroud</b>.",
         "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
       ]
     },
     "SHROUD_FILTER": {
       "cost": 1,
       "maxLevel": 3,
+      "gameValues": {
+        "gameValue2": "9",
+        "gameValue3": "20"
+      },
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Shroud Filter",
       "description": [
-        "Dealing damage with a Magic weapon has a <b>5%</b> chance to trigger a small flame burst that restores <b>9</b> seconds of <b>Time in the Shroud </b> to you and your allies within <b>20</b> meters.",
+        "Dealing damage with a Magic weapon has a <b>{{gameValue1}}</b> chance to trigger a small flame burst that restores <b>{{gameValue2}}</b> seconds of <b>Time in the Shroud </b> to you and your allies within <b>{{gameValue3}}</b> meters.",
         "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
       ]
     },
@@ -2660,10 +3134,20 @@
     "HEALER": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "15%",
+          "30%",
+          "45%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "15%"
+      },
       "importedEnglish": true,
       "name": "Healer",
       "description": [
-        "Health gain from healing spells and skills is increased by <b>15%</b>."
+        "Health gain from healing spells and skills is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "SWEET_TOOTH": {
@@ -2678,10 +3162,13 @@
     "STING": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "20%"
+      },
       "importedEnglish": true,
       "name": "Sting",
       "description": [
-        "Repeated Wand damage is increased by <b>20%</b>."
+        "Repeated Wand damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "EXALTED": {
@@ -2705,87 +3192,177 @@
     "SAVIOUR": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "-1",
+          "-2",
+          "-3"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "-1"
+      },
       "importedEnglish": true,
       "name": "Saviour",
       "description": [
-        "Time to revive an ally is reduced by <b>-1</b> seconds.",
+        "Time to revive an ally is reduced by <b>{{gameValue1}}</b> seconds.",
         "Default revive time is <b>6</b> seconds."
       ]
     },
     "VITALITY_SURGE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "3",
+          "6",
+          "9"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "3"
+      },
       "importedEnglish": true,
       "name": "Vitality Surge",
       "description": [
-        "Critical Strikes with Ranged weapons restore <b>3</b> Stamina."
+        "Critical Strikes with Ranged weapons restore <b>{{gameValue1}}</b> Stamina."
       ]
     },
     "ARCANE_DEFLECTION": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10",
+          "20",
+          "30"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10"
+      },
       "importedEnglish": true,
       "name": "Arcane Deflection",
       "description": [
-        "Successfully parrying an enemy's attack restores <b>10</b> Mana.",
+        "Successfully parrying an enemy's attack restores <b>{{gameValue1}}</b> Mana.",
         "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
       ]
     },
     "VIGOROUS_DEFLECTION": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "15",
+          "30",
+          "45"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "15"
+      },
       "importedEnglish": true,
       "name": "Vigorous Deflection",
       "description": [
-        "Successfully parrying an enemy's attack restores <b>15</b> Stamina.",
+        "Successfully parrying an enemy's attack restores <b>{{gameValue1}}</b> Stamina.",
         "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
       ]
     },
     "EAGLES_BANE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Eagle's Bane",
       "description": [
-        "Damage against <b>flying</b> enemies is increased by <b>10%</b>."
+        "Damage against <b>flying</b> enemies is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "SILENT_STRIDE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "20%",
+          "40%",
+          "60%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "20%"
+      },
       "importedEnglish": true,
       "name": "Silent Stride",
       "description": [
-        "Increases your movement speed while <b>sneaking</b> by <b>20%</b>."
+        "Increases your movement speed while <b>sneaking</b> by <b>{{gameValue1}}</b>."
       ]
     },
     "SKILL_SHOT": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "20%",
+          "40%",
+          "60%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "20%"
+      },
       "importedEnglish": true,
       "name": "Skill Shot",
       "description": [
-        "<b>Skillshot</b> damage is increased by <b>20%</b>.",
+        "<b>Skillshot</b> damage is increased by <b>{{gameValue1}}</b>.",
         "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
       ]
     },
     "SWIFTSHOT_SUSTENANCE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "12%",
+          "24%",
+          "36%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "12%"
+      },
       "importedEnglish": true,
       "name": "Swiftshot Sustenance",
       "description": [
-        "Defeating an enemy with a Bow has a <b>12%</b> chance to spawn a Stamina Orb.",
+        "Defeating an enemy with a Bow has a <b>{{gameValue1}}</b> chance to spawn a Stamina Orb.",
         "Gathering an Orb restores <b>10%</b> of the respective resource."
       ]
     },
     "ARACHNOID": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "20%",
+          "40%",
+          "60%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "20%"
+      },
       "importedEnglish": true,
       "name": "Arachnoid",
       "description": [
-        "Stamina cost while climbing is reduced by <b>20%</b>."
+        "Stamina cost while climbing is reduced by <b>{{gameValue1}}</b>."
       ]
     },
     "WANDERLUST": {
@@ -2801,10 +3378,20 @@
     "THUNDER": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Thunder",
       "description": [
-        "All <b>Shock</b> damage is increased by <b>10%</b>."
+        "All <b>Shock</b> damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "BEE_STING": {
@@ -2841,29 +3428,65 @@
     "WATER_AURA": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5.1",
+          "10.1",
+          "15.1"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5.1"
+      },
       "importedEnglish": true,
       "name": "Water Aura",
       "description": [
-        "You emit a healing aura that heals you and all injured allies within <b>5.1</b> meters.",
+        "You emit a healing aura that heals you and all injured allies within <b>{{gameValue1}}</b> meters.",
         "The healing scales with your Intelligence attribute and restores <b>1</b> Health per <b>2</b> points of Intelligence."
       ]
     },
     "RADIANT_AURA": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "2.1",
+          "4.1",
+          "6.1"
+        ],
+        "gameValue2": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "2.1",
+        "gamePerLevelValue2": "1"
+      },
       "importedEnglish": true,
       "name": "Radiant Aura",
       "description": [
-        "All <b>Fell</b> enemies within <b>2.1</b> meters take <b>1 Fire</b> damage per Intelligence per second."
+        "All <b>Fell</b> enemies within <b>{{gameValue1}}</b> meters take <b>{{gameValue2}} Fire</b> damage per Intelligence per second."
       ]
     },
     "NEMESIS": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Nemesis",
       "description": [
-        "Increase the attention you draw from enemies by <b>5%</b>."
+        "Increase the attention you draw from enemies by <b>{{gameValue1}}</b>."
       ]
     },
     "SHOCKWAVE": {
@@ -2881,28 +3504,44 @@
     "SWIFT_BLADES": {
       "cost": 5,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "15%"
+      },
       "importedEnglish": true,
       "name": "Swift Blades",
       "description": [
-        "Increases the attack speed of all One-Handed Melee weapons by <b>15%</b>."
+        "Increases the attack speed of all One-Handed Melee weapons by <b>{{gameValue1}}</b>."
       ]
     },
     "HEAVY_SPECIALIZATION": {
       "cost": 5,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Heavy Hitter",
       "description": [
-        "Increases the attack speed of all Two-Handed Melee weapons by <b>10%</b>."
+        "Increases the attack speed of all Two-Handed Melee weapons by <b>{{gameValue1}}</b>."
       ]
     },
     "BASH": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10",
+          "20",
+          "30"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10"
+      },
       "importedEnglish": true,
       "name": "Bash",
       "description": [
-        "Parrying enemy attacks bashes them for <b>10 Blunt</b> damage. Bash damage is increased by your Strength attribute.",
+        "Parrying enemy attacks bashes them for <b>{{gameValue1}} Blunt</b> damage. Bash damage is increased by your Strength attribute.",
         "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
       ]
     },
@@ -2920,29 +3559,61 @@
     "SHELL_SHOCK": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "8"
+      },
       "importedEnglish": true,
       "name": "Shell Shock",
       "description": [
         "Infuse your <b>Ranged Explosives</b> with Mana. They now stun enemies for <b>2</b> seconds.",
-        "<b>Cost:</b> 8 Mana per stunned enemy"
+        "<b>Cost:</b> {{gameValue1}} Mana per stunned enemy"
       ]
     },
     "UNITY": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ],
+        "gameValue2": [
+          "2%",
+          "4%",
+          "6%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%",
+        "gamePerLevelValue2": "2%"
+      },
       "importedEnglish": true,
       "name": "Unity",
       "description": [
-        "Damaging enemies with Wands has a <b>10%</b> chance to restore <b>2%</b> of your maximum Mana."
+        "Damaging enemies with Wands has a <b>{{gameValue1}}</b> chance to restore <b>{{gameValue2}}</b> of your maximum Mana."
       ]
     },
     "EARTH_AURA": {
       "cost": 2,
       "maxLevel": 3,
+      "gameValues": {
+        "gameValue1": "10%"
+      },
+      "gameLevelValues": {
+        "gameValue2": [
+          "4",
+          "8",
+          "12"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4"
+      },
       "importedEnglish": true,
       "name": "Earth Aura",
       "description": [
-        "You emit a protective aura that increases Physical and Magical Resistances by <b>10%</b> for you and all allies within <b>4</b> meters."
+        "You emit a protective aura that increases Physical and Magical Resistances by <b>{{gameValue1}}</b> for you and all allies within <b>{{gameValue2}}</b> meters."
       ]
     },
     "SPLASH_DASH": {
@@ -2985,11 +3656,15 @@
     "EAGLE_EYE": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Aim]",
+        "gameValue2": "[Quick Bow Aim]"
+      },
       "importedEnglish": true,
       "name": "Eagle Eye",
       "description": [
         "Greatly increases the zoom while aiming with Bows.",
-        "To aim, hold down the [Aim] while a Bow is selected in the Action bar.<br/>(Alternatively, hold [Quick Bow Aim] to aim your equipped Bow.)"
+        "To aim, hold down the {{gameValue1}} while a Bow is selected in the Action bar.<br/>(Alternatively, hold {{gameValue2}} to aim your equipped Bow.)"
       ]
     },
     "DESSERT_STOMACH": {
@@ -3024,55 +3699,109 @@
     "OPPORTUNITY": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "40%",
+          "80%",
+          "120%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "40%"
+      },
       "importedEnglish": true,
       "name": "Opportunity",
       "description": [
-        "Increases the damage multiplier of <b>Merciless Attacks</b> by <b>40%</b>."
+        "Increases the damage multiplier of <b>Merciless Attacks</b> by <b>{{gameValue1}}</b>."
       ]
     },
     "DAGGER_MASTERY": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Dagger Mastery",
       "description": [
-        "Dagger damage is increased by <b>5%</b>."
+        "Dagger damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "SLICE_AND_DICE": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "20",
+        "gameValue2": "50%"
+      },
       "importedEnglish": true,
       "name": "Slice And Dice",
       "description": [
-        "After a Critical Strike with a Dagger, the base damage of your next Bow attack within 20 seconds is increased by <b>50%</b>."
+        "After a Critical Strike with a Dagger, the base damage of your next Bow attack within {{gameValue1}} seconds is increased by <b>{{gameValue2}}</b>."
       ]
     },
     "ETERNAL_SPARK": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Eternal Spark",
       "description": [
-        "Dealing damage with Wand projectiles has a <b>10%</b> chance to restore <b>1</b> durability to that weapon."
+        "Dealing damage with Wand projectiles has a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability to that weapon."
       ]
     },
     "FINESSE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Finesse",
       "description": [
-        "Dealing damage with One-Handed Melee weapons and Daggers has a <b>10%</b> chance to restore <b>1</b> durability to that weapon."
+        "Dealing damage with One-Handed Melee weapons and Daggers has a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability to that weapon."
       ]
     },
     "STEADFAST": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "1"
+      },
       "importedEnglish": true,
       "name": "Steadfast",
       "description": [
-        "Defeating an enemy with a Melee weapon restores <b>1</b> durability to that weapon."
+        "Defeating an enemy with a Melee weapon restores <b>{{gameValue1}}</b> durability to that weapon."
       ]
     },
     "POISONED_BLADES": {
@@ -3105,10 +3834,20 @@
     "LIFE_ESSENCES": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "2",
+          "4",
+          "6"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "2"
+      },
       "importedEnglish": true,
       "name": "Life Essences",
       "description": [
-        "Increases your maximum Health by <b>2</b> times your Intelligence attribute."
+        "Increases your maximum Health by <b>{{gameValue1}}</b> times your Intelligence attribute."
       ]
     },
     "GIANT_SLAYER_HOOK": {
@@ -3145,10 +3884,20 @@
     "TITAN_EDGE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Titan Edge",
       "description": [
-        "Two-Handed Greatsword damage is increased by <b>5%</b>."
+        "Two-Handed Greatsword damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "WHIRLWIND_CRESCENDO": {
@@ -3176,37 +3925,77 @@
     "SHROUD_RESISTANCE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "4%",
+          "8%",
+          "12%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4%"
+      },
       "importedEnglish": true,
       "name": "Shroud Resistance",
       "description": [
-        "Increases your <b>Shroud Resistance</b> by <b>4%</b>, which reduces the amount of <b>Shroud</b> damage received."
+        "Increases your <b>Shroud Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Shroud</b> damage received."
       ]
     },
     "FIRE_RESISTANCE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "4%",
+          "8%",
+          "12%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4%"
+      },
       "importedEnglish": true,
       "name": "Fire Resistance",
       "description": [
-        "Increases your <b>Fire Resistance</b> by <b>4%</b>, which reduces the amount of <b>Fire</b> damage received."
+        "Increases your <b>Fire Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Fire</b> damage received."
       ]
     },
     "ICE_RESISTANCE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "4%",
+          "8%",
+          "12%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4%"
+      },
       "importedEnglish": true,
       "name": "Ice Resistance",
       "description": [
-        "Increases your <b>Ice Resistance</b> by <b>4%</b>, which reduces the amount of <b>Ice</b> damage received."
+        "Increases your <b>Ice Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Ice</b> damage received."
       ]
     },
     "SHOCK_RESISTANCE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "4%",
+          "8%",
+          "12%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "4%"
+      },
       "importedEnglish": true,
       "name": "Shock Resistance",
       "description": [
-        "Increases your <b>Shock Resistance</b> by <b>4%</b>, which reduces the amount of <b>Shock</b> damage received."
+        "Increases your <b>Shock Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Shock</b> damage received."
       ]
     },
     "LAST_MEAL": {
@@ -3221,19 +4010,33 @@
     "EXPOSE_WEAKNESS": {
       "cost": 4,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "25%",
+        "gameValue2": "5"
+      },
       "importedEnglish": true,
       "name": "Expose Weakness",
       "description": [
-        "Critical Strikes with Daggers increase damage dealt to the enemy by <b>25%</b> for <b>5</b> seconds."
+        "Critical Strikes with Daggers increase damage dealt to the enemy by <b>{{gameValue1}}</b> for <b>{{gameValue2}}</b> seconds."
       ]
     },
     "RIGHTEOUS_FIRE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "20%",
+          "40%",
+          "60%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "20%"
+      },
       "importedEnglish": true,
       "name": "Righteous Fire",
       "description": [
-        "Healing any target with a spell triggers a burst of fire that deals <b>20%</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies."
+        "Healing any target with a spell triggers a burst of fire that deals <b>{{gameValue1}}</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies."
       ]
     },
     "DIVINE_SURGE": {
@@ -3248,19 +4051,42 @@
     "SHROUD_MISTERY": {
       "cost": 2,
       "maxLevel": 3,
+      "gameValues": {
+        "gameValue2": "15%"
+      },
+      "gameLevelValues": {
+        "gameValue1": [
+          "5",
+          "10",
+          "15"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5"
+      },
       "importedEnglish": true,
       "name": "Shared Misery",
       "description": [
-        "When you receive <b>Shroud</b> damage, all players within <b>5</b> meters receive <b>15%</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds."
+        "When you receive <b>Shroud</b> damage, all players within <b>{{gameValue1}}</b> meters receive <b>{{gameValue2}}</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds."
       ]
     },
     "FISHERMANS_RESOLVE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5",
+          "10",
+          "15"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5"
+      },
       "importedEnglish": true,
       "name": "Fisherman’s Resolve",
       "description": [
-        "Increases your Fishing Endurance by <b>5</b>.",
+        "Increases your Fishing Endurance by <b>{{gameValue1}}</b>.",
         "Allows for extended battles with hooked fish."
       ]
     },
@@ -3303,206 +4129,383 @@
     "CUTTHROAT": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "100%",
+          "200%",
+          "300%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "100%"
+      },
       "importedEnglish": true,
       "name": "Cutthroat",
       "description": [
-        "Sneak Attack Damage is increased by <b>100%</b>."
+        "Sneak Attack Damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "REBOUND": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Rebound",
       "description": [
-        "Base Stamina Regeneration is increased by <b>10%</b>."
+        "Base Stamina Regeneration is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "BONE_TO_ASH": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Bone to Ash",
       "description": [
-        "Damage against Hollow is increased by <b>5%</b>."
+        "Damage against Hollow is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "CULL_THE_HERD": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Cull the Herd",
       "description": [
-        "Damage against Wildlife is increased by <b>5%</b>."
+        "Damage against Wildlife is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "PRIMAL_FORCE": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Primal Force",
       "description": [
-        "Damage against Vukah is increased by <b>5%</b>."
+        "Damage against Vukah is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "SLEIGHT_OF_HAND": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "30%",
+          "60%",
+          "90%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "30%"
+      },
       "importedEnglish": true,
       "name": "Sleight of Hand",
       "description": [
-        "Unarmed damage is increased by <b>30%</b>."
+        "Unarmed damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "VILE_CONCOCTION": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "12%",
+          "24%",
+          "36%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "12%"
+      },
       "importedEnglish": true,
       "name": "Vile Concoction",
       "description": [
-        "Throwable damage is increased by <b>12%</b>."
+        "Throwable damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "MANA_CURRENTS": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "3",
+          "6",
+          "9"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "3"
+      },
       "importedEnglish": true,
       "name": "Mana Currents",
       "description": [
-        "Base Mana Regeneration is increased by <b>3</b>."
+        "Base Mana Regeneration is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "FATAL_PRECISION": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "1%",
+          "2%",
+          "3%"
+        ],
+        "gameValue2": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "1%",
+        "gamePerLevelValue2": "5%"
+      },
       "importedEnglish": true,
       "name": "Fatal Precision",
       "description": [
-        "Critical Strike chance is increased by <b>1%</b>.<br/>Critical Strike damage is increased by <b>5%</b>."
+        "Critical Strike chance is increased by <b>{{gameValue1}}</b>.<br/>Critical Strike damage is increased by <b>{{gameValue2}}</b>."
       ]
     },
     "SPELLSLINGER": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Spellslinger",
       "description": [
-        "Staff damage is increased by <b>5%</b>."
+        "Staff damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "WAND_MASTERY": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Wand Mastery",
       "description": [
-        "Wand damage is increased by <b>5%</b>."
+        "Wand damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "TWO_HANDED_SPECIALIZATION": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Special Ability]"
+      },
       "importedEnglish": true,
       "name": "Two-Handed Specialization",
       "description": [
-        "Unlocks Special Abilities of Two-Handed Melee weapons. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+        "Unlocks Special Abilities of Two-Handed Melee weapons. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
         "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
       ]
     },
     "ONE_HANDED_SPECIALIZATION": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Special Ability]"
+      },
       "importedEnglish": true,
       "name": "One-Handed Specialization",
       "description": [
-        "Unlocks Special Abilities of One-Handed Melee weapons. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+        "Unlocks Special Abilities of One-Handed Melee weapons. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
         "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
       ]
     },
     "WAND_SPECIALIZATION": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Special Ability]"
+      },
       "importedEnglish": true,
       "name": "Wand Specialization",
       "description": [
-        "Unlocks Special Abilities of Wands. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+        "Unlocks Special Abilities of Wands. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
         "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
       ]
     },
     "BOW_SPECIALIZATION": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Special Ability]"
+      },
       "importedEnglish": true,
       "name": "Bow Specialization",
       "description": [
-        "Unlocks Special Abilities of Bows. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+        "Unlocks Special Abilities of Bows. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
         "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
       ]
     },
     "DAGGER_SPECIALIZATION": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Special Ability]"
+      },
       "importedEnglish": true,
       "name": "Dagger Specialization",
       "description": [
-        "Unlocks Special Abilities of Daggers. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+        "Unlocks Special Abilities of Daggers. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
         "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
       ]
     },
     "PICKAXE_SPECIALIZATION": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Special Ability]"
+      },
       "importedEnglish": true,
       "name": "Pickaxe Specialization",
       "description": [
-        "Unlocks Special Abilities of Pickaxes. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+        "Unlocks Special Abilities of Pickaxes. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
         "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
       ]
     },
     "FELLING_AXE_SPECIALIZATION": {
       "cost": 3,
       "maxLevel": 1,
+      "gameValues": {
+        "gameValue1": "[Special Ability]"
+      },
       "importedEnglish": true,
       "name": "Felling Axe Specialization",
       "description": [
-        "Unlocks Special Abilities of Felling Axes. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+        "Unlocks Special Abilities of Felling Axes. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
         "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
       ]
     },
     "ATHLETE": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "2",
+          "4",
+          "6"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "2"
+      },
       "importedEnglish": true,
       "name": "Athlete",
       "description": [
-        "Increases your maximum Health by <b>2</b> times your Strength attribute."
+        "Increases your maximum Health by <b>{{gameValue1}}</b> times your Strength attribute."
       ]
     },
     "BARBARIAN_PATH": {
       "cost": 1,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "5%",
+          "10%",
+          "15%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "5%"
+      },
       "importedEnglish": true,
       "name": "Barbarian's Path",
       "description": [
-        "Two-Handed Melee weapon damage is increased by <b>5%</b>."
+        "Two-Handed Melee weapon damage is increased by <b>{{gameValue1}}</b>."
       ]
     },
     "VEILED_VIGOR": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "2",
+          "4",
+          "6"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "2"
+      },
       "importedEnglish": true,
       "name": "Veiled Vigor",
       "description": [
-        "Increases your maximum Health by <b>2</b> times your Dexterity attribute."
+        "Increases your maximum Health by <b>{{gameValue1}}</b> times your Dexterity attribute."
       ]
     },
     "PROSPECTOR": {
       "cost": 2,
       "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "10%",
+          "20%",
+          "30%"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "10%"
+      },
       "importedEnglish": true,
       "name": "Prospector",
       "description": [
-        "Tools deal <b>10%</b> increased damage against metal.<br/>This includes metal ore veins."
+        "Tools deal <b>{{gameValue1}}</b> increased damage against metal.<br/>This includes metal ore veins."
       ]
     }
   }

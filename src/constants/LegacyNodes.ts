@@ -24,6 +24,9 @@ export type NodeTypeMetadata = {
   stats?: NodeStatsType;
   maxLevel?: number;
   levelValues?: { [varName: string]: (number | string)[] };
+  gameValues?: { [varName: string]: number | string };
+  gameLevelValues?: { [varName: string]: (number | string)[] };
+  gamePerLevelValues?: { [varName: string]: number | string };
   perLevel?: {
     value: number | string;
     value2?: number | string;

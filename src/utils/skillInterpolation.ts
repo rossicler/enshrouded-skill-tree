@@ -22,3 +22,15 @@ export const getSkillInterpolationValues = (
   }
   return interpolation;
 };
+
+export const getGameInterpolationValues = (
+  metadata: NodeTypeMetadata | undefined,
+  displayLevel: number,
+): Record<string, number | string> => {
+  const interpolation = { ...metadata?.gameValues };
+  for (const [key, values] of Object.entries(metadata?.gameLevelValues ?? {})) {
+    const value = values[displayLevel - 1] ?? values[values.length - 1];
+    if (value != null) interpolation[key] = value;
+  }
+  return interpolation;
+};

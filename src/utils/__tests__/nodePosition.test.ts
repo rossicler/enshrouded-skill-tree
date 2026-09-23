@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import SkillNodes from "../../constants/Nodes";
+import SkillNodes from "../../constants/LegacyNodes";
 import { resolveBaseAnchor, resolveNodePosition } from "../nodePosition";
 import { getBaseLinesToDraw } from "../utils";
 

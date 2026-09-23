@@ -38,8 +38,9 @@ const SkillTooltip = ({
   onSelect,
 }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
-  const { t } = useTranslation(["nodes", "common"]);
-  const name = t(`${node.type}.name`, {
+  const { t, i18n } = useTranslation(["nodes", "common"]);
+  const useImportedEnglish = metadata.importedEnglish && (i18n.resolvedLanguage ?? i18n.language).split("-")[0] === "en";
+  const name = t(`${node.type}.${useImportedEnglish ? "game.name" : "name"}`, {
     ns: "nodes",
     defaultValue: humanizeKey(node.type),
   });
@@ -50,7 +51,9 @@ const SkillTooltip = ({
   const displayLevel = level > 0 ? level : 1;
   const interpolation = getSkillInterpolationValues(metadata, displayLevel);
 
-  const perLevelLabel = metadata?.perLevel
+  const perLevelLabel = useImportedEnglish
+    ? t(`${node.type}.game.perLevelLabel`, { ns: "nodes", defaultValue: "" })
+    : metadata?.perLevel
     ? t(`${node.type}.perLevelLabel`, {
         ns: "nodes",
         defaultValue: metadata.perLevel.label,
@@ -59,10 +62,12 @@ const SkillTooltip = ({
       })
     : null;
 
-  const rawDescription = t(`${node.type}.description`, {
+  const rawDescription = t(useImportedEnglish
+    ? `${node.type}.game.descriptionsByLevel.${Math.min(displayLevel, maxLevel) - 1}`
+    : `${node.type}.description`, {
     ns: "nodes",
     returnObjects: true,
-    ...interpolation,
+    ...(useImportedEnglish ? {} : interpolation),
   });
   const description = Array.isArray(rawDescription) ? rawDescription : [rawDescription];
   const id = useId();

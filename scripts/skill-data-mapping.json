@@ -1,0 +1,890 @@
+{
+  "29426941": {
+    "appId": "14",
+    "type": "GIANT_SLAYER_HOOK"
+  },
+  "31613866": {
+    "appId": "170",
+    "type": "ATTR_SPIRIT"
+  },
+  "134064960": {
+    "appId": "35",
+    "type": "ATTR_CONS"
+  },
+  "137870545": {
+    "appId": "119",
+    "type": "VITALITY_SURGE"
+  },
+  "142828059": {
+    "appId": "93",
+    "type": "DESSERT_STOMACH"
+  },
+  "168513822": {
+    "appId": "50",
+    "type": "SHOCKWAVE"
+  },
+  "174576457": {
+    "appId": "160",
+    "type": "SLEIGHT_OF_HAND"
+  },
+  "190967951": {
+    "appId": "47",
+    "type": "ATTR_STR"
+  },
+  "202635800": {
+    "appId": "77",
+    "type": "CRASH_DOWN_FORCE"
+  },
+  "220208207": {
+    "appId": "25",
+    "type": "SOUL_LEECH"
+  },
+  "226037501": {
+    "appId": "118",
+    "type": "COUNTER_BATTERY"
+  },
+  "232558175": {
+    "appId": "101",
+    "type": "SNAKE_EATER"
+  },
+  "237479378": {
+    "appId": "105",
+    "type": "ATTR_ENDURANCE"
+  },
+  "289243756": {
+    "appId": "6",
+    "type": "PROSPECTOR"
+  },
+  "291846185": {
+    "appId": "84",
+    "type": "INNER_FIRES"
+  },
+  "293824207": {
+    "appId": "116",
+    "type": "SILENT_STRIDE"
+  },
+  "408134555": {
+    "appId": "169",
+    "type": "SPELLSLINGER"
+  },
+  "411072318": {
+    "appId": "106",
+    "type": "PRIMAL_FORCE"
+  },
+  "473572828": {
+    "appId": "212",
+    "type": "ATTR_INT"
+  },
+  "494749233": {
+    "appId": "134",
+    "type": "AIRBORNE"
+  },
+  "521283386": {
+    "appId": "126",
+    "type": "RANGER"
+  },
+  "527879180": {
+    "appId": "46",
+    "type": "ATTR_CONS"
+  },
+  "530860338": {
+    "appId": "130",
+    "type": "CHAIN_REACTION"
+  },
+  "543522262": {
+    "appId": "124",
+    "type": "BLESSED_ARROWS"
+  },
+  "552223285": {
+    "appId": "213",
+    "type": "ETERNAL_SPARK"
+  },
+  "597251164": {
+    "appId": "161",
+    "type": "ATTR_SPIRIT"
+  },
+  "601427122": {
+    "appId": "56",
+    "type": "ATTR_CONS"
+  },
+  "606477139": {
+    "appId": "138",
+    "type": "SNEAK_ATTACK"
+  },
+  "610475778": {
+    "appId": "205",
+    "type": "ATTR_INT"
+  },
+  "643526784": {
+    "appId": "73",
+    "type": "ATTR_CONS"
+  },
+  "660703408": {
+    "appId": "29",
+    "type": "ATTR_CONS"
+  },
+  "677895850": {
+    "appId": "167",
+    "type": "ATTR_SPIRIT"
+  },
+  "690056851": {
+    "appId": "163",
+    "type": "ATTR_INT"
+  },
+  "712870937": {
+    "appId": "185",
+    "type": "FROST"
+  },
+  "728443669": {
+    "appId": "31",
+    "type": "THICK_SKIN"
+  },
+  "738565796": {
+    "appId": "219",
+    "type": "ARCANE_PROLIFERATION"
+  },
+  "770186136": {
+    "appId": "149",
+    "type": "DAGGER_MASTERY"
+  },
+  "802872125": {
+    "appId": "4",
+    "type": "MASON"
+  },
+  "856922754": {
+    "appId": "115",
+    "type": "MARKSMAN"
+  },
+  "882997635": {
+    "appId": "83",
+    "type": "RUNNER"
+  },
+  "899622224": {
+    "appId": "66",
+    "type": "ATTR_STR"
+  },
+  "904862120": {
+    "appId": "70",
+    "type": "FINESSE"
+  },
+  "905182548": {
+    "appId": "218",
+    "type": "WAND_MASTERY"
+  },
+  "939257483": {
+    "appId": "157",
+    "type": "ATTR_INT"
+  },
+  "1003909512": {
+    "appId": "69",
+    "type": "WET_DOG"
+  },
+  "1003933989": {
+    "appId": "145",
+    "type": "SHELL_SHOCK"
+  },
+  "1012172970": {
+    "appId": "184",
+    "type": "WIZARD"
+  },
+  "1023573379": {
+    "appId": "18",
+    "type": "HEAVY_PLATES"
+  },
+  "1065999155": {
+    "appId": "82",
+    "type": "ATTR_ENDURANCE"
+  },
+  "1075009690": {
+    "appId": "110",
+    "type": "ENDURANCE_OF_THE_FLAME"
+  },
+  "1078926128": {
+    "appId": "87",
+    "type": "ATTR_ENDURANCE"
+  },
+  "1082068405": {
+    "appId": "143",
+    "type": "VEILED_VIGOR"
+  },
+  "1087433670": {
+    "appId": "100",
+    "type": "EAGLE_EYE"
+  },
+  "1090908724": {
+    "appId": "146",
+    "type": "VILE_CONCOCTION"
+  },
+  "1101080504": {
+    "appId": "208",
+    "type": "RIGHTEOUS_FIRE"
+  },
+  "1104997802": {
+    "appId": "210",
+    "type": "ARCANE_DEFLECTION"
+  },
+  "1131166881": {
+    "appId": "55",
+    "type": "ATTR_CONS"
+  },
+  "1149171418": {
+    "appId": "38",
+    "type": "ATTR_STR"
+  },
+  "1173146866": {
+    "appId": "109",
+    "type": "VUKAH_CULTURE"
+  },
+  "1173687821": {
+    "appId": "54",
+    "type": "BARBARIAN_PATH"
+  },
+  "1196649862": {
+    "appId": "1",
+    "type": "OPPORTUNITY"
+  },
+  "1210493692": {
+    "appId": "216",
+    "type": "WAND_SPECIALIZATION"
+  },
+  "1222197801": {
+    "appId": "91",
+    "type": "SWIFTSHOT_SUSTENANCE"
+  },
+  "1262972838": {
+    "appId": "152",
+    "type": "GRACEFUL_STRIDE"
+  },
+  "1263598172": {
+    "appId": "191",
+    "type": "SHOCK_RESISTANCE"
+  },
+  "1311628529": {
+    "appId": "142",
+    "type": "BACKSTAB_MASTERY"
+  },
+  "1313439627": {
+    "appId": "133",
+    "type": "ATTR_DEX"
+  },
+  "1353284146": {
+    "appId": "8",
+    "type": "QUALITY_GEAR"
+  },
+  "1365673623": {
+    "appId": "68",
+    "type": "ATTR_STR"
+  },
+  "1371376638": {
+    "appId": "188",
+    "type": "CHAIN_HIT"
+  },
+  "1393481644": {
+    "appId": "99",
+    "type": "MITHRIDATIST"
+  },
+  "1407590399": {
+    "appId": "173",
+    "type": "BONE_TO_ASH"
+  },
+  "1417816412": {
+    "appId": "198",
+    "type": "WATER_AURA"
+  },
+  "1442728401": {
+    "appId": "117",
+    "type": "SNIPER"
+  },
+  "1444116688": {
+    "appId": "92",
+    "type": "ATTR_DEX"
+  },
+  "1468975901": {
+    "appId": "197",
+    "type": "ATTR_SPIRIT"
+  },
+  "1542383404": {
+    "appId": "120",
+    "type": "SKILL_SHOT"
+  },
+  "1569371409": {
+    "appId": "200",
+    "type": "SHROUD_FILTER"
+  },
+  "1573526808": {
+    "appId": "122",
+    "type": "BOW_SPECIALIZATION"
+  },
+  "1587016302": {
+    "appId": "139",
+    "type": "CUTTHROAT"
+  },
+  "1587746322": {
+    "appId": "206",
+    "type": "ATTR_SPIRIT"
+  },
+  "1667913488": {
+    "appId": "211",
+    "type": "EVASION_ATTACK"
+  },
+  "1669339746": {
+    "appId": "98",
+    "type": "ATTR_ENDURANCE"
+  },
+  "1707727214": {
+    "appId": "183",
+    "type": "ATTR_SPIRIT"
+  },
+  "1746924892": {
+    "appId": "23",
+    "type": "TOWER"
+  },
+  "1757117632": {
+    "appId": "62",
+    "type": "BLOOD_RAGE"
+  },
+  "1769595312": {
+    "appId": "112",
+    "type": "CALM_SPIRIT"
+  },
+  "1770341796": {
+    "appId": "113",
+    "type": "BEAST_MASTER"
+  },
+  "1778625218": {
+    "appId": "176",
+    "type": "ARSONIST"
+  },
+  "1779930900": {
+    "appId": "89",
+    "type": "GOOD_METABOLISM"
+  },
+  "1813568515": {
+    "appId": "182",
+    "type": "RADIANT_AURA"
+  },
+  "1819719245": {
+    "appId": "203",
+    "type": "ATTR_INT"
+  },
+  "1863946535": {
+    "appId": "53",
+    "type": "ATTR_STR"
+  },
+  "1899983678": {
+    "appId": "94",
+    "type": "SWEET_TOOTH"
+  },
+  "1966155335": {
+    "appId": "207",
+    "type": "DIVINE_SURGE"
+  },
+  "1980671994": {
+    "appId": "220",
+    "type": "LIFE_ESSENCES"
+  },
+  "1985702775": {
+    "appId": "150",
+    "type": "POISONED_BLADES"
+  },
+  "2054949573": {
+    "appId": "125",
+    "type": "EAGLES_BANE"
+  },
+  "2091926037": {
+    "appId": "76",
+    "type": "VIGOROUS_DEFLECTION"
+  },
+  "2116701756": {
+    "appId": "9",
+    "type": "LUMBERJACK"
+  },
+  "2150218293": {
+    "appId": "155",
+    "type": "QUICK_CHARGE"
+  },
+  "2152967169": {
+    "appId": "204",
+    "type": "WATERS_OF_LIFE"
+  },
+  "2166505620": {
+    "appId": "90",
+    "type": "REBOUND"
+  },
+  "2178463311": {
+    "appId": "192",
+    "type": "ATTR_INT"
+  },
+  "2193423673": {
+    "appId": "2",
+    "type": "POWER_PARRY"
+  },
+  "2200866113": {
+    "appId": "181",
+    "type": "ICE_RESISTANCE"
+  },
+  "2203998011": {
+    "appId": "80",
+    "type": "BLOOD_WARRIOR"
+  },
+  "2214899032": {
+    "appId": "21",
+    "type": "PURIFICATION"
+  },
+  "2233896186": {
+    "appId": "111",
+    "type": "ATTR_DEX"
+  },
+  "2238298807": {
+    "appId": "180",
+    "type": "ATTR_INT"
+  },
+  "2276004814": {
+    "appId": "108",
+    "type": "VUKAH_LANGUAGE"
+  },
+  "2282076069": {
+    "appId": "114",
+    "type": "ATTR_DEX"
+  },
+  "2346031477": {
+    "appId": "32",
+    "type": "NEMESIS"
+  },
+  "2360135054": {
+    "appId": "196",
+    "type": "EMERGENCY_BLINK"
+  },
+  "2369077220": {
+    "appId": "136",
+    "type": "ATTR_ENDURANCE"
+  },
+  "2378964554": {
+    "appId": "175",
+    "type": "ATTR_INT"
+  },
+  "2402369183": {
+    "appId": "49",
+    "type": "BREACH"
+  },
+  "2460851263": {
+    "appId": "164",
+    "type": "ARCANE_CONCENTRATION"
+  },
+  "2464065620": {
+    "appId": "165",
+    "type": "ATTR_SPIRIT"
+  },
+  "2465314888": {
+    "appId": "178",
+    "type": "ATTR_SPIRIT"
+  },
+  "2489448655": {
+    "appId": "60",
+    "type": "TITAN_EDGE"
+  },
+  "2500131673": {
+    "appId": "172",
+    "type": "NECROMANCER"
+  },
+  "2506510512": {
+    "appId": "41",
+    "type": "THRUST"
+  },
+  "2508204276": {
+    "appId": "45",
+    "type": "SWIFT_BLADES"
+  },
+  "2517449291": {
+    "appId": "74",
+    "type": "CRASH_DOWN_ATTACK"
+  },
+  "2555735449": {
+    "appId": "102",
+    "type": "ATTR_ENDURANCE"
+  },
+  "2561298721": {
+    "appId": "148",
+    "type": "POISON_MASTERY"
+  },
+  "2571965916": {
+    "appId": "36",
+    "type": "WARRIOR_PATH"
+  },
+  "2584030793": {
+    "appId": "107",
+    "type": "CULL_THE_HERD"
+  },
+  "2587217951": {
+    "appId": "209",
+    "type": "ATTR_INT"
+  },
+  "2661746342": {
+    "appId": "104",
+    "type": "ATTR_DEX"
+  },
+  "2670026153": {
+    "appId": "86",
+    "type": "WANDERLUST"
+  },
+  "2701798535": {
+    "appId": "141",
+    "type": "ATTR_DEX"
+  },
+  "2711201416": {
+    "appId": "72",
+    "type": "ATTR_STR"
+  },
+  "2751446638": {
+    "appId": "61",
+    "type": "BRUTE"
+  },
+  "2757603307": {
+    "appId": "129",
+    "type": "RICOCHETS"
+  },
+  "2778233134": {
+    "appId": "13",
+    "type": "WELL_RESTED"
+  },
+  "2791798199": {
+    "appId": "10",
+    "type": "FELLING_AXE_SPECIALIZATION"
+  },
+  "2805707774": {
+    "appId": "30",
+    "type": "ATTR_CONS"
+  },
+  "2826484814": {
+    "appId": "156",
+    "type": "MANA_CURRENTS"
+  },
+  "2832342611": {
+    "appId": "144",
+    "type": "ATTR_ENDURANCE"
+  },
+  "2877121847": {
+    "appId": "193",
+    "type": "HEALER"
+  },
+  "2877196577": {
+    "appId": "199",
+    "type": "HEALER_REVIVE"
+  },
+  "2900625199": {
+    "appId": "166",
+    "type": "TERROR"
+  },
+  "2903868533": {
+    "appId": "19",
+    "type": "ONE_HANDED_SPECIALIZATION"
+  },
+  "2932169734": {
+    "appId": "96",
+    "type": "ATTR_ENDURANCE"
+  },
+  "2968145550": {
+    "appId": "147",
+    "type": "SLICE_AND_DICE"
+  },
+  "2998370207": {
+    "appId": "95",
+    "type": "LAST_MEAL"
+  },
+  "3005573120": {
+    "appId": "121",
+    "type": "FATAL_PRECISION"
+  },
+  "3040026531": {
+    "appId": "131",
+    "type": "MULTI_SHOT_TRIGGER"
+  },
+  "3055155591": {
+    "appId": "140",
+    "type": "DAGGER_SPECIALIZATION"
+  },
+  "3057307031": {
+    "appId": "162",
+    "type": "BLOODLETTING"
+  },
+  "3060709718": {
+    "appId": "132",
+    "type": "MULTI_SHOT_SPREAD"
+  },
+  "3077082216": {
+    "appId": "137",
+    "type": "QUICK_REFLEX_BLOCK"
+  },
+  "3077911823": {
+    "appId": "7",
+    "type": "MINER"
+  },
+  "3086646529": {
+    "appId": "22",
+    "type": "ATTR_CONS"
+  },
+  "3088989644": {
+    "appId": "135",
+    "type": "UPDRAFT"
+  },
+  "3092706612": {
+    "appId": "202",
+    "type": "SHROUD_MISTERY"
+  },
+  "3126571237": {
+    "appId": "11",
+    "type": "FISHERMANS_RESOLVE"
+  },
+  "3141319256": {
+    "appId": "39",
+    "type": "SLASHER"
+  },
+  "3147036259": {
+    "appId": "97",
+    "type": "STRATEGIC_MANEUVER"
+  },
+  "3155992996": {
+    "appId": "26",
+    "type": "SNAP"
+  },
+  "3166359215": {
+    "appId": "57",
+    "type": "ATTR_STR"
+  },
+  "3166875476": {
+    "appId": "171",
+    "type": "MAGE_APPRENTICE"
+  },
+  "3170981638": {
+    "appId": "78",
+    "type": "UPWARDS_SLASH_ATTACK"
+  },
+  "3178698450": {
+    "appId": "151",
+    "type": "EXPOSE_WEAKNESS"
+  },
+  "3179300754": {
+    "appId": "128",
+    "type": "MULTI_SHOT"
+  },
+  "3206142296": {
+    "appId": "16",
+    "type": "GROUNDING_HOOK"
+  },
+  "3223249169": {
+    "appId": "3",
+    "type": "MERCILESS_ATTACK"
+  },
+  "3232917652": {
+    "appId": "217",
+    "type": "LIFE_BURST"
+  },
+  "3239982797": {
+    "appId": "201",
+    "type": "SHROUD_RESISTANCE"
+  },
+  "3242233909": {
+    "appId": "154",
+    "type": "COUNTERSTRIKE"
+  },
+  "3243069428": {
+    "appId": "194",
+    "type": "BLINK"
+  },
+  "3304713733": {
+    "appId": "81",
+    "type": "SPLASH_DASH"
+  },
+  "3316523540": {
+    "appId": "179",
+    "type": "FIRE_RESISTANCE"
+  },
+  "3337133885": {
+    "appId": "48",
+    "type": "BASH"
+  },
+  "3377542145": {
+    "appId": "65",
+    "type": "HEAVY_SPECIALIZATION"
+  },
+  "3385478732": {
+    "appId": "20",
+    "type": "SHINY_PLATES"
+  },
+  "3390913916": {
+    "appId": "103",
+    "type": "BOUNTY_BONANZA"
+  },
+  "3408597457": {
+    "appId": "123",
+    "type": "BEE_STING"
+  },
+  "3408936759": {
+    "appId": "159",
+    "type": "BEGONE"
+  },
+  "3433516950": {
+    "appId": "63",
+    "type": "WHIRLWIND_CRESCENDO"
+  },
+  "3435349512": {
+    "appId": "33",
+    "type": "EARTH_AURA"
+  },
+  "3483736155": {
+    "appId": "187",
+    "type": "ATTR_INT"
+  },
+  "3519088837": {
+    "appId": "75",
+    "type": "ATTR_STR"
+  },
+  "3528387231": {
+    "appId": "168",
+    "type": "BLOOD_MAGIC"
+  },
+  "3576056527": {
+    "appId": "27",
+    "type": "ABSORB"
+  },
+  "3646732803": {
+    "appId": "43",
+    "type": "ATTR_CONS"
+  },
+  "3651771067": {
+    "appId": "127",
+    "type": "ATTR_DEX"
+  },
+  "3653629718": {
+    "appId": "42",
+    "type": "VETERAN"
+  },
+  "3655395818": {
+    "appId": "15",
+    "type": "SAVIOUR"
+  },
+  "3675065567": {
+    "appId": "177",
+    "type": "ICEMAN"
+  },
+  "3763211473": {
+    "appId": "221",
+    "type": "EXALTED"
+  },
+  "3781823445": {
+    "appId": "52",
+    "type": "ATTR_CONS"
+  },
+  "3803217515": {
+    "appId": "190",
+    "type": "THUNDER"
+  },
+  "3804983481": {
+    "appId": "59",
+    "type": "RELENTLESS"
+  },
+  "3830325263": {
+    "appId": "85",
+    "type": "KICK"
+  },
+  "3844459022": {
+    "appId": "17",
+    "type": "ATTR_CONS"
+  },
+  "3861731929": {
+    "appId": "222",
+    "type": "ATTR_INT"
+  },
+  "3870348226": {
+    "appId": "215",
+    "type": "STING"
+  },
+  "3873499523": {
+    "appId": "24",
+    "type": "WARDEN"
+  },
+  "3901216476": {
+    "appId": "214",
+    "type": "UNITY"
+  },
+  "3904289011": {
+    "appId": "51",
+    "type": "ATTR_STR"
+  },
+  "3916335172": {
+    "appId": "40",
+    "type": "BATTLE_HEAL"
+  },
+  "3959272851": {
+    "appId": "153",
+    "type": "ATTR_SPIRIT"
+  },
+  "3968160425": {
+    "appId": "67",
+    "type": "STEADFAST"
+  },
+  "3980909207": {
+    "appId": "44",
+    "type": "ATTR_STR"
+  },
+  "4023524580": {
+    "appId": "71",
+    "type": "SOAKED_DOG"
+  },
+  "4039776277": {
+    "appId": "34",
+    "type": "MARTYR"
+  },
+  "4071143870": {
+    "appId": "79",
+    "type": "ATHLETE"
+  },
+  "4098230685": {
+    "appId": "195",
+    "type": "BLINK_ATTACK"
+  },
+  "4141089830": {
+    "appId": "88",
+    "type": "ARACHNOID"
+  },
+  "4166833546": {
+    "appId": "158",
+    "type": "ATTR_SPIRIT"
+  },
+  "4195583476": {
+    "appId": "5",
+    "type": "PICKAXE_SPECIALIZATION"
+  },
+  "4208308624": {
+    "appId": "189",
+    "type": "MASS_DESTRUCTION"
+  },
+  "4224393554": {
+    "appId": "186",
+    "type": "ATTR_SPIRIT"
+  },
+  "4239066035": {
+    "appId": "28",
+    "type": "ATTR_STR"
+  },
+  "4259351834": {
+    "appId": "174",
+    "type": "DARK_ARTS"
+  },
+  "4261093250": {
+    "appId": "37",
+    "type": "HEAVY_HANDED"
+  },
+  "4264247508": {
+    "appId": "58",
+    "type": "TWO_HANDED_SPECIALIZATION"
+  },
+  "4272552236": {
+    "appId": "64",
+    "type": "BARBARIAN"
+  },
+  "4292213056": {
+    "appId": "12",
+    "type": "DOUBLE_JUMP"
+  }
+}

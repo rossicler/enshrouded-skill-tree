@@ -14,7 +14,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "import-skills": "node scripts/skill-data.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",

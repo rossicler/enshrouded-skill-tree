@@ -4,21 +4,57 @@
     "description": [
       "Use your <b>Grappling Hook</b> to pull yourself towards large enemies during combat.",
       "<b>Cost:</b> 50 Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Giant Slayer Hook",
+      "descriptionsByLevel": [
+        [
+          "Use your <b>Grappling Hook</b> to pull yourself towards large enemies during combat.",
+          "<b>Cost:</b> 50 Stamina"
+        ]
+      ]
+    }
   },
   "GROUNDING_HOOK": {
     "name": "GROUNDING HOOK",
     "description": [
       "Use your <b>Grappling Hook</b> to pull <b>flying</b> enemies towards you during combat.",
       "<b>Cost:</b> 50 Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Grounding Hook",
+      "descriptionsByLevel": [
+        [
+          "Use your <b>Grappling Hook</b> to pull <b>flying</b> enemies towards you during combat.",
+          "<b>Cost:</b> 50 Stamina"
+        ]
+      ]
+    }
   },
   "SAVIOUR": {
     "name": "SAVIOUR",
     "description": [
       "Time to revive an ally is reduced by <b>-1</b> seconds.",
       "Default revive time is <b>6</b> seconds. "
-    ]
+    ],
+    "game": {
+      "name": "Saviour",
+      "descriptionsByLevel": [
+        [
+          "Time to revive an ally is reduced by <b>-1</b> seconds.",
+          "Default revive time is <b>6</b> seconds."
+        ],
+        [
+          "Time to revive an ally is reduced by <b>-2</b> seconds.",
+          "Default revive time is <b>6</b> seconds."
+        ],
+        [
+          "Time to revive an ally is reduced by <b>-3</b> seconds.",
+          "Default revive time is <b>6</b> seconds."
+        ]
+      ],
+      "perLevelLabel": "<b>-1</b> second per level"
+    }
   },
   "BACKSTAB_DAMAGE": {
     "name": "BACKSTAB MASTERY",
@@ -30,40 +66,119 @@
     "name": "OPPORTUNITY",
     "description": [
       "Increases the damage multiplier of <b>Merciless Attacks</b> by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Opportunity",
+      "descriptionsByLevel": [
+        [
+          "Increases the damage multiplier of <b>Merciless Attacks</b> by <b>40%</b>."
+        ],
+        [
+          "Increases the damage multiplier of <b>Merciless Attacks</b> by <b>80%</b>."
+        ],
+        [
+          "Increases the damage multiplier of <b>Merciless Attacks</b> by <b>120%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>40%</b> damage per level"
+    }
   },
   "MINER": {
     "name": "MINER",
     "description": [
       "Mining resources has a <b>10%</b> chance to grant one additional resource."
-    ]
+    ],
+    "game": {
+      "name": "Miner",
+      "descriptionsByLevel": [
+        [
+          "Mining resources has a <b>10%</b> chance to grant one additional resource."
+        ]
+      ]
+    }
   },
   "LUMBERJACK": {
     "name": "LUMBERJACK",
     "description": [
       "Tool deals <b>{{value}}%</b> increased damage against wood.",
       "This includes trees and wooden terrain."
-    ]
+    ],
+    "game": {
+      "name": "Lumberjack",
+      "descriptionsByLevel": [
+        [
+          "Tools deal <b>10%</b> increased damage against wood.<br/>This includes trees and wooden terrain."
+        ],
+        [
+          "Tools deal <b>20%</b> increased damage against wood.<br/>This includes trees and wooden terrain."
+        ],
+        [
+          "Tools deal <b>30%</b> increased damage against wood.<br/>This includes trees and wooden terrain."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "QUALITY_GEAR": {
     "name": "QUALITY GEAR",
     "description": [
       "Tools have a <b>20%</b> chance to restore <b>1</b> durability point"
-    ]
+    ],
+    "game": {
+      "name": "Quality Gear",
+      "descriptionsByLevel": [
+        [
+          "Tools have a <b>20%</b> chance to restore <b>1</b> durability on hit."
+        ]
+      ]
+    }
   },
   "MASON": {
     "name": "MASON",
     "description": [
       "Tools deal <b>{{value}}%</b> increased damage against stone.",
       "This includes stone terrain and gemstone veins."
-    ]
+    ],
+    "game": {
+      "name": "Mason",
+      "descriptionsByLevel": [
+        [
+          "Tools deal <b>10%</b> increased damage against stone.<br/>This includes stone terrain and gemstone veins."
+        ],
+        [
+          "Tools deal <b>20%</b> increased damage against stone.<br/>This includes stone terrain and gemstone veins."
+        ],
+        [
+          "Tools deal <b>30%</b> increased damage against stone.<br/>This includes stone terrain and gemstone veins."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "FISHERMANS_RESOLVE": {
     "name": "FISHERMAN'S RESOLVE",
     "description": [
       "Increases your Fishing Endurance by <b>{{value}}</b>.",
       "Allows for extended battles with hooked fish."
-    ]
+    ],
+    "game": {
+      "name": "Fisherman’s Resolve",
+      "descriptionsByLevel": [
+        [
+          "Increases your Fishing Endurance by <b>5</b>.",
+          "Allows for extended battles with hooked fish."
+        ],
+        [
+          "Increases your Fishing Endurance by <b>10</b>.",
+          "Allows for extended battles with hooked fish."
+        ],
+        [
+          "Increases your Fishing Endurance by <b>15</b>.",
+          "Allows for extended battles with hooked fish."
+        ]
+      ],
+      "perLevelLabel": "<b>5</b> Fishing Endurance per level"
+    }
   },
   "POWER_PARRY": {
     "name": "POWER PARRY",
@@ -71,67 +186,175 @@
       "Your Parry Power is increased by <b>{{value}}%</b>.",
       "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
       "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks."
-    ]
+    ],
+    "game": {
+      "name": "Power Parry",
+      "descriptionsByLevel": [
+        [
+          "Your Parry Power is increased by <b>10%</b>.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ],
+        [
+          "Your Parry Power is increased by <b>20%</b>.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ],
+        [
+          "Your Parry Power is increased by <b>30%</b>.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> Parry Power per level"
+    }
   },
   "FELLING_AXE_SPECIALIZATION": {
     "description": [
       "Unlocks Special Abilities of Felling Axes. Press <b>[R]</b> to unleash a powerful Special Ability after generating enough Focus.",
       "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
-    ]
+    ],
+    "game": {
+      "name": "Felling Axe Specialization",
+      "descriptionsByLevel": [
+        [
+          "Unlocks Special Abilities of Felling Axes. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+          "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
+        ]
+      ]
+    }
   },
   "PICKAXE_SPECIALIZATION": {
     "description": [
       "Unlocks Special Abilities of Pickaxes. Press <b>[R]</b> to unleash a powerful Special Ability after generating enough Focus.",
       "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
-    ]
+    ],
+    "game": {
+      "name": "Pickaxe Specialization",
+      "descriptionsByLevel": [
+        [
+          "Unlocks Special Abilities of Pickaxes. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+          "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
+        ]
+      ]
+    }
   },
   "PROSPECTOR": {
     "description": [
       "Tools deal <b>{{value}}</b> increased damage against metal.\nThis includes metal ore veins.",
       "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
-    ]
+    ],
+    "game": {
+      "name": "Prospector",
+      "descriptionsByLevel": [
+        [
+          "Tools deal <b>10%</b> increased damage against metal.<br/>This includes metal ore veins."
+        ],
+        [
+          "Tools deal <b>20%</b> increased damage against metal.<br/>This includes metal ore veins."
+        ],
+        [
+          "Tools deal <b>30%</b> increased damage against metal.<br/>This includes metal ore veins."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "ATTR_SPIRIT": {
     "name": "SPIRIT",
     "description": [
       "Increases your Spirit attribute by 1.",
       "Increases Mana by 20 per Attribute Point."
-    ]
+    ],
+    "game": {
+      "name": "Spirit",
+      "descriptionsByLevel": [
+        [
+          "Increases your Spirit attribute by 1.",
+          "Increases Mana by 20 per Attribute Point."
+        ]
+      ]
+    }
   },
   "ATTR_INT": {
     "name": "INTELLIGENCE",
     "description": [
       "Increases your Intelligence attribute by 1.",
       "Increases Magic damage by 5% per Attribute Point."
-    ]
+    ],
+    "game": {
+      "name": "Intelligence",
+      "descriptionsByLevel": [
+        [
+          "Increases your Intelligence attribute by 1.",
+          "Increases Magic damage by 5% per Attribute Point."
+        ]
+      ]
+    }
   },
   "ATTR_CONS": {
     "name": "CONSTITUTION",
     "description": [
       "Increases your Constitution attribute by 1.",
       "Increases Health by 50 per Attribute Point."
-    ]
+    ],
+    "game": {
+      "name": "Constitution",
+      "descriptionsByLevel": [
+        [
+          "Increases your Constitution attribute by 1.",
+          "Increases Health by 50 per Attribute Point."
+        ]
+      ]
+    }
   },
   "ATTR_STR": {
     "name": "STRENGTH",
     "description": [
       "Increases your Strength attribute by 1.",
       "Increases Melee damage by 5% per Attribute Point."
-    ]
+    ],
+    "game": {
+      "name": "Strength",
+      "descriptionsByLevel": [
+        [
+          "Increases your Strength attribute by 1.",
+          "Increases Melee damage by 5% per Attribute Point."
+        ]
+      ]
+    }
   },
   "ATTR_ENDURANCE": {
     "name": "ENDURANCE",
     "description": [
       "Increases your Endurance attribute by 1.",
       "Increases Stamina by 10 per Attribute Point."
-    ]
+    ],
+    "game": {
+      "name": "Endurance",
+      "descriptionsByLevel": [
+        [
+          "Increases your Endurance attribute by 1.",
+          "Increases Stamina by 10 per Attribute Point."
+        ]
+      ]
+    }
   },
   "ATTR_DEX": {
     "name": "DEXTERITY",
     "description": [
       "Increases your Dexterity attribute by 1.",
       "Increases Bow and Dagger damage by 5% per Attribute Point."
-    ]
+    ],
+    "game": {
+      "name": "Dexterity",
+      "descriptionsByLevel": [
+        [
+          "Increases your Dexterity attribute by 1.",
+          "Increases Bow and Dagger damage by 5% per Attribute Point."
+        ]
+      ]
+    }
   },
   "WELL_RESTED": {
     "name": "WELL RESTED",
@@ -141,21 +364,66 @@
       "It requires <b>shelter, sitting or sleeping,</b> as well as <b>warmth</b> from a heat source.",
       "The buff can be refreshed <b>anywhere.</b>",
       "Surrounding comfort items further increase its duration."
-    ]
+    ],
+    "game": {
+      "name": "Well Rested",
+      "descriptionsByLevel": [
+        [
+          "The base duration for the Rested buff is increased by <b>2</b> minutes.",
+          "<b>Rested</b><br/>The Rested buff increases your Stamina Maximum and Regeneration significantly.",
+          "It requires <b>shelter, sitting or sleeping,</b> as well as <b>warmth</b> from a heat source.",
+          "The buff can be refreshed <b>anywhere.</b>",
+          "Surrounding comfort items further increase its duration."
+        ],
+        [
+          "The base duration for the Rested buff is increased by <b>4</b> minutes.",
+          "<b>Rested</b><br/>The Rested buff increases your Stamina Maximum and Regeneration significantly.",
+          "It requires <b>shelter, sitting or sleeping,</b> as well as <b>warmth</b> from a heat source.",
+          "The buff can be refreshed <b>anywhere.</b>",
+          "Surrounding comfort items further increase its duration."
+        ],
+        [
+          "The base duration for the Rested buff is increased by <b>6</b> minutes.",
+          "<b>Rested</b><br/>The Rested buff increases your Stamina Maximum and Regeneration significantly.",
+          "It requires <b>shelter, sitting or sleeping,</b> as well as <b>warmth</b> from a heat source.",
+          "The buff can be refreshed <b>anywhere.</b>",
+          "Surrounding comfort items further increase its duration."
+        ]
+      ],
+      "perLevelLabel": "<b>2</b> minutes per level"
+    }
   },
   "SNEAK_ATTACK": {
     "name": "SNEAK ATTACK",
     "description": [
       "Perform a <b>Sneak Attack</b> by sneaking up to an unaware enemy and pressing <b>[E]</b>.",
       "<b>Sneak Attack</b> deals <b>+900%</b> increased damage."
-    ]
+    ],
+    "game": {
+      "name": "Sneak Attack",
+      "descriptionsByLevel": [
+        [
+          "Perform a <b>Sneak Attack</b> by sneaking up to an unaware enemy and pressing <b>[Interact]</b>.",
+          "<b>Sneak Attack</b> deals <b>+900%</b> increased damage."
+        ]
+      ]
+    }
   },
   "MERCILESS_ATTACK": {
     "name": "MERCILESS ATTACK",
     "description": [
       "Perform a <b>Merciless Attack</b> by pressing <b>[E]</b> to deal <b>+500%</b> damage to an <b>overpowered</b> enemy.",
       "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks."
-    ]
+    ],
+    "game": {
+      "name": "Merciless Attack",
+      "descriptionsByLevel": [
+        [
+          "Perform a <b>Merciless Attack</b> by pressing <b>[Interact]</b> to deal <b>+500%</b> damage to an <b>overpowered</b> enemy.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ]
+      ]
+    }
   },
   "UPDRAFT": {
     "name": "UPDRAFT",
@@ -163,7 +431,17 @@
       "Jumping with [SPACE] while gliding lifts you upwards. Can be used once per flight.",
       "<b>Charge</b><br/>As the Updraft charges before activation, the resulting lift is increased. A full charge grants you an additional boost. The charge is accelerated while inside your base.",
       "<b>Cost:</b> 100 Mana"
-    ]
+    ],
+    "game": {
+      "name": "Updraft",
+      "descriptionsByLevel": [
+        [
+          "Jumping with [Jump] while gliding lifts you upwards. Can be used once per flight.",
+          "<b>Charge</b><br/>As the Updraft charges before activation, the resulting lift is increased. A full charge grants you an additional boost. The charge is accelerated while inside your base.",
+          "<b>Cost:</b> 100 Mana"
+        ]
+      ]
+    }
   },
   "BEGONE": {
     "name": "BEGONE!",
@@ -171,39 +449,114 @@
       "A magic-powered punch that pushes back and stuns enemies.",
       "Replaces your unarmed attacks as long as you have the necessary Mana available.",
       "<b>Cost:</b> 30 Mana"
-    ]
+    ],
+    "game": {
+      "name": "Begone!",
+      "descriptionsByLevel": [
+        [
+          "A magic-powered punch that pushes back and stuns enemies.",
+          "Replaces your unarmed attacks as long as you have the necessary Mana available.",
+          "<b>Cost:</b> 30 Mana"
+        ]
+      ]
+    }
   },
   "RADIANT_AURA": {
     "name": "RADIANT AURA",
     "description": [
       "All <b>Fell</b> enemies within <b>{{value}}</b> meters take <b>{{value2}} Fire</b> damage per Intelligence per second."
-    ]
+    ],
+    "game": {
+      "name": "Radiant Aura",
+      "descriptionsByLevel": [
+        [
+          "All <b>Fell</b> enemies within <b>2.1</b> meters take <b>1 Fire</b> damage per Intelligence per second."
+        ],
+        [
+          "All <b>Fell</b> enemies within <b>4.1</b> meters take <b>2 Fire</b> damage per Intelligence per second."
+        ],
+        [
+          "All <b>Fell</b> enemies within <b>6.1</b> meters take <b>3 Fire</b> damage per Intelligence per second."
+        ]
+      ],
+      "perLevelLabel": "<b>2.1</b> meters range and <b>1 Fire</b> damage per Intelligence per level"
+    }
   },
   "WATER_AURA": {
     "name": "WATER AURA",
     "description": [
       "You emit a healing aura that heals you and all injured allies within <b>{{value}}</b> meters.",
       "The healing scales with your intelligence attribute and restores <b>1</b> Health per <b>2</b> points of intelligence."
-    ]
+    ],
+    "game": {
+      "name": "Water Aura",
+      "descriptionsByLevel": [
+        [
+          "You emit a healing aura that heals you and all injured allies within <b>5.1</b> meters.",
+          "The healing scales with your Intelligence attribute and restores <b>1</b> Health per <b>2</b> points of Intelligence."
+        ],
+        [
+          "You emit a healing aura that heals you and all injured allies within <b>10.1</b> meters.",
+          "The healing scales with your Intelligence attribute and restores <b>1</b> Health per <b>2</b> points of Intelligence."
+        ],
+        [
+          "You emit a healing aura that heals you and all injured allies within <b>15.1</b> meters.",
+          "The healing scales with your Intelligence attribute and restores <b>1</b> Health per <b>2</b> points of Intelligence."
+        ]
+      ],
+      "perLevelLabel": "<b>5.1</b> meters range per level"
+    }
   },
   "MARTYR": {
     "name": "MARTYR",
     "description": [
       "When you are killed by an enemy, all allies within 30 meters are healed for <b>50%</b> of their maximum health.",
       "They also receive a <b>Final Blessing</b> buff, increasing their maximum Health by <b>100</b> points for <b>15</b> minutes."
-    ]
+    ],
+    "game": {
+      "name": "Martyr",
+      "descriptionsByLevel": [
+        [
+          "When you are killed by an enemy, all allies within <b>30</b> meters are healed for <b>50%</b> of their maximum Health.",
+          "They also receive a <b>Final Blessing</b> buff, increasing their maximum Health by <b>100</b> points for <b>15</b> minutes."
+        ]
+      ]
+    }
   },
   "DIVINE_SURGE": {
     "name": "DIVINE SURGE",
     "description": [
       "Healing spells can perform Critical Strikes that scale with your Critical Strike damage."
-    ]
+    ],
+    "game": {
+      "name": "Divine Surge",
+      "descriptionsByLevel": [
+        [
+          "Healing spells can perform Critical Strikes that scale with your Critical Strike damage."
+        ]
+      ]
+    }
   },
   "RIGHTEOUS_FIRE": {
     "name": "RIGHTEOUS FIRE",
     "description": [
       "Healing any target with a spell triggers a burst of fire that deals <b>{{value}}%</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies."
-    ]
+    ],
+    "game": {
+      "name": "Righteous Fire",
+      "descriptionsByLevel": [
+        [
+          "Healing any target with a spell triggers a burst of fire that deals <b>20%</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies."
+        ],
+        [
+          "Healing any target with a spell triggers a burst of fire that deals <b>40%</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies."
+        ],
+        [
+          "Healing any target with a spell triggers a burst of fire that deals <b>60%</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies."
+        ]
+      ],
+      "perLevelLabel": "<b>20% Fire</b> damage per level"
+    }
   },
   "BLINK": {
     "name": "BLINK",
@@ -211,7 +564,17 @@
       "Replaces the Dodge Roll ability with a short-range teleport.",
       "Blink also replaces the sideways Dodge Roll of the Strategig Maneuver skill",
       "<b>Cost:</b> 20 Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Blink",
+      "descriptionsByLevel": [
+        [
+          "Replaces the Dodge Roll ability with a short-range teleport.",
+          "Blink also replaces the sideways Dodge Roll of the Strategic Maneuver skill.",
+          "<b>Cost:</b> 20 Stamina"
+        ]
+      ]
+    }
   },
   "EVASION_ATTACK": {
     "name": "EVASION ATTACK",
@@ -219,19 +582,59 @@
       "When equipped with a Melee weapon, you can perform an evade attack, which dashes towards the enemy and deals more weapon damage with <b>[LMB]</b>",
       "<b>Cost:</b> 20 Stamina",
       "<b>Block Breaker</b><br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit."
-    ]
+    ],
+    "game": {
+      "name": "Evasion Attack",
+      "descriptionsByLevel": [
+        [
+          "When equipped with a Melee weapon, you can perform an evade attack, which dashes towards the enemy and deals more weapon damage with <b>[Attack]</b>.",
+          "<b>Cost:</b> 20 Stamina",
+          "<b>Block Breaker</b> <br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit."
+        ]
+      ]
+    }
   },
   "EARTH_AURA": {
     "name": "EARTH AURA",
     "description": [
       "You emit a protective aura that increases Physical an Magical Resistances by <b>10%</b> for you and all allies within <b>{{value}}</b> meters."
-    ]
+    ],
+    "game": {
+      "name": "Earth Aura",
+      "descriptionsByLevel": [
+        [
+          "You emit a protective aura that increases Physical and Magical Resistances by <b>10%</b> for you and all allies within <b>4</b> meters."
+        ],
+        [
+          "You emit a protective aura that increases Physical and Magical Resistances by <b>10%</b> for you and all allies within <b>8</b> meters."
+        ],
+        [
+          "You emit a protective aura that increases Physical and Magical Resistances by <b>10%</b> for you and all allies within <b>12</b> meters."
+        ]
+      ],
+      "perLevelLabel": "<b>4</b> meters range per level"
+    }
   },
   "NEMESIS": {
     "name": "NEMESIS",
     "description": [
       "Increase the attention you draw from enemies by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Nemesis",
+      "descriptionsByLevel": [
+        [
+          "Increase the attention you draw from enemies by <b>5%</b>."
+        ],
+        [
+          "Increase the attention you draw from enemies by <b>10%</b>."
+        ],
+        [
+          "Increase the attention you draw from enemies by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> attention drawn per level"
+    }
   },
   "SHOCKWAVE": {
     "name": "SHOCKWAVE",
@@ -239,27 +642,73 @@
       "Trigger a Shockwave when you parry an attack or <b>overpower</b> an enemy.",
       "The Shockwave pushes back nearby enemies. It also fills their <i>Stun Bar</i>, scaling with your Strength attribute.",
       "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks."
-    ]
+    ],
+    "game": {
+      "name": "Shockwave",
+      "descriptionsByLevel": [
+        [
+          "Trigger a Shockwave when you parry an attack or <b>overpower</b> an enemy.",
+          "The Shockwave pushes back nearby enemies. It also fills their <i>Stun Bar</i>, scaling with your Strength attribute.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ]
+      ]
+    }
   },
   "HEAVY_SPECIALIZATION": {
     "name": "HEAVY HITTER",
     "description": [
       "Increases the attack speed of all Two-Handed Melee weapons by <b>10%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Heavy Hitter",
+      "descriptionsByLevel": [
+        [
+          "Increases the attack speed of all Two-Handed Melee weapons by <b>10%</b>."
+        ]
+      ]
+    }
   },
   "BASH": {
     "name": "BASH",
     "description": [
       "Parrying enemy attacks bashes them for <b>{{value}} Blunt</b> damage. Bash damage is increased by your Strength attribute.",
       "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
-    ]
+    ],
+    "game": {
+      "name": "Bash",
+      "descriptionsByLevel": [
+        [
+          "Parrying enemy attacks bashes them for <b>10 Blunt</b> damage. Bash damage is increased by your Strength attribute.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ],
+        [
+          "Parrying enemy attacks bashes them for <b>20 Blunt</b> damage. Bash damage is increased by your Strength attribute.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ],
+        [
+          "Parrying enemy attacks bashes them for <b>30 Blunt</b> damage. Bash damage is increased by your Strength attribute.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ]
+      ],
+      "perLevelLabel": "<b>10 Blunt</b> damage per level"
+    }
   },
   "WHIRLWIND_CRESCENDO": {
     "name": "WHIRLWIND CRESCENDO",
     "description": [
       "When equipped with a Two-Handed weapon, trigger a whirl attack at the end of an attack chain.",
       "<b>Cost</b>: 75 Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Whirlwind Crescendo",
+      "descriptionsByLevel": [
+        [
+          "When equipped with a Two-Handed weapon, trigger a whirl attack at the end of an attack chain.",
+          "<b>Cost:</b> 75 stamina"
+        ]
+      ]
+    }
   },
   "CRASH_DOWN_ATTACK": {
     "name": "CRASH DOWN ATTACK",
@@ -268,39 +717,92 @@
       "Crash Down deals 50% more weapon damage in a small blast radius and costs Stamina depending on weapon type used.",
       "<b>Cost</b>: 35-60 Stamina",
       "<b>Block Breaker</b><br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit."
-    ]
+    ],
+    "game": {
+      "name": "Crash Down Attack",
+      "descriptionsByLevel": [
+        [
+          "When equipped with a Melee weapon, you can perform a special attack by holding <b>[Attack]</b> during a jump.",
+          "Crash Down deals 50% more weapon damage in a small blast radius and costs Stamina depending on weapon type used.",
+          "<b>Cost:</b> 35 - 60 Stamina",
+          "<b>Block Breaker</b> <br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit.."
+        ]
+      ]
+    }
   },
   "CRASH_DOWN_FORCE": {
     "name": "Crash Down: Force",
     "description": [
       "When attacking from a double jump, <b>Crash Down</b> deals <b>20%</b> more weapon damage."
-    ]
+    ],
+    "game": {
+      "name": "Crash Down: Force",
+      "descriptionsByLevel": [
+        [
+          "When attacking from a double jump, <b>Crash Down</b> deals <b>20%</b> more weapon damage."
+        ]
+      ]
+    }
   },
   "DOUBLE_JUMP": {
     "name": "DOUBLE JUMP",
     "description": [
       "Allows jumping a second time while airborne.",
       "<b>Cost:</b> 10 Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Double Jump",
+      "descriptionsByLevel": [
+        [
+          "Allows jumping a second time while airborne.",
+          "<b>Cost:</b> 10 Stamina"
+        ]
+      ]
+    }
   },
   "DESSERT_STOMACH": {
     "name": "DESSERT STOMACH",
     "description": [
       "You gain one additional Food slot"
-    ]
+    ],
+    "game": {
+      "name": "Dessert Stomach",
+      "descriptionsByLevel": [
+        [
+          "You gain one additional Food slot."
+        ]
+      ]
+    }
   },
   "LAST_MEAL": {
     "name": "LAST MEAL",
     "description": [
       "Your Food buffs persist through death, but they last half as long."
-    ]
+    ],
+    "game": {
+      "name": "Last Meal",
+      "descriptionsByLevel": [
+        [
+          "Your Food buffs persist through death, but they last half as long."
+        ]
+      ]
+    }
   },
   "EAGLE_EYE": {
     "name": "EAGLE EYE",
     "description": [
       "Greatly increases the zoom while aiming with Bows.",
       "To aim, hold down the [RMB] while a bow is selected in the Action bar. (Alternatively, hold [Q] to aim your equipped bow.)"
-    ]
+    ],
+    "game": {
+      "name": "Eagle Eye",
+      "descriptionsByLevel": [
+        [
+          "Greatly increases the zoom while aiming with Bows.",
+          "To aim, hold down the [Aim] while a Bow is selected in the Action bar.<br/>(Alternatively, hold [Quick Bow Aim] to aim your equipped Bow.)"
+        ]
+      ]
+    }
   },
   "MULTI_SHOT": {
     "name": "MULTI SHOT",
@@ -308,60 +810,169 @@
       "Shooting <i>Regular Arrows</i> has a <b>20%</b> chance to spawn a <b>Flurry of <b>Arrows</b> that spreads slightly.",
       "<i>Regular Arrows</i> fired this way will substract from your ammunition.",
       "<b>Flurry of <b>Arrows</b> does not trigger on <i>Special Arrows</i>."
-    ]
+    ],
+    "game": {
+      "name": "Multi Shot",
+      "descriptionsByLevel": [
+        [
+          "Shooting <i>Regular Arrows</i> has a <b>20%</b> chance to spawn a <b>Flurry of Arrows</b> that spreads slightly.",
+          "<i>Regular Arrows</i> fired this way will subtract from your ammunition.",
+          "<b>Flurry of Arrows</b> does not trigger on <i>Special Arrows</i>."
+        ]
+      ]
+    }
   },
   "MULTI_SHOT_SPREAD": {
     "name": "MULTI SHOT SPREAD",
     "description": [
       "Adds a <b>25%</b> chance to spawn an additional <i>Regular Arrow</i> with your <b>Flurry of <b>Arrows</b> from the <b>Multi Shot</b> skill.",
       "This additional <i>Regular Arrow</i> does not subtract from your ammunition."
-    ]
+    ],
+    "game": {
+      "name": "Multi Shot Spread",
+      "descriptionsByLevel": [
+        [
+          "Adds a <b>25%</b> chance to spawn an additional <i>Regular Arrow</i> with your <b>Flurry of Arrows</b> from the <b>Multi Shot</b> skill.",
+          "This additional <i>Regular Arrow</i> does not subtract from your ammunition."
+        ]
+      ]
+    }
   },
   "MULTI_SHOT_TRIGGER": {
     "name": "MULTI SHOT TRIGGER",
     "description": [
       "Shooting <i>Special Arrows</i> now triggers a <b>Flurry of <b>Arrows</b> from the <b>Multi Shot</b> skill.",
       "<i>Special Arrows</i> fired this way will subtract from your ammunition."
-    ]
+    ],
+    "game": {
+      "name": "Multi Shot Trigger",
+      "descriptionsByLevel": [
+        [
+          "Shooting <i>Special Arrows</i> now triggers a <b>Flurry of Arrows</b> from the <b>Multi Shot</b> skill.",
+          "<i>Special Arrows</i> fired this way will subtract from your ammunition."
+        ]
+      ]
+    }
   },
   "BEE_STING": {
     "name": "BEE STING",
     "description": [
       "Firing or aiming your Bow while airborne slowes down your fall briefly. Every shot lifts you slightly, granting more airtime.",
       "<b>Cost:</b> 10 stamina per second"
-    ]
+    ],
+    "game": {
+      "name": "Bee Sting",
+      "descriptionsByLevel": [
+        [
+          "Firing or aiming your Bow while airborne slows down your fall briefly. Every shot lifts you slightly, granting more airtime.",
+          "<b>Cost:</b> 10 Stamina per second"
+        ]
+      ]
+    }
   },
   "SHELL_SHOCK": {
     "name": "SHELL SHOCK",
     "description": [
       "Infuse your <b>Ranged Explosives</b> with Mana. They now stun enemies for 2 seconds.",
       "<b>Cost:</b> 8 Mana per stunned enemy"
-    ]
+    ],
+    "game": {
+      "name": "Shell Shock",
+      "descriptionsByLevel": [
+        [
+          "Infuse your <b>Ranged Explosives</b> with Mana. They now stun enemies for <b>2</b> seconds.",
+          "<b>Cost:</b> 8 Mana per stunned enemy"
+        ]
+      ]
+    }
   },
   "COUNTERSTRIKE": {
     "name": "COUNTERSTRIKE",
     "description": [
       "After receiving damage, there is a <b>{{value}}%</b> chance to reflect <b>{{value2}}%</b> of the damage back to the attacker as <b>Fire</b> damage.",
       "This magical attack can trigger other skills."
-    ]
+    ],
+    "game": {
+      "name": "Counterstrike",
+      "descriptionsByLevel": [
+        [
+          "After receiving damage, there is a <b>8%</b> chance to reflect <b>20%</b> of the damage back to the attacker as <b>Fire</b> damage.",
+          "This magical attack can trigger other skills."
+        ],
+        [
+          "After receiving damage, there is a <b>16%</b> chance to reflect <b>40%</b> of the damage back to the attacker as <b>Fire</b> damage.",
+          "This magical attack can trigger other skills."
+        ],
+        [
+          "After receiving damage, there is a <b>24%</b> chance to reflect <b>60%</b> of the damage back to the attacker as <b>Fire</b> damage.",
+          "This magical attack can trigger other skills."
+        ]
+      ],
+      "perLevelLabel": "<b>8%</b> chance and <b>20%</b> reflected damage per level"
+    }
   },
   "TERROR": {
     "name": "TERROR",
     "description": [
       "Critical Strikes with spells have a <b>{{value}}%</b> chance to stun the target for <b>2</b> seconds."
-    ]
+    ],
+    "game": {
+      "name": "Terror",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with spells have a <b>15%</b> chance to stun the target for <b>2</b> seconds."
+        ],
+        [
+          "Critical Strikes with spells have a <b>30%</b> chance to stun the target for <b>2</b> seconds."
+        ],
+        [
+          "Critical Strikes with spells have a <b>45%</b> chance to stun the target for <b>2</b> seconds."
+        ]
+      ],
+      "perLevelLabel": "<b>15%</b> chance per level"
+    }
   },
   "SHOCK_RESISTANCE": {
     "name": "SHOCK RESISTANCE",
     "description": [
       "Increases your <b>Shock Resistance</b> by <b>{{value}}%</b> which reduces the amount of <b>Shock</b> damage received."
-    ]
+    ],
+    "game": {
+      "name": "Shock Resistance",
+      "descriptionsByLevel": [
+        [
+          "Increases your <b>Shock Resistance</b> by <b>4%</b>, which reduces the amount of <b>Shock</b> damage received."
+        ],
+        [
+          "Increases your <b>Shock Resistance</b> by <b>8%</b>, which reduces the amount of <b>Shock</b> damage received."
+        ],
+        [
+          "Increases your <b>Shock Resistance</b> by <b>12%</b>, which reduces the amount of <b>Shock</b> damage received."
+        ]
+      ],
+      "perLevelLabel": "<b>4%</b> Resistance per level"
+    }
   },
   "QUICK_CHARGE": {
     "name": "QUICK CHARGE",
     "description": [
       "Cast Time of spells is reduced by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Quick Charge",
+      "descriptionsByLevel": [
+        [
+          "Cast Time of spells is reduced by <b>-15%</b>."
+        ],
+        [
+          "Cast Time of spells is reduced by <b>-30%</b>."
+        ],
+        [
+          "Cast Time of spells is reduced by <b>-45%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>-15%</b> Cast Time per level"
+    }
   },
   "THIS_IS_THE_WAY": {
     "name": "MAGE APPRENTICE",
@@ -373,7 +984,22 @@
     "name": "ARSONIST",
     "description": [
       "All <b>Fire</b> damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Arsonist",
+      "descriptionsByLevel": [
+        [
+          "All <b>Fire</b> damage is increased by <b>10%</b>."
+        ],
+        [
+          "All <b>Fire</b> damage is increased by <b>20%</b>."
+        ],
+        [
+          "All <b>Fire</b> damage is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "SUN_AURA": {
     "name": "RADIANT AURA",
@@ -385,13 +1011,43 @@
     "name": "FIRE RESISTANCE",
     "description": [
       "Increases your <b>Fire Resistance</b> by <b>{{value}}%</b>, which reduces the amount of <b>Fire</b> damage received."
-    ]
+    ],
+    "game": {
+      "name": "Fire Resistance",
+      "descriptionsByLevel": [
+        [
+          "Increases your <b>Fire Resistance</b> by <b>4%</b>, which reduces the amount of <b>Fire</b> damage received."
+        ],
+        [
+          "Increases your <b>Fire Resistance</b> by <b>8%</b>, which reduces the amount of <b>Fire</b> damage received."
+        ],
+        [
+          "Increases your <b>Fire Resistance</b> by <b>12%</b>, which reduces the amount of <b>Fire</b> damage received."
+        ]
+      ],
+      "perLevelLabel": "<b>4%</b> Resistance per level"
+    }
   },
   "THUNDER": {
     "name": "THUNDER",
     "description": [
       "All <b>Shock</b> damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Thunder",
+      "descriptionsByLevel": [
+        [
+          "All <b>Shock</b> damage is increased by <b>10%</b>."
+        ],
+        [
+          "All <b>Shock</b> damage is increased by <b>20%</b>."
+        ],
+        [
+          "All <b>Shock</b> damage is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "LIGHTNING": {
     "name": "LIGHTNING",
@@ -403,7 +1059,22 @@
     "name": "ICEMAN",
     "description": [
       "All <b>Ice</b> damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Iceman",
+      "descriptionsByLevel": [
+        [
+          "All <b>Ice</b> damage is increased by <b>10%</b>."
+        ],
+        [
+          "All <b>Ice</b> damage is increased by <b>20%</b>."
+        ],
+        [
+          "All <b>Ice</b> damage is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "SUBZERO": {
     "name": "SUBZERO",
@@ -421,19 +1092,64 @@
     "name": "ICE RESISTANCE",
     "description": [
       "Increases your <b>Ice Resistance</b> by <b>{{value}}%</b> which reduces the amount of <b>Ice</b> damage received."
-    ]
+    ],
+    "game": {
+      "name": "Ice Resistance",
+      "descriptionsByLevel": [
+        [
+          "Increases your <b>Ice Resistance</b> by <b>4%</b>, which reduces the amount of <b>Ice</b> damage received."
+        ],
+        [
+          "Increases your <b>Ice Resistance</b> by <b>8%</b>, which reduces the amount of <b>Ice</b> damage received."
+        ],
+        [
+          "Increases your <b>Ice Resistance</b> by <b>12%</b>, which reduces the amount of <b>Ice</b> damage received."
+        ]
+      ],
+      "perLevelLabel": "<b>4%</b> Resistance per level"
+    }
   },
   "WIZARD": {
     "name": "WIZARD",
     "description": [
       "Magic weapon Critical Strike chance is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Wizard",
+      "descriptionsByLevel": [
+        [
+          "Magic weapon Critical Strike chance is increased by <b>2%</b>."
+        ],
+        [
+          "Magic weapon Critical Strike chance is increased by <b>4%</b>."
+        ],
+        [
+          "Magic weapon Critical Strike chance is increased by <b>6%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>2%</b> Critical Strike chance per level"
+    }
   },
   "DARK_ARTS": {
     "name": "DARK ARTS",
     "description": [
       "All <b>Shroud damage</b> is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Dark Arts",
+      "descriptionsByLevel": [
+        [
+          "All <b>Shroud</b> damage is increased by <b>10%</b>."
+        ],
+        [
+          "All <b>Shroud</b> damage is increased by <b>20%</b>."
+        ],
+        [
+          "All <b>Shroud</b> damage is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "ABYSS": {
     "name": "ABYSS",
@@ -445,25 +1161,78 @@
     "name": "CHAIN HIT",
     "description": [
       "Critical Strikes with Magic weapon will automatically hit a second enemy within <b>15</b> meters for <b>5 Shock</b> damage per intelligence."
-    ]
+    ],
+    "game": {
+      "name": "Chain Hit",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with Magic weapons will automatically hit a second enemy within <b>15</b> meters for <b>5 Shock</b> damage per Intelligence."
+        ]
+      ]
+    }
   },
   "MASS_DESTRUCTION": {
     "name": "MASS DESTRUCTION",
     "description": [
       "Critical Strikes with a Magic weapons deal <b>2 Shock</b> damage per intelligence to all enemies whithin <b>{{value}}</b> meters of the target."
-    ]
+    ],
+    "game": {
+      "name": "Mass Destruction",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with Magic weapons deal <b>2 Shock</b> damage per Intelligence to all enemies within <b>5</b> meters of the target."
+        ],
+        [
+          "Critical Strikes with Magic weapons deal <b>2 Shock</b> damage per Intelligence to all enemies within <b>10</b> meters of the target."
+        ],
+        [
+          "Critical Strikes with Magic weapons deal <b>2 Shock</b> damage per Intelligence to all enemies within <b>15</b> meters of the target."
+        ]
+      ],
+      "perLevelLabel": "<b>5</b> meters range per level"
+    }
   },
   "NECROMANCER": {
     "name": "NECROMANCER",
     "description": [
       "When killing an enemy with a Magic weapon, you have a <b>{{value}}%</b> chance to summon a friendly <b>Skull Companion</b>."
-    ]
+    ],
+    "game": {
+      "name": "Necromancer",
+      "descriptionsByLevel": [
+        [
+          "When killing an enemy with a Magic weapon, you have a <b>5%</b> chance to summon a friendly <b>Skull Companion</b>."
+        ],
+        [
+          "When killing an enemy with a Magic weapon, you have a <b>10%</b> chance to summon a friendly <b>Skull Companion</b>."
+        ],
+        [
+          "When killing an enemy with a Magic weapon, you have a <b>15%</b> chance to summon a friendly <b>Skull Companion</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> chance per level"
+    }
   },
   "HEALER": {
     "name": "HEALER",
     "description": [
       "Health gain from healing spells and skills is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Healer",
+      "descriptionsByLevel": [
+        [
+          "Health gain from healing spells and skills is increased by <b>15%</b>."
+        ],
+        [
+          "Health gain from healing spells and skills is increased by <b>30%</b>."
+        ],
+        [
+          "Health gain from healing spells and skills is increased by <b>45%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>15%</b> Healing per level"
+    }
   },
   "HEALER_II": {
     "name": "HEALER II",
@@ -483,88 +1252,266 @@
     "description": [
       "Dealing damage with a Magic weapon has a <b>{{value}}%</b> chance to trigger a small flame burst that restores <b>9</b> seconds of <b>Time in the Shroud</b> to you and your allies within <b>20</b> meters.",
       "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you."
-    ]
+    ],
+    "game": {
+      "name": "Shroud Filter",
+      "descriptionsByLevel": [
+        [
+          "Dealing damage with a Magic weapon has a <b>5%</b> chance to trigger a small flame burst that restores <b>9</b> seconds of <b>Time in the Shroud </b> to you and your allies within <b>20</b> meters.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ],
+        [
+          "Dealing damage with a Magic weapon has a <b>10%</b> chance to trigger a small flame burst that restores <b>9</b> seconds of <b>Time in the Shroud </b> to you and your allies within <b>20</b> meters.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ],
+        [
+          "Dealing damage with a Magic weapon has a <b>15%</b> chance to trigger a small flame burst that restores <b>9</b> seconds of <b>Time in the Shroud </b> to you and your allies within <b>20</b> meters.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> chance per level"
+    }
   },
   "WATERS_OF_LIFE": {
     "name": "WATERS OF LIFE",
     "description": [
       "Increases <b>Water Aura</b> healing to <b>2</b> Health per <b>2</b> points of Intelligence."
-    ]
+    ],
+    "game": {
+      "name": "Waters Of Life",
+      "descriptionsByLevel": [
+        [
+          "Increases <b>Water Aura</b> healing to <b>2</b> Health per <b>2</b> points of Intelligence."
+        ]
+      ]
+    }
   },
   "SHROUD_RESISTANCE": {
     "name": "SHROUD RESISTANCE",
     "description": [
       "Increases your <b>Shroud Resistance</b> by <b>{{value}}%</b> which reduces the amount of <b>Shroud</b> damage received."
-    ]
+    ],
+    "game": {
+      "name": "Shroud Resistance",
+      "descriptionsByLevel": [
+        [
+          "Increases your <b>Shroud Resistance</b> by <b>4%</b>, which reduces the amount of <b>Shroud</b> damage received."
+        ],
+        [
+          "Increases your <b>Shroud Resistance</b> by <b>8%</b>, which reduces the amount of <b>Shroud</b> damage received."
+        ],
+        [
+          "Increases your <b>Shroud Resistance</b> by <b>12%</b>, which reduces the amount of <b>Shroud</b> damage received."
+        ]
+      ],
+      "perLevelLabel": "<b>4%</b> Resistance per level"
+    }
   },
   "SHROUD_MISTERY": {
     "name": "SHARED MISERY",
     "description": [
       "When you receive <b>Shroud</b> damage, all players within <b>{{value}}</b>-meters receive <b>15%</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds."
-    ]
+    ],
+    "game": {
+      "name": "Shared Misery",
+      "descriptionsByLevel": [
+        [
+          "When you receive <b>Shroud</b> damage, all players within <b>5</b> meters receive <b>15%</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds."
+        ],
+        [
+          "When you receive <b>Shroud</b> damage, all players within <b>10</b> meters receive <b>15%</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds."
+        ],
+        [
+          "When you receive <b>Shroud</b> damage, all players within <b>15</b> meters receive <b>15%</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds."
+        ]
+      ],
+      "perLevelLabel": "<b>5</b> meters range per level"
+    }
   },
   "EMERGENCY_BLINK": {
     "name": "EMERGENCY BLINK",
     "description": [
       "You can blink while being stunned. This will break the stunned state."
-    ]
+    ],
+    "game": {
+      "name": "Emergency Blink",
+      "descriptionsByLevel": [
+        [
+          "You can blink while being stunned. This will break the stunned state."
+        ]
+      ]
+    }
   },
   "BLINK_ATTACK": {
     "name": "BLINK ATTACK",
     "description": [
       "Blinking into an enemy triggers an explosion which deals <b>Fire</b> damage in a small radius.",
       "Damage and Mana cost scale with the Intelligence attribute."
-    ]
+    ],
+    "game": {
+      "name": "Blink Attack",
+      "descriptionsByLevel": [
+        [
+          "Blinking into an enemy triggers an explosion which deals <b>Fire</b> damage in a small radius.",
+          "Damage and Mana cost scale with the Intelligence attribute."
+        ]
+      ]
+    }
   },
   "ARCANE_DEFLECTION": {
     "name": "ARCANE DEFLECTION",
     "description": [
       "Successfully parrying an enemy's attack restores <b>{{value}}</b> Mana.",
       "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
-    ]
+    ],
+    "game": {
+      "name": "Arcane Deflection",
+      "descriptionsByLevel": [
+        [
+          "Successfully parrying an enemy's attack restores <b>10</b> Mana.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ],
+        [
+          "Successfully parrying an enemy's attack restores <b>20</b> Mana.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ],
+        [
+          "Successfully parrying an enemy's attack restores <b>30</b> Mana.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ]
+      ],
+      "perLevelLabel": "<b>10</b> Mana per level"
+    }
   },
   "UNITY": {
     "name": "UNITY",
     "description": [
       "Damaging enemies with Wands has a <b>{{value}}%</b> chance to restore <b>{{value2}}%</b> of your maximum Mana."
-    ]
+    ],
+    "game": {
+      "name": "Unity",
+      "descriptionsByLevel": [
+        [
+          "Damaging enemies with Wands has a <b>10%</b> chance to restore <b>2%</b> of your maximum Mana."
+        ],
+        [
+          "Damaging enemies with Wands has a <b>20%</b> chance to restore <b>4%</b> of your maximum Mana."
+        ],
+        [
+          "Damaging enemies with Wands has a <b>30%</b> chance to restore <b>6%</b> of your maximum Mana."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> chance and <b>2%</b> of maximum Mana per level"
+    }
   },
   "ARCANE_PROLIFERATION": {
     "name": "ARCANE PROLIFERATION",
     "description": [
       "Wand attacks have a <b>30%</b> chance to spawn double the amount of projectiles. Extra projectiles spawned deal <b>50%</b> less damage."
-    ]
+    ],
+    "game": {
+      "name": "Arcane Proliferation",
+      "descriptionsByLevel": [
+        [
+          "Wand attacks have a <b>30%</b> chance to spawn double the amount of projectiles. Extra projectiles spawned deal <b>50%</b> less damage."
+        ]
+      ]
+    }
   },
   "ETERNAL_SPARK": {
     "name": "ETERNAL SPARK",
     "description": [
       "Dealing damage with Wand projectiles has a <b>{{value}}%</b> chance to restore 1 durability to that weapon."
-    ]
+    ],
+    "game": {
+      "name": "Eternal Spark",
+      "descriptionsByLevel": [
+        [
+          "Dealing damage with Wand projectiles has a <b>10%</b> chance to restore <b>1</b> durability to that weapon."
+        ],
+        [
+          "Dealing damage with Wand projectiles has a <b>20%</b> chance to restore <b>1</b> durability to that weapon."
+        ],
+        [
+          "Dealing damage with Wand projectiles has a <b>30%</b> chance to restore <b>1</b> durability to that weapon."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> chance per level"
+    }
   },
   "STING": {
     "name": "STING",
     "description": [
       "Repeated Wand damage is increased by <b>20%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Sting",
+      "descriptionsByLevel": [
+        [
+          "Repeated Wand damage is increased by <b>20%</b>."
+        ]
+      ]
+    }
   },
   "BATTLE_HEAL": {
     "name": "BATTLE HEAL",
     "description": [
       "Critical Strikes with Melee weapon heal you for <b>{{value}}%</b> of your maximum Health."
-    ]
+    ],
+    "game": {
+      "name": "Battle Heal",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with Melee weapons heal you for <b>1%</b> of your maximum Health."
+        ],
+        [
+          "Critical Strikes with Melee weapons heal you for <b>2%</b> of your maximum Health."
+        ],
+        [
+          "Critical Strikes with Melee weapons heal you for <b>3%</b> of your maximum Health."
+        ]
+      ],
+      "perLevelLabel": "<b>1%</b> of maximum Health per level"
+    }
   },
   "BLOODLETTING": {
     "name": "BLOODLETTING",
     "description": [
       "Critical Strikes with spells have a <b>{{value}}%</b> chance to spawn 2 Health, Mana, and/or Stamina Orbs.",
       "Gathering an Orb restores <b>10%</b> of the respective resource."
-    ]
+    ],
+    "game": {
+      "name": "Bloodletting",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with spells have a <b>15%</b> chance to spawn two Health, Mana, and/or Stamina Orbs.",
+          "Gathering an Orb restores <b>10%</b> of the respective resource."
+        ],
+        [
+          "Critical Strikes with spells have a <b>30%</b> chance to spawn two Health, Mana, and/or Stamina Orbs.",
+          "Gathering an Orb restores <b>10%</b> of the respective resource."
+        ],
+        [
+          "Critical Strikes with spells have a <b>45%</b> chance to spawn two Health, Mana, and/or Stamina Orbs.",
+          "Gathering an Orb restores <b>10%</b> of the respective resource."
+        ]
+      ],
+      "perLevelLabel": "<b>15%</b> chance per level"
+    }
   },
   "LIFE_BURST": {
     "name": "LIFE BURST",
     "description": [
       "Defeating an enemy with a Magic weapon restores Health equal to <b>3</b> times your Intelligence to all players within <b>15</b> meters of the target."
-    ]
+    ],
+    "game": {
+      "name": "Life Burst",
+      "descriptionsByLevel": [
+        [
+          "Defeating an enemy with a Magic weapon restores Health equal to <b>3</b> times your Intelligence to all players within <b>15</b> meters of the target."
+        ]
+      ]
+    }
   },
   "BLOOD_MAGIC": {
     "name": "BLOOD MAGIC",
@@ -572,56 +1519,159 @@
       "When your Mana drops below <b>20%</b>, you restore up to <b>35%</b> of your maximum Mana at the cost of <b>1</b> Health per Mana restored.",
       "This effect stops at 1 Health.",
       "<b>Cooldown:</b> 2 minutes"
-    ]
+    ],
+    "game": {
+      "name": "Blood Magic",
+      "descriptionsByLevel": [
+        [
+          "When your Mana drops below <b>20%</b>, you restore up to <b>35%</b> of your maximum Mana at the cost of <b>1</b> Health per Mana restored.",
+          "This effect stops at <b>1</b> Health.",
+          "<b>Cooldown:</b> 2 minutes"
+        ]
+      ]
+    }
   },
   "ABSORB": {
     "name": "ABSORB",
     "description": [
       "When you receive <b>Magic</b> damage, you have a <b>{{value}}%</b> chance to restore 1 Mana per Health point lost."
-    ]
+    ],
+    "game": {
+      "name": "Absorb",
+      "descriptionsByLevel": [
+        [
+          "When you receive <b>Magic</b> damage, you have a <b>4%</b> chance to restore <b>1</b> Mana per Health point lost."
+        ],
+        [
+          "When you receive <b>Magic</b> damage, you have a <b>8%</b> chance to restore <b>1</b> Mana per Health point lost."
+        ],
+        [
+          "When you receive <b>Magic</b> damage, you have a <b>12%</b> chance to restore <b>1</b> Mana per Health point lost."
+        ]
+      ],
+      "perLevelLabel": "<b>4%</b> chance per level"
+    }
   },
   "SNAP": {
     "name": "SNAP",
     "description": [
       "Triggering a <b>Merciless Attack</b> restores <b>10%</b> Mana."
-    ]
+    ],
+    "game": {
+      "name": "Snap",
+      "descriptionsByLevel": [
+        [
+          "Triggering a <b>Merciless Attack</b> restores <b>10%</b> Mana."
+        ]
+      ]
+    }
   },
   "SOUL_LEECH": {
     "name": "SOUL LEECH",
     "description": [
       "When killing an enemy with a Melee weapon, all players within <b>{{value}}</b> meters of the target restore <b>{{value2}}</b> Mana."
-    ]
+    ],
+    "game": {
+      "name": "Soul Leech",
+      "descriptionsByLevel": [
+        [
+          "When killing an enemy with a Melee weapon, all players within <b>5</b> meters of the target restore <b>15</b> Mana."
+        ],
+        [
+          "When killing an enemy with a Melee weapon, all players within <b>10</b> meters of the target restore <b>30</b> Mana."
+        ],
+        [
+          "When killing an enemy with a Melee weapon, all players within <b>15</b> meters of the target restore <b>45</b> Mana."
+        ]
+      ],
+      "perLevelLabel": "<b>5</b> meters range and <b>15</b> Mana per level"
+    }
   },
   "SHINY_PLATES": {
     "name": "SHINY PLATES",
     "description": [
       "Equipped armor grants <b>{{value}}%</b> increased Magical Armor"
-    ]
+    ],
+    "game": {
+      "name": "Shiny Plates",
+      "descriptionsByLevel": [
+        [
+          "Equipped armor grants <b>4%</b> increased Magical Armor."
+        ],
+        [
+          "Equipped armor grants <b>8%</b> increased Magical Armor."
+        ],
+        [
+          "Equipped armor grants <b>12%</b> increased Magical Armor."
+        ]
+      ],
+      "perLevelLabel": "<b>4%</b> increased Magical Armor per level"
+    }
   },
   "HEAVY_PLATES": {
     "name": "HEAVY PLATES",
     "description": [
       "Equipped armor grants <b>{{value}}%</b> increased Physical Armor"
-    ]
+    ],
+    "game": {
+      "name": "Heavy Plates",
+      "descriptionsByLevel": [
+        [
+          "Equipped armor grants <b>4%</b> increased Physical Armor."
+        ],
+        [
+          "Equipped armor grants <b>8%</b> increased Physical Armor."
+        ],
+        [
+          "Equipped armor grants <b>12%</b> increased Physical Armor."
+        ]
+      ],
+      "perLevelLabel": "<b>4%</b> increased Physical Armor per level"
+    }
   },
   "ONE_HANDED_SPECIALIZATION": {
     "name": "One-Handed Specialization",
     "description": [
       "Unlocks Special Abilities of One-Handed Melee weapons.\nPress <b>[R]</b> to unleash a powerful Special Ability after generating enough Focus",
       "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
-    ]
+    ],
+    "game": {
+      "name": "One-Handed Specialization",
+      "descriptionsByLevel": [
+        [
+          "Unlocks Special Abilities of One-Handed Melee weapons. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+          "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
+        ]
+      ]
+    }
   },
   "WARDEN": {
     "name": "WARDEN",
     "description": [
       "While there are three or more enemies within <b>20</b> meters, you receive <b>10%</b> increased <b>Magical Resistance</b>."
-    ]
+    ],
+    "game": {
+      "name": "Warden",
+      "descriptionsByLevel": [
+        [
+          "While there are three or more enemies within <b>20</b> meters, you receive <b>10%</b> increased <b>Magical Resistance</b>."
+        ]
+      ]
+    }
   },
   "TOWER": {
     "name": "TOWER",
     "description": [
       "While there are three or more enemies within <b>20</b> meters, you receive <b>10%</b> increased <b>Physical Resistance</b>"
-    ]
+    ],
+    "game": {
+      "name": "Tower",
+      "descriptionsByLevel": [
+        [
+          "While there are three or more enemies within <b>20</b> meters, you receive <b>10%</b> increased <b>Physical Resistance</b>."
+        ]
+      ]
+    }
   },
   "ARCH_NEMESIS": {
     "name": "ARCH NEMESIS",
@@ -634,19 +1684,67 @@
     "description": [
       "Defeating a Shroud infested enemy with a Melee weapon restores <b>{{value}}</b> seconds of <b>Time in the Shroud</b>.",
       "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you."
-    ]
+    ],
+    "game": {
+      "name": "Purification",
+      "descriptionsByLevel": [
+        [
+          "Defeating a Shroud infested enemy with a Melee weapon restores <b>3</b> seconds of <b>Time in the Shroud</b>.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ],
+        [
+          "Defeating a Shroud infested enemy with a Melee weapon restores <b>6</b> seconds of <b>Time in the Shroud</b>.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ],
+        [
+          "Defeating a Shroud infested enemy with a Melee weapon restores <b>9</b> seconds of <b>Time in the Shroud</b>.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ]
+      ],
+      "perLevelLabel": "<b>3</b> seconds per level"
+    }
   },
   "WARRIOR_PATH": {
     "name": "WARRIOR'S PATH",
     "description": [
       "One-Handed Melee weapon damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Warrior's Path",
+      "descriptionsByLevel": [
+        [
+          "One-Handed Melee weapon damage is increased by <b>5%</b>."
+        ],
+        [
+          "One-Handed Melee weapon damage is increased by <b>10%</b>."
+        ],
+        [
+          "One-Handed Melee weapon damage is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "THRUST": {
     "name": "THRUST",
     "description": [
       "Melee <b>Piercing</b> damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Thrust",
+      "descriptionsByLevel": [
+        [
+          "Melee <b>Piercing</b> damage is increased by <b>10%</b>."
+        ],
+        [
+          "Melee <b>Piercing</b> damage is increased by <b>20%</b>."
+        ],
+        [
+          "Melee <b>Piercing</b> damage is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "PIERCE": {
     "name": "PIERCE",
@@ -658,7 +1756,22 @@
     "name": "BRUTE",
     "description": [
       "Melee <b>Blunt</b> damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Brute",
+      "descriptionsByLevel": [
+        [
+          "Melee <b>Blunt</b> damage is increased by <b>10%</b>."
+        ],
+        [
+          "Melee <b>Blunt</b> damage is increased by <b>20%</b>."
+        ],
+        [
+          "Melee <b>Blunt</b> damage is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "HAMMER_TIME": {
     "name": "HAMMER TIME",
@@ -670,7 +1783,22 @@
     "name": "SLASHER",
     "description": [
       "Melee <b>Cutting</b> damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Slasher",
+      "descriptionsByLevel": [
+        [
+          "Melee <b>Cutting</b> damage is increased by <b>10%</b>."
+        ],
+        [
+          "Melee <b>Cutting</b> damage is increased by <b>20%</b>."
+        ],
+        [
+          "Melee <b>Cutting</b> damage is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "BUTCHER": {
     "name": "BUTCHER",
@@ -682,19 +1810,57 @@
     "name": "VETERAN",
     "description": [
       "Melee weapon Critical Strike chance is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Veteran",
+      "descriptionsByLevel": [
+        [
+          "Melee weapon Critical Strike chance is increased by <b>2%</b>."
+        ],
+        [
+          "Melee weapon Critical Strike chance is increased by <b>4%</b>."
+        ],
+        [
+          "Melee weapon Critical Strike chance is increased by <b>6%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>2%</b> Critical Strike chance per level"
+    }
   },
   "TITAN_EDGE": {
     "name": "TITAN EDGE",
     "description": [
       "Two-Handed Greatsword damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Titan Edge",
+      "descriptionsByLevel": [
+        [
+          "Two-Handed Greatsword damage is increased by <b>5%</b>."
+        ],
+        [
+          "Two-Handed Greatsword damage is increased by <b>10%</b>."
+        ],
+        [
+          "Two-Handed Greatsword damage is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "SWIFT_BLADES": {
     "name": "SWIFT BLADES",
     "description": [
       "Increase the attack speed of all One-Handed Melee weapons by <b>15%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Swift Blades",
+      "descriptionsByLevel": [
+        [
+          "Increases the attack speed of all One-Handed Melee weapons by <b>15%</b>."
+        ]
+      ]
+    }
   },
   "FEAST": {
     "name": "FEAST",
@@ -707,13 +1873,46 @@
     "description": [
       "Filling up enemy <i>Stun Bars</i> is increased by <b>{{value}}</b> when attacking blocking enemies with Melee weapons.",
       "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks."
-    ]
+    ],
+    "game": {
+      "name": "Heavy Handed",
+      "descriptionsByLevel": [
+        [
+          "Filling up enemy <i>Stun Bars</i> is increased by <b>10%</b> when attacking blocking enemies with Melee weapons.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ],
+        [
+          "Filling up enemy <i>Stun Bars</i> is increased by <b>20%</b> when attacking blocking enemies with Melee weapons.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ],
+        [
+          "Filling up enemy <i>Stun Bars</i> is increased by <b>30%</b> when attacking blocking enemies with Melee weapons.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> effect per level"
+    }
   },
   "STEADFAST": {
     "name": "STEADFAST",
     "description": [
       "Defeating an enemy with a melee weapon restores <b>{{value}}</b> durability to that weapon."
-    ]
+    ],
+    "game": {
+      "name": "Steadfast",
+      "descriptionsByLevel": [
+        [
+          "Defeating an enemy with a Melee weapon restores <b>1</b> durability to that weapon."
+        ],
+        [
+          "Defeating an enemy with a Melee weapon restores <b>2</b> durability to that weapon."
+        ],
+        [
+          "Defeating an enemy with a Melee weapon restores <b>3</b> durability to that weapon."
+        ]
+      ],
+      "perLevelLabel": "<b>1</b> durability per level"
+    }
   },
   "UPWARDS_SLASH_ATTACK": {
     "name": "UPWARDS SLASH ATTACK",
@@ -721,47 +1920,127 @@
       "When equipped with a Melee weapon, launch a powerful upward strike during the ascent of your jump.",
       "Use this skill to rapidly close the distance on <b>flying</b> enemies.",
       "<b>Cost</b>: 25 Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Upwards Slash Attack",
+      "descriptionsByLevel": [
+        [
+          "When equipped with a Melee weapon, launch a powerful upward strike during the ascent of your jump.",
+          "Use this skill to rapidly close the distance on <b>flying</b> enemies.",
+          "<b>Cost:</b> 25 Stamina"
+        ]
+      ]
+    }
   },
   "BREACH": {
     "name": "BREACH",
     "description": [
       "<b>Overpowered</b> enemies receive <b>+100%</b> increased Melee physical damage for <b>3</b> seconds.",
       "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks."
-    ]
+    ],
+    "game": {
+      "name": "Breach",
+      "descriptionsByLevel": [
+        [
+          "<b>Overpowered</b> enemies receive <b>+100%</b> increased Melee physical damage for <b>3</b> seconds.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ]
+      ]
+    }
   },
   "RELENTLESS": {
     "name": "RELENTLESS",
     "description": [
       "Critical Strikes with Two-Handed weapons increase your Critical Strike chance by <b>8%</b> for the next hit."
-    ]
+    ],
+    "game": {
+      "name": "Relentless",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with Two-Handed weapons increase your Critical Strike chance by <b>8%</b> for the next hit."
+        ]
+      ]
+    }
   },
   "BARBARIAN": {
     "name": "BARBARIAN",
     "description": [
       "Gain one point of Strength for every two levels of the Flame."
-    ]
+    ],
+    "game": {
+      "name": "Barbarian",
+      "descriptionsByLevel": [
+        [
+          "Gain one point of Strength for every two levels of the Flame."
+        ]
+      ]
+    }
   },
   "BLOOD_RAGE": {
     "name": "BLOOD RAGE",
     "description": [
       "When an enemy within <b>{{value}}</b> meters is killed by a Melee weapon, you fall into <b>Blood Rage</b>",
       "<b>Blood Rage</b><br/>Increases Melee weapon damage by <b>15%</b> for <b>10</b> seconds."
-    ]
+    ],
+    "game": {
+      "name": "Blood Rage",
+      "descriptionsByLevel": [
+        [
+          "When an enemy within <b>5</b> meters is killed by a Melee weapon, you fall into <b>Blood Rage</b>.",
+          "<b>Blood Rage</b><br/>Increases Melee weapon damage by <b>15%</b> for <b>10</b> seconds."
+        ],
+        [
+          "When an enemy within <b>10</b> meters is killed by a Melee weapon, you fall into <b>Blood Rage</b>.",
+          "<b>Blood Rage</b><br/>Increases Melee weapon damage by <b>15%</b> for <b>10</b> seconds."
+        ],
+        [
+          "When an enemy within <b>15</b> meters is killed by a Melee weapon, you fall into <b>Blood Rage</b>.",
+          "<b>Blood Rage</b><br/>Increases Melee weapon damage by <b>15%</b> for <b>10</b> seconds."
+        ]
+      ],
+      "perLevelLabel": "<b>5</b> meters range per level"
+    }
   },
   "VIGOROUS_DEFLECTION": {
     "name": "VIGOROUS DEFLECTION",
     "description": [
       "Succesfully parrying an enemy's attack restore <b>{{value}}</b> Stamina.",
       "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
-    ]
+    ],
+    "game": {
+      "name": "Vigorous Deflection",
+      "descriptionsByLevel": [
+        [
+          "Successfully parrying an enemy's attack restores <b>15</b> Stamina.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ],
+        [
+          "Successfully parrying an enemy's attack restores <b>30</b> Stamina.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ],
+        [
+          "Successfully parrying an enemy's attack restores <b>45</b> Stamina.",
+          "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        ]
+      ],
+      "perLevelLabel": "<b>15</b> Stamina per level"
+    }
   },
   "BLOOD_WARRIOR": {
     "name": "BLOOD WARRIOR",
     "description": [
       "Defeating an enemy with a <b>Sneak Attack</b> or <b>Merciless Attack</b> spawns a Health Orb.",
       "Gathering an Orb restores <b>10%</b> of the respective resource."
-    ]
+    ],
+    "game": {
+      "name": "Blood Warrior",
+      "descriptionsByLevel": [
+        [
+          "Defeating an enemy with a <b>Sneak Attack</b> or <b>Merciless Attack</b> spawns a Health Orb.",
+          "Gathering an Orb restores <b>10%</b> of the respective resource."
+        ]
+      ]
+    }
   },
   "WET_DOG": {
     "name": "WET DOG",
@@ -770,7 +2049,18 @@
       "Stamina and Stamina Regeneration is reduced by <b>20%</b> instead of <b>30%</b>.",
       "<b>Wet</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>15</b> minutes. Warmth reduces the remaining duration.",
       "<b>Soaked</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>30</b> seconds. Also reduces <b>Ice and Shock Resistances</b> by <b>30%</b> but increases <b>Fire Resistances</b> by <b>30%</b>.<br><b>Soaked</b> can be applied to enemies. <br><b>Soaked</b> duration can not be reduced by warmth and <b>Wet</b> debuff starts after it is over."
-    ]
+    ],
+    "game": {
+      "name": "Wet Dog",
+      "descriptionsByLevel": [
+        [
+          "Weakens the effect of the <b>Wet</b> and <b>Soaked</b> debuffs.",
+          "Stamina and Stamina Regeneration is reduced by <b>20%</b> instead of <b>30%</b>.",
+          "<b>Wet</b> <br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>15</b> minutes. Warmth reduces the remaining duration.",
+          "<b>Soaked</b> <br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>30</b> seconds. Also reduces <b>Ice and Shock Resistances</b> by <b>30%</b> but increases <b>Fire Resistance</b> by <b>30%</b>.<br/><b>Soaked</b> can be applied to enemies.<br/><b>Soaked</b> duration can not be reduced by warmth, and transitions into the <b>Wet</b> debuff once it ends."
+        ]
+      ]
+    }
   },
   "SOAKED_DOG": {
     "name": "SOAKED DOG",
@@ -779,20 +2069,55 @@
       "Stamina and Stamina Regeneration are reduced by <b>10%</b> instead of <b>20%</b>.",
       "<b>Wet</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>15</b> minutes. Warmth reduces the remaining duration.",
       "<b>Soaked</b><br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>30</b> seconds. Also reduces <b>Ice and Shock Resistances</b> by <b>30%</b> but increases <b>Fire Resistances</b> by <b>30%</b>.<br><b>Soaked</b> can be applied to enemies. <br><b>Soaked</b> duration can not be reduced by warmth and <b>Wet</b> debuff starts after it is over."
-    ]
+    ],
+    "game": {
+      "name": "Soaked Dog",
+      "descriptionsByLevel": [
+        [
+          "Weakens the effect of the <b>Wet</b> and <b>Soaked</b> debuffs.",
+          "Stamina and Stamina Regeneration is reduced by <b>10%</b> instead of <b>20%</b>.",
+          "<b>Wet</b> <br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>15</b> minutes. Warmth reduces the remaining duration.",
+          "<b>Soaked</b> <br/>Reduces Stamina and Stamina Regeneration by <b>30%</b> for <b>30</b> seconds. Also reduces <b>Ice and Shock Resistances</b> by <b>30%</b> but increases <b>Fire Resistance</b> by <b>30%</b>.<br/><b>Soaked</b> can be applied to enemies.<br/><b>Soaked</b> duration can not be reduced by warmth, and transitions into the <b>Wet</b> debuff once it ends."
+        ]
+      ]
+    }
   },
   "SPLASH_DASH": {
     "name": "SPLASH DASH",
     "description": [
       "Allows you to perform an evasive dash while swimming or diving.",
       "<b>Cost</b>: 40 Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Splash Dash",
+      "descriptionsByLevel": [
+        [
+          "Allows you to perform an evasive dash while swimming or diving.",
+          "<b>Cost</b>: 40 Stamina"
+        ]
+      ]
+    }
   },
   "FINESSE": {
     "name": "FINESSE",
     "description": [
       "Dealing damage with One-Handed Melee weapons and daggers has a <b>{{value}}%</b> chance to restore <b>1</b> durability to that weapon."
-    ]
+    ],
+    "game": {
+      "name": "Finesse",
+      "descriptionsByLevel": [
+        [
+          "Dealing damage with One-Handed Melee weapons and Daggers has a <b>10%</b> chance to restore <b>1</b> durability to that weapon."
+        ],
+        [
+          "Dealing damage with One-Handed Melee weapons and Daggers has a <b>20%</b> chance to restore <b>1</b> durability to that weapon."
+        ],
+        [
+          "Dealing damage with One-Handed Melee weapons and Daggers has a <b>30%</b> chance to restore <b>1</b> durability to that weapon."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> chance per level"
+    }
   },
   "JUMP_ATTACK_II": {
     "name": "CRASH DOWN: FORCE",
@@ -804,51 +2129,155 @@
     "name": "BACKSTAB MASTERY",
     "description": [
       "<b>Backstab</b> damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Backstab Mastery",
+      "descriptionsByLevel": [
+        [
+          "<b>Backstab</b> damage is increased by <b>20%</b>."
+        ],
+        [
+          "<b>Backstab</b> damage is increased by <b>40%</b>."
+        ],
+        [
+          "<b>Backstab</b> damage is increased by <b>60%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>20%</b> damage per level"
+    }
   },
   "RUNNER": {
     "name": "RUNNER",
     "description": [
       "Sprint Speed is increased by <b>{{value}}%</b> and Stamina cost while sprinting is decreased by <b>{{value2}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Runner",
+      "descriptionsByLevel": [
+        [
+          "Sprint Speed is increased by <b>5%</b> and Stamina cost while sprinting is decreased by <b>5%</b>."
+        ],
+        [
+          "Sprint Speed is increased by <b>10%</b> and Stamina cost while sprinting is decreased by <b>10%</b>."
+        ],
+        [
+          "Sprint Speed is increased by <b>15%</b> and Stamina cost while sprinting is decreased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> Speed and <b>5%</b> cost reduction per level"
+    }
   },
   "WANDERLUST": {
     "name": "WANDERLUST",
     "description": [
       "Stamina cost for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>. Stamina cost for <b>sprinting on stone roads</b> is reduced from <b>75% to 50%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Wanderlust",
+      "descriptionsByLevel": [
+        [
+          "Stamina cost for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>.",
+          "Stamina cost for <b>sprinting on stone roads</b> is reduced from <b>75% to 50%</b>."
+        ]
+      ]
+    }
   },
   "GOOD_METABOLISM": {
     "name": "GOOD METABOLISM",
     "description": [
       "Health, Mana, and Stamina Orbs restore <b>30%</b> instead of <b>10%</b> of their respective resource.",
       "Health and Mana Potions restore <b>20%</b> more resources."
-    ]
+    ],
+    "game": {
+      "name": "Good Metabolism",
+      "descriptionsByLevel": [
+        [
+          "Health, Mana, and Stamina Orbs restore <b>30%</b> instead of <b>10%</b> of their respective resource.",
+          "Health and Mana Potions restore <b>20%</b> more resources."
+        ]
+      ]
+    }
   },
   "SWIFTSHOT_SUSTENANCE": {
     "name": "SWIFTSHOT SUSTENANCE",
     "description": [
       "Defeating an enemy with a Bow has a <b>{{value}}%</b> chance to spawn a Stamina Orb.",
       "Gathering an Orb restores <b>10%</b> of the respective resource."
-    ]
+    ],
+    "game": {
+      "name": "Swiftshot Sustenance",
+      "descriptionsByLevel": [
+        [
+          "Defeating an enemy with a Bow has a <b>12%</b> chance to spawn a Stamina Orb.",
+          "Gathering an Orb restores <b>10%</b> of the respective resource."
+        ],
+        [
+          "Defeating an enemy with a Bow has a <b>24%</b> chance to spawn a Stamina Orb.",
+          "Gathering an Orb restores <b>10%</b> of the respective resource."
+        ],
+        [
+          "Defeating an enemy with a Bow has a <b>36%</b> chance to spawn a Stamina Orb.",
+          "Gathering an Orb restores <b>10%</b> of the respective resource."
+        ]
+      ],
+      "perLevelLabel": "<b>12%</b> chance per level"
+    }
   },
   "SWEET_TOOTH": {
     "name": "SWEET TOOTH",
     "description": [
       "Stamina Regeneration of sweets is increased by <b>50%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Sweet Tooth",
+      "descriptionsByLevel": [
+        [
+          "Stamina Regeneration of sweets is increased by <b>50%</b>."
+        ]
+      ]
+    }
   },
   "ARACHNOID": {
     "name": "ARACHNOID",
     "description": [
       "Stamina cost while climbing is reduced by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Arachnoid",
+      "descriptionsByLevel": [
+        [
+          "Stamina cost while climbing is reduced by <b>20%</b>."
+        ],
+        [
+          "Stamina cost while climbing is reduced by <b>40%</b>."
+        ],
+        [
+          "Stamina cost while climbing is reduced by <b>60%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>20%</b> cost reduction per level"
+    }
   },
   "REBOUND": {
     "name": "REBOUND",
     "description": [
       "Base Stamina Regeneration is increased <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Rebound",
+      "descriptionsByLevel": [
+        [
+          "Base Stamina Regeneration is increased by <b>10%</b>."
+        ],
+        [
+          "Base Stamina Regeneration is increased by <b>20%</b>."
+        ],
+        [
+          "Base Stamina Regeneration is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> Stamina Regeneration per level"
+    }
   },
   "REBOUND_II": {
     "name": "REBOUND",
@@ -861,7 +2290,25 @@
     "description": [
       "<i>Time in the Shroud</i> is increased by <b>{{value}} min</b>, allowing you to explore for longer.",
       "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you."
-    ]
+    ],
+    "game": {
+      "name": "Inner Fires",
+      "descriptionsByLevel": [
+        [
+          "<b>Time in the Shroud</b> is increased by <b>120 seconds</b>, allowing you to explore for longer.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ],
+        [
+          "<b>Time in the Shroud</b> is increased by <b>240 seconds</b>, allowing you to explore for longer.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ],
+        [
+          "<b>Time in the Shroud</b> is increased by <b>360 seconds</b>, allowing you to explore for longer.",
+          "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+        ]
+      ],
+      "perLevelLabel": "<b>120 seconds</b> per level"
+    }
   },
   "RELENTLESS_FLAME": {
     "name": "RELENTLESS FLAME",
@@ -874,62 +2321,167 @@
     "name": "SNAKE EATER",
     "description": [
       "Increases your <b>Poison Resistance</b> by <b>{{value}}%</b>, which reduces the amount of <b>Poison</b> damage received."
-    ]
+    ],
+    "game": {
+      "name": "Snake Eater",
+      "descriptionsByLevel": [
+        [
+          "Increases your <b>Poison Resistance</b> by <b>4%</b>, which reduces the amount of <b>Poison</b> damage received.",
+          "<b>Poison</b> damage bypasses armor and can only be mitigated by <b>Poison Resistance</b>."
+        ],
+        [
+          "Increases your <b>Poison Resistance</b> by <b>8%</b>, which reduces the amount of <b>Poison</b> damage received.",
+          "<b>Poison</b> damage bypasses armor and can only be mitigated by <b>Poison Resistance</b>."
+        ],
+        [
+          "Increases your <b>Poison Resistance</b> by <b>12%</b>, which reduces the amount of <b>Poison</b> damage received.",
+          "<b>Poison</b> damage bypasses armor and can only be mitigated by <b>Poison Resistance</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>4%</b> Resistance per level"
+    }
   },
   "MITHRIDATIST": {
     "name": "MITHRIDATIST",
     "description": [
       "Gain a <b>25%</b> chance to avoid being poisoned."
-    ]
+    ],
+    "game": {
+      "name": "Mithridatist",
+      "descriptionsByLevel": [
+        [
+          "Gain a <b>25%</b> chance to avoid being poisoned."
+        ]
+      ]
+    }
   },
   "DAGGER_MASTERY": {
     "name": "DAGGER MASTERY",
     "description": [
       "Increases damage dealt with daggers by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Dagger Mastery",
+      "descriptionsByLevel": [
+        [
+          "Dagger damage is increased by <b>5%</b>."
+        ],
+        [
+          "Dagger damage is increased by <b>10%</b>."
+        ],
+        [
+          "Dagger damage is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "SLICE_AND_DICE": {
     "name": "SLICE AND DICE",
     "description": [
       "After a Critical Strike with a Dagger, the base damage of your next Bow attack within 20 seconds is increased by <b>50%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Slice And Dice",
+      "descriptionsByLevel": [
+        [
+          "After a Critical Strike with a Dagger, the base damage of your next Bow attack within 20 seconds is increased by <b>50%</b>."
+        ]
+      ]
+    }
   },
   "VUKAH_LANGUAGE": {
     "name": "VUKAH LANGUAGE",
     "description": [
       "<b>Vukah</b> within <b>50</b> meters will no longer attack you unless provoked."
-    ]
+    ],
+    "game": {
+      "name": "Vukah Language",
+      "descriptionsByLevel": [
+        [
+          "<b>Vukah</b> within <b>50</b> meters will no longer attack you unless provoked."
+        ]
+      ]
+    }
   },
   "CALM_SPIRIT": {
     "name": "CALM SPIRIT",
     "description": [
       "<b>Wild Animals</b> within <b>50</b> meters will be no longer attack you unless provoked.",
       "Does not affect animals corrupted by the Shroud."
-    ]
+    ],
+    "game": {
+      "name": "Calm Spirit",
+      "descriptionsByLevel": [
+        [
+          "<b>Wild Animals</b> within <b>50</b> meters will no longer attack you unless provoked.",
+          "Does not affect animals corrupted by the Shroud."
+        ]
+      ]
+    }
   },
   "BEAST_MASTER": {
     "name": "BEAST MASTER",
     "description": [
       "When you are targeted by an attack, <b>Wild Animals</b> within <b>50</b> meters will attack the enemy."
-    ]
+    ],
+    "game": {
+      "name": "Beast Master",
+      "descriptionsByLevel": [
+        [
+          "When you are targeted by an attack, <b>Wild Animals</b> within <b>50</b> meters will attack the enemy."
+        ]
+      ]
+    }
   },
   "VUKAH_CULTURE": {
     "name": "VUKAH CULTURE",
     "description": [
       "When you are targeted by an attack, <b>Vukah</b> within <b>50</b> meters will attack the enemy."
-    ]
+    ],
+    "game": {
+      "name": "Vukah Culture",
+      "descriptionsByLevel": [
+        [
+          "When you are targeted by an attack, <b>Vukah</b> within <b>50</b> meters will attack the enemy."
+        ]
+      ]
+    }
   },
   "ENDURANCE_OF_THE_FLAME": {
     "name": "ENDURANCE OF THE FLAME",
     "description": [
       "Gain one point of Endurance for every two levels of the Flame."
-    ]
+    ],
+    "game": {
+      "name": "Endurance of the Flame",
+      "descriptionsByLevel": [
+        [
+          "Gain one point of Endurance for every two levels of the Flame."
+        ]
+      ]
+    }
   },
   "MARKSMAN": {
     "name": "MARKSMAN",
     "description": [
       "Damage with Bows is increased by <b>{{value}}%</b>"
-    ]
+    ],
+    "game": {
+      "name": "Marksman",
+      "descriptionsByLevel": [
+        [
+          "Damage with Bows is increased by <b>5%</b>."
+        ],
+        [
+          "Damage with Bows is increased by <b>10%</b>."
+        ],
+        [
+          "Damage with Bows is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "SHARPSHOOTER": {
     "name": "SHARPSHOOTER",
@@ -941,33 +2493,114 @@
     "name": "COUNTER BATTERY",
     "description": [
       "Damage against <b>ranged</b> enemies is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Counter Battery",
+      "descriptionsByLevel": [
+        [
+          "Damage against <b>ranged</b> enemies is increased by <b>8%</b>."
+        ],
+        [
+          "Damage against <b>ranged</b> enemies is increased by <b>16%</b>."
+        ],
+        [
+          "Damage against <b>ranged</b> enemies is increased by <b>24%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>8%</b> damage per level"
+    }
   },
   "EAGLES_BANE": {
     "name": "EAGLES BANE",
     "description": [
       "Damage against <b>flying</b> enemies is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Eagle's Bane",
+      "descriptionsByLevel": [
+        [
+          "Damage against <b>flying</b> enemies is increased by <b>10%</b>."
+        ],
+        [
+          "Damage against <b>flying</b> enemies is increased by <b>20%</b>."
+        ],
+        [
+          "Damage against <b>flying</b> enemies is increased by <b>30%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>10%</b> damage per level"
+    }
   },
   "SKILL_SHOT": {
     "name": "SKILL SHOT",
     "description": [
       "<b>Skillshot</b> damage is increased by <b>{{value}}%</b>.",
       "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
-    ]
+    ],
+    "game": {
+      "name": "Skill Shot",
+      "descriptionsByLevel": [
+        [
+          "<b>Skillshot</b> damage is increased by <b>20%</b>.",
+          "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
+        ],
+        [
+          "<b>Skillshot</b> damage is increased by <b>40%</b>.",
+          "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
+        ],
+        [
+          "<b>Skillshot</b> damage is increased by <b>60%</b>.",
+          "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
+        ]
+      ],
+      "perLevelLabel": "<b>20%</b> damage per level"
+    }
   },
   "RANGER": {
     "name": "RANGER",
     "description": [
       "Increases your Dexterity and Endurace attributes by <b>{{value}}</b>.",
       "Base Stamina Regeneration is increased by <b>{{value2}}</b>,"
-    ]
+    ],
+    "game": {
+      "name": "Ranger",
+      "descriptionsByLevel": [
+        [
+          "Increases your Dexterity and Endurance attributes by <b>1</b>.",
+          "Base Stamina Regeneration is increased by <b>5</b>."
+        ],
+        [
+          "Increases your Dexterity and Endurance attributes by <b>2</b>.",
+          "Base Stamina Regeneration is increased by <b>10</b>."
+        ],
+        [
+          "Increases your Dexterity and Endurance attributes by <b>3</b>.",
+          "Base Stamina Regeneration is increased by <b>15</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>1</b> Dexterity and Endurance per level.<br/><b>5</b> Stamina Regeneration per level."
+    }
   },
   "SILENT_STRIDE": {
     "name": "SILENT STRIDE",
     "description": [
       "Increases your movement speed while <b>sneaking</b> by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Silent Stride",
+      "descriptionsByLevel": [
+        [
+          "Increases your movement speed while <b>sneaking</b> by <b>20%</b>."
+        ],
+        [
+          "Increases your movement speed while <b>sneaking</b> by <b>40%</b>."
+        ],
+        [
+          "Increases your movement speed while <b>sneaking</b> by <b>60%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>20%</b> movement speed per level"
+    }
   },
   "KICK": {
     "name": "KICK",
@@ -976,122 +2609,336 @@
       "Kick deals little damage but hits the target with massive force and pushes them back, filling their <i>Stun Bar</i>.",
       "<i>Stun Bar</i> increase scales with Dexterity. Stun time depends on the enemy's size.",
       "<b>Overpower</b><br>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br><b>Overpowered</b> enemies are open for Merciless Attacks."
-    ]
+    ],
+    "game": {
+      "name": "Kick",
+      "descriptionsByLevel": [
+        [
+          "When equipped with a Melee weapon, you can perform a Kick by attacking while blocking.",
+          "Kicking deals little damage, but hits the target with massive force and pushes them back, filling their <i>Stun Bar</i>.",
+          "<i>Stun Bar</i> increase scales with Dexterity.<br/>Stun time depends on the enemy's size.",
+          "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        ]
+      ]
+    }
   },
   "AIRBORNE": {
     "name": "AIRBORNE",
     "description": [
       "Gliders consume <b>{{value}}%</b> less Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Airborne",
+      "descriptionsByLevel": [
+        [
+          "Gliders consume <b>12%</b> less Stamina."
+        ],
+        [
+          "Gliders consume <b>24%</b> less Stamina."
+        ],
+        [
+          "Gliders consume <b>36%</b> less Stamina."
+        ]
+      ],
+      "perLevelLabel": "<b>12%</b> cost reduction per level"
+    }
   },
   "SNIPER": {
     "name": "SNIPER",
     "description": [
       "Ranged weapon Critical Strike chance is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Sniper",
+      "descriptionsByLevel": [
+        [
+          "Ranged weapon Critical Strike chance is increased by <b>2%</b>."
+        ],
+        [
+          "Ranged weapon Critical Strike chance is increased by <b>4%</b>."
+        ],
+        [
+          "Ranged weapon Critical Strike chance is increased by <b>6%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>2%</b> Critical Strike chance per level"
+    }
   },
   "VITALITY_SURGE": {
     "name": "VITALITY SURGE",
     "description": [
       "Critical Strikea with Ranged weapons restore <b>{{value}}</b> Stamina."
-    ]
+    ],
+    "game": {
+      "name": "Vitality Surge",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with Ranged weapons restore <b>3</b> Stamina."
+        ],
+        [
+          "Critical Strikes with Ranged weapons restore <b>6</b> Stamina."
+        ],
+        [
+          "Critical Strikes with Ranged weapons restore <b>9</b> Stamina."
+        ]
+      ],
+      "perLevelLabel": "<b>3</b> Stamina per level"
+    }
   },
   "BLESSED_ARROWS": {
     "name": "BLESSED ARROWS",
     "description": [
       "Critical Strikes with Bowsrestore <b>{{value}}</b> mana."
-    ]
+    ],
+    "game": {
+      "name": "Blessed Arrows",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with Bows restore <b>8</b> Mana."
+        ],
+        [
+          "Critical Strikes with Bows restore <b>16</b> Mana."
+        ],
+        [
+          "Critical Strikes with Bows restore <b>24</b> Mana."
+        ]
+      ],
+      "perLevelLabel": "<b>8</b> Mana per level"
+    }
   },
   "BOUNTY_BONANZA": {
     "name": "BOUNTY BONANZA",
     "description": [
       "After defeating a <b>Fell</b> enemy with a <b>Skillshot</b>, your group gains an additional <b>+5</b> Experience Points.",
       "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
-    ]
+    ],
+    "game": {
+      "name": "Bounty Bonanza",
+      "descriptionsByLevel": [
+        [
+          "After defeating a <b>Fell</b> enemy with a <b>Skillshot</b>, your group gains an additional <b>+5</b> Experience Points.",
+          "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
+        ]
+      ]
+    }
   },
   "RICOCHETS": {
     "name": "RICOCHETS",
     "description": [
       "For every target you hit with an <b>Explosive Arrow</b>, its damage is increased by <b>1%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Ricochets",
+      "descriptionsByLevel": [
+        [
+          "For every target you hit with an <b>Explosive Arrow</b>, its damage is increased by <b>1%</b>."
+        ]
+      ]
+    }
   },
   "GRACEFUL_STRIDE": {
     "name": "GRACEFUL STRIDE",
     "description": [
       "Gain one point of Dexterity for every two levels of the Flame."
-    ]
+    ],
+    "game": {
+      "name": "Graceful Stride",
+      "descriptionsByLevel": [
+        [
+          "Gain one point of Dexterity for every two levels of the Flame."
+        ]
+      ]
+    }
   },
   "CHAIN_REACTION": {
     "name": "CHAIN REACTION",
     "description": [
       "Every enemy hit with an <b>Explosive Arrow</b> has a <b>20%</b> chance to trigger a secondary explosion for <b>50%</b> damage in a small radius."
-    ]
+    ],
+    "game": {
+      "name": "Chain Reaction",
+      "descriptionsByLevel": [
+        [
+          "Every enemy hit with an <b>Explosive Arrow</b> has a <b>20%</b> chance to trigger a secondary explosion for <b>50%</b> damage in a small radius."
+        ]
+      ]
+    }
   },
   "ARCANE_CONCENTRATION": {
     "name": "ARCANE CONCENTRATION",
     "description": [
       "Gain one point of Spirit for every two levels of the Flame."
-    ]
+    ],
+    "game": {
+      "name": "Arcane Concentration",
+      "descriptionsByLevel": [
+        [
+          "Gain one point of Spirit for every two levels of the Flame."
+        ]
+      ]
+    }
   },
   "EXALTED": {
     "name": "EXALTED",
     "description": [
       "Gain one point of Intelligence for every two levels of the Flame."
-    ]
+    ],
+    "game": {
+      "name": "Exalted",
+      "descriptionsByLevel": [
+        [
+          "Gain one point of Intelligence for every two levels of the Flame."
+        ]
+      ]
+    }
   },
   "THICK_SKIN": {
     "name": "THICK SKIN",
     "description": [
       "Gain one point of Constitution for every two levels of the Flame."
-    ]
+    ],
+    "game": {
+      "name": "Thick Skin",
+      "descriptionsByLevel": [
+        [
+          "Gain one point of Constitution for every two levels of the Flame."
+        ]
+      ]
+    }
   },
   "LIFE_ESSENCES": {
     "name": "LIFE ESSENCES",
     "description": [
       "Increase your maximum Health by <b>{{value}}</b> times your Intelligence attribute."
-    ]
+    ],
+    "game": {
+      "name": "Life Essences",
+      "descriptionsByLevel": [
+        [
+          "Increases your maximum Health by <b>2</b> times your Intelligence attribute."
+        ],
+        [
+          "Increases your maximum Health by <b>4</b> times your Intelligence attribute."
+        ],
+        [
+          "Increases your maximum Health by <b>6</b> times your Intelligence attribute."
+        ]
+      ],
+      "perLevelLabel": "<b>2</b> times per level"
+    }
   },
   "POISONED_BLADES": {
     "name": "VENOMOUS BLADES",
     "description": [
       "Increases the chance to poison enemies to <b>25%</b> when using Daggers with the <b>Venomous Blades</b> perk."
-    ]
+    ],
+    "game": {
+      "name": "Venomous Blades",
+      "descriptionsByLevel": [
+        [
+          "Increases the chance to poison enemies to <b>25%</b> when using Daggers with the <b>Venomous Blades</b> perk."
+        ]
+      ]
+    }
   },
   "POISON_MASTERY": {
     "name": "VENOM MASTERY",
     "description": [
       "Increases the damage dealt with the <b>Venomous Blades</b> Dagger perk by <b>100%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Venom Mastery",
+      "descriptionsByLevel": [
+        [
+          "Increases the damage dealt with the <b>Venomous Blades</b> Dagger perk by <b>100%</b>."
+        ]
+      ]
+    }
   },
   "QUICK_REFLEX_BLOCK": {
     "name": "QUICK REFLEX BLOCK",
     "description": [
       "Briefly enhances your block value when blocking with Daggers, ensuring a near-miss parry reduces stamina minimally."
-    ]
+    ],
+    "game": {
+      "name": "Quick Reflex Block",
+      "descriptionsByLevel": [
+        [
+          "Briefly increases your Block value when blocking with Daggers, ensuring a near-miss parry reduces Stamina minimally."
+        ]
+      ]
+    }
   },
   "EXPOSE_WEAKNESS": {
     "name": "EXPOSE WEAKNESS",
     "description": [
       "Critical Strikes with Daggers increase damage dealt to the enemy by <b>25%</b> for <b>5</b> seconds."
-    ]
+    ],
+    "game": {
+      "name": "Expose Weakness",
+      "descriptionsByLevel": [
+        [
+          "Critical Strikes with Daggers increase damage dealt to the enemy by <b>25%</b> for <b>5</b> seconds."
+        ]
+      ]
+    }
   },
   "BARBARIAN_PATH": {
     "name": "Barbarian's Path",
     "description": [
       "Two-Handed Melee weapon damage is increased by <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Barbarian's Path",
+      "descriptionsByLevel": [
+        [
+          "Two-Handed Melee weapon damage is increased by <b>5%</b>."
+        ],
+        [
+          "Two-Handed Melee weapon damage is increased by <b>10%</b>."
+        ],
+        [
+          "Two-Handed Melee weapon damage is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "TWO_HANDED_SPECIALIZATION": {
     "name": "Two-Handed Specialization",
     "description": [
       "Unlocks Special Abilities of Two-Handed Melee weapons.\nPress <b>[R]</b> to unleash a powerful Special Ability after generating enough Focus.",
       "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
-    ]
+    ],
+    "game": {
+      "name": "Two-Handed Specialization",
+      "descriptionsByLevel": [
+        [
+          "Unlocks Special Abilities of Two-Handed Melee weapons. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+          "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
+        ]
+      ]
+    }
   },
   "ATHLETE": {
     "description": [
       "Increases your maximum Health by <b>{{value}}</b> times your Strength attribute."
-    ]
+    ],
+    "game": {
+      "name": "Athlete",
+      "descriptionsByLevel": [
+        [
+          "Increases your maximum Health by <b>2</b> times your Strength attribute."
+        ],
+        [
+          "Increases your maximum Health by <b>4</b> times your Strength attribute."
+        ],
+        [
+          "Increases your maximum Health by <b>6</b> times your Strength attribute."
+        ]
+      ],
+      "perLevelLabel": "<b>2</b> times per level"
+    }
   },
   "STRATEGIC_MANEUVER": {
     "description": [
@@ -1099,91 +2946,327 @@
       "Use it to roll around your enemies, making it easier to flank them or deliver backstabs.",
       "Blink replaces the sideways Dodge Roll of the Strategic Maneuver skill.",
       "<b>Cost:</b> 20 Stamina"
-    ]
+    ],
+    "game": {
+      "name": "Strategic Maneuver",
+      "descriptionsByLevel": [
+        [
+          "Replaces the Dodge Roll ability with a sideways Dodge Roll while an enemy target is locked.",
+          "Use it to roll around your enemies, making it easier to flank them or deliver backstabs.",
+          "Blink replaces the sideways Dodge Roll of the Strategic Maneuver skill.",
+          "<b>Cost:</b> 20 Stamina"
+        ]
+      ]
+    }
   },
   "PRIMAL_FORCE": {
     "description": [
       "Damage against Vukah is increased by <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Primal Force",
+      "descriptionsByLevel": [
+        [
+          "Damage against Vukah is increased by <b>5%</b>."
+        ],
+        [
+          "Damage against Vukah is increased by <b>10%</b>."
+        ],
+        [
+          "Damage against Vukah is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "CULL_THE_HERD": {
     "description": [
       "Damage against Wildlife is increased by <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Cull the Herd",
+      "descriptionsByLevel": [
+        [
+          "Damage against Wildlife is increased by <b>5%</b>."
+        ],
+        [
+          "Damage against Wildlife is increased by <b>10%</b>."
+        ],
+        [
+          "Damage against Wildlife is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "FATAL_PRECISION": {
     "description": [
       "Critical Strike chance is increased by <b>{{value}}</b>.\nCritical Strike damage is increased by <b>{{value2}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Fatal Precision",
+      "descriptionsByLevel": [
+        [
+          "Critical Strike chance is increased by <b>1%</b>.<br/>Critical Strike damage is increased by <b>5%</b>."
+        ],
+        [
+          "Critical Strike chance is increased by <b>2%</b>.<br/>Critical Strike damage is increased by <b>10%</b>."
+        ],
+        [
+          "Critical Strike chance is increased by <b>3%</b>.<br/>Critical Strike damage is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>1%</b> Critical Strike chance and <b>5%</b> Critical Strike damage per level"
+    }
   },
   "BOW_SPECIALIZATION": {
     "description": [
       "Unlocks Special Abilities of Bows.\nPress <b>[R]</b> to unleash a powerful Special Ability after generating enough Focus.",
       "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
-    ]
+    ],
+    "game": {
+      "name": "Bow Specialization",
+      "descriptionsByLevel": [
+        [
+          "Unlocks Special Abilities of Bows. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+          "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
+        ]
+      ]
+    }
   },
   "CUTTHROAT": {
     "description": [
       "Sneak Attack Damage is increased by <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Cutthroat",
+      "descriptionsByLevel": [
+        [
+          "Sneak Attack Damage is increased by <b>100%</b>."
+        ],
+        [
+          "Sneak Attack Damage is increased by <b>200%</b>."
+        ],
+        [
+          "Sneak Attack Damage is increased by <b>300%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>100%</b> damage per level"
+    }
   },
   "DAGGER_SPECIALIZATION": {
     "description": [
       "Unlocks Special Abilities of Daggers.\nPress <b>[R]</b> to unleash a powerful Special Ability after generating enough Focus.",
       "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
-    ]
+    ],
+    "game": {
+      "name": "Dagger Specialization",
+      "descriptionsByLevel": [
+        [
+          "Unlocks Special Abilities of Daggers. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+          "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
+        ]
+      ]
+    }
   },
   "VEILED_VIGOR": {
     "description": [
       "Increases your maximum Health by <b>{{value}}</b> times your Dexterity attribute."
-    ]
+    ],
+    "game": {
+      "name": "Veiled Vigor",
+      "descriptionsByLevel": [
+        [
+          "Increases your maximum Health by <b>2</b> times your Dexterity attribute."
+        ],
+        [
+          "Increases your maximum Health by <b>4</b> times your Dexterity attribute."
+        ],
+        [
+          "Increases your maximum Health by <b>6</b> times your Dexterity attribute."
+        ]
+      ],
+      "perLevelLabel": "<b>2</b> times per level"
+    }
   },
   "VILE_CONCOCTION": {
     "description": [
       "Throwable damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Vile Concoction",
+      "descriptionsByLevel": [
+        [
+          "Throwable damage is increased by <b>12%</b>."
+        ],
+        [
+          "Throwable damage is increased by <b>24%</b>."
+        ],
+        [
+          "Throwable damage is increased by <b>36%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>12%</b> damage per level"
+    }
   },
   "MANA_CURRENTS": {
     "description": [
       "Base Mana Regeneration is increased by <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Mana Currents",
+      "descriptionsByLevel": [
+        [
+          "Base Mana Regeneration is increased by <b>3</b>."
+        ],
+        [
+          "Base Mana Regeneration is increased by <b>6</b>."
+        ],
+        [
+          "Base Mana Regeneration is increased by <b>9</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>3</b> Mana Regeneration per level"
+    }
   },
   "SLEIGHT_OF_HAND": {
     "name": "Sleight of Hand",
     "description": [
       "Unarmed damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Sleight of Hand",
+      "descriptionsByLevel": [
+        [
+          "Unarmed damage is increased by <b>30%</b>."
+        ],
+        [
+          "Unarmed damage is increased by <b>60%</b>."
+        ],
+        [
+          "Unarmed damage is increased by <b>90%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>30%</b> damage per level"
+    }
   },
   "SPELLSLINGER": {
     "description": [
       "Staff damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Spellslinger",
+      "descriptionsByLevel": [
+        [
+          "Staff damage is increased by <b>5%</b>."
+        ],
+        [
+          "Staff damage is increased by <b>10%</b>."
+        ],
+        [
+          "Staff damage is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "MAGE_APPRENTICE": {
     "description": [
       "Magic weapon damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Mage Apprentice",
+      "descriptionsByLevel": [
+        [
+          "Magic weapon damage is increased by <b>5%</b>."
+        ],
+        [
+          "Magic weapon damage is increased by <b>10%</b>."
+        ],
+        [
+          "Magic weapon damage is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "BONE_TO_ASH": {
     "description": [
       "Damage against Hollow is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Bone to Ash",
+      "descriptionsByLevel": [
+        [
+          "Damage against Hollow is increased by <b>5%</b>."
+        ],
+        [
+          "Damage against Hollow is increased by <b>10%</b>."
+        ],
+        [
+          "Damage against Hollow is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   },
   "HEALER_REVIVE": {
     "description": [
       "Revive players with <b>{{value}}%</b> increased Health.",
       "Default Health of revived players is <b>10%</b>"
-    ]
+    ],
+    "game": {
+      "name": "Healing Revive",
+      "descriptionsByLevel": [
+        [
+          "Revive players with <b>8%</b> increased Health.",
+          "Default Health of revived players is <b>10%</b>."
+        ],
+        [
+          "Revive players with <b>16%</b> increased Health.",
+          "Default Health of revived players is <b>10%</b>."
+        ],
+        [
+          "Revive players with <b>24%</b> increased Health.",
+          "Default Health of revived players is <b>10%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>8%</b> Health per level"
+    }
   },
   "WAND_SPECIALIZATION": {
     "description": [
       "Unlobkc Special Abilities of Wands.\nPress <b>[R]</b> to unleash a powerful Special Ability after generating enough Focus.",
       "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
-    ]
+    ],
+    "game": {
+      "name": "Wand Specialization",
+      "descriptionsByLevel": [
+        [
+          "Unlocks Special Abilities of Wands. <br/>Press <b>[Special Ability]</b> to unleash a powerful Special Ability after generating enough Focus.",
+          "<b>Focus</b><br/>Generate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons."
+        ]
+      ]
+    }
   },
   "WAND_MASTERY": {
     "description": [
       "Wand damage is increased by <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Wand Mastery",
+      "descriptionsByLevel": [
+        [
+          "Wand damage is increased by <b>5%</b>."
+        ],
+        [
+          "Wand damage is increased by <b>10%</b>."
+        ],
+        [
+          "Wand damage is increased by <b>15%</b>."
+        ]
+      ],
+      "perLevelLabel": "<b>5%</b> damage per level"
+    }
   }
 }

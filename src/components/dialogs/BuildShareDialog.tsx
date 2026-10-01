@@ -11,6 +11,7 @@ import GamePanel from "../shared/GamePanel";
 import GameButton from "../shared/GameButton";
 import { classNames } from "@/utils/utils";
 import { BIOMES, MAX_PLAYER_LEVEL } from "@/constants/Biomes";
+import { isDifferentTreeVersion, SKILL_TREE_CONTENT_HASH } from "@/constants/skillTreeVersion";
 
 type PropsType = {
   open: boolean;
@@ -42,6 +43,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
     const hasMultiLevel = Object.values(selectedSkills).some((l) => l > 1);
     return {
       skills: selectedSkillIds,
+      treeContentHash: SKILL_TREE_CONTENT_HASH,
       ...(hasMultiLevel ? { skillLevels: selectedSkills } : {}),
       playerLevel,
       unlockedBiomes,
@@ -67,6 +69,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
         }
         onImportSkills(build);
         gameToast.success(t("toasts.buildImported", { name: file.name.replace(/\.json$/i, "") }));
+        if (isDifferentTreeVersion(build)) gameToast.warning(t("toasts.differentTreeVersion"));
         onClose();
       } catch {
         gameToast.error(t("toasts.invalidCode"));

@@ -13,6 +13,7 @@ import {
 } from "@/redux/skills/skills.slice";
 import { buildToSelectedSkills, convertHashToJson } from "@/utils/utils";
 import SkillNodes from "@/constants/Nodes";
+import { isDifferentTreeVersion } from "@/constants/skillTreeVersion";
 
 
 const InitSkills = () => {
@@ -42,6 +43,7 @@ const InitSkills = () => {
         if (build.unlockedBiomes != null)
           dispatch(setUnlockedBiomes(build.unlockedBiomes));
         dispatch(clearCodeImported());
+        if (isDifferentTreeVersion(build)) gameToast.warning(t("toasts.differentTreeVersion"));
       } catch {
         gameToast.error(t("toasts.invalidCode"));
       }

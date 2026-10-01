@@ -56,7 +56,7 @@ const labels: Labels[] = [
   {
     nameKey: "warrior",
     angle: 50,
-    distance: 630,
+    distance: 710, // Presentation override: clear the imported outer nodes.
     asset: "WARRIOR",
     width: 364,
     height: 112,
@@ -96,7 +96,7 @@ const labels: Labels[] = [
   {
     nameKey: "ranger",
     angle: 196,
-    distance: 520,
+    distance: 680, // Presentation override: clear Multi Shot and its upgrades.
     asset: "RANGER",
     width: 321,
     height: 112,

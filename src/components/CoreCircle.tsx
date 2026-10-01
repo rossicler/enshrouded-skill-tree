@@ -1,4 +1,5 @@
-import { LinesAngles } from "../constants/Nodes";
+import SkillNodes, { LinesAngles } from "../constants/Nodes";
+import { resolveBaseAnchor } from "../utils/nodePosition";
 
 const CoreCircle = () => {
   return (
@@ -13,7 +14,7 @@ const CoreCircle = () => {
             transform: `rotate(${lineAngle}deg)`,
           }}
         >
-          <div id={`line-${lineAngle}`} className={`relative mt-[198px]`}>
+          <div className={`relative mt-[198px]`}>
             <div
               key={lineAngle}
               className="absolute w-2 h-2 rounded-full bg-purple-400 -left-1 -bottom-1 drop-shadow-shiny"
@@ -21,6 +22,19 @@ const CoreCircle = () => {
           </div>
         </div>
       ))}
+      {Object.values(SkillNodes.nodes)
+        .filter((node) => node.base)
+        .map((node) => {
+          const anchor = resolveBaseAnchor(node);
+          return (
+            <div
+              key={node.id}
+              id={`line-base-${node.id}`}
+              className="absolute w-0 h-0"
+              style={{ left: anchor.x, top: anchor.y }}
+            />
+          );
+        })}
     </>
   );
 };

@@ -68,6 +68,10 @@
     },
     "settings": {
       "title": "Settings",
+      "treeVersion": "Skill tree",
+      "gameUpdate": "Update",
+      "gameBuild": "build",
+      "appVersion": "App",
       "sounds": "Sound effects",
       "language": "Language",
       "hardcap": "Skill points hard cap",
@@ -95,6 +99,7 @@
   "toasts": {
     "shareUrlCopied": "Share URL copied successfully",
     "buildImported": "Build \"{{name}}\" imported successfully",
+    "differentTreeVersion": "This build was made for a different skill tree version. Check its skills after importing.",
     "noSkillsAllocated": "No skills allocated!",
     "invalidUrl": "Invalid url!",
     "invalidCode": "Invalid code"

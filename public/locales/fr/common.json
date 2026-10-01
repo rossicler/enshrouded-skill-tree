@@ -68,6 +68,10 @@
     },
     "settings": {
       "title": "Paramètres",
+      "treeVersion": "Arbre de compétences",
+      "gameUpdate": "Mise à jour",
+      "gameBuild": "build",
+      "appVersion": "Application",
       "sounds": "Effets sonores",
       "language": "Langue",
       "hardcap": "Limite de points de compétence",
@@ -95,6 +99,7 @@
   "toasts": {
     "shareUrlCopied": "URL de partage copiée avec succès",
     "buildImported": "Build \"{{name}}\" importé avec succès",
+    "differentTreeVersion": "Ce build a été créé pour une autre version de l'arbre. Vérifiez ses compétences après l'importation.",
     "noSkillsAllocated": "Aucune compétence allouée !",
     "invalidUrl": "URL invalide !",
     "invalidCode": "Code invalide"

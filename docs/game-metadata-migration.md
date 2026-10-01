@@ -98,6 +98,29 @@ an older tree would require retaining its complete nodes, edges, assets and
 translations as a separately selectable snapshot, plus migration rules for
 builds. That can be added after the update workflow is reviewed.
 
+## To-do: structural changes in future game updates
+
+The current adapter intentionally requires a one-to-one match with the 222
+authored app nodes and exact graph agreement. It can update supported fields
+on matched nodes, but it is not yet a general add/remove-node importer. A new
+skill, removed skill, renamed skill, or changed connection can make the preview
+fail before a report is written. The game export still contains the source
+records; the missing piece is a reviewed app migration path.
+
+- [ ] Produce a structured preflight diff before strict mapping/topology checks
+  abort: added/removed game IDs, stable IDs with changed names or types, node
+  fields, root links, skill edges, and icon references. Compare by stable game
+  ID first so a rename does not look like a removal plus addition.
+- [ ] Assign new app IDs and type keys through an explicit reviewed mapping;
+  preserve existing IDs for shared and saved builds. Update authored node and
+  edge definitions, presentation overrides, locales, and assets where needed.
+- [ ] Define how removed or replaced nodes affect existing saved/share builds
+  (including unversioned builds). Report dropped selections to users and test
+  any migration or compatibility policy; do not silently reuse old IDs.
+- [ ] Keep changed graph/unlock behavior and unsupported effects behind a
+  review gate. Add fixtures/tests for addition, removal, rename, and topology
+  changes, then let the agentic update workflow apply approved changes.
+
 ## Follow-up: agentic update skill
 
 After reviewing this PR, create an agentic skill for the full game-update

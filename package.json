@@ -6,6 +6,9 @@
   },
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "validate-translations": "node scripts/validate-translations.js",

@@ -11,7 +11,8 @@
     "about": "About",
     "stats": "Stats",
     "search": {
-      "placeholder": "Search"
+      "placeholder": "Search",
+      "moreMatches": "+{{count}} more matches highlighted on the tree"
     },
     "tooltips": {
       "skillPoints": "Skill Points",

@@ -195,12 +195,14 @@ const SkillNode = ({
         </div>
       </div>
       {node.base && (
-        <SkillPath
-          key={`base-line-${node.id}`}
-          from={`node-${node.id}`}
-          to={`line-${node.angle}`}
-          color="#1c1829"
-        />
+        <svg className="absolute inset-0 w-full h-full pointer-events-none">
+          <SkillPath
+            key={`base-line-${node.id}`}
+            from={`node-${node.id}`}
+            to={`line-${node.angle}`}
+            color="#1c1829"
+          />
+        </svg>
       )}
     </>
   );

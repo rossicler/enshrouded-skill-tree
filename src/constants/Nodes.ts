@@ -231,6 +231,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "gold",
       cost: 3,
+      hasIcon: true,
     },
     PICKAXE_SPECIALIZATION: {
       description: [
@@ -239,6 +240,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "gold",
       cost: 3,
+      hasIcon: true,
     },
     PROSPECTOR: {
       description: [
@@ -380,7 +382,7 @@ const skillTreeSeed: SkillTreeSeed = {
       hasIcon: true,
       color: "blue",
       cost: 1,
-      maxLevel: 1,
+      maxLevel: 3,
       perLevel: {
         value: 2,
         value2: 1,
@@ -508,7 +510,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "BASH",
       description: [
         "Parrying enemy attacks bashes them for <b>{{value}} Blunt</b> damage. Bash damage is increased by your Strength attribute.",
-        PARRY
+        PARRY,
       ],
       hasIcon: true,
       color: "red",
@@ -1137,6 +1139,7 @@ const skillTreeSeed: SkillTreeSeed = {
         FOCUS,
       ],
       color: "red",
+      hasIcon: true,
       cost: 3,
     },
     WARDEN: {
@@ -1723,8 +1726,9 @@ const skillTreeSeed: SkillTreeSeed = {
       perLevel: {
         value: 1,
         value2: 5,
-        label: "<b>{{value}}</b> Dexterity and Endurance per level.\n<b>{{value2}}</b> Stamina Regeneration per level"
-      }
+        label:
+          "<b>{{value}}</b> Dexterity and Endurance per level.\n<b>{{value2}}</b> Stamina Regeneration per level",
+      },
     },
     SILENT_STRIDE: {
       name: "SILENT STRIDE",
@@ -1755,7 +1759,7 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "AIRBORNE",
       description: ["Gliders consume <b>{{value}}%</b> less Stamina"],
       color: "green",
-      cost: 2,
+      cost: 1,
       maxLevel: 3,
       perLevel: {
         value: 12,
@@ -1781,7 +1785,7 @@ const skillTreeSeed: SkillTreeSeed = {
         "Critical Strikea with Ranged weapons restore <b>{{value}}</b> Stamina.",
       ],
       color: "green",
-      cost: 3,
+      cost: 1,
       maxLevel: 3,
       perLevel: {
         value: 3,
@@ -1919,11 +1923,12 @@ const skillTreeSeed: SkillTreeSeed = {
       name: "Two-Handed Specialization",
       description: [
         "Unlocks Special Abilities of Two-Handed Melee weapons.\n" +
-        UNLEASH_FOCUS,
+          UNLEASH_FOCUS,
         FOCUS,
       ],
       color: "red",
       cost: 3,
+      hasIcon: true,
     },
     ATHLETE: {
       description: [
@@ -1936,6 +1941,7 @@ const skillTreeSeed: SkillTreeSeed = {
         value: 2,
         label: "<b>{{value}}</b> times per level",
       },
+      hasIcon: true,
     },
     STRATEGIC_MANEUVER: {
       description: [
@@ -1946,6 +1952,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "green",
       cost: 1,
+      hasIcon: true,
     },
     PRIMAL_FORCE: {
       description: ["Damage against Vukah is increased by <b>{{value}}</b>."],
@@ -1990,6 +1997,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "green",
       cost: 3,
+      hasIcon: true,
     },
     CUTTHROAT: {
       description: ["Sneak Attack Damage is increased by <b>{{value}}</b>."],
@@ -2008,6 +2016,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "green",
       cost: 3,
+      hasIcon: true,
     },
     VEILED_VIGOR: {
       description: [
@@ -2020,6 +2029,7 @@ const skillTreeSeed: SkillTreeSeed = {
         value: 2,
         label: "<b>{{value}}</b> times per level",
       },
+      hasIcon: true,
     },
     VILE_CONCOCTION: {
       description: ["Throwable damage is increased by <b>{{value}}%</b>."],
@@ -2102,6 +2112,7 @@ const skillTreeSeed: SkillTreeSeed = {
       ],
       color: "blue",
       cost: 3,
+      hasIcon: true,
     },
     WAND_MASTERY: {
       description: ["Wand damage is increased by <b>{{value}}%</b>."],
@@ -2425,13 +2436,13 @@ const skillTreeSeed: SkillTreeSeed = {
       angle: Q2 + BASE_ANGLE_DIST / 2,
     },
     "51": {
-      type: "ATTR_CONS",
+      type: "ATTR_STR",
       tier: "small",
       distance: BASE_OUTER + 5 * BASE_DIST,
       angle: Q2 + BASE_ANGLE_DIST / 2 - 5,
     },
     "52": {
-      type: "ATTR_STR",
+      type: "ATTR_CONS",
       tier: "small",
       distance: BASE_OUTER + 5 * BASE_DIST,
       angle: Q2 + BASE_ANGLE_DIST / 2 + 5,
@@ -3480,7 +3491,7 @@ const skillTreeSeed: SkillTreeSeed = {
     ["38", "39", "41"],
     ["42", "40"],
     ["44", "41", "42", "45", "28"],
-    ["43", "39", "45", "51"],
+    ["43", "39", "45", "51", "42"],
     ["46", "45", "47"],
     ["51", "48", "50"],
     ["49", "48", "50"],
@@ -3494,6 +3505,7 @@ const skillTreeSeed: SkillTreeSeed = {
     ["62", "63", "65"],
     ["64", "63", "65"],
     ["66", "63", "65"],
+    ["67", "73"],
     ["69", "68", "71", "72", "73", "67", "70"],
     ["70", "72"],
     ["74", "77", "72", "73"],
@@ -3521,6 +3533,7 @@ const skillTreeSeed: SkillTreeSeed = {
     ["129", "127", "130"],
     ["134", "133", "135", "116", "136"],
     ["138", "116", "139", "142", "136"],
+    ["136", "141"],
     ["137", "136"],
     ["140", "137", "141"],
     ["142", "141"],
@@ -3530,7 +3543,7 @@ const skillTreeSeed: SkillTreeSeed = {
     ["145", "146"],
     ["151", "149", "152"],
     ["150", "148", "152"],
-    ["154", "155", "157", "158"],
+    ["154", "155", "157", "158", "153", "135"],
     ["155", "156"],
     ["159", "160", "157", "158"],
     ["162", "165", "158"],

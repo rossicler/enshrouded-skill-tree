@@ -11,7 +11,8 @@
     "about": "À propos",
     "stats": "Stats",
     "search": {
-      "placeholder": "Rechercher"
+      "placeholder": "Rechercher",
+      "moreMatches": "+{{count}} autres résultats surlignés dans l'arbre"
     },
     "tooltips": {
       "skillPoints": "Points de compétence",

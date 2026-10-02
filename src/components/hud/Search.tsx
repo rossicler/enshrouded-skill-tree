@@ -14,8 +14,33 @@ import { classNames } from "@/utils/utils";
 import { useAppDispatch } from "@/redux/hooks";
 
 import GameInput from "../shared/GameInput";
-import SkillNodes from "@/constants/Nodes";
 import { setSearchSkillResults } from "@/redux/skills/skills.slice";
+import SkillNodes from "@/constants/Nodes";
+import { buildSearchCorpus } from "@/utils/searchCorpus";
+import {
+  MatchRange,
+  buildSnippet,
+  normalizeQuery,
+  scoreMatch,
+} from "@/utils/searchText";
+
+const MAX_VISIBLE_RESULTS = 5;
+
+const HIGHLIGHT_CLASSES =
+  "text-[#f0e0b0] font-semibold bg-[#b8941f]/25 rounded-[1px]";
+
+const renderHighlighted = (text: string, range?: MatchRange) => {
+  if (!range || range.start >= range.end) return text;
+  return (
+    <>
+      {text.slice(0, range.start)}
+      <span className={HIGHLIGHT_CLASSES}>
+        {text.slice(range.start, range.end)}
+      </span>
+      {text.slice(range.end)}
+    </>
+  );
+};
 
 type PropsType = {
   zoomToElement: (
@@ -68,23 +93,52 @@ const Search = ({
     routerRef.current.replace({ query: rest }, undefined, { shallow: true });
   }, []);
 
+  const locale = router.locale ?? "en";
+  const corpus = useMemo(() => buildSearchCorpus(t, locale), [t, locale]);
+
   const results = useMemo(() => {
     if (!searchText || searchText.length < 3) return [];
-    const lSearchText = searchText.toLowerCase();
-    return Object.entries(SkillNodes.types)
-      .filter(([key]) => {
-        const name = t(`${key}.name`, { ns: "nodes" });
-        return exactMatch
-          ? name.toLowerCase() === lSearchText
-          : name.toLowerCase().includes(lSearchText);
-      })
-      .map(([key, meta]) => {
-        const node = Object.values(SkillNodes.nodes).find(
-          (n) => n.type === key,
-        );
-        return { key, meta, tier: node?.tier ?? "small" };
-      });
-  }, [searchText, t]);
+
+    if (exactMatch) {
+      const lSearchText = searchText.toLowerCase();
+      return corpus
+        .filter((entry) => entry.name.toLowerCase() === lSearchText)
+        .map((entry) => ({
+          ...entry,
+          nameMatch: { start: 0, end: entry.name.length },
+          snippet: buildSnippet(entry.description),
+        }));
+    }
+
+    const queryNorm = normalizeQuery(searchText, locale);
+    if (!queryNorm) return [];
+
+    return corpus
+      .map((entry) => ({
+        entry,
+        score: scoreMatch(entry.nameNorm, entry.descNorm, queryNorm),
+      }))
+      .filter(({ score }) => score.weight > 0)
+      .sort(
+        (a, b) =>
+          b.score.weight - a.score.weight ||
+          a.score.position - b.score.position ||
+          a.entry.name.localeCompare(b.entry.name, locale),
+      )
+      .map(({ entry, score }) => ({
+        ...entry,
+        nameMatch: score.nameMatch,
+        snippet: buildSnippet(entry.description, score.descMatch),
+      }));
+  }, [searchText, corpus, exactMatch, locale]);
+
+  // The dropdown shows only the top matches (no scrollbar — wheel events over
+  // the HUD zoom the tree); every match still highlights on the tree via Redux.
+  const visibleResults = useMemo(
+    () => results.slice(0, MAX_VISIBLE_RESULTS),
+    [results],
+  );
+  const hiddenMatchCount = results.length - visibleResults.length;
 
   // Reset selected index when results change
   useEffect(() => {
@@ -117,8 +171,7 @@ const Search = ({
   }, []);
 
   const handleResultClick = useCallback(
-    (typeKey: string) => {
-      const name = t(`${typeKey}.name`, { ns: "nodes" });
+    (typeKey: string, name: string) => {
       setSearchText(name);
       clearExactMatch();
       setFocused(false);
@@ -140,26 +193,29 @@ const Search = ({
         }, 350);
       }
     },
-    [t, zoomToElement],
+    [zoomToElement],
   );
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (!results.length) return;
+    if (!visibleResults.length) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setSelectedIndex((prev) => Math.min(prev + 1, results.length - 1));
+      setSelectedIndex((prev) => Math.min(prev + 1, visibleResults.length - 1));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setSelectedIndex((prev) => Math.max(prev - 1, 0));
     } else if (e.key === "Enter") {
       e.preventDefault();
-      if (results[selectedIndex]) {
-        handleResultClick(results[selectedIndex].key);
+      if (visibleResults[selectedIndex]) {
+        handleResultClick(
+          visibleResults[selectedIndex].key,
+          visibleResults[selectedIndex].name,
+        );
       }
     }
   };
 
-  const showResults = focused && searchText && results.length > 0;
+  const showResults = focused && searchText && visibleResults.length > 0;
 
   return (
     <div
@@ -218,17 +274,17 @@ const Search = ({
             "mt-0 md:mt-1",
             "w-full md:w-72 md:max-w-sm",
             "bg-[#414255]/95 border border-[#5a5a60]/50 border-t-[#b8941f]/60",
-            "rounded-sm overflow-y-auto max-h-60",
+            "rounded-sm",
             "shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
           )}
         >
-          {results.map(({ key, meta, tier }, index) => {
+          {visibleResults.map(({ key, meta, tier, name, nameMatch, snippet }, index) => {
             const iconSize =
               tier === "large" ? 22 : tier === "medium" ? 18 : 14;
             return (
               <button
                 key={key}
-                onClick={() => handleResultClick(key)}
+                onClick={() => handleResultClick(key, name)}
                 onMouseEnter={() => setSelectedIndex(index)}
                 className={classNames(
                   "flex items-center gap-2.5 px-3 py-2 w-full text-left",
@@ -257,17 +313,44 @@ const Search = ({
                     />
                   )}
                 </div>
-                <span
-                  className={classNames(
-                    "text-[#e8d5a3] truncate",
-                    meta.hasIcon && "font-semibold",
+                <span className="flex flex-col min-w-0 flex-1">
+                  <span
+                    className={classNames(
+                      "text-[#e8d5a3] truncate",
+                      meta.hasIcon && "font-semibold",
+                    )}
+                  >
+                    {renderHighlighted(name, nameMatch)}
+                  </span>
+                  {snippet.before + snippet.match + snippet.after !== "" && (
+                    <span className="block text-xs text-[#c0b89a]/70 truncate leading-snug">
+                      {snippet.leadingEllipsis && "…"}
+                      {snippet.before}
+                      {snippet.match && (
+                        <span className={HIGHLIGHT_CLASSES}>
+                          {snippet.match}
+                        </span>
+                      )}
+                      {snippet.after}
+                    </span>
                   )}
-                >
-                  {t(`${key}.name`, { ns: "nodes" })}
                 </span>
               </button>
             );
           })}
+          {hiddenMatchCount > 0 && (
+            <div
+              className={classNames(
+                "px-3 py-1.5 text-xs text-[#c0b89a]/60 italic",
+                "border-t border-[#5a5a60]/20",
+              )}
+            >
+              {t("hud.search.moreMatches", {
+                ns: "common",
+                count: hiddenMatchCount,
+              })}
+            </div>
+          )}
         </div>
       )}
     </div>

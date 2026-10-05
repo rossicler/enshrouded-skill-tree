@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { saveCode } from "@/lib/api/code";
+import { isMongoConfigured } from "@/lib/mongodb";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
@@ -12,6 +13,11 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === "POST") {
+    if (!isMongoConfigured()) {
+      return res
+        .status(503)
+        .json({ error: "Short share URLs are unavailable: MONGODB_URI is not configured." });
+    }
     const { code } = req.body;
     try {
       const result = await saveCode(code);

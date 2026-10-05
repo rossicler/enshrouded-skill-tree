@@ -7,7 +7,7 @@ import { classNames } from "@/utils/utils";
 import CustomHeader from "@/components/CustomHeader";
 import SkillTree from "@/components/SkillTree";
 import InitSkills from "@/components/handlers/InitSkills";
-import clientPromise from "@/lib/mongodb";
+import { getMongoClient, isMongoConfigured } from "@/lib/mongodb";
 import { getCode } from "@/lib/api/code";
 import { useEffect } from "react";
 import { useAppDispatch } from "@/redux/hooks";
@@ -68,26 +68,36 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { shortCode, code: rawCode = "", focus } = context.query as Query;
   const focusNodeId = Array.isArray(focus) ? focus[0] : focus;
 
+  // A raw ?code= link carries the whole build and needs no database.
+  let code: string | undefined = (Array.isArray(rawCode) ? rawCode[0] : rawCode) || undefined;
   let dbAvailable = false;
-  let code: string | undefined;
 
-  try {
-    await clientPromise;
-    dbAvailable = true;
-    const fullCode = Array.isArray(rawCode) ? rawCode[0] : rawCode;
-    code = shortCode ? await getCode(shortCode) : fullCode;
-  } catch (e: any) {
-    if (e.code === "ENOTFOUND") {
-      // cluster is still provisioning
-      return {
-        props: {
-          ...translations,
-          clusterStillProvisioning: true,
-          ...(focusNodeId ? { focusNodeId } : {}),
-        },
-      };
+  if (isMongoConfigured()) {
+    try {
+      await getMongoClient();
+      dbAvailable = true;
+    } catch (e: any) {
+      if (e.code === "ENOTFOUND") {
+        // cluster is still provisioning
+        return {
+          props: {
+            ...translations,
+            clusterStillProvisioning: true,
+            ...(focusNodeId ? { focusNodeId } : {}),
+          },
+        };
+      }
+      // Connection limit or other DB error — render without DB features
     }
-    // Connection limit or other DB error — render without DB features
+  }
+
+  if (shortCode && dbAvailable) {
+    try {
+      code = await getCode(Array.isArray(shortCode) ? shortCode[0] : shortCode);
+    } catch (e) {
+      // Invalid ObjectId or lookup failure — render without the shared build
+      console.error("Error loading short code:", e);
+    }
   }
 
   return {

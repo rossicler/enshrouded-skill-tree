@@ -8,13 +8,15 @@ const localesDir = path.join(__dirname, '../public/locales');
 // Define the schema for a single skill node translation
 const nodeTranslationSchema = z.object({
     name: z.string().min(1, "Name must be a non-empty string when present").optional(),
-    description: z.array(z.string()).min(1, "Description must be a non-empty array of strings"),
+    description: z.array(z.string()).min(1, "Description must be a non-empty array of strings").optional(),
     game: z.object({
         name: z.string().min(1),
         description: z.array(z.string()).min(1),
         perLevelLabel: z.string().optional(),
     }).strict().optional(),
-}).strict(); // Disallow extra keys to keep translation files lean
+}).strict() // Disallow extra keys to keep translation files lean
+    // Skills added by a game import may carry only generated English game text.
+    .refine((entry) => entry.description || entry.game, "Needs a description or imported game text");
 
 // Define the schema for the entire nodes.json file
 const nodesJsonSchema = z.record(z.string(), nodeTranslationSchema);
@@ -36,6 +38,12 @@ if (nodeKeys.length === 0) {
 
 const locales = ['en', 'fr'];
 let hasError = false;
+let englishNodes;
+try {
+    englishNodes = JSON.parse(fs.readFileSync(path.join(localesDir, 'en', 'nodes.json'), 'utf8'));
+} catch {
+    // Reported below when the English locale is validated.
+}
 
 locales.forEach(lang => {
     const jsonPath = path.join(localesDir, lang, 'nodes.json');
@@ -66,12 +74,17 @@ locales.forEach(lang => {
         hasError = true;
     }
 
-    // 2. Validate completeness (Keys in Nodes.ts vs Keys in JSON)
+    // 2. Validate completeness (Keys in Nodes.ts vs Keys in JSON). Other
+    // locales may omit a type that has imported English game text: the app
+    // falls back to that text until it is translated.
     nodeKeys.forEach(key => {
-        if (!rawJson[key]) {
-            console.error(`Error: Missing key "${key}" in ${lang}/nodes.json`);
-            hasError = true;
+        if (rawJson[key]) return;
+        if (lang !== 'en' && englishNodes?.[key]?.game) {
+            console.warn(`Warning: "${key}" is untranslated in ${lang}/nodes.json; English game text is used`);
+            return;
         }
+        console.error(`Error: Missing key "${key}" in ${lang}/nodes.json`);
+        hasError = true;
     });
 });
 

@@ -1,6 +1,8 @@
 import { ClassNameValue, twMerge } from "tailwind-merge";
 
-import SkillNodes from "../constants/Nodes";
+import SkillNodes, { SkillNodesType } from "../constants/Nodes";
+
+type SelectedSkills = { [id: string]: number };
 
 type LineToDrawType = [string, string];
 
@@ -44,20 +46,21 @@ export const getBaseLinesToDraw = () => {
 export const getSubGraphNodes = (
   root: string,
   toExclude: string[],
-  selectedSkills: string[]
+  selectedSkills: string[],
+  tree: SkillNodesType = SkillNodes
 ) => {
   let stack = [root];
   const visited = new Set<string>();
   while (stack.length > 0) {
     const nodeId = stack.pop();
-    const isRoot = nodeId && SkillNodes.nodes[nodeId]?.base;
+    const isRoot = nodeId && tree.nodes[nodeId]?.base;
     if (isRoot) {
       return { shouldRemove: false, nodes: [] };
     }
     if (nodeId && !visited.has(nodeId)) {
       visited.add(nodeId);
       stack = stack.concat(
-        SkillNodes.edges[nodeId].filter(
+        tree.edges[nodeId].filter(
           (id) =>
             selectedSkills.includes(id) &&
             !toExclude.includes(id) &&
@@ -72,9 +75,10 @@ export const getSubGraphNodes = (
 
 export const getSkillsToRemove = (
   removed: string,
-  skillsSelected: string[]
+  skillsSelected: string[],
+  tree: SkillNodesType = SkillNodes
 ) => {
-  const edges = SkillNodes.edges[removed];
+  const edges = tree.edges[removed];
 
   const connectedSelectedIds = edges.filter(
     (id) => skillsSelected.includes(id) && id !== removed
@@ -83,13 +87,81 @@ export const getSkillsToRemove = (
 
   let toRemove: string[] = [removed];
   connectedSelectedIds.forEach((skillToCheck) => {
-    const res = getSubGraphNodes(skillToCheck, [removed], skillsSelected);
+    const res = getSubGraphNodes(skillToCheck, [removed], skillsSelected, tree);
     if (res.shouldRemove) {
       toRemove = toRemove.concat(Array.from(res.nodes));
     }
   });
 
   return toRemove;
+};
+
+// Unselected base nodes, plus unselected neighbors of selected nodes. Edges
+// are undirected, so a skill unlocks from whichever side is selected first.
+export const getSelectableSkills = (
+  selectedSkills: SelectedSkills,
+  tree: SkillNodesType = SkillNodes
+): string[] => {
+  const selectable = new Set<string>();
+  Object.values(tree.nodes).forEach((node) => {
+    if (node.base && selectedSkills[node.id] == null) selectable.add(node.id);
+  });
+  Object.keys(selectedSkills).forEach((id) => {
+    (tree.edges[id] ?? []).forEach((connected) => {
+      if (selectedSkills[connected] == null) selectable.add(connected);
+    });
+  });
+  return Array.from(selectable);
+};
+
+export type SelectionCleanup = {
+  selection: SelectedSkills;
+  // Not in the current tree (e.g. retired by a game update).
+  removed: string[];
+  // No longer connected to a base node through selected skills.
+  disconnected: string[];
+  // Level lowered to the current max level.
+  clamped: string[];
+};
+
+// Fit a saved or shared selection to the current tree.
+export const sanitizeSelection = (
+  selectedSkills: SelectedSkills,
+  tree: SkillNodesType = SkillNodes
+): SelectionCleanup => {
+  const removed: string[] = [];
+  const clamped: string[] = [];
+  const kept: SelectedSkills = {};
+  Object.entries(selectedSkills).forEach(([id, rawLevel]) => {
+    const node = tree.nodes[id];
+    if (!node) {
+      removed.push(id);
+      return;
+    }
+    const max = tree.types[node.type]?.maxLevel ?? 1;
+    const level = Number.isFinite(rawLevel) ? Math.max(1, Math.floor(rawLevel)) : 1;
+    if (level > max) clamped.push(id);
+    kept[id] = Math.min(level, max);
+  });
+  const reached = new Set(Object.keys(kept).filter((id) => tree.nodes[id].base));
+  const stack = Array.from(reached);
+  while (stack.length > 0) {
+    const id = stack.pop()!;
+    tree.edges[id].forEach((next) => {
+      if (kept[next] != null && !reached.has(next)) {
+        reached.add(next);
+        stack.push(next);
+      }
+    });
+  }
+  const disconnected = Object.keys(kept).filter((id) => !reached.has(id));
+  disconnected.forEach((id) => delete kept[id]);
+  return {
+    selection: kept,
+    removed,
+    disconnected,
+    clamped: clamped.filter((id) => kept[id] != null),
+  };
 };
 
 export type BuildData = {

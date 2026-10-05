@@ -19,7 +19,7 @@ import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
 import SkillTooltip from "./SkillTooltip";
 import SkillPaths from "./SkillPaths";
-import { getSkillsToRemove } from "../utils/utils";
+import { getSelectableSkills, getSkillsToRemove } from "../utils/utils";
 import { playSound } from "../utils/sounds";
 import { isHardcapEnabled } from "../utils/settings";
 import HUD from "./hud/HUD";
@@ -68,22 +68,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
     );
 
   const updateSelectableSkills = () => {
-    let tmpSelectableSkills: string[] = [];
-    // Base nodes are always selectable
-    Object.values(Nodes.nodes).forEach((node) => {
-      if (node.base && selectedSkills[node.id] == null) {
-        tmpSelectableSkills.push(node.id);
-      }
-    });
-    // Neighbors of selected nodes are selectable
-    selectedSkillIds.forEach((id) => {
-      tmpSelectableSkills = tmpSelectableSkills.concat(
-        Nodes.edges[id].filter(
-          (connected) => selectedSkills[connected] == null
-        )
-      );
-    });
-    setSelectableSkills(Array.from(new Set(tmpSelectableSkills)));
+    setSelectableSkills(getSelectableSkills(selectedSkills));
   };
 
   const executeRefund = (skillsToRemove: string[]) => {

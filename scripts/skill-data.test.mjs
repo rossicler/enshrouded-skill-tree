@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import i18next from "i18next";
-import { formatValue, renderText, buildTextTemplate, resolveArgument, loadAuthoredTree, buildCandidate, treeContentHash } from "./skill-data.mjs";
+import { formatValue, renderText, buildTextTemplate, resolveArgument, loadAuthoredPresentation, runImport, treeContentHash, candidateContentHash } from "./skill-data.mjs";
 import { getGameInterpolationValues } from "../src/utils/skillInterpolation";
 import { isDifferentTreeVersion, SKILL_TREE_CONTENT_HASH, SKILL_TREE_GAME_BUILD, SKILL_TREE_UPDATE } from "../src/constants/skillTreeVersion";
 import runtime from "../src/constants/gameSkillData.json";
@@ -56,7 +56,7 @@ describe("game argument formatting", () => {
 });
 
 describe("committed import compatibility", () => {
-  const authored = loadAuthoredTree();
+  const presentation = loadAuthoredPresentation();
   it("uses a stable content revision independent of object key order", () => {
     expect(treeContentHash({ nodes: { b: 2, a: 1 }, types: [] })).toBe(
       treeContentHash({ types: [], nodes: { a: 1, b: 2 } }));
@@ -69,21 +69,38 @@ describe("committed import compatibility", () => {
     expect(isDifferentTreeVersion({ treeContentHash: SKILL_TREE_CONTENT_HASH })).toBe(false);
     expect(isDifferentTreeVersion({ treeContentHash: "older-tree" })).toBe(true);
   });
-  it("preserves all 222 IDs and a one-to-one source mapping", () => {
-    expect(Object.keys(runtime.nodes).sort()).toEqual(Object.keys(authored.nodes).sort());
-    expect(Object.keys(mapping)).toHaveLength(222);
-    expect(new Set(Object.values(mapping).map((entry) => entry.appId)).size).toBe(222);
-    for (const [gameId, entry] of Object.entries(mapping)) {
+  it("keeps a one-to-one checked mapping that never reuses retired IDs", () => {
+    const active = Object.entries(mapping.nodes);
+    expect(active).toHaveLength(Object.keys(runtime.nodes).length);
+    expect(new Set(active.map(([, entry]) => entry.appId)).size).toBe(active.length);
+    for (const [gameId, entry] of active) {
       expect(runtime.nodes[entry.appId].gameNodeId).toBe(gameId);
-      expect(authored.nodes[entry.appId].type).toBe(entry.type);
+      expect(runtime.nodes[entry.appId].type).toBe(entry.type);
+      expect(presentation.types[entry.type]).toBeDefined();
+      expect(presentation.nodes[entry.appId]?.tier).toBeDefined();
     }
+    for (const [appId, entry] of Object.entries(mapping.retired)) {
+      expect(runtime.nodes[appId]).toBeUndefined();
+      expect(runtime.retired[appId]).toEqual({ type: entry.type, name: entry.name });
+    }
+    expect(Object.keys(runtime.retired)).toEqual(Object.keys(mapping.retired));
   });
-  it("generates finite Cartesian centers and all 21 base anchors", () => {
-    expect(Object.values(runtime.nodes).filter((entry) => entry.baseAnchor)).toHaveLength(21);
-    for (const [id, entry] of Object.entries(runtime.nodes)) {
+  it("hashes the committed nodes, edges, types and English text", () => {
+    const types = Object.fromEntries(Object.entries(runtime.types).map(([type, metadata]) => {
+      const { importedEnglish, name, description, ...rest } = metadata;
+      return [type, rest];
+    }));
+    const english = Object.fromEntries(Object.keys(runtime.types).filter((type) => runtime.types[type].importedEnglish)
+      .map((type) => [type, locale[type].game]));
+    expect(candidateContentHash({ nodes: runtime.nodes, edges: runtime.edges, types, english }))
+      .toBe(runtime.treeVersion.contentHash);
+  });
+  it("generates finite Cartesian centers and an anchor for every base node", () => {
+    expect(Object.values(runtime.nodes).some((entry) => entry.base)).toBe(true);
+    for (const entry of Object.values(runtime.nodes)) {
       expect(entry.position.kind).toBe("cartesian");
       expect(Number.isFinite(entry.position.x) && Number.isFinite(entry.position.y)).toBe(true);
-      expect(Boolean(entry.baseAnchor)).toBe(Boolean(authored.nodes[id].base));
+      expect(Boolean(entry.baseAnchor)).toBe(Boolean(entry.base));
     }
   });
   it("keeps metadata and generated English levels in sync", () => {
@@ -102,9 +119,11 @@ describe("committed import compatibility", () => {
   });
   it.runIf(Boolean(process.env.SKILL_DATA_EXPORT))("reproduces all English levels with i18next and rejects graph drift", async () => {
     const source = JSON.parse(fs.readFileSync(process.env.SKILL_DATA_EXPORT, "utf8"));
-    const { report, candidate } = buildCandidate(source, authored, locale, inputs);
+    const run = (data) => runImport({ data, mapping, previous: runtime, presentation, locale, inputLabels: inputs });
+    const { report, candidate, nextMapping, blockers } = run(source);
+    expect(blockers).toEqual([]);
     expect(candidate.treeVersion).toEqual(runtime.treeVersion);
-    expect(report.mapping).toEqual(mapping);
+    expect(nextMapping).toEqual(mapping);
     expect(report.unresolvedText).toEqual([]);
     expect(report.retainedText.map((entry) => entry.type)).toEqual(["FROST"]);
     expect(report.retainedStats.map((entry) => entry.type)).toEqual(["RANGER"]);
@@ -113,7 +132,7 @@ describe("committed import compatibility", () => {
       interpolation: { escapeValue: false }, initImmediate: false });
     const interpreted = new Map(source.interpreted.nodes.map((entry) => [entry.gameNodeId, entry]));
     for (const raw of source.raw.trees[0].data.nodes.filter((entry) => entry.type !== "Root")) {
-      const id = String(raw.id.value), type = report.mapping[id].type, metadata = runtime.types[type];
+      const id = String(raw.id.value), type = mapping.nodes[id].type, metadata = runtime.types[type];
       if (!metadata.importedEnglish) continue;
       for (let level = 1; level <= metadata.maxLevel; level++) {
         expect(t.t(`${type}.game.description`, { returnObjects: true,
@@ -125,6 +144,8 @@ describe("committed import compatibility", () => {
       if (rawLabel) expect(t.t(`${type}.game.perLevelLabel`, { ...metadata.gamePerLevelValues })).toBe(rawLabel);
     }
     source.raw.trees[0].data.links.pop();
-    expect(() => buildCandidate(source, authored, locale, inputs)).toThrow();
+    const drifted = run(source);
+    expect(Object.values(drifted.report.graph).flat().length).toBeGreaterThan(0);
+    expect(drifted.blockers.length).toBeGreaterThan(0);
   });
 });

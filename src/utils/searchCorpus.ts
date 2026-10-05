@@ -3,7 +3,10 @@ import SkillNodesDefault, {
   SkillNodesType,
 } from "@/constants/Nodes";
 import { humanizeKey } from "@/utils/utils";
-import { getSkillInterpolationValues } from "@/utils/skillInterpolation";
+import {
+  getGameInterpolationValues,
+  getSkillInterpolationValues,
+} from "@/utils/skillInterpolation";
 import {
   NormalizedText,
   normalizeForSearch,
@@ -26,6 +29,7 @@ export const buildSearchCorpus = (
   t: Translator,
   locale: string,
   skillNodes: SkillNodesType = SkillNodesDefault,
+  hasOwnText: (type: string) => boolean = () => true,
 ): SearchEntry[] => {
   const tierByType: Record<string, "small" | "medium" | "large"> = {};
   Object.values(skillNodes.nodes).forEach((node) => {
@@ -35,14 +39,19 @@ export const buildSearchCorpus = (
   });
 
   return Object.entries(skillNodes.types).map(([key, meta]) => {
+    // Types without locale text (e.g. new, untranslated skills) use game text.
+    const gameText = Boolean(meta.importedEnglish) && !hasOwnText(key);
+    const prefix = gameText ? `${key}.game` : key;
     const name = String(
-      t(`${key}.name`, { ns: "nodes", defaultValue: humanizeKey(key) }),
+      t(`${prefix}.name`, { ns: "nodes", defaultValue: humanizeKey(key) }),
     );
     // Interpolate with level-1 values, matching the tooltip's unselected preview.
-    const rawDescription = t(`${key}.description`, {
+    const rawDescription = t(`${prefix}.description`, {
       ns: "nodes",
       returnObjects: true,
-      ...getSkillInterpolationValues(meta, 1),
+      ...(gameText
+        ? getGameInterpolationValues(meta, 1)
+        : getSkillInterpolationValues(meta, 1)),
     });
     const paragraphs = Array.isArray(rawDescription)
       ? rawDescription

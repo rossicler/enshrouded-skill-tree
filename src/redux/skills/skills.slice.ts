@@ -96,7 +96,7 @@ const skillsSlice = createSlice({
       const alreadySetObj: { [key: string]: boolean } = {};
       skills.forEach((id) => {
         const connectedTo = skills.filter((to) =>
-          SkillNodes.edges[id].includes(to)
+          SkillNodes.edges[id]?.includes(to)
         );
         connectedTo.forEach((to) => {
           const pathId = id > to ? `${id}-${to}` : `${to}-${id}`;

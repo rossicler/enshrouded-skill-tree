@@ -1,16 +1,18 @@
 import { toast } from "react-toastify";
-import { CircleCheck, CircleX } from "lucide-react";
+import { CircleAlert, CircleCheck, CircleX } from "lucide-react";
 
 const GameToast = ({
   message,
   type,
 }: {
   message: string;
-  type: "success" | "error";
+  type: "success" | "error" | "warning";
 }) => (
   <div className="flex items-center gap-2">
     {type === "success" ? (
       <CircleCheck size={18} className="text-[#8fad6a] shrink-0" />
+    ) : type === "warning" ? (
+      <CircleAlert size={18} className="text-[#C8B169] shrink-0" />
     ) : (
       <CircleX size={18} className="text-[#c45c5c] shrink-0" />
     )}
@@ -19,6 +21,13 @@ const GameToast = ({
 );
 
 export const gameToast = {
+  warning: (message: string) =>
+    toast(<GameToast message={message} type="warning" />, {
+      className:
+        "!bg-[#2a2a35] !border !border-[#5a5a60]/50 !border-t-[#C8B169]/60 !rounded-sm !shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
+      closeButton: false,
+      autoClose: 6000,
+    }),
   success: (message: string) =>
     toast(<GameToast message={message} type="success" />, {
       className:

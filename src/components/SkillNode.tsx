@@ -4,7 +4,7 @@ import { Node } from "../constants/Nodes";
 
 import { getAsset } from "../utils/assets-utils";
 import Image from "next/image";
-import SkillPath from "./shared/SkillPath";
+import { resolveNodePosition } from "../utils/nodePosition";
 import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
 import { playSound } from "@/utils/sounds";
@@ -36,8 +36,6 @@ const SIZE = {
   },
   label: "text-sm",
 };
-
-const INIT_DISTANCE = 250;
 
 const SkillNode = ({
   node,
@@ -111,21 +109,19 @@ const SkillNode = ({
   const iconSize =
     nodeSize.size - (selected || selectable ? 15 : 20) - (iconOffset ?? 0);
 
-  if (!node.angle) return null;
+  const position = resolveNodePosition(node);
 
   return (
     <>
       <div
-        className="absolute top-0 left-0 h-full"
+        className="absolute top-0 left-0"
         style={{
-          transformOrigin: "0% 0%",
-          transform: `rotate(${node.angle}deg)`,
+          transform: `translate(${position.x}px, ${position.y}px)`,
         }}
       >
         <div
           id={`node-${node.id}`}
-          className="relative w-0.5 h-0.5"
-          style={{ marginTop: INIT_DISTANCE + (node.distance ?? 0) }}
+          className="relative w-0 h-0"
         >
           <div
             className={classNames(
@@ -136,8 +132,6 @@ const SkillNode = ({
             style={{
               left: -nodeSize.size / 2,
               bottom: -nodeSize.size / 2,
-              transformOrigin: "center",
-              transform: `rotate(-${node.angle}deg)`,
             }}
           >
             <button
@@ -194,16 +188,6 @@ const SkillNode = ({
           </div>
         </div>
       </div>
-      {node.base && (
-        <svg className="absolute inset-0 w-full h-full pointer-events-none">
-          <SkillPath
-            key={`base-line-${node.id}`}
-            from={`node-${node.id}`}
-            to={`line-${node.angle}`}
-            color="#1c1829"
-          />
-        </svg>
-      )}
     </>
   );
 };

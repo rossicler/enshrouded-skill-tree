@@ -7,7 +7,13 @@ import { clearCodeImported } from "@/redux/skills/skills.slice";
 import { useApplySelection, useLoadBuild } from "@/hooks/useLoadBuild";
 import { convertHashToJson, sanitizeSelection } from "@/utils/utils";
 
-const InitSkills = () => {
+type PropsType = {
+  // Share code from the page props. Known on the first render, unlike
+  // codeImported, which Home's effect sets after this component's effects run.
+  sharedCode?: string;
+};
+
+const InitSkills = ({ sharedCode }: PropsType) => {
   const code = useAppSelector((state) => state.skill.codeImported);
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
   const { t } = useTranslation("common");
@@ -16,9 +22,10 @@ const InitSkills = () => {
   const applySelection = useApplySelection();
 
   // A session restored after a game update may reference retired or now
-  // unreachable skills; fit it to the current tree once on load.
+  // unreachable skills; fit it to the current tree once on load. Skip it when a
+  // shared build is about to replace the session.
   useEffect(() => {
-    if (code) return;
+    if (code || sharedCode) return;
     const cleanup = sanitizeSelection(selectedSkills);
     if (cleanup.removed.length || cleanup.disconnected.length || cleanup.clamped.length) {
       applySelection(selectedSkills);

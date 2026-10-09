@@ -55,7 +55,7 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
         />
         <div>
           <SkillTree dbAvailable={dbAvailable} focusNodeId={focusNodeId} />
-          <InitSkills />
+          <InitSkills sharedCode={code} />
         </div>
       </main>
     </>

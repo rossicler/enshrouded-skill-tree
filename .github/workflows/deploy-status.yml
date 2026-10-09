@@ -1,0 +1,99 @@
+name: Deploy status
+
+# Mirrors the AWS Amplify build for this commit as a GitHub check, so its
+# result shows on the PR or commit without opening the AWS console.
+# Setup (IAM role and repo variables): docs/amplify-deploy-status.md
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  id-token: write # OIDC token for assuming the AWS role
+
+concurrency:
+  group: deploy-status-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  amplify:
+    name: Amplify deploy
+    # Skip until the repo variables exist, and skip fork PRs (they get no OIDC token).
+    if: >-
+      vars.AMPLIFY_APP_ID != '' &&
+      (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Wait for the Amplify build
+        env:
+          APP_ID: ${{ vars.AMPLIFY_APP_ID }}
+          REGION: ${{ vars.AWS_REGION }}
+          # Amplify names PR preview branches pr-<number>; pushes use the branch name.
+          BRANCH: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.ref_name }}
+          SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+
+          if ! display_name=$(aws amplify get-branch --app-id "$APP_ID" --branch-name "$BRANCH" \
+              --query branch.displayName --output text 2>err.txt); then
+            if grep -q NotFoundException err.txt; then
+              echo "::notice::Amplify has no branch '$BRANCH', so nothing deploys from this event."
+              exit 0
+            fi
+            cat err.txt >&2
+            exit 1
+          fi
+          domain=$(aws amplify get-app --app-id "$APP_ID" --query app.defaultDomain --output text)
+          site_url="https://$display_name.$domain"
+
+          # Amplify starts the job from its own webhook, which can lag behind this run.
+          deadline=$((SECONDS + 600))
+          while :; do
+            job_id=$(aws amplify list-jobs --app-id "$APP_ID" --branch-name "$BRANCH" --max-items 25 \
+              --query "jobSummaries[?commitId=='$SHA'] | [0].jobId" --output text)
+            if [ -n "$job_id" ] && [ "$job_id" != None ]; then break; fi
+            if [ "$SECONDS" -ge "$deadline" ]; then
+              echo "::error::No Amplify job for $SHA on branch '$BRANCH' after 10 minutes."
+              aws amplify list-jobs --app-id "$APP_ID" --branch-name "$BRANCH" --max-items 5 \
+                --query 'jobSummaries[].[jobId,commitId,status]' --output table
+              exit 1
+            fi
+            sleep 15
+          done
+
+          console_url="https://$REGION.console.aws.amazon.com/amplify/apps/$APP_ID/branches/$BRANCH/deployments/$job_id"
+          echo "Amplify job $job_id: $console_url"
+
+          while :; do
+            status=$(aws amplify get-job --app-id "$APP_ID" --branch-name "$BRANCH" --job-id "$job_id" \
+              --query job.summary.status --output text)
+            case "$status" in
+              SUCCEED|FAILED|CANCELLED) break ;;
+            esac
+            echo "$(date -u +%H:%M:%S) $status"
+            sleep 20
+          done
+
+          {
+            echo "### Amplify deploy: $status"
+            echo
+            echo "- Branch: \`$BRANCH\`, job $job_id"
+            echo "- Site: $site_url"
+            echo "- Build logs: $console_url"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$status" != SUCCEED ]; then
+            aws amplify get-job --app-id "$APP_ID" --branch-name "$BRANCH" --job-id "$job_id" \
+              --query 'job.steps[].[stepName,status]' --output table
+            echo "::error::Amplify job $job_id ended $status. Logs: $console_url"
+            exit 1
+          fi
+          echo "::notice::Deployed $site_url"

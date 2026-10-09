@@ -5,7 +5,9 @@ name: Deploy status
 # Setup (IAM role and repo variables): docs/amplify-deploy-status.md
 
 on:
+  # Keep these branches in sync with the IAM role's trust policy (sub claim).
   push:
+    branches: [main, dev]
   pull_request:
     types: [opened, synchronize, reopened]
 

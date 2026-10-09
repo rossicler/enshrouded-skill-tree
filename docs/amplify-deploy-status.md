@@ -2,7 +2,7 @@
 
 `.github/workflows/deploy-status.yml` adds an **Amplify deploy** check to pushes and pull requests. The check waits for the AWS Amplify build of the same commit, then passes or fails with it. Its job summary links to the deployed site and to the build logs in the Amplify console.
 
-- On a push, it watches the Amplify branch with the same name (for example `main`).
+- On a push to `main` or `dev`, it watches the Amplify branch with the same name.
 - On a pull request, it watches the PR preview branch `pr-<number>`.
 - If Amplify doesn't have that branch, the check passes with a notice, because nothing deploys from that event.
 - The check is skipped until `AMPLIFY_APP_ID` is set, and it is also skipped for PRs from forks, which get no OIDC token.
@@ -34,13 +34,21 @@ IAM → Roles → Create role → Custom trust policy. Replace `<ACCOUNT_ID>`:
       },
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
-        "StringEquals": { "token.actions.githubusercontent.com:aud": "sts.amazonaws.com" },
-        "StringLike": { "token.actions.githubusercontent.com:sub": "repo:rossicler/enshrouded-skill-tree:*" }
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": [
+            "repo:rossicler/enshrouded-skill-tree:ref:refs/heads/main",
+            "repo:rossicler/enshrouded-skill-tree:ref:refs/heads/dev",
+            "repo:rossicler/enshrouded-skill-tree:pull_request"
+          ]
+        }
       }
     }
   ]
 }
 ```
+
+The subject list has no wildcards. Push runs carry `ref:refs/heads/<branch>`, so only pushes to `main` and `dev` can assume the role. PR runs carry `pull_request`. PRs from forks don't get a token, so only branches in this repo, which only people with write access can push, match that value. The workflow's `push.branches` must name the same branches as the subject list. When Amplify starts deploying another branch, add it in both places, or pushes to it will fail at the AWS sign-in step.
 
 Attach an inline permissions policy. Replace `<REGION>`, `<ACCOUNT_ID>` and `<APP_ID>`:
 

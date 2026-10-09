@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+# A new push to the PR cancels the run still going for the previous commit.
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Type check, test and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Type check
+        run: yarn tsc --noEmit --incremental false
+
+      - name: Test
+        run: yarn test
+
+      # prebuild runs validate-translations and generate-version.
+      # MONGODB_URI is left unset, so the build runs with DB features off.
+      - name: Build
+        run: yarn build

@@ -17,7 +17,6 @@ import GameInput from "../shared/GameInput";
 import { setSearchSkillResults } from "@/redux/skills/skills.slice";
 import SkillNodes from "@/constants/Nodes";
 import { buildSearchCorpus } from "@/utils/searchCorpus";
-import { hasLocaleText } from "@/utils/skillText";
 import {
   MatchRange,
   buildSnippet,
@@ -83,7 +82,7 @@ const Search = ({
   useEffect(() => {
     routerRef.current = router;
   }, [router]);
-  const { t, i18n } = useTranslation(["common", "nodes"]);
+  const { t } = useTranslation(["common", "nodes"]);
   const dispatch = useAppDispatch();
 
   const exactMatch = !!router.query.focus;
@@ -95,10 +94,7 @@ const Search = ({
   }, []);
 
   const locale = router.locale ?? "en";
-  const corpus = useMemo(
-    () => buildSearchCorpus(t, locale, undefined, (type) => hasLocaleText(i18n, locale, type)),
-    [t, i18n, locale]
-  );
+  const corpus = useMemo(() => buildSearchCorpus(t, locale), [t, locale]);
 
   const results = useMemo(() => {
     if (!searchText || searchText.length < 3) return [];

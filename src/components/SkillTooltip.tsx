@@ -9,7 +9,6 @@ import DOMPurify from "dompurify";
 import { classNames, humanizeKey } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
-import { hasLocaleText, usesGameText } from "@/utils/skillText";
 import { getGameInterpolationValues, getSkillInterpolationValues } from "@/utils/skillInterpolation";
 import GameButton from "./shared/GameButton";
 import type { SkillAction } from "./SkillTree";
@@ -40,8 +39,7 @@ const SkillTooltip = ({
 }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
   const { t, i18n } = useTranslation(["nodes", "common"]);
-  const language = i18n.resolvedLanguage ?? i18n.language;
-  const useImportedEnglish = usesGameText(metadata, language, hasLocaleText(i18n, language, node.type));
+  const useImportedEnglish = metadata.importedEnglish && (i18n.resolvedLanguage ?? i18n.language).split("-")[0] === "en";
   const name = t(`${node.type}.${useImportedEnglish ? "game.name" : "name"}`, {
     ns: "nodes",
     defaultValue: humanizeKey(node.type),

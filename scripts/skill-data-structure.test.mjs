@@ -5,16 +5,25 @@ import { buildSkillTree } from "../src/constants/Nodes";
 import { getSelectableSkills } from "../src/utils/utils";
 import runtime from "../src/constants/gameSkillData.json";
 import locale from "../public/locales/en/nodes.json";
+import frLocale from "../public/locales/fr/nodes.json";
 import mapping from "./skill-data-mapping.json";
 
 const presentation = loadAuthoredPresentation();
 const fresh = () => syntheticExport({ runtime, mapping, locale });
 const gameIdOf = (appId) => Object.entries(mapping.nodes).find(([, entry]) => entry.appId === appId)[0];
+// Locales with a translation for every authored type (new fixture types get one
+// alongside their presentation, as a maintainer would add before applying).
+const translated = (pres) => {
+  const fill = (nodes) => ({ ...Object.fromEntries(Object.keys(pres.types)
+    .map((type) => [type, { description: [`${type} translation.`] }])), ...nodes });
+  return { en: fill(locale), fr: fill(frLocale) };
+};
 const run = (data, changes, options = {}) => runImport({
   data, changes, locale,
   mapping: options.mapping ?? mapping,
   previous: options.previous ?? runtime,
   presentation: options.presentation ?? presentation,
+  locales: options.locales ?? translated(options.presentation ?? presentation),
 });
 const approve = (result) => structuredClone(result.proposal);
 const withType = (type) => ({ ...presentation, types: { ...presentation.types, [type]: { color: "blue" } } });
@@ -73,7 +82,11 @@ describe("structural import: additions", () => {
   it("requires authored presentation for a new type before applying", () => {
     const preview = run(data);
     const pending = run(data, approve(preview));
-    expect(pending.blockers).toEqual([expect.stringContaining("Type FROST_NOVA needs authored presentation")]);
+    expect(pending.blockers).toEqual([
+      expect.stringContaining("Type FROST_NOVA needs authored presentation"),
+      "Type FROST_NOVA needs a translation (description) in public/locales/en/nodes.json",
+      "Type FROST_NOVA needs a translation (description) in public/locales/fr/nodes.json",
+    ]);
 
     const pres = withType("FROST_NOVA");
     const applied = run(data, approve(preview), { presentation: pres });
@@ -90,6 +103,14 @@ describe("structural import: additions", () => {
     expect(getSelectableSkills({ "222": 1 }, tree)).toContain("223");
     expect(getSelectableSkills({ "223": 1 }, tree)).toContain("222");
     expectBidirectional(tree);
+  });
+
+  it("requires a translation in every locale, even though game text is English", () => {
+    const pres = withType("FROST_NOVA");
+    const locales = translated(pres);
+    delete locales.fr.FROST_NOVA;
+    const result = run(data, approve(run(data)), { presentation: pres, locales });
+    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in public/locales/fr/nodes.json"]);
   });
 
   it("reuses an existing type when the name matches", () => {

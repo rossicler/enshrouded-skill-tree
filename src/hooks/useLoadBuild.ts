@@ -11,7 +11,6 @@ import {
   setUnlockedBiomes,
 } from "@/redux/skills/skills.slice";
 import { gameToast } from "@/utils/gameToast";
-import { hasLocaleText, usesGameText } from "@/utils/skillText";
 import {
   BuildData,
   SelectionCleanup,
@@ -29,9 +28,9 @@ export const useApplySelection = () => {
     (id: string) => {
       const node = SkillNodes.nodes[id];
       if (!node) return RETIRED_NODES[id]?.name ?? `#${id}`;
-      const language = i18n.resolvedLanguage ?? i18n.language;
-      const metadata = SkillNodes.types[node.type];
-      const key = usesGameText(metadata, language, hasLocaleText(i18n, language, node.type)) ? "game.name" : "name";
+      // Same rule as the tooltip: English shows the imported game name.
+      const language = (i18n.resolvedLanguage ?? i18n.language).split("-")[0];
+      const key = SkillNodes.types[node.type]?.importedEnglish && language === "en" ? "game.name" : "name";
       return String(t(`${node.type}.${key}`, { ns: "nodes", defaultValue: humanizeKey(node.type) }));
     },
     [t, i18n]

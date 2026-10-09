@@ -148,9 +148,10 @@ A successful apply renames the file to `changes.applied.json`.
 New types also need authored presentation in `LegacyNodes.ts` (at least a
 `color`; `hasIcon` plus `public/assets/skills/<TYPE>.png` and `_GRAY.png`
 for an icon). Apply is refused until it exists. A new node without an
-authored `tier` renders as small (a warning). Apply writes the English `game`
-text. Other locales may omit a new type; the validator warns, and the tooltip
-and search fall back to the English game text until it is translated.
+authored `tier` renders as small (a warning). Game text is English only, so
+apply is also refused until every locale has a translation (at least a
+`description`) for the new type, matching `validate-translations.js`, which
+requires one at build time. Apply then adds the English `game` text.
 
 Saved and shared builds are fitted to the current tree when loaded (share
 code, JSON import, or a restored session): retired IDs, skills no longer

@@ -213,7 +213,7 @@ const APP_ID = /^[1-9]\d*$/;
 // Compare an export with the checked mapping and the previous import, by
 // stable game ID. Never throws for structural differences: they are reported,
 // proposed as decisions, and gated on explicit approval.
-export function planImport({ data, mapping: rawMapping, previous, presentation, locale, changes }) {
+export function planImport({ data, mapping: rawMapping, previous, presentation, locale, locales = { en: locale }, changes }) {
   const parsed = parseExport(data);
   const mapping = normalizeMapping(rawMapping);
   const blockers = [], warnings = [];
@@ -333,6 +333,13 @@ export function planImport({ data, mapping: rawMapping, previous, presentation, 
   const usedTypes = [...new Set(Object.values(nextNodes).map((entry) => entry.type))].sort();
   const missingPresentation = usedTypes.filter((type) => !presentation.types[type]);
   for (const type of missingPresentation) blockers.push(`Type ${type} needs authored presentation in src/constants/LegacyNodes.ts (color, icon/assets)`);
+  // Game text is English only; every locale still needs its own translation
+  // (scripts/validate-translations.js enforces the same at build time).
+  for (const type of usedTypes) {
+    for (const [lang, nodes] of Object.entries(locales)) {
+      if (!nodes[type]?.description?.length) blockers.push(`Type ${type} needs a translation (description) in public/locales/${lang}/nodes.json`);
+    }
+  }
   for (const gameId of added) {
     const id = nextNodes[gameId]?.appId;
     if (id && !presentation.nodes[id]) warnings.push(`Node ${id} (${parsed.name(gameId)}) has no authored tier; it renders as "small"`);
@@ -460,8 +467,8 @@ export function buildCandidate(data, parsed, nextMapping, previous, presentation
 }
 
 // Full preview: plan, build, and list everything that prevents --apply.
-export function runImport({ data, mapping, previous, presentation, locale, inputLabels = {}, changes }) {
-  const plan = planImport({ data, mapping, previous, presentation, locale, changes });
+export function runImport({ data, mapping, previous, presentation, locale, locales, inputLabels = {}, changes }) {
+  const plan = planImport({ data, mapping, previous, presentation, locale, locales, changes });
   const { candidate, textReport } = buildCandidate(data, plan.parsed, plan.nextMapping, previous, presentation, inputLabels);
   const blockers = [...plan.blockers];
   if (textReport.unresolvedText.length) blockers.push("Unresolved text prevents applying this import; see report.json");
@@ -527,6 +534,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   };
   const data = readJson(input);
   const locale = readJson(paths.locale);
+  const localesDir = path.join(root, "public/locales");
+  const locales = Object.fromEntries(fs.readdirSync(localesDir).filter((lang) => fs.existsSync(path.join(localesDir, lang, "nodes.json")))
+    .map((lang) => [lang, lang === "en" ? locale : readJson(path.join(localesDir, lang, "nodes.json"))]));
   const presentation = loadAuthoredPresentation();
   const previous = readJson(paths.runtime);
   const inputLabels = readJson(option("inputs") ?? path.join(root, "scripts/skill-data-inputs.json"));
@@ -540,7 +550,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   }
   if (!fs.existsSync(paths.mapping)) throw new Error("Initialize and review the identity mapping first");
   const changes = fs.existsSync(paths.changes) ? readJson(paths.changes) : undefined;
-  const result = runImport({ data, mapping: readJson(paths.mapping), previous, presentation, locale, inputLabels, changes });
+  const result = runImport({ data, mapping: readJson(paths.mapping), previous, presentation, locale, locales, inputLabels, changes });
   fs.writeFileSync(path.join(output, "report.json"), JSON.stringify(result.report, null, 2) + "\n");
   fs.writeFileSync(path.join(output, "candidate.json"), JSON.stringify(result.candidate, null, 2) + "\n");
   fs.writeFileSync(path.join(output, "changes.proposed.json"), JSON.stringify(result.proposal, null, 2) + "\n");

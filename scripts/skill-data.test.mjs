@@ -119,7 +119,7 @@ describe("committed import compatibility", () => {
   });
   it.runIf(Boolean(process.env.SKILL_DATA_EXPORT))("reproduces all English levels with i18next and rejects graph drift", async () => {
     const source = JSON.parse(fs.readFileSync(process.env.SKILL_DATA_EXPORT, "utf8"));
-    const run = (data) => runImport({ data, mapping, previous: runtime, presentation, locale, inputLabels: inputs });
+    const run = (data) => runImport({ data, mapping, previous: runtime, presentation, locales: { en: locale }, inputLabels: inputs });
     const { report, candidate, nextMapping, blockers } = run(source);
     expect(blockers).toEqual([]);
     expect(candidate.treeVersion).toEqual(runtime.treeVersion);

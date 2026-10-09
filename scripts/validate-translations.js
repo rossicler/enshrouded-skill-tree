@@ -34,7 +34,8 @@ if (nodeKeys.length === 0) {
     console.warn('Warning: No node keys found in Nodes.ts. Check the regex parser.');
 }
 
-const locales = ['en', 'fr'];
+// Same locale list as the app (and the importer's translation check).
+const locales = require('../next-i18next.config.js').i18n.locales;
 let hasError = false;
 
 locales.forEach(lang => {

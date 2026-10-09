@@ -22,14 +22,17 @@ const InitSkills = ({ sharedCode }: PropsType) => {
   const applySelection = useApplySelection();
 
   // A session restored after a game update may reference retired or now
-  // unreachable skills; fit it to the current tree once on load. Skip it when a
-  // shared build is about to replace the session.
-  useEffect(() => {
-    if (code || sharedCode) return;
+  // unreachable skills; fit it to the current tree.
+  const cleanUpSession = () => {
     const cleanup = sanitizeSelection(selectedSkills);
     if (cleanup.removed.length || cleanup.disconnected.length || cleanup.clamped.length) {
       applySelection(selectedSkills);
     }
+  };
+
+  // Once on load, unless a shared build is about to replace the session.
+  useEffect(() => {
+    if (!code && !sharedCode) cleanUpSession();
   }, []);
 
   useEffect(() => {
@@ -41,6 +44,8 @@ const InitSkills = ({ sharedCode }: PropsType) => {
         dispatch(clearCodeImported());
       } catch {
         gameToast.error(t("toasts.invalidCode"));
+        // The session stays loaded, so it still needs fitting to the tree.
+        cleanUpSession();
       }
     }
   }, [code]);

@@ -19,7 +19,7 @@ const translated = (pres) => {
   return { en: fill(locale), fr: fill(frLocale) };
 };
 const run = (data, changes, options = {}) => runImport({
-  data, changes, locale,
+  data, changes,
   mapping: options.mapping ?? mapping,
   previous: options.previous ?? runtime,
   presentation: options.presentation ?? presentation,

@@ -60,7 +60,7 @@ export const getSubGraphNodes = (
     if (nodeId && !visited.has(nodeId)) {
       visited.add(nodeId);
       stack = stack.concat(
-        tree.edges[nodeId].filter(
+        (tree.edges[nodeId] ?? []).filter(
           (id) =>
             selectedSkills.includes(id) &&
             !toExclude.includes(id) &&
@@ -78,7 +78,7 @@ export const getSkillsToRemove = (
   skillsSelected: string[],
   tree: SkillNodesType = SkillNodes
 ) => {
-  const edges = tree.edges[removed];
+  const edges = tree.edges[removed] ?? [];
 
   const connectedSelectedIds = edges.filter(
     (id) => skillsSelected.includes(id) && id !== removed

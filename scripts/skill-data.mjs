@@ -209,11 +209,21 @@ export function buildTextTemplate(text, node, interpreted, data, maxLevel, input
 
 const TYPE_KEY = /^[A-Z][A-Z0-9_]*$/;
 const APP_ID = /^[1-9]\d*$/;
+// Game attribute GUIDs for the basic stats an Attribute node can raise.
+const STAT_KEYS = {
+  "0b1ceec5-402d-43ff-9a12-43392d53cf26": "CONS",
+  "4be83310-d59c-4f6d-89dd-1e61e033db86": "DEX",
+  "6bd1a147-1ea7-441e-8c6e-6f8b68dbcbfe": "ENDURANCE",
+  "2609852d-a281-4176-804e-b2dc4b8eb8e8": "INT",
+  "0e31beac-22c5-4572-a98a-e39dca2bd1f7": "SPIRIT",
+  "64810163-59a0-4b55-82b9-5bb6290b22d7": "STR",
+};
 
 // Compare an export with the checked mapping and the previous import, by
 // stable game ID. Never throws for structural differences: they are reported,
 // proposed as decisions, and gated on explicit approval.
-export function planImport({ data, mapping: rawMapping, previous, presentation, locale, locales = { en: locale }, changes }) {
+export function planImport({ data, mapping: rawMapping, previous, presentation, locales, changes }) {
+  const locale = locales.en;
   const parsed = parseExport(data);
   const mapping = normalizeMapping(rawMapping);
   const blockers = [], warnings = [];
@@ -391,19 +401,11 @@ export function buildCandidate(data, parsed, nextMapping, previous, presentation
     const isNewType = !previous.types[type];
     const metadata = { cost: node.costs, maxLevel: interpreted.maxPurchasableLevel };
     try {
-      const statKeys = {
-        "0b1ceec5-402d-43ff-9a12-43392d53cf26": "CONS",
-        "4be83310-d59c-4f6d-89dd-1e61e033db86": "DEX",
-        "6bd1a147-1ea7-441e-8c6e-6f8b68dbcbfe": "ENDURANCE",
-        "2609852d-a281-4176-804e-b2dc4b8eb8e8": "INT",
-        "0e31beac-22c5-4572-a98a-e39dca2bd1f7": "SPIRIT",
-        "64810163-59a0-4b55-82b9-5bb6290b22d7": "STR",
-      };
-      const attribute = node.configValues.simple.find((config) => config.variantType === "keen::impact::AttributeReferenceConfig" && statKeys[config.value.value]);
+      const attribute = node.configValues.simple.find((config) => config.variantType === "keen::impact::AttributeReferenceConfig" && STAT_KEYS[config.value.value]);
       if (node.type === "Attribute" && attribute) {
         const increment = node.configValues.simple.find((config) => config.variantType === "keen::impact::Sint32ImpactConfig" && config.value.configId.value === 168593383);
         if (!Number.isFinite(increment?.value.value) || node.configValues.scaled.length) throw new Error(`Unsupported attribute increment ${gameId}`);
-        metadata.stats = { [statKeys[attribute.value.value]]: increment.value.value };
+        metadata.stats = { [STAT_KEYS[attribute.value.value]]: increment.value.value };
         if (!isNewType && JSON.stringify(original.stats) !== JSON.stringify(metadata.stats)) throw new Error(`Basic stat change needs review: ${gameId}`);
       } else if (original.stats) {
         if (node.type === "Attribute") throw new Error(`Missing basic stat configuration: ${gameId}`);
@@ -467,8 +469,8 @@ export function buildCandidate(data, parsed, nextMapping, previous, presentation
 }
 
 // Full preview: plan, build, and list everything that prevents --apply.
-export function runImport({ data, mapping, previous, presentation, locale, locales, inputLabels = {}, changes }) {
-  const plan = planImport({ data, mapping, previous, presentation, locale, locales, changes });
+export function runImport({ data, mapping, previous, presentation, locales, inputLabels = {}, changes }) {
+  const plan = planImport({ data, mapping, previous, presentation, locales, changes });
   const { candidate, textReport } = buildCandidate(data, plan.parsed, plan.nextMapping, previous, presentation, inputLabels);
   const blockers = [...plan.blockers];
   if (textReport.unresolvedText.length) blockers.push("Unresolved text prevents applying this import; see report.json");
@@ -534,9 +536,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   };
   const data = readJson(input);
   const locale = readJson(paths.locale);
-  const localesDir = path.join(root, "public/locales");
-  const locales = Object.fromEntries(fs.readdirSync(localesDir).filter((lang) => fs.existsSync(path.join(localesDir, lang, "nodes.json")))
-    .map((lang) => [lang, lang === "en" ? locale : readJson(path.join(localesDir, lang, "nodes.json"))]));
+  // Same locale list as the app and scripts/validate-translations.js.
+  const locales = Object.fromEntries(createRequire(import.meta.url)("../next-i18next.config.js").i18n.locales
+    .map((lang) => [lang, lang === "en" ? locale : readJson(path.join(root, "public/locales", lang, "nodes.json"))]));
   const presentation = loadAuthoredPresentation();
   const previous = readJson(paths.runtime);
   const inputLabels = readJson(option("inputs") ?? path.join(root, "scripts/skill-data-inputs.json"));
@@ -550,7 +552,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   }
   if (!fs.existsSync(paths.mapping)) throw new Error("Initialize and review the identity mapping first");
   const changes = fs.existsSync(paths.changes) ? readJson(paths.changes) : undefined;
-  const result = runImport({ data, mapping: readJson(paths.mapping), previous, presentation, locale, locales, inputLabels, changes });
+  const result = runImport({ data, mapping: readJson(paths.mapping), previous, presentation, locales, inputLabels, changes });
   fs.writeFileSync(path.join(output, "report.json"), JSON.stringify(result.report, null, 2) + "\n");
   fs.writeFileSync(path.join(output, "candidate.json"), JSON.stringify(result.candidate, null, 2) + "\n");
   fs.writeFileSync(path.join(output, "changes.proposed.json"), JSON.stringify(result.proposal, null, 2) + "\n");

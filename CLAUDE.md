@@ -15,7 +15,7 @@ yarn test                                 # vitest run (src/**/__tests__ and scr
 yarn vitest run src/utils/__tests__/nodePosition.test.ts   # single test file
 yarn vitest run -t "name substring"       # single test by name
 yarn tsc --noEmit --incremental false     # type check
-yarn validate-translations                # zod-check public/locales/*/nodes.json against node type keys
+yarn validate-translations                # check every locale has all text the app shows or searches
 yarn import-skills <export.json> [--changes=path] [--apply]  # preview/apply a game import (see below)
 ```
 
@@ -38,7 +38,8 @@ Env (`.env.local`, see `.env.example`): `BASE_URL`, `MONGODB_URI`, `NEXT_PUBLIC_
 `src/utils/nodePosition.ts` (`resolveNodePosition`) handles legacy `angle`/`distance` fields, `position: {kind:"polar"}` and `position: {kind:"cartesian", x, y}`. An explicit `position` wins over the legacy fields. +X points right and +Y points down, with the tree center as origin. Base nodes connect to the 198-unit core circle, or to an explicit `baseAnchor`.
 
 ### Text and localization
-- `public/locales/{en,fr}/common.json` holds UI strings and `nodes.json` holds per-type text. The imported English text lives under each record's `game` key, which the zod schema in `scripts/validate-translations.js` checks strictly (no extra keys allowed). A failure there breaks the build. English shows `game` text when a type has it, and other locales show their own translation. Every type needs a `description` in every locale: the validator requires it, and the importer refuses `--apply` for a new type until it has one.
+- `public/locales/{en,fr}/common.json` holds UI strings and `nodes.json` holds per-type text. The imported English text lives under each record's `game` key. English shows `game` text when a type has it, and other locales show their own translation; `skillTextPrefix` (`src/utils/skillText.ts`) picks the record, and the tooltip, search, toasts and `?focus=` all use it.
+- `scripts/validate-translations.js` (run by `prebuild`, so a failure breaks the build) loads the app's tree and interpolation through `jiti` and checks what each locale actually shows: the zod schema (strict, no extra keys), an entry for every type in `LegacyNodes.ts`, and, for every type in the tree, a `name`, a `description` whose `{{placeholders}}` all have values at every level, and a per-level line in the locale's language (`perLevelLabel`; outside English the authored `perLevel.label` fallback is English, so it is an error). For `common.json` it checks key and placeholder parity with `en`, every key the code references (literal `t()`/`i18nKey`, and string literals naming a key in a known section), and every value of keys built at runtime (`biomes.<id>`, `treeLabels.<nameKey>`). A new ``t(`prefix${...}`)`` prefix fails until it is listed under `families` in the script. The importer only refuses `--apply` for a new type without a `description`; the build check covers the rest.
 - Descriptions are i18next templates. Their numeric values come from node-type metadata: `gameValues`, `gameLevelValues` (indexed by purchased level) and `gamePerLevelValues`, plus the legacy `levelValues` and `perLevel`. `src/utils/skillInterpolation.ts` resolves them, and the output is sanitized with DOMPurify before rendering.
 
 ### State and build sharing

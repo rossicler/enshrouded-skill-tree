@@ -11,7 +11,7 @@ import {
   setUnlockedBiomes,
 } from "@/redux/skills/skills.slice";
 import { gameToast } from "@/utils/gameToast";
-import { usesGameText } from "@/utils/skillText";
+import { skillTextPrefix } from "@/utils/skillText";
 import {
   BuildData,
   SelectionCleanup,
@@ -30,8 +30,8 @@ export const useApplySelection = () => {
       const node = SkillNodes.nodes[id];
       if (!node) return RETIRED_NODES[id]?.name ?? `#${id}`;
       const language = i18n.resolvedLanguage ?? i18n.language;
-      const key = usesGameText(SkillNodes.types[node.type], language) ? "game.name" : "name";
-      return String(t(`${node.type}.${key}`, { ns: "nodes", defaultValue: humanizeKey(node.type) }));
+      const prefix = skillTextPrefix(node.type, SkillNodes.types[node.type], language);
+      return String(t(`${prefix}.name`, { ns: "nodes", defaultValue: humanizeKey(node.type) }));
     },
     [t, i18n]
   );

@@ -19,7 +19,8 @@ import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
 import SkillTooltip from "./SkillTooltip";
 import SkillPaths from "./SkillPaths";
-import { getSelectableSkills, getSkillsToRemove } from "../utils/utils";
+import { getSelectableSkills, getSkillsToRemove, humanizeKey } from "../utils/utils";
+import { skillTextPrefix } from "../utils/skillText";
 import { playSound } from "../utils/sounds";
 import { isHardcapEnabled } from "../utils/settings";
 import HUD from "./hud/HUD";
@@ -35,9 +36,13 @@ type SkillTreeProps = {
 };
 
 const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
-  const { t } = useTranslation("nodes");
-  const focusNodeName = focusNodeId
-    ? t(`${Nodes.nodes[focusNodeId]?.type}.name`)
+  const { t, i18n } = useTranslation("nodes");
+  // Seeds the search box, so it must be the same name the search corpus indexes.
+  const focusType = focusNodeId ? Nodes.nodes[focusNodeId]?.type : undefined;
+  const focusNodeName = focusType
+    ? t(`${skillTextPrefix(focusType, Nodes.types[focusType], i18n.resolvedLanguage ?? i18n.language)}.name`, {
+        defaultValue: humanizeKey(focusType),
+      })
     : undefined;
   const [pendingRefund, setPendingRefund] = useState<string[] | null>(null);
   const [showCapWarning, setShowCapWarning] = useState(false);

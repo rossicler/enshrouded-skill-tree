@@ -9,7 +9,7 @@ import DOMPurify from "dompurify";
 import { classNames, humanizeKey } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
-import { usesGameText } from "@/utils/skillText";
+import { skillTextPrefix, usesGameText } from "@/utils/skillText";
 import { getGameInterpolationValues, getSkillInterpolationValues } from "@/utils/skillInterpolation";
 import GameButton from "./shared/GameButton";
 import type { SkillAction } from "./SkillTree";
@@ -40,8 +40,10 @@ const SkillTooltip = ({
 }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
   const { t, i18n } = useTranslation(["nodes", "common"]);
-  const useImportedEnglish = usesGameText(metadata, i18n.resolvedLanguage ?? i18n.language);
-  const name = t(`${node.type}.${useImportedEnglish ? "game.name" : "name"}`, {
+  const language = i18n.resolvedLanguage ?? i18n.language;
+  const useImportedEnglish = usesGameText(metadata, language);
+  const textPrefix = skillTextPrefix(node.type, metadata, language);
+  const name = t(`${textPrefix}.name`, {
     ns: "nodes",
     defaultValue: humanizeKey(node.type),
   });
@@ -69,9 +71,7 @@ const SkillTooltip = ({
       })
     : null;
 
-  const rawDescription = t(useImportedEnglish
-    ? `${node.type}.game.description`
-    : `${node.type}.description`, {
+  const rawDescription = t(`${textPrefix}.description`, {
     ns: "nodes",
     returnObjects: true,
     ...interpolation,

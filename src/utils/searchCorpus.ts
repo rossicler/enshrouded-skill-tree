@@ -7,7 +7,7 @@ import {
   getGameInterpolationValues,
   getSkillInterpolationValues,
 } from "@/utils/skillInterpolation";
-import { usesGameText } from "@/utils/skillText";
+import { skillTextPrefix, usesGameText } from "@/utils/skillText";
 import {
   NormalizedText,
   normalizeForSearch,
@@ -41,7 +41,7 @@ export const buildSearchCorpus = (
   return Object.entries(skillNodes.types).map(([key, meta]) => {
     // Index the same text the tooltip shows.
     const gameText = usesGameText(meta, locale);
-    const prefix = gameText ? `${key}.game` : key;
+    const prefix = skillTextPrefix(key, meta, locale);
     const name = String(
       t(`${prefix}.name`, { ns: "nodes", defaultValue: humanizeKey(key) }),
     );

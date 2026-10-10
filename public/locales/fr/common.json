@@ -131,6 +131,7 @@
   },
   "accessibility": {
     "skillPointIcon": "Icône de point de compétence",
+    "flameIcon": "Icône de flamme",
     "backgroundAlt": "Fond de fumée violette"
   },
   "skillTooltip": {

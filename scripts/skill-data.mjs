@@ -343,8 +343,9 @@ export function planImport({ data, mapping: rawMapping, previous, presentation, 
   const usedTypes = [...new Set(Object.values(nextNodes).map((entry) => entry.type))].sort();
   const missingPresentation = usedTypes.filter((type) => !presentation.types[type]);
   for (const type of missingPresentation) blockers.push(`Type ${type} needs authored presentation in src/constants/LegacyNodes.ts (color, icon/assets)`);
-  // Game text is English only; every locale still needs its own translation
-  // (scripts/validate-translations.js enforces the same at build time).
+  // Game text is English only; every locale still needs its own translation.
+  // This is the minimum for apply; scripts/validate-translations.js checks the
+  // rest (names, placeholders, per-level lines) at build time.
   for (const type of usedTypes) {
     for (const [lang, nodes] of Object.entries(locales)) {
       if (!nodes[type]?.description?.length) blockers.push(`Type ${type} needs a translation (description) in public/locales/${lang}/nodes.json`);

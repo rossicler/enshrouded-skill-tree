@@ -1,0 +1,25 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # The build image defaults to Node 22, but package.json requires 24.x.
+        # A fresh nvm Node has no global yarn, so install the version yarn.lock was written with.
+        - nvm install 24
+        - npm install -g yarn@1.22.22
+        - node --version && yarn --version
+        - yarn install
+    build:
+      commands:
+        # Next.js server code on Amplify only sees env vars written to .env.production.
+        - env | grep -e '^MONGODB_URI=' -e '^BASE_URL=' >> .env.production
+        - env | grep -e '^NEXT_PUBLIC_' >> .env.production
+        - yarn run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .next/cache/**/*
+      - node_modules/**/*

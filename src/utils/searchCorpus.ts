@@ -50,7 +50,7 @@ export const buildSearchCorpus = (
       ns: "nodes",
       returnObjects: true,
       ...(gameText
-        ? getGameInterpolationValues(meta, 1)
+        ? getGameInterpolationValues(meta, 1, locale)
         : getSkillInterpolationValues(meta, 1)),
     });
     const paragraphs = Array.isArray(rawDescription)

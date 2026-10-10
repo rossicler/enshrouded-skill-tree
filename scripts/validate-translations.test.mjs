@@ -3,19 +3,19 @@ import os from "node:os";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { describe, expect, it } from "vitest";
-import { getGameInterpolationValues, getSkillInterpolationValues } from "../src/utils/skillInterpolation";
+import { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } from "../src/utils/skillInterpolation";
 import { usesGameText } from "../src/utils/skillText";
 
 const { collectProblems, scanSource, placeholders } = createRequire(import.meta.url)("./validate-translations.js");
 
-// GAME shows imported English game text in en; LEGACY has no game text.
+// GAME shows imported game text in en only; LEGACY has no game text.
 const fixture = () => ({
   defaultLocale: "en",
   presentationTypes: ["GAME", "LEGACY"],
   tree: {
     types: {
       GAME: {
-        importedEnglish: true,
+        gameTextLocales: ["en"],
         maxLevel: 2,
         gameLevelValues: { gameValue1: ["5%", "10%"] },
         gamePerLevelValues: { gameValue1: "5%" },
@@ -44,7 +44,7 @@ const fixture = () => ({
     },
   },
   usesGameText,
-  interpolation: { game: getGameInterpolationValues, skill: getSkillInterpolationValues },
+  interpolation: { game: getGameInterpolationValues, gamePerLevel: getGamePerLevelValues, skill: getSkillInterpolationValues },
   families: { "biomes.": ["springlands"] },
   references: { keys: [{ key: "hud.title", file: "src/a.tsx", call: true }], templates: [{ template: "biomes.${id}", file: "src/b.tsx" }] },
 });
@@ -84,6 +84,20 @@ describe("validate-translations", () => {
     const input = fixture();
     delete input.locales.en.nodes.GAME.game.perLevelLabel;
     expect(messages(input)).toEqual(["en/nodes.json: GAME.game.perLevelLabel is missing, so the tooltip would show no per-level line"]);
+  });
+
+  it("checks a locale's own game text, with its per-locale values, when it has one", () => {
+    const input = fixture();
+    const game = input.tree.types.GAME;
+    game.gameTextLocales = ["en", "fr"];
+    game.gameLocaleValues = { fr: { gamePerLevelValues: { gameValue1: "5 %" } } };
+    input.locales.fr.nodes.GAME.game = { name: "Jeu", description: ["Jusqu'à {{gameValue1}} {{gameValue9}}"] };
+    expect(messages(input)).toEqual([
+      "fr/nodes.json: GAME.game.description uses {{gameValue9}}, which has no value at level 1",
+      "fr/nodes.json: GAME.game.perLevelLabel is missing, so the tooltip would show no per-level line",
+    ]);
+    input.locales.fr.nodes.GAME.game = { name: "Jeu", description: ["Jusqu'à {{gameValue1}}"], perLevelLabel: "{{gameValue1}} par niveau" };
+    expect(messages(input)).toEqual([]);
   });
 
   it("requires an entry for every authored type", () => {

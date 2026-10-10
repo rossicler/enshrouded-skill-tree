@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0.0",
   "provenance": {
-    "exportedAtUtc": "2026-09-19T18:18:49.0655271Z",
+    "exportedAtUtc": "2026-10-10T22:50:04.4976238Z",
     "sourceFileSha256": {
       "enshrouded.exe": "AF2F5A1227911D8AA06B3908D6BD0211838211CAE14EA91099CB57D0DF990781",
       "enshrouded.kfc": "B0B0EC4C4F970C0B317224B44D330EF7DD41334BF53EE93D3BCE4D0180489A42",
       "enshrouded.kfc_resources": "F4AE2D3AD905A89C941FD8CBEEC677B231736105C45E0E49A7928237F91D67BA"
     },
     "parserRevision": "f201f7667ddd5d0d78f0a27368f2e7481b870618",
-    "parserSha256": "54149EC4988657392A24A839681DB625CCF1C1A767433B15A2A4AEA4DCF3C64C",
+    "parserSha256": "B237B37094FCAC4C4206B8F49D9EC9C7D8F9B2826D4FF4724482370F0C24F9C7",
     "gameBuild": "1076226|^/game38/branches/ea_update_08|2026-06-29T10:27:39.052394Z"
   },
   "transform": {
@@ -3216,7 +3216,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Absorb",
       "description": [
         "When you receive <b>Magic</b> damage, you have a <b>{{gameValue1}}</b> chance to restore <b>1</b> Mana per Health point lost."
@@ -3235,7 +3238,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "12%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Airborne",
       "description": [
         "Gliders consume <b>{{gameValue1}}</b> less Stamina."
@@ -3254,7 +3260,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "20%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Arachnoid",
       "description": [
         "Stamina cost while climbing is reduced by <b>{{gameValue1}}</b>."
@@ -3263,7 +3272,10 @@
     "ARCANE_CONCENTRATION": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Arcane Concentration",
       "description": [
         "Gain one point of Spirit for every two levels of the Flame."
@@ -3282,7 +3294,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Arcane Deflection",
       "description": [
         "Successfully parrying an enemy's attack restores <b>{{gameValue1}}</b> Mana.",
@@ -3292,7 +3307,10 @@
     "ARCANE_PROLIFERATION": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Arcane Proliferation",
       "description": [
         "Wand attacks have a <b>30%</b> chance to spawn double the amount of projectiles. Extra projectiles spawned deal <b>50%</b> less damage."
@@ -3311,7 +3329,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Arsonist",
       "description": [
         "All <b>Fire</b> damage is increased by <b>{{gameValue1}}</b>."
@@ -3330,7 +3351,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "2"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Athlete",
       "description": [
         "Increases your maximum Health by <b>{{gameValue1}}</b> times your Strength attribute."
@@ -3345,7 +3369,10 @@
       "gameValues": {
         "gameValue1": "50"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Constitution",
       "description": [
         "Increases your Constitution attribute by 1.",
@@ -3358,7 +3385,10 @@
       "stats": {
         "DEX": 1
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Dexterity",
       "description": [
         "Increases your Dexterity attribute by 1.",
@@ -3374,7 +3404,10 @@
       "gameValues": {
         "gameValue1": "10"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Endurance",
       "description": [
         "Increases your Endurance attribute by 1.",
@@ -3387,7 +3420,10 @@
       "stats": {
         "INT": 1
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Intelligence",
       "description": [
         "Increases your Intelligence attribute by 1.",
@@ -3403,7 +3439,10 @@
       "gameValues": {
         "gameValue1": "20"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Spirit",
       "description": [
         "Increases your Spirit attribute by 1.",
@@ -3416,7 +3455,10 @@
       "stats": {
         "STR": 1
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Strength",
       "description": [
         "Increases your Strength attribute by 1.",
@@ -3436,7 +3478,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "20%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Backstab Mastery",
       "description": [
         "<b>Backstab</b> damage is increased by <b>{{gameValue1}}</b>."
@@ -3445,7 +3490,10 @@
     "BARBARIAN": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Barbarian",
       "description": [
         "Gain one point of Strength for every two levels of the Flame."
@@ -3464,7 +3512,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Barbarian's Path",
       "description": [
         "Two-Handed Melee weapon damage is increased by <b>{{gameValue1}}</b>."
@@ -3483,7 +3534,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Bash",
       "description": [
         "Parrying enemy attacks bashes them for <b>{{gameValue1}} Blunt</b> damage. Bash damage is increased by your Strength attribute.",
@@ -3503,7 +3557,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "1%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Battle Heal",
       "description": [
         "Critical Strikes with Melee weapons heal you for <b>{{gameValue1}}</b> of your maximum Health."
@@ -3512,7 +3569,10 @@
     "BEAST_MASTER": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Beast Master",
       "description": [
         "When you are targeted by an attack, <b>Wild Animals</b> within <b>50</b> meters will attack the enemy."
@@ -3521,7 +3581,10 @@
     "BEE_STING": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Bee Sting",
       "description": [
         "Firing or aiming your Bow while airborne slows down your fall briefly. Every shot lifts you slightly, granting more airtime.",
@@ -3531,7 +3594,10 @@
     "BEGONE": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Begone!",
       "description": [
         "A magic-powered punch that pushes back and stuns enemies.",
@@ -3552,7 +3618,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "8"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Blessed Arrows",
       "description": [
         "Critical Strikes with Bows restore <b>{{gameValue1}}</b> Mana."
@@ -3561,7 +3630,10 @@
     "BLINK": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Blink",
       "description": [
         "Replaces the Dodge Roll ability with a short-range teleport.",
@@ -3572,7 +3644,10 @@
     "BLINK_ATTACK": {
       "cost": 2,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Blink Attack",
       "description": [
         "Blinking into an enemy triggers an explosion which deals <b>Fire</b> damage in a small radius.",
@@ -3582,7 +3657,10 @@
     "BLOOD_MAGIC": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Blood Magic",
       "description": [
         "When your Mana drops below <b>20%</b>, you restore up to <b>35%</b> of your maximum Mana at the cost of <b>1</b> Health per Mana restored.",
@@ -3606,7 +3684,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Blood Rage",
       "description": [
         "When an enemy within <b>{{gameValue1}}</b> meters is killed by a Melee weapon, you fall into <b>Blood Rage</b>.",
@@ -3616,7 +3697,10 @@
     "BLOOD_WARRIOR": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Blood Warrior",
       "description": [
         "Defeating an enemy with a <b>Sneak Attack</b> or <b>Merciless Attack</b> spawns a Health Orb.",
@@ -3636,7 +3720,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "15%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Bloodletting",
       "description": [
         "Critical Strikes with spells have a <b>{{gameValue1}}</b> chance to spawn two Health, Mana, and/or Stamina Orbs.",
@@ -3656,7 +3743,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Bone to Ash",
       "description": [
         "Damage against Hollow is increased by <b>{{gameValue1}}</b>."
@@ -3668,7 +3758,10 @@
       "gameValues": {
         "gameValue1": "+5"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Bounty Bonanza",
       "description": [
         "After defeating a <b>Fell</b> enemy with a <b>Skillshot</b>, your group gains an additional <b>{{gameValue1}}</b> Experience Points.",
@@ -3681,7 +3774,17 @@
       "gameValues": {
         "gameValue1": "[Special Ability]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Capacité spéciale]"
+          }
+        }
+      },
       "name": "Bow Specialization",
       "description": [
         "Unlocks Special Abilities of Bows. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
@@ -3694,7 +3797,10 @@
       "gameValues": {
         "gameValue1": "+100%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Breach",
       "description": [
         "<b>Overpowered</b> enemies receive <b>{{gameValue1}}</b> increased Melee physical damage for <b>3</b> seconds.",
@@ -3714,7 +3820,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Brute",
       "description": [
         "Melee <b>Blunt</b> damage is increased by <b>{{gameValue1}}</b>."
@@ -3723,7 +3832,10 @@
     "CALM_SPIRIT": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Calm Spirit",
       "description": [
         "<b>Wild Animals</b> within <b>50</b> meters will no longer attack you unless provoked.",
@@ -3733,7 +3845,10 @@
     "CHAIN_HIT": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Chain Hit",
       "description": [
         "Critical Strikes with Magic weapons will automatically hit a second enemy within <b>15</b> meters for <b>5 Shock</b> damage per Intelligence."
@@ -3742,7 +3857,10 @@
     "CHAIN_REACTION": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Chain Reaction",
       "description": [
         "Every enemy hit with an <b>Explosive Arrow</b> has a <b>20%</b> chance to trigger a secondary explosion for <b>50%</b> damage in a small radius."
@@ -3761,7 +3879,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "8%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Counter Battery",
       "description": [
         "Damage against <b>ranged</b> enemies is increased by <b>{{gameValue1}}</b>."
@@ -3786,7 +3907,10 @@
         "gamePerLevelValue1": "8%",
         "gamePerLevelValue2": "20%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Counterstrike",
       "description": [
         "After receiving damage, there is a <b>{{gameValue1}}</b> chance to reflect <b>{{gameValue2}}</b> of the damage back to the attacker as <b>Fire</b> damage.",
@@ -3797,9 +3921,19 @@
       "cost": 3,
       "maxLevel": 1,
       "gameValues": {
-        "gameValue1": "[Attack]"
+        "gameValue1": "[Use Item]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Utiliser un objet]"
+          }
+        }
+      },
       "name": "Crash Down Attack",
       "description": [
         "When equipped with a Melee weapon, you can perform a special attack by holding <b>{{gameValue1}}</b> during a jump.",
@@ -3811,7 +3945,10 @@
     "CRASH_DOWN_FORCE": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Crash Down: Force",
       "description": [
         "When attacking from a double jump, <b>Crash Down</b> deals <b>20%</b> more weapon damage."
@@ -3830,7 +3967,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Cull the Herd",
       "description": [
         "Damage against Wildlife is increased by <b>{{gameValue1}}</b>."
@@ -3849,7 +3989,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "100%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Cutthroat",
       "description": [
         "Sneak Attack Damage is increased by <b>{{gameValue1}}</b>."
@@ -3868,7 +4011,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Dagger Mastery",
       "description": [
         "Dagger damage is increased by <b>{{gameValue1}}</b>."
@@ -3880,7 +4026,17 @@
       "gameValues": {
         "gameValue1": "[Special Ability]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Capacité spéciale]"
+          }
+        }
+      },
       "name": "Dagger Specialization",
       "description": [
         "Unlocks Special Abilities of Daggers. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
@@ -3900,7 +4056,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Dark Arts",
       "description": [
         "All <b>Shroud</b> damage is increased by <b>{{gameValue1}}</b>."
@@ -3909,7 +4068,10 @@
     "DESSERT_STOMACH": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Dessert Stomach",
       "description": [
         "You gain one additional Food slot."
@@ -3918,7 +4080,10 @@
     "DIVINE_SURGE": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Divine Surge",
       "description": [
         "Healing spells can perform Critical Strikes that scale with your Critical Strike damage."
@@ -3927,7 +4092,10 @@
     "DOUBLE_JUMP": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Double Jump",
       "description": [
         "Allows jumping a second time while airborne.",
@@ -3938,10 +4106,21 @@
       "cost": 3,
       "maxLevel": 1,
       "gameValues": {
-        "gameValue1": "[Aim]",
-        "gameValue2": "[Quick Bow Aim]"
+        "gameValue1": "[Block and Parry]",
+        "gameValue2": "[Ready ranged weapon]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Bloquer et parer]",
+            "gameValue2": "[Préparez une arme à distance]"
+          }
+        }
+      },
       "name": "Eagle Eye",
       "description": [
         "Greatly increases the zoom while aiming with Bows.",
@@ -3961,7 +4140,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Eagle's Bane",
       "description": [
         "Damage against <b>flying</b> enemies is increased by <b>{{gameValue1}}</b>."
@@ -3983,7 +4165,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Earth Aura",
       "description": [
         "You emit a protective aura that increases Physical and Magical Resistances by <b>{{gameValue1}}</b> for you and all allies within <b>{{gameValue2}}</b> meters."
@@ -3992,7 +4177,10 @@
     "EMERGENCY_BLINK": {
       "cost": 2,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Emergency Blink",
       "description": [
         "You can blink while being stunned. This will break the stunned state."
@@ -4001,7 +4189,10 @@
     "ENDURANCE_OF_THE_FLAME": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Endurance of the Flame",
       "description": [
         "Gain one point of Endurance for every two levels of the Flame."
@@ -4020,7 +4211,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Eternal Spark",
       "description": [
         "Dealing damage with Wand projectiles has a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability to that weapon."
@@ -4030,9 +4224,19 @@
       "cost": 4,
       "maxLevel": 1,
       "gameValues": {
-        "gameValue1": "[Attack]"
+        "gameValue1": "[Use Item]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Utiliser un objet]"
+          }
+        }
+      },
       "name": "Evasion Attack",
       "description": [
         "When equipped with a Melee weapon, you can perform an evade attack, which dashes towards the enemy and deals more weapon damage with <b>{{gameValue1}}</b>.",
@@ -4043,7 +4247,10 @@
     "EXALTED": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Exalted",
       "description": [
         "Gain one point of Intelligence for every two levels of the Flame."
@@ -4056,7 +4263,10 @@
         "gameValue1": "25%",
         "gameValue2": "5"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Expose Weakness",
       "description": [
         "Critical Strikes with Daggers increase damage dealt to the enemy by <b>{{gameValue1}}</b> for <b>{{gameValue2}}</b> seconds."
@@ -4081,7 +4291,10 @@
         "gamePerLevelValue1": "1%",
         "gamePerLevelValue2": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Fatal Precision",
       "description": [
         "Critical Strike chance is increased by <b>{{gameValue1}}</b>.<br/>Critical Strike damage is increased by <b>{{gameValue2}}</b>."
@@ -4093,7 +4306,17 @@
       "gameValues": {
         "gameValue1": "[Special Ability]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Capacité spéciale]"
+          }
+        }
+      },
       "name": "Felling Axe Specialization",
       "description": [
         "Unlocks Special Abilities of Felling Axes. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
@@ -4113,7 +4336,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Finesse",
       "description": [
         "Dealing damage with One-Handed Melee weapons and Daggers has a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability to that weapon."
@@ -4132,7 +4358,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Fire Resistance",
       "description": [
         "Increases your <b>Fire Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Fire</b> damage received."
@@ -4151,7 +4380,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Fisherman’s Resolve",
       "description": [
         "Increases your Fishing Endurance by <b>{{gameValue1}}</b>.",
@@ -4160,13 +4392,15 @@
     },
     "FROST": {
       "cost": 2,
-      "maxLevel": 3,
-      "importedEnglish": false
+      "maxLevel": 3
     },
     "GIANT_SLAYER_HOOK": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Giant Slayer Hook",
       "description": [
         "Use your <b>Grappling Hook</b> to pull yourself towards large enemies during combat.",
@@ -4176,7 +4410,10 @@
     "GOOD_METABOLISM": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Good Metabolism",
       "description": [
         "Health, Mana, and Stamina Orbs restore <b>30%</b> instead of <b>10%</b> of their respective resource.",
@@ -4186,7 +4423,10 @@
     "GRACEFUL_STRIDE": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Graceful Stride",
       "description": [
         "Gain one point of Dexterity for every two levels of the Flame."
@@ -4195,7 +4435,10 @@
     "GROUNDING_HOOK": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Grounding Hook",
       "description": [
         "Use your <b>Grappling Hook</b> to pull <b>flying</b> enemies towards you during combat.",
@@ -4215,7 +4458,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "15%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Healer",
       "description": [
         "Health gain from healing spells and skills is increased by <b>{{gameValue1}}</b>."
@@ -4234,7 +4480,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "8%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Healing Revive",
       "description": [
         "Revive players with <b>{{gameValue1}}</b> increased Health.",
@@ -4254,7 +4503,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Heavy Handed",
       "description": [
         "Filling up enemy <i>Stun Bars</i> is increased by <b>{{gameValue1}}</b> when attacking blocking enemies with Melee weapons.",
@@ -4274,7 +4526,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Heavy Plates",
       "description": [
         "Equipped armor grants <b>{{gameValue1}}</b> increased Physical Armor."
@@ -4286,7 +4541,10 @@
       "gameValues": {
         "gameValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Heavy Hitter",
       "description": [
         "Increases the attack speed of all Two-Handed Melee weapons by <b>{{gameValue1}}</b>."
@@ -4305,7 +4563,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Ice Resistance",
       "description": [
         "Increases your <b>Ice Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Ice</b> damage received."
@@ -4324,7 +4585,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Iceman",
       "description": [
         "All <b>Ice</b> damage is increased by <b>{{gameValue1}}</b>."
@@ -4335,15 +4599,18 @@
       "maxLevel": 3,
       "gameLevelValues": {
         "gameValue1": [
-          "120 seconds",
-          "240 seconds",
-          "360 seconds"
+          "120 s",
+          "240 s",
+          "360 s"
         ]
       },
       "gamePerLevelValues": {
-        "gamePerLevelValue1": "120 seconds"
+        "gamePerLevelValue1": "120 s"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Inner Fires",
       "description": [
         "<b>Time in the Shroud</b> is increased by <b>{{gameValue1}}</b>, allowing you to explore for longer.",
@@ -4353,7 +4620,10 @@
     "KICK": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Kick",
       "description": [
         "When equipped with a Melee weapon, you can perform a Kick by attacking while blocking.",
@@ -4365,7 +4635,10 @@
     "LAST_MEAL": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Last Meal",
       "description": [
         "Your Food buffs persist through death, but they last half as long."
@@ -4374,7 +4647,10 @@
     "LIFE_BURST": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Life Burst",
       "description": [
         "Defeating an enemy with a Magic weapon restores Health equal to <b>3</b> times your Intelligence to all players within <b>15</b> meters of the target."
@@ -4393,7 +4669,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "2"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Life Essences",
       "description": [
         "Increases your maximum Health by <b>{{gameValue1}}</b> times your Intelligence attribute."
@@ -4412,7 +4691,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Lumberjack",
       "description": [
         "Tools deal <b>{{gameValue1}}</b> increased damage against wood.<br/>This includes trees and wooden terrain."
@@ -4431,7 +4713,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Mage Apprentice",
       "description": [
         "Magic weapon damage is increased by <b>{{gameValue1}}</b>."
@@ -4450,7 +4735,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "3"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Mana Currents",
       "description": [
         "Base Mana Regeneration is increased by <b>{{gameValue1}}</b>."
@@ -4469,7 +4757,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Marksman",
       "description": [
         "Damage with Bows is increased by <b>{{gameValue1}}</b>."
@@ -4478,7 +4769,10 @@
     "MARTYR": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Martyr",
       "description": [
         "When you are killed by an enemy, all allies within <b>30</b> meters are healed for <b>50%</b> of their maximum Health.",
@@ -4498,7 +4792,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Mason",
       "description": [
         "Tools deal <b>{{gameValue1}}</b> increased damage against stone.<br/>This includes stone terrain and gemstone veins."
@@ -4517,7 +4814,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Mass Destruction",
       "description": [
         "Critical Strikes with Magic weapons deal <b>2 Shock</b> damage per Intelligence to all enemies within <b>{{gameValue1}}</b> meters of the target."
@@ -4527,10 +4827,20 @@
       "cost": 2,
       "maxLevel": 1,
       "gameValues": {
-        "gameValue1": "[Interact]",
+        "gameValue1": "[Contextual Action]",
         "gameValue2": "+500%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Action contextuelle]"
+          }
+        }
+      },
       "name": "Merciless Attack",
       "description": [
         "Perform a <b>Merciless Attack</b> by pressing <b>{{gameValue1}}</b> to deal <b>{{gameValue2}}</b> damage to an <b>overpowered</b> enemy.",
@@ -4540,7 +4850,10 @@
     "MINER": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Miner",
       "description": [
         "Mining resources has a <b>10%</b> chance to grant one additional resource."
@@ -4549,7 +4862,10 @@
     "MITHRIDATIST": {
       "cost": 2,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Mithridatist",
       "description": [
         "Gain a <b>25%</b> chance to avoid being poisoned."
@@ -4558,7 +4874,10 @@
     "MULTI_SHOT": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Multi Shot",
       "description": [
         "Shooting <i>Regular Arrows</i> has a <b>20%</b> chance to spawn a <b>Flurry of Arrows</b> that spreads slightly.",
@@ -4569,7 +4888,10 @@
     "MULTI_SHOT_SPREAD": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Multi Shot Spread",
       "description": [
         "Adds a <b>25%</b> chance to spawn an additional <i>Regular Arrow</i> with your <b>Flurry of Arrows</b> from the <b>Multi Shot</b> skill.",
@@ -4579,7 +4901,10 @@
     "MULTI_SHOT_TRIGGER": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Multi Shot Trigger",
       "description": [
         "Shooting <i>Special Arrows</i> now triggers a <b>Flurry of Arrows</b> from the <b>Multi Shot</b> skill.",
@@ -4599,7 +4924,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Necromancer",
       "description": [
         "When killing an enemy with a Magic weapon, you have a <b>{{gameValue1}}</b> chance to summon a friendly <b>Skull Companion</b>."
@@ -4618,7 +4946,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Nemesis",
       "description": [
         "Increase the attention you draw from enemies by <b>{{gameValue1}}</b>."
@@ -4630,7 +4961,17 @@
       "gameValues": {
         "gameValue1": "[Special Ability]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Capacité spéciale]"
+          }
+        }
+      },
       "name": "One-Handed Specialization",
       "description": [
         "Unlocks Special Abilities of One-Handed Melee weapons. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
@@ -4650,7 +4991,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "40%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Opportunity",
       "description": [
         "Increases the damage multiplier of <b>Merciless Attacks</b> by <b>{{gameValue1}}</b>."
@@ -4662,7 +5006,17 @@
       "gameValues": {
         "gameValue1": "[Special Ability]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Capacité spéciale]"
+          }
+        }
+      },
       "name": "Pickaxe Specialization",
       "description": [
         "Unlocks Special Abilities of Pickaxes. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
@@ -4672,7 +5026,10 @@
     "POISON_MASTERY": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Venom Mastery",
       "description": [
         "Increases the damage dealt with the <b>Venomous Blades</b> Dagger perk by <b>100%</b>."
@@ -4681,7 +5038,10 @@
     "POISONED_BLADES": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Venomous Blades",
       "description": [
         "Increases the chance to poison enemies to <b>25%</b> when using Daggers with the <b>Venomous Blades</b> perk."
@@ -4700,7 +5060,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Power Parry",
       "description": [
         "Your Parry Power is increased by <b>{{gameValue1}}</b>.",
@@ -4721,7 +5084,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Primal Force",
       "description": [
         "Damage against Vukah is increased by <b>{{gameValue1}}</b>."
@@ -4740,7 +5106,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Prospector",
       "description": [
         "Tools deal <b>{{gameValue1}}</b> increased damage against metal.<br/>This includes metal ore veins."
@@ -4759,7 +5128,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "3"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Purification",
       "description": [
         "Defeating a Shroud infested enemy with a Melee weapon restores <b>{{gameValue1}}</b> seconds of <b>Time in the Shroud</b>.",
@@ -4772,7 +5144,10 @@
       "gameValues": {
         "gameValue1": "20%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Quality Gear",
       "description": [
         "Tools have a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability on hit."
@@ -4791,7 +5166,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "-15%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Quick Charge",
       "description": [
         "Cast Time of spells is reduced by <b>{{gameValue1}}</b>."
@@ -4800,7 +5178,10 @@
     "QUICK_REFLEX_BLOCK": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Quick Reflex Block",
       "description": [
         "Briefly increases your Block value when blocking with Daggers, ensuring a near-miss parry reduces Stamina minimally."
@@ -4825,7 +5206,10 @@
         "gamePerLevelValue1": "2.1",
         "gamePerLevelValue2": "1"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Radiant Aura",
       "description": [
         "All <b>Fell</b> enemies within <b>{{gameValue1}}</b> meters take <b>{{gameValue2}} Fire</b> damage per Intelligence per second."
@@ -4850,7 +5234,10 @@
         "gamePerLevelValue1": "1",
         "gamePerLevelValue2": "5"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Ranger",
       "description": [
         "Increases your Dexterity and Endurance attributes by <b>{{gameValue1}}</b>.",
@@ -4870,7 +5257,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Rebound",
       "description": [
         "Base Stamina Regeneration is increased by <b>{{gameValue1}}</b>."
@@ -4882,7 +5272,10 @@
       "gameValues": {
         "gameValue1": "8%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Relentless",
       "description": [
         "Critical Strikes with Two-Handed weapons increase your Critical Strike chance by <b>{{gameValue1}}</b> for the next hit."
@@ -4891,7 +5284,10 @@
     "RICOCHETS": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Ricochets",
       "description": [
         "For every target you hit with an <b>Explosive Arrow</b>, its damage is increased by <b>1%</b>."
@@ -4910,7 +5306,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "20%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Righteous Fire",
       "description": [
         "Healing any target with a spell triggers a burst of fire that deals <b>{{gameValue1}}</b> of the heal amount as <b>Fire</b> damage to nearby <b>Fell</b> enemies."
@@ -4935,7 +5334,10 @@
         "gamePerLevelValue1": "5%",
         "gamePerLevelValue2": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Runner",
       "description": [
         "Sprint Speed is increased by <b>{{gameValue1}}</b> and Stamina cost while sprinting is decreased by <b>{{gameValue2}}</b>."
@@ -4954,7 +5356,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "-1"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Saviour",
       "description": [
         "Time to revive an ally is reduced by <b>{{gameValue1}}</b> seconds.",
@@ -4967,7 +5372,10 @@
       "gameValues": {
         "gameValue1": "8"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Shell Shock",
       "description": [
         "Infuse your <b>Ranged Explosives</b> with Mana. They now stun enemies for <b>2</b> seconds.",
@@ -4987,7 +5395,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Shiny Plates",
       "description": [
         "Equipped armor grants <b>{{gameValue1}}</b> increased Magical Armor."
@@ -5006,7 +5417,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Shock Resistance",
       "description": [
         "Increases your <b>Shock Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Shock</b> damage received."
@@ -5015,7 +5429,10 @@
     "SHOCKWAVE": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Shockwave",
       "description": [
         "Trigger a Shockwave when you parry an attack or <b>overpower</b> an enemy.",
@@ -5041,7 +5458,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Shroud Filter",
       "description": [
         "Dealing damage with a Magic weapon has a <b>{{gameValue1}}</b> chance to trigger a small flame burst that restores <b>{{gameValue2}}</b> seconds of <b>Time in the Shroud </b> to you and your allies within <b>{{gameValue3}}</b> meters.",
@@ -5064,7 +5484,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Shared Misery",
       "description": [
         "When you receive <b>Shroud</b> damage, all players within <b>{{gameValue1}}</b> meters receive <b>{{gameValue2}}</b> increased <b>Shroud Resistance</b> for <b>30</b> seconds."
@@ -5083,7 +5506,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Shroud Resistance",
       "description": [
         "Increases your <b>Shroud Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Shroud</b> damage received."
@@ -5102,7 +5528,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "20%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Silent Stride",
       "description": [
         "Increases your movement speed while <b>sneaking</b> by <b>{{gameValue1}}</b>."
@@ -5121,7 +5550,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "20%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Skill Shot",
       "description": [
         "<b>Skillshot</b> damage is increased by <b>{{gameValue1}}</b>.",
@@ -5141,7 +5573,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Slasher",
       "description": [
         "Melee <b>Cutting</b> damage is increased by <b>{{gameValue1}}</b>."
@@ -5160,7 +5595,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "30%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Sleight of Hand",
       "description": [
         "Unarmed damage is increased by <b>{{gameValue1}}</b>."
@@ -5173,7 +5611,10 @@
         "gameValue1": "20",
         "gameValue2": "50%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Slice And Dice",
       "description": [
         "After a Critical Strike with a Dagger, the base damage of your next Bow attack within {{gameValue1}} seconds is increased by <b>{{gameValue2}}</b>."
@@ -5192,7 +5633,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "4%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Snake Eater",
       "description": [
         "Increases your <b>Poison Resistance</b> by <b>{{gameValue1}}</b>, which reduces the amount of <b>Poison</b> damage received.",
@@ -5202,7 +5646,10 @@
     "SNAP": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Snap",
       "description": [
         "Triggering a <b>Merciless Attack</b> restores <b>10%</b> Mana."
@@ -5212,9 +5659,19 @@
       "cost": 3,
       "maxLevel": 1,
       "gameValues": {
-        "gameValue1": "[Interact]"
+        "gameValue1": "[Contextual Action]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Action contextuelle]"
+          }
+        }
+      },
       "name": "Sneak Attack",
       "description": [
         "Perform a <b>Sneak Attack</b> by sneaking up to an unaware enemy and pressing <b>{{gameValue1}}</b>.",
@@ -5234,7 +5691,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "2%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Sniper",
       "description": [
         "Ranged weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
@@ -5243,7 +5703,10 @@
     "SOAKED_DOG": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Soaked Dog",
       "description": [
         "Weakens the effect of the <b>Wet</b> and <b>Soaked</b> debuffs.",
@@ -5271,7 +5734,10 @@
         "gamePerLevelValue1": "5",
         "gamePerLevelValue2": "15"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Soul Leech",
       "description": [
         "When killing an enemy with a Melee weapon, all players within <b>{{gameValue1}}</b> meters of the target restore <b>{{gameValue2}}</b> Mana."
@@ -5290,7 +5756,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Spellslinger",
       "description": [
         "Staff damage is increased by <b>{{gameValue1}}</b>."
@@ -5299,7 +5768,10 @@
     "SPLASH_DASH": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Splash Dash",
       "description": [
         "Allows you to perform an evasive dash while swimming or diving.",
@@ -5319,7 +5791,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "1"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Steadfast",
       "description": [
         "Defeating an enemy with a Melee weapon restores <b>{{gameValue1}}</b> durability to that weapon."
@@ -5331,7 +5806,10 @@
       "gameValues": {
         "gameValue1": "20%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Sting",
       "description": [
         "Repeated Wand damage is increased by <b>{{gameValue1}}</b>."
@@ -5340,7 +5818,10 @@
     "STRATEGIC_MANEUVER": {
       "cost": 1,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Strategic Maneuver",
       "description": [
         "Replaces the Dodge Roll ability with a sideways Dodge Roll while an enemy target is locked.",
@@ -5352,7 +5833,10 @@
     "SWEET_TOOTH": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Sweet Tooth",
       "description": [
         "Stamina Regeneration of sweets is increased by <b>50%</b>."
@@ -5364,7 +5848,10 @@
       "gameValues": {
         "gameValue1": "15%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Swift Blades",
       "description": [
         "Increases the attack speed of all One-Handed Melee weapons by <b>{{gameValue1}}</b>."
@@ -5383,7 +5870,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "12%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Swiftshot Sustenance",
       "description": [
         "Defeating an enemy with a Bow has a <b>{{gameValue1}}</b> chance to spawn a Stamina Orb.",
@@ -5403,7 +5893,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "15%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Terror",
       "description": [
         "Critical Strikes with spells have a <b>{{gameValue1}}</b> chance to stun the target for <b>2</b> seconds."
@@ -5412,7 +5905,10 @@
     "THICK_SKIN": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Thick Skin",
       "description": [
         "Gain one point of Constitution for every two levels of the Flame."
@@ -5431,7 +5927,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Thrust",
       "description": [
         "Melee <b>Piercing</b> damage is increased by <b>{{gameValue1}}</b>."
@@ -5450,7 +5949,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Thunder",
       "description": [
         "All <b>Shock</b> damage is increased by <b>{{gameValue1}}</b>."
@@ -5469,7 +5971,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Titan Edge",
       "description": [
         "Two-Handed Greatsword damage is increased by <b>{{gameValue1}}</b>."
@@ -5481,7 +5986,10 @@
       "gameValues": {
         "gameValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Tower",
       "description": [
         "While there are three or more enemies within <b>20</b> meters, you receive <b>{{gameValue1}}</b> increased <b>Physical Resistance</b>."
@@ -5493,7 +6001,17 @@
       "gameValues": {
         "gameValue1": "[Special Ability]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Capacité spéciale]"
+          }
+        }
+      },
       "name": "Two-Handed Specialization",
       "description": [
         "Unlocks Special Abilities of Two-Handed Melee weapons. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
@@ -5519,7 +6037,10 @@
         "gamePerLevelValue1": "10%",
         "gamePerLevelValue2": "2%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Unity",
       "description": [
         "Damaging enemies with Wands has a <b>{{gameValue1}}</b> chance to restore <b>{{gameValue2}}</b> of your maximum Mana."
@@ -5531,7 +6052,17 @@
       "gameValues": {
         "gameValue1": "[Jump]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Sauter]"
+          }
+        }
+      },
       "name": "Updraft",
       "description": [
         "Jumping with {{gameValue1}} while gliding lifts you upwards. Can be used once per flight.",
@@ -5542,7 +6073,10 @@
     "UPWARDS_SLASH_ATTACK": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Upwards Slash Attack",
       "description": [
         "When equipped with a Melee weapon, launch a powerful upward strike during the ascent of your jump.",
@@ -5563,7 +6097,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "2"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Veiled Vigor",
       "description": [
         "Increases your maximum Health by <b>{{gameValue1}}</b> times your Dexterity attribute."
@@ -5582,7 +6119,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "2%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Veteran",
       "description": [
         "Melee weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
@@ -5601,7 +6141,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "15"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Vigorous Deflection",
       "description": [
         "Successfully parrying an enemy's attack restores <b>{{gameValue1}}</b> Stamina.",
@@ -5621,7 +6164,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "12%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Vile Concoction",
       "description": [
         "Throwable damage is increased by <b>{{gameValue1}}</b>."
@@ -5640,7 +6186,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "3"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Vitality Surge",
       "description": [
         "Critical Strikes with Ranged weapons restore <b>{{gameValue1}}</b> Stamina."
@@ -5649,7 +6198,10 @@
     "VUKAH_CULTURE": {
       "cost": 4,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Vukah Culture",
       "description": [
         "When you are targeted by an attack, <b>Vukah</b> within <b>50</b> meters will attack the enemy."
@@ -5658,7 +6210,10 @@
     "VUKAH_LANGUAGE": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Vukah Language",
       "description": [
         "<b>Vukah</b> within <b>50</b> meters will no longer attack you unless provoked."
@@ -5677,7 +6232,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Wand Mastery",
       "description": [
         "Wand damage is increased by <b>{{gameValue1}}</b>."
@@ -5689,7 +6247,17 @@
       "gameValues": {
         "gameValue1": "[Special Ability]"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "gameLocaleValues": {
+        "fr": {
+          "gameValues": {
+            "gameValue1": "[Capacité spéciale]"
+          }
+        }
+      },
       "name": "Wand Specialization",
       "description": [
         "Unlocks Special Abilities of Wands. <br/>Press <b>{{gameValue1}}</b> to unleash a powerful Special Ability after generating enough Focus.",
@@ -5699,7 +6267,10 @@
     "WANDERLUST": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Wanderlust",
       "description": [
         "Stamina cost for <b>sprinting on dirt roads</b> is reduced from <b>90% to 80%</b>.",
@@ -5712,7 +6283,10 @@
       "gameValues": {
         "gameValue1": "10%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Warden",
       "description": [
         "While there are three or more enemies within <b>20</b> meters, you receive <b>{{gameValue1}}</b> increased <b>Magical Resistance</b>."
@@ -5731,7 +6305,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Warrior's Path",
       "description": [
         "One-Handed Melee weapon damage is increased by <b>{{gameValue1}}</b>."
@@ -5750,7 +6327,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "5.1"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Water Aura",
       "description": [
         "You emit a healing aura that heals you and all injured allies within <b>{{gameValue1}}</b> meters.",
@@ -5760,7 +6340,10 @@
     "WATERS_OF_LIFE": {
       "cost": 2,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Waters Of Life",
       "description": [
         "Increases <b>Water Aura</b> healing to <b>2</b> Health per <b>2</b> points of Intelligence."
@@ -5779,7 +6362,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "2"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Well Rested",
       "description": [
         "The base duration for the Rested buff is increased by <b>{{gameValue1}}</b> minutes.",
@@ -5792,7 +6378,10 @@
     "WET_DOG": {
       "cost": 3,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Wet Dog",
       "description": [
         "Weakens the effect of the <b>Wet</b> and <b>Soaked</b> debuffs.",
@@ -5804,7 +6393,10 @@
     "WHIRLWIND_CRESCENDO": {
       "cost": 5,
       "maxLevel": 1,
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Whirlwind Crescendo",
       "description": [
         "When equipped with a Two-Handed weapon, trigger a whirl attack at the end of an attack chain.",
@@ -5824,7 +6416,10 @@
       "gamePerLevelValues": {
         "gamePerLevelValue1": "2%"
       },
-      "importedEnglish": true,
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
       "name": "Wizard",
       "description": [
         "Magic weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
@@ -5832,6 +6427,6 @@
     }
   },
   "treeVersion": {
-    "contentHash": "afc8b8ef2ebc61c8cf59ce38a9a5d7bc49f43f138233d64533dcc0f80d75b334"
+    "contentHash": "a94c08c8bddf6a84f9c21e395b935613322f564074b24214d29a3927150786fb"
   }
 }

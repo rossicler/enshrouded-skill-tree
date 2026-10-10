@@ -4,21 +4,43 @@
     "description": [
       "Utilisez votre <b>crochet de grappin</b> pour vous hisser vers les ennemis les plus imposants pendant le combat.",
       "<b>Coût :</b> 50 points d'endurance"
-    ]
+    ],
+    "game": {
+      "name": "Crochet de tueur géant",
+      "description": [
+        "Utilisez votre <b>crochet de grappin</b> pour vous hisser vers les ennemis les plus imposants pendant le combat.",
+        "<b>Coût :</b> 50 points d'endurance"
+      ]
+    }
   },
   "GROUNDING_HOOK": {
     "name": "GRAPPIN DE MISE À LA TERRE",
     "description": [
       "Utilisez votre <b>crochet de grappin</b> pour attirer les ennemis <b>volants</b> vers vous pendant le combat.",
       "<b>Coût :</b> 50 points d'endurance"
-    ]
+    ],
+    "game": {
+      "name": "Grappin de mise à la terre",
+      "description": [
+        "Utilisez votre <b>crochet de grappin</b> pour attirer les ennemis <b>volants</b> vers vous pendant le combat.",
+        "<b>Coût :</b> 50 points d'endurance"
+      ]
+    }
   },
   "SAVIOUR": {
     "name": "SAUVEUR",
     "description": [
       "Le temps nécessaire pour réssusciter un allié est réduit de <b>-1</b> seconde.",
       "Le temps de résurrection par défaut est de <b>6</b> secondes. "
-    ]
+    ],
+    "game": {
+      "name": "Sauveur",
+      "description": [
+        "Le temps nécessaire pour ressusciter un allié est réduit de <b>{{gameValue1}}</b> secondes.",
+        "Le temps nécessaire pour ressusciter par défaut est de <b>6</b> secondes."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> seconde par niveau"
+    }
   },
   "BACKSTAB_DAMAGE": {
     "name": "MAÎTRISE DE L'ATTAQUE DANS LE DOS",
@@ -30,40 +52,81 @@
     "name": "OPPORTUNITÉ",
     "description": [
       "Augmente le multiplicateur de dégâts des <b>Attaques impitoyables</b> de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Opportunité",
+      "description": [
+        "Augmente le multiplicateur de dégâts des <b>Attaque impitoyables</b> de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "MINER": {
     "name": "MINEUR",
     "description": [
       "L'extraction des ressources donne <b>10%</b> de chance d'obtenir une ressource supplémentaire."
-    ]
+    ],
+    "game": {
+      "name": "Mineur",
+      "description": [
+        "L’extraction des ressources donne <b>10 %</b> de chance d'obtenir une ressource de plus."
+      ]
+    }
   },
   "LUMBERJACK": {
     "name": "BÛCHERON",
     "description": [
       "Les outils infligent <b>{{value}}%</b> de dégâts augmentés contre le bois.",
       "Cela inclut les arbres et le terrain en bois."
-    ]
+    ],
+    "game": {
+      "name": "Bûcheron",
+      "description": [
+        "Les outils infligent <b>{{gameValue1}}</b> de dégâts augmentés au bois.<br/>Cela comprend les arbres et les terrains boisés."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "QUALITY_GEAR": {
     "name": "ÉQUIPEMENT DE QUALITÉ",
     "description": [
       "Les outils ont <b>20%</b> de chance de restaurer <b>1</b> point de durabilité"
-    ]
+    ],
+    "game": {
+      "name": "Équipement de qualité",
+      "description": [
+        "Les outils ont <b>{{gameValue1}}</b> de chance de restaurer <b>1</b> durabilité lors d’un coup."
+      ]
+    }
   },
   "MASON": {
     "name": "MAÇON",
     "description": [
       "Les outils infligent <b>{{value}}%</b> de dégâts augmentés contre la pierre.",
       "Cela inclut le terrain en pierre et les veines de pierres précieuses."
-    ]
+    ],
+    "game": {
+      "name": "Maçon",
+      "description": [
+        "Les outils infligent <b>{{gameValue1}}</b> de dégâts augmentés à la pierre.<br/>Cela comprend les terrains rocheux et les filons de pierres précieuses."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "FISHERMANS_RESOLVE": {
     "name": "RÉSOLUTION DU PÊCHEUR",
     "description": [
       "Augmente votre endurance de pêche de <b>{{value}}</b>.",
       "Permet des combats prolongés avec les poissons ferrés."
-    ]
+    ],
+    "game": {
+      "name": "Résolution du pêcheur",
+      "description": [
+        "Augmente votre endurance de pêche de <b>{{gameValue1}}</b>.",
+        "Permet des combats prolongés avec les poissons ferrés."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> endurance de pêche par niveau"
+    }
   },
   "POWER_PARRY": {
     "name": "PARADE DE PUISSANCE",
@@ -71,67 +134,139 @@
       "Votre puissance de parade est augmentée de <b>{{value}}%</b>.",
       "<b>Parer</b><br/>Un blocage bien synchronisé avec n'importe quelle arme de mêlée ou un bouclier permet de <b>parer</b> l'attaque et de remplir la <i>barre d'étourdissement</i> de l'ennemi.",
       "<b>Surpuissance</b><br>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>.<br>Les ennemis <b>surpassés</b> sont ouverts aux Attaques impitoyables."
-    ]
+    ],
+    "game": {
+      "name": "Parade de puissance",
+      "description": [
+        "Votre capacité de parade augmente de <b>{{gameValue1}}</b>.",
+        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.",
+        "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Capacité de parade par niveau"
+    }
   },
   "FELLING_AXE_SPECIALIZATION": {
     "description": [
       "Débloque les Capacités Spéciales des Haches d'abattage. Appuyez sur <b>[R]</b> pour déclencher une Capacité Spéciale puissante après avoir généré suffisamment de Concentration.",
       "<b>Concentration</b><br/>Générez de la Concentration en attaquant. La Concentration peut être accumulée avec n'importe quel type d'arme et est utilisée pour déclencher les Capacités Spéciales des armes."
-    ]
+    ],
+    "game": {
+      "name": "Spécialisation en hache d'abattage",
+      "description": [
+        "Déverrouille les capacités spéciales des haches d'abattage. <br/>Appuyez sur <b>{{gameValue1}}</b> pour déclencher une capacité spéciale puissante après avoir accumulé suffisamment de concentration.",
+        "<b>Concentration</b><br/>Gagnez de la concentration en attaquant. La concentration peut être accumulée avec n'importe quel type d'arme et sert à déclencher les capacités spéciales des armes."
+      ]
+    }
   },
   "PICKAXE_SPECIALIZATION": {
     "description": [
       "Débloque les Capacités Spéciales des Pioches. Appuyez sur <b>[R]</b> pour déclencher une Capacité Spéciale puissante après avoir généré suffisamment de Concentration.",
       "<b>Concentration</b><br/>Générez de la Concentration en attaquant. La Concentration peut être accumulée avec n'importe quel type d'arme et est utilisée pour déclencher les Capacités Spéciales des armes."
-    ]
+    ],
+    "game": {
+      "name": "Spécialisation en pioche",
+      "description": [
+        "Déverrouille les capacités spéciales des pioches. <br/>Appuyez sur <b>{{gameValue1}}</b> pour déclencher une capacité spéciale puissante après avoir accumulé suffisamment de concentration.",
+        "<b>Concentration</b><br/>Gagnez de la concentration en attaquant. La concentration peut être accumulée avec n'importe quel type d'arme et sert à déclencher les capacités spéciales des armes."
+      ]
+    }
   },
   "PROSPECTOR": {
     "description": [
       "Les outils infligent <b>{{value}}</b> de dégâts augmentés contre le métal.\nCela inclut les veines de minerai métallique.",
       "<b>Concentration</b><br/>Générez de la Concentration en attaquant. La Concentration peut être accumulée avec n'importe quel type d'arme et est utilisée pour déclencher les Capacités Spéciales des armes."
-    ]
+    ],
+    "game": {
+      "name": "Prospecteur",
+      "description": [
+        "Les outils infligent <b>{{gameValue1}}</b> de dégâts augmentés au métal.<br/>Cela comprend les filons de minerais métalliques."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "ATTR_SPIRIT": {
     "name": "ESPRIT",
     "description": [
       "Augmente votre attribut Esprit de 1.",
       "Augmente le mana de 20 par point d'attribut."
-    ]
+    ],
+    "game": {
+      "name": "Esprit",
+      "description": [
+        "Augmente votre attribut Esprit de 1.",
+        "Augmente le mana de {{gameValue1}} par point d'attribut."
+      ]
+    }
   },
   "ATTR_INT": {
     "name": "INTELLIGENCE",
     "description": [
       "Augmente votre attribut Intelligence de 1.",
       "Augmente les dégâts magiques de 5% par point d'attribut."
-    ]
+    ],
+    "game": {
+      "name": "Intelligence",
+      "description": [
+        "Augmente votre Intelligence par 1.",
+        "Augmentez les dégâts magiques de 5 % par point d'attribut."
+      ]
+    }
   },
   "ATTR_CONS": {
     "name": "CONSTITUTION",
     "description": [
       "Augmente votre attribut Constitution de 1.",
       "Augmente la santé de 50 par point d'attribut."
-    ]
+    ],
+    "game": {
+      "name": "Constitution",
+      "description": [
+        "Augmente ton attribut Constitution de 1.",
+        "Augmente la santé de {{gameValue1}} par point d'attribut."
+      ]
+    }
   },
   "ATTR_STR": {
     "name": "FORCE",
     "description": [
       "Augmente votre attribut Force de 1.",
       "Augmente les dégâts de mêlée de 5% par point d'attribut."
-    ]
+    ],
+    "game": {
+      "name": "Force",
+      "description": [
+        "Augmente votre Force par 1.",
+        "Augmente les dégâts de mêlée de 5 % par point d'attribut."
+      ]
+    }
   },
   "ATTR_ENDURANCE": {
     "name": "RÉSISTANCE",
     "description": [
       "Augmente votre attribut Résistance de 1.",
       "Augmente l'endurance de 10 par point d'attribut."
-    ]
+    ],
+    "game": {
+      "name": "Résistance",
+      "description": [
+        "Augmente votre attribut Résistance de 1.",
+        "Augmente l'endurance de {{gameValue1}} par point d'attribut."
+      ]
+    }
   },
   "ATTR_DEX": {
     "name": "DEXTÉRITÉ",
     "description": [
       "Augmente votre attribut Dextérité de 1.",
       "Augmente les dégâts d'arc et de dague de 5% par point d'attribut."
-    ]
+    ],
+    "game": {
+      "name": "Dextérité",
+      "description": [
+        "Augmente votre Dextérité par 1.",
+        "Augmente les dégâts de l'arc et de la dague de 5 % par point d'attribut."
+      ]
+    }
   },
   "WELL_RESTED": {
     "name": "BIEN REPOSÉ",
@@ -141,21 +276,46 @@
       "Il nécessite un <b>abri, le fait d'être assis ou de dormir,</b> ainsi que de la <b>chaleur</b> provenant d'une source de chaleur.",
       "Le buff peut être renouvelé <b>n'importe où.</b>",
       "Les objets de confort environnants augmentent encore sa durée."
-    ]
+    ],
+    "game": {
+      "name": "Bien reposé",
+      "description": [
+        "La durée de base du buff Reposé augmente de <b>{{gameValue1}}</b> minutes.",
+        "<b>Reposé</b><br/>Le buff Reposé augmente votre endurance maximum et la régénération de manière significative.",
+        "Il demande <b>d’être à l’abri, assis ou de dormir,</b> et d’avoir <b>chaud</b> grâce à une source de chaleur.",
+        "Le buff peut être actualisé <b>n’importe où.</b>",
+        "Les objets de confort environnants augmentent encore davantage sa durée."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> minutes par niveau"
+    }
   },
   "SNEAK_ATTACK": {
     "name": "ATTAQUE FURTIVE",
     "description": [
       "Effectuez une <b>Attaque furtive</b> en vous approchant furtivement d'un ennemi qui ne se doute de rien et en appuyant sur <b>[E]</b>.",
       "L'<b>Attaque furtive</b> inflige <b>+900%</b> de dégâts augmentés."
-    ]
+    ],
+    "game": {
+      "name": "Attaque furtive",
+      "description": [
+        "Effectuez une <b>Attaque furtive</b> en vous approchant furtivement d'un ennemi qui ne se doute de rien et en appuyant sur <b>{{gameValue1}}</b>.",
+        "<b>Attaque furtive</b> inflige <b>+900 %</b> de dégâts augmentés."
+      ]
+    }
   },
   "MERCILESS_ATTACK": {
     "name": "ATTAQUE IMPITOYABLE",
     "description": [
       "Effectuez une <b>Attaque impitoyable</b> en appuyant sur <b>[E]</b> pour infliger <b>+500%</b> de dégâts à un ennemi <b>surpassé</b>.",
       "<b>Surpuissance</b><br>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>.<br>Les ennemis <b>surpassés</b> sont ouverts aux Attaques impitoyables."
-    ]
+    ],
+    "game": {
+      "name": "Attaque impitoyable",
+      "description": [
+        "Effectuez une <b>Attaque impitoyable</b> en appuyant sur <b>{{gameValue1}}</b> pour infliger <b>{{gameValue2}}</b> de dégâts sur un ennemi <b>surpassé</b>.",
+        "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
+      ]
+    }
   },
   "UPDRAFT": {
     "name": "COURANT ASCENDANT",
@@ -163,7 +323,15 @@
       "Sauter avec [ESPACE] tout en planant vous élève vers le haut. Utilisable une fois par vol.",
       "<b>Charge</b><br/>Lorsque le Courant ascendant se charge avant son activation, la portée est augmentée. Une charge complète vous accorde un boost supplémentaire. La charge est accélérée lorsque vous êtes à l'intérieur de votre base.",
       "<b>Coût :</b> 100 Mana"
-    ]
+    ],
+    "game": {
+      "name": "Courant ascendant",
+      "description": [
+        "Sauter avec {{gameValue1}} tout en planant vous fait monter. Cette compétence peut être utilisée une fois par vol.",
+        "<b>Charger</b><br/>À mesure que le courant ascendant se recharge avant son activation, la portance générée augmente. Une recharge complète vous confère un coup de pouce supplémentaire. La recharge s'accélère lorsque vous vous trouvez à l'intérieur de votre base.",
+        "<b>Coût :</b> 100 mana"
+      ]
+    }
   },
   "BEGONE": {
     "name": "VA-T'EN !",
@@ -171,39 +339,82 @@
       "Un coup de poing magique qui repousse et étourdit les ennemis.",
       "Remplace vos attaques à mains nues tant que vous disposez du mana nécessaire.",
       "<b>Coût :</b> 30 Mana"
-    ]
+    ],
+    "game": {
+      "name": "Va-t'en !",
+      "description": [
+        "Un coup de poing magique qui repousse et étourdit les ennemis touchés.",
+        "Remplace vos attaques à mains nues tant que vous disposez du mana nécessaire",
+        "<b>Coût :</b> 30 mana."
+      ]
+    }
   },
   "RADIANT_AURA": {
     "name": "AURA RADIEUSE",
     "description": [
       "Tous les ennemis <b>Déchu</b> dans un rayon de <b>{{value}}</b> mètres subissent <b>{{value2}} dégât de Feu</b> par point d'Intelligence par seconde."
-    ]
+    ],
+    "game": {
+      "name": "Aura radieuse",
+      "description": [
+        "Tous les ennemis <b>Déchu</b> dans un rayon de <b>{{gameValue1}}</b> mètres subissent <b>{{gameValue2}} dégât de feu</b> par intelligence par seconde."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mètres et <b>{{gamePerLevelValue2}} dégâts de feu</b> par intelligence par niveau"
+    }
   },
   "WATER_AURA": {
     "name": "AURA DE L'EAU",
     "description": [
       "Vous émettez une aura de guérison qui vous soigne, ainsi que tous les alliés blessés dans un rayon de <b>{{value}}</b> mètres.",
       "La guérison évolue avec votre attribut Intelligence et restaure <b>1</b> point de santé par <b>2</b> points d'Intelligence."
-    ]
+    ],
+    "game": {
+      "name": "Aura de l'eau",
+      "description": [
+        "Vous émettez une aura de guérison qui vous soigne, vous et tous les alliés blessés dans un rayon de <b>{{gameValue1}}</b> mètres.",
+        "La guérison évolue en fonction de votre attribut Intelligence et restaure <b>1</b> point de santé tous les <b>2</b> points d’Intelligence."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mètres par niveau"
+    }
   },
   "MARTYR": {
     "name": "MARTYR",
     "description": [
       "Lorsque vous êtes tué(e) par un ennemi, tous les alliés dans un rayon de 30 mètres sont soignés à hauteur de <b>50%</b> de leurs points de vie maximum.",
       "Ils reçoivent également un buff <b>Bénédiction finale</b>, qui augmente leur Santé maximum de <b>100</b> points pendant <b>15</b> minutes."
-    ]
+    ],
+    "game": {
+      "name": "Martyr",
+      "description": [
+        "Lorsque vous êtes tué(e) par un ennemi, tous les alliés situés dans un rayon de <b>30</b> mètres sont soignés de <b>50 %</b> de leurs points de vie maximum.",
+        "De plus, ils reçoivent un buff <b>Bénédiction finale</b>, qui augmente leur Santé maximum de <b>100</b> pendant <b>15</b> minutes."
+      ]
+    }
   },
   "DIVINE_SURGE": {
     "name": "DÉFERLEMENT DIVIN",
     "description": [
       "Les sorts de guérison peuvent infliger des Coups critiques dont la puissance dépend de vos dégâts de Coup critique."
-    ]
+    ],
+    "game": {
+      "name": "Déferlement divin",
+      "description": [
+        "Les sorts de guérison peuvent infliger des coups critiques dont la puissance dépend de vos dégâts de coups critiques."
+      ]
+    }
   },
   "RIGHTEOUS_FIRE": {
     "name": "FEU VERTUEUX",
     "description": [
       "Soigner une cible avec un sort déclenche une explosion de feu qui inflige <b>{{value}}%</b> du montant des soins en dégâts de <b>Feu</b> aux ennemis <b>Déchu</b> à proximité."
-    ]
+    ],
+    "game": {
+      "name": "Feu vertueux",
+      "description": [
+        "Soigner n’importe quelle cible avec un sort déclenche une explosion de feu qui inflige <b>{{gameValue1}}</b> de la quantité de soins sous forme de dégâts de <b>feu</b> aux ennemis <b>Déchus</b> proches."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}} dégâts de feu</b> par niveau"
+    }
   },
   "BLINK": {
     "name": "FLASH",
@@ -211,7 +422,15 @@
       "Remplace la capacité Esquive en roulade par une téléportation de courte portée.",
       "Flash remplace également l'Esquive en roulade latérale de la compétence Manœuvre stratégique.",
       "<b>Coût :</b> 20 points d'endurance"
-    ]
+    ],
+    "game": {
+      "name": "Flash",
+      "description": [
+        "Remplace la capacité Esquive en roulade par une téléportation à courte portée.",
+        "Flash remplace aussi le déplacement latéral Esquive en roulade de la compétence Manœuvre stratégique.",
+        "<b>Coût :</b> 20 endurance"
+      ]
+    }
   },
   "EVASION_ATTACK": {
     "name": "ATTAQUE D'ÉVASION",
@@ -219,19 +438,41 @@
       "Lorsque vous êtes équipé(e) d'une arme de mêlée, vous pouvez effectuer une attaque d'évasion qui fonce sur l'ennemi et inflige plus de dégâts d'arme avec <b>[BSG]</b>",
       "<b>Coût :</b> 20 points d'endurance",
       "<b>Briseur de bloc</b><br/>Cette attaque spéciale multiplie par deux la <i>barre d'étourdissement</i> de l'ennemi lorsqu'il est touché."
-    ]
+    ],
+    "game": {
+      "name": "Attaque d'évasion",
+      "description": [
+        "Lorsque vous êtes équipé(e) d’une arme de mêlée, vous pouvez effectuer une attaque d’évasion qui fonce sur l'ennemi et lui inflige plus de dégâts d'arme avec <b>{{gameValue1}}</b>.",
+        "<b>Coût :</b> 20 points d’endurance",
+        "<b>Briseur de bloc</b> <br/>Cette attaque spéciale multiplie par deux la <i>barre d'étourdissement</i> de l'ennemi lorsqu'il est touché."
+      ]
+    }
   },
   "EARTH_AURA": {
     "name": "AURA DE LA TERRE",
     "description": [
       "Vous émettez une aura protectrice qui augmente les Résistances Physiques et Magiques de <b>10%</b> pour vous et tous les alliés dans un rayon de <b>{{value}}</b> mètres."
-    ]
+    ],
+    "game": {
+      "name": "Aura de la Terre",
+      "description": [
+        "Vous émettez une aura protectrice qui augmente les résistances physiques et magiques de <b>{{gameValue1}}</b> pour vous et vos alliés dans un rayon de <b>{{gameValue2}}</b> mètres."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mètres par niveau"
+    }
   },
   "NEMESIS": {
     "name": "NÉMÉSIS",
     "description": [
       "Augmente l'attention que vous attirez des ennemis de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Némésis",
+      "description": [
+        "Augmente l’attention que vous attirez de la part des ennemis de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> attention attirée par niveau"
+    }
   },
   "SHOCKWAVE": {
     "name": "ONDE DE CHOC",
@@ -239,27 +480,57 @@
       "Déclenche une onde de choc lorsque vous parez une attaque ou <b>surpassez</b> un ennemi.",
       "L'onde de choc repousse les ennemis proches. Elle remplit également leur <i>barre d'étourdissement</i>, en fonction de votre attribut de Force.",
       "<b>Surpuissance</b><br>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>.<br>Les ennemis <b>surpassés</b> sont ouverts aux Attaques impitoyables."
-    ]
+    ],
+    "game": {
+      "name": "Onde de choc",
+      "description": [
+        "Déclenche une onde de choc lorsque vous parez une attaque ou que vous <b>dominez</b> un ennemi.",
+        "L'onde de choc repousse les ennemis proches. Elle remplit également leur <i>barre d'étourdissement</i>, en fonction de votre attribut de force.",
+        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.",
+        "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
+      ]
+    }
   },
   "HEAVY_SPECIALIZATION": {
     "name": "FRAPPEUR LOURD",
     "description": [
       "Augmente la vitesse d'attaque de toutes les armes de mêlée à deux mains de <b>10%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Poids lourds",
+      "description": [
+        "Augmente la vitesse d’attaque de toutes les armes de mêlée à deux mains de <b>{{gameValue1}}</b>."
+      ]
+    }
   },
   "BASH": {
     "name": "COUP VIOLENT",
     "description": [
       "Parer les attaques ennemies leur inflige <b>{{value}} dégâts contondants</b>. Les dégâts du Coup violent sont augmentés par votre attribut de Force.",
       "<b>Parer</b><br/>Un blocage bien synchronisé avec n'importe quelle arme de mêlée ou un bouclier permet de <b>parer</b> l'attaque et de remplir la <i>barre d'étourdissement</i> de l'ennemi."
-    ]
+    ],
+    "game": {
+      "name": "Le cambriolage",
+      "description": [
+        "Parer les attaques ennemies leur inflige {{gameValue1}} de dégâts <b> contondants</b>. Les dégâts causés par un coup violent augmentent par votre attribut de force.",
+        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}} dégâts contondants</b> par niveau"
+    }
   },
   "WHIRLWIND_CRESCENDO": {
     "name": "TOURBILLON CRESCENDO",
     "description": [
       "Lorsque vous êtes équipé(e) d'une arme à deux mains, déclenche une attaque tourbillonnante à la fin d'une chaîne d'attaques.",
       "<b>Coût</b> : 75 points d'endurance"
-    ]
+    ],
+    "game": {
+      "name": "Tourbillon Crescendo",
+      "description": [
+        "Quand vous êtes équipé(e) d’une arme à deux mains, déclenche une attaque tourbillonnante à la fin d'une chaîne d’attaques.",
+        "<b>Coût :</b> 75 points d'endurance"
+      ]
+    }
   },
   "CRASH_DOWN_ATTACK": {
     "name": "ATTAQUE FRACASSANTE",
@@ -268,39 +539,80 @@
       "Fracas inflige 50% de dégâts d'arme supplémentaires dans un petit rayon et coûte de l'endurance en fonction du type d'arme utilisé.",
       "<b>Coût</b> : 35-60 points d'endurance",
       "<b>Briseur de bloc</b><br/>Cette attaque spéciale multiplie par deux la <i>barre d'étourdissement</i> de l'ennemi lorsqu'il est touché."
-    ]
+    ],
+    "game": {
+      "name": "Attaque fracassante",
+      "description": [
+        "Lorsque vous êtes équipé(e) d'une arme de mêlée, vous pouvez effectuer une attaque spéciale en maintenant <b>{{gameValue1}}</b> appuyé pendant un saut.",
+        "Fracas inflige 50 % de dégâts d’arme supplémentaires dans un petit rayon et coûte de l’endurance en fonction de l’arme utilisée.",
+        "<b>Coût :</b> 35 - 60 points d'endurance",
+        "<b>Briseur de bloc</b> <br/>Cette attaque spéciale multiplie par deux la <i>barre d'étourdissement</i> de l'ennemi lorsqu'il est touché."
+      ]
+    }
   },
   "CRASH_DOWN_FORCE": {
     "name": "Fracas : Force",
     "description": [
       "Lors d'une attaque depuis un double saut, <b>Fracas</b> inflige <b>20%</b> de dégâts d'arme supplémentaires."
-    ]
+    ],
+    "game": {
+      "name": "Fracas : force",
+      "description": [
+        "Lors d'une attaque à partir d'un double saut, <b>Fracas</b> inflige <b>20 %</b> de dégât d’arme supplémentaire."
+      ]
+    }
   },
   "DOUBLE_JUMP": {
     "name": "DOUBLE SAUT",
     "description": [
       "Permet de sauter une seconde fois en plein vol.",
       "<b>Coût :</b> 10 points d'endurance"
-    ]
+    ],
+    "game": {
+      "name": "Double saut",
+      "description": [
+        "Permet de sauter une deuxième fois quand vous êtes en l'air.",
+        "<b>Coût :</b> 10 points d'endurance"
+      ]
+    }
   },
   "DESSERT_STOMACH": {
     "name": "ESTOMAC SECONDAIRE",
     "description": [
       "Vous gagnez un emplacement nourriture supplémentaire"
-    ]
+    ],
+    "game": {
+      "name": "Estomac secondaire",
+      "description": [
+        "Vous gagnez un emplacement nourriture supplémentaire."
+      ]
+    }
   },
   "LAST_MEAL": {
     "name": "DERNIER REPAS",
     "description": [
       "Vos buffs alimentaires persistent après la mort, mais leur durée est réduite de moitié."
-    ]
+    ],
+    "game": {
+      "name": "Dernier repas",
+      "description": [
+        "Vos buffs alimentaires persistent après la mort, mais leur durée est réduite de moitié."
+      ]
+    }
   },
   "EAGLE_EYE": {
     "name": "OEIL D'AIGLE",
     "description": [
       "Augmente considérablement le zoom lors de la visée avec un Arc.",
       "Pour viser, maintenez <b>[BSD]</b> enfoncé lorsqu'un arc est sélectionné dans la barre d'actions. (Ou maintenez [Q] pour viser avec votre arc équipé.)"
-    ]
+    ],
+    "game": {
+      "name": "Œil d'aigle",
+      "description": [
+        "Augmente considérablement le zoom lors de la visée avec des arcs.",
+        "Pour viser, maintenez la touche {{gameValue1}} enfoncée lorsqu'un arc est sélectionné dans la barre d'actions.<br/>(Sinon, maintenez {{gameValue2}} pour viser votre arc équipé.)"
+      ]
+    }
   },
   "MULTI_SHOT": {
     "name": "MULTI-TIRS",
@@ -308,60 +620,125 @@
       "Tirer des <i>Flèches ordinaires</i> a <b>20%</b> de chance de générer une <b>Rafale de flèches</b> qui se disperse légèrement.",
       "Les <i>Flèches ordinaires</i> tirées de cette manière seront déduites de vos munitions.",
       "La <b>Rafale de flèches</b> ne se déclenche pas avec les <i>Flèches spéciales</i>."
-    ]
+    ],
+    "game": {
+      "name": "Multi-tirs",
+      "description": [
+        "Tirer des <i>flèches ordinaires</i> a <b>20 %</b> de chance de générer une <b>rafale de flèches</b> qui se disperse légèrement.",
+        "Les <i>flèches ordinaires</i> tirées de cette manière seront déduites de vos munitions.",
+        "<b>La rafale de flèches</b> ne se déclenche pas avec les <i>flèches spéciales</i>."
+      ]
+    }
   },
   "MULTI_SHOT_SPREAD": {
     "name": "RÉPARTITION MULTI-TIRS",
     "description": [
       "Ajoute <b>25%</b> de chance de générer une <i>Flèche ordinaire</i> supplémentaire avec votre <b>Rafale de flèches</b> de la compétence <b>Multi-tirs</b>.",
       "Cette <i>Flèche ordinaire</i> supplémentaire n'est pas déduite de vos munitions."
-    ]
+    ],
+    "game": {
+      "name": "Répartition multi-tirs",
+      "description": [
+        "Ajoute <b>25 %</b> de chance de générer une <i>flèche ordinaire</i> supplémentaire avec votre <b>rafale de flèches</b> de la compétence <b>Multi-tirs</b>.",
+        "Cette <i>flèche ordinaire</i> supplémentaire n'est pas déduite de vos munitions."
+      ]
+    }
   },
   "MULTI_SHOT_TRIGGER": {
     "name": "DÉCLENCHEUR MULTI-TIRS",
     "description": [
       "Tirer des <i>Flèches spéciales</i> déclenche désormais une <b>Rafale de flèches</b> à partir de la compétence <b>Multi-tirs</b>.",
       "Les <i>Flèches spéciales</i> tirées de cette manière seront déduites de vos munitions."
-    ]
+    ],
+    "game": {
+      "name": "Déclencheur multi-tirs",
+      "description": [
+        "Tirer des <i>flèches spéciales</i> déclenche maintenant une <b>rafale de flèches</b> à partir de la compétence <b>Multi-tirs</b>.",
+        "Les <i>flèches spéciales</i> tirées de cette manière sont déduites de vos munitions."
+      ]
+    }
   },
   "BEE_STING": {
     "name": "PIQÛRE D'ABEILLE",
     "description": [
       "Tirer ou viser avec votre Arc en plein vol ralentit brièvement votre chute. Chaque tir vous soulève légèrement, vous accordant plus de temps en l'air.",
       "<b>Coût :</b> 10 points d'endurance par seconde"
-    ]
+    ],
+    "game": {
+      "name": "Piqûre d'abeille",
+      "description": [
+        "Tirer ou viser avec votre arc pendant que vous êtes en l'air ralentit brièvement votre chute. Chaque tir vous soulève légèrement, vous accordant plus de temps dans les airs.",
+        "<b>Coût :</b> 10 points d'endurance par seconde"
+      ]
+    }
   },
   "SHELL_SHOCK": {
     "name": "SOUS LE CHOC",
     "description": [
       "Infusez du mana dans vos <b>Explosifs à distance</b>. Ils étourdissent désormais les ennemis pendant 2 secondes.",
       "<b>Coût :</b> 8 Mana par ennemi étourdi"
-    ]
+    ],
+    "game": {
+      "name": "Sous le choc",
+      "description": [
+        "Infusez du mana dans vos <b>Explosifs de longue portée</b>. Ils étourdissent désormais les ennemis pendant <b>2</b> secondes.",
+        "<b>Coût : </b>{{gameValue1}} mana par ennemi étourdi"
+      ]
+    }
   },
   "COUNTERSTRIKE": {
     "name": "CONTRE-ATTAQUE",
     "description": [
       "Après avoir subi des dégâts, vous avez <b>{{value}}%</b> de chance de renvoyer <b>{{value2}}%</b> des dégâts à l'attaquant sous forme de dégâts de <b>Feu</b>.",
       "Cette attaque magique peut déclencher d'autres compétences."
-    ]
+    ],
+    "game": {
+      "name": "Contre-attaque",
+      "description": [
+        "Après avoir reçu des dégâts, il y a <b>{{gameValue1}}</b> de chances de renvoyer <b>{{gameValue2}}</b> de dégâts à l’attaquant en dégât de <b>feu</b>.",
+        "Cette attaque magique peut déclencher d'autres compétences."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance et <b>{{gamePerLevelValue2}}</b> dégâts renvoyés par niveau"
+    }
   },
   "TERROR": {
     "name": "TERREUR",
     "description": [
       "Les Coups critiques avec des sorts ont <b>{{value}}%</b> de chance d'étourdir la cible pendant <b>2</b> secondes."
-    ]
+    ],
+    "game": {
+      "name": "Terreur",
+      "description": [
+        "Les coups critiques avec des sorts ont une chance de <b>{{gameValue1}}</b> d’étourdir la cible pendant <b>2</b> secondes."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
   },
   "SHOCK_RESISTANCE": {
     "name": "RÉSISTANCE AUX CHOCS",
     "description": [
       "Augmente votre <b>Résistance aux chocs</b> de <b>{{value}}%</b>, ce qui réduit la quantité de dégâts de <b>choc</b> subis."
-    ]
+    ],
+    "game": {
+      "name": "Résistance aux chocs",
+      "description": [
+        "Augmente votre <b>résistance au choc</b> de <b>{{gameValue1}}</b>, ce qui réduit la quantité des dégâts de <b>choc</b> subis."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> résistance par niveau"
+    }
   },
   "QUICK_CHARGE": {
     "name": "CHARGE RAPIDE",
     "description": [
       "Le temps d'incantation des sorts est réduit de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Charge rapide",
+      "description": [
+        "Le temps d'invocation des sorts diminue de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> temps d’invocation par niveau"
+    }
   },
   "THIS_IS_THE_WAY": {
     "name": "APPRENTI MAGE",
@@ -373,7 +750,14 @@
     "name": "PYROMANE",
     "description": [
       "Tous les dégâts de <b>Feu</b> sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Pyromane",
+      "description": [
+        "Les dégâts de <b>feu</b> augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "SUN_AURA": {
     "name": "AURA RADIEUSE",
@@ -385,13 +769,27 @@
     "name": "RÉSISTANCE AU FEU",
     "description": [
       "Augmente votre <b>Résistance au feu</b> de <b>{{value}}%</b>, ce qui réduit la quantité de dégâts de <b>Feu</b> subis."
-    ]
+    ],
+    "game": {
+      "name": "Résistance au feu",
+      "description": [
+        "Augmente votre <b>résistance au feu</b> de <b>{{gameValue1}}</b>, ce qui réduit la quantité des dégâts de <b>feu</b> subis."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> résistance par niveau"
+    }
   },
   "THUNDER": {
     "name": "TONNERRE",
     "description": [
       "Tous les dégâts de <b>choc</b> sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Tonnerre",
+      "description": [
+        "Tous les dégâts de <b>choc</b> sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "LIGHTNING": {
     "name": "FOUDRE",
@@ -403,7 +801,14 @@
     "name": "HOMME DE GLACE",
     "description": [
       "Tous les dégâts de <b>Glace</b> sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Homme de glace",
+      "description": [
+        "Les dégâts de <b>glace</b> augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "SUBZERO": {
     "name": "NÉGATIF",
@@ -421,19 +826,40 @@
     "name": "RÉSISTANCE À LA GLACE",
     "description": [
       "Augmente votre <b>Résistance à la glace</b> de <b>{{value}}%</b>, ce qui réduit la quantité de dégâts de <b>Glace</b> subis."
-    ]
+    ],
+    "game": {
+      "name": "Résistance à la glace",
+      "description": [
+        "Augmente votre <b>résistance à la glace</b> de <b>{{gameValue1}}</b>, ce qui réduit la quantité des dégâts de <b>glace</b> subis."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> résistance par niveau"
+    }
   },
   "WIZARD": {
     "name": "MAGICIEN",
     "description": [
       "Les chances de Coup critique des armes magiques sont augmentées de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Magicien",
+      "description": [
+        "Les chances de coup critique avec des armes magiques augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance de coup critique par niveau"
+    }
   },
   "DARK_ARTS": {
     "name": "ARTS OBSCURS",
     "description": [
       "Tous les <b>dégâts de Brume</b> sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Arts obscurs",
+      "description": [
+        "Tous les dégâts de <b>Brume</b> augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "ABYSS": {
     "name": "ABYSSE",
@@ -445,25 +871,52 @@
     "name": "COUPS ENCHAÎNÉS",
     "description": [
       "Les Coups critiques avec une arme magique touchent automatiquement un second ennemi dans un rayon de <b>15</b> mètres, lui infligeant <b>5 dégâts de choc</b> par point d'Intelligence."
-    ]
+    ],
+    "game": {
+      "name": "Coups enchaînés",
+      "description": [
+        "En cas de coup critique avec des armes magiques, l'attaque touche automatiquement un second ennemi dans un rayon de <b>15</b> mètres infligeant <b>5 dégâts de choc</b> par intelligence."
+      ]
+    }
   },
   "MASS_DESTRUCTION": {
     "name": "DESTRUCTION DE MASSE",
     "description": [
       "Les Coups critiques avec une arme magique infligent <b>2 dégâts de choc</b> par point d'Intelligence à tous les ennemis dans un rayon de <b>{{value}}</b> mètres autour de la cible."
-    ]
+    ],
+    "game": {
+      "name": "Destruction de masse",
+      "description": [
+        "Une attaque critique avec une arme magique inflige <b>2 dégâts de choc</b> par intelligence à tous les ennemis situés dans un rayon de <b>{{gameValue1}}</b> mètres de la cible."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mètres par niveau"
+    }
   },
   "NECROMANCER": {
     "name": "NÉCROMANCIEN",
     "description": [
       "Lorsque vous tuez un ennemi avec une arme magique, vous avez <b>{{value}}%</b> de chance d'invoquer un <b>compagnon crâne</b> ami."
-    ]
+    ],
+    "game": {
+      "name": "Nécromancien",
+      "description": [
+        "Lorsque vous tuez un ennemi avec une arme magique, vous avez <b>{{gameValue1}}</b> de chance d'invoquer un <b>compagnon crâne</b> ami."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
   },
   "HEALER": {
     "name": "GUÉRISSEUR",
     "description": [
       "Les points de vie rendus par les sorts et compétences de soin sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Guérisseur",
+      "description": [
+        "Les points de vie rendus lors des compétences et des sorts de guérison augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> guérison par niveau"
+    }
   },
   "HEALER_II": {
     "name": "GUÉRISSEUR II",
@@ -483,88 +936,184 @@
     "description": [
       "Infliger des dégâts avec une arme magique a <b>{{value}}%</b> de chance de déclencher une petite explosion de feu qui restaure <b>9</b> secondes de <b>Temps dans la Brume</b> à vous et vos alliés dans un rayon de <b>20</b> mètres.",
       "<b>Temps dans la Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
-    ]
+    ],
+    "game": {
+      "name": "Filtre de Brume",
+      "description": [
+        "Infliger des dégâts avec une arme magique a <b>{{gameValue1}}</b> de chance de déclencher une petite explosion de feu qui restaure<b>{{gameValue2}}</b> secondes du <b>Temps dans la Brume </b> sur vous et vos alliés dans un rayon de <b>{{gameValue3}}</b> mètres.",
+        "<b>Temps dans le Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
   },
   "WATERS_OF_LIFE": {
     "name": "EAUX DE LA VIE",
     "description": [
       "Augmente les soins prodigués par l'<b>Aura de l'eau</b> à <b>2</b> points de santé par <b>2</b> points d'Intelligence."
-    ]
+    ],
+    "game": {
+      "name": "Eaux de la vie",
+      "description": [
+        "Augmente les soins prodigués par l’<b>Aura de l'eau</b> à <b>2</b> points de santé par <b>2</b> points d’Intelligence."
+      ]
+    }
   },
   "SHROUD_RESISTANCE": {
     "name": "RÉSISTANCE À LA BRUME",
     "description": [
       "Augmente votre <b>Résistance à la Brume</b> de <b>{{value}}%</b>, ce qui réduit la quantité de dégâts de <b>Brume</b> subis."
-    ]
+    ],
+    "game": {
+      "name": "Résistance au Brume",
+      "description": [
+        "Augmente votre <b>résistance au Shroud</b> de <b>{{gameValue1}}</b>, ce qui réduit la quantité des dégâts de <b>Shroud</b> subis."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> résistance par niveau"
+    }
   },
   "SHROUD_MISTERY": {
     "name": "MISÈRE PARTAGÉE",
     "description": [
       "Lorsque vous subissez des dégâts de <b>Brume</b>, tous les joueurs dans un rayon de <b>{{value}}</b> mètres reçoivent une augmentation de <b>15%</b> de leur <b>Résistance à la Brume</b> pendant <b>30</b> secondes."
-    ]
+    ],
+    "game": {
+      "name": "Misère partagée",
+      "description": [
+        "Lorsque vous subissez des dégâts de <b>Shroud</b>, tous les joueurs situés dans un rayon de <b>{{gameValue1}}</b> mètres reçoivent une augmentation de <b>{{gameValue2}}</b> de leur <b>résistance au Shroud</b> pendant <b>30</b> secondes."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mètres par niveau"
+    }
   },
   "EMERGENCY_BLINK": {
     "name": "FLASH D'URGENCE",
     "description": [
       "Vous pouvez flasher tout en étant étourdi. Cela interrompt l'état d'étourdissement."
-    ]
+    ],
+    "game": {
+      "name": "Flash d'urgence",
+      "description": [
+        "Vous pouvez flasher tout en étant étourdi. Cela interrompt l'étourdissement."
+      ]
+    }
   },
   "BLINK_ATTACK": {
     "name": "ATTAQUE FLASH",
     "description": [
       "Flasher dans un ennemi déclenche une explosion qui inflige des dégâts de <b>Feu</b> dans un petit rayon.",
       "Les dégâts et le coût en mana évoluent avec l'attribut Intelligence."
-    ]
+    ],
+    "game": {
+      "name": "Attaque flash",
+      "description": [
+        "Flashez un ennemi déclenche une explosion qui inflige des dégâts de <b>feu</b> dans un petit rayon.",
+        "Les dégâts et le coût du mana augmentent en fonction de l'attribut Intelligence."
+      ]
+    }
   },
   "ARCANE_DEFLECTION": {
     "name": "DÉVIATION DES ARCANES",
     "description": [
       "Réussir à parer l'attaque d'un ennemi restaure <b>{{value}}</b> Mana.",
       "<b>Parer</b><br/>Un blocage bien synchronisé avec n'importe quelle arme de mêlée ou un bouclier permet de <b>parer</b> l'attaque et de remplir la <i>barre d'étourdissement</i> de l'ennemi."
-    ]
+    ],
+    "game": {
+      "name": "Déviation des arcanes",
+      "description": [
+        "Réussir à parer l'attaque d'un ennemi restaure <b>{{gameValue1}}</b> points de mana.",
+        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mana par niveau"
+    }
   },
   "UNITY": {
     "name": "UNITÉ",
     "description": [
       "Infliger des dégâts aux ennemis avec des baguettes a <b>{{value}}%</b> de chance de restaurer <b>{{value2}}%</b> de votre mana maximum."
-    ]
+    ],
+    "game": {
+      "name": "Unité",
+      "description": [
+        "Infliger des dégâts aux ennemis avec des baguettes donne <b>{{gameValue1}}</b> de chance de récupérer <b>{{gameValue2}}</b> de votre mana maximum."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance et <b>{{gamePerLevelValue2}}</b> de mana max par niveau"
+    }
   },
   "ARCANE_PROLIFERATION": {
     "name": "PROLIFÉRATION ARCANIQUE",
     "description": [
       "Les attaques de baguette ont <b>30%</b> de chance de générer deux fois plus de projectiles. Les projectiles supplémentaires infligent <b>50%</b> de dégâts en moins."
-    ]
+    ],
+    "game": {
+      "name": "Prolifération d'arcane",
+      "description": [
+        "Les attaques de baguette ont <b>30 %</b> de chance de générer deux fois plus de projectiles. Les projectiles supplémentaires générés infligent <b>50 %</b> de dégâts en moins."
+      ]
+    }
   },
   "ETERNAL_SPARK": {
     "name": "ÉTINCELLE ÉTERNELLE",
     "description": [
       "Infliger des dégâts avec des projectiles de baguette a <b>{{value}}%</b> de chance de restaurer 1 point de durabilité à cette arme."
-    ]
+    ],
+    "game": {
+      "name": "Étincelle éternelle",
+      "description": [
+        "Infliger des dégâts avec des projectiles de baguette a <b>{{gameValue1}}</b> de chance de restaurer <b>1</b> durabilité à cette arme."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
   },
   "STING": {
     "name": "PIQÛRE",
     "description": [
       "Les dégâts répétés de baguette sont augmentés de <b>20%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Piqûre",
+      "description": [
+        "Augmentation de <b>{{gameValue1}}</b> des dégâts répétés par la baguette."
+      ]
+    }
   },
   "BATTLE_HEAL": {
     "name": "SOINS DE COMBAT",
     "description": [
       "Les Coups critiques avec une arme de mêlée vous soignent à hauteur de <b>{{value}}%</b> de vos points de vie maximum."
-    ]
+    ],
+    "game": {
+      "name": "Soins de combat",
+      "description": [
+        "Les coups critiques avec des armes de mêlée vous soignent à hauteur de <b>{{gameValue1}}</b> de votre santé maximale."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de santé maximale par niveau"
+    }
   },
   "BLOODLETTING": {
     "name": "SAIGNÉE",
     "description": [
       "Les Coups critiques avec des sorts ont <b>{{value}}%</b> de chance de faire apparaître 2 Orbes de santé, de mana et/ou d'endurance.",
       "Récupérer un Orbe restaure <b>10%</b> de la ressource correspondante."
-    ]
+    ],
+    "game": {
+      "name": "Saignée",
+      "description": [
+        "Les coups critiques avec les sorts ont <b>{{gameValue1}}</b> de chance de générer deux Orbes de santé, de mana et/ou d’endurance.",
+        "Collecter un orbe restaure <b>10 %</b> de la ressource respective."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
   },
   "LIFE_BURST": {
     "name": "EXPLOSION DE VIE",
     "description": [
       "Vaincre un ennemi avec une arme magique restaure une quantité de santé égale à <b>3</b> fois votre Intelligence à tous les joueurs dans un rayon de <b>15</b> mètres autour de la cible."
-    ]
+    ],
+    "game": {
+      "name": "Explosion de vie",
+      "description": [
+        "Tuer un ennemi avec une arme magique restaure un gain de vie correspondant à <b>3</b> fois votre Intelligence à tous les joueurs dans un rayon de <b>15</b> mètres de la cible."
+      ]
+    }
   },
   "BLOOD_MAGIC": {
     "name": "MAGIE DU SANG",
@@ -572,56 +1121,117 @@
       "Lorsque votre mana tombe sous les <b>20%</b>, vous restaurez jusqu'à <b>35%</b> de votre mana maximum au coût de <b>1</b> point de santé par mana restauré.",
       "Cet effet s'arrête à 1 point de santé.",
       "<b>Temps de récupération :</b> 2 minutes"
-    ]
+    ],
+    "game": {
+      "name": "Magie du sang",
+      "description": [
+        "Lorsque votre mana tombe en dessous de <b>20 %</b>, vous restaurez jusqu'à <b>35 %</b> de votre mana maximum au coût de <b>1</b> point de santé par mana.",
+        "Cet effet s'arrête à <b>1</b> point de santé.",
+        "<b>Temps de récupération :</b> 2 minutes"
+      ]
+    }
   },
   "ABSORB": {
     "name": "ABSORPTION",
     "description": [
       "Lorsque vous subissez des dégâts <b>magiques</b>, vous avez <b>{{value}}%</b> de chance de restaurer 1 point de mana par point de vie perdu."
-    ]
+    ],
+    "game": {
+      "name": "Absorption",
+      "description": [
+        "Lorsque vous subissez des dégâts <b>magiques</b>, vous avez <b>{{gameValue1}}</b> de chance de restaurer <b>1</b> point de mana pour chaque point de vie perdu."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
   },
   "SNAP": {
     "name": "CRAQUAGE",
     "description": [
       "Déclencher une <b>Attaque impitoyable</b> restaure <b>10%</b> de mana."
-    ]
+    ],
+    "game": {
+      "name": "Craquage",
+      "description": [
+        "Déclencher une <b>Attaque impitoyable</b> restaure <b>10 %</b> de mana."
+      ]
+    }
   },
   "SOUL_LEECH": {
     "name": "ABSORPTION D'ÂME",
     "description": [
       "Lorsque vous tuez un ennemi avec une arme de mêlée, tous les joueurs dans un rayon de <b>{{value}}</b> mètres autour de la cible restaurent <b>{{value2}}</b> Mana."
-    ]
+    ],
+    "game": {
+      "name": "Absorption d'âme",
+      "description": [
+        "Lorsque vous tuez un ennemi avec une arme de mêlée, tous les joueurs dans un rayon de <b>{{gameValue1}}</b> mètres autour de la cible gagnent <b>{{gameValue2}}</b> de mana."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mètres et <b>{{gamePerLevelValue2}}</b> mana par niveau"
+    }
   },
   "SHINY_PLATES": {
     "name": "PLAQUES BRILLANTES",
     "description": [
       "L'armure équipée octroie <b>{{value}}%</b> d'Armure magique augmentée"
-    ]
+    ],
+    "game": {
+      "name": "Plaques brillantes",
+      "description": [
+        "L'armure équipée octroie <b>{{gameValue1}}</b> d’armure magique augmentée."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> armure magique augmentée par niveau"
+    }
   },
   "HEAVY_PLATES": {
     "name": "PLAQUES RENFORCÉES",
     "description": [
       "L'armure équipée octroie <b>{{value}}%</b> d'Armure physique augmentée"
-    ]
+    ],
+    "game": {
+      "name": "Plaques renforcées",
+      "description": [
+        "L'armure équipée octroie <b>{{gameValue1}}</b> d’armure physique augmentée."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> armure physique augmentée par niveau"
+    }
   },
   "ONE_HANDED_SPECIALIZATION": {
     "name": "Spécialisation à une main",
     "description": [
       "Débloque les Capacités Spéciales des armes de mêlée à une main.\nAppuyez sur <b>[R]</b> pour déclencher une Capacité Spéciale puissante après avoir généré suffisamment de Concentration",
       "<b>Concentration</b><br/>Générez de la Concentration en attaquant. La Concentration peut être accumulée avec n'importe quel type d'arme et est utilisée pour déclencher les Capacités Spéciales des armes."
-    ]
+    ],
+    "game": {
+      "name": "Spécialisation à une main",
+      "description": [
+        "Déverrouille les capacités spéciales des armes de mêlée à une main. <br/>Appuyez sur <b>{{gameValue1}}</b> pour déclencher une capacité spéciale puissante après avoir accumulé suffisamment de concentration.",
+        "<b>Concentration</b><br/>Gagnez de la concentration en attaquant. La concentration peut être accumulée avec n'importe quel type d'arme et sert à déclencher les capacités spéciales des armes."
+      ]
+    }
   },
   "WARDEN": {
     "name": "GARDIEN",
     "description": [
       "Lorsqu'il y a trois ennemis ou plus dans un rayon de <b>20</b> mètres, vous recevez <b>10%</b> de <b>Résistance magique</b> augmentée."
-    ]
+    ],
+    "game": {
+      "name": "Gardien",
+      "description": [
+        "Lorsqu'il y a trois ennemis ou plus dans un rayon de <b>20</b> mètres, vous recevez <b>{{gameValue1}}</b> de <b>résistance magique</b> augmentée."
+      ]
+    }
   },
   "TOWER": {
     "name": "TOUR",
     "description": [
       "Lorsqu'il y a trois ennemis ou plus dans un rayon de <b>20</b> mètres, vous recevez <b>10%</b> de <b>Résistance physique</b> augmentée"
-    ]
+    ],
+    "game": {
+      "name": "Tour",
+      "description": [
+        "Lorsqu'il y a trois ennemis ou plus dans un rayon de <b>20</b> mètres, vous recevez <b>{{gameValue1}}</b> de <b>résistance physique</b> augmentée."
+      ]
+    }
   },
   "ARCH_NEMESIS": {
     "name": "ENNEMI JURÉ",
@@ -634,19 +1244,41 @@
     "description": [
       "Vaincre un ennemi infesté par la Brume avec une arme de mêlée restaure <b>{{value}}</b> secondes de <b>Temps dans la Brume</b>.",
       "<b>Temps dans la Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
-    ]
+    ],
+    "game": {
+      "name": "Purification",
+      "description": [
+        "Tuer un ennemi infesté par le Brume à l'aide d'une arme de mêlée restaure <b>{{gameValue1}}</b> secondes du <b>Temps dans la Brume</b>.",
+        "<b>Temps dans le Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> secondes par niveau"
+    }
   },
   "WARRIOR_PATH": {
     "name": "LA VOIE DU GUERRIER",
     "description": [
       "Les dégâts des armes de mêlée à une main sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "La voie du guerrier",
+      "description": [
+        "Les dégâts d’arme de mêlée à une main augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "THRUST": {
     "name": "ESTOCADE",
     "description": [
       "Les dégâts <b>perforants</b> de mêlée sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Estocade",
+      "description": [
+        "Les dégâts <b>perforants</b> de mêlée augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "PIERCE": {
     "name": "PERFORATION",
@@ -658,7 +1290,14 @@
     "name": "BRUTE",
     "description": [
       "Les dégâts <b>contondants</b> de mêlée sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Brute",
+      "description": [
+        "Les dégâts <b>contondants</b> de mêlée augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "HAMMER_TIME": {
     "name": "SI J'AVAIS UN MARTEAU",
@@ -670,7 +1309,14 @@
     "name": "COUPE-JARRET",
     "description": [
       "Les dégâts <b>tranchants</b> de mêlée sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Coupe-jarret",
+      "description": [
+        "Les dégâts <b>tranchants</b> de mêlée augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "BUTCHER": {
     "name": "BOUCHER",
@@ -682,19 +1328,39 @@
     "name": "VÉTÉRAN",
     "description": [
       "Les chances de Coup critique des armes de mêlée sont augmentées de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Vétéran",
+      "description": [
+        "Les chances de coup critique des armes de mêlée augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance de coup critique par niveau"
+    }
   },
   "TITAN_EDGE": {
     "name": "BORD EN TITANE",
     "description": [
       "Les dégâts de l'Épée à deux mains sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Bord en titane",
+      "description": [
+        "Les dégâts de la grande épée à deux mains sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "SWIFT_BLADES": {
     "name": "LAMES RAPIDES",
     "description": [
       "Augmente la vitesse d'attaque de toutes les armes de mêlée à une main de <b>15%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Lames rapides",
+      "description": [
+        "Augmente la vitesse d’attaque de toutes les armes de mêlée à une main de <b>{{gameValue1}}</b>."
+      ]
+    }
   },
   "FEAST": {
     "name": "FESTIN",
@@ -707,13 +1373,28 @@
     "description": [
       "Le remplissage des <i>barres d'étourdissement</i> ennemies est augmenté de <b>{{value}}</b> lors de l'attaque d'ennemis qui bloquent avec des armes de mêlée.",
       "<b>Surpuissance</b><br>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>.<br>Les ennemis <b>surpassés</b> sont ouverts aux Attaques impitoyables."
-    ]
+    ],
+    "game": {
+      "name": "Main lourde",
+      "description": [
+        "Le remplissage des <i>barres d’étourdissement</i> ennemies est augmenté de <b>{{gameValue1}}</b> lorsque vous attaquez des ennemis précédemment bloqués avec des armes de mêlée.",
+        "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> effet par niveau"
+    }
   },
   "STEADFAST": {
     "name": "INÉBRANLABLE",
     "description": [
       "Vaincre un ennemi avec une arme de mêlée restaure <b>{{value}}</b> point de durabilité à cette arme."
-    ]
+    ],
+    "game": {
+      "name": "Inébranlable",
+      "description": [
+        "Tuer un ennemi avec une arme de mêlée restaure <b>{{gameValue1}}</b> durabilité à cette arme."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> durabilité par niveau"
+    }
   },
   "UPWARDS_SLASH_ATTACK": {
     "name": "ATTAQUE EN COUP VERS LE HAUT",
@@ -721,47 +1402,97 @@
       "Lorsque vous êtes équipé(e) d'une arme de mêlée, lancez une puissante attaque vers le haut pendant la phase ascendante de votre saut.",
       "Utilisez cette compétence pour réduire rapidement la distance qui vous sépare des ennemis <b>volants</b>.",
       "<b>Coût</b> : 25 points d'endurance"
-    ]
+    ],
+    "game": {
+      "name": "Attaque en coup vers le haut",
+      "description": [
+        "Lorsque vous êtes équipé d'une arme de mêlée, lancez une puissante attaque vers le haut pendant la phase ascendante de votre saut.",
+        "Utilisez cette compétence pour réduire rapidement la distance qui vous sépare des ennemis <b>volants</b>.",
+        "<b>Coût :</b> 25 points d'endurance"
+      ]
+    }
   },
   "BREACH": {
     "name": "BRÈCHE",
     "description": [
       "Les ennemis <b>surpassés</b> reçoivent <b>+100%</b> de dégâts physiques de mêlée augmentés pendant <b>3</b> secondes.",
       "<b>Surpuissance</b><br>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>.<br>Les ennemis <b>surpassés</b> sont ouverts aux Attaques impitoyables."
-    ]
+    ],
+    "game": {
+      "name": "Brèche",
+      "description": [
+        "Les ennemis <b>surpuissants</b> subissent <b>{{gameValue1}}</b> des dégâts de mêlée augmentés pendant <b>3</b> secondes.",
+        "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
+      ]
+    }
   },
   "RELENTLESS": {
     "name": "ACHARNÉ",
     "description": [
       "Les Coups critiques avec une arme à deux mains augmentent vos chances de Coup critique de <b>8%</b> pour le prochain coup."
-    ]
+    ],
+    "game": {
+      "name": "Acharné",
+      "description": [
+        "Les coups critiques avec une arme à deux mains augmentent vos chances de coup critique de <b>{{gameValue1}}</b> au prochain coup."
+      ]
+    }
   },
   "BARBARIAN": {
     "name": "BARBARE",
     "description": [
       "Gagnez un point de Force tous les deux niveaux de Flamme."
-    ]
+    ],
+    "game": {
+      "name": "Barbare",
+      "description": [
+        "Gagnez un point de force tous les 2 niveaux de Flamme."
+      ]
+    }
   },
   "BLOOD_RAGE": {
     "name": "RAGE SANGUINAIRE",
     "description": [
       "Lorsqu'un ennemi est tué dans un rayon de <b>{{value}}</b> mètres avec une arme de mêlée, vous entrez en <b>Rage sanguinaire</b>",
       "<b>Rage sanguinaire</b><br/>Augmente les dégâts d'arme de mêlée de <b>15%</b> pendant <b>10</b> secondes."
-    ]
+    ],
+    "game": {
+      "name": "Rage sanguinaire",
+      "description": [
+        "Lorsqu’un ennemi est tué dans un rayon de <b>{{gameValue1}}</b> mètres par une arme de mêlée, vous entrez dans un état de <b>rage sanguinaire</b>.",
+        "<b>Rage sanguinaire</b><br/>Augmente les dégâts d’arme de mêlée de <b>{{gameValue2}}</b> pendant <b>10</b> secondes."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mètres par niveau"
+    }
   },
   "VIGOROUS_DEFLECTION": {
     "name": "DÉFLEXION RIGOUREUSE",
     "description": [
       "Réussir à parer l'attaque d'un ennemi restaure <b>{{value}}</b> points d'endurance.",
       "<b>Parer</b><br/>Un blocage bien synchronisé avec n'importe quelle arme de mêlée ou un bouclier permet de <b>parer</b> l'attaque et de remplir la <i>barre d'étourdissement</i> de l'ennemi."
-    ]
+    ],
+    "game": {
+      "name": "Déflexion vigoureuse",
+      "description": [
+        "Réussir à parer l'attaque d'un ennemi restaure <b>{{gameValue1}}</b> points d’endurance.",
+        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> endurance par niveau"
+    }
   },
   "BLOOD_WARRIOR": {
     "name": "GUERRIER SANGUINAIRE",
     "description": [
       "Vaincre un ennemi avec une <b>Attaque furtive</b> ou une <b>Attaque impitoyable</b> génère un Orbe de santé.",
       "Récupérer un Orbe restaure <b>10%</b> de la ressource correspondante."
-    ]
+    ],
+    "game": {
+      "name": "Guerrier sanguinaire",
+      "description": [
+        "Tuer un ennemi avec une <b>Attaque furtive</b> ou <b>Attaque impitoyable</b> génère un orbe de santé.",
+        "Récupérer un Orbe restaure <b>10 %</b> de la ressource correspondante."
+      ]
+    }
   },
   "WET_DOG": {
     "name": "CHIEN MOUILLÉ",
@@ -770,7 +1501,16 @@
       "L'endurance et la régénération d'endurance sont réduites de <b>20%</b> au lieu de <b>30%</b>.",
       "<b>Mouillé</b><br/>Réduit l'endurance et la régénération d'endurance de <b>30%</b> pendant <b>15</b> minutes. La chaleur réduit la durée restante.",
       "<b>Trempé</b><br/>Réduit l'endurance et la régénération d'endurance de <b>30%</b> pendant <b>30</b> secondes. Réduit également les <b>Résistances à la glace et aux chocs</b> de <b>30%</b> mais augmente les <b>Résistances au feu</b> de <b>30%</b>.<br><b>Trempé</b> peut s'appliquer aux ennemis. <br>La durée de <b>Trempé</b> ne peut pas être réduite par la chaleur et le debuff <b>Mouillé</b> démarre une fois terminé."
-    ]
+    ],
+    "game": {
+      "name": "Chien mouillé",
+      "description": [
+        "Affaiblit l'effet des debuff <b>Mouillé</b> et <b>Trempé</b>.",
+        "L'endurance et la régénération d'endurance sont réduites de <b>20 %</b> au lieu de <b>30 %</b>.",
+        "<b>Mouillé</b> <br/>Réduit l’endurance et la régénération d’endurance de <b>30 %</b> pendant <b>15</b> minutes. La chaleur réduit la durée restante.",
+        "<b>Trempé</b> <br/>Réduit l’endurance et la régénération d’endurance de <b>30 %</b> pendant <b>30</b> secondes. Réduit également les <b>Résistance au choc et à la glace</b> de <b>30 %</b> mais augmente la <b>Résistance au feu</b> de <b>30 %</b>.<br/><b>Trempé</b> peut s’appliquer aux ennemis.<br/>La durée de <b>Trempé</b> ne peut pas être réduite par la chaleur et se transforme en debuff <b>Mouillé</b> une fois terminée."
+      ]
+    }
   },
   "SOAKED_DOG": {
     "name": "CHIEN TREMPÉ",
@@ -779,20 +1519,43 @@
       "L'endurance et la régénération d'endurance sont réduites de <b>10%</b> au lieu de <b>20%</b>.",
       "<b>Mouillé</b><br/>Réduit l'endurance et la régénération d'endurance de <b>30%</b> pendant <b>15</b> minutes. La chaleur réduit la durée restante.",
       "<b>Trempé</b><br/>Réduit l'endurance et la régénération d'endurance de <b>30%</b> pendant <b>30</b> secondes. Réduit également les <b>Résistances à la glace et aux chocs</b> de <b>30%</b> mais augmente les <b>Résistances au feu</b> de <b>30%</b>.<br><b>Trempé</b> peut s'appliquer aux ennemis. <br>La durée de <b>Trempé</b> ne peut pas être réduite par la chaleur et le debuff <b>Mouillé</b> démarre une fois terminé."
-    ]
+    ],
+    "game": {
+      "name": "Chien trempé",
+      "description": [
+        "Affaiblit l'effet des debuff <b>Mouillé</b> et <b>Trempé</b>.",
+        "L'endurance et la régénération d'endurance sont réduites de <b>10 %</b> au lieu de <b>20 %</b>.",
+        "<b>Mouillé</b> <br/>Réduit l’endurance et la régénération d’endurance de <b>30 %</b> pendant <b>15</b> minutes. La chaleur réduit la durée restante.",
+        "<b>Trempé</b> <br/>Réduit l’endurance et la régénération d’endurance de <b>30 %</b> pendant <b>30</b> secondes. Réduit également les <b>Résistance au choc et à la glace</b> de <b>30 %</b> mais augmente la <b>Résistance au feu</b> de <b>30 %</b>.<br/><b>Trempé</b> peut s’appliquer aux ennemis.<br/>La durée de <b>Trempé</b> ne peut pas être réduite par la chaleur et se transforme en debuff <b>Mouillé</b> une fois terminée."
+      ]
+    }
   },
   "SPLASH_DASH": {
     "name": "ESQUIVE PLONGÉE",
     "description": [
       "Vous permet d'effectuer une esquive rapide en nageant ou en plongeant.",
       "<b>Coût</b> : 40 points d'endurance"
-    ]
+    ],
+    "game": {
+      "name": "Esquive plongée",
+      "description": [
+        "Vous permet d'effectuer une esquive rapide lorsque vous nagez ou plongez.",
+        "<b>Coût</b> : 40 points d’endurance"
+      ]
+    }
   },
   "FINESSE": {
     "name": "FINESSE",
     "description": [
       "Infliger des dégâts avec des armes de mêlée à une main ou des dagues a <b>{{value}}%</b> de chance de restaurer <b>1</b> point de durabilité à cette arme."
-    ]
+    ],
+    "game": {
+      "name": "Finesse",
+      "description": [
+        "Infliger des dégâts avec des armes de mêlée à une main a <b>{{gameValue1}}</b> de chance de restaurer <b>1</b> durabilité à cette arme."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
   },
   "JUMP_ATTACK_II": {
     "name": "FRACAS : FORCE",
@@ -804,51 +1567,107 @@
     "name": "MAÎTRISE DE L'ATTAQUE DANS LE DOS",
     "description": [
       "Les dégâts d'<b>attaque dans le dos</b> sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Coup de grâce",
+      "description": [
+        "Les dégâts de l’<b>attaque sournoise</b> augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "RUNNER": {
     "name": "COUREUR",
     "description": [
       "La vitesse de sprint est augmentée de <b>{{value}}%</b> et le coût en endurance pendant le sprint est diminué de <b>{{value2}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Coureur",
+      "description": [
+        "La vitesse de sprint augmente de <b>{{gameValue1}}</b> et le coût d’endurance lors d’un sprint diminue de <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> réduction de vitesse et <b>{{gamePerLevelValue2}}</b> de coût par niveau"
+    }
   },
   "WANDERLUST": {
     "name": "ENVIE D'ÉVASION",
     "description": [
       "Le coût en endurance pour <b>sprinter sur les chemins de terre</b> est réduit de <b>90% à 80%</b>. Le coût en endurance pour <b>sprinter sur les routes de pierre</b> est réduit de <b>75% à 50%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Envie d'évasion",
+      "description": [
+        "Le coût en endurance pour <b>les sprints sur les chemins de terre</b> passe de <b>90 % à 80 %</b>.",
+        "Le coût en endurance pour <b>les sprints sur des routes de pierre</b> passe de <b>75 % à 50 %</b>."
+      ]
+    }
   },
   "GOOD_METABOLISM": {
     "name": "BON MÉTABOLISME",
     "description": [
       "Les Orbes de santé, de mana et d'endurance restaurent <b>30%</b> au lieu de <b>10%</b> de leur ressource respective.",
       "Les potions de santé et de mana restaurent <b>20%</b> de ressources en plus."
-    ]
+    ],
+    "game": {
+      "name": "Bon métabolisme",
+      "description": [
+        "Les Orbe de santé, de mana et d’endurance restaurent <b>30 %</b> au lieu de <b>10 %</b> de leurs ressources respectives.",
+        "Les potions de mana et de santé restaurent <b>20 %</b> de ressources en plus."
+      ]
+    }
   },
   "SWIFTSHOT_SUSTENANCE": {
     "name": "TIR DE RÉCUP. RAPIDE",
     "description": [
       "Vaincre un ennemi avec un Arc a <b>{{value}}%</b> de chance de générer un Orbe d'endurance.",
       "Récupérer un Orbe restaure <b>10%</b> de la ressource correspondante."
-    ]
+    ],
+    "game": {
+      "name": "Tir de récup. rapide",
+      "description": [
+        "Tuer un ennemi à l’aide d’un arc a <b>{{gameValue1}}</b> de chances de faire apparaître un Orbe d’endurance.",
+        "Récupérer un orbe restaure <b>10 %</b> de la ressource respective."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
   },
   "SWEET_TOOTH": {
     "name": "GOURMAND",
     "description": [
       "La régénération d'endurance des friandises est augmentée de <b>50%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Gourmand",
+      "description": [
+        "La régénération d'endurance des friandises est augmentée de <b>50 %</b>."
+      ]
+    }
   },
   "ARACHNOID": {
     "name": "ARACHNOÏDE",
     "description": [
       "Le coût en endurance pendant l'escalade est réduit de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Arachnoïde",
+      "description": [
+        "Le coût en endurance pendant l'escalade est réduit de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> réduction de coût par niveau"
+    }
   },
   "REBOUND": {
     "name": "REBOND",
     "description": [
       "La régénération d'endurance de base est augmentée de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Rebond",
+      "description": [
+        "La régénération de l'endurance de base augmente de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> régénération d’endurance par niveau"
+    }
   },
   "REBOUND_II": {
     "name": "REBOND",
@@ -861,7 +1680,15 @@
     "description": [
       "Le <i>Temps dans la Brume</i> est augmenté de <b>{{value}} min</b>, vous permettant d'explorer plus longtemps.",
       "<b>Temps dans la Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
-    ]
+    ],
+    "game": {
+      "name": "Flammes intérieures",
+      "description": [
+        "<b>Temps dans le Brume</b> augmenté de <b>{{gameValue1}}</b>, permettant une exploration plus longue.",
+        "<b>Temps dans le Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> par niveau"
+    }
   },
   "RELENTLESS_FLAME": {
     "name": "FLAMME ACHARNÉE",
@@ -874,62 +1701,127 @@
     "name": "MANGEUR DE SERPENT",
     "description": [
       "Augmente votre <b>Résistance aux poisons</b> de <b>{{value}}%</b>, ce qui réduit la quantité de dégâts de <b>poison</b> subis."
-    ]
+    ],
+    "game": {
+      "name": "Mangeur de serpent",
+      "description": [
+        "Augmente votre <b>résistance aux poisons</b> de <b>{{gameValue1}}</b>, ce qui réduit la quantité des dégâts de <b>poison</b> subis.",
+        "Les dégâts de <b>Poison</b> ne sont pas contrés par l’armure et ne peuvent être atténués que par la <b>résistance au poison</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> résistance par niveau"
+    }
   },
   "MITHRIDATIST": {
     "name": "IMMUNISÉ",
     "description": [
       "Gagnez <b>25%</b> de chance d'éviter d'être empoisonné."
-    ]
+    ],
+    "game": {
+      "name": "Immunisé",
+      "description": [
+        "Gagnez <b>25 %</b> de chance d’éviter d’être empoisonné."
+      ]
+    }
   },
   "DAGGER_MASTERY": {
     "name": "MAÎTRISE DE LA DAGUE",
     "description": [
       "Augmente les dégâts infligés avec les dagues de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Maîtrise de la dague",
+      "description": [
+        "Les dégâts de dague sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "SLICE_AND_DICE": {
     "name": "TRANCHER ET DÉCOUPER",
     "description": [
       "Après un Coup critique avec une dague, les dégâts de base de votre prochaine attaque à l'arc dans les 20 secondes sont augmentés de <b>50%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Trancher et découper",
+      "description": [
+        "Après un coup critique avec une dague, les dégâts de base de votre prochaine attaque à l'arc dans les {{gameValue1}} secondes sont augmentés de <b>{{gameValue2}}</b>."
+      ]
+    }
   },
   "VUKAH_LANGUAGE": {
     "name": "LANGUE VUKAH",
     "description": [
       "Les <b>Vukah</b> dans un rayon de <b>50</b> mètres ne vous attaqueront plus à moins d'être provoqués."
-    ]
+    ],
+    "game": {
+      "name": "Langue Vukah",
+      "description": [
+        "Les <b>Vukah</b> dans un rayon de <b>50</b> mètres n'attaquent pas, sauf si les joueurs attaquent."
+      ]
+    }
   },
   "CALM_SPIRIT": {
     "name": "ESPRIT CALME",
     "description": [
       "Les <b>Animaux sauvages</b> dans un rayon de <b>50</b> mètres ne vous attaqueront plus à moins d'être provoqués.",
       "Sans effet sur les animaux corrompus par la Brume."
-    ]
+    ],
+    "game": {
+      "name": "Esprit calme",
+      "description": [
+        "Les <b>Animaux sauvages</b> dans un rayon de <b>50</b> mètres n'attaquent pas, sauf si les joueurs attaquent.",
+        "Sans effet sur les animaux corrompus par le Brume."
+      ]
+    }
   },
   "BEAST_MASTER": {
     "name": "MAÎTRE DES BÊTES",
     "description": [
       "Lorsque vous êtes pris pour cible par une attaque, les <b>Animaux sauvages</b> dans un rayon de <b>50</b> mètres attaqueront l'ennemi."
-    ]
+    ],
+    "game": {
+      "name": "Maître des bêtes",
+      "description": [
+        "Lorsque vous êtes visé(e) par une attaque, les <b>Animaux sauvages</b> dans un rayon de <b>50</b> mètres attaquent l'ennemi."
+      ]
+    }
   },
   "VUKAH_CULTURE": {
     "name": "CULTURE VUKAH",
     "description": [
       "Lorsque vous êtes pris pour cible par une attaque, les <b>Vukah</b> dans un rayon de <b>50</b> mètres attaqueront l'ennemi."
-    ]
+    ],
+    "game": {
+      "name": "Culture Vukah",
+      "description": [
+        "Lorsque vous êtes la cible d'une attaque, les <b>Vukah</b> attaquent l'ennemi dans un rayon de <b>50</b> mètres."
+      ]
+    }
   },
   "ENDURANCE_OF_THE_FLAME": {
     "name": "L'ENDURANCE DE LA FLAMME",
     "description": [
       "Gagnez un point de Résistance tous les deux niveaux de Flamme."
-    ]
+    ],
+    "game": {
+      "name": "L’endurance de l' Flamme",
+      "description": [
+        "Gagnez un point d’endurance tous les 2 niveaux de Flamme."
+      ]
+    }
   },
   "MARKSMAN": {
     "name": "TIREUR D'ÉLITE",
     "description": [
       "Les dégâts d'arc sont augmentés de <b>{{value}}%</b>"
-    ]
+    ],
+    "game": {
+      "name": "Tireur d'élite",
+      "description": [
+        "Tous les dégâts infligés par des arcs augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "SHARPSHOOTER": {
     "name": "TIREUR EXPERT",
@@ -941,33 +1833,70 @@
     "name": "CONTRE-BATTERIE",
     "description": [
       "Les dégâts infligés aux ennemis <b>à distance</b> sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Contre-batterie",
+      "description": [
+        "Les dégâts infligés aux ennemis <b>à distance</b> augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "EAGLES_BANE": {
     "name": "FLÉAU DE L'AIGLE",
     "description": [
       "Les dégâts infligés aux ennemis <b>volants</b> sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Le fauve de l'aigle",
+      "description": [
+        "Les dégâts infligés aux ennemis <b>volants</b> sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "SKILL_SHOT": {
     "name": "TIR DE PRÉCISION",
     "description": [
       "Les dégâts du <b>Tir de précision</b> sont augmentés de <b>{{value}}%</b>.",
       "<b>Tir de précision</b><br/>Frapper les points faibles de l'ennemi, tels que la tête ou le cœur exposé, est considéré comme un Tir de précision."
-    ]
+    ],
+    "game": {
+      "name": "Coup d'adresse",
+      "description": [
+        "Les dégâts infligés par le <b>tir de précision</b> sont augmentés de <b>{{gameValue1}}</b>.",
+        "<b>Tir de précision</b><br/>Frapper les points faibles de l'ennemi, tels que la tête ou le cœur exposé, est considéré comme un Tir de précision."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "RANGER": {
     "name": "ARCHER",
     "description": [
       "Augmente vos attributs Dextérité et Résistance de <b>{{value}}</b>.",
       "La régénération d'endurance de base est augmentée de <b>{{value2}}</b>,"
-    ]
+    ],
+    "game": {
+      "name": "Archer",
+      "description": [
+        "Augmente vos attributs Dextérité et Résistance de <b>{{gameValue1}}</b>.",
+        "La régénération de l'endurance de base augmente de <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Dextérité et Résistance par niveau.<br/><b>{{gamePerLevelValue2}}</b> régénération d’endurance par niveau."
+    }
   },
   "SILENT_STRIDE": {
     "name": "LA FOULÉE SILENCIEUSE",
     "description": [
       "Augmente votre vitesse de déplacement en <b>vous faufilant</b> de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "La foulée silencieuse",
+      "description": [
+        "Augmente votre vitesse de déplacement lorsque vous vous <b>faufilez</b> de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> vitesse de déplacement par niveau"
+    }
   },
   "KICK": {
     "name": "COUP DE PIED",
@@ -976,122 +1905,254 @@
       "Le Coup de pied inflige peu de dégâts mais frappe la cible avec une force massive et la repousse, remplissant sa <i>barre d'étourdissement</i>.",
       "L'augmentation de la <i>barre d'étourdissement</i> évolue avec la Dextérité. La durée de l'étourdissement dépend de la taille de l'ennemi.",
       "<b>Surpuissance</b><br>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d'étourdissement</i> jusqu'à ce qu'ils deviennent <b>surpassés</b>.<br>Les ennemis <b>surpassés</b> sont ouverts aux Attaques impitoyables."
-    ]
+    ],
+    "game": {
+      "name": "Coup de pied",
+      "description": [
+        "Lorsque vous êtes équipé(e) d’une arme de mêlée, vous pouvez effectuer un coup de pied en attaquant tout en bloquant.",
+        "Le coup de pied inflige de petits dégâts mais touche la cible avec une force massive et la repousse pour remplir la <i>barre d’étourdissement</i> des ennemis.",
+        "La <i>barre d’étourdissement</i> augmente proportionnellement à la dextérité.<br/>La durée de l'étourdissement dépend de la taille de l'ennemi.",
+        "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
+      ]
+    }
   },
   "AIRBORNE": {
     "name": "AÉRIEN",
     "description": [
       "Les planeurs consomment <b>{{value}}%</b> d'endurance en moins"
-    ]
+    ],
+    "game": {
+      "name": "Aérien",
+      "description": [
+        "Les planeurs consomment <b>{{gameValue1}}</b> d'endurance en moins."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> réduction de coût par niveau"
+    }
   },
   "SNIPER": {
     "name": "SNIPER",
     "description": [
       "Les chances de Coup critique des armes à distance sont augmentées de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Sniper",
+      "description": [
+        "Les chances de coup critique des armes à distance augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance de coup critique par niveau"
+    }
   },
   "VITALITY_SURGE": {
     "name": "SURCROÎT DE VITALITÉ",
     "description": [
       "Les Coups critiques avec une arme à distance restaurent <b>{{value}}</b> points d'endurance."
-    ]
+    ],
+    "game": {
+      "name": "Surcroît de vitalité",
+      "description": [
+        "Infligez un coup critique avec une arme à distance restaure <b>{{gameValue1}}</b> points d'endurance."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> endurance par niveau"
+    }
   },
   "BLESSED_ARROWS": {
     "name": "FLÈCHES BÉNIES",
     "description": [
       "Les Coups critiques avec un Arc restaurent <b>{{value}}</b> mana."
-    ]
+    ],
+    "game": {
+      "name": "Flèches enchantées",
+      "description": [
+        "Les coups critiques infligés par un arc restaurent <b>{{gameValue1}}</b> points de mana."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mana par niveau"
+    }
   },
   "BOUNTY_BONANZA": {
     "name": "BONUS DE PRIME",
     "description": [
       "Après avoir vaincu un ennemi <b>Déchu</b> avec un <b>Tir de précision</b>, votre groupe gagne <b>+5</b> points d'expérience supplémentaires.",
       "<b>Tir de précision</b><br/>Frapper les points faibles de l'ennemi, tels que la tête ou le cœur exposé, est considéré comme un Tir de précision."
-    ]
+    ],
+    "game": {
+      "name": "Bonus de prime",
+      "description": [
+        "Après avoir vaincu un ennemi <b>Déchu</b> avec un <b>tir de précision</b>, votre groupe gagne <b>{{gameValue1}}</b> points d'expérience supplémentaires.",
+        "<b>Tir de précision</b><br/>Frapper les points faibles de l'ennemi, tels que la tête ou le cœur exposé, est considéré comme un Tir de précision."
+      ]
+    }
   },
   "RICOCHETS": {
     "name": "RICOCHETS",
     "description": [
       "Pour chaque cible touchée par une <b>Flèche explosive</b>, ses dégâts sont augmentés de <b>1%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Ricochets",
+      "description": [
+        "Les dégâts faits aux cibles touchées par une <b>Flèche explosive</b> augmentent de <b>1 %</b>."
+      ]
+    }
   },
   "GRACEFUL_STRIDE": {
     "name": "LA FOULÉE GRACIEUSE",
     "description": [
       "Gagnez un point de Dextérité tous les deux niveaux de Flamme."
-    ]
+    ],
+    "game": {
+      "name": "La foulée gracieuse",
+      "description": [
+        "Gagnez un point de dextérité tous les 2 niveaux de Flamme."
+      ]
+    }
   },
   "CHAIN_REACTION": {
     "name": "RÉACTION EN CHAÎNE",
     "description": [
       "Chaque ennemi touché par une <b>Flèche explosive</b> a <b>20%</b> de chance de déclencher une explosion secondaire infligeant <b>50%</b> de dégâts dans un petit rayon."
-    ]
+    ],
+    "game": {
+      "name": "Réaction en chaîne",
+      "description": [
+        "Chaque ennemi touché par une <b>Flèche explosive</b> a <b>20 %</b> de chances de déclencher une explosion secondaire infligeant <b>50 %</b> de dégâts dans un petit rayon."
+      ]
+    }
   },
   "ARCANE_CONCENTRATION": {
     "name": "CONCENTRATION ARCANIQUE",
     "description": [
       "Gagnez un point d'Esprit tous les deux niveaux de Flamme."
-    ]
+    ],
+    "game": {
+      "name": "Concentration d'arcane",
+      "description": [
+        "Gagnez un point de l’esprit tous les 2 niveaux de Flamme."
+      ]
+    }
   },
   "EXALTED": {
     "name": "EXALTÉ",
     "description": [
       "Gagnez un point d'Intelligence tous les deux niveaux de Flamme."
-    ]
+    ],
+    "game": {
+      "name": "Exalté",
+      "description": [
+        "Vous gagnez 1 Intelligence tous les 2 niveaux de Flamme."
+      ]
+    }
   },
   "THICK_SKIN": {
     "name": "PEAU DURE",
     "description": [
       "Gagnez un point de Constitution tous les deux niveaux de Flamme."
-    ]
+    ],
+    "game": {
+      "name": "Peau dure",
+      "description": [
+        "Vous gagnerez un point de constitution tous les deux niveaux de Flamme."
+      ]
+    }
   },
   "LIFE_ESSENCES": {
     "name": "ESSENCES DE VIE",
     "description": [
       "Augmente votre santé maximale de <b>{{value}}</b> fois votre attribut Intelligence."
-    ]
+    ],
+    "game": {
+      "name": "Essences de vie",
+      "description": [
+        "Multiplie votre santé maximale de <b>{{gameValue1}}</b> fois le montant de votre attribut Intelligence."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> fois par niveau"
+    }
   },
   "POISONED_BLADES": {
     "name": "LAMES VENIMEUSES",
     "description": [
       "Augmente la chance d'empoisonner les ennemis à <b>25%</b> lors de l'utilisation de dagues avec l'avantage <b>Lames venimeuses</b>."
-    ]
+    ],
+    "game": {
+      "name": "Lames venimeuses",
+      "description": [
+        "Augmente la chance d’empoisonner les ennemis de <b>25 %</b> lors de l’utilisation de dagues avec l’avantage <b>Lames venimeuses</b>."
+      ]
+    }
   },
   "POISON_MASTERY": {
     "name": "MAÎTRISE DU VENIN",
     "description": [
       "Augmente les dégâts infligés par l'avantage de dague <b>Lames venimeuses</b> de <b>100%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Maîtrise du venin",
+      "description": [
+        "Augmente les dégâts infligés par l’avantage de la dague <b>Lames venimeuses</b> de <b>100 %</b>."
+      ]
+    }
   },
   "QUICK_REFLEX_BLOCK": {
     "name": "BLOC RÉFLEXE RAPIDE",
     "description": [
       "Améliore brièvement votre valeur de blocage lorsque vous bloquez avec des dagues, garantissant qu'une parade presque manquée ne réduit l'endurance que très peu."
-    ]
+    ],
+    "game": {
+      "name": "Bloc réflexe rapide",
+      "description": [
+        "Augmente brièvement votre valeur de blocage lorsque vous bloquez avec des dagues, garantissant qu'une parade presque manquée ne réduise que très peu l'endurance."
+      ]
+    }
   },
   "EXPOSE_WEAKNESS": {
     "name": "EXPOSEZ LES FAIBLESSES",
     "description": [
       "Les Coups critiques avec des dagues augmentent les dégâts infligés à l'ennemi de <b>25%</b> pendant <b>5</b> secondes."
-    ]
+    ],
+    "game": {
+      "name": "Exposez les faiblesses",
+      "description": [
+        "Les frappes critiques avec des dagues augmentent les dégâts infligés à l'ennemi de <b>{{gameValue1}}</b> pendant <b>{{gameValue2}}</b> secondes."
+      ]
+    }
   },
   "BARBARIAN_PATH": {
     "name": "La voie du barbare",
     "description": [
       "Les dégâts des armes de mêlée à deux mains sont augmentés de <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Voie du barbare",
+      "description": [
+        "Les dégâts d’arme de mêlée à deux mains augmentent de <b>{{gameValue1}}</b>"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "TWO_HANDED_SPECIALIZATION": {
     "name": "Spécialisation à deux mains",
     "description": [
       "Débloque les Capacités Spéciales des armes de mêlée à deux mains.\nAppuyez sur <b>[R]</b> pour déclencher une Capacité Spéciale puissante après avoir généré suffisamment de Concentration.",
       "<b>Concentration</b><br/>Générez de la Concentration en attaquant. La Concentration peut être accumulée avec n'importe quel type d'arme et est utilisée pour déclencher les Capacités Spéciales des armes."
-    ]
+    ],
+    "game": {
+      "name": "Spécialisation à deux mains",
+      "description": [
+        "Déverrouille les capacités spéciales des armes de mêlée à deux mains. <br/>Appuyez sur <b>{{gameValue1}}</b> pour déclencher une puissante capacité spéciale après avoir accumulé suffisamment de concentration.",
+        "<b>Concentration</b><br/>Gagnez de la concentration en attaquant. La concentration peut être accumulée avec n'importe quel type d'arme et sert à déclencher les capacités spéciales des armes."
+      ]
+    }
   },
   "ATHLETE": {
     "description": [
       "Augmente votre santé maximale de <b>{{value}}</b> fois votre attribut Force."
-    ]
+    ],
+    "game": {
+      "name": "Athlète",
+      "description": [
+        "Multiplie votre santé maximale de <b>{{gameValue1}}</b> fois le montant de votre attribut Force."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> fois par niveau"
+    }
   },
   "STRATEGIC_MANEUVER": {
     "description": [
@@ -1099,91 +2160,213 @@
       "Utilisez-la pour rouler autour de vos ennemis, facilitant les contournements ou les attaques dans le dos.",
       "Flash remplace l'Esquive en roulade latérale de la compétence Manœuvre stratégique.",
       "<b>Coût :</b> 20 points d'endurance"
-    ]
+    ],
+    "game": {
+      "name": "Manœuvre stratégique",
+      "description": [
+        "Remplace la capacité Esquive en roulade par une Esquive en roulade latérale tant qu'une cible ennemie est verrouillée.",
+        "Utilisez-la pour contourner vos ennemis, ce qui vous permet de les prendre plus facilement à revers ou de leur porter des coups dans le dos.",
+        "Flash remplace le déplacement latéral Esquive en roulade de la compétence Manœuvre stratégique.",
+        "<b>Coût :</b> 20 endurance"
+      ]
+    }
   },
   "PRIMAL_FORCE": {
     "description": [
       "Les dégâts infligés aux Vukah sont augmentés de <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Force primitive",
+      "description": [
+        "Les dégâts infligés aux ennemis Vukah sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "CULL_THE_HERD": {
     "description": [
       "Les dégâts infligés aux Animaux sauvages sont augmentés de <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Éliminer le troupeau",
+      "description": [
+        "Les dégâts infligés à la faune sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "FATAL_PRECISION": {
     "description": [
       "Les chances de Coup critique sont augmentées de <b>{{value}}</b>.\nLes dégâts de Coup critique sont augmentés de <b>{{value2}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Précision mortelle",
+      "description": [
+        "Les chances de coup critique augmentent de <b>{{gameValue1}}</b>.<br/>Les dégâts de coup critique augmentent de <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance de coup critique et <b>{{gamePerLevelValue2}}</b> dégâts de coup critique par niveau"
+    }
   },
   "BOW_SPECIALIZATION": {
     "description": [
       "Débloque les Capacités Spéciales des Arcs.\nAppuyez sur <b>[R]</b> pour déclencher une Capacité Spéciale puissante après avoir généré suffisamment de Concentration.",
       "<b>Concentration</b><br/>Générez de la Concentration en attaquant. La Concentration peut être accumulée avec n'importe quel type d'arme et est utilisée pour déclencher les Capacités Spéciales des armes."
-    ]
+    ],
+    "game": {
+      "name": "Spécialisation en arc",
+      "description": [
+        "Déverrouille les capacités spéciales des arcs. <br/>Appuyez sur <b>{{gameValue1}}</b> pour déclencher une capacité spéciale puissante après avoir accumulé suffisamment de concentration.",
+        "<b>Concentration</b><br/>Gagnez de la concentration en attaquant. La concentration peut être accumulée avec n'importe quel type d'arme et sert à déclencher les capacités spéciales des armes."
+      ]
+    }
   },
   "CUTTHROAT": {
     "description": [
       "Les dégâts d'Attaque furtive sont augmentés de <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Coupe-gorge",
+      "description": [
+        "Les dégâts d’attaque furtive sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "DAGGER_SPECIALIZATION": {
     "description": [
       "Débloque les Capacités Spéciales des Dagues.\nAppuyez sur <b>[R]</b> pour déclencher une Capacité Spéciale puissante après avoir généré suffisamment de Concentration.",
       "<b>Concentration</b><br/>Générez de la Concentration en attaquant. La Concentration peut être accumulée avec n'importe quel type d'arme et est utilisée pour déclencher les Capacités Spéciales des armes."
-    ]
+    ],
+    "game": {
+      "name": "Spécialisation en dague",
+      "description": [
+        "Déverrouille les capacités spéciales des dagues. <br/>Appuyez sur <b>{{gameValue1}}</b> pour déclencher une capacité spéciale puissante après avoir accumulé suffisamment de concentration.",
+        "<b>Concentration</b><br/>Gagnez de la concentration en attaquant. La concentration peut être accumulée avec n'importe quel type d'arme et sert à déclencher les capacités spéciales des armes."
+      ]
+    }
   },
   "VEILED_VIGOR": {
     "description": [
       "Augmente votre santé maximale de <b>{{value}}</b> fois votre attribut Dextérité."
-    ]
+    ],
+    "game": {
+      "name": "Vigueur dissimulée",
+      "description": [
+        "Multiplie votre santé maximale de <b>{{gameValue1}}</b> fois le montant de votre attribut Dextérité."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> fois par niveau"
+    }
   },
   "VILE_CONCOCTION": {
     "description": [
       "Les dégâts des projectiles à lancer sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Concoction ignoble",
+      "description": [
+        "Les dégâts d’armes de jet sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "MANA_CURRENTS": {
     "description": [
       "La régénération de mana de base est augmentée de <b>{{value}}</b>."
-    ]
+    ],
+    "game": {
+      "name": "Courants de mana",
+      "description": [
+        "La régénération de mana de base augmente de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> régénération de mana par niveau"
+    }
   },
   "SLEIGHT_OF_HAND": {
     "name": "Tour de main",
     "description": [
       "Les dégâts à mains nues sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Tour de passe-passe",
+      "description": [
+        "Les dégâts à mains nues sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "SPELLSLINGER": {
     "description": [
       "Les dégâts de bâton sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Lanceur de sorts",
+      "description": [
+        "Les dégâts de bâton sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "MAGE_APPRENTICE": {
     "description": [
       "Les dégâts des armes magiques sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Apprenti mage",
+      "description": [
+        "Les dégâts d’armes magiques augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "BONE_TO_ASH": {
     "description": [
       "Les dégâts infligés aux Creux sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Os en cendres",
+      "description": [
+        "Les dégâts infligés aux ennemis Creux sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   },
   "HEALER_REVIVE": {
     "description": [
       "Réssucitez les joueurs avec <b>{{value}}%</b> de santé en plus.",
       "La santé par défaut des joueurs ressuscités est de <b>10%</b>"
-    ]
+    ],
+    "game": {
+      "name": "Résurrection",
+      "description": [
+        "Ressuscitez les joueurs avec <b>{{gameValue1}}</b> de leur santé augmentée.",
+        "La santé des joueurs ressuscités par défaut est de <b>10 %</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> santé par niveau"
+    }
   },
   "WAND_SPECIALIZATION": {
     "description": [
       "Débloque les Capacités Spéciales des Baguettes.\nAppuyez sur <b>[R]</b> pour déclencher une Capacité Spéciale puissante après avoir généré suffisamment de Concentration.",
       "<b>Concentration</b><br/>Générez de la Concentration en attaquant. La Concentration peut être accumulée avec n'importe quel type d'arme et est utilisée pour déclencher les Capacités Spéciales des armes."
-    ]
+    ],
+    "game": {
+      "name": "Spécialisation en baguette",
+      "description": [
+        "Déverrouille les capacités spéciales des baguettes. <br/>Appuyez sur <b>{{gameValue1}}</b> pour déclencher une capacité spéciale puissante après avoir accumulé suffisamment de concentration.",
+        "<b>Concentration</b><br/>Gagnez de la concentration en attaquant. La concentration peut être accumulée avec n'importe quel type d'arme et sert à déclencher les capacités spéciales des armes."
+      ]
+    }
   },
   "WAND_MASTERY": {
     "description": [
       "Les dégâts de baguette sont augmentés de <b>{{value}}%</b>."
-    ]
+    ],
+    "game": {
+      "name": "Maîtrise de la baguette",
+      "description": [
+        "Les dégâts de baguette sont augmentés de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
   }
 }

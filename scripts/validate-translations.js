@@ -1,6 +1,6 @@
 // Checks that every locale has the text the app shows or searches:
 // - nodes.json: for each skill type in the tree, the record the locale shows
-//   (the English `game` section or the locale's own text, per skillTextPrefix)
+//   (its imported `game` section or its own text, per skillTextPrefix)
 //   has a name and description, every {{placeholder}} has a value at every
 //   level, and the per-level line is in the locale's language. The tooltip,
 //   search, toasts and the ?focus= search all read these records.
@@ -89,9 +89,9 @@ function collectProblems({
                 report(file, `${key}.name is missing, so the tooltip, search and toasts would show the type key`);
             }
             if (record.description?.length) {
-                const values = game ? interpolation.game : interpolation.skill;
                 for (let level = 1; level <= (meta.maxLevel ?? 1); level++) {
-                    const missing = unresolved(record.description.join('\n'), values(meta, level));
+                    const values = game ? interpolation.game(meta, level, lang) : interpolation.skill(meta, level);
+                    const missing = unresolved(record.description.join('\n'), values);
                     if (missing.length) {
                         report(file, `${key}.description uses ${list(missing)}, which has no value at level ${level}`);
                         break;
@@ -100,10 +100,11 @@ function collectProblems({
             }
             // The per-level line under the description.
             if (game) {
-                if (meta.gamePerLevelValues && !record.perLevelLabel) {
+                const perLevelValues = interpolation.gamePerLevel(meta, lang);
+                if (Object.keys(perLevelValues).length && !record.perLevelLabel) {
                     report(file, `${key}.perLevelLabel is missing, so the tooltip would show no per-level line`);
                 }
-                const missing = record.perLevelLabel ? unresolved(record.perLevelLabel, meta.gamePerLevelValues ?? {}) : [];
+                const missing = record.perLevelLabel ? unresolved(record.perLevelLabel, perLevelValues) : [];
                 if (missing.length) report(file, `${key}.perLevelLabel uses ${list(missing)}, which has no value`);
             } else if (meta.perLevel) {
                 // Without a perLevelLabel the tooltip shows the English label authored in LegacyNodes.ts.
@@ -200,12 +201,12 @@ function scanSource(dir = srcDir) {
 function loadApp() {
     const jiti = require('jiti')(__filename, { alias: { '@': srcDir }, interopDefault: false });
     const load = (file) => jiti(path.join(srcDir, file));
-    const { getGameInterpolationValues, getSkillInterpolationValues } = load('utils/skillInterpolation.ts');
+    const { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } = load('utils/skillInterpolation.ts');
     return {
         tree: load('constants/Nodes.ts').default,
         presentationTypes: Object.keys(load('constants/LegacyNodes.ts').default.types),
         usesGameText: load('utils/skillText.ts').usesGameText,
-        interpolation: { game: getGameInterpolationValues, skill: getSkillInterpolationValues },
+        interpolation: { game: getGameInterpolationValues, gamePerLevel: getGamePerLevelValues, skill: getSkillInterpolationValues },
         // Keys built at runtime from a template literal: prefix -> every value it takes.
         // A t(`prefix${...}`) call with a prefix missing here fails validation.
         families: {

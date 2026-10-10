@@ -1,8 +1,8 @@
 {
-  "10": "[Attack]",
-  "15": "[Interact]",
-  "18": "[Special Ability]",
-  "72": "[Aim]",
-  "74": "[Jump]",
-  "117": "[Quick Bow Aim]"
+  "10": "mainHandAction",
+  "15": "contextualAction",
+  "18": "weaponSkill",
+  "72": "guardAndParry",
+  "74": "locomotionJump",
+  "117": "rangedCombatReady"
 }

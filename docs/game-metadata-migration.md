@@ -27,8 +27,8 @@ skill costs, level behavior or graph adjacency were changed.
 
 ## Metadata adapter (implemented)
 
-The toolkit exports schema 1.0.0 JSON with raw resources, interpreted text
-templates, typed effects and provenance. Do not replace this app's nodes with
+The toolkit exports schema 1.1.0 JSON with raw resources, interpreted text
+templates in every game locale, typed effects and provenance. Do not replace this app's nodes with
 export-order IDs: existing saved/shared builds depend on the current IDs.
 
 Run from this repository with a validated export from enshrouded-tools:
@@ -62,15 +62,42 @@ The coordinate center is the average of the 12 game roots; scale fits their
 mean radius to 198 app units. The transform and original game provenance are
 retained in generated JSON.
 
-The same import writes English text to each locale record's `game` section.
-Descriptions are stored once as i18next templates. Numeric substitutions live
-in app metadata: `gameValues` for constants, `gameLevelValues` for values that
-change with purchased level, and `gamePerLevelValues` for the per-level label.
-Per-level labels have a separate template, so old interpolation cannot
-overwrite imported values. Original
-locale fields and French text remain intact. Imported text still passes through
-DOMPurify. `scripts/skill-data-inputs.json` contains app-owned action labels,
-not claimed game bindings; `--inputs=path.json` can supply different labels.
+The same import writes the game's text to the `game` section of each locale
+record whose app locale maps to a game locale (`GAME_LOCALES` in
+`scripts/skill-data.mjs`: `en` -> `En_Us`, `fr` -> `Fr_Fr`). Type metadata
+lists those locales in `gameTextLocales`; `usesGameText`/`skillTextPrefix`
+(`src/utils/skillText.ts`) show a locale's `game` text whenever it is listed
+there, and `validate-translations.js` checks the same record. Other locales,
+and types without game text (Frost), show their authored translation; those
+original locale fields remain intact as fallbacks.
+
+Descriptions are stored once per locale as i18next templates. Every locale uses
+English's `{{gameValueN}}` numbering: a translation whose arguments are
+reordered is renumbered by argument identity. Numeric substitutions live in app
+metadata: `gameValues` for constants, `gameLevelValues` for values that change
+with purchased level, and `gamePerLevelValues` for the per-level label. Values
+that format differently in a locale (action labels) are stored in
+`gameLocaleValues.<lang>` and replace the English ones there
+(`getGameInterpolationValues`, `getGamePerLevelValues`). Per-level labels have
+a separate template, so old interpolation cannot overwrite imported values.
+Imported text still passes through DOMPurify.
+
+Formatting comes from the game per locale: its decimal separator (`.` in
+English and French) and its seconds abbreviation for Duration values
+(`120 s`). `Input` arguments show the game's controls-menu label for the
+action in brackets (`[Special Ability]`, `[Capacité spéciale]`), chosen per
+input ID by `scripts/skill-data-inputs.json` (ID -> label key in the export's
+`raw.uiText.gameplayActionLabels`). The game itself shows the player's key
+binding; the ID -> label mapping is app-owned and listed in the preview report
+under "Input action labels". `--inputs=path.json` can supply another mapping.
+
+A translation whose arguments differ from English (not merely reordered) is
+unresolved and blocks apply, except the checked `ARGUMENT_EXCEPTIONS`: build
+1076226's French Fatal Precision and Shroud Filter tags reuse one argument in
+place of another. Their French wording is shown with English's arguments in
+English order, so each number matches its sentence (the game shows the
+repeated value). An exception applies only while both argument lists are
+exactly the reviewed ones; the report lists each use.
 
 Supported numeric configs are Float/Sint32/Uint32, constants and Linear
 Self/Level scaling; normal, percentage and numeric-seconds duration formats.
@@ -95,8 +122,8 @@ are copied: current asset names and presentation overrides remain in use.
 ## Tree versioning
 
 The checked import records the source game build and a SHA-256 revision of the
-imported nodes (positions, types, base links), edges, type metadata and English
-text. This content revision
+imported nodes (positions, types, base links), edges, type metadata and every
+locale's game text. This content revision
 ignores export timestamps, parser provenance and JSON key order; it changes
 when the imported tree changes. The app shows the game update/build and short
 revision in Settings, plus the update on wider tree layouts. This is distinct
@@ -122,7 +149,7 @@ the checked mapping and the previous import by stable game ID, then writes
 - **Removed** game IDs: proposed for retirement. A removed and an added ID with
   the same name are proposed as a **re-ID** (`reassign`), keeping the app ID,
   so saved builds continue working.
-- **Renamed** nodes (same game ID, new name) are reported; their English text
+- **Renamed** nodes (same game ID, new name) are reported; their game text
   updates without a decision. If nodes sharing a type diverge, the report lists
   `typeConflicts`; give one node a new type with `retype`.
 - **Graph** changes: added/removed edges and base links, in app-ID space.
@@ -148,11 +175,12 @@ A successful apply renames the file to `changes.applied.json`.
 New types also need authored presentation in `LegacyNodes.ts` (at least a
 `color`; `hasIcon` plus `public/assets/skills/<TYPE>.png` and `_GRAY.png`
 for an icon). Apply is refused until it exists. A new node without an
-authored `tier` renders as small (a warning). Game text is English only, so
-apply is also refused until every locale has a translation (at least a
-`description`) for the new type. `validate-translations.js` then checks the
-rest at build time: a name, placeholders that resolve at every level, and a
-per-level line in each locale's language. Apply then adds the English `game` text.
+authored `tier` renders as small (a warning). Locales with a game locale get
+the new type's game text; unresolved game text in any of them blocks apply.
+A locale without a game locale needs its own translation (at least a
+`description`) before apply. `validate-translations.js` then checks the rest
+at build time: a name, placeholders that resolve at every level, and a
+per-level line in each locale's language.
 
 Saved and shared builds are fitted to the current tree when loaded (share
 code, JSON import, or a restored session): retired IDs, skills no longer
@@ -163,7 +191,8 @@ English name in generated `retired` data for that message.
 `scripts/skill-data-structure.test.mjs` covers additions (new and existing
 types), removals and retired IDs, re-IDs, returning IDs, renames, shared-type
 conflicts, edge and base-link changes, and two-way edges. It uses a synthetic
-export rebuilt from the committed data (`scripts/fixtures/synthetic-export.mjs`).
+export rebuilt from the committed data (`scripts/fixtures/synthetic-export.mjs`),
+including French texts and the UI strings formatting needs.
 
 ## Agentic update skill
 

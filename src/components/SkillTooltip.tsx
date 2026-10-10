@@ -10,7 +10,7 @@ import { classNames, humanizeKey } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
 import { skillTextPrefix, usesGameText } from "@/utils/skillText";
-import { getGameInterpolationValues, getSkillInterpolationValues } from "@/utils/skillInterpolation";
+import { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } from "@/utils/skillInterpolation";
 import GameButton from "./shared/GameButton";
 import type { SkillAction } from "./SkillTree";
 
@@ -41,7 +41,7 @@ const SkillTooltip = ({
   const metadata = SkillNodes.types[node.type];
   const { t, i18n } = useTranslation(["nodes", "common"]);
   const language = i18n.resolvedLanguage ?? i18n.language;
-  const useImportedEnglish = usesGameText(metadata, language);
+  const gameText = usesGameText(metadata, language);
   const textPrefix = skillTextPrefix(node.type, metadata, language);
   const name = t(`${textPrefix}.name`, {
     ns: "nodes",
@@ -52,15 +52,15 @@ const SkillTooltip = ({
   // Interpolated values are eventually sanitized by DOMPurify below, which is the
   // last step in the pipeline (i18next has escapeValue: false in next-i18next.config.js).
   const displayLevel = level > 0 ? level : 1;
-  const interpolation = useImportedEnglish
-    ? getGameInterpolationValues(metadata, displayLevel)
+  const interpolation = gameText
+    ? getGameInterpolationValues(metadata, displayLevel, language)
     : getSkillInterpolationValues(metadata, displayLevel);
 
-  const perLevelLabel = useImportedEnglish
-    ? t(`${node.type}.game.perLevelLabel`, {
+  const perLevelLabel = gameText
+    ? t(`${textPrefix}.perLevelLabel`, {
         ns: "nodes",
         defaultValue: "",
-        ...metadata.gamePerLevelValues,
+        ...getGamePerLevelValues(metadata, language),
       })
     : metadata?.perLevel
     ? t(`${node.type}.perLevelLabel`, {

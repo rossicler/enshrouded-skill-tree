@@ -9,8 +9,18 @@ export type Node = PositionedNode & {
   tier?: "small" | "medium" | "large";
 };
 
-export type NodeTypeMetadata = {
-  importedEnglish?: boolean;
+// Game values for one locale; keys present here replace the default locale's.
+export type GameValues = {
+  gameValues?: { [varName: string]: number | string };
+  gameLevelValues?: { [varName: string]: (number | string)[] };
+  gamePerLevelValues?: { [varName: string]: number | string };
+};
+
+export type NodeTypeMetadata = GameValues & {
+  // App locales whose nodes.json has imported game text for this type.
+  gameTextLocales?: string[];
+  // Per-locale game values that format differently from the default locale.
+  gameLocaleValues?: { [language: string]: GameValues };
   name?: string;
   description: string[];
   hasIcon?: boolean;
@@ -24,9 +34,6 @@ export type NodeTypeMetadata = {
   stats?: NodeStatsType;
   maxLevel?: number;
   levelValues?: { [varName: string]: (number | string)[] };
-  gameValues?: { [varName: string]: number | string };
-  gameLevelValues?: { [varName: string]: (number | string)[] };
-  gamePerLevelValues?: { [varName: string]: number | string };
   perLevel?: {
     value: number | string;
     value2?: number | string;

@@ -9,7 +9,8 @@ import frLocale from "../public/locales/fr/nodes.json";
 import mapping from "./skill-data-mapping.json";
 
 const presentation = loadAuthoredPresentation();
-const fresh = () => syntheticExport({ runtime, mapping, locale });
+const fresh = () => syntheticExport({ runtime, mapping, locale, frLocale });
+const appLocales = { en: locale, fr: frLocale };
 const gameIdOf = (appId) => Object.entries(mapping.nodes).find(([, entry]) => entry.appId === appId)[0];
 // Locales with a translation for every authored type (new fixture types get one
 // alongside their presentation, as a maintainer would add before applying).
@@ -27,7 +28,7 @@ const run = (data, changes, options = {}) => runImport({
 });
 const approve = (result) => structuredClone(result.proposal);
 const withType = (type) => ({ ...presentation, types: { ...presentation.types, [type]: { color: "blue" } } });
-const treeOf = (result, pres = presentation) => buildSkillTree(pres, applyImport(result.candidate, locale).runtime);
+const treeOf = (result, pres = presentation) => buildSkillTree(pres, applyImport(result.candidate, appLocales).runtime);
 
 // Every edge must be traversable from both endpoints, whatever the direction
 // of the game's link record.
@@ -82,20 +83,18 @@ describe("structural import: additions", () => {
   it("requires authored presentation for a new type before applying", () => {
     const preview = run(data);
     const pending = run(data, approve(preview));
-    expect(pending.blockers).toEqual([
-      expect.stringContaining("Type FROST_NOVA needs authored presentation"),
-      "Type FROST_NOVA needs a translation (description) in public/locales/en/nodes.json",
-      "Type FROST_NOVA needs a translation (description) in public/locales/fr/nodes.json",
-    ]);
+    expect(pending.blockers).toEqual([expect.stringContaining("Type FROST_NOVA needs authored presentation")]);
 
     const pres = withType("FROST_NOVA");
     const applied = run(data, approve(preview), { presentation: pres });
     expect(applied.blockers).toEqual([]);
     expect(applied.report.warnings).toContain('Node 223 (Frost Nova) has no authored tier; it renders as "small"');
     expect(applied.nextMapping.nodes[newGameId]).toEqual({ appId: "223", type: "FROST_NOVA" });
-    const output = applyImport(applied.candidate, locale);
+    const output = applyImport(applied.candidate, appLocales);
     expect(output.runtime.nodes["223"]).toMatchObject({ gameNodeId: newGameId, type: "FROST_NOVA" });
-    expect(output.locale.FROST_NOVA.game.name).toBe("Frost Nova");
+    expect(output.runtime.types.FROST_NOVA.gameTextLocales).toEqual(["en", "fr"]);
+    expect(output.locales.en.FROST_NOVA.game.name).toBe("Frost Nova");
+    expect(output.locales.fr.FROST_NOVA.game.description).toEqual(["Frost Nova fixture text."]);
 
     const tree = buildSkillTree(pres, output.runtime);
     expect(tree.edges["222"]).toContain("223");
@@ -105,16 +104,26 @@ describe("structural import: additions", () => {
     expectBidirectional(tree);
   });
 
-  it("requires a translation in every locale, even though game text is English", () => {
+  it("requires a translation only in locales without game text", () => {
     const pres = withType("FROST_NOVA");
     const locales = translated(pres);
     delete locales.fr.FROST_NOVA;
+    locales.de = structuredClone(locales.fr);
     const result = run(data, approve(run(data)), { presentation: pres, locales });
-    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in public/locales/fr/nodes.json"]);
+    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in public/locales/de/nodes.json"]);
+  });
+
+  it("blocks apply while a locale's game text is unresolved", () => {
+    const missing = structuredClone(data);
+    delete missing.interpreted.nodes.find((node) => node.gameNodeId === newGameId).translations.Fr_Fr;
+    const result = run(missing, approve(run(missing)), { presentation: withType("FROST_NOVA") });
+    expect(result.report.unresolvedText).toEqual([expect.objectContaining({ appId: "223", locale: "fr", reason: "No Fr_Fr text in the export" })]);
+    expect(result.blockers).toContain("Unresolved text prevents applying this import; see report.json");
   });
 
   it("reuses an existing type when the name matches", () => {
-    const strength = addNode(fresh(), { gameId: newGameId, name: "Strength", near: neighbor, neighbors: [neighbor] });
+    const strength = addNode(fresh(), { gameId: newGameId, name: "Strength", frenchName: frLocale.ATTR_STR.game?.name ?? frLocale.ATTR_STR.name,
+      near: neighbor, neighbors: [neighbor] });
     const preview = run(strength);
     expect(preview.proposal.add[newGameId].type).toBe("ATTR_STR");
     expect(run(strength, approve(preview)).blockers).toEqual([]);
@@ -146,7 +155,7 @@ describe("structural import: removals and retired IDs", () => {
     expect(approved.candidate.retired["222"]).toEqual({ type: "ATTR_INT", name: locale.ATTR_INT.game.name });
   });
 
-  const next = { mapping: approved.nextMapping, previous: applyImport(approved.candidate, locale).runtime };
+  const next = { mapping: approved.nextMapping, previous: applyImport(approved.candidate, appLocales).runtime };
 
   it("never reuses a retired ID for another skill", () => {
     const added = addNode(structuredClone(data), { gameId: "4000000002", name: "Frost Nova", near: gameIdOf("221"), neighbors: [gameIdOf("221")] });
@@ -190,7 +199,7 @@ describe("structural import: re-IDs, renames and shared types", () => {
     const result = run(renameNode(fresh(), gameIdOf("4"), "Stonemason"));
     expect(result.blockers).toEqual([]);
     expect(result.report.renamed).toEqual([expect.objectContaining({ appId: "4", type: "MASON", before: "Mason", after: "Stonemason" })]);
-    expect(applyImport(result.candidate, locale).locale.MASON.game.name).toBe("Stonemason");
+    expect(applyImport(result.candidate, appLocales).locales.en.MASON.game.name).toBe("Stonemason");
   });
 
   it("blocks diverging shared types until one node is retyped", () => {

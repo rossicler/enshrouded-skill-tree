@@ -112,7 +112,7 @@ const SkillTooltip = ({
       delayShow={500}
       delayHide={0}
     >
-      <div className="relative max-w-sm min-w-[260px]">
+      <div className="relative max-w-sm min-w-[260px]" data-skill-tooltip={node.id}>
         {/* SVG filter for rugged edges */}
         <svg className="absolute w-0 h-0" aria-hidden="true">
           <defs>
@@ -207,17 +207,17 @@ const SkillTooltip = ({
 
             {/* Status */}
             <div className="flex items-center">
-              <GameButton variant="text" onClick={handleShare} title={t("skillTooltip.share", { ns: "common" })}>
+              <GameButton variant="text" data-action="share" onClick={handleShare} title={t("skillTooltip.share", { ns: "common" })}>
                 <Link2 size={14} />
               </GameButton>
               <span className="w-px h-4 bg-white/20 mx-1 shrink-0" />
               {level === 0 && selectable && (
-                <GameButton variant="text" onClick={() => onSelect?.("primary")}>
+                <GameButton variant="text" data-action="unlock" onClick={() => onSelect?.("primary")}>
                   {t("skillTooltip.unlock", { ns: "common" })}
                 </GameButton>
               )}
               {level === 0 && !selectable && (
-                <span className={classNames(
+                <span data-out-of-range data-flash={flash ? "true" : "false"} className={classNames(
                   "text-red-400 text-sm font-semibold uppercase tracking-wide transition-all duration-300",
                   flash && "text-red-300 drop-shadow-[0_0_8px_rgba(248,113,113,0.8)] scale-110"
                 )}>
@@ -226,26 +226,26 @@ const SkillTooltip = ({
               )}
               {level > 0 && level < maxLevel && (
                 <>
-                  <GameButton variant="text" onClick={() => onSelect?.("secondary")}>
+                  <GameButton variant="text" data-action="refund-one" onClick={() => onSelect?.("secondary")}>
                     {t("skillTooltip.refundOne", { ns: "common" })}
                   </GameButton>
-                  <GameButton variant="text" onClick={() => onSelect?.("primary")}>
+                  <GameButton variant="text" data-action="level-up" onClick={() => onSelect?.("primary")}>
                     {t("skillTooltip.levelUp", { ns: "common" })}
                   </GameButton>
                 </>
               )}
               {level > 0 && level === maxLevel && maxLevel > 1 && (
                 <>
-                  <GameButton variant="text" onClick={() => onSelect?.("secondary")}>
+                  <GameButton variant="text" data-action="refund-one" onClick={() => onSelect?.("secondary")}>
                     {t("skillTooltip.refundOne", { ns: "common" })}
                   </GameButton>
-                  <GameButton variant="text" onClick={() => onSelect?.("primary")}>
+                  <GameButton variant="text" data-action="refund-all" onClick={() => onSelect?.("primary")}>
                     {t("skillTooltip.refundAll", { ns: "common" })}
                   </GameButton>
                 </>
               )}
               {level > 0 && maxLevel === 1 && (
-                <GameButton variant="text" onClick={() => onSelect?.("primary")}>
+                <GameButton variant="text" data-action="refund" onClick={() => onSelect?.("primary")}>
                   {t("skillTooltip.refund", { ns: "common" })}
                 </GameButton>
               )}

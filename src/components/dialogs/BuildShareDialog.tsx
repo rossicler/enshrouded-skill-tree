@@ -154,7 +154,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-visible text-left align-middle transition-all">
+              <Dialog.Panel data-dialog="share" className="w-full max-w-md transform overflow-visible text-left align-middle transition-all">
                 <GamePanel onClose={onClose}>
                   <div className="px-10 py-6">
                     <Dialog.Title
@@ -192,6 +192,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
                       {/* Advanced sharing accordion */}
                       <div className="mt-2 border-t border-white/10">
                         <button
+                          data-action="toggle-advanced"
                           onClick={() => setAdvancedOpen((v) => !v)}
                           className="flex items-center justify-between w-full py-3 text-sm text-[#c0b89a] hover:text-[#e8d5a3] transition-colors"
                         >
@@ -208,10 +209,10 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
                         {advancedOpen && (
                           <div className="flex flex-col gap-3 pb-2">
                             <div className="flex gap-3">
-                              <GameButton className="flex-1" onClick={() => fileInputRef.current?.click()}>
+                              <GameButton className="flex-1" data-action="import-json" onClick={() => fileInputRef.current?.click()}>
                                 {t("dialogs.import.importJson")}
                               </GameButton>
-                              <GameButton className="flex-1" onClick={downloadJSON} disabled={selectedSkillIds.length === 0}>
+                              <GameButton className="flex-1" data-action="export-json" onClick={downloadJSON} disabled={selectedSkillIds.length === 0}>
                                 {t("dialogs.export.exportJson")}
                               </GameButton>
                             </div>
@@ -221,6 +222,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
                             <input
                               ref={fileInputRef}
                               type="file"
+                              data-action="import-file"
                               accept=".json"
                               className="hidden"
                               onChange={handleFileChange}

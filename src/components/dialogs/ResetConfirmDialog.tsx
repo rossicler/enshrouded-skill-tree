@@ -39,7 +39,7 @@ const ResetConfirmDialog = ({ open, onConfirm, onCancel }: PropsType) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-sm transform overflow-visible text-left align-middle transition-all">
+              <Dialog.Panel data-dialog="reset-confirm" className="w-full max-w-sm transform overflow-visible text-left align-middle transition-all">
                 <GamePanel>
                   <div className="px-10 py-6">
                     <Dialog.Title
@@ -52,10 +52,10 @@ const ResetConfirmDialog = ({ open, onConfirm, onCancel }: PropsType) => {
                       <p>{t("dialogs.resetConfirm.message")}</p>
                     </div>
                     <div className="mt-5 flex justify-end gap-3">
-                      <GameButton variant="text" onClick={onCancel}>
+                      <GameButton variant="text" data-action="cancel" onClick={onCancel}>
                         {t("dialogs.resetConfirm.cancel")}
                       </GameButton>
-                      <GameButton onClick={onConfirm}>
+                      <GameButton data-action="confirm" onClick={onConfirm}>
                         {t("dialogs.resetConfirm.confirm")}
                       </GameButton>
                     </div>

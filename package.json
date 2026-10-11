@@ -18,6 +18,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
+    "e2e": "playwright test --project=desktop --project=mobile",
+    "e2e:visual": "playwright test --project=visual",
     "import-skills": "node scripts/skill-data.mjs"
   },
   "dependencies": {
@@ -41,6 +43,7 @@
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

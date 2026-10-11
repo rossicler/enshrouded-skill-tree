@@ -35,6 +35,7 @@ const SkillPaths = ({ lines }: PropsType) => {
           from={from}
           to={to}
           color={isConnected(from, to) ? CONNECTED_COLOR : DEFAULT_COLOR}
+          connected={!!isConnected(from, to)}
         />
       ))}
       {baseLines.map(([from, to]) => (
@@ -43,6 +44,7 @@ const SkillPaths = ({ lines }: PropsType) => {
           from={from}
           to={to}
           color={isBaseConnected(from) ? CONNECTED_COLOR : DEFAULT_COLOR}
+          connected={isBaseConnected(from)}
           prefixTo="line"
         />
       ))}

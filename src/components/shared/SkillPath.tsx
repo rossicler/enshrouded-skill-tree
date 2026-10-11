@@ -4,6 +4,7 @@ type PropsType = {
   from: string;
   to: string;
   color: string;
+  connected?: boolean;
   containerId?: string;
   prefixFrom?: string;
   prefixTo?: string;
@@ -13,6 +14,7 @@ const SkillPath = ({
   from,
   to,
   color,
+  connected = false,
   containerId,
   prefixFrom = "node",
   prefixTo = "node",
@@ -60,6 +62,10 @@ const SkillPath = ({
     <line
       id={`line-${from}-${to}`}
       ref={lineRef}
+      data-link-from={from}
+      data-link-to={to}
+      data-link-kind={prefixTo === "line" ? "base" : "edge"}
+      data-connected={connected ? "true" : "false"}
       strokeWidth="1"
       stroke={color}
     />

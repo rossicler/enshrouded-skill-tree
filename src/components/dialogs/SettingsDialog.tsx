@@ -70,7 +70,7 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-visible text-left align-middle transition-all">
+              <Dialog.Panel data-dialog="settings" className="w-full max-w-md transform overflow-visible text-left align-middle transition-all">
                 <GamePanel onClose={onClose}>
                   <div className="px-10 py-6">
                     <Dialog.Title
@@ -85,6 +85,8 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                         </span>
                         <button
                           onClick={toggleHardcap}
+                          data-setting="hardcap"
+                          data-checked={hardcapOn ? "true" : "false"}
                           onMouseEnter={() => playSound("node-hover", 0.3)}
                           className={classNames(
                             "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
@@ -108,6 +110,8 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                         </span>
                         <button
                           onClick={toggleSound}
+                          data-setting="sound"
+                          data-checked={soundOn ? "true" : "false"}
                           onMouseEnter={() => playSound("node-hover", 0.3)}
                           className={classNames(
                             "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
@@ -137,6 +141,7 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                           {["en", "fr"].map((locale) => (
                             <button
                               key={locale}
+                              data-locale={locale}
                               onClick={() => switchLocale(locale)}
                               onMouseEnter={() => playSound("node-hover", 0.3)}
                               className={classNames(

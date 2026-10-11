@@ -16,7 +16,7 @@ jobs:
   check:
     name: Type check, test and build
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
 
@@ -38,3 +38,22 @@ jobs:
       # MONGODB_URI is left unset, so the build runs with DB features off.
       - name: Build
         run: yarn build
+
+      # Browser tests run against the production build above (next start).
+      - name: Install Playwright browser
+        run: yarn playwright install --with-deps chromium
+
+      - name: Browser tests
+        run: yarn e2e
+        env:
+          PW_SERVER: start
+
+      - name: Upload browser test report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            e2e/.report
+            e2e/.results
+          retention-days: 7

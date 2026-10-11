@@ -95,7 +95,7 @@ const ImportDialog = ({ open, onClose, onImport, onImportSkills, dbAvailable = f
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-visible text-left align-middle transition-all">
+              <Dialog.Panel data-dialog="import" className="w-full max-w-md transform overflow-visible text-left align-middle transition-all">
                 <GamePanel onClose={onClose}>
                   <div className="px-10 py-6">
                     <Dialog.Title

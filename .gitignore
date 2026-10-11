@@ -7,6 +7,9 @@
 
 # testing
 /coverage
+/e2e/.results
+/e2e/.report
+/e2e/__screenshots__
 
 # production
 /build

@@ -230,6 +230,7 @@ const Search = ({
       <div className="relative w-full md:w-72 md:max-w-sm pointer-events-auto">
         <GameInput
           ref={inputRef}
+          data-hud="search-input"
           placeholder={t("hud.search.placeholder", { ns: "common" })}
           value={searchText}
           onChange={(e) => {
@@ -271,7 +272,7 @@ const Search = ({
       {showResults && (
         <div
           className={classNames(
-            "mt-0 md:mt-1",
+            "mt-0 md:mt-1 pointer-events-auto",
             "w-full md:w-72 md:max-w-sm",
             "bg-[#414255]/95 border border-[#5a5a60]/50 border-t-[#b8941f]/60",
             "rounded-sm",
@@ -284,6 +285,7 @@ const Search = ({
             return (
               <button
                 key={key}
+                data-search-result={key}
                 onClick={() => handleResultClick(key, name)}
                 onMouseEnter={() => setSelectedIndex(index)}
                 className={classNames(

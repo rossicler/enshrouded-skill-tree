@@ -35,10 +35,10 @@ const About = () => {
       />
       {/* Mobile: vertical */}
       <GameButtonGroup vertical className="md:hidden">
-        <GameButton grouped className="!min-w-0 !px-4" onClick={() => setSettingsOpen(true)}>
+        <GameButton grouped className="!min-w-0 !px-4" data-hud="settings" onClick={() => setSettingsOpen(true)}>
           <Settings size={16} />
         </GameButton>
-        <GameButton grouped className="!min-w-0 !px-4" onClick={() => setAboutOpen(true)}>
+        <GameButton grouped className="!min-w-0 !px-4" data-hud="about" onClick={() => setAboutOpen(true)}>
           <Info size={16} />
         </GameButton>
         <GameButton grouped className="!min-w-0 !px-4" onClick={openDiscordInvite}>
@@ -47,10 +47,10 @@ const About = () => {
       </GameButtonGroup>
       {/* Desktop: horizontal */}
       <GameButtonGroup className="hidden md:flex">
-        <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={() => setSettingsOpen(true)}>
+        <GameButton grouped className="!min-w-0 !px-4 !pl-8" data-hud="settings" onClick={() => setSettingsOpen(true)}>
           <Settings size={18} />
         </GameButton>
-        <GameButton grouped className="!min-w-0 !px-4" onClick={() => setAboutOpen(true)}>
+        <GameButton grouped className="!min-w-0 !px-4" data-hud="about" onClick={() => setAboutOpen(true)}>
           <Info size={18} />
         </GameButton>
         <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={openDiscordInvite}>

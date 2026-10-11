@@ -38,7 +38,7 @@ const SkillCapDialog = ({ open, onClose }: PropsType) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-sm transform overflow-visible text-left align-middle transition-all">
+              <Dialog.Panel data-dialog="skill-cap" className="w-full max-w-sm transform overflow-visible text-left align-middle transition-all">
                 <GamePanel>
                   <div className="px-10 py-6">
                     <Dialog.Title
@@ -54,7 +54,7 @@ const SkillCapDialog = ({ open, onClose }: PropsType) => {
                       </p>
                     </div>
                     <div className="mt-5 flex justify-end">
-                      <GameButton onClick={onClose}>
+                      <GameButton data-action="confirm" onClick={onClose}>
                         {t("dialogs.skillCap.ok")}
                       </GameButton>
                     </div>

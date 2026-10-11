@@ -50,8 +50,30 @@ describe("game argument formatting", () => {
     changed.effects[0].sourceAttribute.name = "Intelligence";
     expect(() => resolveArgument({ type: "Config", id: 1 }, node, changed, data, 3)).toThrow();
     const unsupported = structuredClone(node);
-    unsupported.configValues.scaled[0].variantType = "keen::impact::ScaledTimeImpactConfig";
-    expect(() => resolveArgument({ type: "Config", id: 1 }, unsupported, interpreted, data, 3)).toThrow();
+    unsupported.configValues.scaled[0].variantType = "keen::impact::ScaledDistanceImpactConfig";
+    expect(() => resolveArgument({ type: "Config", id: 1 }, unsupported, interpreted, data, 3)).toThrow(/Unsupported numeric config/);
+  });
+  it("evaluates Frost's scaled time as seconds, as read in game (3/5/7 s)", () => {
+    // Game node 712870937, config 3202798761, from build 1076226.
+    const frost = { configValues: { simple: [], scaled: [{ variantType: "keen::impact::ScaledTimeImpactConfig",
+      value: { configId: { value: 3202798761 }, value: { value: 1000000000 }, scaleFactor: 2, valueFormat: "Duration", isSigned: false,
+        function: "Linear", source: { sourceEntity: "Self", attributeRef: "bbf879a8-9af2-4516-830d-e201d7370f02" } } }] } };
+    const format = localeFormat({ raw: { uiText } }, "En_Us");
+    const argument = { type: "Config", id: 3202798761 };
+    const description = { status: "resolved-template", arguments: [argument],
+      template: "When receiving Melee damage, the attacker will be slowed down for <b>%k</b>. " };
+    const perLevel = { status: "resolved-template", arguments: [argument], template: "<b>%k</b> per level" };
+    expect(buildTextTemplate(description, frost, interpreted, data, 3, format).values).toEqual({ gameValue1: ["3 s", "5 s", "7 s"] });
+    // The game's per-level line shows the level-1 value, not the 2 s increment.
+    expect(buildTextTemplate(perLevel, frost, interpreted, data, 1, format, "gamePerLevelValue").values)
+      .toEqual({ gamePerLevelValue1: ["3 s"] });
+    expect(resolveArgument(argument, frost, interpreted, data, 2, localeFormat({ raw: { uiText } }, "Fr_Fr"))).toBe("5 sec");
+    const changed = structuredClone(interpreted);
+    changed.effects[0].sourceAttribute.name = "Intelligence";
+    expect(() => resolveArgument(argument, frost, changed, data, 1, format)).toThrow(/scaling source/);
+    const notDuration = structuredClone(frost);
+    notDuration.configValues.scaled[0].value.valueFormat = "Normal";
+    expect(() => resolveArgument(argument, notDuration, interpreted, data, 1, format)).toThrow(/Unsupported time config/);
   });
   it("uses checked balancing values and action labels", () => {
     expect(resolveArgument({ type: "Balancing", id: 0 }, node, interpreted, data, 1)).toBe("50");
@@ -164,9 +186,9 @@ describe("committed import compatibility", () => {
     expect(runtime.types.LIFE_ESSENCES.gameLevelValues.gameValue1).toEqual(["2", "4", "6"]);
     expect(locale.MASON.game.description[0]).toContain("<b>{{gameValue1}}</b>");
     expect(runtime.types.MASON.gameLevelValues.gameValue1).toEqual(["10%", "20%", "30%"]);
-    expect(runtime.types.FROST.gameTextLocales).toBeUndefined();
-    expect(locale.FROST.game).toBeUndefined();
-    expect(frLocale.FROST.game).toBeUndefined();
+    expect(runtime.types.FROST.gameLevelValues.gameValue1).toEqual(["3 s", "5 s", "7 s"]);
+    expect(runtime.types.FROST.gamePerLevelValues.gamePerLevelValue1).toBe("3 s");
+    expect(frLocale.FROST.game.perLevelLabel).toContain("{{gamePerLevelValue1}}");
   });
   it.runIf(Boolean(process.env.SKILL_DATA_EXPORT))("reproduces all English and French levels with i18next and rejects graph drift", async () => {
     const source = JSON.parse(fs.readFileSync(process.env.SKILL_DATA_EXPORT, "utf8"));
@@ -176,7 +198,6 @@ describe("committed import compatibility", () => {
     expect(candidate.treeVersion).toEqual(runtime.treeVersion);
     expect(nextMapping).toEqual(mapping);
     expect(report.unresolvedText).toEqual([]);
-    expect(report.retainedText.map((entry) => entry.type)).toEqual(["FROST"]);
     expect(report.retainedStats.map((entry) => entry.type)).toEqual(["RANGER"]);
     expect(report.argumentExceptions.map((entry) => `${entry.type} ${entry.locale}`).sort()).toEqual(["FATAL_PRECISION Fr_Fr", "SHROUD_FILTER Fr_Fr"]);
     const t = i18next.createInstance();

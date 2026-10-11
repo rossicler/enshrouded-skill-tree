@@ -189,8 +189,17 @@ export function resolveArgument(argument, node, interpreted, data, level, format
   if (matches.length !== 1) throw new Error(`Expected one config for ${argument.id}`);
   const config = matches[0], value = config.value;
   const numeric = /^keen::impact::(?:Scaled)?(?:Float|Sint32|Uint32)ImpactConfig$/;
-  if (!numeric.test(config.variantType)) throw new Error(`Unsupported numeric config ${config.variantType}`);
-  let result = value.value;
+  const time = /^keen::impact::(?:Scaled)?TimeImpactConfig$/;
+  let result;
+  if (numeric.test(config.variantType)) result = value.value;
+  else if (time.test(config.variantType)) {
+    // A time is { value: nanoseconds }; its scale factor is in seconds
+    // (Frost: 1e9 ns + 2 * level = 3/5/7 s, confirmed in game).
+    if (value.valueFormat !== "Duration" || !Number.isFinite(value.value?.value)) {
+      throw new Error(`Unsupported time config ${argument.id}`);
+    }
+    result = value.value.value / 1e9;
+  } else throw new Error(`Unsupported numeric config ${config.variantType}`);
   if (config.sourcePath.includes(".scaled")) {
     const effect = interpreted.effects.find((effect) => effect.sourcePath === config.sourcePath);
     if (value.function !== "Linear" || effect?.sourceAttribute?.name !== "Level" || value.source.sourceEntity !== "Self") {
@@ -470,7 +479,7 @@ export function buildCandidate(data, parsed, nextMapping, previous, presentation
   if (languages[0] !== DEFAULT_LOCALE) throw new Error(`The ${DEFAULT_LOCALE} format must come first`);
   const candidate = { schemaVersion: "1.0.0", provenance: data.provenance, transform: { center, scale }, nodes: {}, edges: [], retired: {}, types: {},
     text: Object.fromEntries(languages.map((lang) => [lang, {}])) };
-  const textReport = { unresolvedText: [], retainedText: [], retainedStats: [], changes: [], typeConflicts: [], nodeErrors: [], argumentExceptions: [] };
+  const textReport = { unresolvedText: [], retainedStats: [], changes: [], typeConflicts: [], nodeErrors: [], argumentExceptions: [] };
   const conflicted = new Set();
   for (const node of raw.nodes.filter((node) => node.type !== "Root")) {
     const gameId = String(node.id.value);
@@ -536,11 +545,7 @@ export function buildCandidate(data, parsed, nextMapping, previous, presentation
         }
         for (const exception of exceptions) textReport.argumentExceptions.push({ appId, gameId, type, ...exception });
       } catch (error) {
-        const entry = { appId, gameId, type, locale: lang, reason: error.message };
-        // Deliberate, narrow compatibility exception; never infer time math.
-        if (gameId === "712870937" && error.message === "Unsupported numeric config keen::impact::ScaledTimeImpactConfig") {
-          textReport.retainedText.push(entry);
-        } else textReport.unresolvedText.push(entry);
+        textReport.unresolvedText.push({ appId, gameId, type, locale: lang, reason: error.message });
         // Without default-locale game text a type shows authored text everywhere.
         if (lang === DEFAULT_LOCALE) break;
       }
@@ -632,7 +637,6 @@ export function summarize(report) {
   section("Cost / max level changes", report.changes, (item) => `${item.appId} ${item.type}: ${JSON.stringify(item.before)} -> ${JSON.stringify({ cost: item.after.cost, maxLevel: item.after.maxLevel })}`);
   section("Shared type conflicts", report.typeConflicts, (item) => `${item.appId} ${item.type}: ${item.reason}`);
   section("Unresolved text", report.unresolvedText, (item) => `${item.appId} ${item.type} (${item.locale}): ${item.reason}`);
-  section("Retained authored text", report.retainedText, (item) => `${item.appId} ${item.type} (${item.locale}): ${item.reason}`);
   section("Checked argument exceptions (translation uses default-locale arguments)", report.argumentExceptions,
     (item) => `${item.appId} ${item.type} ${item.locale} tag ${item.tagId}: game ${item.translated}, used ${item.primary}`);
   section("Input action labels", report.inputLabels,

@@ -820,7 +820,14 @@
     "name": "GEL",
     "description": [
       "Lorsque vous subissez des dégâts de mêlée, votre attaquant est ralenti pendant {{value}} secondes."
-    ]
+    ],
+    "game": {
+      "name": "Gel",
+      "description": [
+        "Lorsque vous subissez des dégâts de mêlée, votre attaquant est ralenti pendant <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> par niveau"
+    }
   },
   "ICE_RESISTANCE": {
     "name": "RÉSISTANCE À LA GLACE",

@@ -4392,7 +4392,25 @@
     },
     "FROST": {
       "cost": 2,
-      "maxLevel": 3
+      "maxLevel": 3,
+      "gameLevelValues": {
+        "gameValue1": [
+          "3 s",
+          "5 s",
+          "7 s"
+        ]
+      },
+      "gamePerLevelValues": {
+        "gamePerLevelValue1": "3 s"
+      },
+      "gameTextLocales": [
+        "en",
+        "fr"
+      ],
+      "name": "Frost",
+      "description": [
+        "When receiving Melee damage, the attacker will be slowed down for <b>{{gameValue1}}</b>."
+      ]
     },
     "GIANT_SLAYER_HOOK": {
       "cost": 3,
@@ -6427,6 +6445,6 @@
     }
   },
   "treeVersion": {
-    "contentHash": "a94c08c8bddf6a84f9c21e395b935613322f564074b24214d29a3927150786fb"
+    "contentHash": "6ece8bfae998308b999ce2db66684a02ca8118836c7d3e88e6672921379ba300"
   }
 }

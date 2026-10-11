@@ -1,8 +1,15 @@
 name: CI
 
 on:
+  # Only events that bring new code. Marking a PR ready for review or editing
+  # it doesn't change the commit, so it doesn't run CI again.
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [opened, synchronize, reopened]
+    # Changes to docs alone can't break the build or tests.
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+      - "LICENSE"
 
 permissions:
   contents: read

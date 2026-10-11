@@ -9,7 +9,8 @@ import DOMPurify from "dompurify";
 import { classNames, humanizeKey } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
-import { getGameInterpolationValues, getSkillInterpolationValues } from "@/utils/skillInterpolation";
+import { skillTextPrefix, usesGameText } from "@/utils/skillText";
+import { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } from "@/utils/skillInterpolation";
 import GameButton from "./shared/GameButton";
 import type { SkillAction } from "./SkillTree";
 
@@ -39,8 +40,10 @@ const SkillTooltip = ({
 }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
   const { t, i18n } = useTranslation(["nodes", "common"]);
-  const useImportedEnglish = metadata.importedEnglish && (i18n.resolvedLanguage ?? i18n.language).split("-")[0] === "en";
-  const name = t(`${node.type}.${useImportedEnglish ? "game.name" : "name"}`, {
+  const language = i18n.resolvedLanguage ?? i18n.language;
+  const gameText = usesGameText(metadata, language);
+  const textPrefix = skillTextPrefix(node.type, metadata, language);
+  const name = t(`${textPrefix}.name`, {
     ns: "nodes",
     defaultValue: humanizeKey(node.type),
   });
@@ -49,15 +52,15 @@ const SkillTooltip = ({
   // Interpolated values are eventually sanitized by DOMPurify below, which is the
   // last step in the pipeline (i18next has escapeValue: false in next-i18next.config.js).
   const displayLevel = level > 0 ? level : 1;
-  const interpolation = useImportedEnglish
-    ? getGameInterpolationValues(metadata, displayLevel)
+  const interpolation = gameText
+    ? getGameInterpolationValues(metadata, displayLevel, language)
     : getSkillInterpolationValues(metadata, displayLevel);
 
-  const perLevelLabel = useImportedEnglish
-    ? t(`${node.type}.game.perLevelLabel`, {
+  const perLevelLabel = gameText
+    ? t(`${textPrefix}.perLevelLabel`, {
         ns: "nodes",
         defaultValue: "",
-        ...metadata.gamePerLevelValues,
+        ...getGamePerLevelValues(metadata, language),
       })
     : metadata?.perLevel
     ? t(`${node.type}.perLevelLabel`, {
@@ -68,9 +71,7 @@ const SkillTooltip = ({
       })
     : null;
 
-  const rawDescription = t(useImportedEnglish
-    ? `${node.type}.game.description`
-    : `${node.type}.description`, {
+  const rawDescription = t(`${textPrefix}.description`, {
     ns: "nodes",
     returnObjects: true,
     ...interpolation,

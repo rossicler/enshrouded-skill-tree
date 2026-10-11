@@ -21,7 +21,8 @@ Access the live version [here](https://enshrouded-skill-tree.com/)
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18+)
+- [Node.js](https://nodejs.org/) 24.x (see `.nvmrc`)
+- [Yarn](https://classic.yarnpkg.com/)
 - [MongoDB](https://www.mongodb.com/) (for the share URL feature)
 
 ### Installation
@@ -36,7 +37,7 @@ cd enshrouded-skill-tree
 2. Install dependencies:
 
 ```bash
-npm install
+yarn install
 ```
 
 3. Set up environment variables by copying the example file:
@@ -67,7 +68,7 @@ The app will automatically create the `skill-planner` database and `codes` colle
 ### Running
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -75,9 +76,20 @@ Open [http://localhost:3000](http://localhost:3000).
 ### Building for Production
 
 ```bash
-npm run build
-npm start
+yarn build
+yarn start
 ```
+
+`yarn build` validates translations and regenerates the app version first.
+
+### Tests
+
+```bash
+yarn test
+yarn tsc --noEmit --incremental false
+```
+
+For updating skill data from a new game build, see [docs/game-metadata-migration.md](docs/game-metadata-migration.md).
 
 ## Contributing
 

@@ -3,7 +3,11 @@ import SkillNodesDefault, {
   SkillNodesType,
 } from "@/constants/Nodes";
 import { humanizeKey } from "@/utils/utils";
-import { getSkillInterpolationValues } from "@/utils/skillInterpolation";
+import {
+  getGameInterpolationValues,
+  getSkillInterpolationValues,
+} from "@/utils/skillInterpolation";
+import { skillTextPrefix, usesGameText } from "@/utils/skillText";
 import {
   NormalizedText,
   normalizeForSearch,
@@ -35,14 +39,19 @@ export const buildSearchCorpus = (
   });
 
   return Object.entries(skillNodes.types).map(([key, meta]) => {
+    // Index the same text the tooltip shows.
+    const gameText = usesGameText(meta, locale);
+    const prefix = skillTextPrefix(key, meta, locale);
     const name = String(
-      t(`${key}.name`, { ns: "nodes", defaultValue: humanizeKey(key) }),
+      t(`${prefix}.name`, { ns: "nodes", defaultValue: humanizeKey(key) }),
     );
     // Interpolate with level-1 values, matching the tooltip's unselected preview.
-    const rawDescription = t(`${key}.description`, {
+    const rawDescription = t(`${prefix}.description`, {
       ns: "nodes",
       returnObjects: true,
-      ...getSkillInterpolationValues(meta, 1),
+      ...(gameText
+        ? getGameInterpolationValues(meta, 1, locale)
+        : getSkillInterpolationValues(meta, 1)),
     });
     const paragraphs = Array.isArray(rawDescription)
       ? rawDescription

@@ -820,7 +820,14 @@
     "name": "FROST",
     "description": [
       "When receiving Melee damage, the attacker will be slowed down for {{value}} seconds."
-    ]
+    ],
+    "game": {
+      "name": "Frost",
+      "description": [
+        "When receiving Melee damage, the attacker will be slowed down for <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> per level"
+    }
   },
   "ICE_RESISTANCE": {
     "name": "ICE RESISTANCE",

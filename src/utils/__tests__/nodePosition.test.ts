@@ -1,13 +1,20 @@
 import { describe, expect, it } from "vitest";
-import SkillNodes from "../../constants/LegacyNodes";
+import SkillNodes from "../../constants/Nodes";
 import { resolveBaseAnchor, resolveNodePosition } from "../nodePosition";
 import { getBaseLinesToDraw } from "../utils";
 
 describe("shared node positioning", () => {
-  it("preserves every authored polar icon center", () => {
-    for (const node of Object.values(SkillNodes.nodes)) {
-      const angle = node.angle! * Math.PI / 180;
-      const radius = 250 + (node.distance ?? 0) + 2;
+  it("preserves legacy polar icon centers", () => {
+    // Former authored seed records: inner/outer rings, offsets and negative distances.
+    const legacy = [
+      { angle: 345, distance: -120 },
+      { angle: 15, distance: -180 },
+      { angle: 315, distance: 420 },
+      { angle: 345 - 30 + 30 / 1.5, distance: 0 },
+    ];
+    for (const node of legacy) {
+      const angle = node.angle * Math.PI / 180;
+      const radius = 250 + node.distance + 2;
       const result = resolveNodePosition(node);
       expect(result.x).toBeCloseTo(-Math.sin(angle) * radius, 10);
       expect(result.y).toBeCloseTo(Math.cos(angle) * radius, 10);
@@ -27,10 +34,11 @@ describe("shared node positioning", () => {
   it("gives base links stable IDs independent of angles", () => {
     expect(getBaseLinesToDraw()).toEqual(Object.values(SkillNodes.nodes)
       .filter((node) => node.base).map((node) => [node.id, `base-${node.id}`]));
-    for (const node of Object.values(SkillNodes.nodes).filter((node) => node.base)) {
-      const anchor = resolveBaseAnchor(node);
-      expect(Math.hypot(anchor.x, anchor.y)).toBeCloseTo(198);
-    }
+    // Imported anchors are game-root positions; the import scales their mean radius to 198.
+    const roots = new Map(Object.values(SkillNodes.nodes).filter((node) => node.base)
+      .map((node) => resolveBaseAnchor(node)).map((anchor) => [`${anchor.x},${anchor.y}`, anchor]));
+    const radii = Array.from(roots.values()).map((anchor) => Math.hypot(anchor.x, anchor.y));
+    expect(radii.reduce((sum, radius) => sum + radius, 0) / radii.length).toBeCloseTo(198);
   });
 
   it("supports Cartesian radial and explicit game-root anchors", () => {

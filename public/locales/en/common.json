@@ -102,7 +102,10 @@
     "differentTreeVersion": "This build was made for a different skill tree version. Check its skills after importing.",
     "noSkillsAllocated": "No skills allocated!",
     "invalidUrl": "Invalid url!",
-    "invalidCode": "Invalid code"
+    "invalidCode": "Invalid code",
+    "skillsRemoved": "Removed skills that are no longer in this skill tree: {{names}}",
+    "skillsDisconnected": "Removed skills that are no longer connected to the tree: {{names}}",
+    "skillLevelsLowered": "Lowered skill levels to the current maximum: {{names}}"
   },
   "treeLabels": {
     "trickster": "Trickster",
@@ -128,6 +131,7 @@
   },
   "accessibility": {
     "skillPointIcon": "Skill Point Icon",
+    "flameIcon": "Flame Icon",
     "backgroundAlt": "Purple smoke background"
   },
   "skillTooltip": {

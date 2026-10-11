@@ -7,13 +7,9 @@ import GameButton from "../shared/GameButton";
 import GameButtonGroup from "../shared/GameButtonGroup";
 import ResetConfirmDialog from "../dialogs/ResetConfirmDialog";
 import { useAppDispatch } from "@/redux/hooks";
-import {
-  loadSelectedSkills,
-  initConnectedPaths,
-  setPlayerLevel,
-  setUnlockedBiomes,
-} from "@/redux/skills/skills.slice";
-import { BuildData, buildToSelectedSkills } from "@/utils/utils";
+import { loadSelectedSkills } from "@/redux/skills/skills.slice";
+import { BuildData } from "@/utils/utils";
+import { useLoadBuild } from "@/hooks/useLoadBuild";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
 import BuildShareDialog from "../dialogs/BuildShareDialog";
@@ -35,14 +31,11 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
   const [searchFocused, setSearchFocused] = useState(false);
   const dispatch = useAppDispatch();
   const router = useRouter();
+  const loadBuild = useLoadBuild();
 
   const importSkillsHandler = (build: BuildData) => {
     playSound("node-unlock", 0.4);
-    const map = buildToSelectedSkills(build);
-    dispatch(loadSelectedSkills(map));
-    dispatch(initConnectedPaths(Object.keys(map)));
-    if (build.playerLevel != null) dispatch(setPlayerLevel(build.playerLevel));
-    if (build.unlockedBiomes != null) dispatch(setUnlockedBiomes(build.unlockedBiomes));
+    loadBuild(build);
   };
 
   const clearHandler = () => {

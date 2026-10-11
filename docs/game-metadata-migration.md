@@ -2,8 +2,9 @@
 
 ## Positioning (implemented)
 
-Existing `angle` / `distance` seed records continue working unchanged. New
-records can use a discriminated `position`:
+Legacy `angle` / `distance` fields continue working unchanged (no committed
+node uses them any more; imported nodes are Cartesian). Records can use a
+discriminated `position`:
 
 ```ts
 position: { kind: "polar", angle: 15, distance: 120 }
@@ -26,56 +27,98 @@ skill costs, level behavior or graph adjacency were changed.
 
 ## Metadata adapter (implemented)
 
-The toolkit exports schema 1.0.0 JSON with raw resources, interpreted text
-templates, typed effects and provenance. Do not replace this app's nodes with
+The toolkit exports schema 1.1.0 JSON with raw resources, interpreted text
+templates in every game locale, typed effects and provenance. Do not replace this app's nodes with
 export-order IDs: existing saved/shared builds depend on the current IDs.
 
 Run from this repository with a validated export from enshrouded-tools:
 
 ```powershell
-# Preview only: writes ignored .local/skill-data/{report,candidate}.json
+# Preview only: writes ignored .local/skill-data/{report,candidate}.json,
+# summary.md and changes.proposed.json
 yarn import-skills 'C:\path\to\skill-data.json'
-# Apply after reviewing the report:
+# Apply after reviewing the report (and approving any structural changes):
 yarn import-skills 'C:\path\to\skill-data.json' --apply
 ```
 
-`scripts/skill-data-mapping.json` preserves all 222 app IDs/type keys. Names and
-neighbor topology establish candidate identities; the persisted mapping and
-exact graph equivalence are checked on subsequent imports. The one explicit
-alias is game Healing Revive -> the placed `HEALER_REVIVE` type. All 269 skill
-edges and 21 base connections agree for build 1076226. Unknown placements or
-topology changes fail rather than silently renumbering saved builds.
+`scripts/skill-data-mapping.json` is the checked identity record:
+`nodes` maps stable game IDs to app IDs/type keys, and `retired` keeps app IDs
+removed by game updates so they are never reused. Imports match by game ID
+through this mapping; name and neighbor matching only initializes a mapping
+(`--initialize-mapping`) or suggests types for unseen game IDs. The one
+explicit alias is game Healing Revive -> the placed `HEALER_REVIVE` type. All
+269 skill edges and 21 base connections agreed with the former authored graph
+for build 1076226 when it moved into generated data.
 
-`LegacyNodes.ts` retains authored seed data, presentation/asset overrides and
-graph behavior. `Nodes.ts` overlays generated positions, costs, levels and
-verified basic stat increments from `gameSkillData.json`. The coordinate center
-is the average of the 12 game roots; scale fits their mean radius to 198 app
-units. The transform and original game provenance are retained in generated JSON.
+`gameSkillData.json` is the source of node membership, types, positions, base
+links (`base`, `baseAnchor`) and edges. Edges are stored once as undirected
+`[low, high]` app-ID pairs; the game's links are directed, but `Nodes.ts`
+expands every pair into adjacency on both endpoints, so a skill unlocks from
+whichever neighbor is selected first. `LegacyNodes.ts` holds only app-owned
+presentation: type colors, icons/assets and fallback text, plus per-node
+`tier`. `Nodes.ts` merges the two and rejects edges to unknown nodes or types
+without authored presentation. Only types used by a node are part of the tree.
+The coordinate center is the average of the 12 game roots; scale fits their
+mean radius to 198 app units. The transform and original game provenance are
+retained in generated JSON.
 
-The same import writes English text to each locale record's `game` section.
-Descriptions are stored once as i18next templates. Numeric substitutions live
-in app metadata: `gameValues` for constants, `gameLevelValues` for values that
-change with purchased level, and `gamePerLevelValues` for the per-level label.
-Per-level labels have a separate template, so old interpolation cannot
-overwrite imported values. Original
-locale fields and French text remain intact. Imported text still passes through
-DOMPurify. `scripts/skill-data-inputs.json` contains app-owned action labels,
-not claimed game bindings; `--inputs=path.json` can supply different labels.
+The same import writes the game's text to the `game` section of each locale
+record whose app locale maps to a game locale (`GAME_LOCALES` in
+`scripts/skill-data.mjs`: `en` -> `En_Us`, `fr` -> `Fr_Fr`). Type metadata
+lists those locales in `gameTextLocales`; `usesGameText`/`skillTextPrefix`
+(`src/utils/skillText.ts`) show a locale's `game` text whenever it is listed
+there, and `validate-translations.js` checks the same record. Other locales
+show their authored translation; those original locale fields remain intact as
+fallbacks.
+
+Descriptions are stored once per locale as i18next templates. Every locale uses
+English's `{{gameValueN}}` numbering: a translation whose arguments are
+reordered is renumbered by argument identity. Numeric substitutions live in app
+metadata: `gameValues` for constants, `gameLevelValues` for values that change
+with purchased level, and `gamePerLevelValues` for the per-level label. Values
+that format differently in a locale (action labels) are stored in
+`gameLocaleValues.<lang>` and replace the English ones there
+(`getGameInterpolationValues`, `getGamePerLevelValues`). Per-level labels have
+a separate template, so old interpolation cannot overwrite imported values.
+Imported text still passes through DOMPurify.
+
+Formatting comes from the game per locale: its decimal separator (`.` in
+English and French) and its seconds abbreviation for Duration values
+(`120 s`). `Input` arguments show the game's controls-menu label for the
+action in brackets (`[Special Ability]`, `[Capacité spéciale]`), chosen per
+input ID by `scripts/skill-data-inputs.json` (ID -> label key in the export's
+`raw.uiText.gameplayActionLabels`). The game itself shows the player's key
+binding; the ID -> label mapping is app-owned and listed in the preview report
+under "Input action labels". `--inputs=path.json` can supply another mapping.
+
+A translation whose arguments differ from English (not merely reordered) is
+unresolved and blocks apply, except the checked `ARGUMENT_EXCEPTIONS`: build
+1076226's French Fatal Precision and Shroud Filter tags reuse one argument in
+place of another. Their French wording is shown with English's arguments in
+English order, so each number matches its sentence (the game shows the
+repeated value). An exception applies only while both argument lists are
+exactly the reviewed ones; the report lists each use.
 
 Supported numeric configs are Float/Sint32/Uint32, constants and Linear
 Self/Level scaling; normal, percentage and numeric-seconds duration formats.
+`(Scaled)TimeImpactConfig` is supported with the Duration format only: its
+value is `{ value: nanoseconds }` and its `scaleFactor` is in seconds, so a
+level shows `value / 1e9 + scaleFactor * level` seconds. Frost (build 1076226:
+1e9 ns, factor 2) gives 3/5/7 s for levels 1/2/3, which the maintainer
+confirmed in game; level 0 previews the level-1 value, and the game's per-level
+line also shows the level-1 value (3 s), not the 2 s increment.
 Balancing IDs 0/1/2 resolve Health/Mana/Stamina per attribute point. Unknown
 formats, sources, IDs and placeholder mismatches prevent applying an import.
 
-Two explicit compatibility exceptions remain in the report:
+One explicit compatibility exception remains in the report:
 
-- Frost retains its existing authored text because `ScaledTimeImpactConfig`
-  evaluation is not verified. Its existing 3/6/9 seconds is **not** asserted as
-  newly confirmed game data. Resolve the game's time-scaling semantics before
-  removing this exception.
 - Ranger retains its authored DEX/ENDURANCE contribution; its effect program
   is not decoded into a stat calculation. Other non-basic combat effects are
   not added to the stat totals.
+
+Frost used to keep its authored text (3/6/9 s, which was wrong) because time
+configs were unsupported; it now has game text in every app locale. The
+authored FROST `perLevel` in `LegacyNodes.ts` is only a fallback.
 
 Costs/max levels are unchanged for this build. Generated JSON and English
 locale changes belong in source control; raw game exports and local reports do
@@ -85,7 +128,8 @@ are copied: current asset names and presentation overrides remain in use.
 ## Tree versioning
 
 The checked import records the source game build and a SHA-256 revision of the
-imported node positions, type metadata and English text. This content revision
+imported nodes (positions, types, base links), edges, type metadata and every
+locale's game text. This content revision
 ignores export timestamps, parser provenance and JSON key order; it changes
 when the imported tree changes. The app shows the game update/build and short
 revision in Settings, plus the update on wider tree layouts. This is distinct
@@ -98,45 +142,76 @@ an older tree would require retaining its complete nodes, edges, assets and
 translations as a separately selectable snapshot, plus migration rules for
 builds. That can be added after the update workflow is reviewed.
 
-## To-do: structural changes in future game updates
+## Structural changes in game updates (implemented)
 
-The current adapter intentionally requires a one-to-one match with the 222
-authored app nodes and exact graph agreement. It can update supported fields
-on matched nodes, but it is not yet a general add/remove-node importer. A new
-skill, removed skill, renamed skill, or changed connection can make the preview
-fail before a report is written. The game export still contains the source
-records; the missing piece is a reviewed app migration path.
+A preview never aborts on structural differences. It compares the export with
+the checked mapping and the previous import by stable game ID, then writes
+`report.json`, a readable `summary.md`, and `changes.proposed.json`:
 
-- [ ] Produce a structured preflight diff before strict mapping/topology checks
-  abort: added/removed game IDs, stable IDs with changed names or types, node
-  fields, root links, skill edges, and icon references. Compare by stable game
-  ID first so a rename does not look like a removal plus addition.
-- [ ] Assign new app IDs and type keys through an explicit reviewed mapping;
-  preserve existing IDs for shared and saved builds. Update authored node and
-  edge definitions, presentation overrides, locales, and assets where needed.
-- [ ] Define how removed or replaced nodes affect existing saved/share builds
-  (including unversioned builds). Report dropped selections to users and test
-  any migration or compatibility policy; do not silently reuse old IDs.
-- [ ] Keep changed graph/unlock behavior and unsupported effects behind a
-  review gate. Add fixtures/tests for addition, removal, rename, and topology
-  changes, then let the agentic update workflow apply approved changes.
+- **Added** game IDs: proposed new app IDs (one above the highest active or
+  retired ID) and type keys (an existing type when the name matches, else
+  UPPER_SNAKE of the name). A game ID that was retired before is proposed to
+  restore its old app ID.
+- **Removed** game IDs: proposed for retirement. A removed and an added ID with
+  the same name are proposed as a **re-ID** (`reassign`), keeping the app ID,
+  so saved builds continue working.
+- **Renamed** nodes (same game ID, new name) are reported; their game text
+  updates without a decision. If nodes sharing a type diverge, the report lists
+  `typeConflicts`; give one node a new type with `retype`.
+- **Graph** changes: added/removed edges and base links, in app-ID space.
 
-## Follow-up: agentic update skill
+`--apply` is refused while any blocker remains. Structural or graph changes
+need a reviewed `.local/skill-data/changes.json` (or `--changes=path`). Start
+from `changes.proposed.json`, edit decisions if needed, and rerun the preview
+until it is clean. Approvals are tied to the export's game build, and the graph
+section must match the computed graph exactly, so a stale approval cannot apply.
+A successful apply renames the file to `changes.applied.json`.
 
-After reviewing this PR, create an agentic skill for the full game-update
-workflow: verify the installed game build; export and validate icons and rich
-metadata with enshrouded-tools; preview the checked ID/graph/text mapping;
-review changed costs, effects, labels, and icon names with the maintainer;
-apply the approved import and assets; run tests and visual checks; then prepare
-a reviewable PR. Keep explicit stops for new or ambiguous game data. This is a
-future task, not part of the current import change.
+```json
+{
+  "gameBuild": "<from the export>",
+  "add": { "<new game ID>": { "appId": "223", "type": "NEW_SKILL" } },
+  "reassign": { "<new game ID>": "<removed game ID>" },
+  "remove": ["<removed game ID>"],
+  "retype": { "<game ID>": "NEW_TYPE" },
+  "graph": { "added": [], "removed": [], "baseAdded": [], "baseRemoved": [] }
+}
+```
+
+New types also need authored presentation in `LegacyNodes.ts` (at least a
+`color`; `hasIcon` plus `public/assets/skills/<TYPE>.png` and `_GRAY.png`
+for an icon). Apply is refused until it exists. A new node without an
+authored `tier` renders as small (a warning). Locales with a game locale get
+the new type's game text; unresolved game text in any of them blocks apply.
+A locale without a game locale needs its own translation (at least a
+`description`) before apply. `validate-translations.js` then checks the rest
+at build time: a name, placeholders that resolve at every level, and a
+per-level line in each locale's language.
+
+Saved and shared builds are fitted to the current tree when loaded (share
+code, JSON import, or a restored session): retired IDs, skills no longer
+connected to a base node, and levels above a lowered max level are removed or
+clamped, and the user is told which skills changed. Retired IDs keep their
+English name in generated `retired` data for that message.
+
+`scripts/skill-data-structure.test.mjs` covers additions (new and existing
+types), removals and retired IDs, re-IDs, returning IDs, renames, shared-type
+conflicts, edge and base-link changes, and two-way edges. It uses a synthetic
+export rebuilt from the committed data (`scripts/fixtures/synthetic-export.mjs`),
+including French texts and the UI strings formatting needs.
+
+## Agentic update skill
+
+The full game-update workflow is the `enshrouded-game-update` skill in
+enshrouded-tools (`.agents/skills/`, with a `.claude/skills/` wrapper). It
+reads this document, so the structural review steps above apply to it.
 
 Detailed source findings and examples are in the toolkit's
 [metadata assessment](https://github.com/rossicler/enshrouded-tools/blob/main/docs/skill-metadata-assessment.md)
 and [positioning decision](https://github.com/rossicler/enshrouded-tools/blob/main/docs/positioning-decision.md).
 
 Run `yarn test` and `yarn tsc --noEmit --incremental false` for regression and
-type checks. The positioning tests cover the current polar seed, explicit polar
+type checks. The positioning tests cover legacy polar records, explicit polar
 and Cartesian positions, base endpoints and invalid coordinates. Browser visual
 checks are also needed before shipping a new imported layout.
 

@@ -19,7 +19,8 @@ import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
 import SkillTooltip from "./SkillTooltip";
 import SkillPaths from "./SkillPaths";
-import { getSkillsToRemove } from "../utils/utils";
+import { getSelectableSkills, getSkillsToRemove, humanizeKey } from "../utils/utils";
+import { skillTextPrefix } from "../utils/skillText";
 import { playSound } from "../utils/sounds";
 import { isHardcapEnabled } from "../utils/settings";
 import HUD from "./hud/HUD";
@@ -35,17 +36,24 @@ type SkillTreeProps = {
 };
 
 const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
-  const { t } = useTranslation("nodes");
-  const focusNodeName = focusNodeId
-    ? t(`${Nodes.nodes[focusNodeId]?.type}.name`)
+  const { t, i18n } = useTranslation("nodes");
+  // Seeds the search box, so it must be the same name the search corpus indexes.
+  const focusType = focusNodeId ? Nodes.nodes[focusNodeId]?.type : undefined;
+  const focusNodeName = focusType
+    ? t(`${skillTextPrefix(focusType, Nodes.types[focusType], i18n.resolvedLanguage ?? i18n.language)}.name`, {
+        defaultValue: humanizeKey(focusType),
+      })
     : undefined;
-  const [selectableSkills, setSelectableSkills] = useState<string[]>([]);
   const [pendingRefund, setPendingRefund] = useState<string[] | null>(null);
   const [showCapWarning, setShowCapWarning] = useState(false);
   const transformRef = useRef<ReactZoomPanPinchRef | null>(null);
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
   const selectedSkillIds = useMemo(
     () => Object.keys(selectedSkills),
+    [selectedSkills]
+  );
+  const selectableSkills = useMemo(
+    () => new Set(getSelectableSkills(selectedSkills)),
     [selectedSkills]
   );
   const connectedPaths = useAppSelector((state) => state.skill.connectedPaths);
@@ -66,25 +74,6 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
         acc + (Nodes.types[Nodes.nodes[id]?.type]?.cost ?? 0) * level,
       0
     );
-
-  const updateSelectableSkills = () => {
-    let tmpSelectableSkills: string[] = [];
-    // Base nodes are always selectable
-    Object.values(Nodes.nodes).forEach((node) => {
-      if (node.base && selectedSkills[node.id] == null) {
-        tmpSelectableSkills.push(node.id);
-      }
-    });
-    // Neighbors of selected nodes are selectable
-    selectedSkillIds.forEach((id) => {
-      tmpSelectableSkills = tmpSelectableSkills.concat(
-        Nodes.edges[id].filter(
-          (connected) => selectedSkills[connected] == null
-        )
-      );
-    });
-    setSelectableSkills(Array.from(new Set(tmpSelectableSkills)));
-  };
 
   const executeRefund = (skillsToRemove: string[]) => {
     dispatch(removeSelectedSkill(skillsToRemove));
@@ -136,7 +125,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
         setShowCapWarning(true);
         return;
       }
-      if (selectableSkills.includes(node.id) || node.base) {
+      if (selectableSkills.has(node.id) || node.base) {
         playSound("node-unlock", 0.4);
       } else {
         playSound("node-select", 0.4);
@@ -163,7 +152,6 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
   };
 
   useEffect(() => {
-    updateSelectableSkills();
     if (selectedSkillIds.length === 0) {
       dispatch(loadConnectedPaths([]));
     }
@@ -227,7 +215,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
                       key={skillNode.id}
                       node={skillNode}
                       selected={selectedSkills[skillNode.id] != null}
-                      selectable={selectableSkills.includes(skillNode.id)}
+                      selectable={selectableSkills.has(skillNode.id)}
                       level={selectedSkills[skillNode.id] ?? 0}
                       maxLevel={getMaxLevel(skillNode.type)}
                       onSelect={onSelect}
@@ -248,7 +236,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
                 key={`tooltip-${skillNode.id}`}
                 node={skillNode}
                 selected={selectedSkills[skillNode.id] != null}
-                selectable={selectableSkills.includes(skillNode.id)}
+                selectable={selectableSkills.has(skillNode.id)}
                 level={selectedSkills[skillNode.id] ?? 0}
                 maxLevel={getMaxLevel(skillNode.type)}
                 onSelect={(action) => onSelect(skillNode, action)}

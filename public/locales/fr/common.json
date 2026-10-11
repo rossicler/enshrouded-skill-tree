@@ -102,7 +102,10 @@
     "differentTreeVersion": "Ce build a été créé pour une autre version de l'arbre. Vérifiez ses compétences après l'importation.",
     "noSkillsAllocated": "Aucune compétence allouée !",
     "invalidUrl": "URL invalide !",
-    "invalidCode": "Code invalide"
+    "invalidCode": "Code invalide",
+    "skillsRemoved": "Compétences retirées car absentes de cet arbre : {{names}}",
+    "skillsDisconnected": "Compétences retirées car plus reliées à l'arbre : {{names}}",
+    "skillLevelsLowered": "Niveaux de compétences réduits au maximum actuel : {{names}}"
   },
   "treeLabels": {
     "trickster": "Trickster",
@@ -128,6 +131,7 @@
   },
   "accessibility": {
     "skillPointIcon": "Icône de point de compétence",
+    "flameIcon": "Icône de flamme",
     "backgroundAlt": "Fond de fumée violette"
   },
   "skillTooltip": {

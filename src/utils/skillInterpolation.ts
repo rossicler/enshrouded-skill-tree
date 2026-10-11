@@ -1,4 +1,5 @@
 import { NodeTypeMetadata } from "@/constants/Nodes";
+import { baseLanguage } from "@/utils/skillText";
 
 export const getSkillInterpolationValues = (
   metadata: NodeTypeMetadata | undefined,
@@ -23,14 +24,32 @@ export const getSkillInterpolationValues = (
   return interpolation;
 };
 
+// The default locale's game values with the language's overrides applied.
+const localeGameValues = (metadata: NodeTypeMetadata | undefined, language: string) => {
+  const local = metadata?.gameLocaleValues?.[baseLanguage(language)];
+  return {
+    gameValues: { ...metadata?.gameValues, ...local?.gameValues },
+    gameLevelValues: { ...metadata?.gameLevelValues, ...local?.gameLevelValues },
+    gamePerLevelValues: { ...metadata?.gamePerLevelValues, ...local?.gamePerLevelValues },
+  };
+};
+
 export const getGameInterpolationValues = (
   metadata: NodeTypeMetadata | undefined,
   displayLevel: number,
+  language: string,
 ): Record<string, number | string> => {
-  const interpolation = { ...metadata?.gameValues };
-  for (const [key, values] of Object.entries(metadata?.gameLevelValues ?? {})) {
+  const { gameValues, gameLevelValues } = localeGameValues(metadata, language);
+  const interpolation: Record<string, number | string> = { ...gameValues };
+  for (const [key, values] of Object.entries(gameLevelValues)) {
     const value = values[displayLevel - 1] ?? values[values.length - 1];
     if (value != null) interpolation[key] = value;
   }
   return interpolation;
 };
+
+// Values for the game per-level line ({{gamePerLevelValueN}}).
+export const getGamePerLevelValues = (
+  metadata: NodeTypeMetadata | undefined,
+  language: string,
+): Record<string, number | string> => localeGameValues(metadata, language).gamePerLevelValues;

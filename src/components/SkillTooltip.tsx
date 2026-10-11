@@ -1,5 +1,5 @@
 import { Tooltip } from "react-tooltip";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import { useEffect, useId, useState } from "react";
 import { Link2 } from "lucide-react";
 

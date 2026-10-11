@@ -86,7 +86,8 @@ yarn start
 
 ```bash
 yarn test
-yarn tsc --noEmit --incremental false
+yarn typecheck
+yarn e2e          # browser tests; run `npx playwright install chromium` once
 ```
 
 For updating skill data from a new game build, see [docs/game-metadata-migration.md](docs/game-metadata-migration.md).

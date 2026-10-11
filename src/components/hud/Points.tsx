@@ -3,7 +3,7 @@ import { useAppSelector } from "@/redux/hooks";
 import { classNames } from "@/utils/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import Stats from "./Stats";
 import FlameLevel from "./FlameLevel";
 import GamePanel from "../shared/GamePanel";

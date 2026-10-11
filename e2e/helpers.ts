@@ -49,6 +49,21 @@ export async function openPlanner(page: Page, path = "/") {
   await page.goto(path);
   await expect(node(page, SINGLE_BASE)).toBeVisible();
   await waitForStableLayout(page);
+  await waitForNodeImages(page);
+}
+
+/**
+ * Wait for the node art on screen to load. Until an image loads, a node's
+ * clickable area can collapse, and a click then misses it.
+ */
+export async function waitForNodeImages(page: Page) {
+  await page.waitForFunction(() =>
+    Array.from(document.querySelectorAll<HTMLImageElement>("[data-node-id] img")).every((img) => {
+      const r = img.getBoundingClientRect();
+      const onScreen = r.right > 0 && r.bottom > 0 && r.left < innerWidth && r.top < innerHeight;
+      return !onScreen || img.complete;
+    }),
+  );
 }
 
 /** Wait until node screen positions stop moving (pan/zoom animations done). */

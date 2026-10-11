@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Enshrouded Skill Planner: a Next.js 14 (pages router) app for planning and sharing Enshrouded skill-tree builds. It uses Redux Toolkit, Tailwind and next-i18next (`en`, `fr`). MongoDB is optional; it only backs short share URLs. Node 24 (`.nvmrc`, `engines`), and the package manager is yarn (`yarn.lock`).
+Enshrouded Skill Planner: a Next.js 16 (pages router, React 19) app for planning and sharing Enshrouded skill-tree builds. It uses Redux Toolkit, Tailwind 4 and next-i18next 16 (`en`, `fr`; import from `next-i18next/pages`). MongoDB is optional; it only backs short share URLs. Node 24 (`.nvmrc`, `engines`), and the package manager is yarn (`yarn.lock`).
 
 ## Commands
 
@@ -14,16 +14,22 @@ yarn build                                # prebuild runs validate-translations 
 yarn test                                 # vitest run (src/**/__tests__ and scripts/*.test.mjs)
 yarn vitest run src/utils/__tests__/nodePosition.test.ts   # single test file
 yarn vitest run -t "name substring"       # single test by name
-yarn tsc --noEmit --incremental false     # type check
+yarn typecheck                            # next typegen + tsc --noEmit (plain `yarn tsc --noEmit --incremental false` also works)
 yarn validate-translations                # check every locale has all text the app shows or searches
 yarn import-skills <export.json> [--changes=path] [--apply]  # preview/apply a game import (see below)
+yarn e2e                                  # Playwright browser tests (desktop + mobile emulation)
+yarn e2e:visual [--update-snapshots]     # screenshot comparison of the main screens (local references)
 ```
 
 Setting `SKILL_DATA_EXPORT=<path to enshrouded-tools export>` turns on an extra full-source integration test in `scripts/skill-data.test.mjs`.
 
 Env (`.env.local`, see `.env.example`): `BASE_URL`, `MONGODB_URI`, `NEXT_PUBLIC_GOOGLE_ANALYTICS`. `MONGODB_URI` is optional: `src/lib/mongodb.ts` connects lazily via `getMongoClient()`, and without the variable the app runs with DB features off (`/api/code` returns 503). The `dev-no-db` entry in `.claude/launch.json` runs the dev server on port 3001 and assumes no `MONGODB_URI` in `.env.local`.
 
-`yarn lint` is not usable: there is no ESLint config, so `next lint` starts an interactive setup prompt.
+There is no lint script: Next 16 removed `next lint` and the repo has no ESLint config.
+
+Browser tests (`e2e/`, `playwright.config.ts`) start their own server on port 3101 without `MONGODB_URI` (`yarn dev`, or `next start` on the last build with `PW_SERVER=start`, which CI uses). Run `npx playwright install chromium` once. They use only `data-*` hooks (`data-node-id`, `data-state`, `data-level`, `data-link-*`, `data-skill-tooltip`, `data-action`, `data-hud`, `data-dialog`, ...), never DOM ids or classes, so keep those hooks when changing markup. `e2e/baseline/positions.json` holds every node center and link endpoint at 1280x800 in the initial view; `positions.spec.ts` checks them within 1px, and `UPDATE_POSITIONS=1` rewrites it after an intended layout change (such as a game import that moves nodes).
+
+Styling is Tailwind 4, configured CSS-first in `src/styles/globals.css` (`@theme`: custom colors, the Tailwind 3 values of the default colors in use, the `shiny` drop shadow and the flame animation). There is no `tailwind.config`. Turbopack builds both `dev` and `build`. Every modal uses `components/shared/GameDialog.tsx` (Headless UI 2 `Dialog` with `transition`).
 
 ## Architecture
 

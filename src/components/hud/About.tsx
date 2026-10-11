@@ -7,7 +7,7 @@ import GameButtonGroup from "../shared/GameButtonGroup";
 import AboutDialog from "../dialogs/AboutDialog";
 import SettingsDialog from "../dialogs/SettingsDialog";
 import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@/constants/skillTreeVersion";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 
 const DISCORD_LINK = "https://discord.gg/saazEkNchu";
 

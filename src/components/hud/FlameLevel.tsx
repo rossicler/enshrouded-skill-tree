@@ -50,7 +50,7 @@ const FlameLevel = () => {
               "relative z-10 w-10 text-center bg-transparent",
               "px-1 py-2.5 text-sm font-semibold tracking-wide",
               "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
-              "focus:outline-none",
+              "focus:outline-hidden",
               "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             )}
           />

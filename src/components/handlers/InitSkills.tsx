@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { gameToast } from "@/utils/gameToast";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { clearCodeImported } from "@/redux/skills/skills.slice";

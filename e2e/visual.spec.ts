@@ -20,7 +20,7 @@ const screens = (device: "desktop" | "mobile", locale: "en" | "fr") => {
       document.querySelectorAll<HTMLImageElement>('img[loading="lazy"]').forEach((img) => (img.loading = "eager")),
     );
     await page.waitForFunction(() => Array.from(document.images).every((img) => img.complete));
-    await expect(page).toHaveScreenshot(`${device}-${locale}-${name}.png`, { animations: "disabled", maxDiffPixelRatio: 0.002 });
+    await expect(page).toHaveScreenshot(`${device}-${locale}-${name}.png`, { animations: "disabled", maxDiffPixelRatio: Number(process.env.PW_MAX_DIFF ?? 0.002) });
   };
 
   test(`tree (${locale})`, async ({ page }) => {

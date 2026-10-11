@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import { classNames } from "@/utils/utils";
 import { TREE_LABELS } from "@/constants/TreeLabels";
 
@@ -11,7 +11,7 @@ const TreeLabels = () => {
   const { t } = useTranslation("common");
   return (
     <>
-      <div className="absolute rounded-full border border-purple-400 border-opacity-30 bg-transparent -left-[200px] -bottom-[200px]" />
+      <div className="absolute rounded-full border border-purple-400/30 bg-transparent -left-[200px] -bottom-[200px]" />
       {TREE_LABELS.map((label) => (
         <div
           key={label.nameKey}

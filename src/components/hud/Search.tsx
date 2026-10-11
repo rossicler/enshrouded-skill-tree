@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import Image from "next/image";
 import { Search as SearchIcon, X } from "lucide-react";
 import { useRouter } from "next/router";
@@ -275,7 +275,7 @@ const Search = ({
             "mt-0 md:mt-1 pointer-events-auto",
             "w-full md:w-72 md:max-w-sm",
             "bg-[#414255]/95 border border-[#5a5a60]/50 border-t-[#b8941f]/60",
-            "rounded-sm",
+            "rounded-xs",
             "shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
           )}
         >
@@ -296,7 +296,7 @@ const Search = ({
                   index === selectedIndex && "bg-white/[0.08]",
                 )}
               >
-                <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
+                <div className="w-6 h-6 shrink-0 flex items-center justify-center">
                   {meta.hasIcon ? (
                     <Image
                       src={`/assets/skills/${meta.selectedAsset ?? key}.png`}

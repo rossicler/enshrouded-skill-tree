@@ -28,8 +28,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      # typegen writes next-env.d.ts and the route types it imports.
       - name: Type check
-        run: yarn tsc --noEmit --incremental false
+        run: yarn typecheck
 
       - name: Test
         run: yarn test

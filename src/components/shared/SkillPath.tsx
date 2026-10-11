@@ -34,11 +34,15 @@ const SkillPath = ({
 
       const svgX = svgRect.left;
       const svgY = svgRect.top;
+      // The svg sits inside the pan/zoom transform, so screen distances are
+      // divided by the current scale to get its own coordinates. Without this,
+      // lines measured while zoomed would be drawn too long.
+      const scale = svg.clientWidth ? svgRect.width / svg.clientWidth : 1;
 
-      const fromX = fromRect.left - svgX + fromRect.width / 2;
-      const fromY = fromRect.top - svgY + fromRect.height / 2;
-      const toX = toRect.left - svgX + toRect.width / 2;
-      const toY = toRect.top - svgY + toRect.height / 2;
+      const fromX = (fromRect.left - svgX + fromRect.width / 2) / scale;
+      const fromY = (fromRect.top - svgY + fromRect.height / 2) / scale;
+      const toX = (toRect.left - svgX + toRect.width / 2) / scale;
+      const toY = (toRect.top - svgY + toRect.height / 2) / scale;
 
       const line = lineRef.current;
       if (line) {

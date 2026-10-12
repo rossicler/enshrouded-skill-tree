@@ -1,41 +1,87 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@theme {
+  --color-ig-red: #a11f1f;
+  --color-ig-green: #8ebe00;
+  --color-ig-blue: #0081dd;
+  --color-ig-gold: #ca9803;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  /* Tailwind 4 moved its palette to OKLCH. Keep the Tailwind 3 values of the
+     default colors the site uses, so they render exactly as before. */
+  --color-purple-400: #c084fc;
+  --color-purple-600: #9333ea;
+  --color-gray-600: #4b5563;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-amber-400: #fbbf24;
+
+  --drop-shadow-shiny: 0 0 3px rgb(192 132 252);
+
+  --animate-flame-radiance: flame-radiance 1.5s ease-in-out infinite;
+
+  @keyframes flame-radiance {
+    0%,
+    100% {
+      box-shadow:
+        0 0 16px 4px rgba(255, 170, 50, 0.6),
+        0 0 40px 12px rgba(255, 120, 20, 0.35),
+        0 0 72px 24px rgba(200, 80, 10, 0.15);
+    }
+    50% {
+      box-shadow:
+        0 0 24px 8px rgba(255, 190, 70, 0.7),
+        0 0 56px 20px rgba(255, 140, 30, 0.4),
+        0 0 96px 36px rgba(200, 80, 10, 0.2);
+    }
   }
 }
 
-*, *::before, *::after {
-  cursor: url('/assets/cursor.png'), auto !important;
+/* Tailwind 3 defaults that Tailwind 4 changed: borders without a color were
+   gray-200 (now currentColor) and placeholders were gray-400. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #e5e7eb;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #9ca3af;
+  }
 }
 
-html, body {
-  overflow: hidden;
-}
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  *,
+  *::before,
+  *::after {
+    cursor: url("/assets/cursor.png"), auto !important;
+  }
+
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   }
 }

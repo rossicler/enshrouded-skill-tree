@@ -7,6 +7,8 @@ const nextConfig = {
     BASE_URL: process.env.BASE_URL,
   },
   i18n: nextI18NextConfig.i18n,
+  // `next dev` would otherwise write an AGENTS.md; agent guidance lives in CLAUDE.md.
+  agentRules: false,
 };
 
 export default nextConfig;

@@ -1,9 +1,8 @@
 import StoreProvider from "@/redux/StoreProvider";
 import "@/styles/globals.css";
-import "react-toastify/dist/ReactToastify.css";
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
-import { appWithTranslation } from "next-i18next";
+import { appWithTranslation } from "next-i18next/pages";
 
 function App({ Component, pageProps }: AppProps) {
   return (

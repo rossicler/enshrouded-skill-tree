@@ -24,21 +24,21 @@ export const gameToast = {
   warning: (message: string) =>
     toast(<GameToast message={message} type="warning" />, {
       className:
-        "!bg-[#2a2a35] !border !border-[#5a5a60]/50 !border-t-[#C8B169]/60 !rounded-sm !shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
+        "!bg-[#2a2a35] !border !border-[#5a5a60]/50 !border-t-[#C8B169]/60 !rounded-xs !shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
       closeButton: false,
       autoClose: 6000,
     }),
   success: (message: string) =>
     toast(<GameToast message={message} type="success" />, {
       className:
-        "!bg-[#2a2a35] !border !border-[#5a5a60]/50 !border-t-[#b8941f]/60 !rounded-sm !shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
+        "!bg-[#2a2a35] !border !border-[#5a5a60]/50 !border-t-[#b8941f]/60 !rounded-xs !shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
       closeButton: false,
       autoClose: 2500,
     }),
   error: (message: string) =>
     toast(<GameToast message={message} type="error" />, {
       className:
-        "!bg-[#2a2a35] !border !border-[#5a5a60]/50 !border-t-[#c45c5c]/60 !rounded-sm !shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
+        "!bg-[#2a2a35] !border !border-[#5a5a60]/50 !border-t-[#c45c5c]/60 !rounded-xs !shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
       closeButton: false,
       autoClose: 3500,
     }),

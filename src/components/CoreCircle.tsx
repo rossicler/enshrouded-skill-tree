@@ -4,7 +4,7 @@ import { resolveBaseAnchor } from "../utils/nodePosition";
 const CoreCircle = () => {
   return (
     <>
-      <div className="absolute w-[400px] h-[400px] rounded-full border border-purple-400 border-opacity-30 bg-transparent -left-[200px] -bottom-[200px]" />
+      <div className="absolute w-[400px] h-[400px] rounded-full border border-purple-400/30 bg-transparent -left-[200px] -bottom-[200px]" />
       {LinesAngles.map((lineAngle) => (
         <div
           key={lineAngle}

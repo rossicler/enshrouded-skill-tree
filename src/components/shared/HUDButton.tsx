@@ -5,7 +5,7 @@ type PropsType = {
   children?: ReactNode;
   onClick?: () => void;
   className?: string;
-} & JSX.IntrinsicElements["button"];
+} & React.JSX.IntrinsicElements["button"];
 
 const HUDButton = ({ children, onClick, className, ...props }: PropsType) => {
   return (

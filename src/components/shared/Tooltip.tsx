@@ -24,7 +24,7 @@ const Tooltip = ({ text, position = "right", children, className }: PropsType) =
       <div
         className={classNames(
           "pointer-events-none absolute z-50",
-          "px-2 py-1 rounded text-xs whitespace-nowrap",
+          "px-2 py-1 rounded-sm text-xs whitespace-nowrap",
           "text-[#c0b89a] bg-[#2a2a35] border border-[#5a5a60]/50 shadow-lg",
           "opacity-0 group-hover/tooltip:opacity-100 transition-opacity",
           positionClasses[position]

@@ -129,6 +129,13 @@ const SkillNode = ({
               nodeSize.className,
               isSearched && "animate-flame-radiance",
             )}
+            data-node-id={node.id}
+            data-node-type={node.type}
+            data-state={selected ? "selected" : selectable ? "selectable" : "locked"}
+            data-selected={selected ? "true" : "false"}
+            data-level={level}
+            data-max-level={maxLevel}
+            data-searched={isSearched ? "true" : "false"}
             style={{
               left: -nodeSize.size / 2,
               bottom: -nodeSize.size / 2,

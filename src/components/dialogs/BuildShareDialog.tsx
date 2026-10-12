@@ -1,7 +1,8 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { gameToast } from "@/utils/gameToast";
-import { Dialog, Transition } from "@headlessui/react";
-import { useTranslation } from "next-i18next";
+import { DialogTitle } from "@headlessui/react";
+import GameDialog from "../shared/GameDialog";
+import { useTranslation } from "next-i18next/pages";
 import { ChevronDown } from "lucide-react";
 
 import { convertJsonToHash, BuildData } from "@/utils/utils";
@@ -129,114 +130,86 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
   }, [open]);
 
   return (
-    <Transition appear show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={onClose}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-black/50" />
-        </Transition.Child>
+    <GameDialog open={open} onClose={onClose} name="share" className="max-w-md">
+      <GamePanel onClose={onClose}>
+        <div className="px-10 py-6">
+          <DialogTitle
+            as="h3"
+            className="text-lg font-semibold leading-6 text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]"
+          >
+            {t("dialogs.export.title")}
+          </DialogTitle>
 
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Dialog.Panel className="w-full max-w-md transform overflow-visible text-left align-middle transition-all">
-                <GamePanel onClose={onClose}>
-                  <div className="px-10 py-6">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-lg font-semibold leading-6 text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]"
-                    >
-                      {t("dialogs.export.title")}
-                    </Dialog.Title>
+          <div className="mt-5 flex flex-col gap-3">
+            {!dbAvailable && (
+              <p className="text-sm text-amber-400/80 italic">
+                {t("dialogs.export.dbUnavailable")}
+              </p>
+            )}
+            {dbAvailable && (
+              selectedSkillIds.length === 0 ? (
+                <p className="text-sm text-[#c0b89a] italic">
+                  {t("dialogs.export.noSkills")}
+                </p>
+              ) : loading ? (
+                <div className="text-sm text-[#c0b89a]">
+                  {t("dialogs.export.generating")}
+                </div>
+              ) : shortURL ? (
+                <CopyInput
+                  label={t("dialogs.export.shortUrl")}
+                  copied={copied === "url"}
+                  onCopy={() => setCopied("url")}
+                  value={shortURL}
+                />
+              ) : null
+            )}
 
-                    <div className="mt-5 flex flex-col gap-3">
-                      {!dbAvailable && (
-                        <p className="text-sm text-amber-400/80 italic">
-                          {t("dialogs.export.dbUnavailable")}
-                        </p>
-                      )}
-                      {dbAvailable && (
-                        selectedSkillIds.length === 0 ? (
-                          <p className="text-sm text-[#c0b89a] italic">
-                            {t("dialogs.export.noSkills")}
-                          </p>
-                        ) : loading ? (
-                          <div className="text-sm text-[#c0b89a]">
-                            {t("dialogs.export.generating")}
-                          </div>
-                        ) : shortURL ? (
-                          <CopyInput
-                            label={t("dialogs.export.shortUrl")}
-                            copied={copied === "url"}
-                            onCopy={() => setCopied("url")}
-                            value={shortURL}
-                          />
-                        ) : null
-                      )}
+            {/* Advanced sharing accordion */}
+            <div className="mt-2 border-t border-white/10">
+              <button
+                data-action="toggle-advanced"
+                onClick={() => setAdvancedOpen((v) => !v)}
+                className="flex items-center justify-between w-full py-3 text-sm text-[#c0b89a] hover:text-[#e8d5a3] transition-colors"
+              >
+                {t("dialogs.advancedSharing")}
+                <ChevronDown
+                  size={16}
+                  className={classNames(
+                    "transition-transform duration-200",
+                    advancedOpen && "rotate-180"
+                  )}
+                />
+              </button>
 
-                      {/* Advanced sharing accordion */}
-                      <div className="mt-2 border-t border-white/10">
-                        <button
-                          onClick={() => setAdvancedOpen((v) => !v)}
-                          className="flex items-center justify-between w-full py-3 text-sm text-[#c0b89a] hover:text-[#e8d5a3] transition-colors"
-                        >
-                          {t("dialogs.advancedSharing")}
-                          <ChevronDown
-                            size={16}
-                            className={classNames(
-                              "transition-transform duration-200",
-                              advancedOpen && "rotate-180"
-                            )}
-                          />
-                        </button>
-
-                        {advancedOpen && (
-                          <div className="flex flex-col gap-3 pb-2">
-                            <div className="flex gap-3">
-                              <GameButton className="flex-1" onClick={() => fileInputRef.current?.click()}>
-                                {t("dialogs.import.importJson")}
-                              </GameButton>
-                              <GameButton className="flex-1" onClick={downloadJSON} disabled={selectedSkillIds.length === 0}>
-                                {t("dialogs.export.exportJson")}
-                              </GameButton>
-                            </div>
-                            <p className="text-sm text-[#c0b89a] italic">
-                              {t("dialogs.import.warning")}
-                            </p>
-                            <input
-                              ref={fileInputRef}
-                              type="file"
-                              accept=".json"
-                              className="hidden"
-                              onChange={handleFileChange}
-                            />
-                          </div>
-                        )}
-                      </div>
-                    </div>
+              {advancedOpen && (
+                <div className="flex flex-col gap-3 pb-2">
+                  <div className="flex gap-3">
+                    <GameButton className="flex-1" data-action="import-json" onClick={() => fileInputRef.current?.click()}>
+                      {t("dialogs.import.importJson")}
+                    </GameButton>
+                    <GameButton className="flex-1" data-action="export-json" onClick={downloadJSON} disabled={selectedSkillIds.length === 0}>
+                      {t("dialogs.export.exportJson")}
+                    </GameButton>
                   </div>
-                </GamePanel>
-              </Dialog.Panel>
-            </Transition.Child>
+                  <p className="text-sm text-[#c0b89a] italic">
+                    {t("dialogs.import.warning")}
+                  </p>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    data-action="import-file"
+                    accept=".json"
+                    className="hidden"
+                    onChange={handleFileChange}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </Dialog>
-    </Transition>
+      </GamePanel>
+    </GameDialog>
   );
 };
 

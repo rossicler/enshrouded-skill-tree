@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 
 import SkillNodes, { RETIRED_NODES } from "@/constants/Nodes";
 import { isDifferentTreeVersion } from "@/constants/skillTreeVersion";

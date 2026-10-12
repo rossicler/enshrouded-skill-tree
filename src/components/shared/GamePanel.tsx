@@ -103,7 +103,7 @@ const GamePanel = ({ children, className, onClose }: PropsType) => {
           className={classNames(
             "absolute top-[27px] right-5 z-20",
             "text-[#c0b89a] hover:text-[#e8d5a3] transition-colors",
-            "focus:outline-none"
+            "focus:outline-hidden"
           )}
           aria-label="Close"
         >

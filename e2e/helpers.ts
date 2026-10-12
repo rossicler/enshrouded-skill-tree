@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from "@playwright/test";
 
-import skillData from "../src/constants/gameSkillData.json";
+import skillData from "../packages/core/src/constants/gameSkillData.json";
 
 // Tree facts the tests rely on, read from the generated data so a game import
 // that changes them fails loudly here instead of producing a confusing click.

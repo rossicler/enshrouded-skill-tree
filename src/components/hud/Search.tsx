@@ -15,14 +15,14 @@ import { useAppDispatch } from "@/redux/hooks";
 
 import GameInput from "../shared/GameInput";
 import { setSearchSkillResults } from "@/redux/skills/skills.slice";
-import SkillNodes from "@/constants/Nodes";
-import { buildSearchCorpus } from "@/utils/searchCorpus";
 import {
   MatchRange,
+  SkillNodes,
+  buildSearchCorpus,
   buildSnippet,
   normalizeQuery,
   scoreMatch,
-} from "@/utils/searchText";
+} from "@enshrouded/core";
 
 const MAX_VISIBLE_RESULTS = 5;
 
@@ -82,7 +82,7 @@ const Search = ({
   useEffect(() => {
     routerRef.current = router;
   }, [router]);
-  const { t } = useTranslation(["common", "nodes"]);
+  const { t } = useTranslation("common");
   const dispatch = useAppDispatch();
 
   const exactMatch = !!router.query.focus;
@@ -94,7 +94,7 @@ const Search = ({
   }, []);
 
   const locale = router.locale ?? "en";
-  const corpus = useMemo(() => buildSearchCorpus(t, locale), [t, locale]);
+  const corpus = useMemo(() => buildSearchCorpus(locale), [locale]);
 
   const results = useMemo(() => {
     if (!searchText || searchText.length < 3) return [];

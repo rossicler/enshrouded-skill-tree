@@ -8,7 +8,7 @@ import GameButtonGroup from "../shared/GameButtonGroup";
 import ResetConfirmDialog from "../dialogs/ResetConfirmDialog";
 import { useAppDispatch } from "@/redux/hooks";
 import { loadSelectedSkills } from "@/redux/skills/skills.slice";
-import { BuildData } from "@/utils/utils";
+import type { SkillBuild } from "@enshrouded/core";
 import { useLoadBuild } from "@/hooks/useLoadBuild";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
@@ -33,7 +33,7 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
   const router = useRouter();
   const loadBuild = useLoadBuild();
 
-  const importSkillsHandler = (build: BuildData) => {
+  const importSkillsHandler = (build: SkillBuild) => {
     playSound("node-unlock", 0.4);
     loadBuild(build);
   };

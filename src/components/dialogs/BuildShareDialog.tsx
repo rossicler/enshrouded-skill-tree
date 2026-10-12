@@ -5,19 +5,25 @@ import GameDialog from "../shared/GameDialog";
 import { useTranslation } from "next-i18next/pages";
 import { ChevronDown } from "lucide-react";
 
-import { convertJsonToHash, BuildData } from "@/utils/utils";
+import {
+  BIOMES,
+  MAX_PLAYER_LEVEL,
+  SkillBuild,
+  encodeSkillBuild,
+  isDifferentTreeVersion,
+  parseSkillBuild,
+  selectionToBuild,
+} from "@enshrouded/core";
 import { useAppSelector } from "@/redux/hooks";
 import CopyInput from "../shared/CopyInput";
 import GamePanel from "../shared/GamePanel";
 import GameButton from "../shared/GameButton";
 import { classNames } from "@/utils/utils";
-import { BIOMES, MAX_PLAYER_LEVEL } from "@/constants/Biomes";
-import { isDifferentTreeVersion, SKILL_TREE_CONTENT_HASH } from "@/constants/skillTreeVersion";
 
 type PropsType = {
   open: boolean;
   onClose: () => void;
-  onImportSkills: (build: BuildData) => void;
+  onImportSkills: (build: SkillBuild) => void;
   dbAvailable?: boolean;
 };
 
@@ -40,16 +46,10 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
     () => Object.keys(selectedSkills),
     [selectedSkills]
   );
-  const buildData: BuildData = useMemo(() => {
-    const hasMultiLevel = Object.values(selectedSkills).some((l) => l > 1);
-    return {
-      skills: selectedSkillIds,
-      treeContentHash: SKILL_TREE_CONTENT_HASH,
-      ...(hasMultiLevel ? { skillLevels: selectedSkills } : {}),
-      playerLevel,
-      unlockedBiomes,
-    };
-  }, [selectedSkills, selectedSkillIds, playerLevel, unlockedBiomes]);
+  const buildData: SkillBuild = useMemo(
+    () => selectionToBuild(selectedSkills, { playerLevel, unlockedBiomes }),
+    [selectedSkills, playerLevel, unlockedBiomes]
+  );
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -57,14 +57,9 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
     const reader = new FileReader();
     reader.onload = (event) => {
       try {
-        const parsed = JSON.parse(event.target?.result as string);
-        // Support both old format (string[]) and new format ({ skills, playerLevel, unlockedBiomes })
-        let build: BuildData;
-        if (Array.isArray(parsed) && parsed.every((s) => typeof s === "string")) {
-          build = { skills: parsed };
-        } else if (parsed && Array.isArray(parsed.skills)) {
-          build = parsed as BuildData;
-        } else {
+        // Old files are a plain string[]; newer ones are a SkillBuild.
+        const build = parseSkillBuild(JSON.parse(event.target?.result as string));
+        if (!build) {
           gameToast.error(t("toasts.invalidCode"));
           return;
         }
@@ -83,7 +78,7 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
   const exportAPIHandler = async () => {
     setLoading(true);
     try {
-      const tmpCode = convertJsonToHash(buildData);
+      const tmpCode = encodeSkillBuild(buildData);
       const response = await fetch("/api/code", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

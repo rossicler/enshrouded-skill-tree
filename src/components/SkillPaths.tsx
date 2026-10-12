@@ -1,6 +1,6 @@
 import { memo, useCallback, useMemo } from "react";
 
-import { getBaseLinesToDraw, getLinesToDraw } from "../utils/utils";
+import { getBaseLinesToDraw, getLinesToDraw } from "@enshrouded/core";
 import SkillPath from "./shared/SkillPath";
 import { useAppSelector } from "@/redux/hooks";
 

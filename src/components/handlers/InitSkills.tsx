@@ -5,7 +5,7 @@ import { useTranslation } from "next-i18next/pages";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { clearCodeImported } from "@/redux/skills/skills.slice";
 import { useApplySelection, useLoadBuild } from "@/hooks/useLoadBuild";
-import { convertHashToJson, sanitizeSelection } from "@/utils/utils";
+import { decodeSkillBuild, hasSelectionChanges, sanitizeSelection } from "@enshrouded/core";
 
 type PropsType = {
   // Share code from the page props. Known on the first render, unlike
@@ -24,8 +24,7 @@ const InitSkills = ({ sharedCode }: PropsType) => {
   // A session restored after a game update may reference retired or now
   // unreachable skills; fit it to the current tree.
   const cleanUpSession = () => {
-    const cleanup = sanitizeSelection(selectedSkills);
-    if (cleanup.removed.length || cleanup.disconnected.length || cleanup.clamped.length) {
+    if (hasSelectionChanges(sanitizeSelection(selectedSkills))) {
       applySelection(selectedSkills);
     }
   };
@@ -38,9 +37,7 @@ const InitSkills = ({ sharedCode }: PropsType) => {
   useEffect(() => {
     if (code) {
       try {
-        const build = convertHashToJson(code);
-        if (!Array.isArray(build.skills)) throw new Error("Invalid code");
-        loadBuild(build);
+        loadBuild(decodeSkillBuild(code));
         dispatch(clearCodeImported());
       } catch {
         gameToast.error(t("toasts.invalidCode"));

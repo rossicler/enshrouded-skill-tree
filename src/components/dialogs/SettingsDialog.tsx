@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { APP_VERSION } from "@/constants/version";
-import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@/constants/skillTreeVersion";
+import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@enshrouded/core";
 import { DialogTitle } from "@headlessui/react";
 import GameDialog from "../shared/GameDialog";
 import { useTranslation } from "next-i18next/pages";

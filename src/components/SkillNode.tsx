@@ -1,10 +1,9 @@
 import { MouseEvent, TouchEvent, memo, useMemo, useRef } from "react";
 
-import { Node } from "../constants/Nodes";
+import { Node, resolveNodePosition } from "@enshrouded/core";
 
 import { getAsset } from "../utils/assets-utils";
 import Image from "next/image";
-import { resolveNodePosition } from "../utils/nodePosition";
 import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
 import { playSound } from "@/utils/sounds";

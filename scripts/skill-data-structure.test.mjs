@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { applyImport, loadAuthoredPresentation, runImport, summarize } from "./skill-data.mjs";
 import { addNode, neighborsOf, removeNode, renameNode, syntheticExport } from "./fixtures/synthetic-export.mjs";
-import { buildSkillTree } from "../src/constants/Nodes";
-import { getSelectableSkills } from "../src/utils/utils";
-import runtime from "../src/constants/gameSkillData.json";
-import locale from "../public/locales/en/nodes.json";
-import frLocale from "../public/locales/fr/nodes.json";
+import { buildSkillTree } from "../packages/core/src/constants/Nodes";
+import { getSelectableSkills } from "../packages/core/src/selection";
+import runtime from "../packages/core/src/constants/gameSkillData.json";
+import locale from "../packages/core/src/locales/en/nodes.json";
+import frLocale from "../packages/core/src/locales/fr/nodes.json";
 import mapping from "./skill-data-mapping.json";
 
 const presentation = loadAuthoredPresentation();
@@ -110,7 +110,7 @@ describe("structural import: additions", () => {
     delete locales.fr.FROST_NOVA;
     locales.de = structuredClone(locales.fr);
     const result = run(data, approve(run(data)), { presentation: pres, locales });
-    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in public/locales/de/nodes.json"]);
+    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in packages/core/src/locales/de/nodes.json"]);
   });
 
   it("blocks apply while a locale's game text is unresolved", () => {

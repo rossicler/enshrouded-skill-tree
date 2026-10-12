@@ -31,7 +31,18 @@ The toolkit exports schema 1.1.0 JSON with raw resources, interpreted text
 templates in every game locale, typed effects and provenance. Do not replace this app's nodes with
 export-order IDs: existing saved/shared builds depend on the current IDs.
 
-Run from this repository with a validated export from enshrouded-tools:
+Run from this repository with a validated export from enshrouded-tools.
+The tree data, its presentation and skill text live in the `@enshrouded/core`
+workspace package, and the importer reads and writes them there:
+
+| File | Import |
+|---|---|
+| `packages/core/src/constants/gameSkillData.json` | generated, written on `--apply` |
+| `packages/core/src/locales/<lang>/nodes.json` | `game` sections written on `--apply`, one file per locale folder |
+| `packages/core/src/constants/LegacyNodes.ts` | read only (authored presentation) |
+| `scripts/skill-data-mapping.json` | identity mapping, written on `--apply` |
+| `public/assets/skills/<TYPE>.png` | checked for types with `hasIcon` |
+
 
 ```powershell
 # Preview only: writes ignored .local/skill-data/{report,candidate}.json,
@@ -66,7 +77,7 @@ The same import writes the game's text to the `game` section of each locale
 record whose app locale maps to a game locale (`GAME_LOCALES` in
 `scripts/skill-data.mjs`: `en` -> `En_Us`, `fr` -> `Fr_Fr`). Type metadata
 lists those locales in `gameTextLocales`; `usesGameText`/`skillTextPrefix`
-(`src/utils/skillText.ts`) show a locale's `game` text whenever it is listed
+(`packages/core/src/utils/skillText.ts`) show a locale's `game` text whenever it is listed
 there, and `validate-translations.js` checks the same record. Other locales
 show their authored translation; those original locale fields remain intact as
 fallbacks.

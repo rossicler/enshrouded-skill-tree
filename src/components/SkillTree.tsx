@@ -190,7 +190,9 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
       <TransformWrapper
         minScale={2}
         maxScale={5}
-        wheel={{ step: 2 }}
+        // Smooth wheel zoom multiplies the step by the wheel distance (about
+        // 100 per notch), so 0.001 zooms about 0.1 per notch.
+        wheel={{ step: 0.001 }}
         doubleClick={{
           disabled: true,
         }}

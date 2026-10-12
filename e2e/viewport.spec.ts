@@ -26,6 +26,19 @@ test("the wheel zooms in and out around the pointer", async ({ page }) => {
   expect(await nodeDistance(page, A, B)).toBeLessThan(zoomed);
 });
 
+test("one wheel tick zooms a little, not to the limit", async ({ page }) => {
+  const viewport = page.viewportSize()!;
+  const start = await nodeDistance(page, A, B);
+  await page.mouse.move(viewport.width / 2, viewport.height / 2);
+  // One notch of a typical mouse wheel. The initial scale is 2 and the max 5,
+  // so jumping to the limit would multiply the distance by 2.5.
+  await page.mouse.wheel(0, -100);
+  await waitForStableLayout(page);
+  const ratio = (await nodeDistance(page, A, B)) / start;
+  expect(ratio).toBeGreaterThan(1.02);
+  expect(ratio).toBeLessThan(1.15);
+});
+
 test("the tree does not zoom out past the initial scale", async ({ page }) => {
   const viewport = page.viewportSize()!;
   const start = await nodeDistance(page, A, B);

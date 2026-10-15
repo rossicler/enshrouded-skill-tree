@@ -12,6 +12,8 @@ import {
   removeSelectedSkill,
 } from "@/redux/skills/skills.slice";
 import Nodes, { Node, getMaxLevel } from "../constants/Nodes";
+import { TREE_LABELS } from "../constants/TreeLabels";
+import { resolveNodePosition } from "../utils/nodePosition";
 
 export type SkillAction = "primary" | "secondary";
 import { computeMaxSkillPoints } from "../constants/Biomes";
@@ -29,6 +31,36 @@ import RefundConfirmDialog from "./dialogs/RefundConfirmDialog";
 import SkillCapDialog from "./dialogs/SkillCapDialog";
 
 const REFUND_CONFIRM_THRESHOLD = 2;
+
+// The zoom library only keeps its content box on screen, so the box is sized
+// to the tree (nodes and class labels) plus a margin instead of the screen.
+// That stops panning from going far past the outermost nodes.
+const TREE_SCALE = 0.25; // the `scale-25` on the tree container
+const LARGEST_NODE = 45;
+const LABEL_SCALE = 0.3; // TreeLabels draws label art at 30%
+const PAN_MARGIN = 80; // px past the tree's edge (labels included), before zoom
+const treeHalfExtent = (() => {
+  let x = 0;
+  let y = 0;
+  for (const node of Object.values(Nodes.nodes)) {
+    const p = resolveNodePosition(node);
+    x = Math.max(x, Math.abs(p.x) + LARGEST_NODE / 2);
+    y = Math.max(y, Math.abs(p.y) + LARGEST_NODE / 2);
+  }
+  // A label is rotated out to its radius, then turned upright about its center.
+  for (const label of TREE_LABELS) {
+    const w = label.width * LABEL_SCALE;
+    const h = label.height * LABEL_SCALE;
+    const a = (label.angle * Math.PI) / 180;
+    const cy0 = 250 + label.distance + h / 2;
+    const cx = (w / 2) * Math.cos(a) - cy0 * Math.sin(a);
+    const cy = (w / 2) * Math.sin(a) + cy0 * Math.cos(a);
+    x = Math.max(x, Math.abs(cx) + w / 2);
+    y = Math.max(y, Math.abs(cy) + h / 2);
+  }
+  // Whole pixels, so the tree center (the box center) lands on a pixel.
+  return { x: Math.ceil(x * TREE_SCALE) + PAN_MARGIN, y: Math.ceil(y * TREE_SCALE) + PAN_MARGIN };
+})();
 
 type SkillTreeProps = {
   dbAvailable?: boolean;
@@ -206,9 +238,10 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
         {({ zoomIn, zoomOut, centerView, zoomToElement }) => (
           <>
             <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} zoomToElement={zoomToElement} dbAvailable={dbAvailable} initialSearchText={focusNodeName} />
-            <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
+            <TransformComponent wrapperClass="!w-screen !h-[100dvh]" contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
               <div
-                className="relative w-screen h-[100dvh] flex items-center justify-center"
+                className="relative flex items-center justify-center"
+                style={{ width: treeHalfExtent.x * 2, height: treeHalfExtent.y * 2 }}
               >
                 <div className="relative scale-25 z-20">
                   <CoreCircle />
@@ -227,7 +260,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
                 </div>
                 <svg
                   id="svg-container"
-                  className="absolute inset-0 w-screen h-[100dvh]"
+                  className="absolute inset-0 w-full h-full overflow-visible"
                 >
                   <SkillPaths lines={connectedPaths} />
                 </svg>

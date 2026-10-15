@@ -49,6 +49,11 @@ test("the tree does not zoom out past the initial scale", async ({ page }) => {
 });
 
 test("dragging the background pans the tree", async ({ page }) => {
+  // At the initial zoom the whole tree fits the desktop viewport, so there is
+  // little room to pan; zoom in first.
+  await hud(page, "zoom-in").click();
+  await hud(page, "zoom-in").click();
+  await waitForStableLayout(page);
   const before = await center(node(page, A));
   await page.mouse.move(200, 400);
   await page.mouse.down();
@@ -61,6 +66,46 @@ test("dragging the background pans the tree", async ({ page }) => {
   expect(after.y - before.y).toBeGreaterThan(40);
   // A drag is not a click: nothing got selected.
   await expect(page.locator('[data-node-id][data-selected="true"]')).toHaveCount(0);
+});
+
+test("panning stops near the edge of the tree", async ({ page }) => {
+  const { width, height } = page.viewportSize()!;
+  // At the max zoom the tree is far larger than the screen.
+  for (let i = 0; i < 8; i++) await hud(page, "zoom-in").click();
+  await waitForStableLayout(page);
+
+  const treeBox = () =>
+    page.locator("[data-node-id]").evaluateAll((els) => {
+      const r = els.map((el) => el.getBoundingClientRect());
+      return {
+        left: Math.min(...r.map((b) => b.left)),
+        right: Math.max(...r.map((b) => b.right)),
+        top: Math.min(...r.map((b) => b.top)),
+        bottom: Math.max(...r.map((b) => b.bottom)),
+      };
+    });
+  // Several long drags in one direction, from inside the viewport.
+  const dragFar = async (dx: number, dy: number) => {
+    for (let i = 0; i < 4; i++) {
+      const x = width / 2 - dx / 2;
+      const y = height / 2 - dy / 2;
+      await page.mouse.move(x, y);
+      await page.mouse.down();
+      await page.mouse.move(x + dx, y + dy, { steps: 10 });
+      await page.mouse.up();
+    }
+    await waitForStableLayout(page);
+  };
+
+  // Wherever you drag, the tree still covers at least a quarter of the screen.
+  await dragFar(width * 0.8, 0);
+  expect((await treeBox()).left).toBeLessThan(width * 0.75);
+  await dragFar(-width * 0.8, 0);
+  expect((await treeBox()).right).toBeGreaterThan(width * 0.25);
+  await dragFar(0, height * 0.8);
+  expect((await treeBox()).top).toBeLessThan(height * 0.75);
+  await dragFar(0, -height * 0.8);
+  expect((await treeBox()).bottom).toBeGreaterThan(height * 0.25);
 });
 
 test("the zoom buttons zoom, and recenter restores the initial view", async ({ page }) => {

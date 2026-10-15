@@ -5,11 +5,12 @@ import { useTranslation } from "next-i18next/pages";
 
 import { useAppSelector } from "@/redux/hooks";
 import {
+  BasicStats,
+  StatsType,
   getStatsFromFlameAltar,
   getStatsFromSkills,
   sumStats,
-} from "@/utils/stats";
-import { BasicStats, StatsType } from "@/constants/Stats";
+} from "@enshrouded/core";
 import GamePanel from "../shared/GamePanel";
 import GameButton from "../shared/GameButton";
 

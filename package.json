@@ -6,6 +6,9 @@
   },
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "engines": {
     "node": "24.x"
   },
@@ -16,13 +19,14 @@
     "prebuild": "npm run validate-translations && npm run generate-version",
     "build": "next build",
     "start": "next start",
-    "typecheck": "next typegen && tsc --noEmit --incremental false",
+    "typecheck": "next typegen && tsc --noEmit --incremental false && tsc -p packages/core",
     "test": "vitest run",
     "e2e": "playwright test --project=desktop --project=mobile",
     "e2e:visual": "playwright test --project=visual",
     "import-skills": "node scripts/skill-data.mjs"
   },
   "dependencies": {
+    "@enshrouded/core": "*",
     "@headlessui/react": "^2.2.10",
     "@reduxjs/toolkit": "^2.2.1",
     "@types/dompurify": "^3.0.5",

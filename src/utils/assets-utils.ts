@@ -1,4 +1,4 @@
-import SkillNodes, { Node } from "../constants/Nodes";
+import { SkillNodes, Node } from "@enshrouded/core";
 
 export const getAsset = (
   node: Node,

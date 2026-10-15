@@ -1,12 +1,13 @@
 // Checks that every locale has the text the app shows or searches:
-// - nodes.json: for each skill type in the tree, the record the locale shows
+// - nodes.json (packages/core): for each skill type in the tree, the record the locale shows
 //   (its imported `game` section or its own text, per skillTextPrefix)
 //   has a name and description, every {{placeholder}} has a value at every
 //   level, and the per-level line is in the locale's language. The tooltip,
 //   search, toasts and the ?focus= search all read these records.
-// - common.json: every locale has the same keys and placeholders as the
-//   default locale, every key the code references exists, and keys built at
-//   runtime (biomes.<id>, treeLabels.<nameKey>) exist for every value.
+// - tree.json (packages/core): a tree label text for every TREE_LABELS entry.
+// - common.json (the site): every locale has the same keys and placeholders
+//   as the default locale, every key the code references exists, and keys
+//   built at runtime (biomes.<id>) exist for every value.
 const fs = require('fs');
 const path = require('path');
 const { z } = require('zod');
@@ -14,6 +15,9 @@ const { z } = require('zod');
 const root = path.join(__dirname, '..');
 const srcDir = path.join(root, 'src');
 const localesDir = path.join(root, 'public/locales');
+// Skill and tree text, owned by the core package.
+const coreSrcDir = path.join(root, 'packages/core/src');
+const coreLocalesDir = path.join(coreSrcDir, 'locales');
 
 const nodeTranslationSchema = z.object({
     name: z.string().min(1, "Name must be a non-empty string when present").optional(),
@@ -60,6 +64,7 @@ function collectProblems({
     interpolation,
     families,
     references,
+    treeLabels,
 }) {
     const problems = [];
     const report = (file, message) => problems.push({ file, message });
@@ -114,6 +119,14 @@ function collectProblems({
                 const { value, value2 } = meta.perLevel;
                 const missing = unresolved(record.perLevelLabel ?? meta.perLevel.label, { value, value2 });
                 if (missing.length) report(file, `${key}.perLevelLabel uses ${list(missing)}, which has no value`);
+            }
+        }
+    }
+
+    if (treeLabels) {
+        for (const [lang, { tree }] of Object.entries(locales)) {
+            for (const nameKey of treeLabels) {
+                if (!tree?.treeLabels?.[nameKey]) report(`${lang}/tree.json`, `treeLabels.${nameKey} is missing (one per TREE_LABELS entry)`);
             }
         }
     }
@@ -199,8 +212,8 @@ function scanSource(dir = srcDir) {
 
 // The app's own tree, text rules and interpolation, so the check matches what renders.
 function loadApp() {
-    const jiti = require('jiti')(__filename, { alias: { '@': srcDir }, interopDefault: false });
-    const load = (file) => jiti(path.join(srcDir, file));
+    const jiti = require('jiti')(__filename, { interopDefault: false });
+    const load = (file) => jiti(path.join(coreSrcDir, file));
     const { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } = load('utils/skillInterpolation.ts');
     return {
         tree: load('constants/Nodes.ts').default,
@@ -211,8 +224,8 @@ function loadApp() {
         // A t(`prefix${...}`) call with a prefix missing here fails validation.
         families: {
             'biomes.': load('constants/Biomes.ts').BIOMES.map((biome) => biome.id),
-            'treeLabels.': load('constants/TreeLabels.ts').TREE_LABELS.map((label) => label.nameKey),
         },
+        treeLabels: load('constants/TreeLabels.ts').TREE_LABELS.map((label) => label.nameKey),
     };
 }
 
@@ -220,15 +233,20 @@ function main() {
     console.log('--- Validating Translations ---');
     const { i18n } = require('../next-i18next.config.js');
     const problems = [];
-    const readJson = (lang, ns) => {
-        const file = path.join(localesDir, lang, `${ns}.json`);
+    const readJson = (dir, lang, ns) => {
+        const file = path.join(dir, lang, `${ns}.json`);
         try {
             return JSON.parse(fs.readFileSync(file, 'utf8'));
         } catch (error) {
             problems.push({ file: `${lang}/${ns}.json`, message: error.message });
         }
     };
-    const locales = Object.fromEntries(i18n.locales.map((lang) => [lang, { nodes: readJson(lang, 'nodes'), common: readJson(lang, 'common') }]));
+    // Every site locale needs the core package's text too.
+    const locales = Object.fromEntries(i18n.locales.map((lang) => [lang, {
+        nodes: readJson(coreLocalesDir, lang, 'nodes'),
+        tree: readJson(coreLocalesDir, lang, 'tree'),
+        common: readJson(localesDir, lang, 'common'),
+    }]));
     if (!problems.length) {
         problems.push(...collectProblems({
             locales,

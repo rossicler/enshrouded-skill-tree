@@ -1,7 +1,7 @@
 import { expect, test } from "./fixtures";
 
-import skillData from "../src/constants/gameSkillData.json";
-import { resolveBaseAnchor, resolveNodePosition } from "../src/utils/nodePosition";
+import skillData from "../packages/core/src/constants/gameSkillData.json";
+import { resolveBaseAnchor, resolveNodePosition } from "../packages/core/src/utils/nodePosition";
 import { openPlanner } from "./helpers";
 
 // The renderer must draw every node where the tree data puts it, and every link

@@ -8,7 +8,7 @@ import {
   MAX_PLAYER_LEVEL,
   computeLevelingPoints,
   computeMaxSkillPoints,
-} from "@/constants/Biomes";
+} from "@enshrouded/core";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setUnlockedBiomes, setPlayerLevel } from "@/redux/skills/skills.slice";
 import { classNames } from "@/utils/utils";

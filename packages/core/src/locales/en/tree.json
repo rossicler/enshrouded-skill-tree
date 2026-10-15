@@ -1,0 +1,16 @@
+{
+  "treeLabels": {
+    "trickster": "Trickster",
+    "wizard": "Wizard",
+    "healer": "Healer",
+    "battlemage": "Battlemage",
+    "tank": "Tank",
+    "warrior": "Warrior",
+    "barbarian": "Barbarian",
+    "athlete": "Athlete",
+    "survivor": "Survivor",
+    "beastmaster": "Beastmaster",
+    "ranger": "Ranger",
+    "assassin": "Assassin"
+  }
+}

@@ -3,14 +3,12 @@ import { useTranslation } from "next-i18next/pages";
 import { useEffect, useId, useState } from "react";
 import { Link2 } from "lucide-react";
 
-import SkillNodes, { Node } from "../constants/Nodes";
+import { SkillNodes, Node, getSkillText } from "@enshrouded/core";
 import Image from "next/image";
 import DOMPurify from "dompurify";
-import { classNames, humanizeKey } from "@/utils/utils";
+import { classNames } from "@/utils/utils";
 
 import { gameToast } from "@/utils/gameToast";
-import { skillTextPrefix, usesGameText } from "@/utils/skillText";
-import { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } from "@/utils/skillInterpolation";
 import GameButton from "./shared/GameButton";
 import type { SkillAction } from "./SkillTree";
 
@@ -39,44 +37,12 @@ const SkillTooltip = ({
   onSelect,
 }: PropsType) => {
   const metadata = SkillNodes.types[node.type];
-  const { t, i18n } = useTranslation(["nodes", "common"]);
+  const { t, i18n } = useTranslation("common");
   const language = i18n.resolvedLanguage ?? i18n.language;
-  const gameText = usesGameText(metadata, language);
-  const textPrefix = skillTextPrefix(node.type, metadata, language);
-  const name = t(`${textPrefix}.name`, {
-    ns: "nodes",
-    defaultValue: humanizeKey(node.type),
-  });
-
   // Preview level-1 values when not yet selected; otherwise show current-level values.
-  // Interpolated values are eventually sanitized by DOMPurify below, which is the
-  // last step in the pipeline (i18next has escapeValue: false in next-i18next.config.js).
-  const displayLevel = level > 0 ? level : 1;
-  const interpolation = gameText
-    ? getGameInterpolationValues(metadata, displayLevel, language)
-    : getSkillInterpolationValues(metadata, displayLevel);
-
-  const perLevelLabel = gameText
-    ? t(`${textPrefix}.perLevelLabel`, {
-        ns: "nodes",
-        defaultValue: "",
-        ...getGamePerLevelValues(metadata, language),
-      })
-    : metadata?.perLevel
-    ? t(`${node.type}.perLevelLabel`, {
-        ns: "nodes",
-        defaultValue: metadata.perLevel.label,
-        value: metadata.perLevel.value,
-        value2: metadata.perLevel.value2,
-      })
-    : null;
-
-  const rawDescription = t(`${textPrefix}.description`, {
-    ns: "nodes",
-    returnObjects: true,
-    ...interpolation,
-  });
-  const description = Array.isArray(rawDescription) ? rawDescription : [rawDescription];
+  // Skill text is unescaped HTML, so DOMPurify sanitizes it below as the last
+  // step in the pipeline.
+  const { name, description, perLevelLabel } = getSkillText(node.type, language, level > 0 ? level : 1);
   const id = useId();
   const filterId = `rugged-tooltip-${id}`;
   const [flash, setFlash] = useState(false);
@@ -98,7 +64,7 @@ const SkillTooltip = ({
   const handleShare = () => {
     const url = `${window.location.origin}${window.location.pathname}?focus=${node.id}`;
     navigator.clipboard.writeText(url).then(() => {
-      gameToast.success(t("toasts.shareUrlCopied", { ns: "common" }));
+      gameToast.success(t("toasts.shareUrlCopied"));
     });
   };
 
@@ -162,7 +128,6 @@ const SkillTooltip = ({
           {maxLevel > 1 && (
             <div className="text-xs text-[#e8d5a3]/80 font-semibold tracking-wide mt-0.5 mb-1">
               {t("skillTooltip.levelHeader", {
-                ns: "common",
                 current: level,
                 max: maxLevel,
               })}
@@ -196,7 +161,7 @@ const SkillTooltip = ({
             <div className="flex items-center gap-1.5">
               <Image
                 src="/assets/skill_point.png"
-                alt={t("accessibility.skillPointIcon", { ns: "common" })}
+                alt={t("accessibility.skillPointIcon")}
                 width={20}
                 height={20}
               />
@@ -207,13 +172,13 @@ const SkillTooltip = ({
 
             {/* Status */}
             <div className="flex items-center">
-              <GameButton variant="text" data-action="share" onClick={handleShare} title={t("skillTooltip.share", { ns: "common" })}>
+              <GameButton variant="text" data-action="share" onClick={handleShare} title={t("skillTooltip.share")}>
                 <Link2 size={14} />
               </GameButton>
               <span className="w-px h-4 bg-white/20 mx-1 shrink-0" />
               {level === 0 && selectable && (
                 <GameButton variant="text" data-action="unlock" onClick={() => onSelect?.("primary")}>
-                  {t("skillTooltip.unlock", { ns: "common" })}
+                  {t("skillTooltip.unlock")}
                 </GameButton>
               )}
               {level === 0 && !selectable && (
@@ -221,32 +186,32 @@ const SkillTooltip = ({
                   "text-red-400 text-sm font-semibold uppercase tracking-wide transition-all duration-300",
                   flash && "text-red-300 drop-shadow-[0_0_8px_rgba(248,113,113,0.8)] scale-110"
                 )}>
-                  {t("skillTooltip.outOfRange", { ns: "common" })}
+                  {t("skillTooltip.outOfRange")}
                 </span>
               )}
               {level > 0 && level < maxLevel && (
                 <>
                   <GameButton variant="text" data-action="refund-one" onClick={() => onSelect?.("secondary")}>
-                    {t("skillTooltip.refundOne", { ns: "common" })}
+                    {t("skillTooltip.refundOne")}
                   </GameButton>
                   <GameButton variant="text" data-action="level-up" onClick={() => onSelect?.("primary")}>
-                    {t("skillTooltip.levelUp", { ns: "common" })}
+                    {t("skillTooltip.levelUp")}
                   </GameButton>
                 </>
               )}
               {level > 0 && level === maxLevel && maxLevel > 1 && (
                 <>
                   <GameButton variant="text" data-action="refund-one" onClick={() => onSelect?.("secondary")}>
-                    {t("skillTooltip.refundOne", { ns: "common" })}
+                    {t("skillTooltip.refundOne")}
                   </GameButton>
                   <GameButton variant="text" data-action="refund-all" onClick={() => onSelect?.("primary")}>
-                    {t("skillTooltip.refundAll", { ns: "common" })}
+                    {t("skillTooltip.refundAll")}
                   </GameButton>
                 </>
               )}
               {level > 0 && maxLevel === 1 && (
                 <GameButton variant="text" data-action="refund" onClick={() => onSelect?.("primary")}>
-                  {t("skillTooltip.refund", { ns: "common" })}
+                  {t("skillTooltip.refund")}
                 </GameButton>
               )}
             </div>

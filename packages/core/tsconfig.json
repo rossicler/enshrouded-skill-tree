@@ -1,0 +1,19 @@
+{
+  // Type checks core without the DOM library, so browser globals don't compile.
+  // Node's types stay in for btoa/atob, which every runtime core targets has.
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "target": "ES2017"
+  },
+  "include": ["src/**/*.ts", "src/**/*.json"],
+  "exclude": ["src/**/__tests__/**"]
+}

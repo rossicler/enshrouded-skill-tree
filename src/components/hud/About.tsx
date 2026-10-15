@@ -6,7 +6,7 @@ import GameButton from "../shared/GameButton";
 import GameButtonGroup from "../shared/GameButtonGroup";
 import AboutDialog from "../dialogs/AboutDialog";
 import SettingsDialog from "../dialogs/SettingsDialog";
-import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@/constants/skillTreeVersion";
+import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@enshrouded/core";
 import { useTranslation } from "next-i18next/pages";
 
 const DISCORD_LINK = "https://discord.gg/saazEkNchu";

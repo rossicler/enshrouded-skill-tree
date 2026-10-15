@@ -90,6 +90,10 @@ yarn typecheck
 yarn e2e          # browser tests; run `npx playwright install chromium` once
 ```
 
+### Project layout
+
+The site lives at the repository root. The skill tree's data, rules, build codes, points, stats, skill text and search live in the `@enshrouded/core` workspace package (`packages/core`): plain TypeScript with no React or browser APIs, so the tree can be reused and embedded in other apps. Run `yarn install` at the root only.
+
 For updating skill data from a new game build, see [docs/game-metadata-migration.md](docs/game-metadata-migration.md).
 
 ## Contributing

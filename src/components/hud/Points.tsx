@@ -1,4 +1,3 @@
-import SkillNodes from "@/constants/Nodes";
 import { useAppSelector } from "@/redux/hooks";
 import { classNames } from "@/utils/utils";
 import Image from "next/image";
@@ -9,7 +8,7 @@ import FlameLevel from "./FlameLevel";
 import GamePanel from "../shared/GamePanel";
 import Tooltip from "../shared/Tooltip";
 import BiomeBudget from "./BiomeBudget";
-import { computeMaxSkillPoints } from "@/constants/Biomes";
+import { getMaxSkillPoints, getPointsUsed } from "@enshrouded/core";
 
 const PointsHUD = () => {
   const [pointsUsed, setPointsUsed] = useState(0);
@@ -17,15 +16,10 @@ const PointsHUD = () => {
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
   const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
   const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? 45);
-  const maxPoints = computeMaxSkillPoints(playerLevel, unlockedBiomes);
+  const maxPoints = getMaxSkillPoints({ playerLevel, unlockedBiomes });
 
   useEffect(() => {
-    const totalCost = Object.entries(selectedSkills).reduce(
-      (acc, [id, level]) =>
-        acc + (SkillNodes.types[SkillNodes.nodes[id]?.type]?.cost ?? 0) * level,
-      0
-    );
-    setPointsUsed(totalCost);
+    setPointsUsed(getPointsUsed(selectedSkills));
   }, [selectedSkills]);
 
   return (

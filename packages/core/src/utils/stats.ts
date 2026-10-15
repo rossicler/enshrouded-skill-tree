@@ -1,5 +1,5 @@
-import SkillNodes from "@/constants/Nodes";
-import { BasicStats, NodeStatsType } from "@/constants/Stats";
+import SkillNodes from "../constants/Nodes";
+import { BasicStats, NodeStatsType } from "../constants/Stats";
 
 export const getStatsFromSkills = (
   skills: { [id: string]: number } | string[]

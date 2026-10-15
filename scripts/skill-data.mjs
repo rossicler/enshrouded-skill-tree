@@ -6,10 +6,16 @@ import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+// The tree data, its presentation and skill text live in the core package.
+export const CORE_PATHS = {
+  presentation: "packages/core/src/constants/LegacyNodes.ts",
+  runtime: "packages/core/src/constants/gameSkillData.json",
+  locales: "packages/core/src/locales",
+};
 
 // Evaluate only this repository's authored TypeScript presentation, never game data.
 export function loadAuthoredPresentation() {
-  const filename = path.join(root, "src/constants/LegacyNodes.ts");
+  const filename = path.join(root, CORE_PATHS.presentation);
   const source = fs.readFileSync(filename, "utf8");
   const code = ts.transpileModule(source, {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
@@ -424,14 +430,14 @@ export function planImport({ data, mapping: rawMapping, previous, presentation, 
   // Presentation is app-owned: new types need authored colors/icons first.
   const usedTypes = [...new Set(Object.values(nextNodes).map((entry) => entry.type))].sort();
   const missingPresentation = usedTypes.filter((type) => !presentation.types[type]);
-  for (const type of missingPresentation) blockers.push(`Type ${type} needs authored presentation in src/constants/LegacyNodes.ts (color, icon/assets)`);
+  for (const type of missingPresentation) blockers.push(`Type ${type} needs authored presentation in ${CORE_PATHS.presentation} (color, icon/assets)`);
   // Locales with a game locale get the game's text (unresolved text blocks
   // apply in runImport); others need their own translation. This is the
   // minimum for apply; scripts/validate-translations.js checks the rest
   // (names, placeholders, per-level lines) at build time.
   for (const type of usedTypes) {
     for (const [lang, nodes] of Object.entries(locales)) {
-      if (!GAME_LOCALES[lang] && !nodes[type]?.description?.length) blockers.push(`Type ${type} needs a translation (description) in public/locales/${lang}/nodes.json`);
+      if (!GAME_LOCALES[lang] && !nodes[type]?.description?.length) blockers.push(`Type ${type} needs a translation (description) in ${CORE_PATHS.locales}/${lang}/nodes.json`);
     }
   }
   for (const gameId of added) {
@@ -653,14 +659,15 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const option = (name) => options.find((arg) => arg.startsWith(`--${name}=`))?.slice(name.length + 3);
   const output = path.join(root, ".local/skill-data");
   const paths = {
-    locale: (lang) => path.join(root, "public/locales", lang, "nodes.json"),
+    locale: (lang) => path.join(root, CORE_PATHS.locales, lang, "nodes.json"),
     mapping: path.join(root, "scripts/skill-data-mapping.json"),
-    runtime: path.join(root, "src/constants/gameSkillData.json"),
+    runtime: path.join(root, CORE_PATHS.runtime),
     changes: option("changes") ?? path.join(output, "changes.json"),
   };
   const data = readJson(input);
-  // Same locale list as the app and scripts/validate-translations.js.
-  const locales = Object.fromEntries(createRequire(import.meta.url)("../next-i18next.config.js").i18n.locales
+  // Every locale the core package has skill text for (scripts/validate-translations.js
+  // checks that it covers every locale of the site).
+  const locales = Object.fromEntries(fs.readdirSync(path.join(root, CORE_PATHS.locales)).sort()
     .map((lang) => [lang, readJson(paths.locale(lang))]));
   const locale = locales[DEFAULT_LOCALE];
   const presentation = loadAuthoredPresentation();

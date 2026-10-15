@@ -64,7 +64,7 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const locale = context.locale ?? "en";
-  const translations = await serverSideTranslations(locale, ["common", "nodes"]);
+  const translations = await serverSideTranslations(locale, ["common"]);
   const { shortCode, code: rawCode = "", focus } = context.query as Query;
   const focusNodeId = Array.isArray(focus) ? focus[0] : focus;
 

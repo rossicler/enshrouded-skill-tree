@@ -3,11 +3,11 @@ import fs from "node:fs";
 import i18next from "i18next";
 import { formatValue, renderText, buildTextTemplate, resolveArgument, loadAuthoredPresentation, runImport, treeContentHash, candidateContentHash,
   alignText, localeFormat, GAME_LOCALES } from "./skill-data.mjs";
-import { getGameInterpolationValues, getGamePerLevelValues } from "../src/utils/skillInterpolation";
-import { isDifferentTreeVersion, SKILL_TREE_CONTENT_HASH, SKILL_TREE_GAME_BUILD, SKILL_TREE_UPDATE } from "../src/constants/skillTreeVersion";
-import runtime from "../src/constants/gameSkillData.json";
-import locale from "../public/locales/en/nodes.json";
-import frLocale from "../public/locales/fr/nodes.json";
+import { getGameInterpolationValues, getGamePerLevelValues } from "../packages/core/src/utils/skillInterpolation";
+import { isDifferentTreeVersion, SKILL_TREE_CONTENT_HASH, SKILL_TREE_GAME_BUILD, SKILL_TREE_UPDATE } from "../packages/core/src/constants/skillTreeVersion";
+import runtime from "../packages/core/src/constants/gameSkillData.json";
+import locale from "../packages/core/src/locales/en/nodes.json";
+import frLocale from "../packages/core/src/locales/fr/nodes.json";
 import mapping from "./skill-data-mapping.json";
 import inputs from "./skill-data-inputs.json";
 

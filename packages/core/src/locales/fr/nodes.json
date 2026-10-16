@@ -9,7 +9,8 @@
       "name": "Crochet de tueur géant",
       "description": [
         "Utilisez votre <b>crochet de grappin</b> pour vous hisser vers les ennemis les plus imposants pendant le combat.",
-        "<b>Coût :</b> 50 points d'endurance"
+        "Le coût de cette compétence varie en fonction du niveau de l'ennemi. Plus le niveau de l'ennemi est élevé, plus son coût est important.",
+        "<b>Coût de base :</b> {{gameValue1}} points d'endurance"
       ]
     }
   },
@@ -22,8 +23,9 @@
     "game": {
       "name": "Grappin de mise à la terre",
       "description": [
-        "Utilisez votre <b>crochet de grappin</b> pour attirer les ennemis <b>volants</b> vers vous pendant le combat.",
-        "<b>Coût :</b> 50 points d'endurance"
+        "Utilisez votre <b>crochet de grappin</b> pour attirer vers vous les ennemis <b>volants</b> pendant le combat.",
+        "Le coût de cette compétence varie en fonction du niveau de l'ennemi. Plus le niveau de l'ennemi est élevé, plus son coût est important.",
+        "<b>Coût de base :</b> {{gameValue1}} points d'endurance"
       ]
     }
   },
@@ -139,7 +141,7 @@
       "name": "Parade de puissance",
       "description": [
         "Votre capacité de parade augmente de <b>{{gameValue1}}</b>.",
-        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.",
+        "<b>Parer</b><br/>Vous pouvez bloquer lorsque vous êtes équipé de n’importe quelle arme de mêlée, sort ou bouclier. Un blocage placé au bon moment permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.<br/>Attendez de voir un <b>flash</b> sur l’ennemi ou le projectile pour parer.",
         "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Capacité de parade par niveau"
@@ -298,8 +300,9 @@
     "game": {
       "name": "Attaque furtive",
       "description": [
-        "Effectuez une <b>Attaque furtive</b> en vous approchant furtivement d'un ennemi qui ne se doute de rien et en appuyant sur <b>{{gameValue1}}</b>.",
-        "<b>Attaque furtive</b> inflige <b>+900 %</b> de dégâts augmentés."
+        "Effectuez une <b>Attaque furtive</b> en vous approchant furtivement d'un ennemi inattentif et en appuyant sur <b>{{gameValue1}}</b>.",
+        "<b>Attaque furtive</b> inflige <b>+900 %</b> de dégâts augmentés.",
+        "Les baguettes, les bâtons et les arcs ne peuvent pas être utilisés pour les Attaque furtives."
       ]
     }
   },
@@ -313,7 +316,8 @@
       "name": "Attaque impitoyable",
       "description": [
         "Effectuez une <b>Attaque impitoyable</b> en appuyant sur <b>{{gameValue1}}</b> pour infliger <b>{{gameValue2}}</b> de dégâts sur un ennemi <b>surpassé</b>.",
-        "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
+        "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables.",
+        "Les baguettes, bâtons et arcs ne font pas des Attaque impitoyables."
       ]
     }
   },
@@ -329,7 +333,7 @@
       "description": [
         "Sauter avec {{gameValue1}} tout en planant vous fait monter. Cette compétence peut être utilisée une fois par vol.",
         "<b>Charger</b><br/>À mesure que le courant ascendant se recharge avant son activation, la portance générée augmente. Une recharge complète vous confère un coup de pouce supplémentaire. La recharge s'accélère lorsque vous vous trouvez à l'intérieur de votre base.",
-        "<b>Coût :</b> 100 mana"
+        "<b>Coût :</b> {{gameValue2}} mana"
       ]
     }
   },
@@ -345,7 +349,7 @@
       "description": [
         "Un coup de poing magique qui repousse et étourdit les ennemis touchés.",
         "Remplace vos attaques à mains nues tant que vous disposez du mana nécessaire",
-        "<b>Coût :</b> 30 mana."
+        "<b>Coût :</b> {{gameValue1}} mana."
       ]
     }
   },
@@ -428,7 +432,7 @@
       "description": [
         "Remplace la capacité Esquive en roulade par une téléportation à courte portée.",
         "Flash remplace aussi le déplacement latéral Esquive en roulade de la compétence Manœuvre stratégique.",
-        "<b>Coût :</b> 20 endurance"
+        "<b>Coût :</b> {{gameValue1}} points d’endurance"
       ]
     }
   },
@@ -442,8 +446,8 @@
     "game": {
       "name": "Attaque d'évasion",
       "description": [
-        "Lorsque vous êtes équipé(e) d’une arme de mêlée, vous pouvez effectuer une attaque d’évasion qui fonce sur l'ennemi et lui inflige plus de dégâts d'arme avec <b>{{gameValue1}}</b>.",
-        "<b>Coût :</b> 20 points d’endurance",
+        "Lorsque vous êtes équipé(e) d’une arme de mêlée, en appuyant sur <b>{{gameValue1}}</b>, vous pouvez effectuer une Attaque d’évasion tout en vous échappant. <br/>Elle fonce sur l'ennemi et lui inflige <b>50 %</b> de dégâts d'arme supplémentaires.",
+        "<b>Coût :</b> {{gameValue2}} points d’endurance",
         "<b>Briseur de bloc</b> <br/>Cette attaque spéciale multiplie par deux la <i>barre d'étourdissement</i> de l'ennemi lorsqu'il est touché."
       ]
     }
@@ -486,7 +490,7 @@
       "description": [
         "Déclenche une onde de choc lorsque vous parez une attaque ou que vous <b>dominez</b> un ennemi.",
         "L'onde de choc repousse les ennemis proches. Elle remplit également leur <i>barre d'étourdissement</i>, en fonction de votre attribut de force.",
-        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.",
+        "<b>Parer</b><br/>Vous pouvez bloquer lorsque vous êtes équipé de n’importe quelle arme de mêlée, sort ou bouclier. Un blocage placé au bon moment permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.<br/>Attendez de voir un <b>flash</b> sur l’ennemi ou le projectile pour parer.",
         "<b>Surpuissance</b><br/>Attaquer des ennemis qui bloquent ou parer leurs attaques remplit leur <i>barre d’étourdissement</i> jusqu’à ce qu’ils deviennent <b>surpassés</b>.<br/>Les ennemis <b>surpassés</b> sont ouverts aux attaques impitoyables."
       ]
     }
@@ -513,7 +517,7 @@
       "name": "Le cambriolage",
       "description": [
         "Parer les attaques ennemies leur inflige {{gameValue1}} de dégâts <b> contondants</b>. Les dégâts causés par un coup violent augmentent par votre attribut de force.",
-        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi."
+        "<b>Parer</b><br/>Vous pouvez bloquer lorsque vous êtes équipé de n’importe quelle arme de mêlée, sort ou bouclier. Un blocage placé au bon moment permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.<br/>Attendez de voir un <b>flash</b> sur l’ennemi ou le projectile pour parer."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}} dégâts contondants</b> par niveau"
     }
@@ -528,7 +532,7 @@
       "name": "Tourbillon Crescendo",
       "description": [
         "Quand vous êtes équipé(e) d’une arme à deux mains, déclenche une attaque tourbillonnante à la fin d'une chaîne d’attaques.",
-        "<b>Coût :</b> 75 points d'endurance"
+        "<b>Coût :</b> {{gameValue1}} points d'endurance"
       ]
     }
   },
@@ -545,7 +549,7 @@
       "description": [
         "Lorsque vous êtes équipé(e) d'une arme de mêlée, vous pouvez effectuer une attaque spéciale en maintenant <b>{{gameValue1}}</b> appuyé pendant un saut.",
         "Fracas inflige 50 % de dégâts d’arme supplémentaires dans un petit rayon et coûte de l’endurance en fonction de l’arme utilisée.",
-        "<b>Coût :</b> 35 - 60 points d'endurance",
+        "<b>Coût :</b> {{gameValue2}} - {{gameValue3}} points d'endurance",
         "<b>Briseur de bloc</b> <br/>Cette attaque spéciale multiplie par deux la <i>barre d'étourdissement</i> de l'ennemi lorsqu'il est touché."
       ]
     }
@@ -572,7 +576,7 @@
       "name": "Double saut",
       "description": [
         "Permet de sauter une deuxième fois quand vous êtes en l'air.",
-        "<b>Coût :</b> 10 points d'endurance"
+        "<b>Coût :</b> {{gameValue1}} points d’endurance"
       ]
     }
   },
@@ -668,7 +672,7 @@
       "name": "Piqûre d'abeille",
       "description": [
         "Tirer ou viser avec votre arc pendant que vous êtes en l'air ralentit brièvement votre chute. Chaque tir vous soulève légèrement, vous accordant plus de temps dans les airs.",
-        "<b>Coût :</b> 10 points d'endurance par seconde"
+        "<b>Coût :</b> {{gameValue1}} points d'endurance par seconde"
       ]
     }
   },
@@ -735,9 +739,9 @@
     "game": {
       "name": "Charge rapide",
       "description": [
-        "Le temps d'invocation des sorts diminue de <b>{{gameValue1}}</b>."
+        "Le temps de charge des sorts diminue de <b>{{gameValue1}}</b>."
       ],
-      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> temps d’invocation par niveau"
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Temps de charge par niveau"
     }
   },
   "THIS_IS_THE_WAY": {
@@ -850,7 +854,7 @@
     "game": {
       "name": "Magicien",
       "description": [
-        "Les chances de coup critique avec des armes magiques augmentent de <b>{{gameValue1}}</b>."
+        "La chance de coup critique avec des baguettes et des bâtons augmente de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance de coup critique par niveau"
     }
@@ -882,7 +886,7 @@
     "game": {
       "name": "Coups enchaînés",
       "description": [
-        "En cas de coup critique avec des armes magiques, l'attaque touche automatiquement un second ennemi dans un rayon de <b>15</b> mètres infligeant <b>5 dégâts de choc</b> par intelligence."
+        "Les coups critiques portés avec des armes magiques touchent une cible aléatoire supplémentaire située dans un rayon de <b>15</b> mètres, lui infligeant <b>5 points de dégâts de choc</b> par point d'Intelligence. <br/>La cible initiale peut être touchée deux fois au lieu de passer à une autre cible."
       ]
     }
   },
@@ -920,7 +924,7 @@
     "game": {
       "name": "Guérisseur",
       "description": [
-        "Les points de vie rendus lors des compétences et des sorts de guérison augmentent de <b>{{gameValue1}}</b>."
+        "Les points de vie conférés par les sorts de soins et l’aura d'eau sont augmentés de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> guérison par niveau"
     }
@@ -945,7 +949,7 @@
       "<b>Temps dans la Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
     ],
     "game": {
-      "name": "Filtre de Brume",
+      "name": "Atténuation de Brume",
       "description": [
         "Infliger des dégâts avec une arme magique a <b>{{gameValue1}}</b> de chance de déclencher une petite explosion de feu qui restaure<b>{{gameValue2}}</b> secondes du <b>Temps dans la Brume </b> sur vous et vos alliés dans un rayon de <b>{{gameValue3}}</b> mètres.",
         "<b>Temps dans le Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
@@ -1027,7 +1031,7 @@
       "name": "Déviation des arcanes",
       "description": [
         "Réussir à parer l'attaque d'un ennemi restaure <b>{{gameValue1}}</b> points de mana.",
-        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi."
+        "<b>Parer</b><br/>Vous pouvez bloquer lorsque vous êtes équipé de n’importe quelle arme de mêlée, sort ou bouclier. Un blocage placé au bon moment permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.<br/>Attendez de voir un <b>flash</b> sur l’ennemi ou le projectile pour parer."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> mana par niveau"
     }
@@ -1118,7 +1122,7 @@
     "game": {
       "name": "Explosion de vie",
       "description": [
-        "Tuer un ennemi avec une arme magique restaure un gain de vie correspondant à <b>3</b> fois votre Intelligence à tous les joueurs dans un rayon de <b>15</b> mètres de la cible."
+        "Tuer un ennemi avec une arme magique restaure de la santé équivalent à <b>{{gameValue1}}</b> fois votre Intelligence à tous les joueurs dans un rayon de <b>15</b> mètres de la cible."
       ]
     }
   },
@@ -1159,7 +1163,7 @@
     "game": {
       "name": "Craquage",
       "description": [
-        "Déclencher une <b>Attaque impitoyable</b> restaure <b>10 %</b> de mana."
+        "Déclencher une <b>Attaque impitoyable</b> restaure <b>{{gameValue1}}</b> de mana."
       ]
     }
   },
@@ -1184,7 +1188,7 @@
     "game": {
       "name": "Plaques brillantes",
       "description": [
-        "L'armure équipée octroie <b>{{gameValue1}}</b> d’armure magique augmentée."
+        "Les points d'armure magique conférés par les objets équipés sont augmentés de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> armure magique augmentée par niveau"
     }
@@ -1197,7 +1201,7 @@
     "game": {
       "name": "Plaques renforcées",
       "description": [
-        "L'armure équipée octroie <b>{{gameValue1}}</b> d’armure physique augmentée."
+        "Les points d'armure physique conférés par les objets équipés sont augmentés de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> armure physique augmentée par niveau"
     }
@@ -1255,7 +1259,7 @@
     "game": {
       "name": "Purification",
       "description": [
-        "Tuer un ennemi infesté par le Brume à l'aide d'une arme de mêlée restaure <b>{{gameValue1}}</b> secondes du <b>Temps dans la Brume</b>.",
+        "Tuer un ennemi infesté par le Brume à l'aide d'une hache à une ou deux mains, d’une massue, d’une épée ou d’une grande épée restaure <b>{{gameValue1}}</b> secondes du <b>Temps dans la Brume</b>.",
         "<b>Temps dans le Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> secondes par niveau"
@@ -1269,7 +1273,7 @@
     "game": {
       "name": "La voie du guerrier",
       "description": [
-        "Les dégâts d’arme de mêlée à une main augmentent de <b>{{gameValue1}}</b>."
+        "Tous les dégâts infligés par des haches à une main, des massues et des épées augmentent de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
     }
@@ -1339,7 +1343,7 @@
     "game": {
       "name": "Vétéran",
       "description": [
-        "Les chances de coup critique des armes de mêlée augmentent de <b>{{gameValue1}}</b>."
+        "La chance de coup critique avec des haches à une ou deux mains, des massues, des marteaux, des épées, des grandes épées et des dagues augmente de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance de coup critique par niveau"
     }
@@ -1413,9 +1417,9 @@
     "game": {
       "name": "Attaque en coup vers le haut",
       "description": [
-        "Lorsque vous êtes équipé d'une arme de mêlée, lancez une puissante attaque vers le haut pendant la phase ascendante de votre saut.",
+        "Lorsque vous êtes équipé(e) d'une arme de mêlée, lancez une puissante attaque vers le haut pendant la phase ascendante de votre saut.",
         "Utilisez cette compétence pour réduire rapidement la distance qui vous sépare des ennemis <b>volants</b>.",
-        "<b>Coût :</b> 25 points d'endurance"
+        "<b>Coût :</b> {{gameValue1}} points d'endurance"
       ]
     }
   },
@@ -1482,7 +1486,7 @@
       "name": "Déflexion vigoureuse",
       "description": [
         "Réussir à parer l'attaque d'un ennemi restaure <b>{{gameValue1}}</b> points d’endurance.",
-        "<b>Parer</b><br/>Un blocage placé au bon moment avec n’importe quelle arme de mêlée ou bouclier permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi."
+        "<b>Parer</b><br/>Vous pouvez bloquer lorsque vous êtes équipé de n’importe quelle arme de mêlée, sort ou bouclier. Un blocage placé au bon moment permet de <b>parer</b> l’attaque et de remplir la <i>barre d’étourdissement</i> de l’ennemi.<br/>Attendez de voir un <b>flash</b> sur l’ennemi ou le projectile pour parer."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> endurance par niveau"
     }
@@ -1547,7 +1551,7 @@
       "name": "Esquive plongée",
       "description": [
         "Vous permet d'effectuer une esquive rapide lorsque vous nagez ou plongez.",
-        "<b>Coût</b> : 40 points d’endurance"
+        "<b>Coût</b> : {{gameValue1}} points d’endurance"
       ]
     }
   },
@@ -1559,7 +1563,7 @@
     "game": {
       "name": "Finesse",
       "description": [
-        "Infliger des dégâts avec des armes de mêlée à une main a <b>{{gameValue1}}</b> de chance de restaurer <b>1</b> durabilité à cette arme."
+        "Infliger des dégâts avec des épées à une main, des haches à une main, des massues à une main et des dagues a <b>{{gameValue1}}</b> de chance de restaurer <b>1</b> durabilité à cette arme."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
     }
@@ -1872,7 +1876,8 @@
       "name": "Coup d'adresse",
       "description": [
         "Les dégâts infligés par le <b>tir de précision</b> sont augmentés de <b>{{gameValue1}}</b>.",
-        "<b>Tir de précision</b><br/>Frapper les points faibles de l'ennemi, tels que la tête ou le cœur exposé, est considéré comme un Tir de précision."
+        "<b>Tir de précision</b><br/>Frapper les points faibles de l'ennemi, comme leur têtes, avec des flèches est considéré comme un Tir de précision.",
+        "Les tirs de précision infligent 100 % de dégâts de base supplémentaires aux ennemis sans casque et 50 % aux ennemis qui portent un casque. <br/>Il peut être encore augmenté grâce à l'attribut Dégâts de tir de précision."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
     }
@@ -1944,7 +1949,7 @@
     "game": {
       "name": "Sniper",
       "description": [
-        "Les chances de coup critique des armes à distance augmentent de <b>{{gameValue1}}</b>."
+        "La chance de coup critique avec des arcs augmente de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance de coup critique par niveau"
     }
@@ -1957,7 +1962,7 @@
     "game": {
       "name": "Surcroît de vitalité",
       "description": [
-        "Infligez un coup critique avec une arme à distance restaure <b>{{gameValue1}}</b> points d'endurance."
+        "Les coups critiques infligés par les arcs, les dagues et les armes de jet restaurent <b>{{gameValue1}}</b> points d’endurance."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> endurance par niveau"
     }
@@ -1985,7 +1990,8 @@
       "name": "Bonus de prime",
       "description": [
         "Après avoir vaincu un ennemi <b>Déchu</b> avec un <b>tir de précision</b>, votre groupe gagne <b>{{gameValue1}}</b> points d'expérience supplémentaires.",
-        "<b>Tir de précision</b><br/>Frapper les points faibles de l'ennemi, tels que la tête ou le cœur exposé, est considéré comme un Tir de précision."
+        "<b>Tir de précision</b><br/>Frapper les points faibles de l'ennemi, comme leur têtes, avec des flèches est considéré comme un Tir de précision.",
+        "Les tirs de précision infligent 100 % de dégâts de base supplémentaires aux ennemis sans casque et 50 % aux ennemis qui portent un casque. <br/>Il peut être encore augmenté grâce à l'attribut Dégâts de tir de précision."
       ]
     }
   },
@@ -1995,9 +2001,9 @@
       "Pour chaque cible touchée par une <b>Flèche explosive</b>, ses dégâts sont augmentés de <b>1%</b>."
     ],
     "game": {
-      "name": "Ricochets",
+      "name": "Explosion de shrapnel",
       "description": [
-        "Les dégâts faits aux cibles touchées par une <b>Flèche explosive</b> augmentent de <b>1 %</b>."
+        "Chaque cible touchée avec une <b>Flèche explosive</b> augmente ses dégâts de <b>10 %</b>."
       ]
     }
   },
@@ -2019,9 +2025,9 @@
       "Chaque ennemi touché par une <b>Flèche explosive</b> a <b>20%</b> de chance de déclencher une explosion secondaire infligeant <b>50%</b> de dégâts dans un petit rayon."
     ],
     "game": {
-      "name": "Réaction en chaîne",
+      "name": "Explosifs en chaîne",
       "description": [
-        "Chaque ennemi touché par une <b>Flèche explosive</b> a <b>20 %</b> de chances de déclencher une explosion secondaire infligeant <b>50 %</b> de dégâts dans un petit rayon."
+        "Chaque ennemi touché par une <b>Flèche explosive</b> a <b>40 %</b> de chances de déclencher une explosion secondaire infligeant <b>50 %</b> de dégâts dans un petit rayon."
       ]
     }
   },
@@ -2069,7 +2075,7 @@
     "game": {
       "name": "Essences de vie",
       "description": [
-        "Multiplie votre santé maximale de <b>{{gameValue1}}</b> fois le montant de votre attribut Intelligence."
+        "Votre santé maximale est augmentée de <b>{{gameValue1}}</b> multiplié par votre attribut d'intelligence."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> fois par niveau"
     }
@@ -2082,7 +2088,7 @@
     "game": {
       "name": "Lames venimeuses",
       "description": [
-        "Augmente la chance d’empoisonner les ennemis de <b>25 %</b> lors de l’utilisation de dagues avec l’avantage <b>Lames venimeuses</b>."
+        "Augmente la chance d’empoisonner les ennemis de <b>30 %</b> lors de l’utilisation de dagues avec l’avantage <b>Lames venimeuses</b>."
       ]
     }
   },
@@ -2118,7 +2124,7 @@
     "game": {
       "name": "Exposez les faiblesses",
       "description": [
-        "Les frappes critiques avec des dagues augmentent les dégâts infligés à l'ennemi de <b>{{gameValue1}}</b> pendant <b>{{gameValue2}}</b> secondes."
+        "Les coups critiques infligés par les dagues brisent l'armure des ennemis, infligeant un <b>debuff</b> ce qui leur fait subir <b>{{gameValue1}}</b> de dégâts physiques augmentés pendant <b>{{gameValue2}}</b> secondes."
       ]
     }
   },
@@ -2130,7 +2136,7 @@
     "game": {
       "name": "Voie du barbare",
       "description": [
-        "Les dégâts d’arme de mêlée à deux mains augmentent de <b>{{gameValue1}}</b>"
+        "Tous les dégâts infligés par des haches à deux mains, des massues et des marteaux augmentent de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
     }
@@ -2171,10 +2177,10 @@
     "game": {
       "name": "Manœuvre stratégique",
       "description": [
-        "Remplace la capacité Esquive en roulade par une Esquive en roulade latérale tant qu'une cible ennemie est verrouillée.",
+        "Remplace la capacité Esquive en roulade par une Esquive en roulade latérale quand une cible ennemie est verrouillée.",
         "Utilisez-la pour contourner vos ennemis, ce qui vous permet de les prendre plus facilement à revers ou de leur porter des coups dans le dos.",
         "Flash remplace le déplacement latéral Esquive en roulade de la compétence Manœuvre stratégique.",
-        "<b>Coût :</b> 20 endurance"
+        "<b>Coût :</b> {{gameValue1}} points d’endurance"
       ]
     }
   },
@@ -2320,7 +2326,7 @@
     "game": {
       "name": "Apprenti mage",
       "description": [
-        "Les dégâts d’armes magiques augmentent de <b>{{gameValue1}}</b>."
+        "Les dégâts infligés par les baguettes et les bâtons augmentent de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
     }
@@ -2374,6 +2380,87 @@
         "Les dégâts de baguette sont augmentés de <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "Nécromancie avancée",
+      "description": [
+        "Augmente la quantité maximale des alliés Creux invoqués par les sorts de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Allié Creux par niveau"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "Attaque aérienne à la baguette",
+      "description": [
+        "Lorsque vous êtes équipé(e) d'une baguette, vous pouvez effectuer une attaque spéciale en maintenant <b>{{gameValue1}}</b> appuyé pendant un saut.",
+        "Elle lance un projectile magique qui inflige <b>50 %</b> de dégâts d’arme supplémentaires dans un petit rayon.",
+        "<b>Coût :</b> {{gameValue2}} points d'endurance"
+      ]
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "Architecte aérien",
+      "description": [
+        "Transformez-vous en étincelle à l'intérieur de la base pour vous déplacer librement dans les airs en vue à la première personne tout en construisant. Pour activer ou désactiver ce mode, maintenez {{gameValue1}} enfoncé."
+      ]
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "Barrage",
+      "description": [
+        "Infliger des dégâts avec des arcs a <b>{{gameValue1}}</b> de chance de restaurer <b>1</b> durabilité à cette arme."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance par niveau"
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "Lancer et tirer",
+      "description": [
+        "Après un coup critique avec une baguette, les dégâts de base de votre prochaine attaque au bâton dans les {{gameValue1}} secondes sont augmentés de <b>{{gameValue2}}</b>."
+      ]
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "Perforation",
+      "description": [
+        "Les dégâts <b>perforants</b> à distance augmentent de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> dégâts par niveau"
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "Instinct de survie",
+      "description": [
+        "Tuer un ennemi infesté par le Brume à l'aide d’un arc ou d’une dague restaure <b>{{gameValue1}}</b> secondes du <b>Temps dans la Brume</b>.",
+        "<b>Temps dans le Brume</b><br/>Si ce temps est écoulé, la Brume vous consumera."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> secondes par niveau"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "Maîtrise des totems",
+      "description": [
+        "Augmente la quantité maximale des totems invoqués de <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> totem par niveau"
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "Attaque d’évasion à la baguette",
+      "description": [
+        "Lorsque vous êtes équipé(e) d’une baguette, en appuyant sur <b>{{gameValue1}}</b>, vous pouvez effectuer une Attaque d’évasion à la baguette tout en vous évadant.<br/> Elle lance un disque magique qui transperce les ennemis et leur inflige <b>50 %</b> de dégâts d'arme supplémentaires.",
+        "<b>Coût :</b> {{gameValue2}} mana"
+      ]
     }
   }
 }

@@ -1,8 +1,9 @@
 {
   "10": "mainHandAction",
   "15": "contextualAction",
-  "18": "weaponSkill",
-  "72": "guardAndParry",
-  "74": "locomotionJump",
+  "19": "specialAbility",
+  "71": "guardAndParry",
+  "73": "locomotionJump",
+  "92": "buildingModeFly",
   "117": "rangedCombatReady"
 }

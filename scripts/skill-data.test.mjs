@@ -21,7 +21,7 @@ const interpreted = { effects: [{ sourcePath: "configValues.scaled[1]", sourceAt
 const data = { raw: { balancing: [{ data: { playerHealthPerAP: 50, playerManaPerAP: 20, playerStaminaPerAP: 10 } }] } };
 
 const uiText = {
-  gameplayActionLabels: { weaponSkill: { status: "resolved", texts: { En_Us: "Special Ability", Fr_Fr: "Capacité spéciale" } },
+  gameplayActionLabels: { specialAbility: { status: "resolved", texts: { En_Us: "Special Ability", Fr_Fr: "Capacité spéciale" } },
     guard: { status: "unresolved", texts: {} } },
   punctuation: { decimalSeparator: { status: "resolved", texts: { En_Us: ".", Fr_Fr: "," } } },
   timeUnitsAbbreviations: { status: "resolved", texts: { En_Us: "d,h,min,s", Fr_Fr: "j,h,m,sec" } },
@@ -39,9 +39,9 @@ describe("game argument formatting", () => {
     expect(() => formatValue(1, "Numberless")).toThrow();
   });
   it("takes separators, time units and action labels from the game per locale", () => {
-    const inputs = { 18: "weaponSkill", 72: "guard" };
-    expect(localeFormat({ raw: { uiText } }, "En_Us", inputs)).toEqual({ decimalSeparator: ".", seconds: "s", inputLabels: { 18: "[Special Ability]" } });
-    expect(localeFormat({ raw: { uiText } }, "Fr_Fr", inputs)).toEqual({ decimalSeparator: ",", seconds: "sec", inputLabels: { 18: "[Capacité spéciale]" } });
+    const inputs = { 19: "specialAbility", 72: "guard" };
+    expect(localeFormat({ raw: { uiText } }, "En_Us", inputs)).toEqual({ decimalSeparator: ".", seconds: "s", inputLabels: { 19: "[Special Ability]" } });
+    expect(localeFormat({ raw: { uiText } }, "Fr_Fr", inputs)).toEqual({ decimalSeparator: ",", seconds: "sec", inputLabels: { 19: "[Capacité spéciale]" } });
     expect(() => localeFormat({ raw: { uiText } }, "De_De", inputs)).toThrow();
   });
   it("evaluates level scaling without treating character stats as levels", () => {
@@ -80,8 +80,8 @@ describe("game argument formatting", () => {
     expect(resolveArgument({ type: "Balancing", id: 1 }, node, interpreted, data, 1)).toBe("20");
     expect(resolveArgument({ type: "Balancing", id: 2 }, node, interpreted, data, 1)).toBe("10");
     const format = localeFormat({ raw: { uiText } }, "Fr_Fr", inputs);
-    expect(inputs[18]).toBe("weaponSkill");
-    expect(resolveArgument({ type: "Input", id: 18 }, node, interpreted, data, 1, format)).toBe("[Capacité spéciale]");
+    expect(inputs[19]).toBe("specialAbility");
+    expect(resolveArgument({ type: "Input", id: 19 }, node, interpreted, data, 1, format)).toBe("[Capacité spéciale]");
     expect(() => resolveArgument({ type: "Input", id: 999 }, node, interpreted, data, 1, format)).toThrow();
   });
   it("preserves paragraphs, handles escaped percents, and rejects argument drift", () => {
@@ -133,8 +133,9 @@ describe("committed import compatibility", () => {
     expect(treeContentHash({ nodes: { a: 1 } })).not.toBe(treeContentHash({ nodes: { a: 2 } }));
     expect(runtime.treeVersion.contentHash).toMatch(/^[a-f0-9]{64}$/);
     expect(SKILL_TREE_CONTENT_HASH).toBe(runtime.treeVersion.contentHash);
-    expect(SKILL_TREE_GAME_BUILD).toBe("1076226");
-    expect(SKILL_TREE_UPDATE).toBe("8");
+    expect(SKILL_TREE_GAME_BUILD).toBe("1267041");
+    // release_1.0 has no update number; the app shows the game build instead.
+    expect(SKILL_TREE_UPDATE).toBeUndefined();
     expect(isDifferentTreeVersion({})).toBe(false); // pre-versioned builds remain supported
     expect(isDifferentTreeVersion({ treeContentHash: SKILL_TREE_CONTENT_HASH })).toBe(false);
     expect(isDifferentTreeVersion({ treeContentHash: "older-tree" })).toBe(true);
@@ -183,10 +184,11 @@ describe("committed import compatibility", () => {
       for (const values of Object.values(metadata.gameLevelValues ?? {})) expect(values).toHaveLength(metadata.maxLevel);
     }
     expect(locale.LIFE_ESSENCES.game.description[0]).toContain("<b>{{gameValue1}}</b>");
-    expect(runtime.types.LIFE_ESSENCES.gameLevelValues.gameValue1).toEqual(["2", "4", "6"]);
+    expect(runtime.types.LIFE_ESSENCES.gameLevelValues.gameValue1).toEqual(["3", "6", "9"]);
     expect(locale.MASON.game.description[0]).toContain("<b>{{gameValue1}}</b>");
     expect(runtime.types.MASON.gameLevelValues.gameValue1).toEqual(["10%", "20%", "30%"]);
-    expect(runtime.types.FROST.gameLevelValues.gameValue1).toEqual(["3 s", "5 s", "7 s"]);
+    // Build 1267041 (1.0): value 0, 3 s per level; build 1076226 was 3/5/7 s.
+    expect(runtime.types.FROST.gameLevelValues.gameValue1).toEqual(["3 s", "6 s", "9 s"]);
     expect(runtime.types.FROST.gamePerLevelValues.gamePerLevelValue1).toBe("3 s");
     expect(frLocale.FROST.game.perLevelLabel).toContain("{{gamePerLevelValue1}}");
   });

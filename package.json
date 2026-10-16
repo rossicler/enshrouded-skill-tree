@@ -23,7 +23,8 @@
     "test": "vitest run",
     "e2e": "playwright test --project=desktop --project=mobile",
     "e2e:visual": "playwright test --project=visual",
-    "import-skills": "node scripts/skill-data.mjs"
+    "import-skills": "node scripts/skill-data.mjs",
+    "import-progression": "node scripts/progression-data.mjs"
   },
   "dependencies": {
     "@enshrouded/core": "*",

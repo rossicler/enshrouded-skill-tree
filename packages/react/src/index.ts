@@ -9,6 +9,8 @@ export { SkillTreeProvider, DEFAULT_ASSET_BASE_URL, useSkillTreeSettings } from 
 export type { SkillTreeProviderProps, SkillTreeNotice, SkillTreeSound, SkillTreeSettings } from "./SkillTreeProvider";
 export { SkillTreeView } from "./SkillTreeView";
 export type { SkillTreeViewProps, SkillTreeViewHandle, RefundRequest } from "./SkillTreeView";
+export { SkillTreeCard, DEFAULT_CARD_SIZE } from "./SkillTreeCard";
+export type { SkillTreeCardProps, SkillTreeCardHandle, SkillTreeCardMode } from "./SkillTreeCard";
 export { useSkillBuild } from "./useSkillBuild";
 export { getNodeArt, assetUrl } from "./art";
 export type { NodeArt, NodeState } from "./art";

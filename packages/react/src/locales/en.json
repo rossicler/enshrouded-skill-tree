@@ -9,5 +9,15 @@
     "refundOne": "Refund 1",
     "refundAll": "Refund All",
     "skillPointIcon": "Skill Point Icon"
+  },
+  "card": {
+    "label": "Skill tree",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Show the whole tree",
+    "expand": "Expand",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit fullscreen",
+    "close": "Close"
   }
 }

@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 
 import { buildSkillTree } from "../constants/Nodes";
-import { BIOMES, MAX_SKILL_POINTS_ABSOLUTE } from "../constants/Biomes";
+import { BIOMES, MAX_PLAYER_LEVEL, MAX_SKILL_POINTS_ABSOLUTE } from "../constants/Biomes";
+import progression from "../constants/gameProgression.json";
 import { fitsUnderHardCap, getMaxSkillPoints, getPointsUsed, getSkillCost } from "../points";
 
 const tree = buildSkillTree(
@@ -27,9 +28,18 @@ describe("points", () => {
   it("budgets 2 points per level after the first, plus explored biomes", () => {
     expect(getMaxSkillPoints({ playerLevel: 1, unlockedBiomes: [] })).toBe(0);
     expect(getMaxSkillPoints({ playerLevel: 10, unlockedBiomes: [] })).toBe(18);
-    expect(getMaxSkillPoints({ playerLevel: 10, unlockedBiomes: ["springlands"] })).toBe(18 + 15);
+    expect(getMaxSkillPoints({ playerLevel: 10, unlockedBiomes: ["springlands"] })).toBe(18 + 17);
     expect(getMaxSkillPoints({ playerLevel: 99, unlockedBiomes: BIOMES.map((b) => b.id) })).toBe(MAX_SKILL_POINTS_ABSOLUTE);
-    expect(getMaxSkillPoints()).toBe(88);
+    expect(getMaxSkillPoints()).toBe(98);
+  });
+
+  it("takes the level cap and every biome's points from the imported game data", () => {
+    // Build 1267041 (1.0): level cap 50 at 2 points per level, 114 exploration points.
+    expect(MAX_PLAYER_LEVEL).toBe(50);
+    expect(MAX_SKILL_POINTS_ABSOLUTE).toBe(98 + 114);
+    expect(BIOMES.map((b) => b.id).sort()).toEqual(Object.keys(progression.biomes).sort());
+    for (const biome of BIOMES) expect(biome.explorationPoints).toBe(progression.biomes[biome.id as keyof typeof progression.biomes].points);
+    expect(BIOMES.at(-1)?.maxLevel).toBe(MAX_PLAYER_LEVEL);
   });
 
   it("allows an unlock that lands exactly on the cap", () => {

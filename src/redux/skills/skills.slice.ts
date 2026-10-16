@@ -1,17 +1,15 @@
-import { SkillNodes, getMaxLevel, BIOMES, MAX_PLAYER_LEVEL } from "@enshrouded/core";
+import { BIOMES, MAX_PLAYER_LEVEL } from "@enshrouded/core";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createMigrate, persistReducer } from "redux-persist";
 import type { PersistedState } from "redux-persist";
 import storageSession from "redux-persist/lib/storage/session";
 
-type SkillPathsType = [string, string][];
 type SelectedSkillsMap = { [id: string]: number };
 
 interface SkillsState {
   selectedSkills: SelectedSkillsMap;
   codeImported?: string;
-  connectedPaths: SkillPathsType;
   searchSkillResults: string[];
   flameLevel?: number;
   unlockedBiomes: string[];
@@ -20,7 +18,6 @@ interface SkillsState {
 
 const initialState = {
   selectedSkills: {},
-  connectedPaths: [],
   searchSkillResults: [],
   flameLevel: 0,
   unlockedBiomes: BIOMES.map((b) => b.id),
@@ -44,68 +41,19 @@ const skillsSlice = createSlice({
   name: "skills",
   initialState,
   reducers: {
+    // The whole build at once: the tree view (@enshrouded/react) applies the
+    // unlock and refund rules and hands over the next selection.
     loadSelectedSkills(
       state,
       action: PayloadAction<SelectedSkillsMap | string[]>
     ) {
       state.selectedSkills = normalizeToMap(action.payload);
     },
-    incrementSelectedSkill(state, action: PayloadAction<string>) {
-      const id = action.payload;
-      const node = SkillNodes.nodes[id];
-      if (!node) return;
-      const max = getMaxLevel(node.type);
-      const current = state.selectedSkills[id] ?? 0;
-      state.selectedSkills[id] = Math.min(max, current + 1);
-    },
-    decrementSelectedSkill(state, action: PayloadAction<string>) {
-      const id = action.payload;
-      const current = state.selectedSkills[id] ?? 0;
-      if (current <= 1) {
-        delete state.selectedSkills[id];
-      } else {
-        state.selectedSkills[id] = current - 1;
-      }
-    },
-    removeSelectedSkill(state, action: PayloadAction<string[]>) {
-      action.payload.forEach((id) => {
-        delete state.selectedSkills[id];
-      });
-    },
     setCodeImported(state, action: PayloadAction<string>) {
       state.codeImported = action.payload;
     },
     clearCodeImported(state) {
       state.codeImported = undefined;
-    },
-    loadConnectedPaths(state, action: PayloadAction<SkillPathsType>) {
-      state.connectedPaths = action.payload;
-    },
-    addConnectedPaths(state, action: PayloadAction<SkillPathsType>) {
-      state.connectedPaths = [...state.connectedPaths, ...action.payload];
-    },
-    removePathsConnectedTo(state, action: PayloadAction<string[]>) {
-      state.connectedPaths = state.connectedPaths.filter(
-        (paths) => !action.payload.some((id) => paths.includes(id))
-      );
-    },
-    initConnectedPaths(state, action: PayloadAction<string[]>) {
-      const skills = action.payload;
-      let paths: SkillPathsType = [];
-      const alreadySetObj: { [key: string]: boolean } = {};
-      skills.forEach((id) => {
-        const connectedTo = skills.filter((to) =>
-          SkillNodes.edges[id]?.includes(to)
-        );
-        connectedTo.forEach((to) => {
-          const pathId = id > to ? `${id}-${to}` : `${to}-${id}`;
-          if (!alreadySetObj[pathId]) {
-            paths.push([id, to]);
-            alreadySetObj[pathId] = true;
-          }
-        });
-      });
-      state.connectedPaths = paths;
     },
     setSearchSkillResults(state, action: PayloadAction<string[]>) {
       state.searchSkillResults = action.payload;
@@ -124,15 +72,8 @@ const skillsSlice = createSlice({
 
 export const {
   loadSelectedSkills,
-  incrementSelectedSkill,
-  decrementSelectedSkill,
-  removeSelectedSkill,
   setCodeImported,
   clearCodeImported,
-  loadConnectedPaths,
-  addConnectedPaths,
-  removePathsConnectedTo,
-  initConnectedPaths,
   setSearchSkillResults,
   setFlameLevel,
   setUnlockedBiomes,
@@ -157,13 +98,19 @@ const migrations = {
     }
     return state;
   },
+  // Links drawn as connected are now derived from the selection.
+  3: (state: PersistedState): PersistedState => {
+    if (!state) return state;
+    const { connectedPaths: _dropped, ...rest } = state as PersistedState & { connectedPaths?: unknown };
+    return rest as PersistedState;
+  },
 };
 
 const persistConfig = {
   key: "skills",
-  version: 2,
+  version: 3,
   storage: storageSession,
-  whitelist: ["selectedSkills", "connectedPaths", "unlockedBiomes", "playerLevel"],
+  whitelist: ["selectedSkills", "unlockedBiomes", "playerLevel"],
   migrate: createMigrate(migrations, { debug: false }),
 };
 

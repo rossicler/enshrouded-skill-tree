@@ -121,18 +121,6 @@
     "flameIcon": "Icône de flamme",
     "backgroundAlt": "Fond de fumée violette"
   },
-  "skillTooltip": {
-    "unlocked": "Déverrouillée",
-    "unlock": "Déverrouiller",
-    "outOfRange": "Hors de portée",
-    "cost": "Coût",
-    "share": "Partager un lien vers cette compétence",
-    "refund": "Rembourser",
-    "levelHeader": "Niveau {{current}} / {{max}}",
-    "levelUp": "Améliorer",
-    "refundOne": "Rembourser 1",
-    "refundAll": "Tout rembourser"
-  },
   "errors": {
     "serverError": "Erreur serveur",
     "notFound": "Page non trouvée"

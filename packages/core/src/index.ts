@@ -48,6 +48,8 @@ export {
   hasSelectionChanges,
 } from "./selection";
 export type { SkillSelection, SelectionCleanup } from "./selection";
+export { applySkillAction, removeSkills } from "./actions";
+export type { SkillAction, SkillActionOptions, SkillActionResult, SkillChange } from "./actions";
 
 // Build codes
 export {

@@ -11,7 +11,6 @@ import {
 } from "@enshrouded/core";
 import { useAppDispatch } from "@/redux/hooks";
 import {
-  initConnectedPaths,
   loadSelectedSkills,
   setPlayerLevel,
   setUnlockedBiomes,
@@ -42,7 +41,6 @@ export const useApplySelection = () => {
     (selection: { [id: string]: number }) => {
       const cleanup = sanitizeSelection(selection);
       dispatch(loadSelectedSkills(cleanup.selection));
-      dispatch(initConnectedPaths(Object.keys(cleanup.selection)));
       reportCleanup(cleanup);
       return cleanup;
     },

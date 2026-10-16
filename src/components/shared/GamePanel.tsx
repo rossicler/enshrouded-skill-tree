@@ -52,7 +52,7 @@ const GamePanel = ({ children, className, onClose }: PropsType) => {
       <div
         className="absolute inset-0 overflow-hidden opacity-[0.10]"
         style={{
-          backgroundImage: "url(/assets/decorations/bg-circles-tiled.svg)",
+          backgroundImage: "url(/skill-tree/decorations/bg-circles-tiled.svg)",
           backgroundRepeat: "repeat",
           backgroundSize: "456px 456px",
         }}
@@ -76,22 +76,22 @@ const GamePanel = ({ children, className, onClose }: PropsType) => {
 
       {/* Corner decorations — desktop only */}
       <img
-        src="/assets/decorations/modal-top-left.svg"
+        src="/skill-tree/decorations/modal-top-left.svg"
         alt=""
         className="absolute -top-[34px] -left-[38px] pointer-events-none w-[75px] h-auto hidden md:block"
       />
       <img
-        src="/assets/decorations/modal-top-right.svg"
+        src="/skill-tree/decorations/modal-top-right.svg"
         alt=""
         className="absolute -top-[15px] -right-[19px] pointer-events-none w-[29px] h-auto hidden md:block"
       />
       <img
-        src="/assets/decorations/modal-bottom-left.svg"
+        src="/skill-tree/decorations/modal-bottom-left.svg"
         alt=""
         className="absolute -bottom-[8px] -left-[9px] pointer-events-none w-[20px] h-auto hidden md:block"
       />
       <img
-        src="/assets/decorations/modal-bottom-right.svg"
+        src="/skill-tree/decorations/modal-bottom-right.svg"
         alt=""
         className="absolute -bottom-[14px] -right-[16px] pointer-events-none w-[32px] h-auto hidden md:block"
       />

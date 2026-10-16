@@ -1,0 +1,27 @@
+{
+  "name": "@enshrouded/react",
+  "version": "0.1.0",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "description": "React components for the Enshrouded skill tree: an SVG tree view with pan, zoom, tooltips and the planner's click rules.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./theme.css": "./theme.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@enshrouded/core": "*",
+    "dompurify": "^3.3.3",
+    "react-tooltip": "^5.26.3",
+    "react-zoom-pan-pinch": "^4.2.0"
+  }
+}

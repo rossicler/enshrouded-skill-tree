@@ -41,7 +41,7 @@ workspace package, and the importer reads and writes them there:
 | `packages/core/src/locales/<lang>/nodes.json` | `game` sections written on `--apply`, one file per locale folder |
 | `packages/core/src/constants/LegacyNodes.ts` | read only (authored presentation) |
 | `scripts/skill-data-mapping.json` | identity mapping, written on `--apply` |
-| `public/assets/skills/<TYPE>.png` | checked for types with `hasIcon` |
+| `packages/react/assets/skills/<TYPE>.png` | checked for types with `hasIcon` |
 
 
 ```powershell
@@ -228,7 +228,7 @@ A successful apply renames the file to `changes.applied.json`.
 ```
 
 New types also need authored presentation in `LegacyNodes.ts` (at least a
-`color`; `hasIcon` plus `public/assets/skills/<TYPE>.png` and `_GRAY.png`
+`color`; `hasIcon` plus `packages/react/assets/skills/<TYPE>.png` and `_GRAY.png`
 for an icon). Apply is refused until it exists. A new node without an
 authored `tier` renders as small (a warning). Locales with a game locale get
 the new type's game text; unresolved game text in any of them blocks apply.

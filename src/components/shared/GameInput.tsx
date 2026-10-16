@@ -86,7 +86,7 @@ const GameInput = forwardRef<HTMLInputElement, PropsType>(({ className, variant 
               hideDecorationsClassName === "hidden md:block" ? "md:hidden" : ""
             )}
             style={{
-              backgroundImage: "url(/assets/decorations/bg-circles-tiled.svg)",
+              backgroundImage: "url(/skill-tree/decorations/bg-circles-tiled.svg)",
               backgroundRepeat: "repeat",
               backgroundSize: "456px 456px",
             }}
@@ -96,7 +96,7 @@ const GameInput = forwardRef<HTMLInputElement, PropsType>(({ className, variant 
 
       {/* Left decoration */}
       <img
-        src="/assets/decorations/button-decoration.svg"
+        src="/skill-tree/decorations/button-decoration.svg"
         alt=""
         className={classNames(
           "absolute left-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none",
@@ -107,7 +107,7 @@ const GameInput = forwardRef<HTMLInputElement, PropsType>(({ className, variant 
       />
       {/* Right decoration (mirrored) */}
       <img
-        src="/assets/decorations/button-decoration.svg"
+        src="/skill-tree/decorations/button-decoration.svg"
         alt=""
         className={classNames(
           "absolute right-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none",

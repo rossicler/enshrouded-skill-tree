@@ -11,6 +11,7 @@ import { Search as SearchIcon, X } from "lucide-react";
 import { useRouter } from "next/router";
 
 import { classNames } from "@/utils/utils";
+import { SKILL_TREE_ASSETS } from "@/constants/assets";
 import { useAppDispatch } from "@/redux/hooks";
 
 import GameInput from "../shared/GameInput";
@@ -43,32 +44,14 @@ const renderHighlighted = (text: string, range?: MatchRange) => {
 };
 
 type PropsType = {
-  zoomToElement: (
-    node: HTMLElement | string,
-    scale?: number,
-    animationTime?: number,
-    animationType?:
-      | "easeOut"
-      | "linear"
-      | "easeInQuad"
-      | "easeOutQuad"
-      | "easeInOutQuad"
-      | "easeInCubic"
-      | "easeOutCubic"
-      | "easeInOutCubic"
-      | "easeInQuart"
-      | "easeOutQuart"
-      | "easeInOutQuart"
-      | "easeInQuint"
-      | "easeOutQuint"
-      | "easeInOutQuint",
-  ) => void;
+  // Zooms the tree to a node and opens its tooltip.
+  onFocusNode: (nodeId: string) => void;
   onFocusChange?: (focused: boolean) => void;
   initialSearchText?: string;
 };
 
 const Search = ({
-  zoomToElement,
+  onFocusNode,
   onFocusChange,
   initialSearchText,
 }: PropsType) => {
@@ -179,21 +162,9 @@ const Search = ({
       const matchingNodes = Object.values(SkillNodes.nodes).filter(
         (n) => n.type === typeKey,
       );
-      if (matchingNodes.length === 1) {
-        const nodeId = matchingNodes[0].id;
-        zoomToElement(`node-${nodeId}`, 5, 300, "easeOut");
-        // Trigger tooltip via synthetic mouseenter after zoom completes
-        setTimeout(() => {
-          const el = document.querySelector(
-            `[data-tooltip-id="skill-tooltip-${nodeId}"]`,
-          );
-          if (el) {
-            el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
-          }
-        }, 350);
-      }
+      if (matchingNodes.length === 1) onFocusNode(matchingNodes[0].id);
     },
-    [zoomToElement],
+    [onFocusNode],
   );
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -299,7 +270,7 @@ const Search = ({
                 <div className="w-6 h-6 shrink-0 flex items-center justify-center">
                   {meta.hasIcon ? (
                     <Image
-                      src={`/assets/skills/${meta.selectedAsset ?? key}.png`}
+                      src={`${SKILL_TREE_ASSETS}/skills/${meta.selectedAsset ?? key}.png`}
                       alt=""
                       width={24}
                       height={24}
@@ -307,7 +278,7 @@ const Search = ({
                     />
                   ) : (
                     <Image
-                      src={`/assets/${meta.color}_${tier}.png`}
+                      src={`${SKILL_TREE_ASSETS}/nodes/${meta.color}_${tier}.png`}
                       alt=""
                       width={iconSize}
                       height={iconSize}

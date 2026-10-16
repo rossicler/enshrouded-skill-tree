@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState, type RefObject } from "react";
 import { ZoomOut, Crosshair, ZoomIn, Share2, RotateCcw } from "lucide-react";
 
 import { classNames } from "../../utils/utils";
@@ -9,6 +9,7 @@ import ResetConfirmDialog from "../dialogs/ResetConfirmDialog";
 import { useAppDispatch } from "@/redux/hooks";
 import { loadSelectedSkills } from "@/redux/skills/skills.slice";
 import type { SkillBuild } from "@enshrouded/core";
+import type { SkillTreeViewHandle } from "@enshrouded/react";
 import { useLoadBuild } from "@/hooks/useLoadBuild";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
@@ -17,15 +18,19 @@ import { useRouter } from "next/router";
 import SearchHUD from "./Search";
 
 type PropsType = {
-  zoomIn: (step?: number) => void;
-  zoomOut: (step?: number) => void;
-  centerView: (scale?: number) => void;
-  zoomToElement: (node: HTMLElement | string, scale?: number, animationTime?: number, animationType?: "easeOut" | "linear" | "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint") => void;
+  view: RefObject<SkillTreeViewHandle | null>;
   dbAvailable?: boolean;
   initialSearchText?: string;
 };
 
-const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, initialSearchText }: PropsType) => {
+const HUD = ({ view, dbAvailable = false, initialSearchText }: PropsType) => {
+  const zoomIn = () => view.current?.zoomIn();
+  const zoomOut = () => view.current?.zoomOut();
+  const recenter = () => view.current?.center();
+  const focusNode = useCallback(
+    (nodeId: string) => view.current?.focusNode(nodeId, { showTooltip: true }),
+    [view]
+  );
   const [exportOpen, setExportOpen] = useState(false);
   const [resetOpen, setResetOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
@@ -60,7 +65,7 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
       />
 
       {/* Search — always visible, full width on mobile */}
-      <SearchHUD zoomToElement={zoomToElement} onFocusChange={setSearchFocused} initialSearchText={initialSearchText} />
+      <SearchHUD onFocusNode={focusNode} onFocusChange={setSearchFocused} initialSearchText={initialSearchText} />
 
       {/* Other HUD elements — hidden on mobile when search is focused */}
       <div className={searchFocused ? "hidden md:contents" : "contents"}>
@@ -100,25 +105,25 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
         >
           {/* Mobile: vertical */}
           <GameButtonGroup vertical className="md:hidden">
-            <GameButton grouped className="!min-w-0 !px-4" data-hud="zoom-in" onClick={() => zoomIn(0.5)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="zoom-in" onClick={() => zoomIn()}>
               <ZoomIn size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4" data-hud="recenter" onClick={() => centerView(2)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="recenter" onClick={() => recenter()}>
               <Crosshair size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4" data-hud="zoom-out" onClick={() => zoomOut(0.5)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="zoom-out" onClick={() => zoomOut()}>
               <ZoomOut size={16} />
             </GameButton>
           </GameButtonGroup>
           {/* Desktop: horizontal */}
           <GameButtonGroup className="hidden md:flex">
-            <GameButton grouped className="!min-w-0 !px-4 !pl-8" data-hud="zoom-out" onClick={() => zoomOut(0.5)}>
+            <GameButton grouped className="!min-w-0 !px-4 !pl-8" data-hud="zoom-out" onClick={() => zoomOut()}>
               <ZoomOut size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4" data-hud="recenter" onClick={() => centerView(2)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="recenter" onClick={() => recenter()}>
               <Crosshair size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4 !pr-8" data-hud="zoom-in" onClick={() => zoomIn(0.5)}>
+            <GameButton grouped className="!min-w-0 !px-4 !pr-8" data-hud="zoom-in" onClick={() => zoomIn()}>
               <ZoomIn size={16} />
             </GameButton>
           </GameButtonGroup>

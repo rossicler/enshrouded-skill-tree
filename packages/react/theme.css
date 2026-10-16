@@ -1,0 +1,21 @@
+/* Tailwind 4 tokens used by @enshrouded/react. In the host's CSS:
+
+     @import "tailwindcss";
+     @import "<path to packages/react>/theme.css";
+     @source "<path to packages/react>/src";
+
+   Names start with skill-tree- so they don't collide with the host's theme. */
+@theme {
+  /* Glow behind nodes that match a search. */
+  --animate-skill-tree-glow: skill-tree-glow 1.5s ease-in-out infinite;
+
+  @keyframes skill-tree-glow {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+  }
+}

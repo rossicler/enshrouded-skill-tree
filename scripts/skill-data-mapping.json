@@ -64,6 +64,10 @@
       "appId": "116",
       "type": "SILENT_STRIDE"
     },
+    "344823068": {
+      "appId": "223",
+      "type": "BARRAGE"
+    },
     "408134555": {
       "appId": "169",
       "type": "SPELLSLINGER"
@@ -79,6 +83,10 @@
     "494749233": {
       "appId": "134",
       "type": "AIRBORNE"
+    },
+    "504202023": {
+      "appId": "224",
+      "type": "TOTEM_MASTERY"
     },
     "521283386": {
       "appId": "126",
@@ -228,6 +236,10 @@
       "appId": "55",
       "type": "ATTR_CONS"
     },
+    "1148578013": {
+      "appId": "225",
+      "type": "AIRBORNE_ARCHITECT"
+    },
     "1149171418": {
       "appId": "38",
       "type": "ATTR_STR"
@@ -275,6 +287,10 @@
     "1365673623": {
       "appId": "68",
       "type": "ATTR_STR"
+    },
+    "1365862896": {
+      "appId": "226",
+      "type": "SURVIVAL_INSTINCT"
     },
     "1371376638": {
       "appId": "188",
@@ -360,6 +376,10 @@
       "appId": "89",
       "type": "GOOD_METABOLISM"
     },
+    "1781808122": {
+      "appId": "227",
+      "type": "ADVANCED_NECROMANCY"
+    },
     "1813568515": {
       "appId": "182",
       "type": "RADIANT_AURA"
@@ -399,6 +419,10 @@
     "2116701756": {
       "appId": "9",
       "type": "LUMBERJACK"
+    },
+    "2134094382": {
+      "appId": "228",
+      "type": "AERIAL_WAND_ATTACK"
     },
     "2150218293": {
       "appId": "155",
@@ -451,6 +475,10 @@
     "2346031477": {
       "appId": "32",
       "type": "NEMESIS"
+    },
+    "2357176191": {
+      "appId": "229",
+      "type": "BLAST_AND_CAST"
     },
     "2360135054": {
       "appId": "196",
@@ -519,6 +547,10 @@
     "2587217951": {
       "appId": "209",
       "type": "ATTR_INT"
+    },
+    "2632701081": {
+      "appId": "230",
+      "type": "WAND_EVASION_ATTACK"
     },
     "2661746342": {
       "appId": "104",
@@ -743,6 +775,10 @@
     "3528387231": {
       "appId": "168",
       "type": "BLOOD_MAGIC"
+    },
+    "3532424874": {
+      "appId": "231",
+      "type": "PUNCTURE"
     },
     "3576056527": {
       "appId": "27",

@@ -31,7 +31,18 @@ The toolkit exports schema 1.1.0 JSON with raw resources, interpreted text
 templates in every game locale, typed effects and provenance. Do not replace this app's nodes with
 export-order IDs: existing saved/shared builds depend on the current IDs.
 
-Run from this repository with a validated export from enshrouded-tools:
+Run from this repository with a validated export from enshrouded-tools.
+The tree data, its presentation and skill text live in the `@enshrouded/core`
+workspace package, and the importer reads and writes them there:
+
+| File | Import |
+|---|---|
+| `packages/core/src/constants/gameSkillData.json` | generated, written on `--apply` |
+| `packages/core/src/locales/<lang>/nodes.json` | `game` sections written on `--apply`, one file per locale folder |
+| `packages/core/src/constants/LegacyNodes.ts` | read only (authored presentation) |
+| `scripts/skill-data-mapping.json` | identity mapping, written on `--apply` |
+| `public/assets/skills/<TYPE>.png` | checked for types with `hasIcon` |
+
 
 ```powershell
 # Preview only: writes ignored .local/skill-data/{report,candidate}.json,
@@ -66,7 +77,7 @@ The same import writes the game's text to the `game` section of each locale
 record whose app locale maps to a game locale (`GAME_LOCALES` in
 `scripts/skill-data.mjs`: `en` -> `En_Us`, `fr` -> `Fr_Fr`). Type metadata
 lists those locales in `gameTextLocales`; `usesGameText`/`skillTextPrefix`
-(`src/utils/skillText.ts`) show a locale's `game` text whenever it is listed
+(`packages/core/src/utils/skillText.ts`) show a locale's `game` text whenever it is listed
 there, and `validate-translations.js` checks the same record. Other locales
 show their authored translation; those original locale fields remain intact as
 fallbacks.
@@ -90,10 +101,15 @@ input ID by `scripts/skill-data-inputs.json` (ID -> label key in the export's
 `raw.uiText.gameplayActionLabels`). The game itself shows the player's key
 binding; the ID -> label mapping is app-owned and listed in the preview report
 under "Input action labels". `--inputs=path.json` can supply another mapping.
+The keys are `GameplayAction` enum values, which a game update can renumber:
+1.0 (build 1267041) inserted `AreaLoot` at 18, so the mapping was moved by enum
+name (SpecialAbility 19, Block 71, Jump 73) and the UI field `weaponSkill`
+became `specialAbility` with the same text. Check the report's enum names, not
+just its IDs, after each update.
 
 A translation whose arguments differ from English (not merely reordered) is
-unresolved and blocks apply, except the checked `ARGUMENT_EXCEPTIONS`: build
-1076226's French Fatal Precision and Shroud Filter tags reuse one argument in
+unresolved and blocks apply, except the checked `ARGUMENT_EXCEPTIONS`: the
+game's French Fatal Precision and Shroud Filter tags reuse one argument in
 place of another. Their French wording is shown with English's arguments in
 English order, so each number matches its sentence (the game shows the
 repeated value). An exception applies only while both argument lists are
@@ -106,7 +122,8 @@ value is `{ value: nanoseconds }` and its `scaleFactor` is in seconds, so a
 level shows `value / 1e9 + scaleFactor * level` seconds. Frost (build 1076226:
 1e9 ns, factor 2) gives 3/5/7 s for levels 1/2/3, which the maintainer
 confirmed in game; level 0 previews the level-1 value, and the game's per-level
-line also shows the level-1 value (3 s), not the 2 s increment.
+line also shows the level-1 value (3 s), not the 2 s increment. Build 1267041
+(1.0) changed Frost to value 0 with factor 3, so 3/6/9 s.
 Balancing IDs 0/1/2 resolve Health/Mana/Stamina per attribute point. Unknown
 formats, sources, IDs and placeholder mismatches prevent applying an import.
 
@@ -116,14 +133,16 @@ One explicit compatibility exception remains in the report:
   is not decoded into a stat calculation. Other non-basic combat effects are
   not added to the stat totals.
 
-Frost used to keep its authored text (3/6/9 s, which was wrong) because time
-configs were unsupported; it now has game text in every app locale. The
+Frost used to keep its authored text because time configs were unsupported;
+it now has game text in every app locale. The
 authored FROST `perLevel` in `LegacyNodes.ts` is only a fallback.
 
-Costs/max levels are unchanged for this build. Generated JSON and English
-locale changes belong in source control; raw game exports and local reports do
-not. Regenerate both outputs with the command, not by hand. No new PNG assets
-are copied: current asset names and presentation overrides remain in use.
+Generated JSON and locale changes belong in source control; raw game exports
+and local reports do not. Regenerate both outputs with the command, not by
+hand. Build 1267041 (1.0) added nine skills (app IDs 223-231), rewired edges,
+moved nodes and changed costs and one max level (Mass Destruction 3 -> 1). Its
+existing icons are pixel-identical to the committed PNGs; only the three new
+active skills' icons were copied in, under their app type keys.
 
 ## Tree versioning
 
@@ -184,7 +203,7 @@ for an icon). Apply is refused until it exists. A new node without an
 authored `tier` renders as small (a warning). Locales with a game locale get
 the new type's game text; unresolved game text in any of them blocks apply.
 A locale without a game locale needs its own translation (at least a
-`description`) before apply. `validate-translations.js` then checks the rest
+`description`) before apply; a locale with game text needs none for the new type. `validate-translations.js` then checks the rest
 at build time: a name, placeholders that resolve at every level, and a
 per-level line in each locale's language.
 

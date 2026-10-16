@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { TransformComponent, TransformWrapper, ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
@@ -11,16 +11,25 @@ import {
   removePathsConnectedTo,
   removeSelectedSkill,
 } from "@/redux/skills/skills.slice";
-import Nodes, { Node, getMaxLevel } from "../constants/Nodes";
+import {
+  SkillNodes as Nodes,
+  TREE_LABELS,
+  Node,
+  fitsUnderHardCap,
+  getMaxLevel,
+  getMaxSkillPoints,
+  getSelectableSkills,
+  getSelectedNeighbors,
+  getSkillName,
+  getSkillsToRemove,
+  resolveNodePosition,
+} from "@enshrouded/core";
 
 export type SkillAction = "primary" | "secondary";
-import { computeMaxSkillPoints } from "../constants/Biomes";
 import CoreCircle from "./CoreCircle";
 import SkillNode from "./SkillNode";
 import SkillTooltip from "./SkillTooltip";
 import SkillPaths from "./SkillPaths";
-import { getSelectableSkills, getSkillsToRemove, humanizeKey } from "../utils/utils";
-import { skillTextPrefix } from "../utils/skillText";
 import { playSound } from "../utils/sounds";
 import { isHardcapEnabled } from "../utils/settings";
 import HUD from "./hud/HUD";
@@ -30,19 +39,47 @@ import SkillCapDialog from "./dialogs/SkillCapDialog";
 
 const REFUND_CONFIRM_THRESHOLD = 2;
 
+// The zoom library only keeps its content box on screen, so the box is sized
+// to the tree (nodes and class labels) plus a margin instead of the screen.
+// That stops panning from going far past the outermost nodes.
+const TREE_SCALE = 0.25; // the `scale-25` on the tree container
+const LARGEST_NODE = 45;
+const LABEL_SCALE = 0.3; // TreeLabels draws label art at 30%
+const PAN_MARGIN = 80; // px past the tree's edge (labels included), before zoom
+const treeHalfExtent = (() => {
+  let x = 0;
+  let y = 0;
+  for (const node of Object.values(Nodes.nodes)) {
+    const p = resolveNodePosition(node);
+    x = Math.max(x, Math.abs(p.x) + LARGEST_NODE / 2);
+    y = Math.max(y, Math.abs(p.y) + LARGEST_NODE / 2);
+  }
+  // A label is rotated out to its radius, then turned upright about its center.
+  for (const label of TREE_LABELS) {
+    const w = label.width * LABEL_SCALE;
+    const h = label.height * LABEL_SCALE;
+    const a = (label.angle * Math.PI) / 180;
+    const cy0 = 250 + label.distance + h / 2;
+    const cx = (w / 2) * Math.cos(a) - cy0 * Math.sin(a);
+    const cy = (w / 2) * Math.sin(a) + cy0 * Math.cos(a);
+    x = Math.max(x, Math.abs(cx) + w / 2);
+    y = Math.max(y, Math.abs(cy) + h / 2);
+  }
+  // Whole pixels, so the tree center (the box center) lands on a pixel.
+  return { x: Math.ceil(x * TREE_SCALE) + PAN_MARGIN, y: Math.ceil(y * TREE_SCALE) + PAN_MARGIN };
+})();
+
 type SkillTreeProps = {
   dbAvailable?: boolean;
   focusNodeId?: string;
 };
 
 const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
-  const { t, i18n } = useTranslation("nodes");
+  const { i18n } = useTranslation("common");
   // Seeds the search box, so it must be the same name the search corpus indexes.
   const focusType = focusNodeId ? Nodes.nodes[focusNodeId]?.type : undefined;
   const focusNodeName = focusType
-    ? t(`${skillTextPrefix(focusType, Nodes.types[focusType], i18n.resolvedLanguage ?? i18n.language)}.name`, {
-        defaultValue: humanizeKey(focusType),
-      })
+    ? getSkillName(focusType, i18n.resolvedLanguage ?? i18n.language)
     : undefined;
   const [pendingRefund, setPendingRefund] = useState<string[] | null>(null);
   const [showCapWarning, setShowCapWarning] = useState(false);
@@ -59,7 +96,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
   const connectedPaths = useAppSelector((state) => state.skill.connectedPaths);
   const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
   const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? 45);
-  const maxSkillPoints = computeMaxSkillPoints(playerLevel, unlockedBiomes);
+  const maxSkillPoints = getMaxSkillPoints({ playerLevel, unlockedBiomes });
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -67,13 +104,6 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
     const el = document.getElementById(`node-${focusNodeId}`);
     if (el) transformRef.current.zoomToElement(el, 5, 0);
   }, [focusNodeId]);
-
-  const getPointsUsed = () =>
-    Object.entries(selectedSkills).reduce(
-      (acc, [id, level]) =>
-        acc + (Nodes.types[Nodes.nodes[id]?.type]?.cost ?? 0) * level,
-      0
-    );
 
   const executeRefund = (skillsToRemove: string[]) => {
     dispatch(removeSelectedSkill(skillsToRemove));
@@ -93,9 +123,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
   const onSelect = (node: Node, action: SkillAction = "primary") => {
     const currentLevel = selectedSkills[node.id] ?? 0;
     const max = getMaxLevel(node.type);
-    const connectedTo = selectedSkillIds.filter((id) =>
-      Nodes.edges[id].includes(node.id)
-    );
+    const connectedTo = getSelectedNeighbors(node.id, selectedSkills);
 
     if (action === "secondary") {
       if (currentLevel === 0) return;
@@ -119,8 +147,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
         );
         return;
       }
-      const nodeCost = Nodes.types[node.type]?.cost ?? 0;
-      if (isHardcapEnabled() && getPointsUsed() + nodeCost > maxSkillPoints) {
+      if (isHardcapEnabled() && !fitsUnderHardCap(selectedSkills, node.id, maxSkillPoints)) {
         playSound("node-refund", 0.4);
         setShowCapWarning(true);
         return;
@@ -136,8 +163,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
     }
 
     if (currentLevel < max) {
-      const nodeCost = Nodes.types[node.type]?.cost ?? 0;
-      if (isHardcapEnabled() && getPointsUsed() + nodeCost > maxSkillPoints) {
+      if (isHardcapEnabled() && !fitsUnderHardCap(selectedSkills, node.id, maxSkillPoints)) {
         playSound("node-refund", 0.4);
         setShowCapWarning(true);
         return;
@@ -190,7 +216,9 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
       <TransformWrapper
         minScale={2}
         maxScale={5}
-        wheel={{ step: 2 }}
+        // Smooth wheel zoom multiplies the step by the wheel distance (about
+        // 100 per notch), so 0.001 zooms about 0.1 per notch.
+        wheel={{ step: 0.001 }}
         doubleClick={{
           disabled: true,
         }}
@@ -204,9 +232,10 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
         {({ zoomIn, zoomOut, centerView, zoomToElement }) => (
           <>
             <HUD zoomIn={zoomIn} zoomOut={zoomOut} centerView={centerView} zoomToElement={zoomToElement} dbAvailable={dbAvailable} initialSearchText={focusNodeName} />
-            <TransformComponent contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
+            <TransformComponent wrapperClass="!w-screen !h-[100dvh]" contentClass="!flex !flex-wrap !w-fit !h-fit !m-0 !p-0 !origin-[0%_0%]">
               <div
-                className="relative w-screen h-[100dvh] flex items-center justify-center"
+                className="relative flex items-center justify-center"
+                style={{ width: treeHalfExtent.x * 2, height: treeHalfExtent.y * 2 }}
               >
                 <div className="relative scale-25 z-20">
                   <CoreCircle />
@@ -225,7 +254,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
                 </div>
                 <svg
                   id="svg-container"
-                  className="absolute inset-0 w-screen h-[100dvh]"
+                  className="absolute inset-0 w-full h-full overflow-visible"
                 >
                   <SkillPaths lines={connectedPaths} />
                 </svg>

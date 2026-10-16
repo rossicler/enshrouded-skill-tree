@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import Image from "next/image";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
+import { useTranslation } from "next-i18next/pages";
 
 import { classNames } from "@/utils/utils";
 import CustomHeader from "@/components/CustomHeader";
@@ -64,7 +64,7 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const locale = context.locale ?? "en";
-  const translations = await serverSideTranslations(locale, ["common", "nodes"]);
+  const translations = await serverSideTranslations(locale, ["common"]);
   const { shortCode, code: rawCode = "", focus } = context.query as Query;
   const focusNodeId = Array.isArray(focus) ? focus[0] : focus;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import { Copy, Check } from "lucide-react";
 
 import { classNames } from "@/utils/utils";
@@ -29,14 +29,14 @@ const CopyInput = ({ copied, value, label, onCopy }: PropsType) => {
       )}
       <div
         className={classNames(
-          "w-full h-10 border rounded-sm",
+          "w-full h-10 border rounded-xs",
           "py-1 px-2 flex items-center relative overflow-hidden",
           copied
             ? "border-[#8fad6a] bg-[#2a2a35]"
             : "border-[#5a5a60] bg-[#2a2a35]"
         )}
       >
-        <input className="flex-grow mr-8 bg-transparent text-[#e8d5a3] outline-none" value={value} disabled />
+        <input className="grow mr-8 bg-transparent text-[#e8d5a3] outline-hidden" value={value} disabled />
         <button
           className={classNames(
             "absolute right-0 w-8 h-full flex items-center justify-center border-l",

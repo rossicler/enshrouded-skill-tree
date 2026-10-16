@@ -107,20 +107,6 @@
     "skillsDisconnected": "Removed skills that are no longer connected to the tree: {{names}}",
     "skillLevelsLowered": "Lowered skill levels to the current maximum: {{names}}"
   },
-  "treeLabels": {
-    "trickster": "Trickster",
-    "wizard": "Wizard",
-    "healer": "Healer",
-    "battlemage": "Battlemage",
-    "tank": "Tank",
-    "warrior": "Warrior",
-    "barbarian": "Barbarian",
-    "athlete": "Athlete",
-    "survivor": "Survivor",
-    "beastmaster": "Beastmaster",
-    "ranger": "Ranger",
-    "assassin": "Assassin"
-  },
   "stats": {
     "constitution": "Constitution",
     "strength": "Strength",

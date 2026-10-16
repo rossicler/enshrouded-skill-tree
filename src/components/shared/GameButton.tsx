@@ -9,7 +9,7 @@ type PropsType = {
   grouped?: boolean;
   variant?: "default" | "text";
   noDecorations?: boolean;
-} & JSX.IntrinsicElements["button"];
+} & React.JSX.IntrinsicElements["button"];
 
 const DECORATION_FILTER =
   "[filter:brightness(0)_saturate(100%)_invert(88%)_sepia(15%)_saturate(500%)_hue-rotate(10deg)_brightness(95%)]";

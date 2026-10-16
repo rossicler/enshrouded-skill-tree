@@ -8,7 +8,7 @@ import GameButtonGroup from "../shared/GameButtonGroup";
 import ResetConfirmDialog from "../dialogs/ResetConfirmDialog";
 import { useAppDispatch } from "@/redux/hooks";
 import { loadSelectedSkills } from "@/redux/skills/skills.slice";
-import { BuildData } from "@/utils/utils";
+import type { SkillBuild } from "@enshrouded/core";
 import { useLoadBuild } from "@/hooks/useLoadBuild";
 import PointsHUD from "./Points";
 import AboutHUD from "./About";
@@ -33,7 +33,7 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
   const router = useRouter();
   const loadBuild = useLoadBuild();
 
-  const importSkillsHandler = (build: BuildData) => {
+  const importSkillsHandler = (build: SkillBuild) => {
     playSound("node-unlock", 0.4);
     loadBuild(build);
   };
@@ -73,19 +73,19 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
         >
           {/* Mobile: vertical */}
           <GameButtonGroup vertical className="md:hidden">
-            <GameButton grouped className="!min-w-0 !px-4" onClick={() => setExportOpen(true)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="share" onClick={() => setExportOpen(true)}>
               <Share2 size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4" onClick={() => setResetOpen(true)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="reset" onClick={() => setResetOpen(true)}>
               <RotateCcw size={16} />
             </GameButton>
           </GameButtonGroup>
           {/* Desktop: horizontal, icon-only */}
           <GameButtonGroup className="hidden md:flex">
-            <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={() => setExportOpen(true)}>
+            <GameButton grouped className="!min-w-0 !px-4 !pl-8" data-hud="share" onClick={() => setExportOpen(true)}>
               <Share2 size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={() => setResetOpen(true)}>
+            <GameButton grouped className="!min-w-0 !px-4 !pr-8" data-hud="reset" onClick={() => setResetOpen(true)}>
               <RotateCcw size={16} />
             </GameButton>
           </GameButtonGroup>
@@ -100,25 +100,25 @@ const HUD = ({ zoomIn, zoomOut, centerView, zoomToElement, dbAvailable = false, 
         >
           {/* Mobile: vertical */}
           <GameButtonGroup vertical className="md:hidden">
-            <GameButton grouped className="!min-w-0 !px-4" onClick={() => zoomIn(0.5)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="zoom-in" onClick={() => zoomIn(0.5)}>
               <ZoomIn size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4" onClick={() => centerView(2)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="recenter" onClick={() => centerView(2)}>
               <Crosshair size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4" onClick={() => zoomOut(0.5)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="zoom-out" onClick={() => zoomOut(0.5)}>
               <ZoomOut size={16} />
             </GameButton>
           </GameButtonGroup>
           {/* Desktop: horizontal */}
           <GameButtonGroup className="hidden md:flex">
-            <GameButton grouped className="!min-w-0 !px-4 !pl-8" onClick={() => zoomOut(0.5)}>
+            <GameButton grouped className="!min-w-0 !px-4 !pl-8" data-hud="zoom-out" onClick={() => zoomOut(0.5)}>
               <ZoomOut size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4" onClick={() => centerView(2)}>
+            <GameButton grouped className="!min-w-0 !px-4" data-hud="recenter" onClick={() => centerView(2)}>
               <Crosshair size={16} />
             </GameButton>
-            <GameButton grouped className="!min-w-0 !px-4 !pr-8" onClick={() => zoomIn(0.5)}>
+            <GameButton grouped className="!min-w-0 !px-4 !pr-8" data-hud="zoom-in" onClick={() => zoomIn(0.5)}>
               <ZoomIn size={16} />
             </GameButton>
           </GameButtonGroup>

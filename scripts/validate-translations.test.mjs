@@ -3,8 +3,8 @@ import os from "node:os";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { describe, expect, it } from "vitest";
-import { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } from "../src/utils/skillInterpolation";
-import { usesGameText } from "../src/utils/skillText";
+import { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } from "../packages/core/src/utils/skillInterpolation";
+import { usesGameText } from "../packages/core/src/utils/skillText";
 
 const { collectProblems, scanSource, placeholders } = createRequire(import.meta.url)("./validate-translations.js");
 
@@ -60,6 +60,14 @@ describe("validate-translations", () => {
     const input = fixture();
     delete input.locales.fr.nodes.GAME.name;
     expect(messages(input)).toEqual(["fr/nodes.json: GAME.name is missing, so the tooltip, search and toasts would show the type key"]);
+  });
+
+  it("needs no authored description beside game text, but requires one without it", () => {
+    const input = fixture();
+    delete input.locales.en.nodes.GAME.description;
+    expect(messages(input)).toEqual([]);
+    delete input.locales.fr.nodes.LEGACY.description;
+    expect(messages(input)).toEqual(["fr/nodes.json: [LEGACY.description] Description must be a non-empty array of strings"]);
   });
 
   it("requires every description placeholder to have a value at every level", () => {
@@ -132,6 +140,16 @@ describe("validate-translations", () => {
       "fr/common.json: hud.missing is missing (used in src/c.tsx)",
       "en/common.json: biomes.revelwood is missing (one key per value of biomes.*)",
       "fr/common.json: biomes.revelwood is missing (one key per value of biomes.*)",
+    ]);
+  });
+
+  it("requires a tree label text in every locale", () => {
+    const input = fixture();
+    input.treeLabels = ["wizard", "tank"];
+    input.locales.en.tree = { treeLabels: { wizard: "Wizard", tank: "Tank" } };
+    input.locales.fr.tree = { treeLabels: { wizard: "Magicien" } };
+    expect(messages(input)).toEqual([
+      "fr/tree.json: treeLabels.tank is missing (one per TREE_LABELS entry)",
     ]);
   });
 

@@ -1,22 +1,26 @@
 import { describe, expect, it } from "vitest";
 import { applyImport, loadAuthoredPresentation, runImport, summarize } from "./skill-data.mjs";
 import { addNode, neighborsOf, removeNode, renameNode, syntheticExport } from "./fixtures/synthetic-export.mjs";
-import { buildSkillTree } from "../src/constants/Nodes";
-import { getSelectableSkills } from "../src/utils/utils";
-import runtime from "../src/constants/gameSkillData.json";
-import locale from "../public/locales/en/nodes.json";
-import frLocale from "../public/locales/fr/nodes.json";
+import { buildSkillTree } from "../packages/core/src/constants/Nodes";
+import { getSelectableSkills } from "../packages/core/src/selection";
+import runtime from "../packages/core/src/constants/gameSkillData.json";
+import locale from "../packages/core/src/locales/en/nodes.json";
+import frLocale from "../packages/core/src/locales/fr/nodes.json";
 import mapping from "./skill-data-mapping.json";
 
 const presentation = loadAuthoredPresentation();
 const fresh = () => syntheticExport({ runtime, mapping, locale, frLocale });
 const appLocales = { en: locale, fr: frLocale };
 const gameIdOf = (appId) => Object.entries(mapping.nodes).find(([, entry]) => entry.appId === appId)[0];
+// The importer proposes one above the highest active or retired app ID.
+const nextAppId = String(Math.max(...Object.values(mapping.nodes).map((entry) => Number(entry.appId)),
+  ...Object.keys(mapping.retired).map(Number)) + 1);
 // Locales with a translation for every authored type (new fixture types get one
 // alongside their presentation, as a maintainer would add before applying).
 const translated = (pres) => {
-  const fill = (nodes) => ({ ...Object.fromEntries(Object.keys(pres.types)
-    .map((type) => [type, { description: [`${type} translation.`] }])), ...nodes });
+  // Types added by a game update have only game text, so they get one too.
+  const fill = (nodes) => Object.fromEntries([...new Set([...Object.keys(pres.types), ...Object.keys(nodes)])]
+    .map((type) => [type, { description: [`${type} translation.`], ...nodes[type] }]));
   return { en: fill(locale), fr: fill(frLocale) };
 };
 const run = (data, changes, options = {}) => runImport({
@@ -74,8 +78,8 @@ describe("structural import: additions", () => {
   it("proposes a new app ID and type, and requires a reviewed changes file", () => {
     const preview = run(data);
     expect(preview.report.added).toEqual([{ gameId: newGameId, name: "Frost Nova", base: false, neighbors: ["222"] }]);
-    expect(preview.proposal.add).toEqual({ [newGameId]: { appId: "223", type: "FROST_NOVA" } });
-    expect(preview.proposal.graph.added).toEqual([["222", "223"]]);
+    expect(preview.proposal.add).toEqual({ [newGameId]: { appId: nextAppId, type: "FROST_NOVA" } });
+    expect(preview.proposal.graph.added).toEqual([["222", nextAppId]]);
     expect(preview.blockers.some((blocker) => blocker.includes("reviewed changes file"))).toBe(true);
     expect(summarize(preview.report)).toContain("Frost Nova");
   });
@@ -88,19 +92,19 @@ describe("structural import: additions", () => {
     const pres = withType("FROST_NOVA");
     const applied = run(data, approve(preview), { presentation: pres });
     expect(applied.blockers).toEqual([]);
-    expect(applied.report.warnings).toContain('Node 223 (Frost Nova) has no authored tier; it renders as "small"');
-    expect(applied.nextMapping.nodes[newGameId]).toEqual({ appId: "223", type: "FROST_NOVA" });
+    expect(applied.report.warnings).toContain(`Node ${nextAppId} (Frost Nova) has no authored tier; it renders as "small"`);
+    expect(applied.nextMapping.nodes[newGameId]).toEqual({ appId: nextAppId, type: "FROST_NOVA" });
     const output = applyImport(applied.candidate, appLocales);
-    expect(output.runtime.nodes["223"]).toMatchObject({ gameNodeId: newGameId, type: "FROST_NOVA" });
+    expect(output.runtime.nodes[nextAppId]).toMatchObject({ gameNodeId: newGameId, type: "FROST_NOVA" });
     expect(output.runtime.types.FROST_NOVA.gameTextLocales).toEqual(["en", "fr"]);
     expect(output.locales.en.FROST_NOVA.game.name).toBe("Frost Nova");
     expect(output.locales.fr.FROST_NOVA.game.description).toEqual(["Frost Nova fixture text."]);
 
     const tree = buildSkillTree(pres, output.runtime);
-    expect(tree.edges["222"]).toContain("223");
-    expect(tree.edges["223"]).toContain("222");
-    expect(getSelectableSkills({ "222": 1 }, tree)).toContain("223");
-    expect(getSelectableSkills({ "223": 1 }, tree)).toContain("222");
+    expect(tree.edges["222"]).toContain(nextAppId);
+    expect(tree.edges[nextAppId]).toContain("222");
+    expect(getSelectableSkills({ "222": 1 }, tree)).toContain(nextAppId);
+    expect(getSelectableSkills({ [nextAppId]: 1 }, tree)).toContain("222");
     expectBidirectional(tree);
   });
 
@@ -110,14 +114,14 @@ describe("structural import: additions", () => {
     delete locales.fr.FROST_NOVA;
     locales.de = structuredClone(locales.fr);
     const result = run(data, approve(run(data)), { presentation: pres, locales });
-    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in public/locales/de/nodes.json"]);
+    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in packages/core/src/locales/de/nodes.json"]);
   });
 
   it("blocks apply while a locale's game text is unresolved", () => {
     const missing = structuredClone(data);
     delete missing.interpreted.nodes.find((node) => node.gameNodeId === newGameId).translations.Fr_Fr;
     const result = run(missing, approve(run(missing)), { presentation: withType("FROST_NOVA") });
-    expect(result.report.unresolvedText).toEqual([expect.objectContaining({ appId: "223", locale: "fr", reason: "No Fr_Fr text in the export" })]);
+    expect(result.report.unresolvedText).toEqual([expect.objectContaining({ appId: nextAppId, locale: "fr", reason: "No Fr_Fr text in the export" })]);
     expect(result.blockers).toContain("Unresolved text prevents applying this import; see report.json");
   });
 
@@ -160,7 +164,7 @@ describe("structural import: removals and retired IDs", () => {
   it("never reuses a retired ID for another skill", () => {
     const added = addNode(structuredClone(data), { gameId: "4000000002", name: "Frost Nova", near: gameIdOf("221"), neighbors: [gameIdOf("221")] });
     const later = run(added, undefined, { ...next, presentation: withType("FROST_NOVA") });
-    expect(later.proposal.add["4000000002"].appId).toBe("223");
+    expect(later.proposal.add["4000000002"].appId).toBe(nextAppId);
     const reuse = approve(later);
     reuse.add["4000000002"].appId = "222";
     expect(run(added, reuse, { ...next, presentation: withType("FROST_NOVA") }).blockers)

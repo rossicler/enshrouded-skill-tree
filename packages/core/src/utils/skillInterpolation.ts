@@ -1,5 +1,5 @@
-import { NodeTypeMetadata } from "@/constants/Nodes";
-import { baseLanguage } from "@/utils/skillText";
+import { NodeTypeMetadata } from "../constants/Nodes";
+import { baseLanguage } from "./skillText";
 
 export const getSkillInterpolationValues = (
   metadata: NodeTypeMetadata | undefined,

@@ -9,7 +9,8 @@
       "name": "Giant Slayer Hook",
       "description": [
         "Use your <b>Grappling Hook</b> to pull yourself towards large enemies during combat.",
-        "<b>Cost:</b> 50 Stamina"
+        "The cost of this skill scales with enemy level. The higher the enemy level, the more it costs.",
+        "<b>Base Cost:</b> {{gameValue1}} Stamina"
       ]
     }
   },
@@ -23,7 +24,8 @@
       "name": "Grounding Hook",
       "description": [
         "Use your <b>Grappling Hook</b> to pull <b>flying</b> enemies towards you during combat.",
-        "<b>Cost:</b> 50 Stamina"
+        "The cost of this skill scales with enemy level. The higher the enemy level, the more it costs.",
+        "<b>Base Cost:</b> {{gameValue1}} Stamina"
       ]
     }
   },
@@ -139,7 +141,7 @@
       "name": "Power Parry",
       "description": [
         "Your Parry Power is increased by <b>{{gameValue1}}</b>.",
-        "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
+        "<b>Parry</b><br/>You can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.<br/>Wait to see a <b>flash</b> on the enemy or projectile to perform a parry.",
         "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Parry Power per level"
@@ -299,7 +301,8 @@
       "name": "Sneak Attack",
       "description": [
         "Perform a <b>Sneak Attack</b> by sneaking up to an unaware enemy and pressing <b>{{gameValue1}}</b>.",
-        "<b>Sneak Attack</b> deals <b>+900%</b> increased damage."
+        "<b>Sneak Attack</b> deals <b>+900%</b> increased damage.",
+        "Wands, Staves and Bows cannot perform Sneak Attacks."
       ]
     }
   },
@@ -313,7 +316,8 @@
       "name": "Merciless Attack",
       "description": [
         "Perform a <b>Merciless Attack</b> by pressing <b>{{gameValue1}}</b> to deal <b>{{gameValue2}}</b> damage to an <b>overpowered</b> enemy.",
-        "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
+        "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks.",
+        "Wands, Staves and Bows cannot perform Merciless Attacks."
       ]
     }
   },
@@ -329,7 +333,7 @@
       "description": [
         "Jumping with {{gameValue1}} while gliding lifts you upwards. Can be used once per flight.",
         "<b>Charge</b><br/>As the Updraft charges before activation, the resulting lift is increased. A full charge grants you an additional boost. The charge is accelerated while inside your base.",
-        "<b>Cost:</b> 100 Mana"
+        "<b>Cost:</b> {{gameValue2}} Mana"
       ]
     }
   },
@@ -345,7 +349,7 @@
       "description": [
         "A magic-powered punch that pushes back and stuns enemies.",
         "Replaces your unarmed attacks as long as you have the necessary Mana available.",
-        "<b>Cost:</b> 30 Mana"
+        "<b>Cost:</b> {{gameValue1}} Mana"
       ]
     }
   },
@@ -428,7 +432,7 @@
       "description": [
         "Replaces the Dodge Roll ability with a short-range teleport.",
         "Blink also replaces the sideways Dodge Roll of the Strategic Maneuver skill.",
-        "<b>Cost:</b> 20 Stamina"
+        "<b>Cost:</b> {{gameValue1}} Stamina"
       ]
     }
   },
@@ -442,8 +446,8 @@
     "game": {
       "name": "Evasion Attack",
       "description": [
-        "When equipped with a Melee weapon, you can perform an evade attack, which dashes towards the enemy and deals more weapon damage with <b>{{gameValue1}}</b>.",
-        "<b>Cost:</b> 20 Stamina",
+        "When equipped with a Melee weapon, you can perform an Evasion Attack by pressing <b>{{gameValue1}}</b> while evading. <br/>You will dash towards the enemy and deal <b>50%</b> additional weapon damage.",
+        "<b>Cost:</b> {{gameValue2}} Stamina",
         "<b>Block Breaker</b> <br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit."
       ]
     }
@@ -486,7 +490,7 @@
       "description": [
         "Trigger a Shockwave when you parry an attack or <b>overpower</b> an enemy.",
         "The Shockwave pushes back nearby enemies. It also fills their <i>Stun Bar</i>, scaling with your Strength attribute.",
-        "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.",
+        "<b>Parry</b><br/>You can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.<br/>Wait to see a <b>flash</b> on the enemy or projectile to perform a parry.",
         "<b>Overpower</b> <br/>Attacking blocking enemies or parrying their attacks fills their <i>Stun Bar</i> until they become <b>overpowered</b>.<br/><b>Overpowered</b> enemies are open for Merciless Attacks."
       ]
     }
@@ -513,7 +517,7 @@
       "name": "Bash",
       "description": [
         "Parrying enemy attacks bashes them for <b>{{gameValue1}} Blunt</b> damage. Bash damage is increased by your Strength attribute.",
-        "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        "<b>Parry</b><br/>You can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.<br/>Wait to see a <b>flash</b> on the enemy or projectile to perform a parry."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}} Blunt</b> damage per level"
     }
@@ -528,7 +532,7 @@
       "name": "Whirlwind Crescendo",
       "description": [
         "When equipped with a Two-Handed weapon, trigger a whirl attack at the end of an attack chain.",
-        "<b>Cost:</b> 75 stamina"
+        "<b>Cost:</b> {{gameValue1}} Stamina"
       ]
     }
   },
@@ -545,7 +549,7 @@
       "description": [
         "When equipped with a Melee weapon, you can perform a special attack by holding <b>{{gameValue1}}</b> during a jump.",
         "Crash Down deals 50% more weapon damage in a small blast radius and costs Stamina depending on weapon type used.",
-        "<b>Cost:</b> 35 - 60 Stamina",
+        "<b>Cost:</b> {{gameValue2}} - {{gameValue3}} Stamina",
         "<b>Block Breaker</b> <br/>This special attack fills a blocking enemy's <i>Stun Bar</i> twice as much when hit.."
       ]
     }
@@ -572,7 +576,7 @@
       "name": "Double Jump",
       "description": [
         "Allows jumping a second time while airborne.",
-        "<b>Cost:</b> 10 Stamina"
+        "<b>Cost:</b> {{gameValue1}} Stamina"
       ]
     }
   },
@@ -668,7 +672,7 @@
       "name": "Bee Sting",
       "description": [
         "Firing or aiming your Bow while airborne slows down your fall briefly. Every shot lifts you slightly, granting more airtime.",
-        "<b>Cost:</b> 10 Stamina per second"
+        "<b>Cost:</b> {{gameValue1}} Stamina per second"
       ]
     }
   },
@@ -735,9 +739,9 @@
     "game": {
       "name": "Quick Charge",
       "description": [
-        "Cast Time of spells is reduced by <b>{{gameValue1}}</b>."
+        "Charge Time of spells is reduced by <b>{{gameValue1}}</b>."
       ],
-      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Cast Time per level"
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Charge Time per level"
     }
   },
   "THIS_IS_THE_WAY": {
@@ -850,7 +854,7 @@
     "game": {
       "name": "Wizard",
       "description": [
-        "Magic weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
+        "Critical Strike chance with Wands and Staves is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Critical Strike chance per level"
     }
@@ -882,7 +886,7 @@
     "game": {
       "name": "Chain Hit",
       "description": [
-        "Critical Strikes with Magic weapons will automatically hit a second enemy within <b>15</b> meters for <b>5 Shock</b> damage per Intelligence."
+        "Critical Strikes with Magic weapons hit an additional random target within <b>15</b> meters for <b>5 Shock</b> damage per Intelligence. <br/>The initial target can be hit twice instead of chaining to another one."
       ]
     }
   },
@@ -920,7 +924,7 @@
     "game": {
       "name": "Healer",
       "description": [
-        "Health gain from healing spells and skills is increased by <b>{{gameValue1}}</b>."
+        "Health gain from healing spells and Water Aura is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Healing per level"
     }
@@ -945,7 +949,7 @@
       "<b>Shroud Time</b><br/>Should this time run out, the Shroud will consume you."
     ],
     "game": {
-      "name": "Shroud Filter",
+      "name": "Shroud Mitigation",
       "description": [
         "Dealing damage with a Magic weapon has a <b>{{gameValue1}}</b> chance to trigger a small flame burst that restores <b>{{gameValue2}}</b> seconds of <b>Time in the Shroud </b> to you and your allies within <b>{{gameValue3}}</b> meters.",
         "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
@@ -1027,7 +1031,7 @@
       "name": "Arcane Deflection",
       "description": [
         "Successfully parrying an enemy's attack restores <b>{{gameValue1}}</b> Mana.",
-        "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        "<b>Parry</b><br/>You can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.<br/>Wait to see a <b>flash</b> on the enemy or projectile to perform a parry."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Mana per level"
     }
@@ -1118,7 +1122,7 @@
     "game": {
       "name": "Life Burst",
       "description": [
-        "Defeating an enemy with a Magic weapon restores Health equal to <b>3</b> times your Intelligence to all players within <b>15</b> meters of the target."
+        "Defeating an enemy with a Magic weapon restores Health equal to <b>{{gameValue1}}</b> times your Intelligence to all players within <b>15</b> meters of the target."
       ]
     }
   },
@@ -1159,7 +1163,7 @@
     "game": {
       "name": "Snap",
       "description": [
-        "Triggering a <b>Merciless Attack</b> restores <b>10%</b> Mana."
+        "Triggering a <b>Merciless Attack</b> restores <b>{{gameValue1}}</b> Mana."
       ]
     }
   },
@@ -1184,7 +1188,7 @@
     "game": {
       "name": "Shiny Plates",
       "description": [
-        "Equipped armor grants <b>{{gameValue1}}</b> increased Magical Armor."
+        "Magical Armor points from equipped items are increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> increased Magical Armor per level"
     }
@@ -1197,7 +1201,7 @@
     "game": {
       "name": "Heavy Plates",
       "description": [
-        "Equipped armor grants <b>{{gameValue1}}</b> increased Physical Armor."
+        "Physical Armor points from equipped items are increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> increased Physical Armor per level"
     }
@@ -1255,7 +1259,7 @@
     "game": {
       "name": "Purification",
       "description": [
-        "Defeating a Shroud infested enemy with a Melee weapon restores <b>{{gameValue1}}</b> seconds of <b>Time in the Shroud</b>.",
+        "Defeating a Shroud infested enemy with a One- or Two-Handed Axe, Club, Hammer, Sword or Greatsword restores <b>{{gameValue1}}</b> seconds of <b>Time in the Shroud</b>.",
         "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> seconds per level"
@@ -1269,7 +1273,7 @@
     "game": {
       "name": "Warrior's Path",
       "description": [
-        "One-Handed Melee weapon damage is increased by <b>{{gameValue1}}</b>."
+        "Damage with One-Handed Axes, Clubs and Swords is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> damage per level"
     }
@@ -1339,7 +1343,7 @@
     "game": {
       "name": "Veteran",
       "description": [
-        "Melee weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
+        "Critical Strike chance with One- or Two-Handed Axes, Clubs, Hammers, Swords, Greatswords and Daggers is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Critical Strike chance per level"
     }
@@ -1352,7 +1356,7 @@
     "game": {
       "name": "Titan Edge",
       "description": [
-        "Two-Handed Greatsword damage is increased by <b>{{gameValue1}}</b>."
+        "Damage with Two-Handed Greatswords is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> damage per level"
     }
@@ -1415,7 +1419,7 @@
       "description": [
         "When equipped with a Melee weapon, launch a powerful upward strike during the ascent of your jump.",
         "Use this skill to rapidly close the distance on <b>flying</b> enemies.",
-        "<b>Cost:</b> 25 Stamina"
+        "<b>Cost:</b> {{gameValue1}} Stamina"
       ]
     }
   },
@@ -1482,7 +1486,7 @@
       "name": "Vigorous Deflection",
       "description": [
         "Successfully parrying an enemy's attack restores <b>{{gameValue1}}</b> Stamina.",
-        "<b>Parry</b><br/>A well-timed block with any Melee weapon or Shield will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>."
+        "<b>Parry</b><br/>You can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry</b> the attack and fill up the enemy's <i>Stun Bar</i>.<br/>Wait to see a <b>flash</b> on the enemy or projectile to perform a parry."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Stamina per level"
     }
@@ -1547,7 +1551,7 @@
       "name": "Splash Dash",
       "description": [
         "Allows you to perform an evasive dash while swimming or diving.",
-        "<b>Cost</b>: 40 Stamina"
+        "<b>Cost</b>: {{gameValue1}} Stamina"
       ]
     }
   },
@@ -1559,7 +1563,7 @@
     "game": {
       "name": "Finesse",
       "description": [
-        "Dealing damage with One-Handed Melee weapons and Daggers has a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability to that weapon."
+        "Dealing damage with One-Handed Swords, One-Handed Axes, One-Handed Clubs or Daggers has a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability to that weapon."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance per level"
     }
@@ -1738,7 +1742,7 @@
     "game": {
       "name": "Dagger Mastery",
       "description": [
-        "Dagger damage is increased by <b>{{gameValue1}}</b>."
+        "Damage with Daggers is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> damage per level"
     }
@@ -1872,7 +1876,8 @@
       "name": "Skill Shot",
       "description": [
         "<b>Skillshot</b> damage is increased by <b>{{gameValue1}}</b>.",
-        "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
+        "<b>Skillshot</b><br/>Striking enemy weak points, such as their heads, with Arrows is considered a Skillshot.",
+        "Skillshots deal 100% increased base damage against enemies without helmets and 50% against helmeted enemies. <br/>It can be further increased by the Skillshot damage attribute."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> damage per level"
     }
@@ -1944,7 +1949,7 @@
     "game": {
       "name": "Sniper",
       "description": [
-        "Ranged weapon Critical Strike chance is increased by <b>{{gameValue1}}</b>."
+        "Critical Strike chance with Bows is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Critical Strike chance per level"
     }
@@ -1957,7 +1962,7 @@
     "game": {
       "name": "Vitality Surge",
       "description": [
-        "Critical Strikes with Ranged weapons restore <b>{{gameValue1}}</b> Stamina."
+        "Critical Strikes with Bows, Daggers and Throwables restore <b>{{gameValue1}}</b> Stamina."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Stamina per level"
     }
@@ -1985,7 +1990,8 @@
       "name": "Bounty Bonanza",
       "description": [
         "After defeating a <b>Fell</b> enemy with a <b>Skillshot</b>, your group gains an additional <b>{{gameValue1}}</b> Experience Points.",
-        "<b>Skillshot</b><br/>Striking enemy weak points, such as heads or exposed hearts, is considered a Skillshot."
+        "<b>Skillshot</b><br/>Striking enemy weak points, such as their heads, with Arrows is considered a Skillshot.",
+        "Skillshots deal 100% increased base damage against enemies without helmets and 50% against helmeted enemies. <br/>It can be further increased by the Skillshot damage attribute."
       ]
     }
   },
@@ -1995,9 +2001,9 @@
       "For every target you hit with an <b>Explosive Arrow</b>, its damage is increased by <b>1%</b>."
     ],
     "game": {
-      "name": "Ricochets",
+      "name": "Shrapnel Blast",
       "description": [
-        "For every target you hit with an <b>Explosive Arrow</b>, its damage is increased by <b>1%</b>."
+        "Every target hit with an <b>Explosive Arrow</b>, increases its damage by <b>10%</b>."
       ]
     }
   },
@@ -2019,9 +2025,9 @@
       "Every enemy hit with an <b>Explosive Arrow</b> has a <b>20%</b> chance to trigger a secondary explosion for <b>50%</b> damage in a small radius."
     ],
     "game": {
-      "name": "Chain Reaction",
+      "name": "Echoing Explosives",
       "description": [
-        "Every enemy hit with an <b>Explosive Arrow</b> has a <b>20%</b> chance to trigger a secondary explosion for <b>50%</b> damage in a small radius."
+        "Every enemy hit with an <b>Explosive Arrow</b> has a <b>40%</b> chance to trigger a secondary explosion for <b>50%</b> damage in a small radius."
       ]
     }
   },
@@ -2082,7 +2088,7 @@
     "game": {
       "name": "Venomous Blades",
       "description": [
-        "Increases the chance to poison enemies to <b>25%</b> when using Daggers with the <b>Venomous Blades</b> perk."
+        "Increases the chance to poison enemies to <b>30%</b> when using Daggers with the <b>Venomous Blades</b> perk."
       ]
     }
   },
@@ -2118,7 +2124,7 @@
     "game": {
       "name": "Expose Weakness",
       "description": [
-        "Critical Strikes with Daggers increase damage dealt to the enemy by <b>{{gameValue1}}</b> for <b>{{gameValue2}}</b> seconds."
+        "Critical Strikes with Daggers break the armor of enemies, applying a <b>debuff</b> which lets them take <b>{{gameValue1}}</b> increased physical damage for <b>{{gameValue2}}</b> seconds."
       ]
     }
   },
@@ -2130,7 +2136,7 @@
     "game": {
       "name": "Barbarian's Path",
       "description": [
-        "Two-Handed Melee weapon damage is increased by <b>{{gameValue1}}</b>."
+        "Damage with Two-Handed Axes, Clubs and Hammers is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> damage per level"
     }
@@ -2174,7 +2180,7 @@
         "Replaces the Dodge Roll ability with a sideways Dodge Roll while an enemy target is locked.",
         "Use it to roll around your enemies, making it easier to flank them or deliver backstabs.",
         "Blink replaces the sideways Dodge Roll of the Strategic Maneuver skill.",
-        "<b>Cost:</b> 20 Stamina"
+        "<b>Cost:</b> {{gameValue1}} Stamina"
       ]
     }
   },
@@ -2320,7 +2326,7 @@
     "game": {
       "name": "Mage Apprentice",
       "description": [
-        "Magic weapon damage is increased by <b>{{gameValue1}}</b>."
+        "Damage with Wands and Staves increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> damage per level"
     }
@@ -2374,6 +2380,87 @@
         "Wand damage is increased by <b>{{gameValue1}}</b>."
       ],
       "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> damage per level"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "Advanced Necromancy",
+      "description": [
+        "Increases the maximum amount of summoned Hollow allies from spells by <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Hollow ally per level"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "Aerial Wand Attack",
+      "description": [
+        "When equipped with a Wand, you can perform a special attack by holding <b>{{gameValue1}}</b> during a jump.",
+        "It fires a magical projectile that deals <b>50%</b> additional weapon damage in a small blast radius.",
+        "<b>Cost:</b> {{gameValue2}} Stamina"
+      ]
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "Airborne Architect",
+      "description": [
+        "Turn into a spark inside the base to move freely through the air in first person while building. To toggle this mode, hold {{gameValue1}}."
+      ]
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "Barrage",
+      "description": [
+        "Dealing damage with Bows has a <b>{{gameValue1}}</b> chance to restore <b>1</b> durability to that weapon."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> chance per level"
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "Blast and Cast",
+      "description": [
+        "After a Critical Strike with a Wand, the base damage of your next Staff attack within {{gameValue1}} seconds is increased by <b>{{gameValue2}}</b>."
+      ]
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "Puncture",
+      "description": [
+        "Ranged <b>Piercing</b> damage is increased by <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> damage per level"
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "Survival Instinct",
+      "description": [
+        "Defeating a Shroud infested enemy with a Bow or Dagger restores <b>{{gameValue1}}</b> seconds of <b>Time in the Shroud</b>.",
+        "<b>Time in the Shroud</b><br/>Should this time run out, the Shroud will consume you."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> seconds per level"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "Totem Mastery",
+      "description": [
+        "Increases the maximum amount of summoned totems by <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> totem per level"
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "Wand Evasion Attack",
+      "description": [
+        "When equipped with a Wand, you can perform a Wand Evasion Attack by pressing <b>{{gameValue1}}</b> while evading.<br/>It fires a magical disc that pierces enemies and deals <b>50%</b> additional weapon damage.",
+        "<b>Cost:</b> {{gameValue2}} Mana"
+      ]
     }
   }
 }

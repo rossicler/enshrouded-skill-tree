@@ -1,17 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import { classNames } from "@/utils/utils";
-import { TREE_LABELS } from "@/constants/TreeLabels";
+import { TREE_LABELS, getTreeLabelName } from "@enshrouded/core";
 
 const INIT_DISTANCE = 250;
 const TO_SCALE_DOWN = 0.3;
 
 const TreeLabels = () => {
-  const { t } = useTranslation("common");
+  const { i18n } = useTranslation("common");
+  const language = i18n.resolvedLanguage ?? i18n.language;
   return (
     <>
-      <div className="absolute rounded-full border border-purple-400 border-opacity-30 bg-transparent -left-[200px] -bottom-[200px]" />
+      <div className="absolute rounded-full border border-purple-400/30 bg-transparent -left-[200px] -bottom-[200px]" />
       {TREE_LABELS.map((label) => (
         <div
           key={label.nameKey}
@@ -36,7 +37,7 @@ const TreeLabels = () => {
             >
               <Image
                 src={`/assets/labels/${label.asset}.png`}
-                alt={t(`treeLabels.${label.nameKey}`)}
+                alt={getTreeLabelName(label.nameKey, language)}
                 height={label.height * TO_SCALE_DOWN}
                 width={label.width * TO_SCALE_DOWN}
               />

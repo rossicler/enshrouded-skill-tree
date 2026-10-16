@@ -8,7 +8,7 @@ import {
   normalizeQuery,
   scoreMatch,
   stripHtml,
-} from "../searchText";
+} from "../utils/searchText";
 
 describe("normalizeForSearch", () => {
   it("lowercases and strips accents", () => {

@@ -1,8 +1,14 @@
 import { useCallback } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 
-import SkillNodes, { RETIRED_NODES } from "@/constants/Nodes";
-import { isDifferentTreeVersion } from "@/constants/skillTreeVersion";
+import {
+  SelectionCleanup,
+  SkillBuild,
+  buildToSelection,
+  getNodeName,
+  isDifferentTreeVersion,
+  sanitizeSelection,
+} from "@enshrouded/core";
 import { useAppDispatch } from "@/redux/hooks";
 import {
   initConnectedPaths,
@@ -11,29 +17,15 @@ import {
   setUnlockedBiomes,
 } from "@/redux/skills/skills.slice";
 import { gameToast } from "@/utils/gameToast";
-import { skillTextPrefix } from "@/utils/skillText";
-import {
-  BuildData,
-  SelectionCleanup,
-  buildToSelectedSkills,
-  humanizeKey,
-  sanitizeSelection,
-} from "@/utils/utils";
 
 // Fit a selection to the current tree, load it, and tell the user what changed.
 export const useApplySelection = () => {
   const dispatch = useAppDispatch();
-  const { t, i18n } = useTranslation(["common", "nodes"]);
+  const { t, i18n } = useTranslation("common");
 
   const skillName = useCallback(
-    (id: string) => {
-      const node = SkillNodes.nodes[id];
-      if (!node) return RETIRED_NODES[id]?.name ?? `#${id}`;
-      const language = i18n.resolvedLanguage ?? i18n.language;
-      const prefix = skillTextPrefix(node.type, SkillNodes.types[node.type], language);
-      return String(t(`${prefix}.name`, { ns: "nodes", defaultValue: humanizeKey(node.type) }));
-    },
-    [t, i18n]
+    (id: string) => getNodeName(id, i18n.resolvedLanguage ?? i18n.language),
+    [i18n]
   );
 
   const reportCleanup = useCallback(
@@ -65,8 +57,8 @@ export const useLoadBuild = () => {
   const applySelection = useApplySelection();
 
   return useCallback(
-    (build: BuildData) => {
-      applySelection(buildToSelectedSkills(build));
+    (build: SkillBuild) => {
+      applySelection(buildToSelection(build));
       if (build.playerLevel != null) dispatch(setPlayerLevel(build.playerLevel));
       if (build.unlockedBiomes != null) dispatch(setUnlockedBiomes(build.unlockedBiomes));
       if (isDifferentTreeVersion(build)) gameToast.warning(t("toasts.differentTreeVersion"));

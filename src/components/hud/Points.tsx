@@ -1,15 +1,14 @@
-import SkillNodes from "@/constants/Nodes";
 import { useAppSelector } from "@/redux/hooks";
 import { classNames } from "@/utils/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import Stats from "./Stats";
 import FlameLevel from "./FlameLevel";
 import GamePanel from "../shared/GamePanel";
 import Tooltip from "../shared/Tooltip";
 import BiomeBudget from "./BiomeBudget";
-import { computeMaxSkillPoints } from "@/constants/Biomes";
+import { getMaxSkillPoints, getPointsUsed } from "@enshrouded/core";
 
 const PointsHUD = () => {
   const [pointsUsed, setPointsUsed] = useState(0);
@@ -17,15 +16,10 @@ const PointsHUD = () => {
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
   const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
   const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? 45);
-  const maxPoints = computeMaxSkillPoints(playerLevel, unlockedBiomes);
+  const maxPoints = getMaxSkillPoints({ playerLevel, unlockedBiomes });
 
   useEffect(() => {
-    const totalCost = Object.entries(selectedSkills).reduce(
-      (acc, [id, level]) =>
-        acc + (SkillNodes.types[SkillNodes.nodes[id]?.type]?.cost ?? 0) * level,
-      0
-    );
-    setPointsUsed(totalCost);
+    setPointsUsed(getPointsUsed(selectedSkills));
   }, [selectedSkills]);
 
   return (
@@ -66,6 +60,7 @@ const PointsHUD = () => {
               <div className="flex text-base gap-1 items-center justify-between w-full">
                 <div className="flex gap-1 items-center">
                   <span
+                    data-hud="points-used"
                     className={classNames(
                       "font-semibold tracking-wide",
                       "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
@@ -74,7 +69,7 @@ const PointsHUD = () => {
                   >
                     {pointsUsed}
                   </span>
-                  <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
+                  <span data-hud="points-max" className="font-semibold tracking-wide text-[#e8d5a3]/60">
                     / {maxPoints}
                   </span>
                 </div>
@@ -121,6 +116,7 @@ const PointsHUD = () => {
             <div className={classNames("flex text-lg gap-1.5 items-center justify-between")}>
               <div className="flex gap-1.5 items-center">
                 <span
+                  data-hud="points-used"
                   className={classNames(
                     "font-semibold tracking-wide",
                     "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
@@ -129,7 +125,7 @@ const PointsHUD = () => {
                 >
                   {pointsUsed}
                 </span>
-                <span className="font-semibold tracking-wide text-[#e8d5a3]/60">
+                <span data-hud="points-max" className="font-semibold tracking-wide text-[#e8d5a3]/60">
                   / {maxPoints}
                 </span>
               </div>

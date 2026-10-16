@@ -1,4 +1,4 @@
-import type { NodeTypeMetadata } from "@/constants/Nodes";
+import type { NodeTypeMetadata } from "../constants/Nodes";
 
 // "fr-CA" -> "fr": imported game text is keyed by the app's base locales.
 export const baseLanguage = (language: string): string => language.split("-")[0];

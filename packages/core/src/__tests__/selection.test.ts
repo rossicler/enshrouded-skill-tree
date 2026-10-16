@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import SkillNodes, { buildSkillTree } from "../../constants/Nodes";
-import { getSelectableSkills, getSkillsToRemove, sanitizeSelection } from "../utils";
+import SkillNodes, { buildSkillTree } from "../constants/Nodes";
+import { getSelectableSkills, getSkillsToRemove, sanitizeSelection } from "../selection";
 
 // base(1) - 2 - 3, plus 4 attached to 3. Edges listed in one direction only.
 const tree = buildSkillTree(

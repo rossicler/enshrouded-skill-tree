@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import SkillNodes from "../../constants/Nodes";
-import { resolveBaseAnchor, resolveNodePosition } from "../nodePosition";
-import { getBaseLinesToDraw } from "../utils";
+import SkillNodes from "../constants/Nodes";
+import { resolveBaseAnchor, resolveNodePosition } from "../utils/nodePosition";
+import { getBaseLinesToDraw } from "../links";
 
 describe("shared node positioning", () => {
   it("preserves legacy polar icon centers", () => {

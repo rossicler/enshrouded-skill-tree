@@ -1,5 +1,4 @@
-import SkillNodes, { getMaxLevel } from "@/constants/Nodes";
-import { BIOMES, MAX_PLAYER_LEVEL } from "@/constants/Biomes";
+import { SkillNodes, getMaxLevel, BIOMES, MAX_PLAYER_LEVEL } from "@enshrouded/core";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createMigrate, persistReducer } from "redux-persist";

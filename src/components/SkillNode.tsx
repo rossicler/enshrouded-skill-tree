@@ -1,10 +1,9 @@
 import { MouseEvent, TouchEvent, memo, useMemo, useRef } from "react";
 
-import { Node } from "../constants/Nodes";
+import { Node, resolveNodePosition } from "@enshrouded/core";
 
 import { getAsset } from "../utils/assets-utils";
 import Image from "next/image";
-import { resolveNodePosition } from "../utils/nodePosition";
 import { classNames } from "@/utils/utils";
 import { useAppSelector } from "@/redux/hooks";
 import { playSound } from "@/utils/sounds";
@@ -129,6 +128,13 @@ const SkillNode = ({
               nodeSize.className,
               isSearched && "animate-flame-radiance",
             )}
+            data-node-id={node.id}
+            data-node-type={node.type}
+            data-state={selected ? "selected" : selectable ? "selectable" : "locked"}
+            data-selected={selected ? "true" : "false"}
+            data-level={level}
+            data-max-level={maxLevel}
+            data-searched={isSearched ? "true" : "false"}
             style={{
               left: -nodeSize.size / 2,
               bottom: -nodeSize.size / 2,

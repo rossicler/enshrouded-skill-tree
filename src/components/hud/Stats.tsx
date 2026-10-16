@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import { BarChart3 } from "lucide-react";
 import { classNames } from "@/utils/utils";
 import GameButton from "../shared/GameButton";

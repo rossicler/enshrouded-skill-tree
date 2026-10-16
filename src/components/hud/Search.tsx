@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next/pages";
 import Image from "next/image";
 import { Search as SearchIcon, X } from "lucide-react";
 import { useRouter } from "next/router";
@@ -15,14 +15,14 @@ import { useAppDispatch } from "@/redux/hooks";
 
 import GameInput from "../shared/GameInput";
 import { setSearchSkillResults } from "@/redux/skills/skills.slice";
-import SkillNodes from "@/constants/Nodes";
-import { buildSearchCorpus } from "@/utils/searchCorpus";
 import {
   MatchRange,
+  SkillNodes,
+  buildSearchCorpus,
   buildSnippet,
   normalizeQuery,
   scoreMatch,
-} from "@/utils/searchText";
+} from "@enshrouded/core";
 
 const MAX_VISIBLE_RESULTS = 5;
 
@@ -82,7 +82,7 @@ const Search = ({
   useEffect(() => {
     routerRef.current = router;
   }, [router]);
-  const { t } = useTranslation(["common", "nodes"]);
+  const { t } = useTranslation("common");
   const dispatch = useAppDispatch();
 
   const exactMatch = !!router.query.focus;
@@ -94,7 +94,7 @@ const Search = ({
   }, []);
 
   const locale = router.locale ?? "en";
-  const corpus = useMemo(() => buildSearchCorpus(t, locale), [t, locale]);
+  const corpus = useMemo(() => buildSearchCorpus(locale), [locale]);
 
   const results = useMemo(() => {
     if (!searchText || searchText.length < 3) return [];
@@ -230,6 +230,7 @@ const Search = ({
       <div className="relative w-full md:w-72 md:max-w-sm pointer-events-auto">
         <GameInput
           ref={inputRef}
+          data-hud="search-input"
           placeholder={t("hud.search.placeholder", { ns: "common" })}
           value={searchText}
           onChange={(e) => {
@@ -271,10 +272,10 @@ const Search = ({
       {showResults && (
         <div
           className={classNames(
-            "mt-0 md:mt-1",
+            "mt-0 md:mt-1 pointer-events-auto",
             "w-full md:w-72 md:max-w-sm",
             "bg-[#414255]/95 border border-[#5a5a60]/50 border-t-[#b8941f]/60",
-            "rounded-sm",
+            "rounded-xs",
             "shadow-[0_3px_6px_rgba(0,0,0,0.4)]",
           )}
         >
@@ -284,6 +285,7 @@ const Search = ({
             return (
               <button
                 key={key}
+                data-search-result={key}
                 onClick={() => handleResultClick(key, name)}
                 onMouseEnter={() => setSelectedIndex(index)}
                 className={classNames(
@@ -294,7 +296,7 @@ const Search = ({
                   index === selectedIndex && "bg-white/[0.08]",
                 )}
               >
-                <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
+                <div className="w-6 h-6 shrink-0 flex items-center justify-center">
                   {meta.hasIcon ? (
                     <Image
                       src={`/assets/skills/${meta.selectedAsset ?? key}.png`}

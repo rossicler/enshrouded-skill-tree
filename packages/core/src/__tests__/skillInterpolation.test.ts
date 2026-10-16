@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import { NodeTypeMetadata } from "@/constants/Nodes";
-import { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } from "../skillInterpolation";
-import { skillTextPrefix, usesGameText } from "../skillText";
+import { NodeTypeMetadata } from "../constants/Nodes";
+import { getGameInterpolationValues, getGamePerLevelValues, getSkillInterpolationValues } from "../utils/skillInterpolation";
+import { skillTextPrefix, usesGameText } from "../utils/skillText";
 
 const base: NodeTypeMetadata = {
   description: [],

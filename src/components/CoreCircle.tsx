@@ -1,10 +1,9 @@
-import SkillNodes, { LinesAngles } from "../constants/Nodes";
-import { resolveBaseAnchor } from "../utils/nodePosition";
+import { SkillNodes, LinesAngles, resolveBaseAnchor } from "@enshrouded/core";
 
 const CoreCircle = () => {
   return (
     <>
-      <div className="absolute w-[400px] h-[400px] rounded-full border border-purple-400 border-opacity-30 bg-transparent -left-[200px] -bottom-[200px]" />
+      <div className="absolute w-[400px] h-[400px] rounded-full border border-purple-400/30 bg-transparent -left-[200px] -bottom-[200px]" />
       {LinesAngles.map((lineAngle) => (
         <div
           key={lineAngle}

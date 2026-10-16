@@ -62,6 +62,14 @@ describe("validate-translations", () => {
     expect(messages(input)).toEqual(["fr/nodes.json: GAME.name is missing, so the tooltip, search and toasts would show the type key"]);
   });
 
+  it("needs no authored description beside game text, but requires one without it", () => {
+    const input = fixture();
+    delete input.locales.en.nodes.GAME.description;
+    expect(messages(input)).toEqual([]);
+    delete input.locales.fr.nodes.LEGACY.description;
+    expect(messages(input)).toEqual(["fr/nodes.json: [LEGACY.description] Description must be a non-empty array of strings"]);
+  });
+
   it("requires every description placeholder to have a value at every level", () => {
     const input = fixture();
     input.locales.fr.nodes.LEGACY.description = ["Ajoute {{amount}} et {{other}}"];

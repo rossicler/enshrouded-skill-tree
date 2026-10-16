@@ -21,7 +21,8 @@ const coreLocalesDir = path.join(coreSrcDir, 'locales');
 
 const nodeTranslationSchema = z.object({
     name: z.string().min(1, "Name must be a non-empty string when present").optional(),
-    description: z.array(z.string()).min(1, "Description must be a non-empty array of strings"),
+    // Optional only beside imported game text: a type added by a game update has no authored text.
+    description: z.array(z.string()).min(1, "Description must be a non-empty array of strings").optional(),
     // Per-level line for types that show this record instead of game text.
     perLevelLabel: z.string().min(1).optional(),
     game: z.object({
@@ -29,7 +30,11 @@ const nodeTranslationSchema = z.object({
         description: z.array(z.string()).min(1),
         perLevelLabel: z.string().optional(),
     }).strict().optional(),
-}).strict(); // Disallow extra keys to keep translation files lean
+}).strict() // Disallow extra keys to keep translation files lean
+    .refine((record) => record.description || record.game, {
+        message: "Description must be a non-empty array of strings",
+        path: ["description"],
+    });
 
 const nodesJsonSchema = z.record(z.string(), nodeTranslationSchema);
 

@@ -8,7 +8,11 @@ frontend:
         - nvm install 24
         - npm install -g yarn@1.22.22
         - node --version && yarn --version
-        - yarn install
+        # The cached node_modules can hold a stale copy of the workspace package
+        # instead of its link to packages/core, and yarn skips relinking when the
+        # lockfile is unchanged. Drop it and check files so the build uses the repo's core.
+        - rm -rf node_modules/@enshrouded
+        - yarn install --check-files
     build:
       commands:
         # Next.js server code on Amplify only sees env vars written to .env.production.

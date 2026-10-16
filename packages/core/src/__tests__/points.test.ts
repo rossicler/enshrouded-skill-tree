@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { buildSkillTree } from "../constants/Nodes";
-import { BIOMES, MAX_PLAYER_LEVEL, MAX_SKILL_POINTS_ABSOLUTE } from "../constants/Biomes";
+import { BIOMES, MAX_FLAME_LEVEL, MAX_PLAYER_LEVEL, MAX_SKILL_POINTS_ABSOLUTE, clampFlameLevel } from "../constants/Biomes";
 import progression from "../constants/gameProgression.json";
 import { fitsUnderHardCap, getMaxSkillPoints, getPointsUsed, getSkillCost } from "../points";
 
@@ -34,12 +34,24 @@ describe("points", () => {
   });
 
   it("takes the level cap and every biome's points from the imported game data", () => {
-    // Build 1267041 (1.0): level cap 50 at 2 points per level, 114 exploration points.
+    // Builds 1267041 and 1269579 (1.0): level cap 50 at 2 points per level, 114 exploration points.
     expect(MAX_PLAYER_LEVEL).toBe(50);
     expect(MAX_SKILL_POINTS_ABSOLUTE).toBe(98 + 114);
     expect(BIOMES.map((b) => b.id).sort()).toEqual(Object.keys(progression.biomes).sort());
     for (const biome of BIOMES) expect(biome.explorationPoints).toBe(progression.biomes[biome.id as keyof typeof progression.biomes].points);
     expect(BIOMES.at(-1)?.maxLevel).toBe(MAX_PLAYER_LEVEL);
+  });
+
+  it("takes the flame level cap from the imported game data and clamps to it", () => {
+    // Build 1269579 (1.0): 10 flame upgrades, from level 1 to 11.
+    expect(MAX_FLAME_LEVEL).toBe(progression.flame.flameLevelCap);
+    expect(MAX_FLAME_LEVEL).toBe(11);
+    expect(clampFlameLevel(0)).toBe(1);
+    expect(clampFlameLevel(-3)).toBe(1);
+    expect(clampFlameLevel(Number.NaN)).toBe(1);
+    expect(clampFlameLevel(4.7)).toBe(4);
+    expect(clampFlameLevel(MAX_FLAME_LEVEL)).toBe(MAX_FLAME_LEVEL);
+    expect(clampFlameLevel(MAX_FLAME_LEVEL + 9)).toBe(MAX_FLAME_LEVEL);
   });
 
   it("allows an unlock that lands exactly on the cap", () => {

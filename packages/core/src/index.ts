@@ -65,6 +65,8 @@ export {
   BIOMES,
   SP_PER_LEVEL,
   MAX_PLAYER_LEVEL,
+  MAX_FLAME_LEVEL,
+  clampFlameLevel,
   MAX_SKILL_POINTS_ABSOLUTE,
   computeLevelingPoints,
   computeMaxSkillPoints,

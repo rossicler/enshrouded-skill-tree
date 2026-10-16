@@ -1,4 +1,4 @@
-import { SkillNodes, getMaxLevel, BIOMES, MAX_PLAYER_LEVEL } from "@enshrouded/core";
+import { SkillNodes, getMaxLevel, BIOMES, MAX_PLAYER_LEVEL, clampFlameLevel } from "@enshrouded/core";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createMigrate, persistReducer } from "redux-persist";
@@ -22,7 +22,7 @@ const initialState = {
   selectedSkills: {},
   connectedPaths: [],
   searchSkillResults: [],
-  flameLevel: 0,
+  flameLevel: 1,
   unlockedBiomes: BIOMES.map((b) => b.id),
   playerLevel: MAX_PLAYER_LEVEL,
 } satisfies SkillsState as SkillsState;
@@ -111,7 +111,7 @@ const skillsSlice = createSlice({
       state.searchSkillResults = action.payload;
     },
     setFlameLevel(state, action: PayloadAction<number>) {
-      state.flameLevel = action.payload;
+      state.flameLevel = clampFlameLevel(action.payload);
     },
     setUnlockedBiomes(state, action: PayloadAction<string[]>) {
       state.unlockedBiomes = action.payload;

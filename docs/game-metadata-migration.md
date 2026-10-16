@@ -156,12 +156,13 @@ yarn import-progression 'C:\path\to\progression.json' --apply
 ```
 
 `--apply` writes `packages/core/src/constants/gameProgression.json`: the
-game's level cap and skill points per level (balancing table), and per app
+game's level cap and skill points per level (balancing table), the flame
+level cap and attribute points per flame level (toolkit schema 1.1.0), and per app
 biome the points and number of one-time skill point unlocks (Shroud Roots
 grant 1, Elixir Wells 3). Each unlock counts toward the region of its entity
 template, as the designers labelled it (`..._SkillPointPlant_04_desert`), and
 `scripts/progression-regions.json` maps game regions to app biome IDs. A region
-without a mapping, missing leveling values, or unlocks that do not account for
+without a mapping, missing leveling or flame values, or unlocks that do not account for
 every listed source block apply. The preview lists unlocks whose biome-map
 cell lies in a different region (border placements); they still count by
 template.
@@ -173,6 +174,14 @@ order and level ranges are app-owned there, and each biome needs a
 (98 points) and 114 exploration points, 212 in total; Cinder's Cradle (game
 region `ancientland`, levels 46-50) is new, and Tall Trees counts toward
 Revelwood. The former hand-counted budget was 184 (level 45, 96 exploration).
+
+`MAX_FLAME_LEVEL` (same file) is the flame level cap: 1 plus the number of
+flame upgrade recipes in the game. The HUD flame control, the slice's
+`setFlameLevel` and the stats dialog clamp the flame level to 1..cap with
+`clampFlameLevel`. Build 1269579 (1.0 hotfix, same skill point data as
+1267041): flame level cap 11, replacing the hard-coded 9. The game's
+`apPerFlameLevel` (1) is imported but not used yet: `getStatsFromFlameAltar`
+in `utils/stats.ts` keeps its own rule of flame level - 1 per attribute.
 
 ## Tree versioning
 

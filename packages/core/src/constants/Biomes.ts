@@ -14,6 +14,14 @@ export interface Biome {
 // scripts/progression-regions.json. Level ranges and order are app-owned.
 export const SP_PER_LEVEL = progression.leveling.skillPointsPerLevel;
 export const MAX_PLAYER_LEVEL = progression.leveling.playerLevelCap;
+// The flame level a player can reach, from the game's flame upgrade recipes.
+// The flame starts at level 1.
+export const MAX_FLAME_LEVEL = progression.flame.flameLevelCap;
+
+export function clampFlameLevel(level: number): number {
+  if (!Number.isFinite(level)) return 1;
+  return Math.max(1, Math.min(MAX_FLAME_LEVEL, Math.floor(level)));
+}
 
 const BIOME_LEVELS: Omit<Biome, "explorationPoints">[] = [
   { id: "springlands",      minLevel: 2,  maxLevel: 10 },

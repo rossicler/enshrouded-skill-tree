@@ -144,6 +144,36 @@ moved nodes and changed costs and one max level (Mass Destruction 3 -> 1). Its
 existing icons are pixel-identical to the committed PNGs; only the three new
 active skills' icons were copied in, under their app type keys.
 
+## Skill point budget (implemented)
+
+The planner's points budget comes from the toolkit's progression export
+(`tools/progression`), imported with:
+
+```powershell
+# Preview only: writes ignored .local/progression/{summary.md,candidate.json}
+yarn import-progression 'C:\path\to\progression.json'
+yarn import-progression 'C:\path\to\progression.json' --apply
+```
+
+`--apply` writes `packages/core/src/constants/gameProgression.json`: the
+game's level cap and skill points per level (balancing table), and per app
+biome the points and number of one-time skill point unlocks (Shroud Roots
+grant 1, Elixir Wells 3). Each unlock counts toward the region of its entity
+template, as the designers labelled it (`..._SkillPointPlant_04_desert`), and
+`scripts/progression-regions.json` maps game regions to app biome IDs. A region
+without a mapping, missing leveling values, or unlocks that do not account for
+every listed source block apply. The preview lists unlocks whose biome-map
+cell lies in a different region (border placements); they still count by
+template.
+
+`Biomes.ts` derives `MAX_PLAYER_LEVEL`, `SP_PER_LEVEL`, each biome's
+`explorationPoints` and `MAX_SKILL_POINTS_ABSOLUTE` from that file. Biome
+order and level ranges are app-owned there, and each biome needs a
+`biomes.<id>` name in every `common.json`. Build 1267041 (1.0): level cap 50
+(98 points) and 114 exploration points, 212 in total; Cinder's Cradle (game
+region `ancientland`, levels 46-50) is new, and Tall Trees counts toward
+Revelwood. The former hand-counted budget was 184 (level 45, 96 exploration).
+
 ## Tree versioning
 
 The checked import records the source game build and a SHA-256 revision of the

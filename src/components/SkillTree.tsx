@@ -17,6 +17,7 @@ import {
   Node,
   fitsUnderHardCap,
   getMaxLevel,
+  MAX_PLAYER_LEVEL,
   getMaxSkillPoints,
   getSelectableSkills,
   getSelectedNeighbors,
@@ -95,7 +96,7 @@ const SkillTree = ({ dbAvailable = false, focusNodeId }: SkillTreeProps) => {
   );
   const connectedPaths = useAppSelector((state) => state.skill.connectedPaths);
   const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
-  const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? 45);
+  const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? MAX_PLAYER_LEVEL);
   const maxSkillPoints = getMaxSkillPoints({ playerLevel, unlockedBiomes });
   const dispatch = useAppDispatch();
 

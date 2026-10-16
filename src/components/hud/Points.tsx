@@ -8,14 +8,14 @@ import FlameLevel from "./FlameLevel";
 import GamePanel from "../shared/GamePanel";
 import Tooltip from "../shared/Tooltip";
 import BiomeBudget from "./BiomeBudget";
-import { getMaxSkillPoints, getPointsUsed } from "@enshrouded/core";
+import { MAX_PLAYER_LEVEL, getMaxSkillPoints, getPointsUsed } from "@enshrouded/core";
 
 const PointsHUD = () => {
   const [pointsUsed, setPointsUsed] = useState(0);
   const { t } = useTranslation("common");
   const selectedSkills = useAppSelector((state) => state.skill.selectedSkills);
   const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
-  const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? 45);
+  const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? MAX_PLAYER_LEVEL);
   const maxPoints = getMaxSkillPoints({ playerLevel, unlockedBiomes });
 
   useEffect(() => {

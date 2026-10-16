@@ -2131,6 +2131,36 @@ const authoredPresentation: AuthoredPresentation = {
         label: "<b>{{value}}</b>% damage per level",
       },
     },
+    BARRAGE: {
+      color: "green",
+    },
+    TOTEM_MASTERY: {
+      color: "blue",
+    },
+    AIRBORNE_ARCHITECT: {
+      hasIcon: true,
+      color: "gold",
+    },
+    SURVIVAL_INSTINCT: {
+      color: "green",
+    },
+    ADVANCED_NECROMANCY: {
+      color: "blue",
+    },
+    AERIAL_WAND_ATTACK: {
+      hasIcon: true,
+      color: "blue",
+    },
+    BLAST_AND_CAST: {
+      color: "blue",
+    },
+    WAND_EVASION_ATTACK: {
+      hasIcon: true,
+      color: "blue",
+    },
+    PUNCTURE: {
+      color: "green",
+    },
   },
   nodes: {
     "1": { tier: "medium" },
@@ -2355,6 +2385,15 @@ const authoredPresentation: AuthoredPresentation = {
     "220": { tier: "large" },
     "221": { tier: "small" },
     "222": { tier: "small" },
+    "223": { tier: "medium" },
+    "224": { tier: "medium" },
+    "225": { tier: "large" },
+    "226": { tier: "medium" },
+    "227": { tier: "medium" },
+    "228": { tier: "large" },
+    "229": { tier: "medium" },
+    "230": { tier: "large" },
+    "231": { tier: "medium" },
   },
 };
 

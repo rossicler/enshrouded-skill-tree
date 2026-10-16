@@ -51,9 +51,9 @@ export function syntheticExport({ runtime, mapping, locale, frLocale = {} }) {
     raw: {
       trees: [{ data: { nodes, links } }],
       balancing: [{ data: { playerHealthPerAP: 50, playerManaPerAP: 20, playerStaminaPerAP: 10 } }],
-      inputActions: [{ id: 18, name: "SpecialAbility" }],
+      inputActions: [{ id: 19, name: "SpecialAbility" }],
       uiText: {
-        gameplayActionLabels: { weaponSkill: resolved("Special Ability", "Capacité spéciale") },
+        gameplayActionLabels: { specialAbility: resolved("Special Ability", "Capacité spéciale") },
         punctuation: { decimalSeparator: resolved(".", ".") },
         timeUnitsAbbreviations: resolved("d,h,min,s", "d,h,m,s"),
       },

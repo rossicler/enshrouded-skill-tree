@@ -22,8 +22,8 @@ import {
 } from "@enshrouded/core";
 
 import type { NodeState } from "./art";
-import { TREE_TO_PX, getTreeLayout } from "./layout";
-import { PanZoom, type PanZoomHandle } from "./PanZoom";
+import { PAN_MARGIN, TREE_TO_PX, getTreeLayout } from "./layout";
+import { PanZoom, type FitSize, type PanZoomHandle } from "./PanZoom";
 import { useSkillTreeSettings } from "./SkillTreeProvider";
 import { SkillTooltipCard } from "./SkillTooltip";
 import Defs from "./svg/Defs";
@@ -63,6 +63,13 @@ export type SkillTreeViewProps = {
   initialFocusNodeId?: string;
   // Shows a share button in the tooltip that copies this URL.
   getNodeShareUrl?: (nodeId: string) => string;
+  // "center" (default): the planner's view, the tree centered at a fixed zoom.
+  // "fit": the whole tree fitted to the container, which is also the most
+  // zoomed-out view, and zoom steps that feel the same at any size.
+  initialView?: "center" | "fit";
+  // How the tooltip is positioned. "fixed" lets it leave a small or clipped
+  // container while staying inside the viewport. Default "absolute".
+  tooltipStrategy?: "absolute" | "fixed";
   className?: string;
   style?: CSSProperties;
 };
@@ -70,12 +77,18 @@ export type SkillTreeViewProps = {
 const nodeIdOf = (target: EventTarget | null): string | null =>
   target instanceof Element ? target.closest("[data-node-id]")?.getAttribute("data-node-id") ?? null : null;
 
+// The tree without the pan margin, in content px: what a fitted view shows.
+let fitSize: FitSize | undefined;
+const treeFitSize = (hx: number, hy: number): FitSize =>
+  (fitSize ??= { width: 2 * (hx - PAN_MARGIN), height: 2 * (hy - PAN_MARGIN) });
+
 const isCoarsePointer = () => typeof window !== "undefined" && window.matchMedia?.("(pointer: coarse)").matches;
 
 // The skill tree as SVG, with pan and zoom, node actions, tooltips and search
 // highlights. It fills its container, so give the container a size.
 export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>(function SkillTreeView(props, ref) {
-  const { selection, highlightedTypes, initialFocusNodeId, getNodeShareUrl, className, style } = props;
+  const { selection, highlightedTypes, initialFocusNodeId, getNodeShareUrl, initialView = "center", tooltipStrategy, className, style } =
+    props;
   const settings = useSkillTreeSettings();
   const { locale, assetBaseUrl, playSound } = settings;
   const layout = getTreeLayout();
@@ -266,7 +279,12 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
       style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden", ...style }}
       data-skill-tree-scope={scope}
     >
-      <PanZoom ref={panZoomRef} onReady={onPanZoomReady} focusKey={initialFocusNodeId}>
+      <PanZoom
+        ref={panZoomRef}
+        onReady={onPanZoomReady}
+        focusKey={initialFocusNodeId}
+        fitSize={initialView === "fit" ? treeFitSize(hx, hy) : undefined}
+      >
         <svg
           ref={svgRef}
           width={hx * 2}
@@ -306,6 +324,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         anchorSelect={`[data-skill-tree-scope="${scope}"] [data-node-id]`}
         className="!p-0 !bg-transparent !border-0 !rounded-none"
         style={{ zIndex: 9999 }}
+        positionStrategy={tooltipStrategy}
         noArrow
         clickable
         delayShow={500}

@@ -68,6 +68,10 @@ export const SkillNodeBase = ({ id, state, level, searched, assetBaseUrl, scope 
         r={size / 2}
         fill="transparent"
         pointerEvents="all"
+        // A host dialog can hand focus back to the node it was opened from
+        // (the refund confirmation does). Nodes aren't keyboard controls, so
+        // Chrome's default focus outline would only draw a stray box.
+        style={{ outline: "none" }}
         data-node-id={id}
         data-node-type={node.type}
         data-state={state}

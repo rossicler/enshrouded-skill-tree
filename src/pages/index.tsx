@@ -1,9 +1,9 @@
 import { GetServerSideProps } from "next";
-import Image from "next/image";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import { useTranslation } from "next-i18next/pages";
 
 import { classNames } from "@/utils/utils";
+import { SKILL_TREE_ASSETS } from "@/constants/assets";
 import CustomHeader from "@/components/CustomHeader";
 import SkillPlanner from "@/components/SkillPlanner";
 import InitSkills from "@/components/handlers/InitSkills";
@@ -47,11 +47,12 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
           "items-center justify-center text-white"
         )}
       >
-        <Image
-          src="/assets/Enshrouded_Skill_Tree_BG.png"
+        {/* A static WebP from the React package (3840 px, 99 KB): no image
+            optimizer needed, and the same art the skill tree cards use. */}
+        <img
+          src={`${SKILL_TREE_ASSETS}/backgrounds/skill-tree-large.webp`}
           alt={t("accessibility.backgroundAlt")}
-          fill
-          className="object-cover object-center"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div>
           <SkillPlanner dbAvailable={dbAvailable} focusNodeId={focusNodeId} />

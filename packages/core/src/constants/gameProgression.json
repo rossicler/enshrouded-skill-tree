@@ -1,17 +1,21 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "provenance": {
-    "gameBuild": "1267041|^/game38/branches/release_1.0|2026-10-15T17:07:04.598331Z",
-    "exportedAtUtc": "2026-10-16T04:45:03.9379996Z",
+    "gameBuild": "1269579|^/game38/branches/release_1.0|2026-10-16T12:58:37.402390Z",
+    "exportedAtUtc": "2026-10-16T19:21:17.7528755Z",
     "sourceFileSha256": {
-      "enshrouded.exe": "4D6D43EA4A91E71C82D60B045DDE932179C99E32E40657EFE374688B2933589A",
-      "enshrouded.kfc": "13CA8DACE2DDC52E6F83800F6BBD70EF1B1ECC052ED2954EF147EEDE2B655EC9",
-      "enshrouded.kfc_resources": "790F0E312506ED8289C057A1DCDA82A5F883D6C43C221E20F680A991975F8FC4"
+      "enshrouded.exe": "82E5020A8736348CD0374F004B2F5E5EF456B5BD27AA5420DF34C7DD241CFEEB",
+      "enshrouded.kfc": "A030BCDB58A089F84DD00FB0C6939FD492A2DFF440BCB5B63F70EFC44B1B9320",
+      "enshrouded.kfc_resources": "CF47DB07AE2A959C22E88C661C8E7318A283E3EA063B7A74570ADA6A5AF9467B"
     }
   },
   "leveling": {
     "playerLevelCap": 50,
     "skillPointsPerLevel": 2
+  },
+  "flame": {
+    "flameLevelCap": 11,
+    "apPerFlameLevel": 1
   },
   "biomes": {
     "springlands": {

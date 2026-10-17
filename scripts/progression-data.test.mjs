@@ -5,10 +5,11 @@ import committed from "../packages/core/src/constants/gameProgression.json";
 
 const plant = (region, variant = "") => `Loot_Node_Well_Core_Object_SkillPointPlant_01_${region}${variant}`;
 const unlock = (knowledgeId, amount, templateName, mapRegion) => ({ knowledgeId, amount, templateName, mapRegion });
-const exportOf = (unlocks, leveling = { playerLevelCap: 50, skillPointsPerLevel: 2 }) => ({
-  schemaVersion: "1.0.0",
+const exportOf = (unlocks, leveling = { playerLevelCap: 50, skillPointsPerLevel: 2 }, flame = { flameLevelCap: 11, flameLevelMax: 20, apPerFlameLevel: 1 }) => ({
+  schemaVersion: "1.1.0",
   provenance: { gameBuild: "2|test", exportedAtUtc: "2026-10-16T00:00:00Z" },
   leveling,
+  flame,
   skillPointSources: unlocks.map(({ knowledgeId, amount }) => ({ knowledgeId, amount })),
   skillPointUnlocks: unlocks,
 });
@@ -31,6 +32,7 @@ describe("progression import", () => {
     const { candidate, report, blockers } = runProgressionImport({ data, regions });
     expect(blockers).toEqual([]);
     expect(candidate.leveling).toEqual({ playerLevelCap: 50, skillPointsPerLevel: 2 });
+    expect(candidate.flame).toEqual({ flameLevelCap: 11, apPerFlameLevel: 1 });
     expect(candidate.biomes.springlands).toEqual({ points: 4, unlocks: 2 });
     expect(candidate.biomes.revelwood).toEqual({ points: 2, unlocks: 2 });
     expect(candidate.biomes.cinders_cradle).toEqual({ points: 0, unlocks: 0 });
@@ -39,12 +41,13 @@ describe("progression import", () => {
     expect(summarizeProgression({ report, blockers })).toContain("4: deepforest template in Grassland cells -> counted in revelwood");
   });
 
-  it("blocks an unmapped game region, missing leveling and an unsupported schema", () => {
-    const data = exportOf([unlock("1", 1, plant("moonland"), "Moonland")], {});
+  it("blocks an unmapped game region, missing leveling or flame values and an unsupported schema", () => {
+    const data = exportOf([unlock("1", 1, plant("moonland"), "Moonland")], {}, {});
     data.schemaVersion = "2.0.0";
     expect(runProgressionImport({ data, regions }).blockers).toEqual([
       "Unsupported progression schema 2.0.0",
       "The export has no leveling values",
+      "The export has no flame level values (toolkit schema 1.1.0)",
       "Game region moonland (1 points) has no app biome in scripts/progression-regions.json",
     ]);
   });
@@ -57,6 +60,7 @@ describe("progression import", () => {
 
   it("covers every mapped biome in the committed data", () => {
     expect(Object.keys(committed.biomes).sort()).toEqual([...new Set(Object.values(regions))].sort());
-    expect(committed.provenance.gameBuild).toMatch(/^1267041\|/);
+    expect(committed.provenance.gameBuild).toMatch(/^1269579\|/);
+    expect(committed.flame).toEqual({ flameLevelCap: 11, apPerFlameLevel: 1 });
   });
 });

@@ -51,6 +51,7 @@ export default defineConfig({
     url: BASE_URL,
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,
-    env: { MONGODB_URI: "" },
+    // The card demo page (/card-demo) only exists where this is set.
+    env: { MONGODB_URI: "", SKILL_TREE_DEMO_PAGES: "1" },
   },
 });

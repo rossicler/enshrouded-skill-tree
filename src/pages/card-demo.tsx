@@ -1,4 +1,4 @@
-import type { GetStaticProps } from "next";
+import type { GetServerSideProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
@@ -102,8 +102,17 @@ export default function CardDemo() {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? "en", ["common"])),
-  },
-});
+// Local only: `next dev` shows it, and so does a production server started
+// with SKILL_TREE_DEMO_PAGES=1 (the browser tests do that). Deployed sites
+// don't set it, so the page is a 404 there.
+const demoPagesEnabled = () =>
+  process.env.NODE_ENV === "development" || process.env.SKILL_TREE_DEMO_PAGES === "1";
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  if (!demoPagesEnabled()) return { notFound: true };
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+  };
+};

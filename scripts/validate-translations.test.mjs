@@ -153,6 +153,34 @@ describe("validate-translations", () => {
     ]);
   });
 
+  it("requires the keys the React package references, and every value of its runtime-built keys", () => {
+    const input = fixture();
+    input.locales.en.ui = { search: { placeholder: "Search" }, biomes: { springlands: "Springlands" } };
+    input.locales.fr.ui = { search: { placeholder: "Rechercher" }, biomes: { springlands: "Hautes pâtures" } };
+    input.uiFamilies = { "biomes.": ["springlands", "revelwood"] };
+    input.uiReferences = {
+      keys: [
+        { key: "search.placeholder", file: "packages/react/src/a.tsx", call: true },
+        { key: "search.clear", file: "packages/react/src/a.tsx", call: true },
+        { key: "search.other", file: "packages/react/src/b.tsx", call: false }, // a label table
+        { key: "hud.title", file: "packages/react/src/c.tsx", call: false }, // not a section of the package's text
+      ],
+      templates: [
+        { template: "biomes.${id}", file: "packages/react/src/d.tsx" },
+        { template: "stats.${stat}", file: "packages/react/src/e.tsx" },
+      ],
+    };
+    expect(messages(input)).toEqual([
+      "react/en.json: search.clear is missing (used in packages/react/src/a.tsx)",
+      "react/fr.json: search.clear is missing (used in packages/react/src/a.tsx)",
+      "react/en.json: search.other is missing (used in packages/react/src/b.tsx)",
+      "react/fr.json: search.other is missing (used in packages/react/src/b.tsx)",
+      "react/en.json: biomes.revelwood is missing (one key per value of biomes.*)",
+      "react/fr.json: biomes.revelwood is missing (one key per value of biomes.*)",
+      "packages/react/src/e.tsx: t(`stats.${stat}`) builds keys this check can't list; list its values under uiFamilies in loadApp() in scripts/validate-translations.js",
+    ]);
+  });
+
   it("requires a tree label text in every locale", () => {
     const input = fixture();
     input.treeLabels = ["wizard", "tank"];
@@ -179,10 +207,11 @@ describe("validate-translations", () => {
       `<Trans i18nKey="dialogs.about" />`,
       `const LABELS = { STR: "stats.strength" };`,
       "t(`biomes.${biome.id}`); t(`${type}.name`);",
+      `uiText(locale, "card.label"); uiText(props.locale, 'card.close', { n: 1 });`,
     ].join("\n"));
     fs.writeFileSync(path.join(dir, "__tests__", "skip.tsx"), `t("ignored.key");`);
     const { keys, templates } = scanSource(dir);
-    expect(keys.filter((k) => k.call).map((k) => k.key)).toEqual(["hud.title", "errors.notFound", "dialogs.about"]);
+    expect(keys.filter((k) => k.call).map((k) => k.key)).toEqual(["hud.title", "errors.notFound", "dialogs.about", "card.label", "card.close"]);
     expect(keys.map((k) => k.key)).toContain("stats.strength");
     expect(keys.map((k) => k.key)).not.toContain("ignored.key");
     expect(templates.map((t) => t.template)).toEqual(["biomes.${biome.id}", "${type}.name"]);

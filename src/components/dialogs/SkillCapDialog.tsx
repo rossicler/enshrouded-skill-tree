@@ -1,8 +1,6 @@
 import { DialogTitle } from "@headlessui/react";
-import GameDialog from "../shared/GameDialog";
 import { useTranslation } from "next-i18next/pages";
-import GamePanel from "../shared/GamePanel";
-import GameButton from "../shared/GameButton";
+import { GameButton, GameDialog, GamePanel } from "@enshrouded/react";
 
 type PropsType = {
   open: boolean;

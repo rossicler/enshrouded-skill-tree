@@ -75,6 +75,24 @@ const screens = (device: "desktop" | "mobile", locale: "en" | "fr") => {
     });
   }
 
+  test(`stats dialog (${locale})`, async ({ page }) => {
+    await openPlanner(page, `${prefix}/`);
+    await hud(page, "flame-up").click();
+    await hud(page, "stats").click();
+    await expect(dialog(page, "stats")).toBeVisible();
+    await page.waitForTimeout(500);
+    await shot(page, "dialog-stats");
+  });
+
+  test(`biome budget dialog (${locale})`, async ({ page }) => {
+    await openPlanner(page, `${prefix}/`);
+    await hud(page, "biome-budget").click();
+    await expect(dialog(page, "biome-budget")).toBeVisible();
+    await page.mouse.move(1, 1);
+    await page.waitForTimeout(500);
+    await shot(page, "dialog-biome-budget");
+  });
+
   test(`refund confirm dialog (${locale})`, async ({ page }) => {
     test.skip(!!touch, "desktop only");
     await openPlanner(page, `${prefix}/`);

@@ -2,13 +2,12 @@ import { useState } from "react";
 import { APP_VERSION } from "@/constants/version";
 import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@enshrouded/core";
 import { DialogTitle } from "@headlessui/react";
-import GameDialog from "../shared/GameDialog";
 import { useTranslation } from "next-i18next/pages";
 import { useRouter } from "next/router";
-import GamePanel from "../shared/GamePanel";
 import { classNames } from "@/utils/utils";
 import { isSoundEnabled, setSoundEnabled, playSound } from "@/utils/sounds";
 import { isHardcapEnabled, setHardcapEnabled } from "@/utils/settings";
+import { GameDialog, GamePanel } from "@enshrouded/react";
 
 type PropsType = {
   open: boolean;

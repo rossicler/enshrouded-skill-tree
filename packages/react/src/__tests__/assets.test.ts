@@ -23,13 +23,17 @@ describe("node art", () => {
     expect([...missing]).toEqual([]);
   });
 
-  it("covers the tree labels, the sounds and the tooltip", () => {
+  it("covers the tree labels, the sounds, the tooltip, the panels and the UI kit", () => {
     const files = [
       ...TREE_LABELS.map((label) => `labels/${label.asset}.png`),
       ...["node-hover", "node-out-of-range", "node-refund", "node-select", "node-unlock"].map((name) => `sounds/${name}.mp3`),
       "ui/skill_point.png",
+      "ui/skill_point_hud.png",
+      "ui/flame.png",
       "decorations/bg-circles-tiled.svg",
       "decorations/divider.svg",
+      "decorations/button-decoration.svg",
+      ...["top-left", "top-right", "bottom-left", "bottom-right"].map((corner) => `decorations/modal-${corner}.svg`),
     ];
     expect(files.filter((file) => !exists(file))).toEqual([]);
   });

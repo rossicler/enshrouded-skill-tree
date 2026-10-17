@@ -74,13 +74,14 @@ export {
   computeMaxSkillPoints,
 } from "./constants/Biomes";
 export type { Biome } from "./constants/Biomes";
-export { getSkillCost, getPointsUsed, getMaxSkillPoints, fitsUnderHardCap } from "./points";
-export type { PointsBudget } from "./points";
+export { getSkillCost, getPointsUsed, getMaxSkillPoints, fitsUnderHardCap, getPointsSummary } from "./points";
+export type { PointsBudget, PointsSummary, PointsSummaryOptions } from "./points";
 
 // Stats
 export { BasicStats } from "./constants/Stats";
 export type { StatsType, NodeStatsType } from "./constants/Stats";
-export { getStatsFromSkills, getStatsFromFlameAltar, sumStats } from "./utils/stats";
+export { getStatsFromSkills, getStatsFromFlameAltar, sumStats, getTotalStats } from "./utils/stats";
+export type { StatTotals } from "./utils/stats";
 
 // Skill text
 export {
@@ -106,6 +107,8 @@ export { humanizeKey } from "./utils/humanizeKey";
 // Search
 export { buildSearchCorpus } from "./utils/searchCorpus";
 export type { SearchEntry } from "./utils/searchCorpus";
+export { SEARCH_MIN_QUERY_LENGTH, getSearchCorpus, searchSkills, getNodesOfType } from "./search";
+export type { SkillSearchResult, SkillSearchOptions } from "./search";
 export {
   SNIPPET_CONTEXT_BEFORE,
   SNIPPET_NEAR_START,

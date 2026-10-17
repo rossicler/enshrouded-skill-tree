@@ -8,31 +8,7 @@
     "export": "Exporter",
     "clear": "Réinitialiser",
     "discord": "Discord",
-    "about": "À propos",
-    "stats": "Stats",
-    "search": {
-      "placeholder": "Rechercher",
-      "moreMatches": "+{{count}} autres résultats surlignés dans l'arbre"
-    },
-    "tooltips": {
-      "skillPoints": "Points de compétence",
-      "flameLevel": "Niveau de flamme"
-    },
-    "biomeBudget": {
-      "title": "Budget par biome",
-      "playerLevel": "Niveau du joueur",
-      "total": "Points de compétences totaux",
-      "reset": "Tout débloquer"
-    }
-  },
-  "biomes": {
-    "springlands": "Hautes pâtures",
-    "revelwood": "Bois envoutés",
-    "nomad_highlands": "Plateaux nomades",
-    "kindlewastes": "Regs exaltés",
-    "albaneve_summits": "Sommets d'Albaneve",
-    "veilwater_basin": "Bassin de Veilwater",
-    "cinders_cradle": "Berceau des cendres"
+    "about": "À propos"
   },
   "dialogs": {
     "advancedSharing": "Partage avancé",
@@ -61,11 +37,6 @@
       "import": "Importer URL",
       "importJson": "Importer JSON",
       "warning": "N'importez que des builds provenant de sources fiables."
-    },
-    "stats": {
-      "title": "Résumé des statistiques",
-      "basic": "Base",
-      "close": "Fermer"
     },
     "settings": {
       "title": "Paramètres",
@@ -108,17 +79,7 @@
     "skillsDisconnected": "Compétences retirées car plus reliées à l'arbre : {{names}}",
     "skillLevelsLowered": "Niveaux de compétences réduits au maximum actuel : {{names}}"
   },
-  "stats": {
-    "constitution": "Constitution",
-    "strength": "Force",
-    "endurance": "Endurance",
-    "dexterity": "Dextérité",
-    "spirit": "Esprit",
-    "intelligence": "Intelligence"
-  },
   "accessibility": {
-    "skillPointIcon": "Icône de point de compétence",
-    "flameIcon": "Icône de flamme",
     "backgroundAlt": "Fond de fumée violette"
   },
   "errors": {

@@ -4,7 +4,7 @@ import nextI18NextConfig from './next-i18next.config.js';
 const nextConfig = {
   reactStrictMode: true,
   // Workspace packages ship TypeScript source.
-  transpilePackages: ["@enshrouded/core"],
+  transpilePackages: ["@enshrouded/core", "@enshrouded/react"],
   env: {
     BASE_URL: process.env.BASE_URL,
   },

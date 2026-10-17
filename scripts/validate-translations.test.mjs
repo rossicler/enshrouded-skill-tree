@@ -127,6 +127,16 @@ describe("validate-translations", () => {
     ]);
   });
 
+  it("matches the React package's UI text against the default locale", () => {
+    const input = fixture();
+    input.locales.en.ui = { tooltip: { unlock: "Unlock", levelHeader: "Level {{current}}" } };
+    input.locales.fr.ui = { tooltip: { levelHeader: "Niveau" } };
+    expect(messages(input)).toEqual([
+      "react/fr.json: tooltip.unlock is missing (it is in react/en.json)",
+      "react/fr.json: tooltip.levelHeader uses no placeholders, but en uses {{current}}",
+    ]);
+  });
+
   it("requires keys referenced in code and every value of a runtime-built key", () => {
     const input = fixture();
     input.references.keys.push(

@@ -28,6 +28,17 @@ const sourceFiles = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMa
 
 const isTest = (file) => /[\\/]__tests__[\\/]|\.test\.[cm]?[jt]sx?$/.test(file);
 
+// What each package may use beyond the shared rules (no @/, no next, every
+// external import declared). Core runs anywhere, servers included, so it has
+// neither React nor browser globals. The React package is client code: its
+// entry is marked "use client" and its effects and handlers may touch
+// window/document. Unknown packages get core's strict rules.
+const ALLOWANCES = {
+  core: { react: false, browserGlobals: false, useClient: false },
+  react: { react: true, browserGlobals: true, useClient: true },
+};
+const allowanceOf = (pkg) => ALLOWANCES[pkg.name] ?? ALLOWANCES.core;
+
 // Comments and string contents removed, so prose and text don't trip the checks.
 const codeOnly = (source) => source
   .replace(/\/\*[\s\S]*?\*\//g, "")
@@ -46,25 +57,35 @@ const packageName = (specifier) => specifier.startsWith("@")
 
 const violations = (pkg) => {
   const problems = [];
+  const allow = allowanceOf(pkg);
+  const srcDir = path.join(pkg.dir, "src");
   const deps = new Set([...Object.keys(pkg.manifest.dependencies ?? {}), ...Object.keys(pkg.manifest.peerDependencies ?? {})]);
-  for (const file of sourceFiles(path.join(pkg.dir, "src"))) {
+  for (const file of sourceFiles(srcDir)) {
     const rel = path.relative(root, file).split(path.sep).join("/");
     const source = fs.readFileSync(file, "utf8");
     for (const specifier of specifiers(source)) {
       if (specifier.startsWith("@/")) problems.push(`${rel} imports "${specifier}" (the host's @/ alias)`);
       if (specifier === "next" || specifier.startsWith("next/")) problems.push(`${rel} imports "${specifier}"`);
-      if (pkg.name === "core" && /^react(-dom)?(\/|$)/.test(specifier)) problems.push(`${rel} imports "${specifier}" (core has no React)`);
+      if (!allow.react && /^react(-dom)?(\/|$)/.test(specifier)) problems.push(`${rel} imports "${specifier}" (${pkg.name} has no React)`);
+      // Other packages are imported by name, so hosts resolve them the same way.
+      if (specifier.startsWith(".") && !path.resolve(path.dirname(file), specifier).startsWith(pkg.dir + path.sep)) {
+        problems.push(`${rel} imports "${specifier}", outside ${pkg.manifest.name}`);
+      }
       const external = !specifier.startsWith(".") && !specifier.startsWith("@/");
       const name = packageName(specifier.replace(/^node:/, ""));
       if (external && !isTest(file) && !builtinModules.includes(name) && !deps.has(name)) {
         problems.push(`${rel} imports "${specifier}", which is not a dependency of ${pkg.manifest.name}`);
       }
     }
-    if (!isTest(file)) {
+    if (!isTest(file) && !allow.browserGlobals) {
       for (const global of ["window", "document"]) {
         if (new RegExp(`(?<![.\\w$])${global}\\b`).test(codeOnly(source))) problems.push(`${rel} uses the browser global "${global}"`);
       }
     }
+  }
+  const entry = pkg.manifest.main && path.join(pkg.dir, pkg.manifest.main);
+  if (allow.useClient && entry && !/^\s*(\/\/[^\n]*\n\s*)*["']use client["']/.test(fs.readFileSync(entry, "utf8"))) {
+    problems.push(`${pkg.manifest.main} of ${pkg.manifest.name} must start with "use client"`);
   }
   return problems;
 };
@@ -74,8 +95,31 @@ describe("workspace packages", () => {
     expect(packages.map((pkg) => pkg.manifest.name)).toContain("@enshrouded/core");
   });
 
+  it("include the React package", () => {
+    expect(packages.map((pkg) => pkg.manifest.name)).toContain("@enshrouded/react");
+  });
+
   it.each(packages.map((pkg) => [pkg.manifest.name, pkg]))("%s stays inside its boundary", (_name, pkg) => {
     expect(violations(pkg)).toEqual([]);
+  });
+
+  it("the React package may use React and browser globals, but needs \"use client\"", () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "boundary-check-"));
+    try {
+      fs.mkdirSync(path.join(dir, "src"));
+      fs.writeFileSync(path.join(dir, "src", "index.ts"), [
+        'import { useState } from "react";',
+        'import x from "../../core/src/index";',
+        "export const width = () => window.innerWidth + document.body.clientWidth;",
+      ].join("\n"));
+      const problems = violations({ name: "react", dir, manifest: { name: "@enshrouded/react", main: "src/index.ts", peerDependencies: { react: "*" } } });
+      expect(problems).toEqual([
+        expect.stringContaining('imports "../../core/src/index", outside @enshrouded/react'),
+        expect.stringContaining('must start with "use client"'),
+      ]);
+    } finally {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
   });
 
   it("the check catches each kind of violation", () => {

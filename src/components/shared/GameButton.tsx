@@ -176,7 +176,7 @@ const GameButton = ({
 
       {!noDecorations && (
         <img
-          src="/assets/decorations/button-decoration.svg"
+          src="/skill-tree/decorations/button-decoration.svg"
           alt=""
           className={classNames(
             "absolute left-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none hidden md:block",
@@ -188,7 +188,7 @@ const GameButton = ({
       )}
       {!noDecorations && (
         <img
-          src="/assets/decorations/button-decoration.svg"
+          src="/skill-tree/decorations/button-decoration.svg"
           alt=""
           className={classNames(
             "absolute right-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none hidden md:block",

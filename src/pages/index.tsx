@@ -5,7 +5,7 @@ import { useTranslation } from "next-i18next/pages";
 
 import { classNames } from "@/utils/utils";
 import CustomHeader from "@/components/CustomHeader";
-import SkillTree from "@/components/SkillTree";
+import SkillPlanner from "@/components/SkillPlanner";
 import InitSkills from "@/components/handlers/InitSkills";
 import { getMongoClient, isMongoConfigured } from "@/lib/mongodb";
 import { getCode } from "@/lib/api/code";
@@ -54,7 +54,7 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
           className="object-cover object-center"
         />
         <div>
-          <SkillTree dbAvailable={dbAvailable} focusNodeId={focusNodeId} />
+          <SkillPlanner dbAvailable={dbAvailable} focusNodeId={focusNodeId} />
           <InitSkills sharedCode={code} />
         </div>
       </main>

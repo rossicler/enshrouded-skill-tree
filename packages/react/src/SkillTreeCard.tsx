@@ -14,6 +14,7 @@ import {
 import { createPortal } from "react-dom";
 import type { SkillChange, SkillSelection } from "@enshrouded/core";
 
+import { assetUrl } from "./art";
 import { CardControls, type CardAction } from "./CardControls";
 import { useSkillTreeSettings } from "./SkillTreeProvider";
 import { SkillTreeView, type RefundRequest, type SkillTreeViewHandle } from "./SkillTreeView";
@@ -21,7 +22,17 @@ import { uiText } from "./text";
 
 // Used for a side the container leaves unsized (an auto height, say).
 export const DEFAULT_CARD_SIZE = 360;
-const DEFAULT_BACKGROUND = "radial-gradient(circle at 50% 50%, #2b2536 0%, #15121c 65%, #0d0b12 100%)";
+const FALLBACK_BACKGROUND = "radial-gradient(circle at 50% 50%, #2b2536 0%, #15121c 65%, #0d0b12 100%)";
+// The planner's backdrop art, resized for cards (assets/backgrounds/).
+const BACKGROUND_ART = "backgrounds/skill-tree.webp";
+
+// CSS background for the card and its overlay: the art over the gradient
+// (the gradient shows while the art loads), the gradient alone, or the host's.
+const cardBackground = (background: SkillTreeCardProps["background"], assetBaseUrl: string) => {
+  if (background === false) return FALLBACK_BACKGROUND;
+  if (typeof background === "string") return background;
+  return `url("${assetUrl(assetBaseUrl, BACKGROUND_ART)}") center / cover no-repeat, ${FALLBACK_BACKGROUND}`;
+};
 
 export type SkillTreeCardMode = "inline" | "expanded" | "fullscreen";
 
@@ -45,6 +56,9 @@ export type SkillTreeCardProps = {
   getNodeShareUrl?: (nodeId: string) => string;
   // The zoom, expand and fullscreen buttons. Default true.
   controls?: boolean;
+  // Behind the tree: true (default) shows the planner's backdrop art, false a
+  // plain dark gradient, and a string is used as the CSS background.
+  background?: boolean | string;
   // Accessible name of the card and its overlay. Default: "Skill tree".
   label?: string;
   onModeChange?: (mode: SkillTreeCardMode) => void;
@@ -94,10 +108,12 @@ const SkillTreeCardBase = forwardRef<SkillTreeCardHandle, SkillTreeCardProps>(fu
     highlightedTypes,
     getNodeShareUrl,
     controls = true,
+    background = true,
     className,
     style,
   } = props;
-  const { locale } = useSkillTreeSettings();
+  const { locale, assetBaseUrl } = useSkillTreeSettings();
+  const backdrop = cardBackground(background, assetBaseUrl);
   const label = props.label ?? uiText(locale, "card.label");
   const root = useRef<HTMLDivElement>(null);
   const view = useRef<SkillTreeViewHandle>(null);
@@ -261,7 +277,7 @@ const SkillTreeCardBase = forwardRef<SkillTreeCardHandle, SkillTreeCardProps>(fu
         overflow: "hidden",
         // Drags and pinches on the card move the tree, not the page.
         touchAction: "none",
-        background: DEFAULT_BACKGROUND,
+        background: backdrop,
         width: fallback.width ? DEFAULT_CARD_SIZE : "100%",
         height: fallback.height ? DEFAULT_CARD_SIZE : "100%",
         ...style,
@@ -270,7 +286,7 @@ const SkillTreeCardBase = forwardRef<SkillTreeCardHandle, SkillTreeCardProps>(fu
       <SkillTreeView ref={view} {...viewProps} style={{ position: "absolute", inset: 0 }} />
       {controls && <CardControls actions={inlineActions} locale={locale} onAction={onAction} />}
       {mode === "expanded" && (
-        <CardOverlay label={label} onClose={close}>
+        <CardOverlay label={label} background={backdrop} onClose={close}>
           <SkillTreeView ref={overlayView} {...viewProps} style={{ position: "absolute", inset: 0 }} />
           <CardControls actions={["zoom-in", "zoom-out", "fit", "close"]} locale={locale} onAction={onAction} />
         </CardOverlay>
@@ -282,12 +298,12 @@ const SkillTreeCardBase = forwardRef<SkillTreeCardHandle, SkillTreeCardProps>(fu
 // An action in one card doesn't re-render another (given stable props).
 export const SkillTreeCard = memo(SkillTreeCardBase);
 
-type CardOverlayProps = { label: string; onClose: () => void; children: ReactNode };
+type CardOverlayProps = { label: string; background: string; onClose: () => void; children: ReactNode };
 
 // The expanded card: a dialog over the page, about 90% of the viewport,
 // rendered at the end of <body> so no ancestor of the card can clip it. It
 // keeps focus inside, and Esc, the close button or a click outside closes it.
-const CardOverlay = ({ label, onClose, children }: CardOverlayProps) => {
+const CardOverlay = ({ label, background, onClose, children }: CardOverlayProps) => {
   const panel = useRef<HTMLDivElement>(null);
   const backdrop = useRef<HTMLDivElement>(null);
 
@@ -344,7 +360,7 @@ const CardOverlay = ({ label, onClose, children }: CardOverlayProps) => {
         tabIndex={-1}
         onKeyDown={onKeyDown}
         className="relative overflow-hidden rounded-sm border border-white/15 shadow-2xl outline-none"
-        style={{ width: "90vw", height: "90vh", background: DEFAULT_BACKGROUND }}
+        style={{ width: "90vw", height: "90vh", background }}
       >
         {children}
       </div>

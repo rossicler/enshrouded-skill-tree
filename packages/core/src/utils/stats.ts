@@ -1,5 +1,6 @@
 import SkillNodes from "../constants/Nodes";
-import { BasicStats, NodeStatsType } from "../constants/Stats";
+import { BasicStats, NodeStatsType, StatsType } from "../constants/Stats";
+import { clampFlameLevel } from "../constants/Biomes";
 
 export const getStatsFromSkills = (
   skills: { [id: string]: number } | string[]
@@ -39,4 +40,20 @@ export const sumStats = (stats: NodeStatsType[]) => {
   });
 
   return sum as NodeStatsType;
+};
+
+// Every basic stat, at 0 when nothing adds to it.
+export type StatTotals = Record<StatsType, number>;
+
+// Attribute points from the selected skills (per level) plus the flame altar
+// (one per attribute for each flame level after the first). The flame level
+// is clamped to the game's range.
+export const getTotalStats = (
+  selection: { [id: string]: number } | string[],
+  flameLevel = 1
+): StatTotals => {
+  const sum = sumStats([getStatsFromSkills(selection), getStatsFromFlameAltar(clampFlameLevel(flameLevel))]);
+  return Object.fromEntries(
+    (Object.keys(BasicStats) as StatsType[]).map((stat) => [stat, sum[stat] ?? 0])
+  ) as StatTotals;
 };

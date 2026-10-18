@@ -1,13 +1,10 @@
 import { FormEvent, useRef, useState } from "react";
 import { gameToast } from "@/utils/gameToast";
 import { DialogTitle } from "@headlessui/react";
-import GameDialog from "../shared/GameDialog";
 import { useTranslation } from "next-i18next/pages";
 import { ChevronDown } from "lucide-react";
-import GamePanel from "../shared/GamePanel";
-import GameButton from "../shared/GameButton";
-import GameInput from "../shared/GameInput";
 import { classNames } from "@/utils/utils";
+import { GameButton, GameDialog, GameInput, GamePanel } from "@enshrouded/react";
 
 type PropsType = {
   open: boolean;

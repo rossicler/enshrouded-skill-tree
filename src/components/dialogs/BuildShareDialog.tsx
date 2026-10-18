@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { gameToast } from "@/utils/gameToast";
 import { DialogTitle } from "@headlessui/react";
-import GameDialog from "../shared/GameDialog";
 import { useTranslation } from "next-i18next/pages";
 import { ChevronDown } from "lucide-react";
 
@@ -15,10 +14,8 @@ import {
   selectionToBuild,
 } from "@enshrouded/core";
 import { useAppSelector } from "@/redux/hooks";
-import CopyInput from "../shared/CopyInput";
-import GamePanel from "../shared/GamePanel";
-import GameButton from "../shared/GameButton";
 import { classNames } from "@/utils/utils";
+import { CopyInput, GameButton, GameDialog, GamePanel } from "@enshrouded/react";
 
 type PropsType = {
   open: boolean;
@@ -154,7 +151,10 @@ const BuildShareDialog = ({ open, onClose, onImportSkills, dbAvailable = false }
                 <CopyInput
                   label={t("dialogs.export.shortUrl")}
                   copied={copied === "url"}
-                  onCopy={() => setCopied("url")}
+                  onCopy={() => {
+                    gameToast.success(t("toasts.shareUrlCopied"));
+                    setCopied("url");
+                  }}
                   value={shortURL}
                 />
               ) : null

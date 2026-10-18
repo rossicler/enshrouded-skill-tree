@@ -19,5 +19,51 @@
     "fullscreen": "Plein écran",
     "exitFullscreen": "Quitter le plein écran",
     "close": "Fermer"
+  },
+  "kit": {
+    "close": "Fermer",
+    "copy": "Copier"
+  },
+  "points": {
+    "skillPoints": "Points de compétence",
+    "flameLevel": "Niveau de flamme",
+    "skillPointIcon": "Icône de point de compétence",
+    "flameIcon": "Icône de flamme",
+    "flameDown": "Baisser le niveau de flamme",
+    "flameUp": "Monter le niveau de flamme"
+  },
+  "budget": {
+    "title": "Budget par biome",
+    "playerLevel": "Niveau du joueur",
+    "total": "Points de compétences totaux",
+    "reset": "Tout débloquer"
+  },
+  "biomes": {
+    "springlands": "Hautes pâtures",
+    "revelwood": "Bois envoutés",
+    "nomad_highlands": "Plateaux nomades",
+    "kindlewastes": "Regs exaltés",
+    "albaneve_summits": "Sommets d'Albaneve",
+    "veilwater_basin": "Bassin de Veilwater",
+    "cinders_cradle": "Berceau des cendres"
+  },
+  "stats": {
+    "button": "Stats",
+    "title": "Résumé des statistiques",
+    "basic": "Base",
+    "close": "Fermer",
+    "names": {
+      "constitution": "Constitution",
+      "strength": "Force",
+      "endurance": "Endurance",
+      "dexterity": "Dextérité",
+      "spirit": "Esprit",
+      "intelligence": "Intelligence"
+    }
+  },
+  "search": {
+    "placeholder": "Rechercher",
+    "moreMatches": "+{{count}} autres résultats surlignés dans l'arbre",
+    "clear": "Effacer la recherche"
   }
 }

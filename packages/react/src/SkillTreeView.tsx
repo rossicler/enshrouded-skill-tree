@@ -90,7 +90,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
   const { selection, highlightedTypes, initialFocusNodeId, getNodeShareUrl, initialView = "center", tooltipStrategy, className, style } =
     props;
   const settings = useSkillTreeSettings();
-  const { locale, assetBaseUrl, playSound } = settings;
+  const { locale, assetBaseUrl } = settings;
   const layout = getTreeLayout();
   const scope = `st${useId().replace(/[^\w]/g, "")}`;
   const readOnly = !props.onSelectionChange;
@@ -343,7 +343,6 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
               readOnly={readOnly}
               onAction={act}
               onShare={getNodeShareUrl ? share : undefined}
-              playSound={playSound}
             />
           );
         }}

@@ -8,6 +8,7 @@
 // - common.json (the site): every locale has the same keys and placeholders
 //   as the default locale, every key the code references exists, and keys
 //   built at runtime (biomes.<id>) exist for every value.
+// - <lang>.json (packages/react): the same keys and placeholders as English.
 const fs = require('fs');
 const path = require('path');
 const { z } = require('zod');
@@ -18,6 +19,8 @@ const localesDir = path.join(root, 'public/locales');
 // Skill and tree text, owned by the core package.
 const coreSrcDir = path.join(root, 'packages/core/src');
 const coreLocalesDir = path.join(coreSrcDir, 'locales');
+// The tree view's own UI text (tooltip buttons), owned by the React package.
+const reactLocalesDir = path.join(root, 'packages/react/src/locales');
 
 const nodeTranslationSchema = z.object({
     name: z.string().min(1, "Name must be a non-empty string when present").optional(),
@@ -136,27 +139,34 @@ function collectProblems({
         }
     }
 
-    const expected = commonKeys(locales[defaultLocale].common);
-    const keysByLang = Object.fromEntries(
-        Object.entries(locales).map(([lang, { common }]) => [lang, commonKeys(common)]));
-    for (const [lang, keys] of Object.entries(keysByLang)) {
-        if (lang === defaultLocale) continue;
-        const file = `${lang}/common.json`;
-        for (const [key, texts] of expected) {
-            if (!keys.has(key)) {
-                report(file, `${key} is missing (it is in ${defaultLocale}/common.json)`);
-                continue;
+    // Same keys and placeholders as the default locale.
+    const checkParity = (pick, fileOf) => {
+        const expected = commonKeys(pick(locales[defaultLocale]));
+        const keysByLang = Object.fromEntries(
+            Object.entries(locales).map(([lang, texts]) => [lang, commonKeys(pick(texts) ?? {})]));
+        for (const [lang, keys] of Object.entries(keysByLang)) {
+            if (lang === defaultLocale) continue;
+            const file = fileOf(lang);
+            for (const [key, texts] of expected) {
+                if (!keys.has(key)) {
+                    report(file, `${key} is missing (it is in ${fileOf(defaultLocale)})`);
+                    continue;
+                }
+                const want = placeholders(texts.join('\n'));
+                const have = placeholders(keys.get(key).join('\n'));
+                if (want.join() !== have.join()) {
+                    report(file, `${key} uses ${list(have) || 'no placeholders'}, but ${defaultLocale} uses ${list(want) || 'none'}`);
+                }
             }
-            const want = placeholders(texts.join('\n'));
-            const have = placeholders(keys.get(key).join('\n'));
-            if (want.join() !== have.join()) {
-                report(file, `${key} uses ${list(have) || 'no placeholders'}, but ${defaultLocale} uses ${list(want) || 'none'}`);
+            for (const key of keys.keys()) {
+                if (!expected.has(key)) report(file, `${key} is not in ${fileOf(defaultLocale)}`);
             }
         }
-        for (const key of keys.keys()) {
-            if (!expected.has(key)) report(file, `${key} is not in ${defaultLocale}/common.json`);
-        }
-    }
+        return keysByLang;
+    };
+    const keysByLang = checkParity(({ common }) => common, (lang) => `${lang}/common.json`);
+    // The React package's own UI text (tooltip buttons), when given.
+    if (locales[defaultLocale].ui) checkParity(({ ui }) => ui, (lang) => `react/${lang}.json`);
 
     const requireKey = (key, reason) => {
         for (const [lang, keys] of Object.entries(keysByLang)) {
@@ -251,6 +261,7 @@ function main() {
         nodes: readJson(coreLocalesDir, lang, 'nodes'),
         tree: readJson(coreLocalesDir, lang, 'tree'),
         common: readJson(localesDir, lang, 'common'),
+        ui: readJson(reactLocalesDir, '.', lang),
     }]));
     if (!problems.length) {
         problems.push(...collectProblems({

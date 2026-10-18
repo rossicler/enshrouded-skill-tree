@@ -48,6 +48,8 @@ export {
   hasSelectionChanges,
 } from "./selection";
 export type { SkillSelection, SelectionCleanup } from "./selection";
+export { applySkillAction, removeSkills } from "./actions";
+export type { SkillAction, SkillActionOptions, SkillActionResult, SkillChange } from "./actions";
 
 // Build codes
 export {
@@ -65,6 +67,8 @@ export {
   BIOMES,
   SP_PER_LEVEL,
   MAX_PLAYER_LEVEL,
+  MAX_FLAME_LEVEL,
+  clampFlameLevel,
   MAX_SKILL_POINTS_ABSOLUTE,
   computeLevelingPoints,
   computeMaxSkillPoints,

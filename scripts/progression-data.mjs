@@ -16,13 +16,16 @@ export function regionOfTemplate(name) {
 const MAP_REGION_ALIASES = { steppes: "steppe", talltrees: "tralltrees" };
 
 // Reduces a toolkit progression export (tools/progression) to the app's
-// skill point budget: leveling values and points per app biome. `regions`
+// skill point budget: leveling values and points per app biome, plus the
+// reachable flame level and attribute points per flame level. `regions`
 // maps game regions to app biome IDs (scripts/progression-regions.json).
 export function runProgressionImport({ data, regions, previous }) {
   const blockers = [];
   if (!/^1\./.test(data.schemaVersion ?? "")) blockers.push(`Unsupported progression schema ${data.schemaVersion}`);
   const { playerLevelCap, skillPointsPerLevel } = data.leveling ?? {};
   if (!(playerLevelCap > 1) || !(skillPointsPerLevel > 0)) blockers.push("The export has no leveling values");
+  const { flameLevelCap, apPerFlameLevel } = data.flame ?? {};
+  if (!(flameLevelCap > 1) || !(apPerFlameLevel > 0)) blockers.push("The export has no flame level values (toolkit schema 1.1.0)");
 
   const biomes = Object.fromEntries([...new Set(Object.values(regions))].map((id) => [id, { points: 0, unlocks: 0 }]));
   const unmapped = {};
@@ -49,16 +52,18 @@ export function runProgressionImport({ data, regions, previous }) {
   if (!Object.keys(unmapped).length && sources !== counted) blockers.push(`Sources grant ${sources} points but placed unlocks ${counted}`);
 
   const candidate = {
-    schemaVersion: "1.0.0",
+    schemaVersion: "1.1.0",
     provenance: { gameBuild: data.provenance?.gameBuild, exportedAtUtc: data.provenance?.exportedAtUtc,
       sourceFileSha256: data.provenance?.sourceFileSha256 },
     leveling: { playerLevelCap, skillPointsPerLevel },
+    flame: { flameLevelCap, apPerFlameLevel },
     biomes,
   };
   const report = {
     gameBuild: candidate.provenance.gameBuild,
     previousGameBuild: previous?.provenance?.gameBuild,
     leveling: { previous: previous?.leveling, next: candidate.leveling },
+    flame: { previous: previous?.flame, next: candidate.flame },
     biomes: Object.fromEntries(Object.entries(biomes).map(([id, next]) => [id, { previous: previous?.biomes?.[id], next }])),
     totals: {
       leveling: (playerLevelCap - 1) * skillPointsPerLevel,
@@ -74,6 +79,7 @@ export function summarizeProgression({ report, blockers }) {
   const lines = ["# Skill point progression preview", "",
     `- Game build: ${report.gameBuild} (previous: ${report.previousGameBuild ?? "none"})`,
     `- Leveling: ${JSON.stringify(report.leveling.previous ?? null)} -> ${JSON.stringify(report.leveling.next)}`,
+    `- Flame: ${JSON.stringify(report.flame.previous ?? null)} -> ${JSON.stringify(report.flame.next)}`,
     `- Max skill points: ${report.totals.leveling} leveling + ${report.totals.exploration} exploration = ${report.totals.max}`, "",
     "## Biomes (points, unlocks)", ""];
   for (const [id, { previous, next }] of Object.entries(report.biomes)) {

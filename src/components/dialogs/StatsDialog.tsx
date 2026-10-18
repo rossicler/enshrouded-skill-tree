@@ -7,6 +7,7 @@ import { useAppSelector } from "@/redux/hooks";
 import {
   BasicStats,
   StatsType,
+  clampFlameLevel,
   getStatsFromFlameAltar,
   getStatsFromSkills,
   sumStats,
@@ -31,7 +32,7 @@ const STAT_KEYS: Record<string, string> = {
 const StatsDialog = ({ open, onClose }: PropsType) => {
   const { t } = useTranslation("common");
   const skillsSelected = useAppSelector((state) => state.skill.selectedSkills);
-  const flameLevel = useAppSelector((state) => state.skill.flameLevel ?? 1);
+  const flameLevel = useAppSelector((state) => clampFlameLevel(state.skill.flameLevel ?? 1));
   const stats = useMemo(
     () =>
       sumStats([
@@ -60,7 +61,7 @@ const StatsDialog = ({ open, onClose }: PropsType) => {
                 {Object.keys(BasicStats).map((stat) => (
                   <div key={stat} className="flex justify-between">
                     <span>{t(STAT_KEYS[stat])}</span>
-                    <span className="text-[#e8d5a3]">
+                    <span className="text-[#e8d5a3]" data-stat={stat}>
                       {stats[stat as StatsType] ?? 0}
                     </span>
                   </div>

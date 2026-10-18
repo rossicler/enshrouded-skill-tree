@@ -1,0 +1,23 @@
+{
+  "tooltip": {
+    "levelHeader": "Niveau {{current}} / {{max}}",
+    "unlock": "Déverrouiller",
+    "outOfRange": "Hors de portée",
+    "share": "Partager un lien vers cette compétence",
+    "refund": "Rembourser",
+    "levelUp": "Améliorer",
+    "refundOne": "Rembourser 1",
+    "refundAll": "Tout rembourser",
+    "skillPointIcon": "Icône de point de compétence"
+  },
+  "card": {
+    "label": "Arbre de compétences",
+    "zoomIn": "Zoom avant",
+    "zoomOut": "Zoom arrière",
+    "fit": "Afficher tout l'arbre",
+    "expand": "Agrandir",
+    "fullscreen": "Plein écran",
+    "exitFullscreen": "Quitter le plein écran",
+    "close": "Fermer"
+  }
+}

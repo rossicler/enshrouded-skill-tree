@@ -1,0 +1,23 @@
+{
+  "tooltip": {
+    "levelHeader": "Level {{current}} / {{max}}",
+    "unlock": "Unlock",
+    "outOfRange": "Out of range",
+    "share": "Share link to this skill",
+    "refund": "Refund",
+    "levelUp": "Level Up",
+    "refundOne": "Refund 1",
+    "refundAll": "Refund All",
+    "skillPointIcon": "Skill Point Icon"
+  },
+  "card": {
+    "label": "Skill tree",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Show the whole tree",
+    "expand": "Expand",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit fullscreen",
+    "close": "Close"
+  }
+}

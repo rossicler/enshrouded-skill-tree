@@ -1,0 +1,3 @@
+# Scripts with a #! line must keep LF endings: with CRLF, Vite fails to load
+# them on Windows checkouts (core.autocrlf), e.g. in the asset tests.
+*.mjs text eol=lf

@@ -445,8 +445,8 @@ export function planImport({ data, mapping: rawMapping, previous, presentation, 
     if (id && !presentation.nodes[id]) warnings.push(`Node ${id} (${parsed.name(gameId)}) has no authored tier; it renders as "small"`);
   }
   for (const type of usedTypes) {
-    if (presentation.types[type]?.hasIcon && !fs.existsSync(path.join(root, "public/assets/skills", `${type}.png`))) {
-      warnings.push(`Type ${type} has hasIcon but public/assets/skills/${type}.png is missing`);
+    if (presentation.types[type]?.hasIcon && !fs.existsSync(path.join(root, "packages/react/assets/skills", `${type}.png`))) {
+      warnings.push(`Type ${type} has hasIcon but packages/react/assets/skills/${type}.png is missing`);
     }
   }
 

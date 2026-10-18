@@ -94,6 +94,23 @@ test("refunding a node that others depend on asks for confirmation", async ({ pa
   await expectLevel(page, MULTI_BASE_CHILD, 0);
 });
 
+test("closing the refund confirmation draws no focus outline on the node", async ({ page }) => {
+  // The dialog hands focus back to the node it was opened from; Chrome's
+  // default focus outline then drew a box around it.
+  await node(page, MULTI_BASE).click();
+  await node(page, MULTI_BASE_CHILD).click();
+  for (const action of ["cancel", "confirm"]) {
+    await node(page, MULTI_BASE).click({ button: "right" });
+    await dialog(page, "refund-confirm").locator(`[data-action="${action}"]`).click();
+    await expect(dialog(page, "refund-confirm")).toHaveCount(0);
+    const outline = await page.evaluate(() => {
+      const el = document.activeElement;
+      return el && el !== document.body ? getComputedStyle(el).outlineStyle : "none";
+    });
+    expect(outline, `after ${action}`).toBe("none");
+  }
+});
+
 test("wrapping a max-level node that others depend on also asks for confirmation", async ({ page }) => {
   for (let i = 0; i < maxLevelOf(MULTI_BASE); i++) await node(page, MULTI_BASE).click();
   await node(page, MULTI_BASE_CHILD).click();

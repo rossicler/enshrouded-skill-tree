@@ -60,7 +60,7 @@ const GameButtonGroup = ({ children, className, vertical }: PropsType) => {
 
       {/* Left decoration — hidden on mobile */}
       <img
-        src="/assets/decorations/button-decoration.svg"
+        src="/skill-tree/decorations/button-decoration.svg"
         alt=""
         className={classNames(
           "absolute left-0 top-1/2 -translate-y-1/2 h-full w-auto pointer-events-none opacity-80 hidden md:block",
@@ -69,7 +69,7 @@ const GameButtonGroup = ({ children, className, vertical }: PropsType) => {
       />
       {/* Right decoration (mirrored) — hidden on mobile */}
       <img
-        src="/assets/decorations/button-decoration.svg"
+        src="/skill-tree/decorations/button-decoration.svg"
         alt=""
         className={classNames(
           "absolute right-0 top-1/2 -translate-y-1/2 -scale-x-100 h-full w-auto pointer-events-none opacity-80 hidden md:block",

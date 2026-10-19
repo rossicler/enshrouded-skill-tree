@@ -67,9 +67,16 @@ export type TreeLayout = {
   halfExtent: { x: number; y: number };
 };
 
+// Coordinates are rounded to a thousandth of a tree unit. Math.sin and
+// Math.cos may differ in the last bit between a server's JavaScript engine and
+// the browser's, and the tree is rendered on the server too, so unrounded
+// values made React report a hydration mismatch on the SVG attributes.
+export const roundCoordinate = (value: number) => Math.round(value * 1000) / 1000 || 0;
+const roundPoint = ({ x, y }: { x: number; y: number }) => ({ x: roundCoordinate(x), y: roundCoordinate(y) });
+
 const polar = (angle: number, radius: number) => {
   const r = (angle * Math.PI) / 180;
-  return { x: -Math.sin(r) * radius, y: Math.cos(r) * radius };
+  return roundPoint({ x: -Math.sin(r) * radius, y: Math.cos(r) * radius });
 };
 
 // A label box is rotated out to its radius, then turned upright about its own
@@ -82,13 +89,13 @@ const labelLayout = (label: TreeLabel): LabelLayout => {
   const cy0 = LABEL_START + label.distance + h / 2;
   const cx = cx0 * Math.cos(a) - cy0 * Math.sin(a);
   const cy = cx0 * Math.sin(a) + cy0 * Math.cos(a);
-  return { ...label, x: cx - w / 2, y: cy - h / 2, w, h };
+  return { ...label, ...roundPoint({ x: cx - w / 2, y: cy - h / 2 }), w: roundCoordinate(w), h: roundCoordinate(h) };
 };
 
 export const buildTreeLayout = (tree: SkillNodesType = SkillNodes): TreeLayout => {
   const nodes: Record<string, NodeLayout> = {};
   for (const node of Object.values(tree.nodes)) {
-    const { x, y } = resolveNodePosition(node);
+    const { x, y } = roundPoint(resolveNodePosition(node));
     const tier = node.tier ?? "small";
     nodes[node.id] = { id: node.id, node, x, y, tier, size: NODE_SIZE[tier], maxLevel: tree.types[node.type]?.maxLevel ?? 1 };
   }
@@ -104,7 +111,7 @@ export const buildTreeLayout = (tree: SkillNodesType = SkillNodes): TreeLayout =
       y2: nodes[to].y,
     })),
     ...getBaseLinesToDraw(tree).map(([from, to]) => {
-      const anchor = resolveBaseAnchor(tree.nodes[from]);
+      const anchor = roundPoint(resolveBaseAnchor(tree.nodes[from]));
       return { key: `${from}-${to}`, from, to, kind: "base" as const, x1: nodes[from].x, y1: nodes[from].y, x2: anchor.x, y2: anchor.y };
     }),
   ];

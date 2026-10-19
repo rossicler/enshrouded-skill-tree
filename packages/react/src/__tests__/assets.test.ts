@@ -61,6 +61,21 @@ describe("layout", () => {
     expect(Number.isInteger(layout.halfExtent.x) && Number.isInteger(layout.halfExtent.y)).toBe(true);
     expect(layout.links.filter((l) => l.kind === "base")).toHaveLength(Object.values(SkillNodes.nodes).filter((n) => n.base).length);
   });
+
+  // The tree is rendered on the server and hydrated in the browser, whose
+  // Math.sin/cos may differ in the last bit. The layout must not.
+  it("doesn't change when sin and cos differ in the last bit", () => {
+    const expected = buildTreeLayout();
+    const { sin, cos } = Math;
+    try {
+      Math.sin = (x) => sin(x) * (1 + Number.EPSILON);
+      Math.cos = (x) => cos(x) * (1 - Number.EPSILON);
+      expect(buildTreeLayout()).toEqual(expected);
+    } finally {
+      Math.sin = sin;
+      Math.cos = cos;
+    }
+  });
 });
 
 describe("ui text", () => {

@@ -106,12 +106,12 @@ test("search highlights matches in the card and a result zooms to its node", asy
   await expect(wired(page).locator("[data-search-result]")).toHaveCount(0);
   await waitForStableCard(c, "12");
   expect(await distanceIn(c, SINGLE_BASE, MULTI_BASE)).toBeGreaterThan(start * 2);
-  // The node ends up in the middle of the card. (The tooltip that focusNode
-  // opens isn't asserted: it depends on where the real mouse is.)
+  // The node ends up in the middle of the card, with its tooltip open.
   const box = (await c.boundingBox())!;
   const target = (await inCard(c, "12").boundingBox())!;
   expect(Math.abs(target.x + target.width / 2 - (box.x + box.width / 2))).toBeLessThan(5);
   expect(Math.abs(target.y + target.height / 2 - (box.y + box.height / 2))).toBeLessThan(5);
+  await expect(c.locator('[data-skill-tooltip="12"]')).toBeVisible();
 
   await wiredHook(page, "search-input").fill("");
   await expect(c.locator('[data-node-id][data-searched="true"]')).toHaveCount(0);

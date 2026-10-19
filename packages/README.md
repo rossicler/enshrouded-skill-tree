@@ -13,6 +13,11 @@ them. They are tested with Next.js 16 (App Router and Pages Router), React 19,
 Tailwind 4 and yarn 1 workspaces (npm workspaces should work the same way, but
 aren't tested). Like the rest of this repo, they are GPL-3.0-or-later.
 
+They aren't published to npm yet: nothing outside this repo uses them today,
+so a git submodule (below) is the way in. If you want to build something on
+them, open an issue: publishing them to npm is on the table once someone
+actively uses them.
+
 ## Setup in a host app
 
 The steps below assume a Next.js app with Tailwind 4, and put this repo at

@@ -2,12 +2,11 @@ import React, { useState } from "react";
 
 import { Settings, Info } from "lucide-react";
 import { classNames } from "@/utils/utils";
-import GameButton from "../shared/GameButton";
-import GameButtonGroup from "../shared/GameButtonGroup";
 import AboutDialog from "../dialogs/AboutDialog";
 import SettingsDialog from "../dialogs/SettingsDialog";
 import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@enshrouded/core";
 import { useTranslation } from "next-i18next/pages";
+import { GameButton, GameButtonGroup } from "@enshrouded/react";
 
 const DISCORD_LINK = "https://discord.gg/saazEkNchu";
 

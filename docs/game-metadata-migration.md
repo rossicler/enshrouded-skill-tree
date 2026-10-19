@@ -170,7 +170,7 @@ template.
 `Biomes.ts` derives `MAX_PLAYER_LEVEL`, `SP_PER_LEVEL`, each biome's
 `explorationPoints` and `MAX_SKILL_POINTS_ABSOLUTE` from that file. Biome
 order and level ranges are app-owned there, and each biome needs a
-`biomes.<id>` name in every `common.json`. Build 1267041 (1.0): level cap 50
+`biomes.<id>` name in every `packages/react/src/locales/<lang>.json`. Build 1267041 (1.0): level cap 50
 (98 points) and 114 exploration points, 212 in total; Cinder's Cradle (game
 region `ancientland`, levels 46-50) is new, and Tall Trees counts toward
 Revelwood. The former hand-counted budget was 184 (level 45, 96 exploration).

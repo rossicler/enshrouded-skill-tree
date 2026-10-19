@@ -94,6 +94,8 @@ yarn e2e          # browser tests; run `npx playwright install chromium` once
 
 The site lives at the repository root. The skill tree's data, rules, build codes, points, stats, skill text and search live in the `@enshrouded/core` workspace package (`packages/core`): plain TypeScript with no React or browser APIs, so the tree can be reused and embedded in other apps. The tree's React UI (the SVG view with pan, zoom, tooltips and the click rules) is the `@enshrouded/react` package (`packages/react`), which also holds the node art and sounds; `yarn dev` and `yarn build` copy them to `public/skill-tree/`. Run `yarn install` at the root only.
 
+To embed the skill tree in another app (added as a git submodule), see [packages/README.md](packages/README.md).
+
 For updating skill data from a new game build, see [docs/game-metadata-migration.md](docs/game-metadata-migration.md).
 
 ## Contributing

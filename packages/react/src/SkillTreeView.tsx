@@ -90,7 +90,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
   const { selection, highlightedTypes, initialFocusNodeId, getNodeShareUrl, initialView = "center", tooltipStrategy, className, style } =
     props;
   const settings = useSkillTreeSettings();
-  const { locale, assetBaseUrl, playSound } = settings;
+  const { locale, assetBaseUrl } = settings;
   const layout = getTreeLayout();
   const scope = `st${useId().replace(/[^\w]/g, "")}`;
   const readOnly = !props.onSelectionChange;
@@ -250,8 +250,10 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         if (!el) return;
         panZoomRef.current?.zoomToElement(el, animationMs);
         if (showTooltip) {
-          // The tooltip opens on the node's mouseenter, after the zoom settles.
-          setTimeout(() => el.dispatchEvent(new globalThis.MouseEvent("mouseenter", { bubbles: true })), animationMs + 50);
+          // Once the zoom settles, open the tooltip the way a hover does.
+          // react-tooltip listens for mouseover on each node; the event
+          // doesn't bubble, so the view's own hover sound doesn't play.
+          setTimeout(() => el.dispatchEvent(new globalThis.MouseEvent("mouseover")), animationMs + 50);
         }
       },
     }),
@@ -343,7 +345,6 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
               readOnly={readOnly}
               onAction={act}
               onShare={getNodeShareUrl ? share : undefined}
-              playSound={playSound}
             />
           );
         }}

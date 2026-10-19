@@ -3,8 +3,6 @@ import { ZoomOut, Crosshair, ZoomIn, Share2, RotateCcw } from "lucide-react";
 
 import { classNames } from "../../utils/utils";
 import { playSound } from "../../utils/sounds";
-import GameButton from "../shared/GameButton";
-import GameButtonGroup from "../shared/GameButtonGroup";
 import ResetConfirmDialog from "../dialogs/ResetConfirmDialog";
 import { useAppDispatch } from "@/redux/hooks";
 import { loadSelectedSkills } from "@/redux/skills/skills.slice";
@@ -16,6 +14,7 @@ import AboutHUD from "./About";
 import BuildShareDialog from "../dialogs/BuildShareDialog";
 import { useRouter } from "next/router";
 import SearchHUD from "./Search";
+import { GameButton, GameButtonGroup } from "@enshrouded/react";
 
 type PropsType = {
   view: RefObject<SkillTreeViewHandle | null>;

@@ -1,9 +1,10 @@
-import { useId, type ReactNode } from "react";
+import { useId } from "react";
 import DOMPurify from "dompurify";
 import { SkillNodes, getMaxLevel, getSkillText, type SkillAction } from "@enshrouded/core";
 
 import { assetUrl, type NodeState } from "./art";
-import type { SkillTreeSound } from "./SkillTreeProvider";
+import { GameButton } from "./kit/GameButton";
+import { RuggedFilter } from "./kit/shared";
 import { uiText } from "./text";
 
 const GRADIENT_COLORS: Record<string, { light: string; dark: string }> = {
@@ -14,56 +15,6 @@ const GRADIENT_COLORS: Record<string, { light: string; dark: string }> = {
 };
 
 const cx = (...classes: (string | false | undefined)[]) => classes.filter(Boolean).join(" ");
-
-// Torn-paper edges for the card and the button hover.
-const RuggedFilter = ({ id }: { id: string }) => (
-  <svg className="absolute w-0 h-0" aria-hidden="true">
-    <defs>
-      <filter id={id} x="-2%" y="-2%" width="104%" height="104%">
-        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="4" seed="2" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
-      </filter>
-    </defs>
-  </svg>
-);
-
-const TextButton = ({
-  children,
-  onClick,
-  playSound,
-  ...props
-}: {
-  children: ReactNode;
-  onClick: () => void;
-  playSound: (name: SkillTreeSound, volume: number) => void;
-  title?: string;
-  "data-action": string;
-}) => {
-  const filterId = `rugged-${useId().replace(/[^\w-]/g, "")}`;
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      onMouseEnter={() => playSound("node-hover", 0.3)}
-      className={cx(
-        "group relative inline-flex items-center justify-center overflow-hidden",
-        "px-4 py-2 min-h-[40px]",
-        "text-sm font-semibold tracking-wide",
-        "transition-all duration-150"
-      )}
-      {...props}
-    >
-      <RuggedFilter id={filterId} />
-      <span
-        style={{ filter: `url(#${filterId})` }}
-        className="absolute inset-0 opacity-0 transition-opacity duration-150 group-hover:opacity-100 bg-black/20"
-      />
-      <span className="relative z-10 font-semibold tracking-wide text-sm text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]">
-        {children}
-      </span>
-    </button>
-  );
-};
 
 // lucide "link-2"
 const LinkIcon = () => (
@@ -86,7 +37,6 @@ export type SkillTooltipCardProps = {
   readOnly: boolean;
   onAction: (nodeId: string, action: SkillAction) => void;
   onShare?: (nodeId: string) => void;
-  playSound: (name: SkillTreeSound, volume: number) => void;
 };
 
 // The card shown over a hovered node: name, level, description, cost and actions.
@@ -100,7 +50,6 @@ export const SkillTooltipCard = ({
   readOnly,
   onAction,
   onShare,
-  playSound,
 }: SkillTooltipCardProps) => {
   const node = SkillNodes.nodes[nodeId];
   const filterId = `rugged-tooltip-${useId().replace(/[^\w-]/g, "")}`;
@@ -114,9 +63,9 @@ export const SkillTooltipCard = ({
   const colors = GRADIENT_COLORS[metadata.color] ?? GRADIENT_COLORS.green;
   const gradient = `linear-gradient(187deg, ${colors.light} 0%, ${colors.dark} 100%)`;
   const button = (action: string, label: string, skillAction: SkillAction) => (
-    <TextButton data-action={action} playSound={playSound} onClick={() => onAction(nodeId, skillAction)}>
+    <GameButton variant="text" type="button" data-action={action} onClick={() => onAction(nodeId, skillAction)}>
       {label}
-    </TextButton>
+    </GameButton>
   );
   const selectable = state !== "locked";
 
@@ -159,9 +108,9 @@ export const SkillTooltipCard = ({
           <div className="flex items-center">
             {onShare && (
               <>
-                <TextButton data-action="share" playSound={playSound} onClick={() => onShare(nodeId)} title={t("tooltip.share")}>
+                <GameButton variant="text" type="button" data-action="share" onClick={() => onShare(nodeId)} title={t("tooltip.share")}>
                   <LinkIcon />
-                </TextButton>
+                </GameButton>
                 <span className="w-px h-4 bg-white/20 mx-1 shrink-0" />
               </>
             )}

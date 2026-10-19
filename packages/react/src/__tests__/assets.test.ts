@@ -23,13 +23,17 @@ describe("node art", () => {
     expect([...missing]).toEqual([]);
   });
 
-  it("covers the tree labels, the sounds and the tooltip", () => {
+  it("covers the tree labels, the sounds, the tooltip, the panels and the UI kit", () => {
     const files = [
       ...TREE_LABELS.map((label) => `labels/${label.asset}.png`),
       ...["node-hover", "node-out-of-range", "node-refund", "node-select", "node-unlock"].map((name) => `sounds/${name}.mp3`),
       "ui/skill_point.png",
+      "ui/skill_point_hud.png",
+      "ui/flame.png",
       "decorations/bg-circles-tiled.svg",
       "decorations/divider.svg",
+      "decorations/button-decoration.svg",
+      ...["top-left", "top-right", "bottom-left", "bottom-right"].map((corner) => `decorations/modal-${corner}.svg`),
     ];
     expect(files.filter((file) => !exists(file))).toEqual([]);
   });
@@ -56,6 +60,21 @@ describe("layout", () => {
     const layout = buildTreeLayout();
     expect(Number.isInteger(layout.halfExtent.x) && Number.isInteger(layout.halfExtent.y)).toBe(true);
     expect(layout.links.filter((l) => l.kind === "base")).toHaveLength(Object.values(SkillNodes.nodes).filter((n) => n.base).length);
+  });
+
+  // The tree is rendered on the server and hydrated in the browser, whose
+  // Math.sin/cos may differ in the last bit. The layout must not.
+  it("doesn't change when sin and cos differ in the last bit", () => {
+    const expected = buildTreeLayout();
+    const { sin, cos } = Math;
+    try {
+      Math.sin = (x) => sin(x) * (1 + Number.EPSILON);
+      Math.cos = (x) => cos(x) * (1 - Number.EPSILON);
+      expect(buildTreeLayout()).toEqual(expected);
+    } finally {
+      Math.sin = sin;
+      Math.cos = cos;
+    }
   });
 });
 

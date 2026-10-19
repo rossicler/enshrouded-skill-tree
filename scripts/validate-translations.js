@@ -7,8 +7,10 @@
 // - tree.json (packages/core): a tree label text for every TREE_LABELS entry.
 // - common.json (the site): every locale has the same keys and placeholders
 //   as the default locale, every key the code references exists, and keys
-//   built at runtime (biomes.<id>) exist for every value.
-// - <lang>.json (packages/react): the same keys and placeholders as English.
+//   built at runtime exist for every value.
+// - <lang>.json (packages/react): the same keys and placeholders as English,
+//   every key the package's code references (t(), uiText(), label tables)
+//   exists, and keys built at runtime (biomes.<id>) exist for every value.
 const fs = require('fs');
 const path = require('path');
 const { z } = require('zod');
@@ -20,7 +22,8 @@ const localesDir = path.join(root, 'public/locales');
 const coreSrcDir = path.join(root, 'packages/core/src');
 const coreLocalesDir = path.join(coreSrcDir, 'locales');
 // The tree view's own UI text (tooltip buttons), owned by the React package.
-const reactLocalesDir = path.join(root, 'packages/react/src/locales');
+const reactSrcDir = path.join(root, 'packages/react/src');
+const reactLocalesDir = path.join(reactSrcDir, 'locales');
 
 const nodeTranslationSchema = z.object({
     name: z.string().min(1, "Name must be a non-empty string when present").optional(),
@@ -73,6 +76,8 @@ function collectProblems({
     families,
     references,
     treeLabels,
+    uiFamilies,
+    uiReferences,
 }) {
     const problems = [];
     const report = (file, message) => problems.push({ file, message });
@@ -164,33 +169,56 @@ function collectProblems({
         }
         return keysByLang;
     };
-    const keysByLang = checkParity(({ common }) => common, (lang) => `${lang}/common.json`);
-    // The React package's own UI text (tooltip buttons), when given.
-    if (locales[defaultLocale].ui) checkParity(({ ui }) => ui, (lang) => `react/${lang}.json`);
-
-    const requireKey = (key, reason) => {
-        for (const [lang, keys] of Object.entries(keysByLang)) {
-            if (!keys.has(key)) report(`${lang}/common.json`, `${key} is missing (${reason})`);
+    // Every key the code references exists in every locale of its file.
+    const checkReferences = ({ keysByLang, fileOf, messages, references, families, familiesName, skip = new Set() }) => {
+        const requireKey = (key, reason) => {
+            for (const [lang, keys] of Object.entries(keysByLang)) {
+                if (!keys.has(key)) report(fileOf(lang), `${key} is missing (${reason})`);
+            }
+        };
+        // Literal t()/uiText()/i18nKey keys, plus any string literal that names
+        // a key in one of the file's sections (lookup tables of labels).
+        const sections = new Set(Object.keys(messages));
+        for (const { key, file, call } of references.keys) {
+            const section = key.split('.')[0];
+            if (skip.has(section)) continue;
+            if (call || sections.has(section)) requireKey(key, `used in ${file}`);
+        }
+        for (const [prefix, values] of Object.entries(families)) {
+            for (const value of values) requireKey(`${prefix}${value}`, `one key per value of ${prefix}*`);
+        }
+        for (const { template, file } of references.templates) {
+            // `${type}.…` keys are skill text, checked above.
+            if (template.startsWith('${')) continue;
+            const prefix = template.slice(0, template.indexOf('${'));
+            if (!(prefix in families)) {
+                report(file, `t(\`${template}\`) builds keys this check can't list; list its values under ${familiesName} in loadApp() in scripts/validate-translations.js`);
+            }
         }
     };
-    // Literal t()/i18nKey keys, plus any string literal that names a key in a
-    // common.json section (lookup tables such as StatsDialog's labels).
-    const sections = new Set(Object.keys(locales[defaultLocale].common));
-    const nodeTypes = new Set(Object.keys(locales[defaultLocale].nodes));
-    for (const { key, file, call } of references.keys) {
-        const section = key.split('.')[0];
-        if (nodeTypes.has(section)) continue; // "nodes" namespace, checked above
-        if (call || sections.has(section)) requireKey(key, `used in ${file}`);
-    }
-    for (const [prefix, values] of Object.entries(families)) {
-        for (const value of values) requireKey(`${prefix}${value}`, `one key per value of ${prefix}*`);
-    }
-    for (const { template, file } of references.templates) {
-        // `${type}.…` keys are skill text, checked above.
-        if (template.startsWith('${')) continue;
-        const prefix = template.slice(0, template.indexOf('${'));
-        if (!(prefix in families)) {
-            report(file, `t(\`${template}\`) builds keys this check can't list; list its values under families in loadApp() in scripts/validate-translations.js`);
+
+    checkReferences({
+        keysByLang: checkParity(({ common }) => common, (lang) => `${lang}/common.json`),
+        fileOf: (lang) => `${lang}/common.json`,
+        messages: locales[defaultLocale].common,
+        references,
+        families,
+        familiesName: 'families',
+        // The "nodes" namespace, checked above.
+        skip: new Set(Object.keys(locales[defaultLocale].nodes)),
+    });
+    // The React package's own UI text (tooltip, card, panels, search), when given.
+    if (locales[defaultLocale].ui) {
+        const keysByLang = checkParity(({ ui }) => ui, (lang) => `react/${lang}.json`);
+        if (uiReferences) {
+            checkReferences({
+                keysByLang,
+                fileOf: (lang) => `react/${lang}.json`,
+                messages: locales[defaultLocale].ui,
+                references: uiReferences,
+                families: uiFamilies ?? {},
+                familiesName: 'uiFamilies',
+            });
         }
     }
     return problems;
@@ -210,8 +238,8 @@ function scanSource(dir = srcDir) {
             if (!/\.tsx?$/.test(entry.name)) continue;
             const source = fs.readFileSync(full, 'utf8');
             const file = path.relative(root, full).split(path.sep).join('/');
-            for (const m of source.matchAll(/\bt\(\s*(["'])([^"'`\n]+)\1|i18nKey=\{?\s*(["'])([^"'\n]+)\3/g)) {
-                keys.push({ key: m[2] ?? m[4], file, call: true });
+            for (const m of source.matchAll(/\bt\(\s*(["'])([^"'`\n]+)\1|i18nKey=\{?\s*(["'])([^"'\n]+)\3|\buiText\(\s*[\w.]+\s*,\s*(["'])([^"'`\n]+)\5/g)) {
+                keys.push({ key: m[2] ?? m[4] ?? m[6], file, call: true });
             }
             for (const m of source.matchAll(/(["'])([A-Za-z]\w*(?:\.\w+)+)\1/g)) {
                 keys.push({ key: m[2], file, call: false });
@@ -237,7 +265,9 @@ function loadApp() {
         interpolation: { game: getGameInterpolationValues, gamePerLevel: getGamePerLevelValues, skill: getSkillInterpolationValues },
         // Keys built at runtime from a template literal: prefix -> every value it takes.
         // A t(`prefix${...}`) call with a prefix missing here fails validation.
-        families: {
+        families: {},
+        // The same for the React package's UI text (packages/react/src/locales).
+        uiFamilies: {
             'biomes.': load('constants/Biomes.ts').BIOMES.map((biome) => biome.id),
         },
         treeLabels: load('constants/TreeLabels.ts').TREE_LABELS.map((label) => label.nameKey),
@@ -269,6 +299,7 @@ function main() {
             defaultLocale: i18n.defaultLocale,
             ...loadApp(),
             references: scanSource(),
+            uiReferences: scanSource(reactSrcDir),
         }));
     }
 

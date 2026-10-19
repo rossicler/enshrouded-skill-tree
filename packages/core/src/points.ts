@@ -1,5 +1,5 @@
 import SkillNodes, { SkillNodesType } from "./constants/Nodes";
-import { MAX_PLAYER_LEVEL, computeMaxSkillPoints } from "./constants/Biomes";
+import { BIOMES, MAX_PLAYER_LEVEL, computeMaxSkillPoints } from "./constants/Biomes";
 import type { SkillSelection } from "./selection";
 
 // Skill points one level of a skill costs.
@@ -28,3 +28,35 @@ export const fitsUnderHardCap = (
   maxPoints: number,
   tree: SkillNodesType = SkillNodes
 ): boolean => getPointsUsed(selection, tree) + getSkillCost(id, tree) <= maxPoints;
+
+export type PointsSummary = {
+  // Skill points the selection spends.
+  used: number;
+  // The budget: leveling points plus the explored biomes' points.
+  max: number;
+  // max - used; negative when the build is over budget.
+  left: number;
+  // Every point is spent (used >= max).
+  full: boolean;
+  // The build spends more than the budget.
+  over: boolean;
+};
+
+export type PointsSummaryOptions = {
+  // Defaults to the max player level.
+  playerLevel?: number;
+  // Explored biome IDs (see BIOMES). Defaults to every biome, so with no
+  // options the budget is that of a max-level player who explored everything.
+  biomes?: string[];
+};
+
+// Points used, the budget and what's left, for a player level and explored biomes.
+export const getPointsSummary = (
+  selection: SkillSelection,
+  { playerLevel = MAX_PLAYER_LEVEL, biomes = BIOMES.map((biome) => biome.id) }: PointsSummaryOptions = {},
+  tree: SkillNodesType = SkillNodes
+): PointsSummary => {
+  const used = getPointsUsed(selection, tree);
+  const max = getMaxSkillPoints({ playerLevel, unlockedBiomes: biomes });
+  return { used, max, left: max - used, full: used >= max, over: used > max };
+};

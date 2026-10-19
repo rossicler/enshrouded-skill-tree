@@ -8,31 +8,7 @@
     "export": "Export",
     "clear": "Clear",
     "discord": "Discord",
-    "about": "About",
-    "stats": "Stats",
-    "search": {
-      "placeholder": "Search",
-      "moreMatches": "+{{count}} more matches highlighted on the tree"
-    },
-    "tooltips": {
-      "skillPoints": "Skill Points",
-      "flameLevel": "Flame Level"
-    },
-    "biomeBudget": {
-      "title": "Biome Budget",
-      "playerLevel": "Player Level",
-      "total": "Total Skill Points",
-      "reset": "Unlock all"
-    }
-  },
-  "biomes": {
-    "springlands": "Springlands",
-    "revelwood": "Revelwood",
-    "nomad_highlands": "Nomad Highlands",
-    "kindlewastes": "Kindlewastes",
-    "albaneve_summits": "Albaneve Summits",
-    "veilwater_basin": "Veilwater Basin",
-    "cinders_cradle": "Cinder's Cradle"
+    "about": "About"
   },
   "dialogs": {
     "advancedSharing": "Advanced sharing",
@@ -61,11 +37,6 @@
       "import": "Import URL",
       "importJson": "Import JSON",
       "warning": "Only import builds from sources you trust."
-    },
-    "stats": {
-      "title": "Stats summary",
-      "basic": "Basic",
-      "close": "Close"
     },
     "settings": {
       "title": "Settings",
@@ -108,17 +79,7 @@
     "skillsDisconnected": "Removed skills that are no longer connected to the tree: {{names}}",
     "skillLevelsLowered": "Lowered skill levels to the current maximum: {{names}}"
   },
-  "stats": {
-    "constitution": "Constitution",
-    "strength": "Strength",
-    "endurance": "Endurance",
-    "dexterity": "Dexterity",
-    "spirit": "Spirit",
-    "intelligence": "Intelligence"
-  },
   "accessibility": {
-    "skillPointIcon": "Skill Point Icon",
-    "flameIcon": "Flame Icon",
     "backgroundAlt": "Purple smoke background"
   },
   "errors": {

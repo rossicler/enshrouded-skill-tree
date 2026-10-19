@@ -37,6 +37,9 @@ test("Enter picks the highlighted result", async ({ page }) => {
   const c = await center(node(page, TARGET));
   expect(Math.abs(c.x - viewport.width / 2)).toBeLessThan(5);
   expect(Math.abs(c.y - viewport.height / 2)).toBeLessThan(5);
+  // Picked from the keyboard, so the real mouse isn't over the tree: the
+  // node's tooltip opens once the zoom settles.
+  await expect(page.locator(`[data-skill-tooltip="${TARGET}"]`)).toBeVisible();
 });
 
 test("clearing the search removes the highlight", async ({ page }) => {

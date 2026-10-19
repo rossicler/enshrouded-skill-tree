@@ -19,5 +19,51 @@
     "fullscreen": "Fullscreen",
     "exitFullscreen": "Exit fullscreen",
     "close": "Close"
+  },
+  "kit": {
+    "close": "Close",
+    "copy": "Copy"
+  },
+  "points": {
+    "skillPoints": "Skill Points",
+    "flameLevel": "Flame Level",
+    "skillPointIcon": "Skill Point Icon",
+    "flameIcon": "Flame Icon",
+    "flameDown": "Lower the flame level",
+    "flameUp": "Raise the flame level"
+  },
+  "budget": {
+    "title": "Biome Budget",
+    "playerLevel": "Player Level",
+    "total": "Total Skill Points",
+    "reset": "Unlock all"
+  },
+  "biomes": {
+    "springlands": "Springlands",
+    "revelwood": "Revelwood",
+    "nomad_highlands": "Nomad Highlands",
+    "kindlewastes": "Kindlewastes",
+    "albaneve_summits": "Albaneve Summits",
+    "veilwater_basin": "Veilwater Basin",
+    "cinders_cradle": "Cinder's Cradle"
+  },
+  "stats": {
+    "button": "Stats",
+    "title": "Stats summary",
+    "basic": "Basic",
+    "close": "Close",
+    "names": {
+      "constitution": "Constitution",
+      "strength": "Strength",
+      "endurance": "Endurance",
+      "dexterity": "Dexterity",
+      "spirit": "Spirit",
+      "intelligence": "Intelligence"
+    }
+  },
+  "search": {
+    "placeholder": "Search",
+    "moreMatches": "+{{count}} more matches highlighted on the tree",
+    "clear": "Clear the search"
   }
 }

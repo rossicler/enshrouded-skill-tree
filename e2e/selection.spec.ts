@@ -103,11 +103,21 @@ test("closing the refund confirmation draws no focus outline on the node", async
     await node(page, MULTI_BASE).click({ button: "right" });
     await dialog(page, "refund-confirm").locator(`[data-action="${action}"]`).click();
     await expect(dialog(page, "refund-confirm")).toHaveCount(0);
-    const outline = await page.evaluate(() => {
-      const el = document.activeElement;
-      return el && el !== document.body ? getComputedStyle(el).outlineStyle : "none";
-    });
-    expect(outline, `after ${action}`).toBe("none");
+    // Focus moves back a moment after the dialog leaves the page; until then
+    // the active element can still be the dialog's own (outlined) button.
+    // Wait for focus to settle outside the dialog, then check its outline.
+    await expect
+      .poll(
+        () =>
+          page.evaluate(() => {
+            const el = document.activeElement;
+            if (!el || el === document.body) return "none";
+            if (!el.isConnected || el.closest('[role="dialog"], [data-dialog]')) return "pending";
+            return getComputedStyle(el).outlineStyle;
+          }),
+        { message: `focus outline after ${action}` },
+      )
+      .toBe("none");
   }
 });
 

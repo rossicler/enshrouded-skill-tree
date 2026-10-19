@@ -59,12 +59,16 @@ jobs:
           # Amplify starts the job from its own webhook, which can lag behind this run.
           deadline=$((SECONDS + 600))
           while :; do
-            job_id=$(aws amplify list-jobs --app-id "$APP_ID" --branch-name "$BRANCH" --max-items 25 \
-              --query "jobSummaries[?commitId=='$SHA'] | [0].jobId" --output text)
+            # One page of the newest 25 jobs. With --max-items instead, the CLI
+            # paginates itself and, once a branch has more jobs than that,
+            # prints the next-page token ("None") on a second line after the ID.
+            job_id=$(aws amplify list-jobs --app-id "$APP_ID" --branch-name "$BRANCH" \
+              --max-results 25 --no-paginate \
+              --query "jobSummaries[?commitId=='$SHA'] | [0].jobId" --output text | head -n 1)
             if [ -n "$job_id" ] && [ "$job_id" != None ]; then break; fi
             if [ "$SECONDS" -ge "$deadline" ]; then
               echo "::error::No Amplify job for $SHA on branch '$BRANCH' after 10 minutes."
-              aws amplify list-jobs --app-id "$APP_ID" --branch-name "$BRANCH" --max-items 5 \
+              aws amplify list-jobs --app-id "$APP_ID" --branch-name "$BRANCH" --max-results 5 --no-paginate \
                 --query 'jobSummaries[].[jobId,commitId,status]' --output table
               exit 1
             fi

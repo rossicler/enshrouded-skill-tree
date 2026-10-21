@@ -10,6 +10,9 @@ const BUTTON_STEP = 0.5;
 // Smooth wheel zoom multiplies the step by the wheel distance (about 100 per
 // notch), so 0.001 zooms about 0.1 per notch.
 const WHEEL_STEP = 0.001;
+// A drag counts as a pan (for onUserMove) once it has moved this far, in
+// screen px, so a click with a slight wobble is still a click.
+const PAN_START_PX = 6;
 // The fitted view leaves this share of the container around the tree.
 const FIT_PADDING = 0.04;
 // Before the container is measured: a scale below any real fit.
@@ -35,7 +38,14 @@ type PanZoomProps = {
   // wheel and buttons zoom by a share of the current scale, so they feel the
   // same at any container size. Unset: the planner's fixed scales.
   fitSize?: FitSize;
+  // Called when the user starts to move the view: a drag that pans, a pinch
+  // or a wheel zoom. Not for moves made through the handle.
+  onUserMove?: () => void;
 };
+
+// The pointer of a mouse or one-finger touch event (programmatic moves have none).
+const pointOf = (event: MouseEvent | TouchEvent | undefined): { clientX: number; clientY: number } | null =>
+  !event ? null : "touches" in event ? (event.touches[0] ?? null) : event;
 
 const fitScaleFor = (el: Element | null | undefined, fit: FitSize) => {
   if (!el) return null;
@@ -48,11 +58,15 @@ const fitScaleFor = (el: Element | null | undefined, fit: FitSize) => {
 // react-zoom-pan-pinch around the tree's <svg>. The content box is the tree
 // plus a margin, and the library keeps it on screen, which bounds panning.
 // It fills its container and re-centers when the container is resized.
-export const PanZoom = forwardRef<PanZoomHandle, PanZoomProps>(function PanZoom({ children, onReady, focusKey, fitSize }, ref) {
+export const PanZoom = forwardRef<PanZoomHandle, PanZoomProps>(function PanZoom({ children, onReady, focusKey, fitSize, onUserMove }, ref) {
   const zoom = useRef<ReactZoomPanPinchRef | null>(null);
   const wrapper = useRef<HTMLDivElement>(null);
   const onReadyRef = useRef(onReady);
   onReadyRef.current = onReady;
+  const onUserMoveRef = useRef(onUserMove);
+  onUserMoveRef.current = onUserMove;
+  // Where the current drag started, until it moves far enough to be a pan.
+  const panStart = useRef<{ x: number; y: number } | null>(null);
   const fitRef = useRef(fitSize);
   fitRef.current = fitSize;
   const fitMode = fitSize !== undefined;
@@ -144,6 +158,20 @@ export const PanZoom = forwardRef<PanZoomHandle, PanZoomProps>(function PanZoom(
         centerZoomedOut={fitMode}
         wheel={{ step: WHEEL_STEP }}
         doubleClick={{ disabled: true }}
+        onPanningStart={(_, event) => {
+          const point = pointOf(event);
+          panStart.current = point ? { x: point.clientX, y: point.clientY } : null;
+        }}
+        onPanning={(_, event) => {
+          const start = panStart.current;
+          const point = pointOf(event);
+          if (!start || !point || Math.hypot(point.clientX - start.x, point.clientY - start.y) < PAN_START_PX) return;
+          panStart.current = null;
+          onUserMoveRef.current?.();
+        }}
+        onPanningStop={() => (panStart.current = null)}
+        onPinchStart={() => onUserMoveRef.current?.()}
+        onWheelStart={() => onUserMoveRef.current?.()}
         onInit={(instance) => {
           zoom.current = instance;
           requestAnimationFrame(() => {

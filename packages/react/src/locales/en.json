@@ -8,7 +8,8 @@
     "levelUp": "Level Up",
     "refundOne": "Refund 1",
     "refundAll": "Refund All",
-    "skillPointIcon": "Skill Point Icon"
+    "skillPointIcon": "Skill Point Icon",
+    "close": "Close"
   },
   "card": {
     "label": "Skill tree",

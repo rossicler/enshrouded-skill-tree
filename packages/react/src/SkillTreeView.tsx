@@ -37,6 +37,10 @@ const LONG_PRESS_MS = 500;
 const DOUBLE_TAP_MS = 300;
 const FLASH_MS = 600;
 const FOCUS_ANIMATION_MS = 300;
+// Hovering a node opens its tooltip after this long (unless one is open).
+const TOOLTIP_OPEN_DELAY_MS = 500;
+// Time for the pointer to cross from the node into the tooltip.
+const TOOLTIP_CLOSE_DELAY_MS = 100;
 
 export type RefundRequest = { nodeId: string; removed: string[] };
 
@@ -74,13 +78,19 @@ export type SkillTreeViewProps = {
   style?: CSSProperties;
 };
 
-const nodeIdOf = (target: EventTarget | null): string | null =>
-  target instanceof Element ? target.closest("[data-node-id]")?.getAttribute("data-node-id") ?? null : null;
+const nodeElementOf = (target: EventTarget | null): Element | null =>
+  target instanceof Element ? target.closest("[data-node-id]") : null;
+const nodeIdOf = (target: EventTarget | null): string | null => nodeElementOf(target)?.getAttribute("data-node-id") ?? null;
+// The pointer moved within one node. Compares elements, since another tree on
+// the page has nodes with the same ids.
+const withinNode = (e: MouseEvent) => nodeElementOf(e.relatedTarget) === nodeElementOf(e.target);
 
 // The tree without the pan margin, in content px: what a fitted view shows.
 let fitSize: FitSize | undefined;
 const treeFitSize = (hx: number, hy: number): FitSize =>
   (fitSize ??= { width: 2 * (hx - PAN_MARGIN), height: 2 * (hy - PAN_MARGIN) });
+
+const cssString = (value: string) => value.replace(/["\\]/g, "\\$&");
 
 const isCoarsePointer = () => typeof window !== "undefined" && window.matchMedia?.("(pointer: coarse)").matches;
 
@@ -166,6 +176,59 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
     [flash]
   );
 
+  // The tooltip's open state is ours, not react-tooltip's: the library only
+  // draws it (imperativeModeOnly + isOpen), anchored on the one node it shows.
+  // Hover boundary events can't be trusted to close it (Chrome sends no
+  // mouseout for a tooltip button replaced under a finger, and focusNode
+  // opens it without any hover), so each close path works on its own: the
+  // mouse leaving, a press anywhere outside it, Escape, its close button, and
+  // a pan or zoom. `nodeId` stays set once closed, so the card keeps its
+  // content while it fades out.
+  const [tip, setTip] = useState<{ nodeId: string; open: boolean } | null>(null);
+  const openNodeId = useRef<string | null>(null);
+  const tipTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+  const openTooltip = useCallback((nodeId: string) => {
+    clearTimeout(tipTimer.current);
+    openNodeId.current = nodeId;
+    setTip((current) => (current?.open && current.nodeId === nodeId ? current : { nodeId, open: true }));
+  }, []);
+  const closeTooltip = useCallback(() => {
+    clearTimeout(tipTimer.current);
+    openNodeId.current = null;
+    setTip((current) => (current?.open ? { ...current, open: false } : current));
+  }, []);
+  // One pending tooltip change at a time: a later one replaces it.
+  const tooltipLater = useCallback((run: () => void, ms: number) => {
+    clearTimeout(tipTimer.current);
+    tipTimer.current = setTimeout(run, ms);
+  }, []);
+  useEffect(() => () => clearTimeout(tipTimer.current), []);
+
+  // While it is open, a press outside the tooltip (anywhere on the page, but
+  // not on this tree's nodes, which hover and taps handle) or Escape closes
+  // it. The listeners are this view's own and exist only while its tooltip
+  // is open, so other trees on the page are unaffected.
+  const tipOpen = !!tip?.open;
+  useEffect(() => {
+    if (!tipOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target instanceof Node ? e.target : null;
+      if (target && tooltipRef.current?.contains(target)) return;
+      if (target && svgRef.current?.contains(target) && nodeIdOf(target)) return;
+      closeTooltip();
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeTooltip();
+    };
+    document.addEventListener("pointerdown", onPointerDown, true);
+    document.addEventListener("keydown", onKeyDown, true);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown, true);
+      document.removeEventListener("keydown", onKeyDown, true);
+    };
+  }, [tipOpen, closeTooltip]);
+
   // Pointer input, delegated from the <svg> to the node under the pointer.
   // Touch screens need a double tap to unlock (a single tap shows the
   // tooltip) and a long press to refund.
@@ -228,16 +291,27 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
       onTouchEnd: cancelLongPress,
       onTouchMove: cancelLongPress,
       onTouchCancel: cancelLongPress,
+      // Hover (on touch, the mouse events a tap sends): a node opens its
+      // tooltip after a delay, or at once while another one is open.
       onMouseOver: (e: MouseEvent) => {
         const nodeId = nodeIdOf(e.target);
-        if (nodeId && nodeIdOf(e.relatedTarget) !== nodeId) settingsRef.current.playSound("node-hover", 0.2);
+        if (!nodeId || withinNode(e)) return;
+        settingsRef.current.playSound("node-hover", 0.2);
+        if (openNodeId.current === nodeId) clearTimeout(tipTimer.current);
+        else if (openNodeId.current) openTooltip(nodeId);
+        else tooltipLater(() => openTooltip(nodeId), TOOLTIP_OPEN_DELAY_MS);
+      },
+      onMouseOut: (e: MouseEvent) => {
+        const nodeId = nodeIdOf(e.target);
+        if (!nodeId || withinNode(e)) return;
+        if (openNodeId.current) tooltipLater(closeTooltip, TOOLTIP_CLOSE_DELAY_MS);
+        else clearTimeout(tipTimer.current);
       },
     }),
-    [act, cancelLongPress]
+    [act, cancelLongPress, openTooltip, closeTooltip, tooltipLater]
   );
 
-  const nodeElement = (nodeId: string) =>
-    svgRef.current?.querySelector<SVGElement>(`[data-node-id="${nodeId.replace(/["\\]/g, "\\$&")}"]`) ?? null;
+  const nodeElement = (nodeId: string) => svgRef.current?.querySelector<SVGElement>(`[data-node-id="${cssString(nodeId)}"]`) ?? null;
 
   useImperativeHandle(
     ref,
@@ -249,15 +323,11 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         const el = nodeElement(nodeId);
         if (!el) return;
         panZoomRef.current?.zoomToElement(el, animationMs);
-        if (showTooltip) {
-          // Once the zoom settles, open the tooltip the way a hover does.
-          // react-tooltip listens for mouseover on each node; the event
-          // doesn't bubble, so the view's own hover sound doesn't play.
-          setTimeout(() => el.dispatchEvent(new globalThis.MouseEvent("mouseover")), animationMs + 50);
-        }
+        // Once the zoom settles, open the tooltip.
+        if (showTooltip) tooltipLater(() => openTooltip(nodeId), animationMs + 50);
       },
     }),
-    []
+    [openTooltip, tooltipLater]
   );
 
   const onPanZoomReady = useCallback(() => {
@@ -286,6 +356,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         onReady={onPanZoomReady}
         focusKey={initialFocusNodeId}
         fitSize={initialView === "fit" ? treeFitSize(hx, hy) : undefined}
+        onUserMove={closeTooltip}
       >
         <svg
           ref={svgRef}
@@ -323,29 +394,49 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         </svg>
       </PanZoom>
       <Tooltip
-        anchorSelect={`[data-skill-tree-scope="${scope}"] [data-node-id]`}
+        // Anchored on the tooltip's node. Before the first one opens, any of
+        // this tree's nodes: with no anchor at all, the library re-renders
+        // after every change of the build.
+        anchorSelect={`[data-skill-tree-scope="${scope}"] [data-node-id${tip ? `="${cssString(tip.nodeId)}"` : ""}]`}
+        imperativeModeOnly
+        isOpen={tipOpen}
+        // The library closes it itself only when its anchor leaves the page.
+        setIsOpen={(open) => {
+          if (!open) closeTooltip();
+        }}
         className="!p-0 !bg-transparent !border-0 !rounded-none"
         style={{ zIndex: 9999 }}
         positionStrategy={tooltipStrategy}
         noArrow
         clickable
-        delayShow={500}
-        delayHide={0}
         render={({ activeAnchor }) => {
           const nodeId = activeAnchor?.getAttribute("data-node-id");
           if (!nodeId) return null;
           return (
-            <SkillTooltipCard
-              nodeId={nodeId}
-              state={stateOf(nodeId)}
-              level={selection[nodeId] ?? 0}
-              flash={flashNodeId === nodeId}
-              locale={locale}
-              assetBaseUrl={assetBaseUrl}
-              readOnly={readOnly}
-              onAction={act}
-              onShare={getNodeShareUrl ? share : undefined}
-            />
+            <div
+              ref={tooltipRef}
+              // Moving into the tooltip keeps it open, and leaving it closes
+              // it (unless the mouse goes back to its node).
+              onMouseEnter={() => {
+                if (openNodeId.current) clearTimeout(tipTimer.current);
+              }}
+              onMouseLeave={() => {
+                if (openNodeId.current) tooltipLater(closeTooltip, TOOLTIP_CLOSE_DELAY_MS);
+              }}
+            >
+              <SkillTooltipCard
+                nodeId={nodeId}
+                state={stateOf(nodeId)}
+                level={selection[nodeId] ?? 0}
+                flash={flashNodeId === nodeId}
+                locale={locale}
+                assetBaseUrl={assetBaseUrl}
+                readOnly={readOnly}
+                onAction={act}
+                onShare={getNodeShareUrl ? share : undefined}
+                onClose={closeTooltip}
+              />
+            </div>
           );
         }}
       />

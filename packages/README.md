@@ -280,7 +280,10 @@ Fullscreen API.
 
 `SkillTreeView` is the planner's view: a fixed starting zoom, wheel zoom
 without focus, and the share button in tooltips when you give
-`getNodeShareUrl`. It fills its container.
+`getNodeShareUrl`. It fills its container. A node's tooltip opens on hover
+(after 500 ms) or a tap, and closes when the mouse leaves it, on a press
+anywhere outside it, on Escape, from its × button, or when the tree is panned
+or zoomed.
 
 ```tsx
 "use client";

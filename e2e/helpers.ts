@@ -110,3 +110,37 @@ export async function selectedLevels(page: Page) {
 
 /** Same encoding the site uses for ?code= links. */
 export const encodeBuild = (build: object) => Buffer.from(JSON.stringify(build), "latin1").toString("base64");
+
+/** Every skill tooltip on the page (a closed tooltip leaves the page). */
+export const anyTooltip = (page: Page): Locator => page.locator("[data-skill-tooltip]");
+
+/**
+ * A point on empty tree space inside `within` (default: the middle of the
+ * viewport): nothing but the tree's <svg> under it, and no node within
+ * `clearance` px.
+ */
+export async function emptyTreePoint(page: Page, within?: Locator, clearance = 30) {
+  const box = within ? await within.boundingBox() : null;
+  const point = await page.evaluate(
+    ({ box, clearance }) => {
+      const area = box ?? { x: innerWidth * 0.1, y: innerHeight * 0.15, width: innerWidth * 0.8, height: innerHeight * 0.7 };
+      const nodes = Array.from(document.querySelectorAll("[data-node-id]")).map((n) => {
+        const r = n.getBoundingClientRect();
+        return { x: r.x + r.width / 2, y: r.y + r.height / 2, r: r.width / 2 };
+      });
+      for (let y = area.y + 12; y < area.y + area.height - 12; y += 11) {
+        for (let x = area.x + 12; x < area.x + area.width - 12; x += 13) {
+          const el = document.elementFromPoint(x, y);
+          const tree = el?.closest("svg");
+          if (!el || !tree?.querySelector("[data-node-id]") || el.closest("[data-node-id], [data-skill-tooltip], [data-hud], button, input")) continue;
+          if (nodes.some((n) => Math.hypot(n.x - x, n.y - y) < n.r + clearance)) continue;
+          return { x, y };
+        }
+      }
+      return null;
+    },
+    { box, clearance },
+  );
+  if (!point) throw new Error("no empty tree point found");
+  return point;
+}

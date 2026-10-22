@@ -8,10 +8,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
-  type MouseEvent,
-  type TouchEvent,
 } from "react";
-import { Tooltip } from "react-tooltip";
 import {
   applySkillAction,
   getSelectableSkills,
@@ -23,18 +20,19 @@ import {
 
 import type { NodeState } from "./art";
 import { PAN_MARGIN, TREE_TO_PX, getTreeLayout } from "./layout";
+import { cssString, nodeIdOf } from "./nodeDom";
 import { PanZoom, type FitSize, type PanZoomHandle } from "./PanZoom";
 import { useSkillTreeSettings } from "./SkillTreeProvider";
-import { SkillTooltipCard } from "./SkillTooltip";
 import Defs from "./svg/Defs";
 import { SkillLink } from "./svg/SkillLink";
 import { SkillNode } from "./svg/SkillNode";
 import { CoreCircle, TreeLabels } from "./svg/TreeBackdrop";
+import { TreeTooltip } from "./tooltip/TreeTooltip";
+import { useTreeTooltip } from "./tooltip/useTreeTooltip";
+import { useNodeGestures } from "./useNodeGestures";
 
 // A refund that takes this many skills (the clicked one included) asks first.
 const REFUND_CONFIRM_THRESHOLD = 2;
-const LONG_PRESS_MS = 500;
-const DOUBLE_TAP_MS = 300;
 const FLASH_MS = 600;
 const FOCUS_ANIMATION_MS = 300;
 
@@ -74,15 +72,10 @@ export type SkillTreeViewProps = {
   style?: CSSProperties;
 };
 
-const nodeIdOf = (target: EventTarget | null): string | null =>
-  target instanceof Element ? target.closest("[data-node-id]")?.getAttribute("data-node-id") ?? null : null;
-
 // The tree without the pan margin, in content px: what a fitted view shows.
 let fitSize: FitSize | undefined;
 const treeFitSize = (hx: number, hy: number): FitSize =>
   (fitSize ??= { width: 2 * (hx - PAN_MARGIN), height: 2 * (hy - PAN_MARGIN) });
-
-const isCoarsePointer = () => typeof window !== "undefined" && window.matchMedia?.("(pointer: coarse)").matches;
 
 // The skill tree as SVG, with pan and zoom, node actions, tooltips and search
 // highlights. It fills its container, so give the container a size.
@@ -119,6 +112,10 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
   }, []);
   useEffect(() => () => clearTimeout(flashTimer.current), []);
 
+  const isOwnNode = useCallback((target: Node) => !!svgRef.current?.contains(target) && !!nodeIdOf(target), []);
+  const tooltip = useTreeTooltip({ isOwnNode });
+  const { close: closeTooltip, openAfterFocus, onUserMove } = tooltip;
+
   const act = useCallback(
     (nodeId: string, action: SkillAction) => {
       const { selection: current, onSelectionChange, confirmRefund } = latest.current;
@@ -139,6 +136,9 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
           return;
         case "refund":
           if (result.removed.length >= REFUND_CONFIRM_THRESHOLD && confirmRefund) {
+            // The host's confirmation takes over: close the tooltip so it
+            // can't sit on top of the host's dialog.
+            closeTooltip();
             void Promise.resolve(confirmRefund({ nodeId, removed: result.removed })).then((confirmed) => {
               if (!confirmed) return;
               // The build may have changed while the host was asking.
@@ -163,81 +163,13 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
           onSelectionChange(result.selection, result);
       }
     },
-    [flash]
+    [flash, closeTooltip]
   );
 
-  // Pointer input, delegated from the <svg> to the node under the pointer.
-  // Touch screens need a double tap to unlock (a single tap shows the
-  // tooltip) and a long press to refund.
-  const tap = useRef<{ nodeId: string; timer: ReturnType<typeof setTimeout> } | null>(null);
-  const longPress = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const suppressClick = useRef<string | null>(null);
-  const cancelLongPress = useCallback(() => {
-    if (longPress.current) clearTimeout(longPress.current);
-    longPress.current = null;
-  }, []);
-  useEffect(
-    () => () => {
-      cancelLongPress();
-      if (tap.current) clearTimeout(tap.current.timer);
-    },
-    [cancelLongPress]
-  );
+  const playHoverSound = useCallback(() => settingsRef.current.playSound("node-hover", 0.2), []);
+  const handlers = useNodeGestures({ act, tooltip, playHoverSound });
 
-  const handlers = useMemo(
-    () => ({
-      onClick: (e: MouseEvent) => {
-        const nodeId = nodeIdOf(e.target);
-        if (!nodeId) return;
-        e.preventDefault();
-        e.stopPropagation();
-        if (suppressClick.current === nodeId) {
-          suppressClick.current = null;
-          return;
-        }
-        if (!isCoarsePointer()) {
-          act(nodeId, "primary");
-          return;
-        }
-        if (tap.current?.nodeId === nodeId) {
-          clearTimeout(tap.current.timer);
-          tap.current = null;
-          act(nodeId, "primary");
-          return;
-        }
-        if (tap.current) clearTimeout(tap.current.timer);
-        tap.current = { nodeId, timer: setTimeout(() => (tap.current = null), DOUBLE_TAP_MS) };
-      },
-      onContextMenu: (e: MouseEvent) => {
-        const nodeId = nodeIdOf(e.target);
-        if (!nodeId) return;
-        e.preventDefault();
-        e.stopPropagation();
-        act(nodeId, "secondary");
-      },
-      onTouchStart: (e: TouchEvent) => {
-        cancelLongPress();
-        const nodeId = nodeIdOf(e.target);
-        if (!nodeId) return;
-        longPress.current = setTimeout(() => {
-          longPress.current = null;
-          suppressClick.current = nodeId;
-          act(nodeId, "secondary");
-        }, LONG_PRESS_MS);
-      },
-      onTouchEnd: cancelLongPress,
-      onTouchMove: cancelLongPress,
-      onTouchCancel: cancelLongPress,
-      onMouseOver: (e: MouseEvent) => {
-        const nodeId = nodeIdOf(e.target);
-        if (nodeId && nodeIdOf(e.relatedTarget) !== nodeId) settingsRef.current.playSound("node-hover", 0.2);
-      },
-    }),
-    [act, cancelLongPress]
-  );
-
-  const nodeElement = (nodeId: string) =>
-    svgRef.current?.querySelector<SVGElement>(`[data-node-id="${nodeId.replace(/["\\]/g, "\\$&")}"]`) ?? null;
+  const nodeElement = (nodeId: string) => svgRef.current?.querySelector<SVGElement>(`[data-node-id="${cssString(nodeId)}"]`) ?? null;
 
   useImperativeHandle(
     ref,
@@ -249,15 +181,11 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         const el = nodeElement(nodeId);
         if (!el) return;
         panZoomRef.current?.zoomToElement(el, animationMs);
-        if (showTooltip) {
-          // Once the zoom settles, open the tooltip the way a hover does.
-          // react-tooltip listens for mouseover on each node; the event
-          // doesn't bubble, so the view's own hover sound doesn't play.
-          setTimeout(() => el.dispatchEvent(new globalThis.MouseEvent("mouseover")), animationMs + 50);
-        }
+        // Once the zoom settles, open the tooltip.
+        if (showTooltip) openAfterFocus(nodeId, animationMs + 50);
       },
     }),
-    []
+    [openAfterFocus]
   );
 
   const onPanZoomReady = useCallback(() => {
@@ -286,6 +214,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         onReady={onPanZoomReady}
         focusKey={initialFocusNodeId}
         fitSize={initialView === "fit" ? treeFitSize(hx, hy) : undefined}
+        onUserMove={onUserMove}
       >
         <svg
           ref={svgRef}
@@ -322,32 +251,20 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
           <TreeLabels assetBaseUrl={assetBaseUrl} locale={locale} />
         </svg>
       </PanZoom>
-      <Tooltip
-        anchorSelect={`[data-skill-tree-scope="${scope}"] [data-node-id]`}
-        className="!p-0 !bg-transparent !border-0 !rounded-none"
-        style={{ zIndex: 9999 }}
+      <TreeTooltip
+        tooltip={tooltip}
+        scope={scope}
         positionStrategy={tooltipStrategy}
-        noArrow
-        clickable
-        delayShow={500}
-        delayHide={0}
-        render={({ activeAnchor }) => {
-          const nodeId = activeAnchor?.getAttribute("data-node-id");
-          if (!nodeId) return null;
-          return (
-            <SkillTooltipCard
-              nodeId={nodeId}
-              state={stateOf(nodeId)}
-              level={selection[nodeId] ?? 0}
-              flash={flashNodeId === nodeId}
-              locale={locale}
-              assetBaseUrl={assetBaseUrl}
-              readOnly={readOnly}
-              onAction={act}
-              onShare={getNodeShareUrl ? share : undefined}
-            />
-          );
-        }}
+        cardFor={(nodeId) => ({
+          state: stateOf(nodeId),
+          level: selection[nodeId] ?? 0,
+          flash: flashNodeId === nodeId,
+          locale,
+          assetBaseUrl,
+          readOnly,
+          onAction: act,
+          onShare: getNodeShareUrl ? share : undefined,
+        })}
       />
     </div>
   );

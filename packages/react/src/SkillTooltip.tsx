@@ -37,7 +37,17 @@ export type SkillTooltipCardProps = {
   readOnly: boolean;
   onAction: (nodeId: string, action: SkillAction) => void;
   onShare?: (nodeId: string) => void;
+  // Shows a close (×) button.
+  onClose?: () => void;
 };
+
+// lucide "x"
+const CloseIcon = () => (
+  <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M18 6 6 18" />
+    <path d="m6 6 12 12" />
+  </svg>
+);
 
 // The card shown over a hovered node: name, level, description, cost and actions.
 export const SkillTooltipCard = ({
@@ -50,6 +60,7 @@ export const SkillTooltipCard = ({
   readOnly,
   onAction,
   onShare,
+  onClose,
 }: SkillTooltipCardProps) => {
   const node = SkillNodes.nodes[nodeId];
   const filterId = `rugged-tooltip-${useId().replace(/[^\w-]/g, "")}`;
@@ -82,8 +93,23 @@ export const SkillTooltipCard = ({
         }}
       />
 
+      {onClose && (
+        // A 44 px target in the corner, with a small mark inside.
+        <button
+          type="button"
+          data-tooltip-close=""
+          aria-label={t("tooltip.close")}
+          title={t("tooltip.close")}
+          onClick={onClose}
+          className="absolute top-0 right-0 z-20 flex h-11 w-11 items-center justify-center text-white/70 hover:text-white focus-visible:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400/80"
+        >
+          <CloseIcon />
+        </button>
+      )}
       <div className="relative z-10 px-5 py-4">
-        <h3 className="uppercase text-lg text-white font-bold tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">{name}</h3>
+        <h3 className={cx("uppercase text-lg text-white font-bold tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]", onClose && "pr-6")}>
+          {name}
+        </h3>
         {maxLevel > 1 && (
           <div className="text-xs text-[#e8d5a3]/80 font-semibold tracking-wide mt-0.5 mb-1">
             {t("tooltip.levelHeader", { current: level, max: maxLevel })}

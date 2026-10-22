@@ -8,7 +8,8 @@
     "levelUp": "Améliorer",
     "refundOne": "Rembourser 1",
     "refundAll": "Tout rembourser",
-    "skillPointIcon": "Icône de point de compétence"
+    "skillPointIcon": "Icône de point de compétence",
+    "close": "Fermer"
   },
   "card": {
     "label": "Arbre de compétences",

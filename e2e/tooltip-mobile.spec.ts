@@ -63,6 +63,25 @@ test.describe("planner", () => {
     await expect(anyTooltip(page)).toHaveCount(0);
   });
 
+  test("a tapped tooltip stays open while a mouse rests where it appears", async ({ page }) => {
+    // Seen on Linux CI: a resting mouse gets boundary events as the tooltip
+    // appears under it, which aren't the user leaving.
+    await node(page, MULTI_BASE).tap();
+    await expect(tooltip(page, MULTI_BASE)).toBeVisible();
+    const box = (await tooltip(page, MULTI_BASE).boundingBox())!;
+    await tooltip(page, MULTI_BASE).locator("[data-tooltip-close]").tap();
+    await expect(anyTooltip(page)).toHaveCount(0);
+    // Off any node, so the mouse itself opens nothing.
+    const rest = await emptyTreePoint(page, box, 10);
+    await page.mouse.move(rest.x, rest.y);
+    await page.waitForTimeout(700);
+    await expect(anyTooltip(page)).toHaveCount(0);
+    await node(page, MULTI_BASE).tap();
+    await expect(tooltip(page, MULTI_BASE)).toBeVisible();
+    await page.waitForTimeout(500);
+    await expect(tooltip(page, MULTI_BASE)).toBeVisible();
+  });
+
   test("tapping another node switches the tooltip", async ({ page }) => {
     await node(page, MULTI_BASE).tap();
     await expect(tooltip(page, MULTI_BASE)).toBeVisible();

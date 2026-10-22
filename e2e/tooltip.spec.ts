@@ -40,6 +40,34 @@ test.describe("planner", () => {
     await expect(anyTooltip(page)).toHaveCount(0);
   });
 
+  test("a tooltip opened from search stays open under a resting mouse", async ({ page }) => {
+    // Seen on Linux CI. The tree zooms under a resting mouse and the tooltip
+    // appears under it: the boundary events that sends are not the user
+    // hovering or leaving.
+    const input = hud(page, "search-input");
+    const pick = async () => {
+      await input.fill("");
+      await input.fill("double ju");
+      await expect(page.locator('[data-search-result="DOUBLE_JUMP"]')).toBeVisible();
+      await input.press("Enter");
+      await waitForStableLayout(page, SEARCH_TARGET);
+      await expect(tooltip(page, SEARCH_TARGET)).toBeVisible();
+    };
+    await pick();
+    const box = (await tooltip(page, SEARCH_TARGET).boundingBox())!;
+    await page.keyboard.press("Escape");
+    await expect(anyTooltip(page)).toHaveCount(0);
+    await hud(page, "recenter").click();
+    await waitForStableLayout(page);
+    // Off any node, so the mouse itself opens nothing.
+    const rest = await emptyTreePoint(page, box, 10);
+    await page.mouse.move(rest.x, rest.y);
+    await pick();
+    await page.waitForTimeout(500);
+    await expect(tooltip(page, SEARCH_TARGET)).toBeVisible();
+    await expect(anyTooltip(page)).toHaveCount(1);
+  });
+
   test("a tooltip closes on a click on empty space after one of its buttons", async ({ page }) => {
     await node(page, MULTI_BASE).hover();
     const tip = tooltip(page, MULTI_BASE);
@@ -120,6 +148,9 @@ test.describe("planner", () => {
     await expect(anyTooltip(page)).toHaveCount(0);
 
     await waitForStableLayout(page);
+    // The drag ended on the node: leave it, then hover it again.
+    const empty = await emptyTreePoint(page);
+    await page.mouse.move(empty.x, empty.y);
     await node(page, MULTI_BASE).hover();
     await expect(tooltip(page, MULTI_BASE)).toBeVisible();
     await page.mouse.wheel(0, -100);

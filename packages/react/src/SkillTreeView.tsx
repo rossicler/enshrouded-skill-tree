@@ -42,6 +42,8 @@ const FOCUS_ANIMATION_MS = 300;
 const TOOLTIP_OPEN_DELAY_MS = 500;
 // Time for the pointer to cross from the node into the tooltip.
 const TOOLTIP_CLOSE_DELAY_MS = 100;
+// Boundary events this close in time, at one position, are one mouse move.
+const SAME_MOVE_MS = 4;
 
 export type RefundRequest = { nodeId: string; removed: string[] };
 
@@ -200,15 +202,37 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
     openNodeId.current = nodeId;
     setTip((current) => (current?.open && current.nodeId === nodeId ? current : { nodeId, open: true }));
   }, []);
+  // Leaves a pending focusNode open alone: the mouse leaving another
+  // tooltip while the tree zooms there is no reason to drop it.
   const closeTooltip = useCallback(() => {
     clearTimeout(tipTimer.current);
-    clearTimeout(focusTimer.current);
     openNodeId.current = null;
     setTip((current) => (current?.open ? { ...current, open: false } : current));
   }, []);
   const tooltipLater = useCallback((run: () => void, ms: number) => {
     clearTimeout(tipTimer.current);
     tipTimer.current = setTimeout(run, ms);
+  }, []);
+  // The user panning or zooming closes it, and drops a pending focusNode open.
+  const onUserMove = useCallback(() => {
+    clearTimeout(focusTimer.current);
+    closeTooltip();
+  }, [closeTooltip]);
+  // What sent a pointer boundary event. Touch is left to taps and the
+  // press-outside rule. A resting mouse also gets boundary events when
+  // content moves under it (the tooltip appearing or changing size, the tree
+  // zooming): "resting" events come at the position of the last one but in a
+  // later dispatch, while the events of one real move share its time stamp.
+  // A node sliding under the mouse doesn't open its tooltip, and the tooltip
+  // moving away from under it doesn't close it; a node sliding away still
+  // ends its hover.
+  const lastMouse = useRef<{ x: number; y: number; t: number } | null>(null);
+  const pointerKind = useCallback((e: ReactPointerEvent): "touch" | "move" | "resting" => {
+    if (e.pointerType === "touch") return "touch";
+    const last = lastMouse.current;
+    if (last && last.x === e.clientX && last.y === e.clientY) return Math.abs(e.timeStamp - last.t) < SAME_MOVE_MS ? "move" : "resting";
+    lastMouse.current = { x: e.clientX, y: e.clientY, t: e.timeStamp };
+    return "move";
   }, []);
   // A node hovered or tapped: open its tooltip at once while another one is
   // open, else after the hover delay.
@@ -322,17 +346,17 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
       // Hover with a mouse (a tap opens it from onClick above).
       onPointerOver: (e: ReactPointerEvent) => {
         const nodeId = nodeIdOf(e.target);
-        if (e.pointerType === "touch" || !nodeId || withinNode(e)) return;
+        if (pointerKind(e) !== "move" || !nodeId || withinNode(e)) return;
         showTooltipFor(nodeId);
       },
       onPointerOut: (e: ReactPointerEvent) => {
         const nodeId = nodeIdOf(e.target);
-        if (e.pointerType === "touch" || !nodeId || withinNode(e)) return;
+        if (pointerKind(e) === "touch" || !nodeId || withinNode(e)) return;
         if (openNodeId.current) tooltipLater(closeTooltip, TOOLTIP_CLOSE_DELAY_MS);
         else clearTimeout(tipTimer.current);
       },
     }),
-    [act, cancelLongPress, showTooltipFor, closeTooltip, tooltipLater]
+    [act, cancelLongPress, showTooltipFor, closeTooltip, tooltipLater, pointerKind]
   );
 
   const nodeElement = (nodeId: string) => svgRef.current?.querySelector<SVGElement>(`[data-node-id="${cssString(nodeId)}"]`) ?? null;
@@ -383,7 +407,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         onReady={onPanZoomReady}
         focusKey={initialFocusNodeId}
         fitSize={initialView === "fit" ? treeFitSize(hx, hy) : undefined}
-        onUserMove={closeTooltip}
+        onUserMove={onUserMove}
       >
         <svg
           ref={svgRef}
@@ -446,10 +470,10 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
               // it (unless the mouse goes back to its node). Touch is left to
               // the press-outside rule.
               onPointerEnter={(e) => {
-                if (e.pointerType !== "touch" && openNodeId.current) clearTimeout(tipTimer.current);
+                if (pointerKind(e) !== "touch" && openNodeId.current) clearTimeout(tipTimer.current);
               }}
               onPointerLeave={(e) => {
-                if (e.pointerType !== "touch" && openNodeId.current) tooltipLater(closeTooltip, TOOLTIP_CLOSE_DELAY_MS);
+                if (pointerKind(e) === "move" && openNodeId.current) tooltipLater(closeTooltip, TOOLTIP_CLOSE_DELAY_MS);
               }}
             >
               <SkillTooltipCard

@@ -114,13 +114,15 @@ export const encodeBuild = (build: object) => Buffer.from(JSON.stringify(build),
 /** Every skill tooltip on the page (a closed tooltip leaves the page). */
 export const anyTooltip = (page: Page): Locator => page.locator("[data-skill-tooltip]");
 
+type Box = { x: number; y: number; width: number; height: number };
+
 /**
  * A point on empty tree space inside `within` (default: the middle of the
  * viewport): nothing but the tree's <svg> under it, and no node within
  * `clearance` px.
  */
-export async function emptyTreePoint(page: Page, within?: Locator, clearance = 30) {
-  const box = within ? await within.boundingBox() : null;
+export async function emptyTreePoint(page: Page, within?: Locator | Box, clearance = 30) {
+  const box = within && "boundingBox" in within ? await within.boundingBox() : (within ?? null);
   const point = await page.evaluate(
     ({ box, clearance }) => {
       const area = box ?? { x: innerWidth * 0.1, y: innerHeight * 0.15, width: innerWidth * 0.8, height: innerHeight * 0.7 };

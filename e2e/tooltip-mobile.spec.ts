@@ -27,9 +27,34 @@ async function touchDrag(page: Page, from: Point, to: Point, steps = 10) {
 
 const tap = (page: Page, { x, y }: Point) => page.touchscreen.tap(x, y);
 
+// Fake timers that only move when the test calls page.clock.runFor.
+async function freezeClock(page: Page) {
+  await page.clock.install();
+  await page.clock.pauseAt(Date.now() + 1000);
+}
+
 test.describe("planner", () => {
   test.beforeEach(async ({ page }) => {
     await openPlanner(page);
+  });
+
+  // The page's timers are frozen and advanced by hand, so these don't depend
+  // on how fast the machine is.
+  test("a tap opens the tooltip after the double-tap window, not the hover delay", async ({ page }) => {
+    await freezeClock(page);
+    await node(page, MULTI_BASE).tap();
+    // The double-tap window is 300 ms; the mouse hover delay is 500 ms.
+    await page.clock.runFor(350);
+    await expect(tooltip(page, MULTI_BASE)).toBeVisible();
+  });
+
+  test("a double tap adds a point without opening the tooltip", async ({ page }) => {
+    await freezeClock(page);
+    await node(page, MULTI_BASE).tap();
+    await node(page, MULTI_BASE).tap();
+    await page.clock.runFor(1000);
+    await expectLevel(page, MULTI_BASE, 1);
+    await expect(anyTooltip(page)).toHaveCount(0);
   });
 
   test("after a tooltip button, a tap on empty space closes the tooltip", async ({ page }) => {

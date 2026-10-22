@@ -312,12 +312,17 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         if (tap.current?.nodeId === nodeId) {
           clearTimeout(tap.current.timer);
           tap.current = null;
+          // A double tap adds a point; drop the first tap's pending tooltip.
+          clearTimeout(tipTimer.current);
           act(nodeId, "primary");
           return;
         }
         if (tap.current) clearTimeout(tap.current.timer);
         tap.current = { nodeId, timer: setTimeout(() => (tap.current = null), DOUBLE_TAP_MS) };
-        showTooltipFor(nodeId);
+        // Open once the double-tap window passes, not after the mouse hover
+        // delay: a second tap in the window cancels it and adds a point
+        // instead, so a double tap never flashes the tooltip.
+        if (openNodeId.current !== nodeId) tooltipLater(() => openTooltip(nodeId), DOUBLE_TAP_MS);
       },
       onContextMenu: (e: MouseEvent) => {
         const nodeId = nodeIdOf(e.target);
@@ -356,7 +361,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
         else clearTimeout(tipTimer.current);
       },
     }),
-    [act, cancelLongPress, showTooltipFor, closeTooltip, tooltipLater, pointerKind]
+    [act, cancelLongPress, openTooltip, showTooltipFor, closeTooltip, tooltipLater, pointerKind]
   );
 
   const nodeElement = (nodeId: string) => svgRef.current?.querySelector<SVGElement>(`[data-node-id="${cssString(nodeId)}"]`) ?? null;

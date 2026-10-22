@@ -46,6 +46,18 @@ describe("hooks", () => {
 });
 
 describe("PointsPanel", () => {
+  it("shows the points used in red only when over the budget", () => {
+    const used = (pointsUsed: number) => {
+      const { container, unmount } = render(<PointsPanel pointsUsed={pointsUsed} maxPoints={10} />);
+      const value = container.querySelector('[data-hud="points-used"]')?.getAttribute("data-over");
+      unmount();
+      return value;
+    };
+    expect(used(9)).toBe("false");
+    expect(used(10)).toBe("false");
+    expect(used(11)).toBe("true");
+  });
+
   it("shows points and edits the flame level and the biome budget through callbacks", () => {
     const onFlame = vi.fn();
     const onLevel = vi.fn();

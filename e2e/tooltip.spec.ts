@@ -3,9 +3,11 @@ import { expect, test } from "./fixtures";
 import { action, card, cardBackground, inCard, levelsIn, openDemo, SAMPLE_BUILD, waitForStableCard } from "./cards";
 import {
   MULTI_BASE,
+  MULTI_BASE_CHILD,
   SINGLE_BASE,
   anyTooltip,
   center,
+  dialog,
   emptyTreePoint,
   expectLevel,
   hud,
@@ -109,6 +111,15 @@ test.describe("planner", () => {
     await expect(tip.locator('[data-action="level-up"]')).toBeVisible();
   });
 
+  test("a refund that needs confirming closes the tooltip before the dialog", async ({ page }) => {
+    await node(page, MULTI_BASE).click();
+    await node(page, MULTI_BASE_CHILD).click();
+    await expectLevel(page, MULTI_BASE_CHILD, 1);
+    await node(page, MULTI_BASE).hover();
+    await tooltip(page, MULTI_BASE).locator('[data-action="refund-one"]').click();
+    await expect(dialog(page, "refund-confirm")).toBeVisible();
+    await expect(anyTooltip(page)).toHaveCount(0);
+  });
   test("Escape closes the tooltip", async ({ page }) => {
     await node(page, MULTI_BASE).hover();
     await expect(tooltip(page, MULTI_BASE)).toBeVisible();

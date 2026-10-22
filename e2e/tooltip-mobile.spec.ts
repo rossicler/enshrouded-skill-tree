@@ -3,7 +3,7 @@ import type { Page } from "@playwright/test";
 import { expect, test } from "./fixtures";
 
 import { card, cardBackground, inCard, levelsIn, openDemo, SAMPLE_BUILD } from "./cards";
-import { MULTI_BASE, SINGLE_BASE, anyTooltip, center, emptyTreePoint, expectLevel, hud, node, openPlanner, tooltip, waitForStableLayout } from "./helpers";
+import { MULTI_BASE, MULTI_BASE_CHILD, SINGLE_BASE, anyTooltip, dialog, center, emptyTreePoint, expectLevel, hud, node, openPlanner, tooltip, waitForStableLayout } from "./helpers";
 
 // When the skill tooltip opens and closes on a touch screen. Runs in the
 // "mobile" project (touch, coarse pointer).
@@ -57,6 +57,17 @@ test.describe("planner", () => {
     await expect(anyTooltip(page)).toHaveCount(0);
   });
 
+  test("a refund that needs confirming closes the tooltip before the dialog", async ({ page }) => {
+    for (const id of [MULTI_BASE, MULTI_BASE_CHILD]) {
+      await node(page, id).tap();
+      await tooltip(page, id).locator('[data-action="unlock"]').tap();
+      await expectLevel(page, id, 1);
+    }
+    await node(page, MULTI_BASE).tap();
+    await tooltip(page, MULTI_BASE).locator('[data-action="refund-one"]').tap();
+    await expect(dialog(page, "refund-confirm")).toBeVisible();
+    await expect(anyTooltip(page)).toHaveCount(0);
+  });
   test("after a tooltip button, a tap on empty space closes the tooltip", async ({ page }) => {
     await node(page, MULTI_BASE).tap();
     const tip = tooltip(page, MULTI_BASE);

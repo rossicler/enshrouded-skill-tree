@@ -132,6 +132,8 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
   }, []);
   useEffect(() => () => clearTimeout(flashTimer.current), []);
 
+  // Set once closeTooltip exists below; act needs it before then.
+  const closeTooltipRef = useRef<() => void>(() => {});
   const act = useCallback(
     (nodeId: string, action: SkillAction) => {
       const { selection: current, onSelectionChange, confirmRefund } = latest.current;
@@ -152,6 +154,9 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
           return;
         case "refund":
           if (result.removed.length >= REFUND_CONFIRM_THRESHOLD && confirmRefund) {
+            // The host's confirmation takes over: close the tooltip so it
+            // can't sit on top of the host's dialog.
+            closeTooltipRef.current();
             void Promise.resolve(confirmRefund({ nodeId, removed: result.removed })).then((confirmed) => {
               if (!confirmed) return;
               // The build may have changed while the host was asking.
@@ -209,6 +214,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
     openNodeId.current = null;
     setTip((current) => (current?.open ? { ...current, open: false } : current));
   }, []);
+  closeTooltipRef.current = closeTooltip;
   const tooltipLater = useCallback((run: () => void, ms: number) => {
     clearTimeout(tipTimer.current);
     tipTimer.current = setTimeout(run, ms);

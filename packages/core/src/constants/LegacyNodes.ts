@@ -32,6 +32,8 @@ export type NodeTypeMetadata = GameValues & {
   color: string;
   cost: number;
   stats?: NodeStatsType;
+  // Points gained for every two levels of the Flame.
+  flameStats?: NodeStatsType;
   maxLevel?: number;
   levelValues?: { [varName: string]: (number | string)[] };
   perLevel?: {
@@ -1366,6 +1368,7 @@ const authoredPresentation: AuthoredPresentation = {
       ],
       color: "red",
       cost: 5,
+      flameStats: { STR: 1 },
     },
     BLOOD_RAGE: {
       name: "BLOOD RAGE",
@@ -1659,6 +1662,7 @@ const authoredPresentation: AuthoredPresentation = {
       ],
       color: "green",
       cost: 5,
+      flameStats: { ENDURANCE: 1 },
     },
     MARKSMAN: {
       name: "MARKSMAN",
@@ -1834,6 +1838,7 @@ const authoredPresentation: AuthoredPresentation = {
       ],
       color: "green",
       cost: 5,
+      flameStats: { DEX: 1 },
     },
     CHAIN_REACTION: {
       name: "CHAIN REACTION",
@@ -1850,6 +1855,7 @@ const authoredPresentation: AuthoredPresentation = {
       ],
       color: "blue",
       cost: 5,
+      flameStats: { SPIRIT: 1 },
     },
     EXALTED: {
       name: "EXALTED",
@@ -1858,6 +1864,7 @@ const authoredPresentation: AuthoredPresentation = {
       ],
       color: "blue",
       cost: 5,
+      flameStats: { INT: 1 },
     },
     THICK_SKIN: {
       name: "THICK SKIN",
@@ -1866,6 +1873,7 @@ const authoredPresentation: AuthoredPresentation = {
       ],
       color: "red",
       cost: 5,
+      flameStats: { CONS: 1 },
     },
     LIFE_ESSENCES: {
       name: "LIFE ESSENCES",

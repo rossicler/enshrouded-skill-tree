@@ -307,14 +307,17 @@ export const PointsPanel = ({
   const asset = useAssetUrl();
   const bar = layout === "bar";
 
+  // Spending exactly the budget is fine; only going over it shows red.
+  const over = pointsUsed > maxPoints;
   const points = (
     <div className={classNames("flex gap-1.5 items-center", bar && "gap-1")}>
       <span
         data-hud="points-used"
+        data-over={over ? "true" : "false"}
         className={classNames(
           "font-semibold tracking-wide",
           "text-[#e8d5a3] drop-shadow-[0_0_4px_rgba(202,152,3,0.4)]",
-          pointsUsed >= maxPoints && "!text-[#ef4444]"
+          over && "!text-[#ef4444]"
         )}
       >
         {pointsUsed}

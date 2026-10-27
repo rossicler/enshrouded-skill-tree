@@ -5,6 +5,7 @@ import { useUiText } from "./text";
 import { GameButton, type GameButtonProps } from "./kit/GameButton";
 import { GameDialog, GameDialogTitle } from "./kit/GameDialog";
 import { GamePanel } from "./kit/GamePanel";
+import { HudToggle, type HudToggleProps } from "./kit/HudToggle";
 import { classNames } from "./kit/shared";
 
 // Label keys per stat (string literals, so the translation check sees them).
@@ -78,6 +79,25 @@ export type StatsButtonProps = {
   // The button's content. Defaults to the "Stats" label.
   children?: ReactNode;
 } & Omit<GameButtonProps, "children" | "onClick">;
+
+export type StatsToggleProps = { stats: Partial<StatTotals>; children?: ReactNode } & Omit<
+  HudToggleProps,
+  "label" | "children" | "panelName"
+>;
+
+// A HUD button that shows or hides the stats just below it (see HudToggle: a
+// second click or Escape closes it). The panel carries data-panel="stats".
+export const StatsToggle = ({ stats, children, ...toggleProps }: StatsToggleProps) => {
+  const t = useUiText();
+  return (
+    <HudToggle data-hud="stats" panelName="stats" {...toggleProps} label={children ?? t("stats.button")}>
+      <div className="text-[#c0b89a]">
+        <span className="text-sm text-[#e8d5a3]">{t("stats.basic")}</span>
+        <StatsList stats={stats} className="!grid-cols-1 mt-2" />
+      </div>
+    </HudToggle>
+  );
+};
 
 // A game button that opens the StatsDialog.
 export const StatsButton = ({ stats, children, ...props }: StatsButtonProps) => {

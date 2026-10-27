@@ -22,8 +22,12 @@ export { usePoints, useStats, useSkillSearch } from "./hooks";
 export type { SkillSearchState } from "./hooks";
 export { PointsPanel, FlameLevelControl, BiomeBudgetButton, BiomeBudgetDialog } from "./PointsPanel";
 export type { PointsPanelProps, FlameLevelControlProps, BiomeBudgetDialogProps } from "./PointsPanel";
-export { StatsList, StatsDialog, StatsButton } from "./StatsPanel";
-export type { StatsListProps, StatsDialogProps, StatsButtonProps } from "./StatsPanel";
+export { StatsList, StatsDialog, StatsButton, StatsToggle } from "./StatsPanel";
+export type { StatsListProps, StatsDialogProps, StatsButtonProps, StatsToggleProps } from "./StatsPanel";
+export { StatHighlightList, StatHighlightPanel, StatHighlightButton, getStatMarkers, STAT_HIGHLIGHT_COLORS } from "./StatHighlight";
+export { HudToggle, useControllableOpen } from "./kit/HudToggle";
+export type { HudToggleProps } from "./kit/HudToggle";
+export type { StatHighlightPanelProps, StatHighlightButtonProps } from "./StatHighlight";
 export { SkillSearch } from "./SkillSearch";
 export type { SkillSearchProps } from "./SkillSearch";
 

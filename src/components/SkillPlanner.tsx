@@ -1,9 +1,10 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { useTranslation } from "next-i18next/pages";
 import { MAX_PLAYER_LEVEL, SkillNodes, getMaxSkillPoints, getSkillName, type SkillSelection } from "@enshrouded/core";
 import {
   SkillTreeProvider,
   SkillTreeView,
+  getStatMarkers,
   type RefundRequest,
   type SkillTreeNotice,
   type SkillTreeViewHandle,
@@ -34,8 +35,11 @@ const SkillPlanner = ({ dbAvailable = false, focusNodeId }: SkillPlannerProps) =
   const searchResults = useAppSelector((state) => state.skill.searchSkillResults);
   const unlockedBiomes = useAppSelector((state) => state.skill.unlockedBiomes);
   const playerLevel = useAppSelector((state) => state.skill.playerLevel ?? MAX_PLAYER_LEVEL);
+  const bonusPoints = useAppSelector((state) => state.skill.bonusPoints ?? 0);
+  const highlightedStats = useAppSelector((state) => state.skill.highlightedStats);
+  const markedTypes = useMemo(() => getStatMarkers(highlightedStats ?? []), [highlightedStats]);
   const hardcapEnabled = useHardcapEnabled();
-  const maxSkillPoints = getMaxSkillPoints({ playerLevel, unlockedBiomes });
+  const maxSkillPoints = getMaxSkillPoints({ playerLevel, unlockedBiomes, bonusPoints });
   const view = useRef<SkillTreeViewHandle>(null);
   const [showCapWarning, setShowCapWarning] = useState(false);
   const [pendingRefund, setPendingRefund] = useState<{ count: number; resolve: (confirmed: boolean) => void } | null>(null);
@@ -91,6 +95,7 @@ const SkillPlanner = ({ dbAvailable = false, focusNodeId }: SkillPlannerProps) =
         onSelectionChange={onSelectionChange}
         confirmRefund={confirmRefund}
         highlightedTypes={searchResults}
+        markedTypes={markedTypes}
         initialFocusNodeId={focusNodeId}
         getNodeShareUrl={getNodeShareUrl}
       />

@@ -1,9 +1,12 @@
-import { useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent, type KeyboardEvent } from "react";
 import { Minus, Plus, SlidersHorizontal } from "lucide-react";
 import {
   BIOMES,
   MAX_FLAME_LEVEL,
   MAX_PLAYER_LEVEL,
+  MAX_BONUS_POINTS,
+  MIN_BONUS_POINTS,
+  clampBonusPoints,
   computeLevelingPoints,
   computeMaxSkillPoints,
 } from "@enshrouded/core";
@@ -19,6 +22,8 @@ import { classNames, useAssetUrl } from "./kit/shared";
 
 const ALL_BIOMES = BIOMES.map((biome) => biome.id);
 const clampPlayerLevel = (level: number) => Math.max(1, Math.min(MAX_PLAYER_LEVEL, level));
+// A signed bonus with a true minus sign: "+3", "−3".
+const formatBonus = (points: number) => `${points > 0 ? "+" : "−"}${Math.abs(points)}`;
 
 // ---------------------------------------------------------------------------
 // Biome budget: the player level and explored biomes behind the point budget.
@@ -31,6 +36,10 @@ export type BiomeBudgetDialogProps = {
   biomes: string[];
   onPlayerLevelChange: (level: number) => void;
   onBiomesChange: (biomes: string[]) => void;
+  // A manual adjustment to the total (negative removes points), for a budget
+  // the checkboxes can't express. With onBonusPointsChange, a row edits it.
+  bonusPoints?: number;
+  onBonusPointsChange?: (points: number) => void;
 };
 
 export const BiomeBudgetDialog = ({
@@ -40,19 +49,75 @@ export const BiomeBudgetDialog = ({
   biomes,
   onPlayerLevelChange,
   onBiomesChange,
+  bonusPoints = 0,
+  onBonusPointsChange,
 }: BiomeBudgetDialogProps) => {
   const t = useUiText();
   const { playSound } = useSkillTreeSettings();
+  // The total field's text while it is being edited. It is committed on Enter
+  // or when the field loses focus, never per key press, so the budget doesn't
+  // jump through 2 and 21 on the way to 212.
+  const [totalDraft, setTotalDraft] = useState<string | null>(null);
 
   const levelingSP = computeLevelingPoints(playerLevel);
-  const maxSP = computeMaxSkillPoints(playerLevel, biomes);
+  const baseSP = computeMaxSkillPoints(playerLevel, biomes);
+  const maxSP = computeMaxSkillPoints(playerLevel, biomes, bonusPoints);
   const isDefault =
-    playerLevel === MAX_PLAYER_LEVEL && biomes.length === BIOMES.length && BIOMES.every((b) => biomes.includes(b.id));
+    playerLevel === MAX_PLAYER_LEVEL &&
+    biomes.length === BIOMES.length &&
+    BIOMES.every((b) => biomes.includes(b.id)) &&
+    bonusPoints === 0;
 
   const resetToDefault = () => {
     playSound("node-unlock", 0.4);
     onPlayerLevelChange(MAX_PLAYER_LEVEL);
     onBiomesChange(ALL_BIOMES);
+    onBonusPointsChange?.(0);
+    setTotalDraft(null);
+  };
+
+  // The bonus a typed total stands for (the current bonus while the field is
+  // empty or not being edited).
+  const draftBonus = (draft: string | null) =>
+    draft ? clampBonusPoints(parseInt(draft, 10) - baseSP) : bonusPoints;
+
+  // − / + step from the shown total: a pending edit counts (a tap on − / +
+  // doesn't always blur the field on touch screens), and below a total of 0
+  // there is nothing left to remove.
+  const changeBonus = (delta: number) => {
+    playSound("node-hover", 0.3);
+    const shownTotal = computeMaxSkillPoints(playerLevel, biomes, draftBonus(totalDraft));
+    setTotalDraft(null);
+    onBonusPointsChange?.(clampBonusPoints(shownTotal + delta - baseSP));
+  };
+
+  // Only digits are accepted, so the field never shows a value the budget
+  // doesn't use (no "12abc", "-5" or "1e3").
+  const handleTotalInput = (e: ChangeEvent<HTMLInputElement>) => {
+    if (/^\d*$/.test(e.target.value)) setTotalDraft(e.target.value);
+  };
+
+  // A committed total stores its difference from the level and biomes as the
+  // bonus. The field then shows the total the budget actually holds, which
+  // differs from the typed one only past the bonus limits. An empty field
+  // keeps the current total.
+  const commitTotal = () => {
+    if (totalDraft === null) return;
+    setTotalDraft(null);
+    const bonus = draftBonus(totalDraft);
+    if (bonus !== bonusPoints) onBonusPointsChange?.(bonus);
+  };
+
+  const handleTotalKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      commitTotal();
+    } else if (e.key === "Escape" && totalDraft !== null) {
+      // The first Escape drops the edit; the next one closes the dialog.
+      e.preventDefault();
+      e.stopPropagation();
+      setTotalDraft(null);
+    }
   };
 
   const toggleBiome = (id: string) => {
@@ -163,12 +228,62 @@ export const BiomeBudgetDialog = ({
             })}
           </ul>
 
-          {/* Total */}
-          <div className="mt-4 pt-3 border-t border-[#5a5a60]/50 flex justify-between items-center">
-            <span className="text-sm text-[#c0b89a]">{t("budget.total")}</span>
-            <span className="text-sm font-semibold text-[#e8d5a3] tabular-nums" data-budget="total">
-              {maxSP}
-            </span>
+          {/* Total: − / + (or typing a number) sets the bonus points, a manual
+              adjustment on top of the level and biomes above. */}
+          <div className="mt-4 pt-3 border-t border-[#5a5a60]/50 flex flex-col gap-1">
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-[#c0b89a]">{t("budget.total")}</span>
+              {onBonusPointsChange ? (
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => changeBonus(-1)}
+                    onMouseEnter={() => playSound("node-hover", 0.3)}
+                    disabled={maxSP <= 0 || bonusPoints <= MIN_BONUS_POINTS}
+                    aria-label={t("budget.bonusDown")}
+                    data-budget="bonus-down"
+                    className={stepClasses}
+                  >
+                    −
+                  </button>
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    maxLength={4}
+                    enterKeyHint="done"
+                    value={totalDraft ?? String(maxSP)}
+                    onChange={handleTotalInput}
+                    onKeyDown={handleTotalKeyDown}
+                    onBlur={commitTotal}
+                    aria-label={t("budget.total")}
+                    data-budget="total"
+                    className="w-14 text-center bg-transparent border border-[#5a5a60] text-sm font-semibold text-[#e8d5a3] tabular-nums py-0.5"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => changeBonus(1)}
+                    onMouseEnter={() => playSound("node-hover", 0.3)}
+                    disabled={bonusPoints >= MAX_BONUS_POINTS}
+                    aria-label={t("budget.bonusUp")}
+                    data-budget="bonus-up"
+                    className={stepClasses}
+                  >
+                    +
+                  </button>
+                </div>
+              ) : (
+                <span className="text-sm font-semibold text-[#e8d5a3] tabular-nums" data-budget="total">
+                  {maxSP}
+                </span>
+              )}
+            </div>
+            {bonusPoints !== 0 && (
+              <div className="flex justify-end gap-2 text-xs text-[#c0b89a]/80" data-budget="bonus-points">
+                <span>{t("budget.bonusPoints")}</span>
+                <span className="tabular-nums">{formatBonus(bonusPoints)}</span>
+              </div>
+            )}
           </div>
 
           <div className="flex justify-end mt-3">
@@ -285,6 +400,9 @@ export type PointsPanelProps = {
   biomes?: string[];
   onPlayerLevelChange?: (level: number) => void;
   onBiomesChange?: (biomes: string[]) => void;
+  // A manual adjustment to the budget; with the callback the dialog edits it.
+  bonusPoints?: number;
+  onBonusPointsChange?: (points: number) => void;
   // "panel": a two-row grid with hints on the icons (about 260 px wide).
   // "bar": one wrapping row, for a strip along the bottom of a small screen.
   layout?: "panel" | "bar";
@@ -300,6 +418,8 @@ export const PointsPanel = ({
   biomes = ALL_BIOMES,
   onPlayerLevelChange,
   onBiomesChange,
+  bonusPoints,
+  onBonusPointsChange,
   layout = "panel",
   className,
 }: PointsPanelProps) => {
@@ -325,6 +445,17 @@ export const PointsPanel = ({
       <span data-hud="points-max" className="font-semibold tracking-wide text-[#e8d5a3]/60">
         / {maxPoints}
       </span>
+      {/* A manual change to the budget stays visible after the dialog closes. */}
+      {bonusPoints !== undefined && bonusPoints !== 0 && (
+        <span
+          data-hud="points-bonus"
+          title={t("points.bonusHint", { count: formatBonus(bonusPoints) })}
+          aria-label={t("points.bonusHint", { count: formatBonus(bonusPoints) })}
+          className="text-xs tabular-nums text-[#c0b89a]/80"
+        >
+          ({formatBonus(bonusPoints)})
+        </span>
+      )}
     </div>
   );
   const budget =
@@ -334,6 +465,8 @@ export const PointsPanel = ({
         biomes={biomes}
         onPlayerLevelChange={onPlayerLevelChange}
         onBiomesChange={onBiomesChange}
+        bonusPoints={bonusPoints}
+        onBonusPointsChange={onBonusPointsChange}
       />
     ) : null;
   const pointIcon = (size: number) => (

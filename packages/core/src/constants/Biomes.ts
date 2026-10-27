@@ -44,15 +44,29 @@ export function computeLevelingPoints(playerLevel: number): number {
   return Math.max(0, Math.min(playerLevel, MAX_PLAYER_LEVEL) - 1) * SP_PER_LEVEL;
 }
 
+// Bounds of the manual adjustment to the budget (bonusPoints): enough to
+// remove every point the game can give, or to add as many again.
+export const MIN_BONUS_POINTS = -999;
+export const MAX_BONUS_POINTS = 999;
+
+export function clampBonusPoints(points: number): number {
+  if (!Number.isFinite(points)) return 0;
+  return Math.max(MIN_BONUS_POINTS, Math.min(MAX_BONUS_POINTS, Math.trunc(points)));
+}
+
+// Leveling points plus the explored biomes' points, plus `bonusPoints`: a
+// manual adjustment (negative to take points away) for a budget the biome
+// checkboxes can't express, such as a biome only partly explored. Never below 0.
 export function computeMaxSkillPoints(
   playerLevel: number,
-  unlockedBiomes: string[] | undefined
+  unlockedBiomes: string[] | undefined,
+  bonusPoints = 0
 ): number {
   const levelingSP = computeLevelingPoints(playerLevel);
   const explorationSP = BIOMES
     .filter((b) => unlockedBiomes?.includes(b.id))
     .reduce((acc, b) => acc + b.explorationPoints, 0);
-  return levelingSP + explorationSP;
+  return Math.max(0, levelingSP + explorationSP + clampBonusPoints(bonusPoints));
 }
 
 export const MAX_SKILL_POINTS_ABSOLUTE = computeMaxSkillPoints(MAX_PLAYER_LEVEL, BIOMES.map((b) => b.id));

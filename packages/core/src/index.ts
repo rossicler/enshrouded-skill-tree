@@ -69,6 +69,9 @@ export {
   MAX_PLAYER_LEVEL,
   MAX_FLAME_LEVEL,
   clampFlameLevel,
+  MIN_BONUS_POINTS,
+  MAX_BONUS_POINTS,
+  clampBonusPoints,
   MAX_SKILL_POINTS_ABSOLUTE,
   computeLevelingPoints,
   computeMaxSkillPoints,
@@ -80,7 +83,7 @@ export type { PointsBudget, PointsSummary, PointsSummaryOptions } from "./points
 // Stats
 export { BasicStats } from "./constants/Stats";
 export type { StatsType, NodeStatsType } from "./constants/Stats";
-export { getStatsFromSkills, getStatsFromFlameAltar, sumStats, getTotalStats } from "./utils/stats";
+export { getStatsFromSkills, getStatsFromFlameAltar, sumStats, getTotalStats, getStatSkillTypes } from "./utils/stats";
 export type { StatTotals } from "./utils/stats";
 
 // Skill text

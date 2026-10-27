@@ -15,13 +15,13 @@ import {
 // max-level player's who explored every biome.
 export const usePoints = (
   selection: SkillSelection,
-  { playerLevel, biomes }: PointsSummaryOptions = {}
+  { playerLevel, biomes, bonusPoints }: PointsSummaryOptions = {}
 ): PointsSummary => {
   // A biome list rebuilt on every render shouldn't recompute anything.
   const biomesKey = biomes?.join("\n");
   return useMemo(
-    () => getPointsSummary(selection, { playerLevel, biomes }),
-    [selection, playerLevel, biomesKey]
+    () => getPointsSummary(selection, { playerLevel, biomes, bonusPoints }),
+    [selection, playerLevel, biomesKey, bonusPoints]
   );
 };
 

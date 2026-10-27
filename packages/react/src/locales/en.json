@@ -31,13 +31,17 @@
     "skillPointIcon": "Skill Point Icon",
     "flameIcon": "Flame Icon",
     "flameDown": "Lower the flame level",
-    "flameUp": "Raise the flame level"
+    "flameUp": "Raise the flame level",
+    "bonusHint": "Includes {{count}} bonus points from the Biome Budget"
   },
   "budget": {
     "title": "Biome Budget",
     "playerLevel": "Player Level",
     "total": "Total Skill Points",
-    "reset": "Unlock all"
+    "reset": "Unlock all",
+    "bonusPoints": "Bonus Points",
+    "bonusDown": "Remove a skill point",
+    "bonusUp": "Add a skill point"
   },
   "biomes": {
     "springlands": "Springlands",
@@ -66,5 +70,11 @@
     "placeholder": "Search",
     "moreMatches": "+{{count}} more matches highlighted on the tree",
     "clear": "Clear the search"
+  },
+  "statHighlight": {
+    "button": "Highlight",
+    "title": "Highlight stat nodes",
+    "all": "All",
+    "none": "None"
   }
 }

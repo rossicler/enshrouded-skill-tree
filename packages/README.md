@@ -270,11 +270,11 @@ export function BuildCards({ saved }: { saved: Record<string, number> }) {
 
 More props: `background` (`true`, the default, shows the planner's backdrop
 art; `false` a dark gradient; a string is any CSS background), `controls`
-(the buttons, default true), `highlightedTypes`, `confirmRefund`,
-`getNodeShareUrl`, `onModeChange`, `className` and `style`. Through a ref
-(`SkillTreeCardHandle`): `expand()`, `fullscreen()`, `close()`, plus the view's
-methods below. Fullscreen falls back to the overlay where the browser has no
-Fullscreen API.
+(the buttons, default true), `highlightedTypes`, `markedTypes`,
+`confirmRefund`, `getNodeShareUrl`, `onModeChange`, `className` and `style`.
+Through a ref (`SkillTreeCardHandle`): `expand()`, `fullscreen()`, `close()`,
+plus the view's methods below. Fullscreen falls back to the overlay where the
+browser has no Fullscreen API.
 
 ### The full view
 
@@ -317,6 +317,10 @@ export function Planner() {
 `onSelectionChange(next, change)` gets the new selection and what happened
 (`change.type` is `unlock`, `level-up`, `level-down` or `refund`).
 
+`markedTypes` draws a colored ring around every node of a skill type:
+`{ [type]: color }`, or a list of colors to split the ring into equal arcs.
+`getStatMarkers(stats)` builds it from a list of stat keys (see below).
+
 ### Points, stats and search
 
 The hooks are thin wrappers over core; the panels take values and callbacks and
@@ -324,11 +328,11 @@ hold no state of their own.
 
 ```tsx
 "use client";
-import { useCallback, useRef, useState } from "react";
-import { BIOMES, MAX_PLAYER_LEVEL } from "@enshrouded/core";
+import { useCallback, useMemo, useRef, useState } from "react";
+import { BIOMES, MAX_PLAYER_LEVEL, type StatsType } from "@enshrouded/core";
 import {
-  PointsPanel, SkillSearch, SkillTreeCard, StatsButton, StatsList,
-  usePoints, useSkillBuild, useSkillSearch, useStats, type SkillTreeCardHandle,
+  PointsPanel, SkillSearch, SkillTreeCard, StatHighlightPanel, StatsButton, StatsList,
+  getStatMarkers, usePoints, useSkillBuild, useSkillSearch, useStats, type SkillTreeCardHandle,
 } from "@enshrouded/react";
 
 export function WiredPlanner({ locale }: { locale: string }) {
@@ -336,8 +340,11 @@ export function WiredPlanner({ locale }: { locale: string }) {
   const [flameLevel, setFlameLevel] = useState(1);
   const [playerLevel, setPlayerLevel] = useState(MAX_PLAYER_LEVEL);
   const [biomes, setBiomes] = useState(BIOMES.map((biome) => biome.id));
+  const [bonusPoints, setBonusPoints] = useState(0); // manual adjustment to the budget
+  const [highlighted, setHighlighted] = useState<StatsType[]>([]);
+  const markedTypes = useMemo(() => getStatMarkers(highlighted), [highlighted]);
   const [query, setQuery] = useState("");
-  const points = usePoints(build.selection, { playerLevel, biomes }); // { used, max, left, full, over }
+  const points = usePoints(build.selection, { playerLevel, biomes, bonusPoints }); // { used, max, left, full, over }
   const stats = useStats(build.selection, flameLevel);
   const search = useSkillSearch(query, locale); // { results, highlightedTypes }
   const card = useRef<SkillTreeCardHandle>(null);
@@ -347,7 +354,7 @@ export function WiredPlanner({ locale }: { locale: string }) {
     <div className="flex gap-6">
       <div style={{ width: 480, height: 480 }}>
         <SkillTreeCard ref={card} selection={build.selection} onSelectionChange={build.onSelectionChange}
-          highlightedTypes={search.highlightedTypes} />
+          highlightedTypes={search.highlightedTypes} markedTypes={markedTypes} />
       </div>
       {/* The panels' corner ornaments reach about 40 px outside them from the md breakpoint up. */}
       <div className="flex w-[340px] flex-col gap-4 md:px-6">
@@ -357,7 +364,9 @@ export function WiredPlanner({ locale }: { locale: string }) {
           flameLevel={flameLevel} onFlameLevelChange={setFlameLevel}
           playerLevel={playerLevel} biomes={biomes}
           onPlayerLevelChange={setPlayerLevel} onBiomesChange={setBiomes} // both: shows the budget button
+          bonusPoints={bonusPoints} onBonusPointsChange={setBonusPoints} // the budget dialog edits the total
         />
+        <StatHighlightPanel value={highlighted} onChange={setHighlighted} />
         <StatsList stats={stats} />
         <StatsButton stats={stats} />
       </div>
@@ -369,7 +378,12 @@ export function WiredPlanner({ locale }: { locale: string }) {
 `PointsPanel` also has `layout="bar"`. `FlameLevelControl`, `BiomeBudgetButton`,
 `BiomeBudgetDialog` and `StatsDialog` are exported on their own, as is the UI
 kit (`GameButton`, `GameButtonGroup`, `GamePanel`, `GameInput`, `GameTooltip`,
-`CopyInput`, `GameDialog`). The package's own text (tooltips, buttons, panels)
+`CopyInput`, `GameDialog`, `HudToggle`).
+`StatsToggle` and `StatHighlightButton` are HUD buttons that open their panel
+just below them instead of in a dialog (built on `HudToggle`; pass `open` and
+`onOpenChange` to keep one panel open at a time). `StatHighlightList` is the
+toggle list without a panel, and `STAT_HIGHLIGHT_COLORS` holds the ring color
+per stat. The package's own text (tooltips, buttons, panels)
 follows the provider's `locale`; `useUiText()` reads it.
 
 ### `useSkillBuild`

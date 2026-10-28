@@ -89,8 +89,8 @@ test("one wheel tick zooms a card a little", async ({ page }) => {
   await page.mouse.wheel(0, -100);
   await waitForStableCard(a);
   const ratio = (await distanceIn(a, SINGLE_BASE, MULTI_BASE)) / start;
-  expect(ratio).toBeGreaterThan(1.02);
-  expect(ratio).toBeLessThan(1.15);
+  expect(ratio).toBeGreaterThan(1.1);
+  expect(ratio).toBeLessThan(1.25);
   // The fitted view is the most zoomed-out one.
   await page.mouse.wheel(0, 800);
   await waitForStableCard(a);

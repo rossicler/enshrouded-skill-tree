@@ -53,6 +53,8 @@ export type SkillTreeCardProps = {
   readOnly?: boolean;
   confirmRefund?: (request: RefundRequest) => boolean | Promise<boolean>;
   highlightedTypes?: readonly string[];
+  // Skill type -> ring color(s), as on SkillTreeView.
+  markedTypes?: Readonly<Record<string, string | readonly string[]>>;
   getNodeShareUrl?: (nodeId: string) => string;
   // The zoom, expand and fullscreen buttons. Default true.
   controls?: boolean;
@@ -106,6 +108,7 @@ const SkillTreeCardBase = forwardRef<SkillTreeCardHandle, SkillTreeCardProps>(fu
     readOnly = false,
     confirmRefund,
     highlightedTypes,
+    markedTypes,
     getNodeShareUrl,
     controls = true,
     background = true,
@@ -254,6 +257,7 @@ const SkillTreeCardBase = forwardRef<SkillTreeCardHandle, SkillTreeCardProps>(fu
     onSelectionChange: editable,
     confirmRefund,
     highlightedTypes,
+    markedTypes,
     getNodeShareUrl,
     initialView: "fit" as const,
     tooltipStrategy: "fixed" as const,

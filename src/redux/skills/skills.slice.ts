@@ -1,4 +1,4 @@
-import { BIOMES, MAX_PLAYER_LEVEL, clampFlameLevel } from "@enshrouded/core";
+import { BIOMES, MAX_PLAYER_LEVEL, clampBonusPoints, clampFlameLevel } from "@enshrouded/core";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createMigrate, persistReducer } from "redux-persist";
@@ -14,6 +14,10 @@ interface SkillsState {
   flameLevel?: number;
   unlockedBiomes: string[];
   playerLevel: number;
+  // Manual adjustment to the skill point budget (negative removes points).
+  bonusPoints: number;
+  // Stats whose nodes get a colored ring on the tree (BasicStats keys).
+  highlightedStats: string[];
 }
 
 const initialState = {
@@ -22,6 +26,8 @@ const initialState = {
   flameLevel: 1,
   unlockedBiomes: BIOMES.map((b) => b.id),
   playerLevel: MAX_PLAYER_LEVEL,
+  bonusPoints: 0,
+  highlightedStats: [],
 } satisfies SkillsState as SkillsState;
 
 const normalizeToMap = (
@@ -67,6 +73,12 @@ const skillsSlice = createSlice({
     setPlayerLevel(state, action: PayloadAction<number>) {
       state.playerLevel = Math.max(1, Math.min(MAX_PLAYER_LEVEL, action.payload));
     },
+    setBonusPoints(state, action: PayloadAction<number>) {
+      state.bonusPoints = clampBonusPoints(action.payload);
+    },
+    setHighlightedStats(state, action: PayloadAction<string[]>) {
+      state.highlightedStats = action.payload;
+    },
   },
 });
 
@@ -78,6 +90,8 @@ export const {
   setFlameLevel,
   setUnlockedBiomes,
   setPlayerLevel,
+  setBonusPoints,
+  setHighlightedStats,
 } = skillsSlice.actions;
 
 export const selectSelectedSkillIds = createSelector(
@@ -110,7 +124,8 @@ const persistConfig = {
   key: "skills",
   version: 3,
   storage: storageSession,
-  whitelist: ["selectedSkills", "unlockedBiomes", "playerLevel"],
+  // New keys need no migration: a session saved without them keeps the initial values.
+  whitelist: ["selectedSkills", "unlockedBiomes", "playerLevel", "bonusPoints", "highlightedStats"],
   migrate: createMigrate(migrations, { debug: false }),
 };
 

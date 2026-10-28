@@ -1,4 +1,4 @@
-import SkillNodes from "../constants/Nodes";
+import SkillNodes, { type SkillNodesType } from "../constants/Nodes";
 import { BasicStats, NodeStatsType, StatsType } from "../constants/Stats";
 import { clampFlameLevel } from "../constants/Biomes";
 
@@ -61,3 +61,11 @@ export const getTotalStats = (
     (Object.keys(BasicStats) as StatsType[]).map((stat) => [stat, sum[stat] ?? 0])
   ) as StatTotals;
 };
+
+// Skill types that raise `stat` per level (the attribute nodes, and skills
+// such as Ranger that add attributes directly). Flame-scaled skills are left
+// out: they add nothing per level. Used to highlight a stat's nodes on the tree.
+export const getStatSkillTypes = (stat: StatsType, tree: SkillNodesType = SkillNodes): string[] =>
+  Object.entries(tree.types)
+    .filter(([, metadata]) => (metadata.stats?.[stat] ?? 0) > 0)
+    .map(([type]) => type);

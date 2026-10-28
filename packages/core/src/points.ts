@@ -15,11 +15,13 @@ export type PointsBudget = {
   playerLevel?: number;
   // Biome IDs whose exploration points are collected (see BIOMES).
   unlockedBiomes?: string[];
+  // Manual adjustment added to the budget (negative to remove points).
+  bonusPoints?: number;
 };
 
 // Skill points available at a player level with the given biomes explored.
-export const getMaxSkillPoints = ({ playerLevel = MAX_PLAYER_LEVEL, unlockedBiomes }: PointsBudget = {}): number =>
-  computeMaxSkillPoints(playerLevel, unlockedBiomes);
+export const getMaxSkillPoints = ({ playerLevel = MAX_PLAYER_LEVEL, unlockedBiomes, bonusPoints = 0 }: PointsBudget = {}): number =>
+  computeMaxSkillPoints(playerLevel, unlockedBiomes, bonusPoints);
 
 // Whether one more level of `id` stays within `maxPoints` (the hard cap).
 export const fitsUnderHardCap = (
@@ -48,15 +50,17 @@ export type PointsSummaryOptions = {
   // Explored biome IDs (see BIOMES). Defaults to every biome, so with no
   // options the budget is that of a max-level player who explored everything.
   biomes?: string[];
+  // Manual adjustment added to the budget (negative to remove points). Default 0.
+  bonusPoints?: number;
 };
 
 // Points used, the budget and what's left, for a player level and explored biomes.
 export const getPointsSummary = (
   selection: SkillSelection,
-  { playerLevel = MAX_PLAYER_LEVEL, biomes = BIOMES.map((biome) => biome.id) }: PointsSummaryOptions = {},
+  { playerLevel = MAX_PLAYER_LEVEL, biomes = BIOMES.map((biome) => biome.id), bonusPoints = 0 }: PointsSummaryOptions = {},
   tree: SkillNodesType = SkillNodes
 ): PointsSummary => {
   const used = getPointsUsed(selection, tree);
-  const max = getMaxSkillPoints({ playerLevel, unlockedBiomes: biomes });
+  const max = getMaxSkillPoints({ playerLevel, unlockedBiomes: biomes, bonusPoints });
   return { used, max, left: max - used, full: used >= max, over: used > max };
 };

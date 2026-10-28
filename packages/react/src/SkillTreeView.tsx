@@ -57,6 +57,9 @@ export type SkillTreeViewProps = {
   confirmRefund?: (request: RefundRequest) => boolean | Promise<boolean>;
   // Skill types to highlight, e.g. search matches.
   highlightedTypes?: readonly string[];
+  // Skill type -> ring color(s) around every node of that type, e.g. stat
+  // highlights (getStatMarkers). Several colors split the ring into arcs.
+  markedTypes?: Readonly<Record<string, string | readonly string[]>>;
   // Node to zoom in on at first, instead of the centered tree.
   initialFocusNodeId?: string;
   // Shows a share button in the tooltip that copies this URL.
@@ -80,7 +83,7 @@ const treeFitSize = (hx: number, hy: number): FitSize =>
 // The skill tree as SVG, with pan and zoom, node actions, tooltips and search
 // highlights. It fills its container, so give the container a size.
 export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>(function SkillTreeView(props, ref) {
-  const { selection, highlightedTypes, initialFocusNodeId, getNodeShareUrl, initialView = "center", tooltipStrategy, className, style } =
+  const { selection, highlightedTypes, markedTypes, initialFocusNodeId, getNodeShareUrl, initialView = "center", tooltipStrategy, className, style } =
     props;
   const settings = useSkillTreeSettings();
   const { locale, assetBaseUrl } = settings;
@@ -243,6 +246,7 @@ export const SkillTreeView = forwardRef<SkillTreeViewHandle, SkillTreeViewProps>
                 state={stateOf(id)}
                 level={selection[id] ?? 0}
                 searched={highlighted.has(layout.nodes[id].node.type)}
+                marker={markedTypes?.[layout.nodes[id].node.type]}
                 assetBaseUrl={assetBaseUrl}
                 scope={scope}
               />

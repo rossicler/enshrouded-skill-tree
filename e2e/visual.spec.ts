@@ -75,13 +75,13 @@ const screens = (device: "desktop" | "mobile", locale: "en" | "fr") => {
     });
   }
 
-  test(`stats dialog (${locale})`, async ({ page }) => {
+  test(`stats panel (${locale})`, async ({ page }) => {
     await openPlanner(page, `${prefix}/`);
     await hud(page, "flame-up").click();
     await hud(page, "stats").click();
-    await expect(dialog(page, "stats")).toBeVisible();
+    await expect(page.locator('[data-panel="stats"]')).toBeVisible();
     await page.waitForTimeout(500);
-    await shot(page, "dialog-stats");
+    await shot(page, "panel-stats");
   });
 
   test(`biome budget dialog (${locale})`, async ({ page }) => {

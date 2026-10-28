@@ -31,13 +31,17 @@
     "skillPointIcon": "Icône de point de compétence",
     "flameIcon": "Icône de flamme",
     "flameDown": "Baisser le niveau de flamme",
-    "flameUp": "Monter le niveau de flamme"
+    "flameUp": "Monter le niveau de flamme",
+    "bonusHint": "Inclut {{count}} points bonus du budget par biome"
   },
   "budget": {
     "title": "Budget par biome",
     "playerLevel": "Niveau du joueur",
     "total": "Points de compétences totaux",
-    "reset": "Tout débloquer"
+    "reset": "Tout débloquer",
+    "bonusPoints": "Points bonus",
+    "bonusDown": "Retirer un point de compétence",
+    "bonusUp": "Ajouter un point de compétence"
   },
   "biomes": {
     "springlands": "Hautes pâtures",
@@ -66,5 +70,11 @@
     "placeholder": "Rechercher",
     "moreMatches": "+{{count}} autres résultats surlignés dans l'arbre",
     "clear": "Effacer la recherche"
+  },
+  "statHighlight": {
+    "button": "Surligner",
+    "title": "Surligner les attributs",
+    "all": "Tous",
+    "none": "Aucun"
   }
 }

@@ -7,9 +7,18 @@ export const INITIAL_SCALE = 2;
 export const MIN_SCALE = 2;
 export const MAX_SCALE = 5;
 const BUTTON_STEP = 0.5;
-// Smooth wheel zoom multiplies the step by the wheel distance (about 100 per
-// notch), so 0.001 zooms about 0.1 per notch.
-const WHEEL_STEP = 0.001;
+// Each wheel notch zooms by this share of the current scale, so the wheel
+// feels the same at every zoom: 6 notches from the planner's initial scale
+// to the max.
+const WHEEL_ZOOM_PER_NOTCH = 0.17;
+// Wheel distance of one notch of a typical mouse, in px.
+const NOTCH_PX = 100;
+// A fast or free-spinning wheel can send many notches in one event. Count at
+// most this many, so the zoom doesn't jump to a limit.
+const MAX_NOTCHES = 2;
+// How fast a trackpad pinch zooms, compared with the fingers (1: the tree
+// grows as much as they spread).
+const PINCH_SPEED = 1;
 // A drag counts as a pan (for onUserMove) once it has moved this far, in
 // screen px, so a click with a slight wobble is still a click.
 const PAN_START_PX = 6;
@@ -35,8 +44,8 @@ type PanZoomProps = {
   focusKey?: string;
   // Content size (px at scale 1) to fit in the container. When set, the first
   // view, center() and the minimum zoom all show exactly this much, and the
-  // wheel and buttons zoom by a share of the current scale, so they feel the
-  // same at any container size. Unset: the planner's fixed scales.
+  // buttons zoom by a share of the current scale, so they feel the same at
+  // any container size. Unset: the planner's fixed scales.
   fitSize?: FitSize;
   // Called when the user starts to move the view: a drag that pans, a pinch
   // or a wheel zoom. Not for moves made through the handle.
@@ -46,6 +55,19 @@ type PanZoomProps = {
 // The pointer of a mouse or one-finger touch event (programmatic moves have none).
 const pointOf = (event: MouseEvent | TouchEvent | undefined): { clientX: number; clientY: number } | null =>
   !event ? null : "touches" in event ? (event.touches[0] ?? null) : event;
+
+// The factor (> 1) one wheel event zooms by. Chrome sends a trackpad pinch
+// as Ctrl + wheel events of deltaY = 100 × ln(finger scale), each well under
+// half a notch, so the zoom follows the fingers. Ctrl + a mouse wheel sends
+// whole notches and zooms like the plain wheel. Some browsers (e.g. Firefox)
+// can report lines (3 per notch) or pages instead of px.
+const wheelZoomFactor = ({ deltaY, deltaMode, ctrlKey }: WheelEvent) => {
+  const distance = Math.abs(deltaY);
+  const inPx = deltaMode === WheelEvent.DOM_DELTA_PIXEL;
+  if (inPx && ctrlKey && distance < NOTCH_PX / 2) return Math.exp((PINCH_SPEED * distance) / 100);
+  const notches = inPx ? distance / NOTCH_PX : deltaMode === WheelEvent.DOM_DELTA_LINE ? distance / 3 : MAX_NOTCHES;
+  return (1 + WHEEL_ZOOM_PER_NOTCH) ** Math.min(notches, MAX_NOTCHES);
+};
 
 const fitScaleFor = (el: Element | null | undefined, fit: FitSize) => {
   if (!el) return null;
@@ -92,8 +114,8 @@ export const PanZoom = forwardRef<PanZoomHandle, PanZoomProps>(function PanZoom(
   const centerRef = useRef(centerView);
   centerRef.current = centerView;
 
-  // The library adds a fixed amount per wheel notch or button press. In fit
-  // mode, scale it with the zoom (the planner's amounts at its initial zoom).
+  // The library adds a fixed amount per button press. In fit mode, scale it
+  // with the zoom (the planner's amount at its initial zoom).
   const relative = (step: number) => {
     if (!fitRef.current) return step;
     const scale = zoom.current?.instance.state.scale ?? INITIAL_SCALE;
@@ -127,18 +149,23 @@ export const PanZoom = forwardRef<PanZoomHandle, PanZoomProps>(function PanZoom(
     return () => observer.disconnect();
   }, []);
 
-  // Fit mode: set the wheel step for the current zoom just before the
-  // library's own wheel listener (inside this element) reads it.
+  // The library zooms by its wheel step times the event's deltaY. Set the step
+  // just before its own wheel listener (inside this element) reads it, so the
+  // event multiplies the scale by wheelZoomFactor (divides it, zooming out).
   useEffect(() => {
     const el = wrapper.current;
-    if (!el || !fitMode) return;
-    const onWheel = () => {
-      const setup = zoom.current?.instance.setup;
-      if (setup) setup.wheel.step = relative(WHEEL_STEP);
+    if (!el) return;
+    const onWheel = (event: WheelEvent) => {
+      const instance = zoom.current?.instance;
+      if (!instance || event.deltaY === 0) return;
+      const scale = instance.state.scale;
+      const factor = wheelZoomFactor(event);
+      const change = event.deltaY < 0 ? scale * (factor - 1) : scale * (1 - 1 / factor);
+      instance.setup.wheel.step = change / Math.abs(event.deltaY);
     };
     el.addEventListener("wheel", onWheel, { capture: true, passive: true });
     return () => el.removeEventListener("wheel", onWheel, { capture: true });
-  }, [fitMode]);
+  }, []);
 
   const ready = useRef(false);
   useEffect(() => {
@@ -156,7 +183,6 @@ export const PanZoom = forwardRef<PanZoomHandle, PanZoomProps>(function PanZoom(
         // Fitted to a wide or tall container, the content is narrower than it
         // in one direction: keep it centered there instead of free to slide.
         centerZoomedOut={fitMode}
-        wheel={{ step: WHEEL_STEP }}
         doubleClick={{ disabled: true }}
         onPanningStart={(_, event) => {
           const point = pointOf(event);

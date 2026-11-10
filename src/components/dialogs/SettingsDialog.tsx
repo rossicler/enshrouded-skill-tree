@@ -113,7 +113,7 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
                 {t("dialogs.settings.language")}
               </span>
               <div className="flex rounded-sm overflow-hidden border border-[#5a5a60]">
-                {["en", "fr"].map((locale) => (
+                {["en", "fr", "de"].map((locale) => (
                   <button
                     key={locale}
                     data-locale={locale}

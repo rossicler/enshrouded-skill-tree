@@ -14,7 +14,7 @@ export type SkillTreeNotice =
   | { type: "link-copied"; nodeId: string; url: string };
 
 export type SkillTreeProviderProps = {
-  // Language of skill text and the tooltip ("en" or "fr"; others fall back to English).
+  // Language of skill text and the tooltip ("en", "fr" or "de"; others fall back to English).
   locale?: string;
   // URL where the host serves this package's assets/ folder (see scripts/sync-assets.mjs).
   assetBaseUrl?: string;

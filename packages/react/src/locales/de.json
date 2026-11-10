@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "Stufe {{current}} / {{max}}",
+    "unlock": "Freischalten",
+    "outOfRange": "Nicht in Reichweite",
+    "share": "Link zu dieser Fähigkeit teilen",
+    "refund": "Zurückerstatten",
+    "levelUp": "Stufe erhöhen",
+    "refundOne": "1 zurückerstatten",
+    "refundAll": "Alle zurückerstatten",
+    "skillPointIcon": "Fähigkeitspunkt-Symbol",
+    "close": "Schließen"
+  },
+  "card": {
+    "label": "Skilltree",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "fit": "Gesamten Baum anzeigen",
+    "expand": "Erweitern",
+    "fullscreen": "Vollbild",
+    "exitFullscreen": "Vollbild beenden",
+    "close": "Schließen"
+  },
+  "kit": {
+    "close": "Schließen",
+    "copy": "Kopieren"
+  },
+  "points": {
+    "skillPoints": "Fähigkeitspunkte",
+    "flameLevel": "Flammenstufe",
+    "skillPointIcon": "Fähigkeitspunkt-Symbol",
+    "flameIcon": "Flammen-Symbol",
+    "flameDown": "Flammenstufe verringern",
+    "flameUp": "Flammenstufe erhöhen"
+  },
+  "budget": {
+    "title": "Biom-Budget",
+    "playerLevel": "Spielerstufe",
+    "total": "Fähigkeitspunkte gesamt",
+    "reset": "Alle freischalten"
+  },
+  "biomes": {
+    "springlands": "Hochweiden",
+    "revelwood": "Düsterdickicht",
+    "nomad_highlands": "Nomaden-Anhöhen",
+    "kindlewastes": "Ödland",
+    "albaneve_summits": "Albapracht-Gipfel",
+    "veilwater_basin": "Wogschimmer-Grund",
+    "cinders_cradle": "Glimmkessel"
+  },
+  "stats": {
+    "button": "Werte",
+    "title": "Werteübersicht",
+    "basic": "Basis",
+    "close": "Schließen",
+    "names": {
+      "constitution": "Konstitution",
+      "strength": "Stärke",
+      "endurance": "Kondition",
+      "dexterity": "Geschick",
+      "spirit": "Willenskraft",
+      "intelligence": "Intelligenz"
+    }
+  },
+  "search": {
+    "placeholder": "Suchen",
+    "moreMatches": "+{{count}} weitere Treffer im Baum markiert",
+    "clear": "Suche löschen"
+  }
+}

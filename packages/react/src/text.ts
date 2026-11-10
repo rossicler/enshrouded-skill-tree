@@ -2,11 +2,12 @@ import { useCallback } from "react";
 
 import en from "./locales/en.json";
 import fr from "./locales/fr.json";
+import de from "./locales/de.json";
 import { useSkillTreeSettings } from "./SkillTreeProvider";
 
 // The package's own UI text (tooltip buttons and labels). Skill names and
 // descriptions come from @enshrouded/core.
-export const uiTextResources = { en, fr } as const;
+export const uiTextResources = { en, fr, de } as const;
 
 type Leaves<T, P extends string = ""> = {
   [K in keyof T & string]: T[K] extends string ? `${P}${K}` : Leaves<T[K], `${P}${K}.`>;

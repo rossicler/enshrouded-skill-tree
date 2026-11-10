@@ -89,6 +89,7 @@ describe("ui text", () => {
   it("interpolates and falls back to English", () => {
     expect(uiText("fr", "tooltip.levelHeader", { current: 1, max: 3 })).toBe("Niveau 1 / 3");
     expect(uiText("fr-CA", "tooltip.unlock")).toBe("Déverrouiller");
-    expect(uiText("de", "tooltip.unlock")).toBe("Unlock");
+    expect(uiText("de", "tooltip.unlock")).toBe("Freischalten");
+    expect(uiText("es", "tooltip.unlock")).toBe("Unlock");
   });
 });

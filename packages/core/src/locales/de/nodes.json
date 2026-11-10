@@ -1,0 +1,1354 @@
+{
+  "GIANT_SLAYER_HOOK": {
+    "name": "RIESENTÖTER-HAKEN",
+    "description": [
+      "Nutze deinen <b>Greifhaken</b>, um dich im Kampf zu großen Gegnern hinzuzuziehen.",
+      "<b>Kosten:</b> 50 Ausdauer"
+    ]
+  },
+  "GROUNDING_HOOK": {
+    "name": "BRUCHLANDUNGS-HAKEN",
+    "description": [
+      "Nutze deinen <b>Greifhaken</b>, um im Kampf <b>fliegende</b> Gegner zu dir zu ziehen.",
+      "<b>Kosten:</b> 50 Ausdauer"
+    ]
+  },
+  "SAVIOUR": {
+    "name": "RETTER",
+    "description": [
+      "Die Zeit zum Wiederbeleben eines Verbündeten ist um <b>-1</b> Sekunden reduziert.",
+      "Die Standard-Wiederbelebungszeit beträgt <b>6</b> Sekunden. "
+    ],
+    "perLevelLabel": " <b>-1</b> Sekunden pro Stufe"
+  },
+  "BACKSTAB_DAMAGE": {
+    "name": "HINTERHALTSKUNST",
+    "description": [
+      "<b>Hinterhalt</b>-Schaden wird um <b>20 %</b> erhöht"
+    ]
+  },
+  "OPPORTUNITY": {
+    "name": "OPPORTUNITÄT",
+    "description": [
+      "Erhöht den Schadensmultiplikator von <b>Gnadenlosen Angriffen</b> um <b>{{value}} %</b>."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "MINER": {
+    "name": "BERGARBEITER",
+    "description": [
+      "Das Abbauen von Ressourcen hat eine <b>10 %</b> Chance, eine zusätzliche Ressource zu gewähren."
+    ]
+  },
+  "LUMBERJACK": {
+    "name": "HOLZFÄLLER",
+    "description": [
+      "Werkzeuge verursachen <b>{{value}} %</b> mehr Schaden gegen Holz.",
+      "Dies umfasst Bäume und hölzernes Gelände."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "QUALITY_GEAR": {
+    "name": "HOCHWERTIGE AUSRÜSTUNG",
+    "description": [
+      "Werkzeuge haben eine <b>20 %</b> Chance, <b>1</b> Haltbarkeitspunkt wiederherzustellen."
+    ]
+  },
+  "MASON": {
+    "name": "STEINMETZ",
+    "description": [
+      "Werkzeuge verursachen <b>{{value}} %</b> mehr Schaden gegen Stein.",
+      "Dies umfasst steinernes Gelände und Edelsteinadern."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "FISHERMANS_RESOLVE": {
+    "name": "ENTSCHLOSSENE FISCHER",
+    "description": [
+      "Erhöht deine Ausdauer beim Angeln um <b>{{value}}</b>.",
+      "Ermöglicht längere Kämpfe mit angebissenen Fischen."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Angelausdauer pro Stufe"
+  },
+  "POWER_PARRY": {
+    "name": "PRACHTPARADE",
+    "description": [
+      "Deine Parierkraft wird um <b>{{value}} %</b> erhöht.",
+      "<b>Parieren</b><br/>Ein gut getimter Block mit einer beliebigen Nahkampfwaffe oder einem Schild <b>pariert</b> den Angriff und füllt den <i>Betäubungsbalken</i> des Gegners.",
+      "<b>Überwältigen</b><br/>Wenn du blockende Gegner angreifst oder ihre Angriffe parierst, füllt sich ihr <i>Betäubungsbalken</i>, bis sie <b>überwältigt</b> werden.<br/>Gegen <b>überwältigte</b> Gegner kannst du einen Gnadenlosen Angriff durchführen."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Parierkraft pro Stufe"
+  },
+  "FELLING_AXE_SPECIALIZATION": {
+    "name": "HOLZFÄLLER-AXT-SPEZIALISIERUNG",
+    "description": [
+      "Schaltet Spezialfähigkeiten von Holzfälleraxten frei. Drücke <b>[R]</b>, um eine mächtige Spezialfähigkeit einzusetzen, nachdem du genug Fokus aufgebaut hast.",
+      "<b>Fokus</b><br/>Erzeuge Fokus durch Angriffe. Fokus kann mit jedem Waffentyp aufgebaut werden und wird verwendet, um Spezialfähigkeiten von Waffen einzusetzen."
+    ]
+  },
+  "PICKAXE_SPECIALIZATION": {
+    "name": "SPITZHACKEN-SPEZIALISIERUNG",
+    "description": [
+      "Schaltet Spezialfähigkeiten von Spitzhacken frei. Drücke <b>[R]</b>, um eine mächtige Spezialfähigkeit einzusetzen, nachdem du genug Fokus aufgebaut hast.",
+      "<b>Fokus</b><br/>Erzeuge Fokus durch Angriffe. Fokus kann mit jedem Waffentyp aufgebaut werden und wird verwendet, um Spezialfähigkeiten von Waffen einzusetzen."
+    ]
+  },
+  "PROSPECTOR": {
+    "name": "ERZSUCHER",
+    "description": [
+      "Werkzeuge verursachen <b>{{value}}</b> mehr Schaden gegen Metall, einschließlich Erzadern.",
+      "<b>Fokus</b><br/>Erzeuge Fokus durch Angriffe. Fokus kann mit jedem Waffentyp aufgebaut werden und wird verwendet, um Spezialfähigkeiten von Waffen einzusetzen."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Schaden pro Stufe"
+  },
+  "ATTR_SPIRIT": {
+    "name": "WILLENSKRAFT",
+    "description": [
+      "Erhöht dein Attribut Willenskraft um 1.",
+      "Erhöht dein Mana um 20 pro Attributpunkt."
+    ]
+  },
+  "ATTR_INT": {
+    "name": "INTELLIGENZ",
+    "description": [
+      "Erhöht dein Attribut Intelligenz um 1.",
+      "Erhöht Magieschaden um 5 % pro Attributpunkt."
+    ]
+  },
+  "ATTR_CONS": {
+    "name": "KONSTITUTION",
+    "description": [
+      "Erhöht dein Attribut Konstitution um 1.",
+      "Erhöht die Lebenspunkte um 50 pro Attributpunkt."
+    ]
+  },
+  "ATTR_STR": {
+    "name": "STÄRKE",
+    "description": [
+      "Erhöht dein Attribut Stärke um 1.",
+      "Erhöht Nahkampfschaden um 5 % pro Attributpunkt."
+    ]
+  },
+  "ATTR_ENDURANCE": {
+    "name": "KONDITION",
+    "description": [
+      "Erhöht dein Attribut Kondition um 1.",
+      "Erhöht die Ausdauer um 10 pro Attributspunkt."
+    ]
+  },
+  "ATTR_DEX": {
+    "name": "GESCHICK",
+    "description": [
+      "Erhöht dein Attribut Geschick um 1.",
+      "Erhöht den Schaden von Bögen und Dolchen um 5 % pro Attributpunkt."
+    ]
+  },
+  "WELL_RESTED": {
+    "name": "GUT AUSGERUHT",
+    "description": [
+      "Die Grunddauer des Ausgeruht-Buffs wird um <b>{{value}}</b> Minuten erhöht.",
+      "<b>Ausgeruht</b><br>Der Ausgeruht-Buff erhöht deine maximale Ausdauer und deine Ausdauerregeneration deutlich.",
+      "Dafür brauchst du <b>Unterschlupf, Sitzen oder Schlafen</b> sowie <b>Wärme</b> von einer Wärmequelle.",
+      "Der Buff kann <b>überall</b> aufgefrischt werden.",
+      "Umstehende Komfortgegenstände verlängern die Dauer zusätzlich."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Minuten pro Stufe"
+  },
+  "SNEAK_ATTACK": {
+    "name": "SCHLEICHANGRIFF",
+    "description": [
+      "Führe einen <b>Schleichangriff</b> aus, indem du dich an einen ahnungslosen Gegner heranschleichst und <b>[E]</b> drückst.",
+      "Der <b>Schleichangriff</b> verursacht <b>+900 %</b> mehr Schaden."
+    ]
+  },
+  "MERCILESS_ATTACK": {
+    "name": "GNADENLOSER ANGRIFF",
+    "description": [
+      "Führe einen <b>Gnadenlosen Angriff</b> aus, indem du <b>[E]</b> drückst, um einem <b>überwältigten</b> Gegner <b>+500 %</b> Schaden zuzufügen.",
+      "<b>Überwältigen</b><br/>Wenn du blockende Gegner angreifst oder ihre Angriffe parierst, füllt sich ihr <i>Betäubungsbalken</i>, bis sie <b>überwältigt</b> werden.<br/>Gegen <b>überwältigte</b> Gegner kannst du einen Gnadenlosen Angriff durchführen."
+    ]
+  },
+  "UPDRAFT": {
+    "name": "AUFWIND",
+    "description": [
+      "Ein Sprung mit [LEERTASTE] im Gleitflug hebt dich nach oben. Einmal pro Flug einsetzbar.",
+      "<b>Aufladen</b><br/>Je länger der Aufwind vor dem Auslösen auflädt, desto stärker ist der Auftrieb. Eine volle Aufladung gewährt einen zusätzlichen Schub. Innerhalb deiner Basis lädt er schneller auf.",
+      "<b>Kosten:</b> 100 Mana"
+    ]
+  },
+  "BEGONE": {
+    "name": "HINFORT!",
+    "description": [
+      "Ein magisch verstärkter Schlag, der Gegner zurückstößt und betäubt.",
+      "Ersetzt deine unbewaffneten Angriffe, solange du das nötige Mana hast.",
+      "<b>Kosten:</b> 30 Mana"
+    ]
+  },
+  "RADIANT_AURA": {
+    "name": "STRAHLENDE AURA",
+    "description": [
+      "Alle <b>Brut</b> Feinde innerhalb von <b>{{value}}</b> Metern erleiden <b>{{value2}} Feuerschaden</b> pro Intelligenzpunkt pro Sekunde. "
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Meter Reichweite und <b>{{value2}} Feuerschaden</b> pro Intelligenzpunkt pro Stufe"
+  },
+  "WATER_AURA": {
+    "name": "WASSERAURA",
+    "description": [
+      "Du strahlst eine Heilaura aus, die dich und alle verletzten Verbündeten im Umkreis von <b>{{value}}</b> Metern heilt.",
+      "Die Heilung skaliert mit deinem Attribut Intelligenz und stellt <b>1</b> Lebenspunkt pro <b>2</b> Punkten Intelligenz wieder her."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Meter pro Stufe"
+  },
+  "MARTYR": {
+    "name": "MÄRTYRER",
+    "description": [
+      "Wenn du von einem Gegner getötet wirst, werden alle Verbündeten im Umkreis von 30 Metern um <b>50 %</b> ihrer maximalen Lebenspunkte geheilt.",
+      "Sie erhalten außerdem den Buff <b>Letzter Segen</b>, der ihre maximalen Lebenspunkte <b>15</b> Minuten lang um <b>100</b> Punkte erhöht."
+    ]
+  },
+  "DIVINE_SURGE": {
+    "name": "GÖTTLICHE WOGE",
+    "description": [
+      "Heilungszauber können kritische Treffer landen, die mit deinem kritischen Trefferschaden skalieren. "
+    ]
+  },
+  "RIGHTEOUS_FIRE": {
+    "name": "GERECHTES FEUER",
+    "description": [
+      "Heilst du ein Ziel mit einem Zauber, löst das einen Feuerausbruch aus, der nahen <b>Brut</b>-Gegnern <b>{{value}} %</b> der Heilmenge als <b>Feuer</b>schaden zufügt."
+    ],
+    "perLevelLabel": "<b>{{value}} % Feuer</b>schaden pro Stufe"
+  },
+  "BLINK": {
+    "name": "TELEPORT",
+    "description": [
+      "Ersetzt die Ausweichrolle durch einen Teleport über kurze Distanz.",
+      "Teleport ersetzt außerdem die seitliche Ausweichrolle der Fähigkeit Strategisches Manöver",
+      "<b>Kosten:</b> 20 Ausdauer"
+    ]
+  },
+  "EVASION_ATTACK": {
+    "name": "AUSWEICHANGRIFF",
+    "description": [
+      "Mit einer ausgerüsteten Nahkampfwaffe kannst du einen Ausweichangriff ausführen, der zum Gegner vorschnellt und mit <b>[LMB]</b> mehr Waffenschaden verursacht",
+      "<b>Kosten:</b> 20 Ausdauer",
+      "<b>Block Brecher</b><br/>Dieser Spezialangriff füllt den <i>Betäubungsbalken</i> eines Gegners doppelt so stark, wenn er getroffen wird."
+    ]
+  },
+  "EARTH_AURA": {
+    "name": "ERDAURA",
+    "description": [
+      "Du strahlst eine Schutzaura aus, die deine physischen und magischen Widerstände um <b>10 %</b> erhöht – für dich und alle Verbündeten im Umkreis von <b>{{value}}</b> Metern."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Meter Reichweite pro Stufe"
+  },
+  "NEMESIS": {
+    "name": "NEMESIS",
+    "description": [
+      "Erhöht die Aufmerksamkeit, die du bei Gegnern erzeugst, um <b>{{value}} %</b>."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> erzeugte Aufmerksamkeit pro Stufe"
+  },
+  "SHOCKWAVE": {
+    "name": "SCHOCKWELLE",
+    "description": [
+      "Löse eine Schockwelle aus, wenn du einen Angriff parierst oder wenn du einen Gegner <b>überwältigst</b>.",
+      "Die Schockwelle drängt nahe Gegner zurück und füllt deren <i>Betäubungsbalken</i> – skaliert mit deinem Attribut Stärke.",
+      "<b>Überwältigen</b><br/>Wenn du blockende Gegner angreifst oder ihre Angriffe parierst, füllt sich ihr <i>Betäubungsbalken</i>, bis sie <b>überwältigt</b> werden.<br/>Gegen <b>überwältigte</b> Gegner kannst du einen Gnadenlosen Angriff durchführen."
+    ]
+  },
+  "HEAVY_SPECIALIZATION": {
+    "name": "GROSSKALIBER",
+    "description": [
+      "Erhöht die Angriffsgeschwindigkeit aller zweihändigen Nahkampfwaffen um <b>10 %</b>."
+    ]
+  },
+  "BASH": {
+    "name": "KONTER",
+    "description": [
+      "Wenn du Angriffe von Gegnern parierst, fügst du ihnen <b>{{value}} Wuchtschaden</b> zu. Der Schaden des Konters wird durch dein Attribut Stärke erhöht.",
+      "<b>Parieren</b><br/>Ein gut getimter Block mit einer beliebigen Nahkampfwaffe oder einem Schild <b>pariert</b> den Angriff und füllt den <i>Betäubungsbalken</i> des Gegners."
+    ],
+    "perLevelLabel": "<b>{{value}} Wuchtschaden</b> pro Level"
+  },
+  "WHIRLWIND_CRESCENDO": {
+    "name": "WIRBELWIND CRESCENDO",
+    "description": [
+      "Wenn du eine Zweihandwaffe ausgerüstet hast, löst du am Ende einer Angriffskette einen Wirbelangriff aus.",
+      "<b>Kosten</b>: 75 Ausdauer"
+    ]
+  },
+  "CRASH_DOWN_ATTACK": {
+    "name": "STURZANGRIFF",
+    "description": [
+      "Mit einer ausgerüsteten Nahkampfwaffe kannst du einen Spezialangriff ausführen, indem du im Sprung <b>[LMB]</b> gedrückt hältst.",
+      "Sturzangriff verursacht in einem kleinen Explosionsradius 50 % mehr Waffenschaden und kostet je nach verwendeter Waffenart Ausdauer.",
+      "<b>Kosten</b>: 35–60 Ausdauer",
+      "<b>Block Brecher</b><br/>Dieser Spezialangriff füllt den <i>Betäubungsbalken</i> eines Gegners doppelt so stark, wenn er getroffen wird."
+    ]
+  },
+  "CRASH_DOWN_FORCE": {
+    "name": "STURZFLUG",
+    "description": [
+      "Wenn du aus einem Doppelsprung heraus angreifst, verursacht <b>Sturzangriff</b> <b>20 %</b> mehr Waffenschaden."
+    ]
+  },
+  "DOUBLE_JUMP": {
+    "name": "DOPPELSPRUNG",
+    "description": [
+      "Ermöglicht einen zweiten Sprung in der Luft.",
+      "<b>Kosten:</b> 10 Ausdauer"
+    ]
+  },
+  "DESSERT_STOMACH": {
+    "name": "DESSERTMAGEN",
+    "description": [
+      "Du erhältst einen zusätzlichen Nahrungs-Slot."
+    ]
+  },
+  "LAST_MEAL": {
+    "name": "HENKERSMAHLZEIT",
+    "description": [
+      "Deine Essensbuffs bleiben nach dem Tod erhalten, halten aber nur halb so lange."
+    ]
+  },
+  "EAGLE_EYE": {
+    "name": "ADLERAUGE",
+    "description": [
+      "Erhöht den Zoom beim Zielen mit Bögen deutlich.",
+      "Halte zum Zielen die [RMB] gedrückt, während ein Bogen in der Aktionsleiste ausgewählt ist. (Alternativ hältst du [Q] gedrückt, um mit dem ausgerüsteten Bogen zu zielen.)"
+    ]
+  },
+  "MULTI_SHOT": {
+    "name": "MULTISCHUSS",
+    "description": [
+      "Das Schießen von <i>normalen Pfeilen</i> hat eine <b>20 %</b> Chance, einen <b>Pfeilhagel aus <b>Pfeilen</b></b> auszulösen, der sich leicht fächert.",
+      "<i>Normale Pfeile</i>, die so verschossen werden, verringern deinen Munitionsvorrat.",
+      "Der <b>Pfeilhagel</b> wird nicht durch <i>Spezialpfeile</i> ausgelöst."
+    ]
+  },
+  "MULTI_SHOT_SPREAD": {
+    "name": "MULTISCHUSS TEILUNG",
+    "description": [
+      "Fügt dem <b>Pfeilhagel</b> der Fähigkeit <b>Multischuss</b> eine <b>25 %</b> Chance hinzu, einen zusätzlichen <i>normalen Pfeil</i> zu erzeugen.",
+      "Dieser zusätzliche <i>normale Pfeil</i> verringert deinen Munitionsvorrat nicht."
+    ]
+  },
+  "MULTI_SHOT_TRIGGER": {
+    "name": "MULTISCHUSS TRIGGER",
+    "description": [
+      "Das Schießen von <i>Spezialpfeilen</i> löst nun den <b>Pfeilhagel</b> der Fähigkeit <b>Multischuss</b> aus.",
+      "<i>Spezialpfeile</i>, die so verschossen werden, verringern deinen Munitionsvorrat."
+    ]
+  },
+  "BEE_STING": {
+    "name": "BIENENSTICH",
+    "description": [
+      "Wenn du in der Luft mit dem Bogen schießt oder zielst, verlangsamt sich dein Fall kurz. Jeder Schuss hebt dich leicht an und schenkt dir mehr Zeit in der Luft.",
+      "<b>Kosten:</b> 10 Ausdauer pro Sekunde"
+    ]
+  },
+  "SHELL_SHOCK": {
+    "name": "GRANATENSCHOCK",
+    "description": [
+      "Lade deine <b>Fernkampf-Sprengstoffe</b> mit Mana auf. Sie betäuben Gegner nun für 2 Sekunden.",
+      "<b>Kosten:</b> 8 Mana pro betäubtem Gegner"
+    ]
+  },
+  "COUNTERSTRIKE": {
+    "name": "GEGENSCHLAG",
+    "description": [
+      "Nach erlittenem Schaden besteht eine <b>{{value}} %</b> Chance, <b>{{value2}} %</b> des Schadens als <b>Feuer</b>schaden an den Angreifer zurückzuwerfen.",
+      "Dieser magische Angriff kann andere Fähigkeiten auslösen."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance und <b>{{value2}} %</b> reflektierter Schaden pro Stufe"
+  },
+  "TERROR": {
+    "name": "SCHRECKEN",
+    "description": [
+      "Kritische Treffer mit Zaubern haben eine <b>{{value}} %</b> Chance, das Ziel <b>2</b> Sekunden lang zu betäuben."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance pro Stufe"
+  },
+  "SHOCK_RESISTANCE": {
+    "name": "SCHOCKRESISTENZ",
+    "description": [
+      "Erhöht deine <b>Schockresistenz</b> um <b>{{value}} %</b>, wodurch du weniger <b>Schock</b>schaden erleidest."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Resistenz pro Stufe"
+  },
+  "QUICK_CHARGE": {
+    "name": "SCHNELLLADUNG",
+    "description": [
+      "Die Wirkzeit von Zaubern wird um <b>{{value}} %</b> reduziert."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Wirkzeit pro Stufe"
+  },
+  "THIS_IS_THE_WAY": {
+    "name": "MAGIERLEHRLING",
+    "description": [
+      "Der Schaden magischer Waffen wird um <b>{{value}} %</b> erhöht."
+    ]
+  },
+  "ARSONIST": {
+    "name": "BRANDSTIFTER",
+    "description": [
+      "Jeder <b>Feuer</b>schaden wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "SUN_AURA": {
+    "name": "STRAHLENDE AURA",
+    "description": [
+      "Alle <b>Brut</b>-Gegner im Umkreis von <b>{{value}}</b> Metern erleiden pro Sekunde <b>{{value2}} Feuer</b>schaden pro Intelligenzpunkt."
+    ]
+  },
+  "FIRE_RESISTANCE": {
+    "name": "FEUERBESTÄNDIGKEIT",
+    "description": [
+      "Erhöht deine <b>Feuerbeständigkeit</b> um <b>{{value}} %</b>, wodurch du weniger <b>Feuer</b>schaden erleidest."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Resistenz pro Stufe"
+  },
+  "THUNDER": {
+    "name": "DONNER",
+    "description": [
+      "Jeder <b>Schock</b>schaden wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "LIGHTNING": {
+    "name": "BLITZ",
+    "description": [
+      "Jeder Schockschaden wird um zusätzliche 20 % erhöht."
+    ]
+  },
+  "ICEMAN": {
+    "name": "EISKALT",
+    "description": [
+      "Jeder <b>Eis</b>schaden wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "SUBZERO": {
+    "name": "UNTER NULL",
+    "description": [
+      "Jeder Eisschaden wird um zusätzliche 20 % erhöht."
+    ]
+  },
+  "FROST": {
+    "name": "FROST",
+    "description": [
+      "Wenn du Nahkampfschaden erleidest, wird der Angreifer {{value}} Sekunden lang verlangsamt."
+    ],
+    "perLevelLabel": "<b>{{value}} s</b> pro Stufe"
+  },
+  "ICE_RESISTANCE": {
+    "name": "EISBESTÄNDIGKEIT",
+    "description": [
+      "Erhöht deine <b>Eisbeständigkeit</b> um <b>{{value}} %</b>, wodurch du weniger <b>Eis</b>schaden erleidest."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Resistenz pro Stufe"
+  },
+  "WIZARD": {
+    "name": "ZAUBERER",
+    "description": [
+      "Die kritische Trefferchance magischer Waffen wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance auf kritische Treffer pro Stufe"
+  },
+  "DARK_ARTS": {
+    "name": "DUNKLE KÜNSTE",
+    "description": [
+      "Jeder <b>Miasma-Schaden</b> wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "ABYSS": {
+    "name": "ABGRUND",
+    "description": [
+      "Jeder Miasma-Schaden wird um zusätzliche 20 % erhöht."
+    ]
+  },
+  "CHAIN_HIT": {
+    "name": "KETTENTREFFER",
+    "description": [
+      "Kritische Treffer mit magischen Waffen treffen automatisch einen zweiten Gegner im Umkreis von <b>15</b> Metern und verursachen <b>5 Schockschaden</b> pro Intelligenzpunkt."
+    ]
+  },
+  "MASS_DESTRUCTION": {
+    "name": "MASSENZERSTÖRUNG",
+    "description": [
+      "Kritische Treffer mit magischen Waffen verursachen <b>2 Schockschaden</b> pro Intelligenzpunkt an allen Gegnern im Umkreis von <b>{{value}}</b> Metern um das Ziel."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Meter Reichweite pro Stufe"
+  },
+  "NECROMANCER": {
+    "name": "TOTENBESCHWÖRER",
+    "description": [
+      "Wenn du einen Gegner mit einer magischen Waffe tötest, hast du eine <b>{{value}} %</b> Chance, einen freundlichen <b>Schädelbegleiter</b> zu beschwören."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance pro Stufe"
+  },
+  "HEALER": {
+    "name": "HEILER",
+    "description": [
+      "Der Gesundheitsgewinn durch Heilzauber und Heilfähigkeiten wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Heilung pro Stufe"
+  },
+  "HEALER_II": {
+    "name": "HEILER II",
+    "description": [
+      "Die Heilung durch Heilzauber wird um 20 % erhöht"
+    ]
+  },
+  "HEALING_REVIVE": {
+    "name": "NEUE BLÜTE",
+    "description": [
+      "Wiederbelebt Spieler mit <b>{{value}} %</b> mehr Lebenspunkten.",
+      "Die Standard-Lebenspunkte wiederbelebter Spieler betragen <b>10 %</b>."
+    ]
+  },
+  "SHROUD_FILTER": {
+    "name": "MIASMA-MILDERUNG",
+    "description": [
+      "Wenn du mit einer magischen Waffe Schaden verursachst, besteht eine <b>{{value}} %</b> Chance, einen kleinen Flammenausbruch auszulösen, der dir und deinen Verbündeten im Umkreis von <b>20</b> Metern <b>9</b> Sekunden <b>Zeit im Miasma</b> wiederherstellt.",
+      "<b>Miasma-Zeit</b><br/>Sollte diese Zeit ablaufen, wird das Miasma dich verzehren."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance pro Stufe"
+  },
+  "WATERS_OF_LIFE": {
+    "name": "WASSER DES LEBENS",
+    "description": [
+      "Erhöht die Heilung der <b>Wasseraura</b> auf <b>2</b> Lebenspunkte pro <b>2</b> Punkten Intelligenz."
+    ]
+  },
+  "SHROUD_RESISTANCE": {
+    "name": "MIASMARESISTENZ",
+    "description": [
+      "Erhöht deine <b>Miasma-Resistenz</b> um <b>{{value}} %</b>, wodurch du weniger <b>Miasma</b>schaden erleidest."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Resistenz pro Stufe"
+  },
+  "SHROUD_MISTERY": {
+    "name": "GETEILTES LEID",
+    "description": [
+      "Wenn du <b>Miasma</b>-Schaden erleidest, erhalten alle Spieler im Umkreis von <b>{{value}}</b> Metern <b>30</b> Sekunden lang <b>15 %</b> mehr <b>Miasma-Resistenz</b>."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Meter pro Stufe"
+  },
+  "EMERGENCY_BLINK": {
+    "name": "NOTFALL-TELEPORT",
+    "description": [
+      "Du kannst dich teleportieren, während du betäubt bist. Dadurch endet die Betäubung."
+    ]
+  },
+  "BLINK_ATTACK": {
+    "name": "TELEPORT-ANGRIFF",
+    "description": [
+      "Teleportierst du dich in einen Gegner, löst das eine Explosion aus, die in einem kleinen Radius <b>Feuer</b>schaden verursacht.",
+      "Schaden und Manakosten skalieren mit dem Attribut Intelligenz."
+    ]
+  },
+  "ARCANE_DEFLECTION": {
+    "name": "ARKANE ABLENKUNG",
+    "description": [
+      "Parierst du einen Angriff eines Gegners erfolgreich, werden <b>{{value}}</b> Mana wiederhergestellt.",
+      "<b>Parieren</b><br/>Ein gut getimter Block mit einer beliebigen Nahkampfwaffe oder einem Schild <b>pariert</b> den Angriff und füllt den <i>Betäubungsbalken</i> des Gegners."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Mana pro Stufe"
+  },
+  "UNITY": {
+    "name": "EINHEIT",
+    "description": [
+      "Wenn du Gegnern mit Zauberstäben Schaden zufügst, besteht eine <b>{{value}} %</b> Chance, <b>{{value2}} %</b> deines maximalen Manas wiederherzustellen."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance und <b>{{value2}} %</b> der maximalen Manapunkte pro Stufe"
+  },
+  "ARCANE_PROLIFERATION": {
+    "name": "ARKANE AUSBREITUNG",
+    "description": [
+      "Angriffe mit dem Zauberstab haben eine <b>30 %</b> Chance, die doppelte Menge an Projektilen zu erzeugen. Zusätzlich erzeugte Projektile verursachen <b>50 %</b> weniger Schaden."
+    ]
+  },
+  "ETERNAL_SPARK": {
+    "name": "EWIGER FUNKE",
+    "description": [
+      "Wenn du mit Zauberstab-Projektilen Schaden verursachst, besteht eine <b>{{value}} %</b> Chance, 1 Haltbarkeit dieser Waffe wiederherzustellen."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance pro Stufe"
+  },
+  "STING": {
+    "name": "STACHEL",
+    "description": [
+      "Wiederholter Zauberstabschaden wird um <b>20 %</b> erhöht."
+    ]
+  },
+  "BATTLE_HEAL": {
+    "name": "KAMPFHEILUNG",
+    "description": [
+      "Kritische Treffer mit Nahkampfwaffen heilen dich um <b>{{value}} %</b> deiner maximalen Lebenspunkte."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> der maximalen Lebenspunkte pro Stufe"
+  },
+  "BLOODLETTING": {
+    "name": "BLUTVERGIESSEN",
+    "description": [
+      "Kritische Treffer mit Zaubern haben eine <b>{{value}} %</b> Chance, 2 Gesundheits-, Mana- und/oder Ausdauerorbs zu erzeugen.",
+      "Das Aufsammeln eines Orbs stellt <b>10 %</b> der jeweiligen Ressource wieder her."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance pro Stufe"
+  },
+  "LIFE_BURST": {
+    "name": "LEBENSEXPLOSION",
+    "description": [
+      "Besiegst du einen Gegner mit einer magischen Waffe, werden bei allen Spielern im Umkreis von <b>15</b> Metern um das Ziel Lebenspunkte in Höhe des <b>3</b>-Fachen deiner Intelligenz wiederhergestellt."
+    ]
+  },
+  "BLOOD_MAGIC": {
+    "name": "BLUTMAGIE",
+    "description": [
+      "Wenn dein Mana unter <b>20 %</b> fällt, stellst du bis zu <b>35 %</b> deines maximalen Manas wieder her – zum Preis von <b>1</b> Lebenspunkt pro wiederhergestelltem Mana.",
+      "Dieser Effekt endet bei 1 Lebenspunkt.",
+      "<b>Abklingzeit:</b> 2 Minuten"
+    ]
+  },
+  "ABSORB": {
+    "name": "ABSORPTION",
+    "description": [
+      "Wenn du <b>Magieschaden</b> erleidest, hast du eine <b>{{value}} %</b> Chance, pro verlorenem Lebenspunkt 1 Mana wiederherzustellen."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance pro Stufe"
+  },
+  "SNAP": {
+    "name": "ÜBERSCHNAPPEN",
+    "description": [
+      "Das Auslösen eines <b>Gnadenlosen Angriffs</b> stellt <b>10 %</b> Mana wieder her."
+    ]
+  },
+  "SOUL_LEECH": {
+    "name": "SEELENRAUB",
+    "description": [
+      "Wenn du einen Gegner mit einer Nahkampfwaffe tötest, erhalten alle Spieler innerhalb <b>{{value}}</b> Metern um das Ziel <b>{{value2}}</b> Mana."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Meter Reichweite und <b>{{value2}}</b> Mana pro Stufe"
+  },
+  "SHINY_PLATES": {
+    "name": "GLÄNZENDE RÜSTUNG",
+    "description": [
+      "Ausgerüstete Rüstung gewährt <b>{{value}} %</b> mehr magische Rüstung"
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> mehr magische Rüstung pro Stufe"
+  },
+  "HEAVY_PLATES": {
+    "name": "SCHWERE RÜSTUNG",
+    "description": [
+      "Ausgerüstete Rüstung gewährt <b>{{value}} %</b> mehr physische Rüstung"
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> mehr physische Rüstung pro Stufe"
+  },
+  "ONE_HANDED_SPECIALIZATION": {
+    "name": "EINHÄNDER-SPEZIALISIERUNG",
+    "description": [
+      "Schaltet Spezialfähigkeiten einhändiger Nahkampfwaffen frei.\nDrücke <b>[R]</b>, um eine mächtige Spezialfähigkeit einzusetzen, nachdem du genug Fokus aufgebaut hast",
+      "<b>Fokus</b><br/>Erzeuge Fokus durch Angriffe. Fokus kann mit jedem Waffentyp aufgebaut werden und wird verwendet, um Spezialfähigkeiten von Waffen einzusetzen."
+    ]
+  },
+  "WARDEN": {
+    "name": "WÄCHTER",
+    "description": [
+      "Wenn sich drei oder mehr Gegner im Umkreis von <b>20</b> Metern befinden, erhältst du <b>10 %</b> mehr <b>Magiewiderstand</b>."
+    ]
+  },
+  "TOWER": {
+    "name": "TURM",
+    "description": [
+      "Wenn sich drei oder mehr Gegner im Umkreis von <b>20</b> Metern befinden, erhältst du <b>10 %</b> mehr <b>physischen Widerstand</b>."
+    ]
+  },
+  "ARCH_NEMESIS": {
+    "name": "ERZFEIND",
+    "description": [
+      "Immer wenn ein Verbündeter die Aufmerksamkeit eines Gegners auf sich zieht, ziehst du doppelt so viel auf dich."
+    ]
+  },
+  "PURIFICATION": {
+    "name": "SÄUBERUNG",
+    "description": [
+      "Besiegst du einen mit Miasma befallenen Gegner mit einer Nahkampfwaffe, werden <b>{{value}}</b> Sekunden <b>Zeit im Miasma</b> wiederhergestellt.",
+      "<b>Miasma-Zeit</b><br/>Sollte diese Zeit ablaufen, wird das Miasma dich verzehren."
+    ],
+    "perLevelLabel": " <b>{{value}}</b> Sekunden pro Stufe"
+  },
+  "WARRIOR_PATH": {
+    "name": "DER WEG DES KRIEGERS",
+    "description": [
+      "Der Schaden einhändiger Nahkampfwaffen wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "THRUST": {
+    "name": "PFÄHLER",
+    "description": [
+      "Nahkampf-<b>Stichschaden</b> wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "PIERCE": {
+    "name": "LANZER",
+    "description": [
+      "Jeder Stichschaden im Nahkampf wird um zusätzliche 20 % erhöht."
+    ]
+  },
+  "BRUTE": {
+    "name": "ROHLING",
+    "description": [
+      "Stumpfer Nahkampfschaden wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "HAMMER_TIME": {
+    "name": "HAMMERHART",
+    "description": [
+      "Jeder stumpfe Nahkampfschaden wird um zusätzliche 20 % erhöht."
+    ]
+  },
+  "SLASHER": {
+    "name": "SCHLITZER",
+    "description": [
+      "Nahkampf-<b>Schnittschaden</b> wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "BUTCHER": {
+    "name": "SCHLÄCHTER",
+    "description": [
+      "Jeder Schnittschaden im Nahkampf wird um zusätzliche 20 % erhöht."
+    ]
+  },
+  "VETERAN": {
+    "name": "VETERAN",
+    "description": [
+      "Die kritische Trefferchance von Nahkampfwaffen wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance auf kritische Treffer pro Stufe"
+  },
+  "TITAN_EDGE": {
+    "name": "TITANENSCHNEIDE",
+    "description": [
+      "Der Schaden zweihändiger Großschwerter wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "SWIFT_BLADES": {
+    "name": "SCHNELLE KLINGEN",
+    "description": [
+      "Erhöht die Angriffsgeschwindigkeit aller einhändigen Nahkampfwaffen um <b>15 %</b>."
+    ]
+  },
+  "FEAST": {
+    "name": "FESTMAHL",
+    "description": [
+      "Fleisch erhöht die Lebenspunkte nun um zusätzliche 15 %."
+    ]
+  },
+  "HEAVY_HANDED": {
+    "name": "DICKKÖPFIG",
+    "description": [
+      "Der <i>Betäubungsbalken</i> von Gegnern füllt sich um <b>{{value}}</b> stärker, wenn du blockende Gegner mit Nahkampfwaffen angreifst.",
+      "<b>Überwältigen</b><br/>Wenn du blockende Gegner angreifst oder ihre Angriffe parierst, füllt sich ihr <i>Betäubungsbalken</i>, bis sie <b>überwältigt</b> werden.<br/>Gegen <b>überwältigte</b> Gegner kannst du einen Gnadenlosen Angriff durchführen."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Effekt pro Stufe"
+  },
+  "STEADFAST": {
+    "name": "UNERSCHÜTTERLICH",
+    "description": [
+      "Wenn du einen Gegner mit einer Nahkampfwaffe besiegst, wird <b>{{value}}</b> Haltbarkeit dieser Waffe wiederhergestellt. "
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Haltbarkeit pro Stufe"
+  },
+  "UPWARDS_SLASH_ATTACK": {
+    "name": "AUFWÄRTSANGRIFF",
+    "description": [
+      "Mit einer ausgerüsteten Nahkampfwaffe kannst du während des Aufstiegs deines Sprungs einen kräftigen Aufwärtshieb ausführen.",
+      "Nutze diese Fähigkeit, um dich <b>fliegenden</b> Gegnern schnell zu nähern.",
+      "<b>Kosten</b>: 25 Ausdauer"
+    ]
+  },
+  "BREACH": {
+    "name": "DURCHBRUCH",
+    "description": [
+      "<b>Überwältigte</b> Gegner erleiden <b>3</b> Sekunden lang <b>+100 %</b> mehr physischen Nahkampfschaden.",
+      "<b>Überwältigen</b><br/>Wenn du blockende Gegner angreifst oder ihre Angriffe parierst, füllt sich ihr <i>Betäubungsbalken</i>, bis sie <b>überwältigt</b> werden.<br/>Gegen <b>überwältigte</b> Gegner kannst du einen Gnadenlosen Angriff durchführen."
+    ]
+  },
+  "RELENTLESS": {
+    "name": "UNBARMHERZIG",
+    "description": [
+      "Kritische Treffer mit Zweihandwaffen erhöhen deine kritische Trefferchance für den nächsten Treffer um <b>8 %</b>."
+    ]
+  },
+  "BARBARIAN": {
+    "name": "BARBAR",
+    "description": [
+      "Erhalte einen Punkt Stärke für je zwei Stufen der Flamme. "
+    ]
+  },
+  "BLOOD_RAGE": {
+    "name": "BLUTRAUSCH",
+    "description": [
+      "Wenn ein Gegner im Umkreis von <b>{{value}}</b> Metern mit einer Nahkampfwaffe getötet wird, verfällst du in <b>Blutrausch</b>",
+      "<b>Blutrausch</b><br/>Erhöht den Schaden von Nahkampfwaffen <b>10</b> Sekunden lang um <b>15 %</b>."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Meter pro Stufe"
+  },
+  "VIGOROUS_DEFLECTION": {
+    "name": "KRÄFTIGE UMLENKUNG",
+    "description": [
+      "Parierst du einen Angriff eines Gegners erfolgreich, werden <b>{{value}}</b> Ausdauer wiederhergestellt.",
+      "<b>Parieren</b><br/>Ein gut getimter Block mit einer beliebigen Nahkampfwaffe oder einem Schild <b>pariert</b> den Angriff und füllt den <i>Betäubungsbalken</i> des Gegners."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Ausdauer pro Stufe"
+  },
+  "BLOOD_WARRIOR": {
+    "name": "BLUTKRIEGER",
+    "description": [
+      "Wenn du einen Gegner mit einem <b>Schleichangriff</b> oder <b>Gnadenlosen Angriff</b> besiegst, erscheint ein Gesundheitsorb.",
+      "Das Aufsammeln eines Orbs stellt <b>10 %</b> der jeweiligen Ressource wieder her."
+    ]
+  },
+  "WET_DOG": {
+    "name": "NASSER HUND",
+    "description": [
+      "Schwächt die Wirkung des <b>Nass</b> und <b>Durchnässt</b> Debuffs.",
+      "Ausdauer und Ausdauerregeneration werden um <b>20 %</b> statt <b>30 %</b> reduziert.",
+      "<b>Nass</b><br/>Verringert Ausdauer und Ausdauerregeneration <b>15</b> Minuten lang um <b>30 %</b>. Wärme verkürzt die verbleibende Dauer.",
+      "<b>Durchnässt</b><br/>Verringert Ausdauer und Ausdauerregeneration <b>30</b> Sekunden lang um <b>30 %</b>. Reduziert außerdem <b>Eis- und Schockresistenz</b> um <b>30 %</b>, erhöht aber die <b>Feuerresistenz</b> um <b>30 %</b>.<br><b>Durchnässt</b> kann auf Gegner angewendet werden. <br>Die Dauer von <b>Durchnässt</b> kann nicht durch Wärme verringert werden, und der <b>Nass</b>-Debuff beginnt erst danach."
+    ]
+  },
+  "SOAKED_DOG": {
+    "name": "DURCHNÄSSTER HUND",
+    "description": [
+      "Schwächt die Wirkung des <b>Nass</b> und <b>Durchnässt</b> Debuffs.",
+      "Ausdauer und Ausdauerregeneration werden um <b>10 %</b> statt <b>20 %</b> reduziert.",
+      "<b>Nass</b><br/>Verringert Ausdauer und Ausdauerregeneration <b>15</b> Minuten lang um <b>30 %</b>. Wärme verkürzt die verbleibende Dauer.",
+      "<b>Durchnässt</b><br/>Verringert Ausdauer und Ausdauerregeneration <b>30</b> Sekunden lang um <b>30 %</b>. Reduziert außerdem <b>Eis- und Schockresistenz</b> um <b>30 %</b>, erhöht aber die <b>Feuerresistenz</b> um <b>30 %</b>.<br><b>Durchnässt</b> kann auf Gegner angewendet werden. <br>Die Dauer von <b>Durchnässt</b> kann nicht durch Wärme verringert werden, und der <b>Nass</b>-Debuff beginnt erst danach."
+    ]
+  },
+  "SPLASH_DASH": {
+    "name": "WASSERSTOSS",
+    "description": [
+      "Ermöglicht dir beim Schwimmen oder Tauchen einen Ausweichsprint.",
+      "<b>Kosten</b>: 40 Ausdauer"
+    ]
+  },
+  "FINESSE": {
+    "name": "FINESSE",
+    "description": [
+      "Wenn du mit einhändigen Nahkampfwaffen oder Dolchen Schaden verursachst, hast du eine <b>{{value}} %</b> Chance, <b>1</b> Haltbarkeit dieser Waffe wiederherzustellen."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance pro Stufe"
+  },
+  "JUMP_ATTACK_II": {
+    "name": "STURZFLUG",
+    "description": [
+      "Wenn du aus einem Doppelsprung heraus angreifst, verursacht <b>Sturzangriff</b> <b>20 %</b> mehr Waffenschaden."
+    ]
+  },
+  "BACKSTAB_MASTERY": {
+    "name": "HINTERHALTSKUNST",
+    "description": [
+      "<b>Hinterhalt</b>-Schaden wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> pro Stufe"
+  },
+  "RUNNER": {
+    "name": "LÄUFER",
+    "description": [
+      "Die Sprintgeschwindigkeit wird um <b>{{value}} %</b> erhöht und der Ausdauerverbrauch beim Sprinten um <b>{{value2}} %</b> verringert."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Geschwindigkeit und <b>{{value2}} %</b> Kostenreduktion pro Stufe"
+  },
+  "WANDERLUST": {
+    "name": "FERNWEH",
+    "description": [
+      "Die Ausdauerkosten für <b>Sprinten auf Erdwegen</b> sinken von <b>90 % auf 80 %</b>. Die Ausdauerkosten für <b>Sprinten auf Steinwegen</b> sinken von <b>75 % auf 50 %</b>."
+    ]
+  },
+  "GOOD_METABOLISM": {
+    "name": "GUTER STOFFWECHSEL",
+    "description": [
+      "Gesundheits-, Mana- und Ausdauerorbs stellen <b>30 %</b> statt <b>10 %</b> der jeweiligen Ressource wieder her.",
+      "Gesundheits- und Manatränke stellen <b>20 %</b> mehr Ressourcen wieder her."
+    ]
+  },
+  "SWIFTSHOT_SUSTENANCE": {
+    "name": "ZUSCHUSS",
+    "description": [
+      "Besiegst du einen Gegner mit einem Bogen, besteht eine <b>{{value}} %</b> Chance, einen Ausdauerorb zu erzeugen.",
+      "Das Aufsammeln eines Orbs stellt <b>10 %</b> der jeweiligen Ressource wieder her."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance pro Stufe"
+  },
+  "SWEET_TOOTH": {
+    "name": "SCHLECKERMAUL",
+    "description": [
+      "Die Ausdauerregeneration durch Süßigkeiten wird um <b>50 %</b> erhöht."
+    ]
+  },
+  "ARACHNOID": {
+    "name": "SPINNENTIER",
+    "description": [
+      "Der Ausdauerverbrauch beim Klettern wird um <b>{{value}} %</b> reduziert."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Kostenreduktion pro Stufe"
+  },
+  "REBOUND": {
+    "name": "ATEMTECHNIK",
+    "description": [
+      "Die Grund-Ausdauerregeneration wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Ausdauerregeneration pro Stufe"
+  },
+  "REBOUND_II": {
+    "name": "ATEMTECHNIK",
+    "description": [
+      "Erhöht die Grund-Ausdauerregeneration um 50 %"
+    ]
+  },
+  "INNER_FIRES": {
+    "name": "INNERES FEUER",
+    "description": [
+      "<i>Zeit im Miasma</i> wird um <b>{{value}} Min.</b> erhöht, sodass du länger erkunden kannst.",
+      "<b>Miasma-Zeit</b><br/>Sollte diese Zeit ablaufen, wird das Miasma dich verzehren."
+    ],
+    "perLevelLabel": "<b>{{value}} Min.</b> pro Stufe"
+  },
+  "RELENTLESS_FLAME": {
+    "name": "UNERBITTLICHE FLAMME",
+    "description": [
+      "Maximale <i>Miasma-Zeit</i> um 5 Minuten erhöht, sodass du länger erkunden kannst.",
+      "<b>Miasma-Zeit</b><br/>Sollte diese Zeit ablaufen, wird das Miasma dich verzehren."
+    ]
+  },
+  "SNAKE_EATER": {
+    "name": "SCHLANGENFRESSER",
+    "description": [
+      "Erhöht deine <b>Giftresistenz</b> um <b>{{value}} %</b>, wodurch du weniger <b>Giftschaden</b> erleidest."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Resistenz pro Stufe"
+  },
+  "MITHRIDATIST": {
+    "name": "GIFTIMMUNITÄT",
+    "description": [
+      "Du erhältst eine <b>25 %</b> Chance, einer Vergiftung zu entgehen."
+    ]
+  },
+  "DAGGER_MASTERY": {
+    "name": "DOLCHKUNST",
+    "description": [
+      "Erhöht den mit Dolchen verursachten Schaden um <b>{{value}} %</b>."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "SLICE_AND_DICE": {
+    "name": "STICH UND SCHNITT",
+    "description": [
+      "Nach einem kritischen Treffer mit einem Dolch wird der Grundschaden deines nächsten Bogenangriffs innerhalb von 20 Sekunden um <b>50 %</b> erhöht."
+    ]
+  },
+  "VUKAH_LANGUAGE": {
+    "name": "SPRACHE DER VUKAH",
+    "description": [
+      "<b>Vukah</b> im Umkreis von <b>50</b> Metern greifen dich nicht mehr an, es sei denn, du provozierst sie."
+    ]
+  },
+  "CALM_SPIRIT": {
+    "name": "RUHIGER GEIST",
+    "description": [
+      "<b>Wilde Tiere</b> im Umkreis von <b>50</b> Metern greifen dich nicht mehr an, es sei denn, du provozierst sie.",
+      "Betrifft keine Tiere, die vom Miasma befallen sind."
+    ]
+  },
+  "BEAST_MASTER": {
+    "name": "BESTIENMEISTER",
+    "description": [
+      "Wenn du Ziel eines Angriffs wirst, greifen <b>wilde Tiere</b> im Umkreis von <b>50</b> Metern den Gegner an."
+    ]
+  },
+  "VUKAH_CULTURE": {
+    "name": "KULTUR DER VUKAH",
+    "description": [
+      "Wenn du Ziel eines Angriffs wirst, greifen <b>Vukah</b> im Umkreis von <b>50</b> Metern den Gegner an."
+    ]
+  },
+  "ENDURANCE_OF_THE_FLAME": {
+    "name": "AUSDAUER DER FLAMME",
+    "description": [
+      "Erhalte einen Punkt Kondition für je zwei Stufen der Flamme. "
+    ]
+  },
+  "MARKSMAN": {
+    "name": "SCHÜTZE",
+    "description": [
+      "Der Schaden mit Bögen wird um <b>{{value}} %</b> erhöht"
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "SHARPSHOOTER": {
+    "name": "SCHARFSCHÜTZE",
+    "description": [
+      "Jeder Fernkampfschaden wird um zusätzliche 20 % erhöht"
+    ]
+  },
+  "COUNTER_BATTERY": {
+    "name": "GEGENFEUER",
+    "description": [
+      "Der Schaden gegen <b>Fernkampf</b>gegner wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "EAGLES_BANE": {
+    "name": "FLUCH DES ADLERS",
+    "description": [
+      "Der Schaden gegen <b>fliegende</b> Gegner wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "SKILL_SHOT": {
+    "name": "SKILLSHOT",
+    "description": [
+      "Der <b>Skillshot</b>-Schaden wird um <b>{{value}} %</b> erhöht.",
+      "<b>Skillshot</b><br/>Triffst du Schwachstellen von Gegnern wie Köpfe oder freiliegende Herzen, gilt das als Skillshot."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Schaden pro Stufe"
+  },
+  "RANGER": {
+    "name": "WALDLÄUFER",
+    "description": [
+      "Erhöht deine Attribute Geschick und Kondition um <b>{{value}}</b>.",
+      "Die Grund-Ausdauerregeneration wird um <b>{{value2}}</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b>Geschick und Kondition pro Stufe. <b>{{value2}}</b> Ausdauerregeneration pro Stufe."
+  },
+  "SILENT_STRIDE": {
+    "name": "STILLER SCHRITT",
+    "description": [
+      "Erhöht deine Bewegungsgeschwindigkeit beim <b>Schleichen</b> um <b>{{value}} %</b>."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Bewegungsgeschwindigkeit pro Stufe"
+  },
+  "KICK": {
+    "name": "KICK",
+    "description": [
+      "Mit einer ausgerüsteten Nahkampfwaffe kannst du einen Tritt ausführen, indem du beim Blocken angreifst.",
+      "Der Tritt verursacht wenig Schaden, trifft das Ziel aber mit massiver Wucht, stößt es zurück und füllt seinen <i>Betäubungsbalken</i>.",
+      "Der Anstieg des <i>Betäubungsbalken</i>s skaliert mit deiner Geschicklichkeit. Die Betäubungszeit hängt von der Größe des Gegners ab.",
+      "<b>Überwältigen</b><br/>Wenn du blockende Gegner angreifst oder ihre Angriffe parierst, füllt sich ihr <i>Betäubungsbalken</i>, bis sie <b>überwältigt</b> werden.<br/>Gegen <b>überwältigte</b> Gegner kannst du einen Gnadenlosen Angriff durchführen."
+    ]
+  },
+  "AIRBORNE": {
+    "name": "ABGEHOBEN",
+    "description": [
+      "Gleiter verbrauchen <b>{{value}} %</b> weniger Ausdauer"
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Kostenreduktion pro Stufe"
+  },
+  "SNIPER": {
+    "name": "MEISTERSCHÜTZE",
+    "description": [
+      "Die kritische Trefferchance von Fernkampfwaffen wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}} %</b> Chance auf kritische Treffer pro Stufe"
+  },
+  "VITALITY_SURGE": {
+    "name": "VITALITÄTSSCHUB",
+    "description": [
+      "Kritische Treffer mit Fernkampfwaffen stellen <b>{{value}}</b> Ausdauer wieder her."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Ausdauer pro Stufe"
+  },
+  "BLESSED_ARROWS": {
+    "name": "GESEGNETE PFEILE",
+    "description": [
+      "Kritische Treffer mit Bögen stellen <b>{{value}}</b> Mana wieder her."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Mana pro Stufe"
+  },
+  "BOUNTY_BONANZA": {
+    "name": "KOPFGELD-BONANZA",
+    "description": [
+      "Nachdem du einen <b>Brut</b>-Gegner mit einem <b>Skillshot</b> besiegt hast, erhält deine Gruppe <b>+5</b> zusätzliche Erfahrungspunkte.",
+      "<b>Skillshot</b><br/>Triffst du Schwachstellen von Gegnern wie Köpfe oder freiliegende Herzen, gilt das als Skillshot."
+    ]
+  },
+  "RICOCHETS": {
+    "name": "SPLITTER-EXPLOSION",
+    "description": [
+      "Für jedes Ziel, das du mit einem <b>Explosionspfeil</b> triffst, erhöht sich dessen Schaden um <b>1 %</b>."
+    ]
+  },
+  "GRACEFUL_STRIDE": {
+    "name": "ANMUTIGER SCHRITT",
+    "description": [
+      "Erhalte einen Punkt Geschick für je zwei Stufen der Flamme. "
+    ]
+  },
+  "CHAIN_REACTION": {
+    "name": "EXPLOSIONS-ECHO",
+    "description": [
+      "Jeder Gegner, der von einem <b>Explosionspfeil</b> getroffen wird, hat eine <b>20 %</b> Chance, eine zweite Explosion auszulösen, die in einem kleinen Radius <b>50 %</b> Schaden verursacht."
+    ]
+  },
+  "ARCANE_CONCENTRATION": {
+    "name": "ARKANE KONZENTRATION",
+    "description": [
+      "Erhalte einen Punkt Willenskraft für je zwei Stufen der Flamme. "
+    ]
+  },
+  "EXALTED": {
+    "name": "ERHABEN",
+    "description": [
+      "Alle zwei Stufen der Flamme gewähren einen Intelligenzpunkt."
+    ]
+  },
+  "THICK_SKIN": {
+    "name": "DICKES FELL",
+    "description": [
+      "Erhalte einen Punkt Konstitution für je zwei Stufen der Flamme. "
+    ]
+  },
+  "LIFE_ESSENCES": {
+    "name": "LEBENSESSENZEN",
+    "description": [
+      "Erhöht deine maximalen Lebenspunkte um das <b>{{value}}</b>-Fache deines Attributs Intelligenz."
+    ],
+    "perLevelLabel": "<b>{{value}}</b>-fach pro Stufe"
+  },
+  "POISONED_BLADES": {
+    "name": "GIFTIGE KLINGEN",
+    "description": [
+      "Erhöht die Chance, Gegner zu vergiften, auf <b>25 %</b>, wenn du Dolche mit dem Perk <b>Giftige Klingen</b> verwendest."
+    ]
+  },
+  "POISON_MASTERY": {
+    "name": "GIFTKUNST",
+    "description": [
+      "Erhöht den mit dem Dolch-Perk <b>Giftige Klingen</b> verursachten Schaden um <b>100 %</b>."
+    ]
+  },
+  "QUICK_REFLEX_BLOCK": {
+    "name": "SCHNELLER REFLEX-BLOCK",
+    "description": [
+      "Erhöht kurzzeitig deinen Blockwert, wenn du mit Dolchen blockst, sodass ein knapp verfehltes Parieren nur minimal Ausdauer kostet."
+    ]
+  },
+  "EXPOSE_WEAKNESS": {
+    "name": "SCHWÄCHEN AUFDECKEN",
+    "description": [
+      "Kritische Treffer mit Dolchen erhöhen den vom Gegner erlittenen Schaden <b>5</b> Sekunden lang um <b>25 %</b>."
+    ]
+  },
+  "BARBARIAN_PATH": {
+    "name": "DER WEG DES BARBAREN",
+    "description": [
+      "Der Schaden zweihändiger Nahkampfwaffen wird um <b>{{value}}</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "TWO_HANDED_SPECIALIZATION": {
+    "name": "ZWEIHÄNDER-SPEZIALISIERUNG",
+    "description": [
+      "Schaltet Spezialfähigkeiten zweihändiger Nahkampfwaffen frei.\nDrücke <b>[R]</b>, um eine mächtige Spezialfähigkeit einzusetzen, nachdem du genug Fokus aufgebaut hast.",
+      "<b>Fokus</b><br/>Erzeuge Fokus durch Angriffe. Fokus kann mit jedem Waffentyp aufgebaut werden und wird verwendet, um Spezialfähigkeiten von Waffen einzusetzen."
+    ]
+  },
+  "ATHLETE": {
+    "name": "ATHLET",
+    "description": [
+      "Erhöht deine maximalen Lebenspunkte um das <b>{{value}}</b>-Fache deines Attributs Stärke."
+    ],
+    "perLevelLabel": "<b>{{value}}</b>-fach pro Stufe"
+  },
+  "STRATEGIC_MANEUVER": {
+    "name": "STRATEGISCHES MANÖVER",
+    "description": [
+      "Ersetzt die Ausweichrolle durch eine seitliche Ausweichrolle, solange ein Gegner als Ziel fixiert ist.",
+      "Rolle damit um deine Gegner, um sie leichter zu umgehen oder Hinterhalte auszuführen.",
+      "Teleport ersetzt die seitliche Ausweichrolle der Fähigkeit Strategisches Manöver.",
+      "<b>Kosten:</b> 20 Ausdauer"
+    ]
+  },
+  "PRIMAL_FORCE": {
+    "name": "URKRAFT",
+    "description": [
+      "Der Schaden gegen Vukah wird um <b>{{value}}</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "CULL_THE_HERD": {
+    "name": "AUSROTTUNG",
+    "description": [
+      "Der Schaden gegen Wildtiere wird um <b>{{value}}</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "FATAL_PRECISION": {
+    "name": "TÖDLICHE PRÄZISION",
+    "description": [
+      "Die Chance auf einen kritischen Treffer wird um <b>{{value}}</b> erhöht. Der Schaden eines kritischen Treffers wird um <b>{{value2}}</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Chance auf kritische Treffer und <b>{{value2}}</b> % Schaden kritischer Treffer pro Stufe"
+  },
+  "BOW_SPECIALIZATION": {
+    "name": "BOGEN-SPEZIALISIERUNG",
+    "description": [
+      "Schaltet Spezialfähigkeiten von Bögen frei.\nDrücke <b>[R]</b>, um eine mächtige Spezialfähigkeit einzusetzen, nachdem du genug Fokus aufgebaut hast.",
+      "<b>Fokus</b><br/>Erzeuge Fokus durch Angriffe. Fokus kann mit jedem Waffentyp aufgebaut werden und wird verwendet, um Spezialfähigkeiten von Waffen einzusetzen."
+    ]
+  },
+  "CUTTHROAT": {
+    "name": "GNADENLOS",
+    "description": [
+      "Der Schaden von Schleichangriffen wird um <b>{{value}}</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "DAGGER_SPECIALIZATION": {
+    "name": "DOLCH-SPEZIALISIERUNG",
+    "description": [
+      "Schaltet Spezialfähigkeiten von Dolchen frei.\nDrücke <b>[R]</b>, um eine mächtige Spezialfähigkeit einzusetzen, nachdem du genug Fokus aufgebaut hast.",
+      "<b>Fokus</b><br/>Erzeuge Fokus durch Angriffe. Fokus kann mit jedem Waffentyp aufgebaut werden und wird verwendet, um Spezialfähigkeiten von Waffen einzusetzen."
+    ]
+  },
+  "VEILED_VIGOR": {
+    "name": "VERSCHLEIERTE KRAFT",
+    "description": [
+      "Erhöht deine maximalen Lebenspunkte um das <b>{{value}}</b>-Fache deines Attributs Geschick."
+    ],
+    "perLevelLabel": "<b>{{value}}</b>-fach pro Stufe"
+  },
+  "VILE_CONCOCTION": {
+    "name": "SCHÄNDLICHES GEMISCH",
+    "description": [
+      "Der Schaden mit Wurfgegenständen wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "MANA_CURRENTS": {
+    "name": "MANA-STRÖME",
+    "description": [
+      "Die Grund-Manaregeneration wird um <b>{{value}}</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> Manaregeneration pro Stufe"
+  },
+  "SLEIGHT_OF_HAND": {
+    "name": "HANDFERTIGKEIT",
+    "description": [
+      "Der Schaden unbewaffneter Angriffe wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "SPELLSLINGER": {
+    "name": "MAGIERKUNST",
+    "description": [
+      "Der Schaden mit Magierstäben wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "MAGE_APPRENTICE": {
+    "name": "MAGIERLEHRLING",
+    "description": [
+      "Der Schaden magischer Waffen wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "BONE_TO_ASH": {
+    "name": "KNOCHENBRECHER",
+    "description": [
+      "Der Schaden gegen Erloschene wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "HEALER_REVIVE": {
+    "name": "NEUE BLÜTE",
+    "description": [
+      "Wiederbelebt Spieler mit <b>{{value}} %</b> mehr Lebenspunkten.",
+      "Die Standard-Lebenspunkte wiederbelebter Spieler betragen <b>10 %</b>"
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "WAND_SPECIALIZATION": {
+    "name": "ZAUBERSTAB-SPEZIALISIERUNG",
+    "description": [
+      "Schaltet Spezialfähigkeiten von Zauberstäben frei.\nDrücke <b>[R]</b>, um eine mächtige Spezialfähigkeit einzusetzen, nachdem du genug Fokus aufgebaut hast.",
+      "<b>Fokus</b><br/>Erzeuge Fokus durch Angriffe. Fokus kann mit jedem Waffentyp aufgebaut werden und wird verwendet, um Spezialfähigkeiten von Waffen einzusetzen."
+    ]
+  },
+  "WAND_MASTERY": {
+    "name": "ZAUBERSTABKUNST",
+    "description": [
+      "Der Schaden mit Zauberstäben wird um <b>{{value}} %</b> erhöht."
+    ],
+    "perLevelLabel": "<b>{{value}}</b> % Schaden pro Stufe"
+  },
+  "ADVANCED_NECROMANCY": {
+    "name": "FORTGESCHRITTENE NEKROMANTIE",
+    "description": [
+      "Erhöht die maximale Anzahl der durch Zauber beschworenen Verbündeten der Erloschenen um <b>1</b> je Stufe."
+    ]
+  },
+  "AERIAL_WAND_ATTACK": {
+    "name": "ZAUBERSTAB-LUFTATTACKE",
+    "description": [
+      "Mit einem ausgerüsteten Zauberstab kannst du einen Spezialangriff ausführen, indem du im Sprung <b>[Gegenstand benutzen]</b> gedrückt hältst.",
+      "Er feuert ein magisches Projektil ab, das in einem kleinen Explosionsradius <b>50 %</b> zusätzlichen Waffenschaden verursacht.",
+      "<b>Kosten:</b> 25 Ausdauer"
+    ]
+  },
+  "AIRBORNE_ARCHITECT": {
+    "name": "ARCHITEKT DER LÜFTE",
+    "description": [
+      "Verwandle dich innerhalb der Basis in einen Funken, um dich beim Bauen in der Ego-Perspektive frei durch die Luft zu bewegen. Um diesen Modus umzuschalten, halte <b>[Flugmodus]</b> gedrückt."
+    ]
+  },
+  "BARRAGE": {
+    "name": "SALVE",
+    "description": [
+      "Wenn du mit Bögen Schaden verursachst, besteht je Stufe eine Chance von <b>15 %</b>, <b>1</b> Haltbarkeit dieser Waffe wiederherzustellen."
+    ]
+  },
+  "BLAST_AND_CAST": {
+    "name": "SAUS UND BRAUS",
+    "description": [
+      "Nach einem kritischen Treffer mit einem Zauberstab wird der Grundschaden deines nächsten Magierstabangriffs innerhalb von <b>10</b> Sekunden um <b>50 %</b> erhöht."
+    ]
+  },
+  "PUNCTURE": {
+    "name": "DURCHBOHRUNG",
+    "description": [
+      "Fernkampf-<b>Stichschaden</b> wird um <b>10 %</b> je Stufe erhöht."
+    ]
+  },
+  "SURVIVAL_INSTINCT": {
+    "name": "ÜBERLEBENSINSTINKT",
+    "description": [
+      "Besiegst du einen mit Miasma befallenen Gegner mit einem Bogen oder Dolch, werden je Stufe <b>3</b> Sekunden <b>Zeit im Miasma</b> wiederhergestellt.",
+      "<b>Zeit im Miasma</b><br/>Sollte diese Zeit ablaufen, wird das Miasma dich verzehren. "
+    ]
+  },
+  "TOTEM_MASTERY": {
+    "name": "TOTEMKUNST",
+    "description": [
+      "Erhöht die maximale Anzahl der beschworenen Totems um <b>1</b> je Stufe."
+    ]
+  },
+  "WAND_EVASION_ATTACK": {
+    "name": "ZAUBERSTAB-AUSWEICHANGRIFF",
+    "description": [
+      "Mit einem ausgerüsteten Zauberstab kannst du einen Zauberstab-Ausweichangriff ausführen, indem du beim Ausweichen <b>[Gegenstand benutzen]</b> drückst.<br/>Er feuert eine magische Scheibe ab, die Gegner durchschlägt und <b>50 %</b> zusätzlichen Waffenschaden verursacht.",
+      "<b>Kosten:</b> 50 Mana"
+    ]
+  }
+}

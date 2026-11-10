@@ -12,6 +12,8 @@ import enNodes from "./locales/en/nodes.json";
 import enTree from "./locales/en/tree.json";
 import frNodes from "./locales/fr/nodes.json";
 import frTree from "./locales/fr/tree.json";
+import deNodes from "./locales/de/nodes.json";
+import deTree from "./locales/de/tree.json";
 import { humanizeKey } from "./utils/humanizeKey";
 import {
   getGameInterpolationValues,
@@ -20,7 +22,7 @@ import {
 } from "./utils/skillInterpolation";
 import { skillTextPrefix, usesGameText } from "./utils/skillText";
 
-export const SKILL_TEXT_LOCALES = ["en", "fr"] as const;
+export const SKILL_TEXT_LOCALES = ["en", "fr", "de"] as const;
 export type SkillTextLocale = (typeof SKILL_TEXT_LOCALES)[number];
 export const DEFAULT_SKILL_TEXT_LOCALE: SkillTextLocale = "en";
 
@@ -28,6 +30,7 @@ export const DEFAULT_SKILL_TEXT_LOCALE: SkillTextLocale = "en";
 export const skillTextResources = {
   en: { nodes: enNodes, tree: enTree },
   fr: { nodes: frNodes, tree: frTree },
+  de: { nodes: deNodes, tree: deTree },
 };
 
 type Translate = (key: string, options?: Record<string, unknown>) => unknown;

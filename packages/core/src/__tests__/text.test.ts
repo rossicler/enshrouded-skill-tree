@@ -87,7 +87,8 @@ describe("skill text", () => {
     const type = Object.keys(SkillNodes.types)[0];
     // A locale without text or game text uses the default locale's own record.
     const english = skillTextResources.en.nodes as Record<string, { name?: string }>;
-    expect(getSkillName(type, "de")).toBe(english[type].name);
+    expect(getSkillName(type, "es")).toBe(english[type].name);
+    expect(getSkillName(type, "de")).toBe((skillTextResources.de.nodes as Record<string, { name?: string }>)[type].name);
     expect(getSkillName("NOT_A_SKILL", "en")).toBe("Not A Skill");
   });
 

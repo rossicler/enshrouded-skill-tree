@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "Seviye {{current}} / {{max}}",
+    "unlock": "Kilidi aç",
+    "outOfRange": "Menzil dışında",
+    "share": "Bu yeteneğin bağlantısını paylaş",
+    "refund": "İade et",
+    "levelUp": "Seviye atla",
+    "refundOne": "1 iade et",
+    "refundAll": "Tümünü iade et",
+    "skillPointIcon": "Yetenek puanı simgesi",
+    "close": "Kapat"
+  },
+  "card": {
+    "label": "Yetenek ağacı",
+    "zoomIn": "Yakınlaştır",
+    "zoomOut": "Uzaklaştır",
+    "fit": "Tüm ağacı göster",
+    "expand": "Genişlet",
+    "fullscreen": "Tam ekran",
+    "exitFullscreen": "Tam ekrandan çık",
+    "close": "Kapat"
+  },
+  "kit": {
+    "close": "Kapat",
+    "copy": "Kopyala"
+  },
+  "points": {
+    "skillPoints": "Yetenek Puanları",
+    "flameLevel": "Alev Seviyesi",
+    "skillPointIcon": "Yetenek puanı simgesi",
+    "flameIcon": "Alev simgesi",
+    "flameDown": "Alev seviyesini düşür",
+    "flameUp": "Alev seviyesini yükselt"
+  },
+  "budget": {
+    "title": "Biyom Puanları",
+    "playerLevel": "Oyuncu Seviyesi",
+    "total": "Toplam Yetenek Puanı",
+    "reset": "Tümünün kilidini aç"
+  },
+  "biomes": {
+    "springlands": "Bahar Diyarı",
+    "revelwood": "Neşe Ormanı",
+    "nomad_highlands": "Seyyah Ovaları",
+    "kindlewastes": "Çıra Çöplüğü",
+    "albaneve_summits": "Albaneve Tepeleri",
+    "veilwater_basin": "Peçesu Havzası",
+    "cinders_cradle": "Kor Beşiği"
+  },
+  "stats": {
+    "button": "İstatistikler",
+    "title": "İstatistik özeti",
+    "basic": "Temel",
+    "close": "Kapat",
+    "names": {
+      "constitution": "Bünye",
+      "strength": "Kuvvet",
+      "endurance": "Dayanıklılık",
+      "dexterity": "Beceriklilik",
+      "spirit": "Ruh",
+      "intelligence": "Zekâ"
+    }
+  },
+  "search": {
+    "placeholder": "Ara",
+    "moreMatches": "Ağaçta +{{count}} eşleşme daha vurgulandı",
+    "clear": "Aramayı temizle"
+  }
+}

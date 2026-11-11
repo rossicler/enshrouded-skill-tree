@@ -1,0 +1,1617 @@
+{
+  "ABSORB": {
+    "game": {
+      "name": "吸收",
+      "description": [
+        "承受<b>魔法</b>伤害时，你有<b>{{gameValue1}}</b>的几率恢复<b>等同于损失生命值</b>的法力。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "高阶死灵术",
+      "description": [
+        "法术召唤的空荡召唤物上限提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>空荡召唤物/每级"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "魔棒空中攻击",
+      "description": [
+        "装备魔棒时，你可以在跳跃期间长按<b>{{gameValue1}}</b>发动特殊攻击。",
+        "发射一枚魔法投射物，对小范围半径内的目标额外造成<b>50%</b>的武器伤害。",
+        "<b>消耗：</b>{{gameValue2}}点体力"
+      ]
+    }
+  },
+  "AIRBORNE": {
+    "game": {
+      "name": "飞天",
+      "description": [
+        "滑翔翼的体力消耗降低<b>{{gameValue1}}</b>"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>消耗减免/每级"
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "飞天建筑师",
+      "description": [
+        "在基地内变身为火花，允许你在建造期间以第一人称视角在空中自由移动。长按{{gameValue1}}切换此模式。"
+      ]
+    }
+  },
+  "ARACHNOID": {
+    "game": {
+      "name": "蜘蛛人",
+      "description": [
+        "攀爬时的体力消耗减少<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>消耗减免/每级"
+    }
+  },
+  "ARCANE_CONCENTRATION": {
+    "game": {
+      "name": "秘法汇聚",
+      "description": [
+        "每两级灵火获得1点精神。"
+      ]
+    }
+  },
+  "ARCANE_DEFLECTION": {
+    "game": {
+      "name": "奥术偏转",
+      "description": [
+        "成功招架敌人的攻击将恢复<b>{{gameValue1}}</b>法力。",
+        "<b>招架</b><br/>你可以使用任意近战武器、结界或者是盾牌进行格挡。看准时机发动格挡将能够<b>招架</b>攻击并使敌人的<i>晕眩条</i>增长。<br/>在敌人或者是投射物<b>闪烁发光</b>时发动招架。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>法力/每级"
+    }
+  },
+  "ARCANE_PROLIFERATION": {
+    "game": {
+      "name": "奥术穿透",
+      "description": [
+        "魔棒攻击有<b>30%</b>几率生成双倍数量的投射物。额外生成的投射物只会造成<b>50%</b>的伤害。"
+      ]
+    }
+  },
+  "ARSONIST": {
+    "game": {
+      "name": "纵火犯",
+      "description": [
+        "所有<b>火焰</b>伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "ATHLETE": {
+    "game": {
+      "name": "运动员",
+      "description": [
+        "提高你的最大生命值，具体提升量等同于你的力量属性的<b>{{gameValue1}}</b>倍。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>倍/每级"
+    }
+  },
+  "ATTR_CONS": {
+    "game": {
+      "name": "体质",
+      "description": [
+        "体质属性提升1点。",
+        "每点属性增加{{gameValue1}}点生命。"
+      ]
+    }
+  },
+  "ATTR_DEX": {
+    "game": {
+      "name": "敏捷",
+      "description": [
+        "令敏捷属性提升1点。",
+        "每点属性值可使弓箭和匕首的伤害提高 5%。"
+      ]
+    }
+  },
+  "ATTR_ENDURANCE": {
+    "game": {
+      "name": "耐力",
+      "description": [
+        "令耐力属性提升1点。",
+        "每点属性增加{{gameValue1}}点体力。"
+      ]
+    }
+  },
+  "ATTR_INT": {
+    "game": {
+      "name": "智力",
+      "description": [
+        "令智力属性提升1点。",
+        "每点属性点增加5%的魔法伤害。"
+      ]
+    }
+  },
+  "ATTR_SPIRIT": {
+    "game": {
+      "name": "精神",
+      "description": [
+        "令精神属性提升1点。",
+        "每点属性增加{{gameValue1}}点法力。"
+      ]
+    }
+  },
+  "ATTR_STR": {
+    "game": {
+      "name": "力量",
+      "description": [
+        "令力量属性提升1点。",
+        "每点属性点增加5%的近战伤害。"
+      ]
+    }
+  },
+  "BACKSTAB_MASTERY": {
+    "game": {
+      "name": "背刺专精",
+      "description": [
+        "<b>背刺</b>伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "BARBARIAN": {
+    "game": {
+      "name": "野蛮人",
+      "description": [
+        "每两级灵火获得1点力量。"
+      ]
+    }
+  },
+  "BARBARIAN_PATH": {
+    "game": {
+      "name": "野蛮人之道",
+      "description": [
+        "双手斧、棍棒和锤的伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "持续火力",
+      "description": [
+        "弓造成伤害后有<b>{{gameValue1}}</b>几率为武器恢复<b>1</b>点耐久。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "BASH": {
+    "game": {
+      "name": "重击",
+      "description": [
+        "你的招架会对敌人造成<b>{{gameValue1}}钝击</b>伤害。具体伤害将随你的力量属性一起提升。",
+        "<b>招架</b><br/>你可以使用任意近战武器、结界或者是盾牌进行格挡。看准时机发动格挡将能够<b>招架</b>攻击并使敌人的<i>晕眩条</i>增长。<br/>在敌人或者是投射物<b>闪烁发光</b>时发动招架。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}钝击</b>伤害/每级"
+    }
+  },
+  "BATTLE_HEAL": {
+    "game": {
+      "name": "战斗治疗",
+      "description": [
+        "近战武器暴击将恢复你的最大生命值的<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>最大生命值/每级"
+    }
+  },
+  "BEAST_MASTER": {
+    "game": {
+      "name": "驯兽师",
+      "description": [
+        "当你受到攻击时，<b>50</b>米内的<b>野生动物</b>将攻击敌人。"
+      ]
+    }
+  },
+  "BEE_STING": {
+    "game": {
+      "name": "蜂刺",
+      "description": [
+        "在空中瞄准或是射箭都会暂时延缓你的下降速度。每次射击都将会使你略微升起，延长你的滞空时间。",
+        "<b>消耗：</b>每秒{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "BEGONE": {
+    "game": {
+      "name": "走开！",
+      "description": [
+        "能够推开并晕眩命中的敌人的魔法拳击。",
+        "拥有足够的法力时，替换原本的徒手攻击。",
+        "<b>消耗：</b>{{gameValue1}}点法力"
+      ]
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "法术轰击",
+      "description": [
+        "触发魔棒暴击后，在{{gameValue1}}秒内你的下一次法杖攻击的基础伤害将提高<b>{{gameValue2}}</b>。"
+      ]
+    }
+  },
+  "BLESSED_ARROWS": {
+    "game": {
+      "name": "祝福箭矢",
+      "description": [
+        "使用弓造成暴击将恢复<b>{{gameValue1}}</b>法力。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>法力/每级"
+    }
+  },
+  "BLINK": {
+    "game": {
+      "name": "闪现",
+      "description": [
+        "用短距离传送取代翻滚能力。",
+        "将战术机动技能的侧向翻滚替换为闪现。",
+        "<b>消耗：</b>{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "BLINK_ATTACK": {
+    "game": {
+      "name": "闪现攻击",
+      "description": [
+        "闪现至敌人位置并触发爆炸，对小范围内的目标造成<b>火焰</b>伤害。",
+        "智力属性将提高伤害与法力消耗。"
+      ]
+    }
+  },
+  "BLOOD_MAGIC": {
+    "game": {
+      "name": "鲜血魔法",
+      "description": [
+        "当法力值低于<b>20%</b>时，你将恢复至多<b>35%</b>的最大法力值，但与此同时，你将损失等同于恢复法力值的<b>生命值</b>。",
+        "当生命值仅剩<b>1点</b>时，此效果将暂停。",
+        "<b>冷却时间：</b>2分钟"
+      ]
+    }
+  },
+  "BLOOD_RAGE": {
+    "game": {
+      "name": "鲜血狂暴",
+      "description": [
+        "如果<b>{{gameValue1}}</b>米范围内有敌人被近战武器击杀，你将进入<b>鲜血狂暴</b>。",
+        "<b>鲜血狂暴</b><br/>将使近战武器伤害提高<b>{{gameValue2}}</b>，持续<b>10</b>秒。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>米范围/每级"
+    }
+  },
+  "BLOOD_WARRIOR": {
+    "game": {
+      "name": "鲜血勇士",
+      "description": [
+        "使用<b>隐秘攻击</b>或<b>残酷打击</b>打败敌人时将生成一颗生命球。",
+        "收集恢复球将恢复<b>10%</b>的对应资源。"
+      ]
+    }
+  },
+  "BLOODLETTING": {
+    "game": {
+      "name": "放血",
+      "description": [
+        "法术暴击有<b>{{gameValue1}}</b>几率生成2个生命值、法力以及/或体力恢复球。",
+        "收集恢复球将恢复<b>10%</b>的对应资源。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "BONE_TO_ASH": {
+    "game": {
+      "name": "灰飞烟灭",
+      "description": [
+        "对空荡的伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "BOUNTY_BONANZA": {
+    "game": {
+      "name": "赏金大餐",
+      "description": [
+        "通过<b>爆头射击</b>打败<b>瘴气魔</b>敌人后，你的团队将获得额外<b>{{gameValue1}}</b>点经验值。",
+        "<b>爆头射击</b><br/>用箭打击敌人的弱点（例如头部）会被视为爆头射击。",
+        "爆头射击会对未穿戴头盔的敌人额外造成100%基础伤害，如果敌人穿戴头盔，则变为额外50%伤害。<br/>爆头射击伤害属性能够进一步提高这种伤害加成。"
+      ]
+    }
+  },
+  "BOW_SPECIALIZATION": {
+    "game": {
+      "name": "弓专长",
+      "description": [
+        "解锁弓的特殊能力。<br/>拥有充足专注时按<b>{{gameValue1}}</b>释放强大的特殊能力。",
+        "<b>专注</b><br/>攻击将生成专注。所有类型的武器都可以积累专注，你可以花费专注来发动武器的特殊能力。"
+      ]
+    }
+  },
+  "BREACH": {
+    "game": {
+      "name": "突破",
+      "description": [
+        "<b>被压制</b>的敌人将承受额外<b>{{gameValue1}}</b>的近战物理伤害，此效果持续<b>3</b>秒。",
+        "<b>压制</b><br/>攻击格挡中的敌人或者是招架敌人的攻击都会使他们的<i>晕眩条</i>上涨，直到最后进入<b>被压制</b>状态。<br/><b>被压制</b>的敌人将毫无防备，这种时候你可以对其发动残酷打击。"
+      ]
+    }
+  },
+  "BRUTE": {
+    "game": {
+      "name": "残暴",
+      "description": [
+        "近战<b>钝击</b>伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "CALM_SPIRIT": {
+    "game": {
+      "name": "平静之魂",
+      "description": [
+        "除非受到挑衅，否则<b>50</b>米范围内的<b>野生动物</b>将不会主动攻击玩家。",
+        "此效果对受瘴气腐化的动物无效。"
+      ]
+    }
+  },
+  "CHAIN_HIT": {
+    "game": {
+      "name": "连锁打击",
+      "description": [
+        "使用魔法武器造成暴击时，额外打击<b>15</b>米范围内的另外一名敌人，每点智力造成<b>5点电击</b>伤害。<br/>如果不进行连锁打击，最初的目标将转而承受两次攻击。"
+      ]
+    }
+  },
+  "CHAIN_REACTION": {
+    "game": {
+      "name": "回声爆炸物",
+      "description": [
+        "每名被<b>爆炸箭矢</b>击中的敌人都有<b>40%</b>的几率在小范围内触发二次爆炸，造成<b>50%</b>的伤害。"
+      ]
+    }
+  },
+  "COUNTER_BATTERY": {
+    "game": {
+      "name": "争锋相对",
+      "description": [
+        "对<b>远程</b>敌人的伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "COUNTERSTRIKE": {
+    "game": {
+      "name": "反制",
+      "description": [
+        "受到伤害后，有<b>{{gameValue1}}</b>几率将<b>{{gameValue2}}</b>的伤害以<b>火焰</b>伤害的形式反射给攻击者。",
+        "这种魔法攻击可以触发其他技能。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率，<b>{{gamePerLevelValue2}}</b>反弹伤害/每级"
+    }
+  },
+  "CRASH_DOWN_ATTACK": {
+    "game": {
+      "name": "坠落攻击",
+      "description": [
+        "装备近战武器时，你可以在跳跃期间长按<b>{{gameValue1}}</b>发动特殊攻击。",
+        "坠落攻击将将对小范围半径内的目标造成额外50%的武器伤害，并且会根据武器类型消耗体力。",
+        "<b>消耗：</b> {{gameValue2}} - {{gameValue3}} 体力",
+        "<b>破防打击</b><br/>这种特殊攻击将对格挡中的敌人施加两倍的<i>晕眩条</i>增长。。"
+      ]
+    }
+  },
+  "CRASH_DOWN_FORCE": {
+    "game": {
+      "name": "坠落：力度",
+      "description": [
+        "在二段跳期间攻击将<b>坠落</b>，造成额外<b>20%</b>的武器伤害。"
+      ]
+    }
+  },
+  "CULL_THE_HERD": {
+    "game": {
+      "name": "弱肉强食",
+      "description": [
+        "对野生动物的伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "CUTTHROAT": {
+    "game": {
+      "name": "凶残",
+      "description": [
+        "隐秘攻击伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "DAGGER_MASTERY": {
+    "game": {
+      "name": "匕首精通",
+      "description": [
+        "匕首伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "DAGGER_SPECIALIZATION": {
+    "game": {
+      "name": "匕首专长",
+      "description": [
+        "解锁匕首的特殊能力。<br/>拥有充足专注时按<b>{{gameValue1}}</b>释放强大的特殊能力。",
+        "<b>专注</b><br/>攻击将生成专注。所有类型的武器都可以积累专注，你可以花费专注来发动武器的特殊能力。"
+      ]
+    }
+  },
+  "DARK_ARTS": {
+    "game": {
+      "name": "黑魔法",
+      "description": [
+        "所有<b>瘴气</b>伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "DESSERT_STOMACH": {
+    "game": {
+      "name": "饕餮",
+      "description": [
+        "额外获得一个食物栏位。"
+      ]
+    }
+  },
+  "DIVINE_SURGE": {
+    "game": {
+      "name": "神圣迸发",
+      "description": [
+        "治疗法术能够造成暴击，具体治疗量受暴击伤害影响。"
+      ]
+    }
+  },
+  "DOUBLE_JUMP": {
+    "game": {
+      "name": "二段跳",
+      "description": [
+        "允许在空中进行第二次跳跃。",
+        "<b>消耗：</b>{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "EAGLE_EYE": {
+    "game": {
+      "name": "鹰眼",
+      "description": [
+        "大幅提高弓瞄准时的缩放幅度。",
+        "若要进行瞄准，首先选择动作栏中的弓，接着按住{{gameValue1}}。<br/>（或者长按{{gameValue2}}使用当前装备的弓进行瞄准。）"
+      ]
+    }
+  },
+  "EAGLES_BANE": {
+    "game": {
+      "name": "鹰之刃",
+      "description": [
+        "对<b>飞行</b>敌人造成的伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "EARTH_AURA": {
+    "game": {
+      "name": "大地光环",
+      "description": [
+        "释放一道保护性光环，使自己与<b>{{gameValue2}}</b>米范围内的所有友军的物理与魔法抗性提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>米范围/每级"
+    }
+  },
+  "EMERGENCY_BLINK": {
+    "game": {
+      "name": "紧急闪现",
+      "description": [
+        "你可以在晕眩状态下发动闪现，这么做将解除晕眩状态。"
+      ]
+    }
+  },
+  "ENDURANCE_OF_THE_FLAME": {
+    "game": {
+      "name": "灵火的耐力",
+      "description": [
+        "每两级灵火获得1点耐力。"
+      ]
+    }
+  },
+  "ETERNAL_SPARK": {
+    "game": {
+      "name": "长亮不灭",
+      "description": [
+        "魔棒投射物造成伤害后有<b>{{gameValue1}}</b>几率为武器恢复<b>1</b>点耐久。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "EVASION_ATTACK": {
+    "game": {
+      "name": "闪避攻击",
+      "description": [
+        "装备近战武器时，你可以在闪避时按<b>{{gameValue1}}</b>发动闪避攻击。<br/>你将向敌人猛冲并造成额外<b>50%</b>的武器伤害。",
+        "<b>消耗：</b>{{gameValue2}}体力",
+        "<b>破防打击</b><br/>这种特殊攻击将对格挡中的敌人施加两倍的<i>晕眩条</i>增长。"
+      ]
+    }
+  },
+  "EXALTED": {
+    "game": {
+      "name": "升华",
+      "description": [
+        "每两级灵火获得1点智力。"
+      ]
+    }
+  },
+  "EXPOSE_WEAKNESS": {
+    "game": {
+      "name": "弱点暴露",
+      "description": [
+        "匕首暴击能破坏敌人的护甲，并对其施加承受<b>{{gameValue1}}</b>额外物理伤害的<b>减益</b>，持续<b>{{gameValue2}}</b>秒。"
+      ]
+    }
+  },
+  "FATAL_PRECISION": {
+    "game": {
+      "name": "致命精准",
+      "description": [
+        "暴击率提高<b>{{gameValue1}}</b>。<br/>暴击伤害提高<b>{{gameValue2}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>暴击率，<b>{{gamePerLevelValue2}}</b>暴击伤害/每级"
+    }
+  },
+  "FELLING_AXE_SPECIALIZATION": {
+    "game": {
+      "name": "伐木斧专长",
+      "description": [
+        "解锁伐木斧的特殊能力。<br/>拥有充足专注时按<b>{{gameValue1}}</b>释放强大的特殊能力。",
+        "<b>专注</b><br/>攻击将生成专注。所有类型的武器都可以积累专注，你可以花费专注来发动武器的特殊能力。"
+      ]
+    }
+  },
+  "FINESSE": {
+    "game": {
+      "name": "矫健",
+      "description": [
+        "单手剑、单手斧、单手棍棒与匕首造成伤害后有<b>{{gameValue1}}</b>几率为武器恢复<b>1</b>点耐久。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "FIRE_RESISTANCE": {
+    "game": {
+      "name": "火焰抗性",
+      "description": [
+        "使你的<b>火焰抗性</b>提高<b>{{gameValue1}}</b>，这将降低你承受的<b>火焰</b>伤害。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>抗性/每级"
+    }
+  },
+  "FISHERMANS_RESOLVE": {
+    "game": {
+      "name": "渔夫的毅力",
+      "description": [
+        "垂钓耐力提高<b>{{gameValue1}}</b>。",
+        "这将允许你与上钩的鱼进行长时间对抗。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>垂钓耐力/每级"
+    }
+  },
+  "FROST": {
+    "game": {
+      "name": "冰霜",
+      "description": [
+        "受到近战伤害时，攻击者将承受持续<b>{{gameValue1}}</b>秒的减速效果。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>每级"
+    }
+  },
+  "GIANT_SLAYER_HOOK": {
+    "game": {
+      "name": "巨型屠夫钩",
+      "description": [
+        "在战斗中使用<b>抓钩</b>将自己拉向大型敌人。",
+        "该技能的消耗将随敌人等级增长。敌人等级越高，消耗就越大。",
+        "<b>基础消耗：</b>{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "GOOD_METABOLISM": {
+    "game": {
+      "name": "良好代谢",
+      "description": [
+        "生命值、法力和体力恢复球将恢复<b>30%</b>而不是<b>10%</b>。",
+        "法力和生命药水额外恢复<b>20%</b>。"
+      ]
+    }
+  },
+  "GRACEFUL_STRIDE": {
+    "game": {
+      "name": "优雅步伐",
+      "description": [
+        "每两级灵火获得1点敏捷。"
+      ]
+    }
+  },
+  "GROUNDING_HOOK": {
+    "game": {
+      "name": "落地钩",
+      "description": [
+        "在战斗中使用<b>抓钩</b>将<b>飞行</b>敌人拉向自己。",
+        "该技能的消耗将随敌人等级增长。敌人等级越高，消耗就越大。",
+        "<b>基础消耗：</b>{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "HEALER": {
+    "game": {
+      "name": "治疗师",
+      "description": [
+        "治疗法术与水之光环额外提供<b>{{gameValue1}}</b>生命值。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>治疗/每级"
+    }
+  },
+  "HEALER_REVIVE": {
+    "game": {
+      "name": "妙手回春",
+      "description": [
+        "复活其他玩家将为其提供额外<b>{{gameValue1}}</b>生命值。",
+        "玩家复活时的默认生命值为<b>10%</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>生命值/每级"
+    }
+  },
+  "HEAVY_HANDED": {
+    "game": {
+      "name": "千钧之力",
+      "description": [
+        "使用近战武器攻击处于格挡状态的敌人将使目标的<i>晕眩条</i>提高<b>{{gameValue1}}</b>。",
+        "<b>压制</b><br/>攻击格挡中的敌人或者是招架敌人的攻击都会使他们的<i>晕眩条</i>上涨，直到最后进入<b>被压制</b>状态。<br/><b>被压制</b>的敌人将毫无防备，这种时候你可以对其发动残酷打击。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>效果/每级"
+    }
+  },
+  "HEAVY_PLATES": {
+    "game": {
+      "name": "重型甲胄",
+      "description": [
+        "装备提供的物理护甲点提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>额外物理护甲/每级"
+    }
+  },
+  "HEAVY_SPECIALIZATION": {
+    "game": {
+      "name": "重击手",
+      "description": [
+        "所有双手近战武器的攻击速度提高<b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "ICE_RESISTANCE": {
+    "game": {
+      "name": "寒冰抗性",
+      "description": [
+        "使你的<b>寒冷抗性</b>提高<b>{{gameValue1}}</b>，这将降低你承受的<b>寒冷</b>伤害。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>抗性/每级"
+    }
+  },
+  "ICEMAN": {
+    "game": {
+      "name": "冰人",
+      "description": [
+        "所有<b>寒冰</b>伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "INNER_FIRES": {
+    "game": {
+      "name": "内心之火",
+      "description": [
+        "<b>瘴气停留时间</b>延长<b>{{gameValue1}}</b>，让你能探索更久。",
+        "<b>瘴气停留时间</b><br/>如果停留时间耗尽，你将被瘴气吞噬。"
+      ],
+      "perLevelLabel": "每级<b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "KICK": {
+    "game": {
+      "name": "踢击",
+      "description": [
+        "装备近战武器时，你可以通过在格挡状态下攻击来发动一次踢击。",
+        "踢击只能造成较少的伤害，但是巨大的冲击力将使敌人的<i>晕眩条</i>上涨并将其击退。",
+        "<i>晕眩条</i>增长幅度受你的敏捷影响。<br/>晕眩时间取决于敌人的大小。",
+        "<b>压制</b><br/>攻击格挡中的敌人或者是招架敌人的攻击都会使他们的<i>晕眩条</i>上涨，直到最后进入<b>被压制</b>状态。<br/><b>被压制</b>的敌人将毫无防备，这种时候你可以对其发动残酷打击。"
+      ]
+    }
+  },
+  "LAST_MEAL": {
+    "game": {
+      "name": "最后一餐",
+      "description": [
+        "你的食物加成将不会因为死亡消失，但是持续时间仅为原先的一半。"
+      ]
+    }
+  },
+  "LIFE_BURST": {
+    "game": {
+      "name": "生命迸发",
+      "description": [
+        "使用魔法武器击杀一名敌人时，目标周围<b>15</b>米范围内的所有玩家将获得等同于你的<b>{{gameValue1}}</b>倍的智力。"
+      ]
+    }
+  },
+  "LIFE_ESSENCES": {
+    "game": {
+      "name": "生命精华",
+      "description": [
+        "提高你的最大生命值，具体提升量等同于你的智力属性的<b>{{gameValue1}}</b>倍。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>倍/每级"
+    }
+  },
+  "LUMBERJACK": {
+    "game": {
+      "name": "伐木工",
+      "description": [
+        "工具对木头造成<b>{{gameValue1}}</b>额外伤害。<br/>这包括树木与木制地形。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "MAGE_APPRENTICE": {
+    "game": {
+      "name": "法师学徒",
+      "description": [
+        "魔棒和法杖伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "MANA_CURRENTS": {
+    "game": {
+      "name": "魔法涌流",
+      "description": [
+        "基础法力恢复提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>法力恢复/每级"
+    }
+  },
+  "MARKSMAN": {
+    "game": {
+      "name": "射手",
+      "description": [
+        "弓的伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "MARTYR": {
+    "game": {
+      "name": "烈士",
+      "description": [
+        "当你被敌人杀死时，<b>30</b>米范围内的所有友军将恢复最大生命值的<b>50%</b>。",
+        "除此以外，范围内的友军将获得<b>临别祝福</b>增益并使他们的最大生命值提高<b>100</b>点，持续<b>15</b>分钟。"
+      ]
+    }
+  },
+  "MASON": {
+    "game": {
+      "name": "石匠",
+      "description": [
+        "工具对石头造成<b>{{gameValue1}}</b>额外伤害。<br/>这包括石头地形与宝石矿脉。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "MASS_DESTRUCTION": {
+    "game": {
+      "name": "毁天灭地",
+      "description": [
+        "使用魔法武器造成暴击时，每点智力都会使目标周围<b>{{gameValue1}}</b>米内的所有敌人受到<b>2点电击</b>伤害。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>米范围/每级"
+    }
+  },
+  "MERCILESS_ATTACK": {
+    "game": {
+      "name": "残酷打击",
+      "description": [
+        "对<b>被压制</b>的敌人按<b>{{gameValue1}}</b>发动一次<b>残酷打击</b>以造成<b>{{gameValue2}}</b>伤害。",
+        "<b>压制</b><br/>攻击格挡中的敌人或者是招架敌人的攻击都会使他们的<i>晕眩条</i>上涨，直到最后进入<b>被压制</b>状态。<br/><b>被压制</b>的敌人将毫无防备，这种时候你可以对其发动残酷打击。",
+        "魔棒、法杖和弓无法使用，持续残酷打击秒。"
+      ]
+    }
+  },
+  "MINER": {
+    "game": {
+      "name": "矿工",
+      "description": [
+        "开采时有<b>10%</b>几率获得一份额外资源。"
+      ]
+    }
+  },
+  "MITHRIDATIST": {
+    "game": {
+      "name": "百毒不侵",
+      "description": [
+        "获得<b>25%</b>的毒素免疫几率。"
+      ]
+    }
+  },
+  "MULTI_SHOT": {
+    "game": {
+      "name": "多重射击",
+      "description": [
+        "发射<i>普通箭矢</i>有<b>20%</b>几率生成会略微散射的<b>箭雨</b>。",
+        "通过这种方式发射的<i>普通箭矢</i>将消耗你的弹药。",
+        "使用<i>特殊箭矢</i>时无法触发<b>箭雨</b>。"
+      ]
+    }
+  },
+  "MULTI_SHOT_SPREAD": {
+    "game": {
+      "name": "多重射击扩散",
+      "description": [
+        "使你的<b>多重射击</b>技能发射的<b>箭雨</b>有<b>25%</b>几率生成一枚额外的<i>普通箭矢</i>。",
+        "额外生成的<i>普通箭矢</i>不会消耗你的弹药。"
+      ]
+    }
+  },
+  "MULTI_SHOT_TRIGGER": {
+    "game": {
+      "name": "多重射击触发",
+      "description": [
+        "现在发射<i>特殊箭矢</i>将触发<b>多重射击</b>技能的<b>箭雨</b>。",
+        "通过这种方式发射的<i>特殊箭矢</i>将消耗你的弹药。"
+      ]
+    }
+  },
+  "NECROMANCER": {
+    "game": {
+      "name": "死灵法师",
+      "description": [
+        "使用魔法武器杀死敌人时，有<b>{{gameValue1}}</b>的几率召唤一个友好的<b>骷髅同伴</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "NEMESIS": {
+    "game": {
+      "name": "仇敌",
+      "description": [
+        "使你产生的仇恨提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>仇恨/每级"
+    }
+  },
+  "ONE_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "单手专长",
+      "description": [
+        "解锁单手近战武器的特殊能力。<br/>拥有充足专注时按<b>{{gameValue1}}</b>释放强大的特殊能力。",
+        "<b>专注</b><br/>攻击将生成专注。所有类型的武器都可以积累专注，你可以花费专注来发动武器的特殊能力。"
+      ]
+    }
+  },
+  "OPPORTUNITY": {
+    "game": {
+      "name": "借机",
+      "description": [
+        "<b>残酷打击</b>的伤害倍率提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "PICKAXE_SPECIALIZATION": {
+    "game": {
+      "name": "镐专长",
+      "description": [
+        "解锁镐的特殊能力。<br/>拥有充足专注时按<b>{{gameValue1}}</b>释放强大的特殊能力。",
+        "<b>专注</b><br/>攻击将生成专注。所有类型的武器都可以积累专注，你可以花费专注来发动武器的特殊能力。"
+      ]
+    }
+  },
+  "POISON_MASTERY": {
+    "game": {
+      "name": "毒药精通",
+      "description": [
+        "使<b>剧毒之刃</b>匕首特性造成的伤害提高<b>100%</b>。"
+      ]
+    }
+  },
+  "POISONED_BLADES": {
+    "game": {
+      "name": "剧毒之刃",
+      "description": [
+        "使用带有<b>剧毒之刃</b>特性的匕首时，使敌人中毒的几率提高到<b>30%</b>。"
+      ]
+    }
+  },
+  "POWER_PARRY": {
+    "game": {
+      "name": "强力招架",
+      "description": [
+        "你的招架能力提高<b>{{gameValue1}}</b>。",
+        "<b>招架</b><br/>你可以使用任意近战武器、结界或者是盾牌进行格挡。看准时机发动格挡将能够<b>招架</b>攻击并使敌人的<i>晕眩条</i>增长。<br/>在敌人或者是投射物<b>闪烁发光</b>时发动招架。",
+        "<b>压制</b><br/>攻击格挡中的敌人或者是招架敌人的攻击都会使他们的<i>晕眩条</i>上涨，直到最后进入<b>被压制</b>状态。<br/><b>被压制</b>的敌人将毫无防备，这种时候你可以对其发动残酷打击。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>招架强度/每级"
+    }
+  },
+  "PRIMAL_FORCE": {
+    "game": {
+      "name": "野性力量",
+      "description": [
+        "对沃卡的伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "PROSPECTOR": {
+    "game": {
+      "name": "勘探者",
+      "description": [
+        "工具对金属造成<b>{{gameValue1}}</b>额外伤害。<br/>这包括金属矿脉。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "穿透",
+      "description": [
+        "远程<b>穿刺</b>伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "PURIFICATION": {
+    "game": {
+      "name": "净化",
+      "description": [
+        "用单手/双手斧、棍棒、锤、剑或大剑打败被瘴气腐化的敌人将使你恢复<b>{{gameValue1}}</b>秒<b>瘴气</b>停留时间。",
+        "<b>瘴气停留时间</b><br/>如果停留时间耗尽，你将被瘴气吞噬。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>秒/每级"
+    }
+  },
+  "QUALITY_GEAR": {
+    "game": {
+      "name": "事半功倍",
+      "description": [
+        "工具有<b>{{gameValue1}}</b>几率在命中目标时恢复<b>1点</b>耐久。"
+      ]
+    }
+  },
+  "QUICK_CHARGE": {
+    "game": {
+      "name": "快速充能",
+      "description": [
+        "法术充能时间缩短<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>充能时间/每级"
+    }
+  },
+  "QUICK_REFLEX_BLOCK": {
+    "game": {
+      "name": "快速反射格挡",
+      "description": [
+        "使用匕首格挡时暂时提高格挡值，确保就算招架失败也只需要消耗最少的体力。"
+      ]
+    }
+  },
+  "RADIANT_AURA": {
+    "game": {
+      "name": "璀璨光环",
+      "description": [
+        "<b>{{gameValue1}}</b>米范围内的所有<b>瘴气魔</b>敌人每秒承受等同于智力的<b>{{gameValue2}}火焰</b>伤害。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>米范围，每点智力<b>{{gamePerLevelValue2}}火焰</b>伤害/每级"
+    }
+  },
+  "RANGER": {
+    "game": {
+      "name": "游侠",
+      "description": [
+        "你的敏捷以及耐力属性提高<b>{{gameValue1}}</b>。",
+        "基础体力恢复提高<b>{{gameValue2}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>敏捷以及耐力/每级。<br/><b>{{gamePerLevelValue2}}</b>体力恢复/每级。"
+    }
+  },
+  "REBOUND": {
+    "game": {
+      "name": "振作",
+      "description": [
+        "基础体力恢复提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>体力恢复/每级"
+    }
+  },
+  "RELENTLESS": {
+    "game": {
+      "name": "无情",
+      "description": [
+        "使用双手武器造成暴击伤害后，你的下一次攻击的暴击率将提高<b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "RICOCHETS": {
+    "game": {
+      "name": "溅射爆破",
+      "description": [
+        "用<b>爆炸箭矢</b>每击中一个目标，其伤害就提高<b>10%</b>。"
+      ]
+    }
+  },
+  "RIGHTEOUS_FIRE": {
+    "game": {
+      "name": "正义火焰",
+      "description": [
+        "使用法术治疗任意目标将触发一道火焰迸发，对附近的<b>瘴气魔</b>敌人造成等同于治疗量<b>{{gameValue1}}</b>的<b>火焰</b>伤害。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}火焰</b>伤害/每级"
+    }
+  },
+  "RUNNER": {
+    "game": {
+      "name": "跑步健将",
+      "description": [
+        "冲刺速度提高<b>{{gameValue1}}</b>，冲刺时的体力消耗降低<b>{{gameValue2}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>速度以及<b>{{gamePerLevelValue2}}</b>消耗减免/每级"
+    }
+  },
+  "SAVIOUR": {
+    "game": {
+      "name": "救星",
+      "description": [
+        "复活同伴需要的时间缩短<b>{{gameValue1}}</b>秒。",
+        "默认复活时间为<b>6</b>秒。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>秒/每级"
+    }
+  },
+  "SHELL_SHOCK": {
+    "game": {
+      "name": "弹震症",
+      "description": [
+        "为你的<b>远程爆炸物</b>融入魔法之力。现在它们将能够晕眩敌人至多<b>2</b>秒。",
+        "<b>消耗：</b>每晕眩1名敌人消耗{{gameValue1}}点法力"
+      ]
+    }
+  },
+  "SHINY_PLATES": {
+    "game": {
+      "name": "闪亮铠甲",
+      "description": [
+        "装备提供的魔法护甲点提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>额外魔法护甲/每级"
+    }
+  },
+  "SHOCK_RESISTANCE": {
+    "game": {
+      "name": "电击抗性",
+      "description": [
+        "使你的<b>电击抗性</b>提高<b>{{gameValue1}}</b>，这将降低你承受的<b>电击</b>伤害。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>抗性/每级"
+    }
+  },
+  "SHOCKWAVE": {
+    "game": {
+      "name": "冲击波",
+      "description": [
+        "招架攻击或者<b>压制</b>一名敌人时触发冲击波。",
+        "冲击波将击退附近的敌人。这还将同时使敌人的<i>晕眩条</i>增长，具体幅度由你的力量属性决定。",
+        "<b>招架</b><br/>你可以使用任意近战武器、结界或者是盾牌进行格挡。看准时机发动格挡将能够<b>招架</b>攻击并使敌人的<i>晕眩条</i>增长。<br/>在敌人或者是投射物<b>闪烁发光</b>时发动招架。",
+        "<b>压制</b><br/>攻击格挡中的敌人或者是招架敌人的攻击都会使他们的<i>晕眩条</i>上涨，直到最后进入<b>被压制</b>状态。<br/><b>被压制</b>的敌人将毫无防备，这种时候你可以对其发动残酷打击。"
+      ]
+    }
+  },
+  "SHROUD_FILTER": {
+    "game": {
+      "name": "瘴气减免",
+      "description": [
+        "使用魔法武器对敌人造成伤害时有<b>{{gameValue1}}</b>几率触发一次小规模的火焰迸发，为你以及<b>{{gameValue3}}</b>米范围内的所有友军恢复<b>{{gameValue2}}</b>秒的<b>瘴气</b>停留时间。",
+        "<b>瘴气停留时间</b><br/>如果停留时间耗尽，你将被瘴气吞噬。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "SHROUD_MISTERY": {
+    "game": {
+      "name": "感同身受",
+      "description": [
+        "当你承受<b>瘴气</b>伤害时，附近<b>{{gameValue1}}</b>米范围内的所有玩家都将获得额外<b>{{gameValue2}}</b>的<b>瘴气抗性</b>，持续<b>30</b>秒。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>米范围/每级"
+    }
+  },
+  "SHROUD_RESISTANCE": {
+    "game": {
+      "name": "瘴气抗性",
+      "description": [
+        "使你的<b>瘴气抗性</b>提高<b>{{gameValue1}}</b>，这将降低你承受的<b>瘴气</b>伤害。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>抗性/每级"
+    }
+  },
+  "SILENT_STRIDE": {
+    "game": {
+      "name": "无声步伐",
+      "description": [
+        "<b>潜行</b>时的移动速度加快<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>移动速度/每级"
+    }
+  },
+  "SKILL_SHOT": {
+    "game": {
+      "name": "技巧射击",
+      "description": [
+        "<b>爆头射击</b>伤害提高<b>{{gameValue1}}</b>。",
+        "<b>爆头射击</b><br/>用箭打击敌人的弱点（例如头部）会被视为爆头射击。",
+        "爆头射击会对未穿戴头盔的敌人额外造成100%基础伤害，如果敌人穿戴头盔，则变为额外50%伤害。<br/>爆头射击伤害属性能够进一步提高这种伤害加成。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "SLASHER": {
+    "game": {
+      "name": "屠杀者",
+      "description": [
+        "近战<b>劈砍</b>伤害增加<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "SLEIGHT_OF_HAND": {
+    "game": {
+      "name": "拳打脚踢",
+      "description": [
+        "徒手伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "SLICE_AND_DICE": {
+    "game": {
+      "name": "切割",
+      "description": [
+        "触发匕首暴击后，在{{gameValue1}}内你的下一次弓箭攻击的基础伤害将提高<b>{{gameValue2}}</b>。"
+      ]
+    }
+  },
+  "SNAKE_EATER": {
+    "game": {
+      "name": "食蛇者",
+      "description": [
+        "使你的<b>毒素抗性</b>增加<b>{{gameValue1}}</b>，这将降低你承受的<b>毒素</b>伤害。",
+        "<b>毒素</b>伤害无视护甲，并且只能够通过<b>毒素抗性</b>减免。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>抗性/每级"
+    }
+  },
+  "SNAP": {
+    "game": {
+      "name": "崩裂",
+      "description": [
+        "触发<b>残酷打击</b>将恢复<b>{{gameValue1}}</b>法力。"
+      ]
+    }
+  },
+  "SNEAK_ATTACK": {
+    "game": {
+      "name": "隐秘攻击",
+      "description": [
+        "潜行至未警觉的敌人的身后并按<b>{{gameValue1}}</b>发动一次<b>隐秘攻击</b>。",
+        "<b>隐秘攻击</b>造成额外<b>+900%</b>伤害。",
+        "魔棒、法杖和弓无法使用，持续隐秘攻击秒。"
+      ]
+    }
+  },
+  "SNIPER": {
+    "game": {
+      "name": "狙击手",
+      "description": [
+        "弓的暴击率提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>暴击率/每级"
+    }
+  },
+  "SOAKED_DOG": {
+    "game": {
+      "name": "落水狗",
+      "description": [
+        "削弱<b>潮湿</b>以及<b>湿透</b>的减益效果。",
+        "体力以及体力恢复降低<b>10%</b>而不是<b>20%</b>。",
+        "<b>潮湿</b><br/>体力与体力恢复降低<b>30%</b>，持续<b>15</b>分钟。温暖环境将能够缩短此效果的持续时间。",
+        "<b>湿透</b><br/>体力与体力恢复降低<b>30%</b>，持续<b>30</b>秒。同时使<b>寒冰与电击抗性</b>降低<b>30%</b>，但是<b>火焰抗性</b>将提高<b>30%</b>。<br/>敌人也会进入<b>湿透</b>状态。<br/><b>湿透</b>的持续时间无法通过温暖环境缩短，并且等结束时将会变为<b>潮湿</b>减益。"
+      ]
+    }
+  },
+  "SOUL_LEECH": {
+    "game": {
+      "name": "灵魂汲取",
+      "description": [
+        "使用近战武器击杀敌人时，目标周围<b>{{gameValue1}}</b>米范围内的所有玩家获得<b>{{gameValue2}}</b>点法力。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>米范围，<b>{{gamePerLevelValue2}}</b>法力/每级"
+    }
+  },
+  "SPELLSLINGER": {
+    "game": {
+      "name": "咒术师",
+      "description": [
+        "法杖伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "SPLASH_DASH": {
+    "game": {
+      "name": "溅射猛冲",
+      "description": [
+        "允许你在游泳或潜水时进行闪避猛冲。",
+        "<b>消耗</b>：{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "STEADFAST": {
+    "game": {
+      "name": "稳健",
+      "description": [
+        "使用近战武器打败敌人将使武器恢复<b>{{gameValue1}}</b>耐久。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>耐久/每级"
+    }
+  },
+  "STING": {
+    "game": {
+      "name": "魔刺",
+      "description": [
+        "魔棒重复造成的伤害提高<b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "STRATEGIC_MANEUVER": {
+    "game": {
+      "name": "战术机动",
+      "description": [
+        "锁定一个敌方目标时，翻滚能力将变为侧向翻滚。",
+        "该能力将允许你与敌人周旋，并为你创造侧翼打击或背刺的机会。",
+        "将战术机动技能的侧向翻滚替换为闪现。",
+        "<b>消耗：</b>{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "生存本能",
+      "description": [
+        "使用弓或匕首打败被瘴气腐化的敌人将使你恢复<b>{{gameValue1}}</b>秒<b>瘴气</b>停留时间。",
+        "<b>瘴气停留时间</b><br/>如果停留时间耗尽，你将被瘴气吞噬。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>秒/每级"
+    }
+  },
+  "SWEET_TOOTH": {
+    "game": {
+      "name": "甜食爱好者",
+      "description": [
+        "甜食的体力恢复效果提高<b>50%</b>。"
+      ]
+    }
+  },
+  "SWIFT_BLADES": {
+    "game": {
+      "name": "迅捷之刃",
+      "description": [
+        "所有单手近战武器的攻击速度提高<b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "SWIFTSHOT_SUSTENANCE": {
+    "game": {
+      "name": "速射给养",
+      "description": [
+        "使用弓打败敌人时有<b>{{gameValue1}}</b>几率生成1个体力恢复球。",
+        "收集恢复球将恢复<b>10%</b>的对应资源。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "TERROR": {
+    "game": {
+      "name": "惊惧",
+      "description": [
+        "法术暴击有<b>{{gameValue1}}</b>几率使目标晕眩<b>2</b>秒。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率/每级"
+    }
+  },
+  "THICK_SKIN": {
+    "game": {
+      "name": "皮糙肉厚",
+      "description": [
+        "每两级灵火获得1点体质。"
+      ]
+    }
+  },
+  "THRUST": {
+    "game": {
+      "name": "突刺",
+      "description": [
+        "近战<b>穿刺</b>伤害增加<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "THUNDER": {
+    "game": {
+      "name": "雷霆",
+      "description": [
+        "所有<b>电击</b>伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "TITAN_EDGE": {
+    "game": {
+      "name": "泰坦之刃",
+      "description": [
+        "双手大剑伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "图腾精通",
+      "description": [
+        "图腾召唤上限提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>图腾/每级"
+    }
+  },
+  "TOWER": {
+    "game": {
+      "name": "高塔",
+      "description": [
+        "如果<b>20米</b>范围内存在至少三名敌人，你的<b>物理抗性</b>将提高<b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "TWO_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "双手专长",
+      "description": [
+        "解锁双手近战武器的特殊能力。<br/>拥有充足专注时按<b>{{gameValue1}}</b>释放强大的特殊能力。",
+        "<b>专注</b><br/>攻击将生成专注。所有类型的武器都可以积累专注，你可以花费专注来发动武器的特殊能力。"
+      ]
+    }
+  },
+  "UNITY": {
+    "game": {
+      "name": "身心统一",
+      "description": [
+        "使用魔棒对敌人造成伤害时有<b>{{gameValue1}}</b>几率恢复自身最大法力的<b>{{gameValue2}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>几率，最大法力的<b>{{gamePerLevelValue2}}</b>/每级"
+    }
+  },
+  "UPDRAFT": {
+    "game": {
+      "name": "上升气流",
+      "description": [
+        "滑翔时使用{{gameValue1}}跳跃将使你向上升起。每次飞行期间仅能发动1次。",
+        "<b>充能</b><br/>随着上升气流逐渐充能，发动后将能够提升更多高度。完全充能将能够额外提升高度。在基地中时将加快充能速度。",
+        "<b>消耗：</b>{{gameValue2}}法力"
+      ]
+    }
+  },
+  "UPWARDS_SLASH_ATTACK": {
+    "game": {
+      "name": "上劈攻击",
+      "description": [
+        "装备近战武器时，你可以在跳跃的上升阶段发动一次强力上劈。",
+        "该技能能够帮助你快速接近<b>飞行</b>敌人。",
+        "<b>消耗：</b>{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "VEILED_VIGOR": {
+    "game": {
+      "name": "隐蔽活力",
+      "description": [
+        "提高你的最大生命值，具体提升量等同于你的敏捷属性的<b>{{gameValue1}}</b>倍。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>倍/每级"
+    }
+  },
+  "VETERAN": {
+    "game": {
+      "name": "老兵",
+      "description": [
+        "单手/双手斧、棍棒、锤、剑、大剑和匕首暴击率提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>暴击率/每级"
+    }
+  },
+  "VIGOROUS_DEFLECTION": {
+    "game": {
+      "name": "大力偏转",
+      "description": [
+        "成功招架敌人攻击将恢复<b>{{gameValue1}}</b>体力。",
+        "<b>招架</b><br/>你可以使用任意近战武器、结界或者是盾牌进行格挡。看准时机发动格挡将能够<b>招架</b>攻击并使敌人的<i>晕眩条</i>增长。<br/>在敌人或者是投射物<b>闪烁发光</b>时发动招架。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>体力/每级"
+    }
+  },
+  "VILE_CONCOCTION": {
+    "game": {
+      "name": "阴险调和物",
+      "description": [
+        "投掷伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "VITALITY_SURGE": {
+    "game": {
+      "name": "活力澎湃",
+      "description": [
+        "用弓、匕首和投掷物造成暴击时恢复<b>{{gameValue1}}</b>体力。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>体力/每级"
+    }
+  },
+  "VUKAH_CULTURE": {
+    "game": {
+      "name": "沃卡文化",
+      "description": [
+        "当你受到攻击时，周围<b>50</b>米范围内的<b>沃卡</b>将对攻击者发起进攻。"
+      ]
+    }
+  },
+  "VUKAH_LANGUAGE": {
+    "game": {
+      "name": "沃卡语",
+      "description": [
+        "除非受到挑衅，否则<b>50</b>米范围内的<b>沃卡</b>将不会主动攻击玩家。"
+      ]
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "魔棒闪避攻击",
+      "description": [
+        "当装备魔棒时，你可以在闪避时按<b>{{gameValue1}}</b>发动魔棒闪避攻击。<br/>你将发射一枚魔法圆盘，圆盘能够穿透敌人并额外造成<b>50%</b>的武器伤害。",
+        "<b>消耗：</b>{{gameValue2}}点法力"
+      ]
+    }
+  },
+  "WAND_MASTERY": {
+    "game": {
+      "name": "魔棒精通",
+      "description": [
+        "魔棒伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "WAND_SPECIALIZATION": {
+    "game": {
+      "name": "魔棒专长",
+      "description": [
+        "解锁魔棒的特殊能力。<br/>拥有充足专注时按<b>{{gameValue1}}</b>释放强大的特殊能力。",
+        "<b>专注</b><br/>攻击将生成专注。所有类型的武器都可以积累专注，你可以花费专注来发动武器的特殊能力。"
+      ]
+    }
+  },
+  "WANDERLUST": {
+    "game": {
+      "name": "漫游者",
+      "description": [
+        "<b>在土路上冲刺</b>的体力消耗从<b>90%降低至80%</b>。",
+        "<b>在石路上冲刺</b>的体力消耗从<b>75%降低至50%</b>。"
+      ]
+    }
+  },
+  "WARDEN": {
+    "game": {
+      "name": "守望者",
+      "description": [
+        "如果<b>20米</b>范围内存在至少三名敌人，你的<b>魔法抗性</b>将提高<b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "WARRIOR_PATH": {
+    "game": {
+      "name": "战士之道",
+      "description": [
+        "单手斧、棍棒和剑的伤害提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>伤害/每级"
+    }
+  },
+  "WATER_AURA": {
+    "game": {
+      "name": "水之光环",
+      "description": [
+        "你散发出治愈光环。它能治疗<b>{{gameValue1}}</b>米内所有受伤的盟友。",
+        "治疗效果与智力属性成比例（每<b>2</b>点智力增加<b>1</b>点生命值）。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>米范围/每级"
+    }
+  },
+  "WATERS_OF_LIFE": {
+    "game": {
+      "name": "生之水",
+      "description": [
+        "<b>水之光环</b>的治疗效果变为每<b>2</b>点智力恢复<b>2</b>点生命值。"
+      ]
+    }
+  },
+  "WELL_RESTED": {
+    "game": {
+      "name": "精力旺盛",
+      "description": [
+        "休息良好增益的基础持续时间延长<b>{{gameValue1}}</b>分钟。",
+        "<b>休息良好</b><br/>休息良好增益将大幅提高你的体力上限与恢复。",
+        "你需要准备<b>能够坐下或睡觉的庇护所，</b>以及一处热源来提供<b>温暖</b>。",
+        "增益能够在<b>任意位置刷新。</b>",
+        "在周围放置舒适度物品可以进一步延长增益持续时间。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>分钟/每级"
+    }
+  },
+  "WET_DOG": {
+    "game": {
+      "name": "落水狗",
+      "description": [
+        "削弱<b>潮湿</b>以及<b>湿透</b>的减益效果。",
+        "体力以及体力恢复降低<b>20%</b>而不是<b>30%</b>。",
+        "<b>潮湿</b><br/>体力与体力恢复降低<b>30%</b>，持续<b>15</b>分钟。温暖环境将能够缩短此效果的持续时间。",
+        "<b>湿透</b><br/>体力与体力恢复降低<b>30%</b>，持续<b>30</b>秒。同时使<b>寒冰与电击抗性</b>降低<b>30%</b>，但是<b>火焰抗性</b>将提高<b>30%</b>。<br/>敌人也会进入<b>湿透</b>状态。<br/><b>湿透</b>的持续时间无法通过温暖环境缩短，并且等结束时将会变为<b>潮湿</b>减益。"
+      ]
+    }
+  },
+  "WHIRLWIND_CRESCENDO": {
+    "game": {
+      "name": "回旋斩",
+      "description": [
+        "装备双手武器时，在攻击连招结束时触发一次回旋攻击。",
+        "<b>消耗：</b>{{gameValue1}}点体力"
+      ]
+    }
+  },
+  "WIZARD": {
+    "game": {
+      "name": "巫师",
+      "description": [
+        "魔棒和法杖暴击率提高<b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b>暴击率/每级"
+    }
+  }
+}

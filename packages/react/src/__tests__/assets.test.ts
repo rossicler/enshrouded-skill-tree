@@ -2,7 +2,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { SkillNodes, TREE_LABELS } from "@enshrouded/core";
+import { SKILL_TEXT_LOCALES, SkillNodes, TREE_LABELS } from "@enshrouded/core";
 
 import { getNodeArt, type NodeState } from "../art";
 import { buildTreeLayout } from "../layout";
@@ -83,12 +83,20 @@ describe("ui text", () => {
     Object.entries(o).flatMap(([k, v]) => (typeof v === "string" ? [`${prefix}${k}`] : keys(v, `${prefix}${k}.`)));
 
   it("has the same keys in every locale", () => {
-    for (const messages of Object.values(uiTextResources)) expect(keys(messages).sort()).toEqual(keys(uiTextResources.en).sort());
+    for (const messages of Object.values(uiTextResources)) {
+      expect(keys(messages as object).sort()).toEqual(keys(uiTextResources.en as object).sort());
+    }
+  });
+
+  it("has text for every language of the skill tree", () => {
+    expect(Object.keys(uiTextResources).sort()).toEqual(SKILL_TEXT_LOCALES.map((info) => info.code).sort());
   });
 
   it("interpolates and falls back to English", () => {
     expect(uiText("fr", "tooltip.levelHeader", { current: 1, max: 3 })).toBe("Niveau 1 / 3");
     expect(uiText("fr-CA", "tooltip.unlock")).toBe("Déverrouiller");
-    expect(uiText("de", "tooltip.unlock")).toBe("Unlock");
+    expect(uiText("de", "tooltip.unlock")).toBe("Freischalten");
+    expect(uiText("zh-HK", "tooltip.unlock")).toBe("解鎖");
+    expect(uiText("xx", "tooltip.unlock")).toBe("Unlock");
   });
 });

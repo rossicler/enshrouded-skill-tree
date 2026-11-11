@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "เลเวล {{current}} / {{max}}",
+    "unlock": "ปลดล็อก",
+    "outOfRange": "อยู่นอกระยะ",
+    "share": "แชร์ลิงก์ไปยังสกิลนี้",
+    "refund": "คืนแต้ม",
+    "levelUp": "เพิ่มเลเวล",
+    "refundOne": "คืน 1 แต้ม",
+    "refundAll": "คืนทั้งหมด",
+    "skillPointIcon": "ไอคอนแต้มสกิล",
+    "close": "ปิด"
+  },
+  "card": {
+    "label": "แผนผังสกิล",
+    "zoomIn": "ซูมเข้า",
+    "zoomOut": "ซูมออก",
+    "fit": "แสดงแผนผังทั้งหมด",
+    "expand": "ขยาย",
+    "fullscreen": "เต็มหน้าจอ",
+    "exitFullscreen": "ออกจากโหมดเต็มหน้าจอ",
+    "close": "ปิด"
+  },
+  "kit": {
+    "close": "ปิด",
+    "copy": "คัดลอก"
+  },
+  "points": {
+    "skillPoints": "แต้มสกิล",
+    "flameLevel": "เลเวลเปลวไฟ",
+    "skillPointIcon": "ไอคอนแต้มสกิล",
+    "flameIcon": "ไอคอนเปลวไฟ",
+    "flameDown": "ลดเลเวลเปลวไฟ",
+    "flameUp": "เพิ่มเลเวลเปลวไฟ"
+  },
+  "budget": {
+    "title": "แต้มตามไบโอม",
+    "playerLevel": "เลเวลผู้เล่น",
+    "total": "แต้มสกิลทั้งหมด",
+    "reset": "ปลดล็อกทั้งหมด"
+  },
+  "biomes": {
+    "springlands": "สปริงแลนด์",
+    "revelwood": "รีเวลวูด",
+    "nomad_highlands": "โนแมดไฮแลนด์",
+    "kindlewastes": "คินเดิลเวสต์",
+    "albaneve_summits": "ยอดอัลบานีฟ",
+    "veilwater_basin": "แอ่งเวลวอเตอร์",
+    "cinders_cradle": "แหล่งร่อนเถ้าถ่าน"
+  },
+  "stats": {
+    "button": "ค่าสถานะ",
+    "title": "สรุปค่าสถานะ",
+    "basic": "พื้นฐาน",
+    "close": "ปิด",
+    "names": {
+      "constitution": "ร่างกาย",
+      "strength": "ความแข็งแกร่ง",
+      "endurance": "ความอดทน",
+      "dexterity": "ความคล่องแคล่ว",
+      "spirit": "จิตใจ",
+      "intelligence": "ปัญญา"
+    }
+  },
+  "search": {
+    "placeholder": "ค้นหา",
+    "moreMatches": "ไฮไลต์ผลลัพธ์เพิ่มอีก {{count}} รายการบนแผนผัง",
+    "clear": "ล้างการค้นหา"
+  }
+}

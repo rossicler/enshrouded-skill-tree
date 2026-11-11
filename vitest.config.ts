@@ -8,7 +8,8 @@ export default defineConfig({
     },
   },
   test: {
-    // e2e/ holds the Playwright browser tests (yarn e2e).
-    exclude: [...configDefaults.exclude, "e2e/**"],
+    // e2e/ holds the Playwright browser tests (yarn e2e); .claude/ holds other
+    // sessions' worktrees, each a full copy of the repository.
+    exclude: [...configDefaults.exclude, "e2e/**", ".claude/**"],
   },
 });

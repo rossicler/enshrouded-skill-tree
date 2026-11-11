@@ -1,9 +1,19 @@
 import SkillNodes, { SkillNodesType } from "./constants/Nodes";
+import { skillTextLocale } from "./text";
 import { buildSearchCorpus, type SearchEntry } from "./utils/searchCorpus";
 import { buildSnippet, normalizeQuery, scoreMatch, type MatchRange, type Snippet } from "./utils/searchText";
 
 // Shorter queries match nothing: two letters would light up most of the tree.
 export const SEARCH_MIN_QUERY_LENGTH = 3;
+// Chinese, Japanese and Korean pack a word into one or two characters.
+export const SEARCH_MIN_QUERY_LENGTH_CJK = 2;
+const CJK = /[぀-ヿ㐀-䶿一-鿿가-힯豈-﫿]/;
+
+// Whether a query is long enough to search.
+export const isSearchableQuery = (query: string): boolean => {
+  const length = [...query.trim()].length;
+  return length >= (CJK.test(query) ? SEARCH_MIN_QUERY_LENGTH_CJK : SEARCH_MIN_QUERY_LENGTH);
+};
 
 export type SkillSearchResult = SearchEntry & {
   // Where the query sits in `name`, for highlighting.
@@ -23,12 +33,14 @@ export type SkillSearchOptions = {
 
 const corpusCache = new Map<string, SearchEntry[]>();
 
-// The default tree's search corpus for `locale`, built on first use.
+// The default tree's search corpus for `locale`, built on first use (per
+// supported locale, once its text is loaded).
 export const getSearchCorpus = (locale: string): SearchEntry[] => {
-  let corpus = corpusCache.get(locale);
+  const code = skillTextLocale(locale);
+  let corpus = corpusCache.get(code);
   if (!corpus) {
-    corpus = buildSearchCorpus(locale);
-    corpusCache.set(locale, corpus);
+    corpus = buildSearchCorpus(code);
+    corpusCache.set(code, corpus);
   }
   return corpus;
 };
@@ -41,7 +53,7 @@ export const searchSkills = (
   locale: string,
   { exact = false, corpus = getSearchCorpus(locale) }: SkillSearchOptions = {}
 ): SkillSearchResult[] => {
-  if (!query || query.length < SEARCH_MIN_QUERY_LENGTH) return [];
+  if (!query || !isSearchableQuery(query)) return [];
 
   if (exact) {
     const lower = query.toLowerCase();

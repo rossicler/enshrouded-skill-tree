@@ -1,0 +1,1617 @@
+{
+  "ABSORB": {
+    "game": {
+      "name": "흡수",
+      "description": [
+        "<b>마법</b> 피해를 받으면 <b>{{gameValue1}}</b>의 확률로 잃은 체력 포인트당 마나 <b>1</b>을 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "고급 강령술",
+      "description": [
+        "주문으로 소환되는 할로우 아군의 최대 수가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>마리의 할로우 아군"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "공중 완드 공격",
+      "description": [
+        "완드를 장착한 상태에서 점프 중에 <b>{{gameValue1}}</b>을(를) 길게 누르면 특수 공격을 할 수 있습니다.",
+        "좁은 폭발 반경 내에서 <b>50%</b>의 추가 무기 피해를 주는 마법 투사체를 발사합니다.",
+        "<b>비용:</b> 기력 {{gameValue2}}"
+      ]
+    }
+  },
+  "AIRBORNE": {
+    "game": {
+      "name": "체공 본능",
+      "description": [
+        "글라이더의 기력 소모량이 <b>{{gameValue1}}</b> 감소합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 소모량 감소"
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "공중 건축",
+      "description": [
+        "불꽃으로 변해 하늘을 날아 1인칭 시점으로 자유롭게 기지 내부를 이동하며 건물을 지을 수 있습니다. 모드를 전환하려면 {{gameValue1}}을(를) 길게 누르세요."
+      ]
+    }
+  },
+  "ARACHNOID": {
+    "game": {
+      "name": "거미막",
+      "description": [
+        "등반 중 기력 소모량이 <b>{{gameValue1}}</b> 감소합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 소모량 감소"
+    }
+  },
+  "ARCANE_CONCENTRATION": {
+    "game": {
+      "name": "비전 집중",
+      "description": [
+        "화염 레벨 2당 정신이 1 증가합니다."
+      ]
+    }
+  },
+  "ARCANE_DEFLECTION": {
+    "game": {
+      "name": "아케인 편향",
+      "description": [
+        "적의 공격을 성공적으로 패리하면 <b>{{gameValue1}}</b>의 마나를 회복합니다.",
+        "<b>패리</b><br/>모든 근접 무기, 와드 또는 방패로 막을 수 있습니다. 타이밍을 잘 맞춰 막으면 적의 공격을 <b>패리</b>하고 적의 <i>기절 막대</i>를 채웁니다.<br/>패리하려면 적이나 투사체가 <b>반짝일</b> 때까지 기다리세요."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 마나"
+    }
+  },
+  "ARCANE_PROLIFERATION": {
+    "game": {
+      "name": "불가사의한 증식",
+      "description": [
+        "완드 공격 시 <b>30%</b> 확률로 두 배의 발사체를 생성합니다. 추가로 생성된 발사체는 <b>50%</b> 감소된 피해를 줍니다."
+      ]
+    }
+  },
+  "ARSONIST": {
+    "game": {
+      "name": "화염 전문가",
+      "description": [
+        "모든 <b>화염</b> 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "ATHLETE": {
+    "game": {
+      "name": "애슬리트",
+      "description": [
+        "최대 체력이 힘 속성의 <b>{{gameValue1}}</b>배만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>배"
+    }
+  },
+  "ATTR_CONS": {
+    "game": {
+      "name": "체질",
+      "description": [
+        "체질 특성이 1 증가합니다.",
+        "특성 점수당 체력이 {{gameValue1}} 증가합니다."
+      ]
+    }
+  },
+  "ATTR_DEX": {
+    "game": {
+      "name": "민첩",
+      "description": [
+        "민첩 속성을 1 증가시킵니다.",
+        "활과 단검의 공격력이 특성 점수당 5% 증가합니다."
+      ]
+    }
+  },
+  "ATTR_ENDURANCE": {
+    "game": {
+      "name": "인내력",
+      "description": [
+        "인내력 속성이 1 증가합니다.",
+        "속성 점수당 기력이 {{gameValue1}} 증가합니다."
+      ]
+    }
+  },
+  "ATTR_INT": {
+    "game": {
+      "name": "지능",
+      "description": [
+        "지능 속성을 1 증가시킵니다.",
+        "특성 점수당 마법 공격력이 5% 증가합니다."
+      ]
+    }
+  },
+  "ATTR_SPIRIT": {
+    "game": {
+      "name": "정신",
+      "description": [
+        "정신 속성이 1 증가합니다.",
+        "속성 점수당 마나가 {{gameValue1}} 증가합니다."
+      ]
+    }
+  },
+  "ATTR_STR": {
+    "game": {
+      "name": "힘",
+      "description": [
+        "힘 속성을 1 증가시킵니다.",
+        "속성 포인트당 근접 공격력이 5% 증가합니다."
+      ]
+    }
+  },
+  "BACKSTAB_MASTERY": {
+    "game": {
+      "name": "능숙한 백스탭",
+      "description": [
+        "<b>배후 공격</b> 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "BARBARIAN": {
+    "game": {
+      "name": "야만인",
+      "description": [
+        "화염 레벨 2당 힘이 1 증가합니다."
+      ]
+    }
+  },
+  "BARBARIAN_PATH": {
+    "game": {
+      "name": "야만인의 전투 방식",
+      "description": [
+        "양손 도끼, 곤봉, 망치의 피해가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "일제 사격",
+      "description": [
+        "활로 피해를 주면 <b>{{gameValue1}}</b>의 확률로 해당 무기의 내구도를 <b>1</b> 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "BASH": {
+    "game": {
+      "name": "리포스팅",
+      "description": [
+        "적의 공격을 패리하면 <b>{{gameValue1}}의 둔기</b> 피해로 강타합니다. 강타 피해는 힘 속성에 따라 증가합니다.",
+        "<b>패리</b><br/>모든 근접 무기, 와드 또는 방패로 막을 수 있습니다. 타이밍을 잘 맞춰 막으면 적의 공격을 <b>패리</b>하고 적의 <i>기절 막대</i>를 채웁니다.<br/>패리하려면 적이나 투사체가 <b>반짝일</b> 때까지 기다리세요."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}의 둔기</b> 피해"
+    }
+  },
+  "BATTLE_HEAL": {
+    "game": {
+      "name": "전투 치유",
+      "description": [
+        "근접 무기로 치명타를 가하면 최대 체력의 <b>{{gameValue1}}</b>만큼 회복됩니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 최대 체력"
+    }
+  },
+  "BEAST_MASTER": {
+    "game": {
+      "name": "야수 전문가",
+      "description": [
+        "공격 대상으로 지정되면 <b>50</b>미터 내의 <b>야생 동물</b>이 적을 공격합니다."
+      ]
+    }
+  },
+  "BEE_STING": {
+    "game": {
+      "name": "벌침",
+      "description": [
+        "공중에서 활을 쏘거나 조준하면 잠시 낙하 속도가 느려집니다. 쏠 때마다 몸이 살짝 떠올라 체공 시간이 길어집니다.",
+        "<b>비용:</b> 기력 {{gameValue1}}/초"
+      ]
+    }
+  },
+  "BEGONE": {
+    "game": {
+      "name": "가자!",
+      "description": [
+        "적을 밀어내고 기절시키는 마법 펀치입니다.",
+        "필요한 마나가 남아 있는 한, 비무장 공격을 대체합니다.",
+        "<b>비용:</b> 마나 {{gameValue1}}"
+      ]
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "시전과 폭발",
+      "description": [
+        "완드로 치명타를 가한 후, {{gameValue1}}초 내의 다음 지팡이 공격의 기본 피해가 <b>{{gameValue2}}</b>만큼 증가합니다."
+      ]
+    }
+  },
+  "BLESSED_ARROWS": {
+    "game": {
+      "name": "성스러운 화살",
+      "description": [
+        "활로 치명타를 가하면 <b>{{gameValue1}}</b>의 마나를 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 마나"
+    }
+  },
+  "BLINK": {
+    "game": {
+      "name": "점멸",
+      "description": [
+        "피하며 구르기 능력을 단거리 순간이동으로 대체합니다.",
+        "또한 점멸은 전략적 기동 스킬의 좌우 피하며 구르기를 대체합니다.",
+        "<b>비용:</b> 기력 {{gameValue1}}"
+      ]
+    }
+  },
+  "BLINK_ATTACK": {
+    "game": {
+      "name": "점멸 공격",
+      "description": [
+        "적을 대상으로 점멸하면 폭발이 일어나 작은 반경에 <b>화염</b> 피해를 입힙니다.",
+        "피해와 마나 소모는 지능 속성에 따라 달라집니다."
+      ]
+    }
+  },
+  "BLOOD_MAGIC": {
+    "game": {
+      "name": "혈마법",
+      "description": [
+        "마나가 <b>20%</b> 미만으로 떨어지면, 마나당 체력 <b>1</b>을 희생해 최대 마나의 <b>35%</b>를 회복합니다.",
+        "이 효과는 체력이 <b>1</b>이 되면 멈춥니다.",
+        "<b>쿨다운:</b> 2분"
+      ]
+    }
+  },
+  "BLOOD_RAGE": {
+    "game": {
+      "name": "핏빛 격노",
+      "description": [
+        "<b>{{gameValue1}}</b>미터 내의 적이 근접 무기로 처치되면 <b>핏빛 격노</b>에 빠집니다.",
+        "<b>핏빛 격노</b><br/><b>10</b>초 동안 근접 무기 피해가 <b>{{gameValue2}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>미터의 범위"
+    }
+  },
+  "BLOOD_WARRIOR": {
+    "game": {
+      "name": "피의 전사",
+      "description": [
+        "<b>기습</b> 또는 <b>무자비한 공격</b>(으)로 적을 처치하면 체력 구슬을 생성합니다.",
+        "구슬을(를) 수집하면 각각의 자원마다 <b>10%</b>를 회복합니다."
+      ]
+    }
+  },
+  "BLOODLETTING": {
+    "game": {
+      "name": "방혈",
+      "description": [
+        "주문으로 치명타를 가하면 <b>{{gameValue1}}</b>의 확률로 체력, 마나 및/또는 기력 구슬 2개를 생성합니다.",
+        "구슬을 모으면 해당 자원의 <b>10%</b>를 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "BONE_TO_ASH": {
+    "game": {
+      "name": "뼈를 재로",
+      "description": [
+        "텅 빈에 대한 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "BOUNTY_BONANZA": {
+    "game": {
+      "name": "바운티 보난자",
+      "description": [
+        "<b>타락자</b> 적을 <b>스킬샷</b>으로 처치하면 그룹이 추가로 <b>{{gameValue1}}</b>의 경험치를 얻습니다.",
+        "<b>스킬샷</b><br/>화살로 적의 머리와 같은 약점을 맞히는 것을 스킬샷이라고 합니다.",
+        "스킬샷은 투구가 없는 적에게 100% 증가한 기본 피해를, 투구가 있는 적에게는 50% 증가한 피해를 줍니다.<br/>스킬샷 피해 특성에 따라 더 증가할 수 있습니다."
+      ]
+    }
+  },
+  "BOW_SPECIALIZATION": {
+    "game": {
+      "name": "활 전문화",
+      "description": [
+        "활의 특수 능력을 해제합니다. <br/>집중력을 충분히 모은 후 <b>{{gameValue1}}</b>을 눌러 강력한 특수 능력을 발휘하세요.",
+        "<b>집중력</b><br/>공격하여 집중력을 생성합니다. 집중력은 모든 무기 유형으로 쌓을 수 있으며 무기의 특수 능력을 발동하는 데 사용됩니다."
+      ]
+    }
+  },
+  "BREACH": {
+    "game": {
+      "name": "돌파",
+      "description": [
+        "<b>제압된</b> 적은 <b>3</b>초 동안 근접 물리 피해를 <b>{{gameValue1}}</b> 더 받습니다.",
+        "<b>제압</b> <br/>방어하는 적을 공격하거나 적의 공격을 패리하면 <i>기절 막대</i>가 차올라 적을 <b>제압</b>할 수 있습니다.<br/><b>제압된</b> 적에게는 무자비한 공격을 할 수 있습니다."
+      ]
+    }
+  },
+  "BRUTE": {
+    "game": {
+      "name": "잔혹함",
+      "description": [
+        "근접 <b>둔기</b> 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "CALM_SPIRIT": {
+    "game": {
+      "name": "차분한 정신",
+      "description": [
+        "<b>50</b>미터 내의 <b>야생 동물</b>은 공격을 받기 전까지 먼저 공격하지 않습니다.",
+        "어둠의 장막에 오염된 동물에게는 영향을 미치지 않습니다."
+      ]
+    }
+  },
+  "CHAIN_HIT": {
+    "game": {
+      "name": "연쇄 명중",
+      "description": [
+        "마법 무기로 치명타를 가하면 <b>15</b>미터 내의 적 중 하나를 추가로 지정하여 지능당 <b>5의 충격</b> 피해를 줍니다.<br/>다른 대상을 연쇄 공격하는 대신 처음 지정한 대상을 두 번 공격합니다."
+      ]
+    }
+  },
+  "CHAIN_REACTION": {
+    "game": {
+      "name": "반향하는 폭발물",
+      "description": [
+        "<b>폭발 화살</b>에 맞은 각 적은 <b>40%</b> 확률로 좁은 반경 내에서 <b>50%</b>의 피해를 주는 2차 폭발을 일으킵니다."
+      ]
+    }
+  },
+  "COUNTER_BATTERY": {
+    "game": {
+      "name": "반격의 화살",
+      "description": [
+        "<b>원거리</b> 적에 대한 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "COUNTERSTRIKE": {
+    "game": {
+      "name": "반격",
+      "description": [
+        "피해를 받은 후, <b>{{gameValue1}}</b>의 확률로 피해의 <b>{{gameValue2}}</b>를 공격자에게 <b>화염</b> 피해로 되돌려줍니다.",
+        "이 마법 공격은 다른 스킬을 발동시킬 수 있습니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률 및 <b>{{gamePerLevelValue2}}</b>의 반사 피해"
+    }
+  },
+  "CRASH_DOWN_ATTACK": {
+    "game": {
+      "name": "분쇄 공격",
+      "description": [
+        "근접 무기를 장착한 상태에서 점프 중에 <b>{{gameValue1}}</b>을(를) 길게 누르면 특수 공격을 할 수 있습니다.",
+        "분쇄 공격은 작은 폭발 범위에 50% 더 많은 무기 피해를 주며, 사용한 무기 유형에 비례하여 기력을 소모합니다.",
+        "<b>비용:</b> 기력 {{gameValue2}}~{{gameValue3}}",
+        "<b>막기 분쇄</b> <br/>이 특수 공격은 방어하는 적에게 적중 시 <i>기절 막대</i>를 두 배로 채웁니다.."
+      ]
+    }
+  },
+  "CRASH_DOWN_FORCE": {
+    "game": {
+      "name": "분쇄 공격: 힘",
+      "description": [
+        "이중 점프에서 공격 시, <b>분쇄 공격</b>이 <b>20%</b>의 추가 무기 피해를 줍니다."
+      ]
+    }
+  },
+  "CULL_THE_HERD": {
+    "game": {
+      "name": "무리 도태",
+      "description": [
+        "야생 동물에 대한 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "CUTTHROAT": {
+    "game": {
+      "name": "자객",
+      "description": [
+        "기습 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "DAGGER_MASTERY": {
+    "game": {
+      "name": "단검 전문가",
+      "description": [
+        "단검 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "DAGGER_SPECIALIZATION": {
+    "game": {
+      "name": "단검 전문화",
+      "description": [
+        "단검의 특수 능력을 해제합니다. <br/>집중력을 충분히 모은 후 <b>{{gameValue1}}</b>을 눌러 강력한 특수 능력을 발휘하세요.",
+        "<b>집중력</b><br/>공격하여 집중력을 생성합니다. 집중력은 모든 무기 유형으로 쌓을 수 있으며 무기의 특수 능력을 발동하는 데 사용됩니다."
+      ]
+    }
+  },
+  "DARK_ARTS": {
+    "game": {
+      "name": "흑마술",
+      "description": [
+        "모든 <b>어둠의 장막</b> 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "DESSERT_STOMACH": {
+    "game": {
+      "name": "간식 먹을 배",
+      "description": [
+        "음식 슬롯을 하나 더 획득합니다."
+      ]
+    }
+  },
+  "DIVINE_SURGE": {
+    "game": {
+      "name": "신성한 급등",
+      "description": [
+        "회복 주문이 치명타로 발동할 수 있으며, 치명타 피해량에 따라 위력이 달라집니다."
+      ]
+    }
+  },
+  "DOUBLE_JUMP": {
+    "game": {
+      "name": "이중 점프",
+      "description": [
+        "공중에서 한 번 더 점프할 수 있습니다.",
+        "<b>비용:</b> 기력 {{gameValue1}}"
+      ]
+    }
+  },
+  "EAGLE_EYE": {
+    "game": {
+      "name": "예리한 시선",
+      "description": [
+        "활로 조준할 때 훨씬 크게 확대됩니다.",
+        "조준하려면 액션 바에서 활을 선택한 상태에서 {{gameValue1}}를 길게 누릅니다.<br/>(또는 {{gameValue2}}을 길게 눌러 장착한 활을 조준합니다.)"
+      ]
+    }
+  },
+  "EAGLES_BANE": {
+    "game": {
+      "name": "독수리의 베인",
+      "description": [
+        "<b>비행</b> 중인 적에 대한 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "EARTH_AURA": {
+    "game": {
+      "name": "대지의 오라",
+      "description": [
+        "자신과 <b>{{gameValue2}}</b>미터 내 모든 아군의 물리 및 마법 저항력을 <b>{{gameValue1}}</b> 증가시키는 보호 오라를 발산합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>미터의 범위"
+    }
+  },
+  "EMERGENCY_BLINK": {
+    "game": {
+      "name": "긴급 점멸",
+      "description": [
+        "기절 중 점멸할 수 있습니다. 이를 통해 기절 상태에서 깨어날 것입니다."
+      ]
+    }
+  },
+  "ENDURANCE_OF_THE_FLAME": {
+    "game": {
+      "name": "의 내구성 화염",
+      "description": [
+        "화염 레벨 2당 인내력이 1 증가합니다."
+      ]
+    }
+  },
+  "ETERNAL_SPARK": {
+    "game": {
+      "name": "영원한 불꽃",
+      "description": [
+        "완드 투사체로 피해를 주면 <b>{{gameValue1}}</b>의 확률로 해당 무기의 내구도를 <b>1</b> 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "EVASION_ATTACK": {
+    "game": {
+      "name": "회피 공격",
+      "description": [
+        "근접 무기를 장착한 상태에서 회피 도중 <b>{{gameValue1}}</b>을(를) 누르면<br/>적을 향해 돌진하며 <b>50%</b>의 추가 무기 피해를 주는 회피 공격을 할 수 있습니다.",
+        "<b>비용:</b> 기력 {{gameValue2}}",
+        "<b>막기 분쇄</b> <br/>이 특수 공격은 방어하는 적에게 적중 시 <i>기절 막대</i>를 두 배로 채웁니다."
+      ]
+    }
+  },
+  "EXALTED": {
+    "game": {
+      "name": "고결한 자",
+      "description": [
+        "화염 레벨을 2씩 올릴 때마다 지능이 1 증가합니다."
+      ]
+    }
+  },
+  "EXPOSE_WEAKNESS": {
+    "game": {
+      "name": "약점 노출",
+      "description": [
+        "단검으로 치명타를 가하면 적의 방어구를 파괴하여 <b>{{gameValue2}}</b>초 동안 <b>{{gameValue1}}</b>의 증가된 물리 피해를 주는 <b>디버프</b>를 적용합니다."
+      ]
+    }
+  },
+  "FATAL_PRECISION": {
+    "game": {
+      "name": "치명적인 정밀함",
+      "description": [
+        "치명타 확률이 <b>{{gameValue1}}</b> 증가합니다.<br/>치명타 피해가 <b>{{gameValue2}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 치명타 확률 및 <b>{{gamePerLevelValue2}}</b>의 치명타 피해"
+    }
+  },
+  "FELLING_AXE_SPECIALIZATION": {
+    "game": {
+      "name": "벌목용 도끼 전문화",
+      "description": [
+        "벌목용 도끼의 특수 능력을 해제합니다. <br/>집중력을 충분히 모은 후 <b>{{gameValue1}}</b>을 눌러 강력한 특수 능력을 발휘하세요.",
+        "<b>집중력</b><br/>공격하여 집중력을 생성합니다. 집중력은 모든 무기 유형으로 쌓을 수 있으며 무기의 특수 능력을 발동하는 데 사용됩니다."
+      ]
+    }
+  },
+  "FINESSE": {
+    "game": {
+      "name": "능숙한 솜씨",
+      "description": [
+        "한 손 검, 한 손 도끼, 한 손 곤봉, 단검으로 피해를 주면 <b>{{gameValue1}}</b>의 확률로 해당 무기의 내구도를 <b>1</b> 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "FIRE_RESISTANCE": {
+    "game": {
+      "name": "화염 저항",
+      "description": [
+        "<b>화염 저항</b>이 <b>{{gameValue1}}</b> 증가하여 받는 <b>화염</b> 피해량이 감소합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 저항"
+    }
+  },
+  "FISHERMANS_RESOLVE": {
+    "game": {
+      "name": "어부의 굳은 심지",
+      "description": [
+        "낚시 인내력이 <b>{{gameValue1}}</b> 증가합니다.",
+        "낚인 물고기와의 장시간 전투를 가능하게 합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 낚시 인내력"
+    }
+  },
+  "FROST": {
+    "game": {
+      "name": "서리",
+      "description": [
+        "근접 피해를 받으면 공격자가 <b>{{gameValue1}}</b> 동안 느려집니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "GIANT_SLAYER_HOOK": {
+    "game": {
+      "name": "거인 처치자 갈고리",
+      "description": [
+        "전투 중 <b>갈고리</b>를 사용해 거대한 적에게 접근할 수 있습니다.",
+        "적 레벨에 비례하여 스킬 비용이 달라집니다. 적 레벨이 높을수록 소모 비용이 커집니다.",
+        "<b>기본 비용:</b> 기력 {{gameValue1}}"
+      ]
+    }
+  },
+  "GOOD_METABOLISM": {
+    "game": {
+      "name": "신진대사 양호",
+      "description": [
+        "체력, 마나, 기력 구슬이(가) 각 자원의 <b>10%</b> 대신 <b>30%</b>를 회복합니다.",
+        "체력 및 마나 물약은 <b>20%</b> 더 많은 자원을 회복합니다."
+      ]
+    }
+  },
+  "GRACEFUL_STRIDE": {
+    "game": {
+      "name": "우아한 걸음",
+      "description": [
+        "화염 레벨 2당 민첩성이 1 증가합니다."
+      ]
+    }
+  },
+  "GROUNDING_HOOK": {
+    "game": {
+      "name": "접지 갈고리",
+      "description": [
+        "전투 중 <b>갈고리</b>를 사용해 전투 중 <b>비행하는</b> 적을 끌어당길 수 있습니다.",
+        "적 레벨에 비례하여 스킬 비용이 달라집니다. 적 레벨이 높을수록 소모 비용이 커집니다.",
+        "<b>기본 비용:</b> 기력 {{gameValue1}}"
+      ]
+    }
+  },
+  "HEALER": {
+    "game": {
+      "name": "치유사",
+      "description": [
+        "회복 주문 및 물의 오라로 얻는 체력 회복량이 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 치유량"
+    }
+  },
+  "HEALER_REVIVE": {
+    "game": {
+      "name": "부활 & 회복",
+      "description": [
+        "플레이어를 <b>{{gameValue1}}</b>만큼 증가한 체력으로 부활시킵니다.",
+        "부활한 플레이어의 기본 체력은 <b>10%</b>입니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 체력"
+    }
+  },
+  "HEAVY_HANDED": {
+    "game": {
+      "name": "가혹함",
+      "description": [
+        "근접 무기로 방어 중인 적을 공격할 때 적의 <i>기절 막대</i>를 채우는 효과가 <b>{{gameValue1}}</b> 증가합니다.",
+        "<b>제압</b> <br/>방어하는 적을 공격하거나 적의 공격을 패리하면 <i>기절 막대</i>가 차올라 적을 <b>제압</b>할 수 있습니다.<br/><b>제압된</b> 적에게는 무자비한 공격을 할 수 있습니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 효과"
+    }
+  },
+  "HEAVY_PLATES": {
+    "game": {
+      "name": "중갑",
+      "description": [
+        "장착한 아이템의 물리 방어 포인트가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>만큼 물리 방어력 증가"
+    }
+  },
+  "HEAVY_SPECIALIZATION": {
+    "game": {
+      "name": "강타자",
+      "description": [
+        "모든 양손 근접 무기의 공격 속도가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ]
+    }
+  },
+  "ICE_RESISTANCE": {
+    "game": {
+      "name": "얼음 저항",
+      "description": [
+        "<b>얼음 저항</b>이 <b>{{gameValue1}}</b> 증가하여 받는 <b>얼음</b> 피해량이 감소합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 저항"
+    }
+  },
+  "ICEMAN": {
+    "game": {
+      "name": "얼음 술사",
+      "description": [
+        "모든 <b>얼음</b> 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "INNER_FIRES": {
+    "game": {
+      "name": "내면의 불꽃",
+      "description": [
+        "<b>어둠의 장막에서 머무를 수 있는 시간</b>이 <b>{{gameValue1}}</b>만큼 증가하여 더 오래 탐험할 수 있습니다.",
+        "<b>어둠의 장막에서 머무를 수 있는 시간</b><br/>이 다 되면, 어둠의 장막에 잠식당합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "KICK": {
+    "game": {
+      "name": "발차기",
+      "description": [
+        "근접 무기를 장비한 상태에서 방어 중에 공격하면 발차기를 할 수 있습니다.",
+        "발차기는 피해량이 적지만, 강력한 힘으로 대상을 타격하여 적의 <i>기절 막대</i>를 채우고 뒤로 밀어냅니다.",
+        "<i>기절 막대</i> 증가량은 민첩성에 따라 달라집니다.<br/>기절 시간은 적의 덩치에 따라 다릅니다.",
+        "<b>제압</b> <br/>방어하는 적을 공격하거나 적의 공격을 패리하면 <i>기절 막대</i>가 차올라 적을 <b>제압</b>할 수 있습니다.<br/><b>제압된</b> 적에게는 무자비한 공격을 할 수 있습니다."
+      ]
+    }
+  },
+  "LAST_MEAL": {
+    "game": {
+      "name": "마지막 식사",
+      "description": [
+        "음식 버프가 죽어도 지속되지만, 지속 시간이 절반으로 감소합니다."
+      ]
+    }
+  },
+  "LIFE_BURST": {
+    "game": {
+      "name": "생명력 폭발",
+      "description": [
+        "마법 무기로 적을 처치하면 자신 지능의 <b>{{gameValue1}}</b>배에 해당하는 수치만큼 대상 및 반경 <b>15</b>미터 내 모든 플레이어의 체력을 회복합니다."
+      ]
+    }
+  },
+  "LIFE_ESSENCES": {
+    "game": {
+      "name": "생명의 정수",
+      "description": [
+        "최대 체력이 지능 속성의 <b>{{gameValue1}}</b>배만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>배"
+    }
+  },
+  "LUMBERJACK": {
+    "game": {
+      "name": "벌목꾼",
+      "description": [
+        "도구가 목재에 주는 피해가 <b>{{gameValue1}}</b>만큼 증가합니다.<br/>여기에는 나무와 목재 지형이 포함됩니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "MAGE_APPRENTICE": {
+    "game": {
+      "name": "견습 마법사",
+      "description": [
+        "완드와 지팡이의 피해가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "MANA_CURRENTS": {
+    "game": {
+      "name": "마나의 흐름",
+      "description": [
+        "기본 마나 재생량이 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 마나 재생"
+    }
+  },
+  "MARKSMAN": {
+    "game": {
+      "name": "명사수",
+      "description": [
+        "활로 주는 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "MARTYR": {
+    "game": {
+      "name": "순교자",
+      "description": [
+        "적에게 죽으면 <b>30</b>미터 내의 모든 아군이 최대 체력의 <b>50%</b>만큼 치유됩니다.",
+        "또한 <b>15</b>분 동안 최대 체력을 <b>100</b> 증가시키는 <b>마지막 축복</b> 버프를 받습니다."
+      ]
+    }
+  },
+  "MASON": {
+    "game": {
+      "name": "석공",
+      "description": [
+        "도구가 돌에 주는 피해가 <b>{{gameValue1}}</b>만큼 증가합니다.<br/>여기에는 돌 지형과 보석 광맥이 포함됩니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "MASS_DESTRUCTION": {
+    "game": {
+      "name": "대량 학살",
+      "description": [
+        "마법 무기로 치명타를 가하면 대상의 <b>{{gameValue1}}</b>미터 내 모든 적에게 지능당 <b>2의 충격</b> 피해를 줍니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>미터의 범위"
+    }
+  },
+  "MERCILESS_ATTACK": {
+    "game": {
+      "name": "무자비한 공격",
+      "description": [
+        "<b>{{gameValue1}}</b>을 눌러 <b>제압된</b> 적에게 <b>{{gameValue2}}</b>의 피해를 주는 <b>무자비한 공격</b>을 수행합니다.",
+        "<b>제압</b> <br/>방어하는 적을 공격하거나 적의 공격을 패리하면 <i>기절 막대</i>가 차올라 적을 <b>제압</b>할 수 있습니다.<br/><b>제압된</b> 적에게는 무자비한 공격을 할 수 있습니다.",
+        "완드, 지팡이, 활로는 무자비한 공격을 수행할 수 없습니다."
+      ]
+    }
+  },
+  "MINER": {
+    "game": {
+      "name": "광부",
+      "description": [
+        "자원 채굴 시 <b>10%</b> 확률로 추가 자원 1개를 획득합니다."
+      ]
+    }
+  },
+  "MITHRIDATIST": {
+    "game": {
+      "name": "독에는 독",
+      "description": [
+        "중독에 걸리지 않을 확률이 <b>25%</b> 증가합니다."
+      ]
+    }
+  },
+  "MULTI_SHOT": {
+    "game": {
+      "name": "멀티 샷",
+      "description": [
+        "<i>일반 화살</i> 발사 시 <b>20%</b> 확률로 약간 퍼지는 <b>화살 세례</b>가 생성됩니다.",
+        "이 방식으로 발사된 <i>일반 화살</i>은 탄약에서 차감됩니다.",
+        "<b>화살 세례</b>는 <i>특수 화살</i>로는 발동되지 않습니다."
+      ]
+    }
+  },
+  "MULTI_SHOT_SPREAD": {
+    "game": {
+      "name": "멀티 샷 확산",
+      "description": [
+        "<b>멀티 샷</b> 스킬의 <b>화살 세례</b>에 <i>일반 화살</i>이 추가로 생성될 확률이 <b>25%</b> 증가합니다.",
+        "이 추가 <i>일반 화살</i>은 탄약에서 차감되지 않습니다."
+      ]
+    }
+  },
+  "MULTI_SHOT_TRIGGER": {
+    "game": {
+      "name": "멀티 샷 발동",
+      "description": [
+        "이제 <i>특수 화살</i>을 쏘면 <b>멀티 샷</b> 스킬의 <b>화살 세례</b>가 발동합니다.",
+        "이 방식으로 발사된 <i>특수 화살</i>은 탄약에서 차감됩니다."
+      ]
+    }
+  },
+  "NECROMANCER": {
+    "game": {
+      "name": "강령술사",
+      "description": [
+        "마법 무기로 적을 처치하면 <b>{{gameValue1}}</b>의 확률로 아군 <b>해골 동료</b>를 소환합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "NEMESIS": {
+    "game": {
+      "name": "존재감",
+      "description": [
+        "적의 주의를 끄는 효과가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 주의 끌기"
+    }
+  },
+  "ONE_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "한손 전문화",
+      "description": [
+        "한손 근접 무기의 특수 능력을 해제합니다. <br/>집중력을 충분히 모은 후 <b>{{gameValue1}}</b>을 눌러 강력한 특수 능력을 발휘하세요.",
+        "<b>집중력</b><br/>공격하여 집중력을 생성합니다. 집중력은 모든 무기 유형으로 쌓을 수 있으며 무기의 특수 능력을 발동하는 데 사용됩니다."
+      ]
+    }
+  },
+  "OPPORTUNITY": {
+    "game": {
+      "name": "기회",
+      "description": [
+        "<b>무자비한 공격</b>의 피해 계수가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "PICKAXE_SPECIALIZATION": {
+    "game": {
+      "name": "곡괭이 전문화",
+      "description": [
+        "곡괭이의 특수 능력을 해제합니다. <br/>집중력을 충분히 모은 후 <b>{{gameValue1}}</b>을 눌러 강력한 특수 능력을 발휘하세요.",
+        "<b>집중력</b><br/>공격하여 집중력을 생성합니다. 집중력은 모든 무기 유형으로 쌓을 수 있으며 무기의 특수 능력을 발동하는 데 사용됩니다."
+      ]
+    }
+  },
+  "POISON_MASTERY": {
+    "game": {
+      "name": "독 전문가",
+      "description": [
+        "<b>독 칼날</b> 단검 특전으로 주는 피해가 <b>100%</b> 증가합니다."
+      ]
+    }
+  },
+  "POISONED_BLADES": {
+    "game": {
+      "name": "독 칼날",
+      "description": [
+        "<b>독 칼날</b> 퍼크가 있는 단검 사용 시 적을 중독시킬 확률이 <b>30%</b>로 증가합니다."
+      ]
+    }
+  },
+  "POWER_PARRY": {
+    "game": {
+      "name": "파워 패리",
+      "description": [
+        "패리 위력이 <b>{{gameValue1}}</b> 증가합니다.",
+        "<b>패리</b><br/>모든 근접 무기, 와드 또는 방패로 막을 수 있습니다. 타이밍을 잘 맞춰 막으면 적의 공격을 <b>패리</b>하고 적의 <i>기절 막대</i>를 채웁니다.<br/>패리하려면 적이나 투사체가 <b>반짝일</b> 때까지 기다리세요.",
+        "<b>제압</b> <br/>방어하는 적을 공격하거나 적의 공격을 패리하면 <i>기절 막대</i>가 차올라 적을 <b>제압</b>할 수 있습니다.<br/><b>제압된</b> 적에게는 무자비한 공격을 할 수 있습니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 패리 위력"
+    }
+  },
+  "PRIMAL_FORCE": {
+    "game": {
+      "name": "원시의 힘",
+      "description": [
+        "부카에 대한 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "PROSPECTOR": {
+    "game": {
+      "name": "탐사자",
+      "description": [
+        "도구가 금속에 주는 피해가 <b>{{gameValue1}}</b>만큼 증가합니다.<br/>여기에는 금속 광맥이 포함됩니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "자상",
+      "description": [
+        "원거리 <b>관통</b> 피해가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "PURIFICATION": {
+    "game": {
+      "name": "정화",
+      "description": [
+        "한 손 또는 양손 도끼, 곤봉, 망치, 검 또는 대검으로 어둠의 장막에 감염된 적을 처치하면 <b>어둠의 장막에서 머무를 수 있는 시간</b>이 <b>{{gameValue1}}</b>초 회복됩니다.",
+        "<b>어둠의 장막에서 머무를 수 있는 시간</b><br/>이 다 되면, 어둠의 장막에 잠식당합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>초"
+    }
+  },
+  "QUALITY_GEAR": {
+    "game": {
+      "name": "고품질 장비",
+      "description": [
+        "도구로 타격 시 <b>{{gameValue1}}</b>의 확률로 내구도를 <b>1</b> 회복합니다."
+      ]
+    }
+  },
+  "QUICK_CHARGE": {
+    "game": {
+      "name": "빠른 충전",
+      "description": [
+        "주문 충전 시간이 <b>{{gameValue1}}</b>만큼 감소합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 충전 시간"
+    }
+  },
+  "QUICK_REFLEX_BLOCK": {
+    "game": {
+      "name": "빠른 반사 블록",
+      "description": [
+        "단검으로 방어할 때 블록 값을 잠시 높여서, 아깝게 빗나간 패리로 인한 기력 감소를 최소한으로 줄입니다."
+      ]
+    }
+  },
+  "RADIANT_AURA": {
+    "game": {
+      "name": "빛의 오라",
+      "description": [
+        "<b>{{gameValue1}}</b>미터 내의 모든 <b>타락자</b> 적은 초마다 지능당 <b>{{gameValue2}}의 화염</b> 피해를 받습니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>미터의 범위 및 지능당 <b>{{gamePerLevelValue2}}의 화염</b> 피해"
+    }
+  },
+  "RANGER": {
+    "game": {
+      "name": "감시원",
+      "description": [
+        "민첩 및 인내력 속성이 <b>{{gameValue1}}</b> 증가합니다.",
+        "기본 기력 재생량이 <b>{{gameValue2}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 민첩 및 인내력.<br/>레벨당 <b>{{gamePerLevelValue2}}</b>의 기력 재생."
+    }
+  },
+  "REBOUND": {
+    "game": {
+      "name": "반향",
+      "description": [
+        "기본 기력 재생량이 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 기력 재생"
+    }
+  },
+  "RELENTLESS": {
+    "game": {
+      "name": "냉혹함",
+      "description": [
+        "양손 무기로 치명타를 가하면 다음 공격의 치명타 확률이 <b>{{gameValue1}}</b> 증가합니다."
+      ]
+    }
+  },
+  "RICOCHETS": {
+    "game": {
+      "name": "파편 폭발",
+      "description": [
+        "<b>폭발 화살</b>에 맞은 대상 하나당 피해가 <b>10%</b> 증가합니다."
+      ]
+    }
+  },
+  "RIGHTEOUS_FIRE": {
+    "game": {
+      "name": "정의의 불꽃",
+      "description": [
+        "주문으로 대상을 치유하면 불꽃 폭발이 일어나 근처의 <b>타락자</b> 적에게 치유량의 <b>{{gameValue1}}</b>에 해당하는 <b>화염</b> 피해를 줍니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}의 화염</b> 피해"
+    }
+  },
+  "RUNNER": {
+    "game": {
+      "name": "질주의 달인",
+      "description": [
+        "질주 속도가 <b>{{gameValue1}}</b> 증가하고 질주 중 기력 소모가 <b>{{gameValue2}}</b> 감소합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 속도 및 <b>{{gamePerLevelValue2}}</b>의 소모량 감소"
+    }
+  },
+  "SAVIOUR": {
+    "game": {
+      "name": "구원자",
+      "description": [
+        "아군 부활 시간이 <b>{{gameValue1}}</b>초 감소합니다.",
+        "기본 부활 시간은 <b>6</b>초입니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>초"
+    }
+  },
+  "SHELL_SHOCK": {
+    "game": {
+      "name": "융단폭격",
+      "description": [
+        "<b>원거리 폭발물</b>에 마나를 주입합니다. 이제 적을 <b>2</b>초 동안 기절시킵니다.",
+        "<b>비용:</b> 기절한 적 하나당 {{gameValue1}} 마나"
+      ]
+    }
+  },
+  "SHINY_PLATES": {
+    "game": {
+      "name": "빛나는 갑옷",
+      "description": [
+        "장착한 아이템의 마법 방어 포인트가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>만큼 마법 방어력 증가"
+    }
+  },
+  "SHOCK_RESISTANCE": {
+    "game": {
+      "name": "충격 저항",
+      "description": [
+        "<b>충격 저항</b>이 <b>{{gameValue1}}</b> 증가하여 받는 <b>충격</b> 피해량이 감소합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 저항"
+    }
+  },
+  "SHOCKWAVE": {
+    "game": {
+      "name": "충격파",
+      "description": [
+        "공격을 패리하거나 적을 <b>제압</b>하면 충격파가 발동합니다.",
+        "충격파는 주변의 적을 뒤로 밀어냅니다. 또한 적의 <i>기절 막대</i>가 채워지는데, 힘 속성에 따라 증가량이 달라집니다.",
+        "<b>패리</b><br/>모든 근접 무기, 와드 또는 방패로 막을 수 있습니다. 타이밍을 잘 맞춰 막으면 적의 공격을 <b>패리</b>하고 적의 <i>기절 막대</i>를 채웁니다.<br/>패리하려면 적이나 투사체가 <b>반짝일</b> 때까지 기다리세요.",
+        "<b>제압</b> <br/>방어하는 적을 공격하거나 적의 공격을 패리하면 <i>기절 막대</i>가 차올라 적을 <b>제압</b>할 수 있습니다.<br/><b>제압된</b> 적에게는 무자비한 공격을 할 수 있습니다."
+      ]
+    }
+  },
+  "SHROUD_FILTER": {
+    "game": {
+      "name": "어둠의 장막 경감",
+      "description": [
+        "마법 무기로 피해를 주면 <b>{{gameValue1}}</b>의 확률로 작은 불꽃 폭발이 일어나 자신과 <b>{{gameValue3}}</b>미터 내의 아군에게 <b>어둠의 장막에서 머무를 수 있는 시간</b>을 <b>{{gameValue2}}</b>초 회복시킵니다.",
+        "<b>어둠의 장막에서 머무를 수 있는 시간</b><br/>이 다 되면, 어둠의 장막에 잠식당합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "SHROUD_MISTERY": {
+    "game": {
+      "name": "동고동락",
+      "description": [
+        "<b>어둠의 장막</b> 피해를 받으면 <b>{{gameValue1}}</b>미터 내의 모든 플레이어는 <b>30</b>초 동안 <b>어둠의 장막 저항</b>이 <b>{{gameValue2}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>미터의 범위"
+    }
+  },
+  "SHROUD_RESISTANCE": {
+    "game": {
+      "name": "어둠의 장막 저항",
+      "description": [
+        "<b>어둠의 장막 저항</b>이 <b>{{gameValue1}}</b> 증가하여 받는 <b>어둠의 장막</b> 피해량이 감소합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 저항"
+    }
+  },
+  "SILENT_STRIDE": {
+    "game": {
+      "name": "조용한 걸음",
+      "description": [
+        "<b>잠행</b> 중 이동 속도가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 이동 속도"
+    }
+  },
+  "SKILL_SHOT": {
+    "game": {
+      "name": "정확한 샷",
+      "description": [
+        "<b>스킬샷</b> 피해가 <b>{{gameValue1}}</b> 증가합니다.",
+        "<b>스킬샷</b><br/>화살로 적의 머리와 같은 약점을 맞히는 것을 스킬샷이라고 합니다.",
+        "스킬샷은 투구가 없는 적에게 100% 증가한 기본 피해를, 투구가 있는 적에게는 50% 증가한 피해를 줍니다.<br/>스킬샷 피해 특성에 따라 더 증가할 수 있습니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "SLASHER": {
+    "game": {
+      "name": "절단가",
+      "description": [
+        "근접 <b>절단</b> 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "SLEIGHT_OF_HAND": {
+    "game": {
+      "name": "날랜 솜씨",
+      "description": [
+        "비무장 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "SLICE_AND_DICE": {
+    "game": {
+      "name": "산산조각",
+      "description": [
+        "단검으로 치명타를 가한 후, {{gameValue1}}초 내의 다음 활 공격의 기본 피해가 <b>{{gameValue2}}</b>만큼 증가합니다."
+      ]
+    }
+  },
+  "SNAKE_EATER": {
+    "game": {
+      "name": "뱀을 먹는 자",
+      "description": [
+        "<b>독 저항</b>이 <b>{{gameValue1}}</b>만큼 증가하여 받는 <b>독</b> 피해량이 감소합니다.",
+        "<b>독</b> 피해는 방어구를 무시하며 <b>독 저항</b>으로만 완화할 수 있습니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 저항"
+    }
+  },
+  "SNAP": {
+    "game": {
+      "name": "기민한 판단",
+      "description": [
+        "<b>무자비한 공격</b>을 발동하면 마나 <b>{{gameValue1}}</b>를 회복합니다."
+      ]
+    }
+  },
+  "SNEAK_ATTACK": {
+    "game": {
+      "name": "기습",
+      "description": [
+        "비경계 상태의 적에게 몰래 다가가 <b>{{gameValue1}}</b>을 눌러 <b>기습</b>을 수행합니다.",
+        "<b>기습</b>은 <b>+900%</b>의 증가된 피해를 줍니다.",
+        "완드, 지팡이, 활로는 기습을 수행할 수 없습니다."
+      ]
+    }
+  },
+  "SNIPER": {
+    "game": {
+      "name": "저격수",
+      "description": [
+        "활의 치명타 확률이 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 치명타 확률"
+    }
+  },
+  "SOAKED_DOG": {
+    "game": {
+      "name": "흠뻑 젖은 개",
+      "description": [
+        "<b>젖음</b>과 <b>흠뻑 젖음</b> 디버프의 효과가 약해집니다.",
+        "기력 및 기력 재생이 <b>20%</b> 대신 <b>10%</b>만 감소합니다.",
+        "<b>젖음</b> <br/><b>15</b>분간 기력과 기력 재생이 <b>30%</b> 감소합니다. 남은 지속 시간 동안 온기가 감소합니다.",
+        "<b>흠뻑 젖음</b> <br/><b>30</b>초간 기력과 기력 재생이 <b>30%</b> 감소합니다. 또한 <b>얼음 과 충격 저항</b>이 <b>30%</b> 감소하지만 <b>화염 저항</b>이 <b>30%</b> 증가합니다.<br/><b>흠뻑 젖음</b>은 적에게 적용할 수 있습니다.<br/><b>흠뻑 젖음</b> 지속 기간은 온기로 줄어들지 않으며 끝나면 <b>젖음</b> 디버프 상태로 전환됩니다."
+      ]
+    }
+  },
+  "SOUL_LEECH": {
+    "game": {
+      "name": "영혼 흡수",
+      "description": [
+        "근접 무기로 적을 처치하면 대상의 <b>{{gameValue1}}</b>미터 내 모든 플레이어가 <b>{{gameValue2}}</b>의 마나를 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>미터의 범위와 <b>{{gamePerLevelValue2}}</b>의 마나"
+    }
+  },
+  "SPELLSLINGER": {
+    "game": {
+      "name": "주문술사",
+      "description": [
+        "지팡이 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "SPLASH_DASH": {
+    "game": {
+      "name": "입수 질주",
+      "description": [
+        "수영하거나 낙하하는 동안 회피 돌진을 사용할 수 있습니다.",
+        "<b>비용</b>: 기력 {{gameValue1}}"
+      ]
+    }
+  },
+  "STEADFAST": {
+    "game": {
+      "name": "굳건함",
+      "description": [
+        "근접 무기로 적을 처치하면 해당 무기의 내구도가 <b>{{gameValue1}}</b> 회복됩니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 내구도"
+    }
+  },
+  "STING": {
+    "game": {
+      "name": "매서움",
+      "description": [
+        "반복적인 완드 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ]
+    }
+  },
+  "STRATEGIC_MANEUVER": {
+    "game": {
+      "name": "전략적 기동",
+      "description": [
+        "적을 조준한 상태에서 피하며 구르기 능력을 좌우 피하며 구르기로 대체합니다.",
+        "이 능력을 사용하면 적 주변을 구르며 측면을 공격하거나 배후 공격을 가하기 쉬워집니다.",
+        "점멸은 전략적 기동 스킬의 좌우 피하며 구르기를 대체합니다.",
+        "<b>비용:</b> 기력 {{gameValue1}}"
+      ]
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "생존 본능",
+      "description": [
+        "활이나 단검으로 어둠의 장막에 감염된 적을 처치하면 <b>어둠의 장막에서 머무를 수 있는 시간</b>이 <b>{{gameValue1}}</b>초 회복됩니다.",
+        "<b>어둠의 장막에서 머무를 수 있는 시간</b><br/>이 다 되면, 어둠의 장막에 잠식당합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>초"
+    }
+  },
+  "SWEET_TOOTH": {
+    "game": {
+      "name": "당 중독",
+      "description": [
+        "간식의 기력 재생량이 <b>50%</b> 증가합니다."
+      ]
+    }
+  },
+  "SWIFT_BLADES": {
+    "game": {
+      "name": "스위프트 블레이드",
+      "description": [
+        "모든 한손 근접 무기의 공격 속도가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ]
+    }
+  },
+  "SWIFTSHOT_SUSTENANCE": {
+    "game": {
+      "name": "빠른 복구 샷 ",
+      "description": [
+        "활로 적을 처치하면 <b>{{gameValue1}}</b>의 확률로 기력이 구슬 생성됩니다.",
+        "구슬을 모으면 해당 자원의 <b>10%</b>를 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "TERROR": {
+    "game": {
+      "name": "공포",
+      "description": [
+        "주문으로 치명타를 가하면 <b>{{gameValue1}}</b>의 확률로 대상이 <b>2</b>초 동안 기절합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률"
+    }
+  },
+  "THICK_SKIN": {
+    "game": {
+      "name": "두꺼운 피부",
+      "description": [
+        "화염 레벨 2당 체질이 1 증가합니다."
+      ]
+    }
+  },
+  "THRUST": {
+    "game": {
+      "name": "찌르기",
+      "description": [
+        "근접 <b>관통</b> 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "THUNDER": {
+    "game": {
+      "name": "천둥",
+      "description": [
+        "모든 <b>충격</b> 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "TITAN_EDGE": {
+    "game": {
+      "name": "거인의 날카로운 검",
+      "description": [
+        "양손 대검 피해가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "토템 전문가",
+      "description": [
+        "소환되는 토템의 최대 개수가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>개의 토템"
+    }
+  },
+  "TOWER": {
+    "game": {
+      "name": "요새",
+      "description": [
+        "<b>20</b>미터 내에 적이 셋 이상 있을 때, <b>물리 저항력</b>이 <b>{{gameValue1}}</b> 증가합니다."
+      ]
+    }
+  },
+  "TWO_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "양손 전문화",
+      "description": [
+        "양손 근접 무기의 특수 능력을 해제합니다. <br/>집중력을 충분히 모은 후 <b>{{gameValue1}}</b>을 눌러 강력한 특수 능력을 발휘하세요.",
+        "<b>집중력</b><br/>공격하여 집중력을 생성합니다. 집중력은 모든 무기 유형으로 쌓을 수 있으며 무기의 특수 능력을 발동하는 데 사용됩니다."
+      ]
+    }
+  },
+  "UNITY": {
+    "game": {
+      "name": "통합",
+      "description": [
+        "완드로 적에게 피해를 주면 <b>{{gameValue1}}</b>의 확률로 최대 마나의 <b>{{gameValue2}}</b>를 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 확률 및 <b>{{gamePerLevelValue2}}</b>의 최대 마나"
+    }
+  },
+  "UPDRAFT": {
+    "game": {
+      "name": "상승 기류",
+      "description": [
+        "활공 중에 {{gameValue1}}으로 점프하면 위로 솟아오릅니다. 비행당 한 번 사용할 수 있습니다.",
+        "<b>충전</b><br/>상승 기류 활성화 전 충전량에 따라 상승 높이가 증가합니다. 완전히 충전하면 추가 상승효과를 얻을 수 있습니다. 거점에서는 충전이 가속됩니다.",
+        "<b>비용:</b> 마나 {{gameValue2}}"
+      ]
+    }
+  },
+  "UPWARDS_SLASH_ATTACK": {
+    "game": {
+      "name": "위로 베기 공격",
+      "description": [
+        "근접 무기를 장비한 상태에서 점프하여 상승 중에 강력한 올려치기 공격을 할 수 있습니다.",
+        "이 스킬을 활용해 <b>비행</b>하는 적과의 거리를 빠르게 좁힐 수 있습니다.",
+        "<b>비용:</b> 기력 {{gameValue1}}"
+      ]
+    }
+  },
+  "VEILED_VIGOR": {
+    "game": {
+      "name": "감춰진 활력",
+      "description": [
+        "최대 체력이 민첩 속성의 <b>{{gameValue1}}</b>배만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>배"
+    }
+  },
+  "VETERAN": {
+    "game": {
+      "name": "정예병",
+      "description": [
+        "한 손 또는 양손 도끼, 곤봉, 망치, 검, 대검, 단검의 치명타 확률이 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 치명타 확률"
+    }
+  },
+  "VIGOROUS_DEFLECTION": {
+    "game": {
+      "name": "격렬한 편향",
+      "description": [
+        "적의 공격을 성공적으로 패리하면 <b>{{gameValue1}}</b>의 기력을 회복합니다.",
+        "<b>패리</b><br/>모든 근접 무기, 와드 또는 방패로 막을 수 있습니다. 타이밍을 잘 맞춰 막으면 적의 공격을 <b>패리</b>하고 적의 <i>기절 막대</i>를 채웁니다.<br/>패리하려면 적이나 투사체가 <b>반짝일</b> 때까지 기다리세요."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 기력"
+    }
+  },
+  "VILE_CONCOCTION": {
+    "game": {
+      "name": "사악한 혼합물",
+      "description": [
+        "투척 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "VITALITY_SURGE": {
+    "game": {
+      "name": "활력 서지",
+      "description": [
+        "활, 단검, 투척물로 치명타를 가하면 <b>{{gameValue1}}</b>의 기력을 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 기력"
+    }
+  },
+  "VUKAH_CULTURE": {
+    "game": {
+      "name": "부카 문화",
+      "description": [
+        "공격 대상이 되면 <b>50</b>미터 내의 <b>부카</b> 모두가 적을 공격합니다."
+      ]
+    }
+  },
+  "VUKAH_LANGUAGE": {
+    "game": {
+      "name": "부카어",
+      "description": [
+        "<b>50</b>미터 이내의 <b>부카</b> 계열 적은 공격을 받기 전까지 먼저 공격하지 않습니다."
+      ]
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "완드 회피 공격",
+      "description": [
+        "완드를 장착한 상태에서 회피 도중 <b>{{gameValue1}}</b>을(를) 누르면<br/>적을 관통하고 <b>50%</b>의 추가 무기 피해를 주는 마법 원반을 발사하는 완드 회피 공격을 할 수 있습니다.",
+        "<b>비용:</b> 마나 {{gameValue2}}"
+      ]
+    }
+  },
+  "WAND_MASTERY": {
+    "game": {
+      "name": "완드 전문가",
+      "description": [
+        "완드 피해가 <b>{{gameValue1}}</b> 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "WAND_SPECIALIZATION": {
+    "game": {
+      "name": "완드 전문화",
+      "description": [
+        "완드의 특수 능력을 해제합니다. <br/>집중력을 충분히 모은 후 <b>{{gameValue1}}</b>을 눌러 강력한 특수 능력을 발휘하세요.",
+        "<b>집중력</b><br/>공격하여 집중력을 생성합니다. 집중력은 모든 무기 유형으로 쌓을 수 있으며 무기의 특수 능력을 발동하는 데 사용됩니다."
+      ]
+    }
+  },
+  "WANDERLUST": {
+    "game": {
+      "name": "방랑벽",
+      "description": [
+        "<b>흙길에서 질주 시</b> 기력 소모량이 <b>90%에서 80%</b>로 감소합니다.",
+        "<b>돌길에서 질주 시</b> 기력 소모량이 <b>75%에서 50%</b>로 감소합니다."
+      ]
+    }
+  },
+  "WARDEN": {
+    "game": {
+      "name": "감시자",
+      "description": [
+        "<b>20</b>미터 내에 적이 셋 이상 있을 때, <b>마법 저항력</b>이 <b>{{gameValue1}}</b> 증가합니다."
+      ]
+    }
+  },
+  "WARRIOR_PATH": {
+    "game": {
+      "name": "전사의 전투 방식",
+      "description": [
+        "한 손 도끼, 곤봉, 검의 피해가 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 피해"
+    }
+  },
+  "WATER_AURA": {
+    "game": {
+      "name": "물의 오라",
+      "description": [
+        "자신과 <b>{{gameValue1}}</b>미터 내의 모든 부상당한 아군을 치유하는 치유 오라를 발산합니다.",
+        "치유량은 지능 속성에 따라 달라지며 지능 <b>2</b>포인트당 체력 <b>1</b>을 회복합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>미터의 범위"
+    }
+  },
+  "WATERS_OF_LIFE": {
+    "game": {
+      "name": "생명의 물",
+      "description": [
+        "<b>물의 오라</b> 치유량이 지능 <b>2</b>당 체력 <b>2</b>로 증가합니다."
+      ]
+    }
+  },
+  "WELL_RESTED": {
+    "game": {
+      "name": "푹 쉼",
+      "description": [
+        "휴식 완료 버프의 기본 지속 시간이 <b>{{gameValue1}}</b>분 증가합니다.",
+        "<b>휴식 완료</b><br/>휴식 완료 버프는 최대 기력과 재생량을 크게 증가시킵니다.",
+        "이 버프는 <b>은신처, 앉기 또는 잠자기</b> 그리고 열원에서 나오는 <b>온기</b>가 필요합니다.",
+        "버프는 <b>어디서든</b> 갱신할 수 있습니다.",
+        "주변의 편안함 아이템은 지속 시간을 더욱 증가시킵니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>분"
+    }
+  },
+  "WET_DOG": {
+    "game": {
+      "name": "흠뻑 젖은 개",
+      "description": [
+        "<b>젖음</b>과 <b>흠뻑 젖음</b> 디버프의 효과가 약해집니다.",
+        "기력 및 기력 재생이 <b>30%</b> 대신 <b>20%</b>만 감소합니다.",
+        "<b>젖음</b> <br/><b>15</b>분간 기력과 기력 재생이 <b>30%</b> 감소합니다. 남은 지속 시간 동안 온기가 감소합니다.",
+        "<b>흠뻑 젖음</b> <br/><b>30</b>초간 기력과 기력 재생이 <b>30%</b> 감소합니다. 또한 <b>얼음 과 충격 저항</b>이 <b>30%</b> 감소하지만 <b>화염 저항</b>이 <b>30%</b> 증가합니다.<br/><b>흠뻑 젖음</b>은 적에게 적용할 수 있습니다.<br/><b>흠뻑 젖음</b> 지속 기간은 온기로 줄어들지 않으며 끝나면 <b>젖음</b> 디버프 상태로 전환됩니다."
+      ]
+    }
+  },
+  "WHIRLWIND_CRESCENDO": {
+    "game": {
+      "name": "회오리 크레센도",
+      "description": [
+        "양손 무기를 장비한 상태에서 연쇄 공격이 끝날 때 소용돌이 공격을 발동합니다.",
+        "<b>비용:</b> 기력 {{gameValue1}}"
+      ]
+    }
+  },
+  "WIZARD": {
+    "game": {
+      "name": "대마법사",
+      "description": [
+        "완드와 지팡이의 치명타 확률이 <b>{{gameValue1}}</b>만큼 증가합니다."
+      ],
+      "perLevelLabel": "레벨당 <b>{{gamePerLevelValue1}}</b>의 치명타 확률"
+    }
+  }
+}

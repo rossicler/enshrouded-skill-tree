@@ -1,0 +1,17 @@
+[
+  { "code": "en", "gameLocale": "En_Us", "name": "English" },
+  { "code": "de", "gameLocale": "De_De", "name": "Deutsch" },
+  { "code": "fr", "gameLocale": "Fr_Fr", "name": "Français" },
+  { "code": "it", "gameLocale": "It_It", "name": "Italiano" },
+  { "code": "es", "gameLocale": "Es_Es", "name": "Español" },
+  { "code": "ru", "gameLocale": "Ru_Ru", "name": "Русский" },
+  { "code": "pl", "gameLocale": "Pl_Pl", "name": "Polski" },
+  { "code": "ja", "gameLocale": "Ja_Jp", "name": "日本語" },
+  { "code": "ko", "gameLocale": "Ko_Kr", "name": "한국어" },
+  { "code": "pt-BR", "gameLocale": "Pt_Br", "name": "Português (Brasil)" },
+  { "code": "th", "gameLocale": "Th_Th", "name": "ไทย" },
+  { "code": "tr", "gameLocale": "Tr_Tr", "name": "Türkçe" },
+  { "code": "zh-CN", "gameLocale": "Zh_Cn", "name": "简体中文", "aliases": ["zh-Hans", "zh-SG"] },
+  { "code": "zh-TW", "gameLocale": "Zh_Tw", "name": "繁體中文", "aliases": ["zh-Hant", "zh-HK", "zh-MO"] },
+  { "code": "uk", "gameLocale": "Uk_Ua", "name": "Українська" }
+]

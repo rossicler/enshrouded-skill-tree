@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "等級 {{current}} / {{max}}",
+    "unlock": "解鎖",
+    "outOfRange": "不在範圍內",
+    "share": "分享此技能的連結",
+    "refund": "退還",
+    "levelUp": "升級",
+    "refundOne": "退還 1 點",
+    "refundAll": "全部退還",
+    "skillPointIcon": "技能點圖示",
+    "close": "關閉"
+  },
+  "card": {
+    "label": "技能樹",
+    "zoomIn": "放大",
+    "zoomOut": "縮小",
+    "fit": "顯示整個技能樹",
+    "expand": "展開",
+    "fullscreen": "全螢幕",
+    "exitFullscreen": "結束全螢幕",
+    "close": "關閉"
+  },
+  "kit": {
+    "close": "關閉",
+    "copy": "複製"
+  },
+  "points": {
+    "skillPoints": "技能點",
+    "flameLevel": "火焰等級",
+    "skillPointIcon": "技能點圖示",
+    "flameIcon": "火焰圖示",
+    "flameDown": "降低火焰等級",
+    "flameUp": "提高火焰等級"
+  },
+  "budget": {
+    "title": "生態域技能點",
+    "playerLevel": "玩家等級",
+    "total": "技能點總數",
+    "reset": "全部解鎖"
+  },
+  "biomes": {
+    "springlands": "長春平原",
+    "revelwood": "喧囂森林",
+    "nomad_highlands": "遊牧高地",
+    "kindlewastes": "星火荒原",
+    "albaneve_summits": "阿爾班伊維高峰",
+    "veilwater_basin": "面紗水盆地",
+    "cinders_cradle": "餘燼搖籃"
+  },
+  "stats": {
+    "button": "屬性",
+    "title": "屬性概覽",
+    "basic": "基礎",
+    "close": "關閉",
+    "names": {
+      "constitution": "體質",
+      "strength": "力量",
+      "endurance": "耐力",
+      "dexterity": "敏捷",
+      "spirit": "靈力",
+      "intelligence": "智力"
+    }
+  },
+  "search": {
+    "placeholder": "搜尋",
+    "moreMatches": "技能樹上另有 {{count}} 個相符項目已醒目標示",
+    "clear": "清除搜尋"
+  }
+}

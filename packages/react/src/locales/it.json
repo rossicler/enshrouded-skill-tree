@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "Livello {{current}} / {{max}}",
+    "unlock": "Sblocca",
+    "outOfRange": "Fuori portata",
+    "share": "Condividi il link a questa abilità",
+    "refund": "Rimborsa",
+    "levelUp": "Aumenta livello",
+    "refundOne": "Rimborsa 1",
+    "refundAll": "Rimborsa tutto",
+    "skillPointIcon": "Icona punto abilità",
+    "close": "Chiudi"
+  },
+  "card": {
+    "label": "Albero delle abilità",
+    "zoomIn": "Ingrandisci",
+    "zoomOut": "Riduci",
+    "fit": "Mostra l'intero albero",
+    "expand": "Espandi",
+    "fullscreen": "Schermo intero",
+    "exitFullscreen": "Esci da schermo intero",
+    "close": "Chiudi"
+  },
+  "kit": {
+    "close": "Chiudi",
+    "copy": "Copia"
+  },
+  "points": {
+    "skillPoints": "Punti abilità",
+    "flameLevel": "Livello della fiamma",
+    "skillPointIcon": "Icona punto abilità",
+    "flameIcon": "Icona fiamma",
+    "flameDown": "Abbassa il livello della fiamma",
+    "flameUp": "Alza il livello della fiamma"
+  },
+  "budget": {
+    "title": "Punti per bioma",
+    "playerLevel": "Livello giocatore",
+    "total": "Punti abilità totali",
+    "reset": "Sblocca tutto"
+  },
+  "biomes": {
+    "springlands": "Terre di primavera",
+    "revelwood": "Boscofestante",
+    "nomad_highlands": "Altopiani nomadi",
+    "kindlewastes": "Deserto bruciato",
+    "albaneve_summits": "Cime di Albaneve",
+    "veilwater_basin": "Bacino delle acque velate",
+    "cinders_cradle": "Culla delle ceneri"
+  },
+  "stats": {
+    "button": "Statistiche",
+    "title": "Riepilogo statistiche",
+    "basic": "Base",
+    "close": "Chiudi",
+    "names": {
+      "constitution": "Costituzione",
+      "strength": "Forza",
+      "endurance": "Tempra",
+      "dexterity": "Destrezza",
+      "spirit": "Spirito",
+      "intelligence": "Intelligenza"
+    }
+  },
+  "search": {
+    "placeholder": "Cerca",
+    "moreMatches": "+{{count}} altri risultati evidenziati nell'albero",
+    "clear": "Cancella la ricerca"
+  }
+}

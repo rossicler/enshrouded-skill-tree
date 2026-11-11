@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "等级 {{current}} / {{max}}",
+    "unlock": "解锁",
+    "outOfRange": "不在范围内",
+    "share": "分享此技能的链接",
+    "refund": "退还",
+    "levelUp": "升级",
+    "refundOne": "退还 1 点",
+    "refundAll": "全部退还",
+    "skillPointIcon": "技能点图标",
+    "close": "关闭"
+  },
+  "card": {
+    "label": "技能树",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "fit": "显示整个技能树",
+    "expand": "展开",
+    "fullscreen": "全屏",
+    "exitFullscreen": "退出全屏",
+    "close": "关闭"
+  },
+  "kit": {
+    "close": "关闭",
+    "copy": "复制"
+  },
+  "points": {
+    "skillPoints": "技能点",
+    "flameLevel": "火焰等级",
+    "skillPointIcon": "技能点图标",
+    "flameIcon": "火焰图标",
+    "flameDown": "降低火焰等级",
+    "flameUp": "提高火焰等级"
+  },
+  "budget": {
+    "title": "生物群系技能点",
+    "playerLevel": "玩家等级",
+    "total": "技能点总数",
+    "reset": "全部解锁"
+  },
+  "biomes": {
+    "springlands": "春日平原",
+    "revelwood": "喧嚣森林",
+    "nomad_highlands": "游牧高地",
+    "kindlewastes": "燃火荒原",
+    "albaneve_summits": "阿尔班耶夫山脉",
+    "veilwater_basin": "幕水盆地",
+    "cinders_cradle": "余烬摇篮"
+  },
+  "stats": {
+    "button": "属性",
+    "title": "属性概览",
+    "basic": "基础",
+    "close": "关闭",
+    "names": {
+      "constitution": "体质",
+      "strength": "力量",
+      "endurance": "耐力",
+      "dexterity": "敏捷",
+      "spirit": "精神",
+      "intelligence": "智力"
+    }
+  },
+  "search": {
+    "placeholder": "搜索",
+    "moreMatches": "技能树上另有 {{count}} 个匹配项已高亮",
+    "clear": "清除搜索"
+  }
+}

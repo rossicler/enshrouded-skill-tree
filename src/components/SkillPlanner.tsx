@@ -1,6 +1,13 @@
 import { useCallback, useRef, useState } from "react";
 import { useTranslation } from "next-i18next/pages";
-import { MAX_PLAYER_LEVEL, SkillNodes, getMaxSkillPoints, getSkillName, type SkillSelection } from "@enshrouded/core";
+import {
+  MAX_PLAYER_LEVEL,
+  SkillNodes,
+  getMaxSkillPoints,
+  getSkillName,
+  type SkillSelection,
+  type SkillTextResources,
+} from "@enshrouded/core";
 import {
   SkillTreeProvider,
   SkillTreeView,
@@ -22,11 +29,12 @@ import HUD from "./hud/HUD";
 type SkillPlannerProps = {
   dbAvailable?: boolean;
   focusNodeId?: string;
+  skillText?: SkillTextResources;
 };
 
 // The site's planner: the package's tree view, fed from the Redux store
 // (persisted in sessionStorage), with the site's dialogs, toasts and HUD.
-const SkillPlanner = ({ dbAvailable = false, focusNodeId }: SkillPlannerProps) => {
+const SkillPlanner = ({ dbAvailable = false, focusNodeId, skillText }: SkillPlannerProps) => {
   const { t, i18n } = useTranslation("common");
   const locale = i18n.resolvedLanguage ?? i18n.language;
   const dispatch = useAppDispatch();
@@ -72,6 +80,7 @@ const SkillPlanner = ({ dbAvailable = false, focusNodeId }: SkillPlannerProps) =
   return (
     <SkillTreeProvider
       locale={locale}
+      skillText={skillText}
       assetBaseUrl={SKILL_TREE_ASSETS}
       sound={playSound}
       hardCap={hardcapEnabled ? maxSkillPoints : undefined}

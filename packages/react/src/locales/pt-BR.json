@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "Nível {{current}} / {{max}}",
+    "unlock": "Desbloquear",
+    "outOfRange": "Fora de alcance",
+    "share": "Compartilhar o link desta habilidade",
+    "refund": "Reembolsar",
+    "levelUp": "Subir de nível",
+    "refundOne": "Reembolsar 1",
+    "refundAll": "Reembolsar tudo",
+    "skillPointIcon": "Ícone de ponto de habilidade",
+    "close": "Fechar"
+  },
+  "card": {
+    "label": "Árvore de habilidades",
+    "zoomIn": "Aproximar",
+    "zoomOut": "Afastar",
+    "fit": "Mostrar a árvore inteira",
+    "expand": "Expandir",
+    "fullscreen": "Tela cheia",
+    "exitFullscreen": "Sair da tela cheia",
+    "close": "Fechar"
+  },
+  "kit": {
+    "close": "Fechar",
+    "copy": "Copiar"
+  },
+  "points": {
+    "skillPoints": "Pontos de habilidade",
+    "flameLevel": "Nível da chama",
+    "skillPointIcon": "Ícone de ponto de habilidade",
+    "flameIcon": "Ícone da chama",
+    "flameDown": "Diminuir o nível da chama",
+    "flameUp": "Aumentar o nível da chama"
+  },
+  "budget": {
+    "title": "Pontos por bioma",
+    "playerLevel": "Nível do jogador",
+    "total": "Total de pontos de habilidade",
+    "reset": "Desbloquear tudo"
+  },
+  "biomes": {
+    "springlands": "Terra das Nascentes",
+    "revelwood": "Bosque Farto",
+    "nomad_highlands": "Planalto dos Nômades",
+    "kindlewastes": "Desertos Ardentes",
+    "albaneve_summits": "Picos Albaneve",
+    "veilwater_basin": "Bacia do Véu de Água",
+    "cinders_cradle": "Berço da Brasa"
+  },
+  "stats": {
+    "button": "Atributos",
+    "title": "Resumo dos atributos",
+    "basic": "Básico",
+    "close": "Fechar",
+    "names": {
+      "constitution": "Constituição",
+      "strength": "Força",
+      "endurance": "Resistência",
+      "dexterity": "Destreza",
+      "spirit": "Espírito",
+      "intelligence": "Inteligência"
+    }
+  },
+  "search": {
+    "placeholder": "Buscar",
+    "moreMatches": "+{{count}} resultados destacados na árvore",
+    "clear": "Limpar a busca"
+  }
+}

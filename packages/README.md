@@ -5,7 +5,7 @@ planner site at the repo root is built on them too.
 
 | Package | What it is | Where it runs |
 |---|---|---|
-| `@enshrouded/core` | Tree data and positions, unlock and refund rules, build codes, points, stats, skill text (en, fr) and search. Plain TypeScript: no React, no browser globals. | Server and client (also plain Node). |
+| `@enshrouded/core` | Tree data and positions, unlock and refund rules, build codes, points, stats, skill text in the game's 15 languages, and search. Plain TypeScript: no React, no browser globals. | Server and client (also plain Node). |
 | `@enshrouded/react` | The SVG tree view (pan, zoom, tooltips, the planner's click rules), a card, hooks and panels for points, stats and search, and the game-styled UI kit. Also ships the art, sounds and Tailwind tokens. | Client only. Its entry is `"use client"`. |
 
 Both packages ship TypeScript source with no build step, so the host compiles
@@ -129,14 +129,17 @@ goes in a client component, because it takes functions:
 import type { ReactNode } from "react";
 import { SkillTreeProvider, type SkillTreeNotice } from "@enshrouded/react";
 
-export function SkillTreeProviders({ locale, children }: { locale: string; children: ReactNode }) {
+import type { SkillTextResources } from "@enshrouded/core";
+
+export function SkillTreeProviders({ locale, skillText, children }: { locale: string; skillText?: SkillTextResources; children: ReactNode }) {
   const onNotice = (notice: SkillTreeNotice) => {
     // "out-of-range" | "hard-cap" | "link-copied": show a toast, or ignore it.
     console.info(notice);
   };
   return (
     <SkillTreeProvider
-      locale={locale}             // "en" or "fr"; anything else falls back to English
+      locale={locale}             // a code from SKILL_TEXT_LOCALES (or a regional one, "fr-CA"); others show English
+      skillText={skillText}       // optional: the locale's text from loadSkillText on the server (see Languages)
       assetBaseUrl="/skill-tree"  // where step 5 serves the assets
       sound={false}               // true plays the bundled sounds; a function plays them your way
       hardCap={undefined}         // skill points a build may not go over (unset: no limit)
@@ -149,6 +152,40 @@ export function SkillTreeProviders({ locale, children }: { locale: string; child
 ```
 
 Without a provider, components use English, `/skill-tree`, no sound and no cap.
+
+#### Languages
+
+Skill text comes in every language the game has, as the game writes it:
+`SKILL_TEXT_LOCALES` lists them (`code`, the game's `gameLocale`, and `name`,
+the language's own name, for a picker). English is bundled; any other language
+loads on demand, as its own chunk (10 to 18 kB gzipped each):
+
+- `loadSkillText(locale)` loads it once and returns it (`SkillTextResources`,
+  plain JSON you can pass from server to client).
+- `addSkillText(resources)` adds text you already have.
+- The provider loads its `locale` itself and renders English until the text
+  arrives. To render the language on the first paint, and to keep server and
+  client output equal while hydrating, load it on the server and pass it as
+  `skillText`:
+
+```tsx
+// app/[locale]/layout.tsx (a server component)
+import { loadSkillText } from "@enshrouded/core";
+import { SkillTreeProviders } from "../skill-tree-providers";
+
+export default async function Layout({ children, params }: LayoutProps<"/[locale]">) {
+  const { locale } = await params;
+  const skillText = await loadSkillText(locale);
+  return <SkillTreeProviders locale={locale} skillText={skillText}>{children}</SkillTreeProviders>;
+}
+```
+
+Core's text functions (`getSkillName`, `searchSkills`, ...) show English for a
+language that isn't loaded yet, so await `loadSkillText` before calling them
+in a server component. `resolveSkillTextLocale` maps any code to a supported
+one (`"pt"` to `"pt-BR"`, `"zh-HK"` to `"zh-TW"`, unknown codes to `"en"`).
+The package's own UI text (tooltip buttons, panels) is bundled in every
+language.
 The provider's context reaches the card's expand overlay and dialogs, which
 portal to `<body>`.
 
@@ -182,12 +219,14 @@ import {
   getNodeName,
   getPointsSummary,
   getTotalStats,
+  loadSkillText,
   sanitizeSelection,
   selectionToBuild,
   type SkillBuild,
 } from "@enshrouded/core";
 
-export function BuildSummary({ code, locale = "en" }: { code: string; locale?: string }) {
+export async function BuildSummary({ code, locale = "en" }: { code: string; locale?: string }) {
+  await loadSkillText(locale); // skill names in that language (English is always there)
   let build: SkillBuild;
   try {
     build = decodeSkillBuild(code);
@@ -408,8 +447,9 @@ if (hasSelectionChanges(cleanup)) {
 
 ## Known limits
 
-- Two locales, `en` and `fr`. Both are bundled into the client (about 30 kB
-  gzipped).
+- Skill text exists only in the game's languages. A language the game lacks
+  needs its own `nodes.json` (see `packages/core/src/locales.ts`). Tree labels
+  are English in every language, because the label art spells them out.
 - Node art is served as plain PNGs (about 2 MB in all, cached after the first
   load), not through `next/image`.
 - In a small card at the fitted view, nodes are a few pixels wide; users

@@ -112,9 +112,10 @@ describe("structural import: additions", () => {
     const pres = withType("FROST_NOVA");
     const locales = translated(pres);
     delete locales.fr.FROST_NOVA;
-    locales.de = structuredClone(locales.fr);
+    // A locale the game doesn't have (not in locales.json) needs its own text.
+    locales.xx = structuredClone(locales.fr);
     const result = run(data, approve(run(data)), { presentation: pres, locales });
-    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in packages/core/src/locales/de/nodes.json"]);
+    expect(result.blockers).toEqual(["Type FROST_NOVA needs a translation (description) in packages/core/src/locales/xx/nodes.json"]);
   });
 
   it("blocks apply while a locale's game text is unresolved", () => {

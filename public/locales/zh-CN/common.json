@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Enshrouded 技能规划器",
+    "description": "游戏《雾锁王国》（Enshrouded）的技能树规划工具。"
+  },
+  "hud": {
+    "import": "导入",
+    "export": "导出",
+    "clear": "清空",
+    "discord": "Discord",
+    "about": "关于"
+  },
+  "dialogs": {
+    "advancedSharing": "高级分享",
+    "about": {
+      "title": "关于",
+      "description1": "本工具仅为方便 Enshrouded 玩家分享技能树和配装而制作。我与 Keen Games 无关，也不拥有 Enshrouded 游戏的任何权利。",
+      "description2": "本工具开源，欢迎任何人参与贡献。如果你想参与，可以前往 <githubLink>GitHub 仓库</githubLink>，或加入我们的 <discordLink>Discord 服务器</discordLink>。",
+      "description3": "特别感谢 <glitchizLink>@Glitchiz</glitchizLink> 提供本工具使用的部分素材。",
+      "close": "关闭"
+    },
+    "export": {
+      "title": "分享你的配装",
+      "shortUrl": "分享链接",
+      "generating": "正在生成分享链接...",
+      "noSkills": "在技能树中解锁技能后即可生成分享链接。",
+      "dbUnavailable": "分享链接暂时不可用。请使用 JSON 导出来分享你的配装。",
+      "exportJson": "导出 JSON",
+      "exportJsonTitle": "导出为 JSON",
+      "buildName": "配装名称",
+      "download": "下载",
+      "close": "关闭"
+    },
+    "import": {
+      "title": "导入技能",
+      "urlLabel": "从链接导入",
+      "import": "导入链接",
+      "importJson": "导入 JSON",
+      "warning": "请只导入来自可信来源的配装。"
+    },
+    "settings": {
+      "title": "设置",
+      "treeVersion": "技能树",
+      "gameUpdate": "更新",
+      "gameBuild": "构建",
+      "appVersion": "应用",
+      "sounds": "音效",
+      "language": "语言",
+      "hardcap": "技能点上限",
+      "audioBlocked": "浏览器阻止了音频。请在浏览器设置中允许此网站播放音频，然后重试。"
+    },
+    "refundConfirm": {
+      "title": "退还技能",
+      "message": "这也会退还 {{count}} 个相连的技能。是否继续？",
+      "confirm": "确认",
+      "cancel": "取消"
+    },
+    "resetConfirm": {
+      "title": "重置技能树",
+      "message": "这会移除所有已选技能。确定吗？",
+      "confirm": "重置",
+      "cancel": "取消"
+    },
+    "skillCap": {
+      "title": "已达到技能点上限",
+      "message": "你已达到技能点上限。请先退还部分技能，再解锁新技能。",
+      "ok": "确定",
+      "hardcapHint": "你可以在设置中关闭此限制。"
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "分享链接已复制",
+    "buildImported": "已导入配装“{{name}}”",
+    "differentTreeVersion": "此配装是为其他版本的技能树制作的。导入后请检查其技能。",
+    "noSkillsAllocated": "尚未分配技能！",
+    "invalidUrl": "链接无效！",
+    "invalidCode": "代码无效",
+    "skillsRemoved": "已移除不再属于此技能树的技能：{{names}}",
+    "skillsDisconnected": "已移除不再与技能树相连的技能：{{names}}",
+    "skillLevelsLowered": "已将技能等级降至当前上限：{{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "紫色烟雾背景"
+  },
+  "errors": {
+    "serverError": "服务器错误",
+    "notFound": "页面未找到"
+  }
+}

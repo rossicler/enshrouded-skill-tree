@@ -1,0 +1,1617 @@
+{
+  "ABSORB": {
+    "game": {
+      "name": "Soğurma",
+      "description": [
+        "<b>Büyü</b> hasarı aldığın zaman kaybettiğin her Can puanı için <b>{{gameValue1}}</b> ihtimalle <b>1</b> Mana yenilersin."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "İleri Seviye Ölüm Büyücülüğü",
+      "description": [
+        "Büyülerle çağırabileceğin azami Hortlak müttefik sayısını <b>{{gameValue1}}</b> artırır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Hortlak müttefik"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "Havadan Değnek Saldırısı",
+      "description": [
+        "Elinde bir Değnek varken zıplama sırasında <b>{{gameValue1}}</b> tuşunu basılı tutarak özel bir saldırı gerçekleştirebilirsin.",
+        "Bu saldırı, küçük bir patlama alanında <b>%50</b> ilave silah hasarı veren büyülü bir mermi ateşler.",
+        "<b>Maliyet:</b> {{gameValue2}} Enerji"
+      ]
+    }
+  },
+  "AIRBORNE": {
+    "game": {
+      "name": "Havai",
+      "description": [
+        "Planörler <b>{{gameValue1}}</b> daha az Enerji tüketir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> maliyet azaltımı"
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "Havai Mimar",
+      "description": [
+        "İnşa ederken birinci şahıs bakış açısıyla havada serbestçe hareket etmek için üs içinde bir kıvılcıma dönüş. Bu modu açıp kapatmak için {{gameValue1}} tuşuna basılı tut."
+      ]
+    }
+  },
+  "ARACHNOID": {
+    "game": {
+      "name": "Eklem Bacaklı",
+      "description": [
+        "Tırmanmanın enerji maliyeti <b>{{gameValue1}}</b> azalır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> maliyet azaltımı"
+    }
+  },
+  "ARCANE_CONCENTRATION": {
+    "game": {
+      "name": "Gizemli Konsantrasyon",
+      "description": [
+        "Her iki Alev seviyesi için bir Ruh niteliği kazanırsın."
+      ]
+    }
+  },
+  "ARCANE_DEFLECTION": {
+    "game": {
+      "name": "Esrarengiz Sapma",
+      "description": [
+        "Bir düşmanın saldırısını başarıyla savuşturmak <b>{{gameValue1}}</b> Mana yeniler.",
+        "<b>Savuşturma</b><br/>Herhangi bir Yakın Dövüş silahı veya Kalkan kuşandığında savuşturma yapabilirsin. İyi zamanlanmış bir engelleme, saldırıyı <b>savuşturur</b> ve düşmanın <i>Sersemletme Çubuğu</i>'nu doldurur.<br/>Savuşturma yapmak için düşmanın veya fırlatılan cismin üzerinde bir <b>parlama</b> görmeyi bekle."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Mana"
+    }
+  },
+  "ARCANE_PROLIFERATION": {
+    "game": {
+      "name": "Gizemli Yayılma",
+      "description": [
+        "Değnek saldırıları <b>%30</b> ihtimalle iki kat fazla cisim oluşturur. Oluşan ek cisimler <b>%50</b> daha az hasar verir."
+      ]
+    }
+  },
+  "ARSONIST": {
+    "game": {
+      "name": "Kundakçı",
+      "description": [
+        "Tüm <b>Ateş</b> hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "ATHLETE": {
+    "game": {
+      "name": "Sporcu",
+      "description": [
+        "Azami Can, Kuvvet niteliğinin <b>{{gameValue1}}</b> katı kadar artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> kat"
+    }
+  },
+  "ATTR_CONS": {
+    "game": {
+      "name": "Bünye",
+      "description": [
+        "Bünye niteliğini 1 artırır.",
+        "Her Nitelik Puanı başına canını {{gameValue1}} artırır."
+      ]
+    }
+  },
+  "ATTR_DEX": {
+    "game": {
+      "name": "Beceriklilik",
+      "description": [
+        "Beceriklilik niteliğini 1 artırır.",
+        "Yay ve Hançer hasarını Nitelik Puanı başına %5 artırır."
+      ]
+    }
+  },
+  "ATTR_ENDURANCE": {
+    "game": {
+      "name": "Dayanıklılık",
+      "description": [
+        "Dayanıklılık niteliğini 1 artırır.",
+        "Her Nitelik Puanı başına enerjini {{gameValue1}} artırır."
+      ]
+    }
+  },
+  "ATTR_INT": {
+    "game": {
+      "name": "Zekâ",
+      "description": [
+        "Zekâ niteliğini 1 artırır.",
+        "Her Nitelik Puanı, Büyü hasarını %5 artırır."
+      ]
+    }
+  },
+  "ATTR_SPIRIT": {
+    "game": {
+      "name": "Ruh",
+      "description": [
+        "Ruh niteliğini 1 artırır.",
+        "Her Nitelik Puanı başına mananı {{gameValue1}} artırır."
+      ]
+    }
+  },
+  "ATTR_STR": {
+    "game": {
+      "name": "Kuvvet",
+      "description": [
+        "Kuvvet niteliğini 1 artırır.",
+        "Her Nitelik Puanı, Yakın Dövüş hasarını %5 artırır."
+      ]
+    }
+  },
+  "BACKSTAB_MASTERY": {
+    "game": {
+      "name": "Ustaca arkadan bıçaklamak",
+      "description": [
+        "<b>Arkadan Vurma</b> hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "BARBARIAN": {
+    "game": {
+      "name": "Barbar",
+      "description": [
+        "Her iki Alev seviyesi için bir Kuvvet kazanırsın."
+      ]
+    }
+  },
+  "BARBARIAN_PATH": {
+    "game": {
+      "name": "Barbarın Yolu",
+      "description": [
+        "Çift Elli Baltalar, Sopalar ve Çekiçlerle verilen hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "Yaylım Ateşi",
+      "description": [
+        "Yaylarla hasar verdiğinde <b>{{gameValue1}}</b> ihtimalle o silahın <b>1</b> dayanıklılığı yenilenir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "BASH": {
+    "game": {
+      "name": "Hücum",
+      "description": [
+        "Düşman saldırılarını savuşturmak düşmana <b>{{gameValue1}} Ezici</b> hasar verir. Hücum hasarı, Kuvvet niteliğinle artar.",
+        "<b>Savuşturma</b><br/>Herhangi bir Yakın Dövüş silahı veya Kalkan kuşandığında savuşturma yapabilirsin. İyi zamanlanmış bir engelleme, saldırıyı <b>savuşturur</b> ve düşmanın <i>Sersemletme Çubuğu</i>'nu doldurur.<br/>Savuşturma yapmak için düşmanın veya fırlatılan cismin üzerinde bir <b>parlama</b> görmeyi bekle."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}} Ezici</b> hasar"
+    }
+  },
+  "BATTLE_HEAL": {
+    "game": {
+      "name": "Savaş İyileştirmesi",
+      "description": [
+        "Yakın Dövüş silahlarıyla yapılan Kritik Vuruşlar seni azami Can'ının <b>{{gameValue1}}</b> kadarı iyileştirir."
+      ],
+      "perLevelLabel": "Seviye başına maksimum Can'ın <b>{{gamePerLevelValue1}}</b> kadarı"
+    }
+  },
+  "BEAST_MASTER": {
+    "game": {
+      "name": "Canavar Ustası",
+      "description": [
+        "Bir saldırının hedefi olduğunda <b>50</b> metre yakınındaki tüm <b>Vahşi Hayvanlar</b> düşmana saldırır."
+      ]
+    }
+  },
+  "BEE_STING": {
+    "game": {
+      "name": "Arı İğnesi",
+      "description": [
+        "Havadayken Yay ile nişan almak veya atış yapmak düşüşünü kısa süreliğine yavaşlatır. Her atış seni hafifçe yükseltir ve havada daha uzun kalmanı sağlar.",
+        "<b>Maliyet:</b> Saniye başına {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "BEGONE": {
+    "game": {
+      "name": "Yıkıl!",
+      "description": [
+        "Düşmanları geriye iten ve sersemleten, büyülü bir yumruk.",
+        "Manan yettiği sürece Silahsız saldırılarının yerine geçer.",
+        "<b>Maliyet:</b> {{gameValue1}} Mana"
+      ]
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "Büyüleyici Patlama",
+      "description": [
+        "Değnek ile Kritik Vuruş yaptıktan sonra {{gameValue1}} saniye içinde yaptığın Asa saldırılarının taban hasarı <b>{{gameValue2}}</b> artar."
+      ]
+    }
+  },
+  "BLESSED_ARROWS": {
+    "game": {
+      "name": "Kutsanmış Oklar",
+      "description": [
+        "Yaylarla yapılan Kritik Vuruşlar <b>{{gameValue1}}</b> Mana yeniler."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Mana"
+    }
+  },
+  "BLINK": {
+    "game": {
+      "name": "Sıçrama",
+      "description": [
+        "Kaçış Yuvarlanması Yeteneğini kısa menzilli bir ışınlanma yeteneği ile değiştirir.",
+        "Sıçrama, Stratejik Manevra yeteneğinin yana doğru Kaçış Yuvarlanması hamlesinin de yerine geçer.",
+        "<b>Maliyet:</b> {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "BLINK_ATTACK": {
+    "game": {
+      "name": "Sıçrama Saldırısı",
+      "description": [
+        "Bir düşmanın içine hızlı ışınlanmak, dar bir alanda <b>Ateş</b> hasarı veren bir patlamaya yol açar.",
+        "Hasar ve Mana maliyeti, Zekâ niteliğine göre değişir."
+      ]
+    }
+  },
+  "BLOOD_MAGIC": {
+    "game": {
+      "name": "Kan Büyüsü",
+      "description": [
+        "Manan <b>%20</b>'nin altına indiğinde yenilenen her Mana başına <b>1</b> Can karşılığında azami Mananın <b>%35</b>'ine kadar Mana yenilersin.",
+        "Canın <b>1</b>'e indiğinde bu etki durur.",
+        "<b>Bekleme Süresi:</b> 2 dakika"
+      ]
+    }
+  },
+  "BLOOD_RAGE": {
+    "game": {
+      "name": "Kan Öfkesi",
+      "description": [
+        "<b>{{gameValue1}}</b> metrelik menzildeki bir düşman Yakın Dövüş silahı ile öldürüldüğünde <b>Kan Öfkesi</b> ile dolarsın.",
+        "<b>Kan Öfkesi</b><br/>Yakın Dövüş silahı hasarını <b>10</b> saniyeliğine <b>{{gameValue2}}</b> artırır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> metre menzil"
+    }
+  },
+  "BLOOD_WARRIOR": {
+    "game": {
+      "name": "Kan Savaşçısı",
+      "description": [
+        "Bir düşmanı <b>Gizli Saldırı</b> veya <b>Acımasız Saldırı</b> ile alt etmek bir Can Küresi oluşturur.",
+        "Küre topladığında ilgili değerin <b>%10</b>'u dolar."
+      ]
+    }
+  },
+  "BLOODLETTING": {
+    "game": {
+      "name": "Kan Dökme",
+      "description": [
+        "Büyülerle Kritik Saldırı yaptığında <b>{{gameValue1}}</b> ihtimalle Can, Mana ve/veya Enerji veren iki Küre düşer.",
+        "Bir Küre toplandığında o kaynağın <b>%10</b>'unu yeniler."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "BONE_TO_ASH": {
+    "game": {
+      "name": "Kemikten Küle",
+      "description": [
+        "Hortlaklara karşı hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "BOUNTY_BONANZA": {
+    "game": {
+      "name": "Ganimet Zammı",
+      "description": [
+        "Bir <b>Düşmüş</b> düşmanı <b>Yetenek Vuruşu</b> ile öldürdüğünde grubun ek olarak <b>{{gameValue1}}</b> Deneyim Puanı kazanır.",
+        "<b>Yetenek Vuruşu</b><br/>Düşmanın kafası gibi zayıf noktalarını Oklarla vurmak, Yetenek Vuruşu olarak adlandırılır.",
+        "Yetenek Vuruşları, miğferi olmayan düşmanlara %100, miğferi olan düşmanlara ise %50 artırılmış taban hasar verir. <br/>Yetenek Vuruşu hasarı niteliğiyle daha da artırılabilir."
+      ]
+    }
+  },
+  "BOW_SPECIALIZATION": {
+    "game": {
+      "name": "Yay Ustalığı",
+      "description": [
+        "Yayların Özel Yeteneklerini açar. <br/>Yeterli Odak biriktirdikten sonra <b>{{gameValue1}}</b> ile güçlü bir Özel Yetenek kullan.",
+        "<b>Odak</b><br/>Saldırı yaparak Odak doldur. Odak, her türlü silahla doldurulabilir ve silahların Özel Yeteneklerini tetiklemek için kullanılır."
+      ]
+    }
+  },
+  "BREACH": {
+    "game": {
+      "name": "Yarma",
+      "description": [
+        "<b>Afallamış</b> düşmanlar <b>3 saniyeliğine</b> <b>{{gameValue1}}</b> daha fazla fiziksel Yakın Dövüş hasarı alır.",
+        "<b>Afallatma</b> <br/>Bloklama yapan düşmanlara saldırmak veya saldırılarını savuşturmak <i>Sersemletme Çubuklarını</i> onlar <b>afallayana</b> kadar doldurur.<br/><b>Afallamış</b> düşmanlar Acımasız Saldırılara açıktır."
+      ]
+    }
+  },
+  "BRUTE": {
+    "game": {
+      "name": "Hayvani",
+      "description": [
+        "<b>Ezici</b> Yakın Dövüş hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "CALM_SPIRIT": {
+    "game": {
+      "name": "Sakin Ruh",
+      "description": [
+        "<b>50</b> metre yakınındaki <b>Vahşi Hayvanlar</b> artık kışkırtılmadıkları sürece sana saldırmazlar.",
+        "Pus tarafından yozlaşmış hayvanları etkilemez."
+      ]
+    }
+  },
+  "CHAIN_HIT": {
+    "game": {
+      "name": "Zincirleme Vuruş",
+      "description": [
+        "Büyü silahları ile Kritik Vuruş yaptığında <b>15</b> metrelik menzildeki rastgele bir hedef, her Zekâ niteliği başına <b>5 Şok</b> hasarı alır. <br/>Başka birini zincirlemek yerine ilk hedefe iki kez vurulabilir."
+      ]
+    }
+  },
+  "CHAIN_REACTION": {
+    "game": {
+      "name": "Yankılanan Patlayıcılar",
+      "description": [
+        "<b>Patlayan Ok</b> ile vurulan düşmanlar, <b>%40</b> ihtimalle dar bir alanda <b>%50</b> hasar veren ikincil bir patlama tetikleyebilir."
+      ]
+    }
+  },
+  "COUNTER_BATTERY": {
+    "game": {
+      "name": "Karşı Atış",
+      "description": [
+        "<b>Menzilli</b> düşmanlara karşı hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "COUNTERSTRIKE": {
+    "game": {
+      "name": "Karşı Saldırı",
+      "description": [
+        "Hasar aldıktan sonra <b>{{gameValue1}}</b> ihtimalle hasarın <b>{{gameValue2}}</b> kadarını saldırana <b>Ateş</b> hasarı olarak yansıtırsın.",
+        "Bu büyü saldırısı, diğer yetenekleri tetikleyebilir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal ve <b>{{gamePerLevelValue2}}</b> geri verilen hasar"
+    }
+  },
+  "CRASH_DOWN_ATTACK": {
+    "game": {
+      "name": "Aşağı Vurma Saldırısı",
+      "description": [
+        "Bir Yakın Dövüş silahı kuşanmışken zıpladığında <b>{{gameValue1}}</b> tuşuna basılı tutarak özel bir saldırı yapabilirsin.",
+        "Aşağı Vurma küçük bir alan içinde %50 daha fazla silah hasarı verir ve kullanılan silah türüne bağlı miktarda Enerjiye mal olur.",
+        "<b>Maliyet:</b> {{gameValue2}} - {{gameValue3}} Enerji",
+        "<b>Blok Kırıcı</b> <br/>Bu özel saldırı blok yapan bir düşmanın <i>Sersemletme Çubuğunu</i> iki kat daha fazla doldurur.."
+      ]
+    }
+  },
+  "CRASH_DOWN_FORCE": {
+    "game": {
+      "name": "Aşağı Vurma: Kuvvet",
+      "description": [
+        "Çift zıplama ile saldırırken <b>Aşağı Vurma</b> <b>%20</b> daha fazla silah hasarı verir."
+      ]
+    }
+  },
+  "CULL_THE_HERD": {
+    "game": {
+      "name": "Sürüyü Güt",
+      "description": [
+        "Vahşi Hayvanlara karşı hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "CUTTHROAT": {
+    "game": {
+      "name": "Amansız",
+      "description": [
+        "Gizli Saldırı Hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "DAGGER_MASTERY": {
+    "game": {
+      "name": "Hançer Ustalığı",
+      "description": [
+        "Hançer hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "DAGGER_SPECIALIZATION": {
+    "game": {
+      "name": "Hançer Ustalığı",
+      "description": [
+        "Hançerlerin Özel Yeteneklerini açar. <br/>Yeterli Odak biriktirdikten sonra <b>{{gameValue1}}</b> ile güçlü bir Özel Yetenek kullan.",
+        "<b>Odak</b><br/>Saldırı yaparak Odak doldur. Odak, her türlü silahla doldurulabilir ve silahların Özel Yeteneklerini tetiklemek için kullanılır."
+      ]
+    }
+  },
+  "DARK_ARTS": {
+    "game": {
+      "name": "Karanlık Sanat",
+      "description": [
+        "Tüm <b>Pus</b> hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "DESSERT_STOMACH": {
+    "game": {
+      "name": "Tatlı Aşeren",
+      "description": [
+        "Bir ek Yiyecek yuvası kazanırsın."
+      ]
+    }
+  },
+  "DIVINE_SURGE": {
+    "game": {
+      "name": "Ulu Dalga",
+      "description": [
+        "İyileştirme büyüleri, Kritik Vuruş hasarın ile doğru oranda artan Kritik Vuruşlar yapabilir."
+      ]
+    }
+  },
+  "DOUBLE_JUMP": {
+    "game": {
+      "name": "Çift Zıplama",
+      "description": [
+        "Havadayken ikinci kez zıplamanı sağlar.",
+        "<b>Maliyet:</b> {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "EAGLE_EYE": {
+    "game": {
+      "name": "Kartal Gözü",
+      "description": [
+        "Yaylarla nişan alırken daha fazla yakınlaştırabilmeni sağlar.",
+        "Eylem çubuğunda bir Yay seçiliyken {{gameValue1}} ile basılı tutarak nişan al.<br/>(Ayrıca {{gameValue2}} ile basılı tutarak kuşandığın Yayla nişan alabilirsin.)"
+      ]
+    }
+  },
+  "EAGLES_BANE": {
+    "game": {
+      "name": "Kartalların Kâbusu",
+      "description": [
+        "<b>Uçan</b> düşmanlara karşı hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "EARTH_AURA": {
+    "game": {
+      "name": "Toprak Aurası",
+      "description": [
+        "Sen ve <b>{{gameValue1}}</b> metre içindeki tüm müttefiklerin Fiziksel ve Büyü Direncini <b>{{gameValue2}}</b> artıran koruyucu bir aura yayarsın."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> metre menzil"
+    }
+  },
+  "EMERGENCY_BLINK": {
+    "game": {
+      "name": "Acil Sıçrama",
+      "description": [
+        "Sersemletildiğinde sıçrayabilirsin. Sersemletme etkisi iptal olur."
+      ]
+    }
+  },
+  "ENDURANCE_OF_THE_FLAME": {
+    "game": {
+      "name": "Dayanıklılığı Alev",
+      "description": [
+        "Her iki Alev seviyesi için bir Dayanıklılık kazanırsın."
+      ]
+    }
+  },
+  "ETERNAL_SPARK": {
+    "game": {
+      "name": "Ebedî Kıvılcım",
+      "description": [
+        "Değnek atışları ile hasar verdiğinde <b>{{gameValue1}}</b> ihtimalle o silahın <b>1</b> dayanıklılığı yenilenir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "EVASION_ATTACK": {
+    "game": {
+      "name": "Kaçış Saldırısı",
+      "description": [
+        "Elinde bir Yakın Dövüş silahı varken kaçış sırasında <b>{{gameValue1}}</b> ile Kaçış Saldırısı yapabilirsin.<br/>Bu saldırı, düşmana doğru hücum edip <b>%50</b> ilave silah hasarı vermeni sağlar.",
+        "<b>Maliyet:</b> {{gameValue2}} Enerji",
+        "<b>Blok Kırıcı</b> <br/>Bu özel saldırı blok yapan bir düşmanın <i>Sersemletme Çubuğunu</i> iki kat daha fazla doldurur."
+      ]
+    }
+  },
+  "EXALTED": {
+    "game": {
+      "name": "Engin",
+      "description": [
+        "Her iki Alev seviyesi için bir Zekâ niteliği kazanırsın."
+      ]
+    }
+  },
+  "EXPOSE_WEAKNESS": {
+    "game": {
+      "name": "Zayıflığı Ortaya Çıkar",
+      "description": [
+        "Hançerlerle yapılan Kritik Vuruşlar düşmanların zırhını kırarak <b>{{gameValue2}}</b> saniye boyunca <b>{{gameValue1}}</b> daha fazla hasar almalarına yol açan bir <b>zayıflatma</b> uygular."
+      ]
+    }
+  },
+  "FATAL_PRECISION": {
+    "game": {
+      "name": "Ölümcül İsabet",
+      "description": [
+        "Kritik Vuruş ihtimali <b>{{gameValue2}}</b> artar.<br/>Kritik Vuruş hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Kritik Vuruş ihtimali ve <b>{{gamePerLevelValue2}}</b> Kritik Vuruş hasarı"
+    }
+  },
+  "FELLING_AXE_SPECIALIZATION": {
+    "game": {
+      "name": "Yarma Baltası Ustalığı",
+      "description": [
+        "Yarma Baltalarının Özel Yeteneklerini açar. <br/>Yeterli Odak biriktirdikten sonra <b>{{gameValue1}}</b> ile güçlü bir Özel Yetenek kullan.",
+        "<b>Odak</b><br/>Saldırı yaparak Odak doldur. Odak, her türlü silahla doldurulabilir ve silahların Özel Yeteneklerini tetiklemek için kullanılır."
+      ]
+    }
+  },
+  "FINESSE": {
+    "game": {
+      "name": "Hüner",
+      "description": [
+        "Tek Elli Kılıçlarla, Tek Elli Baltalarla, Tek Elli Sopalarla ve Hançerlerle hasar vermek <b>{{gameValue1}}</b> ihtimale silahın dayanıklılığını <b>1</b> yeniler."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "FIRE_RESISTANCE": {
+    "game": {
+      "name": "Ateş Direnci",
+      "description": [
+        "<b>Ateş Direnci</b>'ni <b>{{gameValue1}}</b> artırarak alınan <b>Ateş</b> hasarı miktarını azaltır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Direnç"
+    }
+  },
+  "FISHERMANS_RESOLVE": {
+    "game": {
+      "name": "Azimli Balıkçı",
+      "description": [
+        "Balık Tutma Dayanıklılığını <b>{{gameValue1}}</b> artırır.",
+        "Böylece kancaya kapılan balıklara karşı uzun süre mücadele verebilirsin."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Balık Tutma Dayanıklılığı"
+    }
+  },
+  "FROST": {
+    "game": {
+      "name": "Buz Kalkan",
+      "description": [
+        "Saldıran, yakın dövüş hasarı aldığında <b>{{gameValue1}}</b> boyunca yavaşlar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "GIANT_SLAYER_HOOK": {
+    "game": {
+      "name": "Dev Katili Kancası",
+      "description": [
+        "Savaş sırasında kendini büyük düşmanlara doğru çekmek için <b>Kanca</b>'nı kullan.",
+        "Bu yeteneğin maliyeti, düşman seviyesine göre doğru orantılı olarak artar ve azalır.",
+        "<b>Taban Maliyet:</b> {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "GOOD_METABOLISM": {
+    "game": {
+      "name": "Sağlam Metabolizma",
+      "description": [
+        "Can, Mana ve Enerji Küreleri ilgili kaynağın <b>%10</b>'u yerine <b>%30</b>'unu yeniler.",
+        "Can ve Mana İksirleri <b>%20</b> daha fazla kaynak yeniler."
+      ]
+    }
+  },
+  "GRACEFUL_STRIDE": {
+    "game": {
+      "name": "Zarif Adım",
+      "description": [
+        "Her iki Alev seviyesi için bir Beceriklilik kazanırsın."
+      ]
+    }
+  },
+  "GROUNDING_HOOK": {
+    "game": {
+      "name": "Oturtan Kanca",
+      "description": [
+        "Savaş sırasında <b>uçabilen</b> düşmanları kendine doğru çekmek için <b>Kanca</b>'nı kullan.",
+        "Bu yeteneğin maliyeti, düşman seviyesine göre doğru orantılı olarak artar ve azalır.",
+        "<b>Taban Maliyet:</b> {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "HEALER": {
+    "game": {
+      "name": "Şifacı",
+      "description": [
+        "İyileştirme büyülerinden ve Su Aurası'ndan kazanılan Can <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> İyileştirme"
+    }
+  },
+  "HEALER_REVIVE": {
+    "game": {
+      "name": "İyileştiren Diriltme",
+      "description": [
+        "Oyuncuları <b>{{gameValue1}}</b> daha fazla Can'la dirilt.",
+        "Diriltilen oyuncuların varsayılan Canı <b>%10</b>."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Can"
+    }
+  },
+  "HEAVY_HANDED": {
+    "game": {
+      "name": "Eli Ağır",
+      "description": [
+        "Bloklama yapan düşmanlara Yakın Dövüş silahları ile saldırırken düşman <i>Sersemletme Çubuğu</i>, <b>{{gameValue1}}</b> daha fazla dolar.",
+        "<b>Afallatma</b> <br/>Bloklama yapan düşmanlara saldırmak veya saldırılarını savuşturmak <i>Sersemletme Çubuklarını</i> onlar <b>afallayana</b> kadar doldurur.<br/><b>Afallamış</b> düşmanlar Acımasız Saldırılara açıktır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> etki"
+    }
+  },
+  "HEAVY_PLATES": {
+    "game": {
+      "name": "Ağır Zırh",
+      "description": [
+        "Kuşanılan eşyalardan kazanılan Fiziksel Zırh Puanı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> daha fazla Fiziksel Zırh"
+    }
+  },
+  "HEAVY_SPECIALIZATION": {
+    "game": {
+      "name": "Ağır Vurucu",
+      "description": [
+        "Tüm Çift Elli Yakın Dövüş Silahlarının saldırı hızını <b>{{gameValue1}}</b> miktarında artırır."
+      ]
+    }
+  },
+  "ICE_RESISTANCE": {
+    "game": {
+      "name": "Buz Direnci",
+      "description": [
+        "<b>Buz Direnci</b>'ni <b>{{gameValue1}}</b> artırarak alınan <b>Buz</b> hasarı miktarını azaltır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Direnç"
+    }
+  },
+  "ICEMAN": {
+    "game": {
+      "name": "Buz Adam",
+      "description": [
+        "Tüm <b>Buz</b> hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "INNER_FIRES": {
+    "game": {
+      "name": "İçteki Ateşler",
+      "description": [
+        "<b>Pus'ta kalma süresi</b> <b>{{gameValue1}}</b> artar, böylece daha uzun süre keşif yapabilirsin.",
+        "<b>Pus'ta geçirebileceğin süre</b><br/>Bu süre dolarsa Pus seni ele geçirir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "KICK": {
+    "game": {
+      "name": "Tekme",
+      "description": [
+        "Bir Yakın Dövüş silahı kuşandığın sırada blok yaparken saldırarak Tekme atabilirsin.",
+        "Tekme az hasar verir fakat düşmanın <i>Sersemletme Çubuğunu</i> doldurarak inanılmaz bir kuvvetle ona çarpar ve onu geri iter.",
+        "<i>Sersemletme Çubuğu</i> Beceriklilik puanı ile doğru oranda artar.<br/>Sersemleme süresi düşmanın boyutuna bağlıdır.",
+        "<b>Afallatma</b> <br/>Bloklama yapan düşmanlara saldırmak veya saldırılarını savuşturmak <i>Sersemletme Çubuklarını</i> onlar <b>afallayana</b> kadar doldurur.<br/><b>Afallamış</b> düşmanlar Acımasız Saldırılara açıktır."
+      ]
+    }
+  },
+  "LAST_MEAL": {
+    "game": {
+      "name": "Son Yemek",
+      "description": [
+        "Yemek güçlendirmelerin öldükten sonra da devam eder ama süreleri yarıya düşer."
+      ]
+    }
+  },
+  "LIFE_BURST": {
+    "game": {
+      "name": "Yaşam Patlaması",
+      "description": [
+        "Bir düşmanı bir Büyü silahıyla yendiğinde hedefin <b>15</b> metre yakınındaki tüm oyuncular Zekâ niteliğinin <b>{{gameValue1}}</b> katı kadar Can kazanır."
+      ]
+    }
+  },
+  "LIFE_ESSENCES": {
+    "game": {
+      "name": "Yaşam Özütleri",
+      "description": [
+        "Azami Canın, Zekâ niteliğinin <b>{{gameValue1}}</b> katı kadar artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> kez"
+    }
+  },
+  "LUMBERJACK": {
+    "game": {
+      "name": "Oduncu",
+      "description": [
+        "Aletler, tahtaya <b>{{gameValue1}}</b> daha fazla hasar verir.<br/>Buna ağaçlar ve ahşap zeminler de dâhildir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "MAGE_APPRENTICE": {
+    "game": {
+      "name": "Sihir Ustası Çırağı",
+      "description": [
+        "Değnekler ve Asalarla verilen hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "MANA_CURRENTS": {
+    "game": {
+      "name": "Mana Akışı",
+      "description": [
+        "Temel Mana Yenilemesi <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Mana Yenileme"
+    }
+  },
+  "MARKSMAN": {
+    "game": {
+      "name": "Nişancı",
+      "description": [
+        "Yay hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "MARTYR": {
+    "game": {
+      "name": "Cengaver",
+      "description": [
+        "Bir düşman seni öldürdüğünde <b>30</b> metre yakınındaki tüm müttefikler, azami Canlarının <b>%50</b>'si kadar Can doldurur.",
+        "Buna ek olarak <b>Nihai Kutsama</b> güçlendirmesini elde ederler ve azami Can puanları <b>15</b> dakikalığına <b>100</b> artar."
+      ]
+    }
+  },
+  "MASON": {
+    "game": {
+      "name": "Duvar Ustası",
+      "description": [
+        "Aletler, taşa <b>{{gameValue1}}</b> daha fazla hasar verir.<br/>Buna taş zeminler ve değerli cevher damarları da dâhildir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "MASS_DESTRUCTION": {
+    "game": {
+      "name": "Toplu Yıkım",
+      "description": [
+        "Büyü silahları ile Kritik Vuruş yaptığında hedefin <b>{{gameValue1}}</b> metre yakınındaki tüm düşmanlar, her Zekâ puanı başına <b>2 Şok</b> hasarı alır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> metre menzil"
+    }
+  },
+  "MERCILESS_ATTACK": {
+    "game": {
+      "name": "Acımasız Saldırı",
+      "description": [
+        "<b>{{gameValue1}}</b> ile <b>afallamış</b> bir düşmana <b>Acımasız Saldırı</b> gerçekleştirerek <b>{{gameValue2}}</b> hasar ver.",
+        "<b>Afallatma</b> <br/>Bloklama yapan düşmanlara saldırmak veya saldırılarını savuşturmak <i>Sersemletme Çubuklarını</i> onlar <b>afallayana</b> kadar doldurur.<br/><b>Afallamış</b> düşmanlar Acımasız Saldırılara açıktır.",
+        "Değnekler, Asalar ve Yaylar Acımasız Saldırı gerçekleştirmek için kullanılamaz."
+      ]
+    }
+  },
+  "MINER": {
+    "game": {
+      "name": "Madenci",
+      "description": [
+        "Kaynak kazmak <b>%10</b> ihtimalle ilave bir kaynak verir."
+      ]
+    }
+  },
+  "MITHRIDATIST": {
+    "game": {
+      "name": "Panzehir Uzmanı",
+      "description": [
+        "<b>%25</b> zehirlenmeme ihtimali kazan."
+      ]
+    }
+  },
+  "MULTI_SHOT": {
+    "game": {
+      "name": "Çoklu Atış",
+      "description": [
+        "<i>Sıradan oklar</i> kullanırken <b>%20</b> ihtimalle hafifçe etrafa yayılan bir <b>Ok Yağmuru</b> ateşlersin.",
+        "Bu şekilde atılan <i>sıradan oklar</i> mühimmatından eksilir.",
+        "<b>Ok Yağmuru</b>, <i>Özel Oklar</i> kullanırken tetiklenmez."
+      ]
+    }
+  },
+  "MULTI_SHOT_SPREAD": {
+    "game": {
+      "name": "Çoklu Atış Yaylımı",
+      "description": [
+        "<b>Çoklu Atış</b> yeteneğinin <b>Ok Yağmuru</b>'na <b>%25</b> ihtimalle fazladan bir <i>Sıradan Ok</i> ekleme şansı verir.",
+        "Bu ek <i>Sıradan Ok</i> mühimmatından eksilmez."
+      ]
+    }
+  },
+  "MULTI_SHOT_TRIGGER": {
+    "game": {
+      "name": "Çoklu Atış Tetiklenmesi",
+      "description": [
+        "<i>Özel Oklar</i> atmak artık <b>Çoklu Atış</b> yeteneğinin <b>Ok Yağmuru</b>'nu tetikleyebilir.",
+        "Bu şekilde kullanılan <i>Özel Oklar</i> mühimmatından eksilir."
+      ]
+    }
+  },
+  "NECROMANCER": {
+    "game": {
+      "name": "Ölüm Büyücüsü",
+      "description": [
+        "Bir düşmanı bir Büyü silahıyla öldürdüğün zaman <b>{{gameValue1}}</b> ihtimalle bir <b>Kafatası Dostu</b> çağırırsın."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "NEMESIS": {
+    "game": {
+      "name": "Ezelî Düşman",
+      "description": [
+        "Düşmanların dikkatini <b>{{gameValue1}}</b> daha fazla çekersin."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> dikkat çekme"
+    }
+  },
+  "ONE_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "Tek Elli Ustalığı",
+      "description": [
+        "Tek Elli Yakın Dövüş silahlarının Özel Yeteneklerini açar. <br/>Yeterli Odak biriktirdikten sonra <b>{{gameValue1}}</b> ile güçlü bir Özel Yetenek kullan.",
+        "<b>Odak</b><br/>Saldırı yaparak Odak doldur. Odak, her türlü silahla doldurulabilir ve silahların Özel Yeteneklerini tetiklemek için kullanılır."
+      ]
+    }
+  },
+  "OPPORTUNITY": {
+    "game": {
+      "name": "Fırsat",
+      "description": [
+        "<b>Acımasız Saldırıların</b> hasar çarpanını <b>{{gameValue1}}</b> artırır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "PICKAXE_SPECIALIZATION": {
+    "game": {
+      "name": "Kazma Ustalığı",
+      "description": [
+        "Kazmaların Özel Yeteneklerini açar. <br/>Yeterli Odak biriktirdikten sonra <b>{{gameValue1}}</b> ile güçlü bir Özel Yetenek kullan.",
+        "<b>Odak</b><br/>Saldırı yaparak Odak doldur. Odak, her türlü silahla doldurulabilir ve silahların Özel Yeteneklerini tetiklemek için kullanılır."
+      ]
+    }
+  },
+  "POISON_MASTERY": {
+    "game": {
+      "name": "Zehir Ustası",
+      "description": [
+        "<b>Zehirli Bıçaklar</b> Hançer avantajıyla verilen hasarı <b>%100</b> artırır."
+      ]
+    }
+  },
+  "POISONED_BLADES": {
+    "game": {
+      "name": "Zehirli Bıçaklar",
+      "description": [
+        "<b>Zehirli Bıçaklar</b> avantajıyla Hançer kullanırken düşmanları zehirleme ihtimalini <b>%30</b> artırır."
+      ]
+    }
+  },
+  "POWER_PARRY": {
+    "game": {
+      "name": "Güçlü Savuşturma",
+      "description": [
+        "Savuşturma Gücün <b>{{gameValue1}}</b> artar.",
+        "<b>Savuşturma</b><br/>Herhangi bir Yakın Dövüş silahı veya Kalkan kuşandığında savuşturma yapabilirsin. İyi zamanlanmış bir engelleme, saldırıyı <b>savuşturur</b> ve düşmanın <i>Sersemletme Çubuğu</i>'nu doldurur.<br/>Savuşturma yapmak için düşmanın veya fırlatılan cismin üzerinde bir <b>parlama</b> görmeyi bekle.",
+        "<b>Afallatma</b> <br/>Bloklama yapan düşmanlara saldırmak veya saldırılarını savuşturmak <i>Sersemletme Çubuklarını</i> onlar <b>afallayana</b> kadar doldurur.<br/><b>Afallamış</b> düşmanlar Acımasız Saldırılara açıktır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Savuşturma Gücü"
+    }
+  },
+  "PRIMAL_FORCE": {
+    "game": {
+      "name": "İlkel Güç",
+      "description": [
+        "Vukahlara karşı hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "PROSPECTOR": {
+    "game": {
+      "name": "Maden Arayıcı",
+      "description": [
+        "Aletler, metale <b>{{gameValue1}}</b> daha fazla hasar verir.<br/>Buna metal cevher damarları da dâhildir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "Delme",
+      "description": [
+        "<b>Delici</b> menzilli hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "PURIFICATION": {
+    "game": {
+      "name": "Arındırma",
+      "description": [
+        "Bir Pus düşmanını bir Tek veya Çift Elli Balta, Sopa, Çekiç, Kılıç veya Büyükkılıç ile yendikten sonra <b>Pus</b>'ta kalma süren <b>{{gameValue1}}</b> saniye uzar.",
+        "<b>Pus'ta geçirebileceğin süre</b><br/>Bu süre dolarsa Pus seni ele geçirir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> saniye"
+    }
+  },
+  "QUALITY_GEAR": {
+    "game": {
+      "name": "Kaliteli Ekipman",
+      "description": [
+        "Aletler <b>{{gameValue1}}</b> ihtimalle vuruş anında <b>1</b> dayanıklılık yeniler."
+      ]
+    }
+  },
+  "QUICK_CHARGE": {
+    "game": {
+      "name": "Hızlı Yük",
+      "description": [
+        "Büyü Yükleme Süresi <b>{{gameValue1}}</b> azalır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Yük Süresi"
+    }
+  },
+  "QUICK_REFLEX_BLOCK": {
+    "game": {
+      "name": "Hızlı Refleksle Engelleme",
+      "description": [
+        "Hançerle savunma yaparken Engelleme değerini kısa süre artırarak kıl payı kaçırılan bir savuşturmanın azalttığı Enerjiyi en aza indirger."
+      ]
+    }
+  },
+  "RADIANT_AURA": {
+    "game": {
+      "name": "Görkemli Aura",
+      "description": [
+        "<b>{{gameValue1}}</b> metre yakınındaki tüm <b>Düşmüş</b> düşmanlar, Zekâ puanı başına her saniye <b>{{gameValue2}} Ateş</b> hasarı alır."
+      ],
+      "perLevelLabel": "Seviye ve Zekâ puanı başına <b>{{gamePerLevelValue1}}</b> metre menzil ve <b>{{gamePerLevelValue2}} Ateş</b> hasarı"
+    }
+  },
+  "RANGER": {
+    "game": {
+      "name": "Korucu",
+      "description": [
+        "Beceriklilik veDayanıklılık niteliklerin <b>{{gameValue1}}</b> artar.",
+        "Temel Enerji Yenilemesi <b>{{gameValue2}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Beceriklilik ve Dayanıklılık.<br/>Seviye başına <b>{{gamePerLevelValue2}}</b> Enerji Yenileme."
+    }
+  },
+  "REBOUND": {
+    "game": {
+      "name": "Yankı",
+      "description": [
+        "Temel Enerji Yenilemesi <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Enerji Yenileme"
+    }
+  },
+  "RELENTLESS": {
+    "game": {
+      "name": "Vicdansız",
+      "description": [
+        "Çift Elli silahlarla Kritik Vuruş yapmak, sonraki vuruşunda Kritik Vuruş ihtimalini <b>{{gameValue1}}</b> artırır."
+      ]
+    }
+  },
+  "RICOCHETS": {
+    "game": {
+      "name": "Şarapnel Patlaması",
+      "description": [
+        "<b>Patlayan Ok</b> ile vurulan her hedef başına okun hasarı <b>%10</b> artar."
+      ]
+    }
+  },
+  "RIGHTEOUS_FIRE": {
+    "game": {
+      "name": "Meşru Ateş",
+      "description": [
+        "Bir büyüyle herhangi bir hedefi iyileştirmek, iyileştirme miktarının <b>{{gameValue1}}</b> kadarını yakındaki <b>Düşmüş</b> düşmanlara <b>Ateş</b> hasarı olarak veren bir ateş patlaması tetikler."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}} Ateş</b> hasarı"
+    }
+  },
+  "RUNNER": {
+    "game": {
+      "name": "Koşucu",
+      "description": [
+        "Depar Hızı <b>{{gameValue1}}</b> artar ve depar atmanın Enerji maliyeti <b>{{gameValue2}}</b> azalır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Hız ve <b>{{gamePerLevelValue2}}</b> maliyet azaltımı"
+    }
+  },
+  "SAVIOUR": {
+    "game": {
+      "name": "Kurtarıcı",
+      "description": [
+        "Bir müttefiki diriltme süresi <b>{{gameValue1}}</b> saniye azalır.",
+        "Varsayılan diriltme süresi <b>6</b> saniyedir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> saniye"
+    }
+  },
+  "SHELL_SHOCK": {
+    "game": {
+      "name": "Çarpışma Şoku",
+      "description": [
+        "<b>Menzilli Patlayıcılarını</b> Manayla doldur. Artık düşmanlarını <b>2</b> saniye sürecek şekilde sersemletir.",
+        "<b>Maliyet:</b> Sersemletilen düşman başına {{gameValue1}} Mana"
+      ]
+    }
+  },
+  "SHINY_PLATES": {
+    "game": {
+      "name": "Parlak Zırhlar",
+      "description": [
+        "Kuşanılan eşyalardan kazanılan Büyülü Zırh Puanı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> daha fazla Büyülü Zırh"
+    }
+  },
+  "SHOCK_RESISTANCE": {
+    "game": {
+      "name": "Şok Direnci",
+      "description": [
+        "<b>Şok Direnci</b>'ni <b>{{gameValue1}}</b> artırarak alınan <b>Şok</b> hasarı miktarını azaltır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Direnç"
+    }
+  },
+  "SHOCKWAVE": {
+    "game": {
+      "name": "Şok Dalgası",
+      "description": [
+        "Bir saldırıyı savuşturduğunda veya düşmanı <b>afallattığında</b> bir Şok Dalgası tetiklersin.",
+        "Şok Dalgası, yakındaki düşmanları geri iter. Aynı zamanda etkisi Kuvvet niteliğinle artacak şekilde düşmanın <i>Sersemletme Çubuğunu</i> doldurur.",
+        "<b>Savuşturma</b><br/>Herhangi bir Yakın Dövüş silahı veya Kalkan kuşandığında savuşturma yapabilirsin. İyi zamanlanmış bir engelleme, saldırıyı <b>savuşturur</b> ve düşmanın <i>Sersemletme Çubuğu</i>'nu doldurur.<br/>Savuşturma yapmak için düşmanın veya fırlatılan cismin üzerinde bir <b>parlama</b> görmeyi bekle.",
+        "<b>Afallatma</b> <br/>Bloklama yapan düşmanlara saldırmak veya saldırılarını savuşturmak <i>Sersemletme Çubuklarını</i> onlar <b>afallayana</b> kadar doldurur.<br/><b>Afallamış</b> düşmanlar Acımasız Saldırılara açıktır."
+      ]
+    }
+  },
+  "SHROUD_FILTER": {
+    "game": {
+      "name": "Pus Azaltma",
+      "description": [
+        "Bir Büyü silahı ile hasar verdiğinde sen ve <b>{{gameValue3}}</b> metrelik menzildeki müttefiklerin <b>{{gameValue1}}</b> ihtimalle <b>Pus'ta Kalma Süresini</b> <b>{{gameValue2}}</b> saniyeliğine yenileyen küçük bir alev patlaması tetiklersin.",
+        "<b>Pus'ta geçirebileceğin süre</b><br/>Bu süre dolarsa Pus seni ele geçirir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "SHROUD_MISTERY": {
+    "game": {
+      "name": "Ortak Keder",
+      "description": [
+        "<b>Pus</b> hasarı aldığın zaman <b>{{gameValue1}}</b> metre yakınındaki tüm oyuncular <b>30</b> saniye boyunca <b>{{gameValue2}}</b> artırılmış <b>Pus Direnci</b> kazanır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> metre menzil"
+    }
+  },
+  "SHROUD_RESISTANCE": {
+    "game": {
+      "name": "Pus Direnci",
+      "description": [
+        "<b>Pus Direnci</b>'ni <b>{{gameValue1}}</b> artırarak alınan <b>Pus</b> hasarı miktarını azaltır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Direnç"
+    }
+  },
+  "SILENT_STRIDE": {
+    "game": {
+      "name": "Sessiz Adım",
+      "description": [
+        "<b>Gizlenirken</b> hareket hızını <b>{{gameValue1}}</b> artırır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hareket hızı"
+    }
+  },
+  "SKILL_SHOT": {
+    "game": {
+      "name": "Beceri Atışı",
+      "description": [
+        "<b>Yetenek Vuruşu</b> hasarı <b>{{gameValue1}}</b> artar.",
+        "<b>Yetenek Vuruşu</b><br/>Düşmanın kafası gibi zayıf noktalarını Oklarla vurmak, Yetenek Vuruşu olarak adlandırılır.",
+        "Yetenek Vuruşları, miğferi olmayan düşmanlara %100, miğferi olan düşmanlara ise %50 artırılmış taban hasar verir. <br/>Yetenek Vuruşu hasarı niteliğiyle daha da artırılabilir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "SLASHER": {
+    "game": {
+      "name": "Biçici",
+      "description": [
+        "<b>Kesme</b> Yakın Dövüş hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "SLEIGHT_OF_HAND": {
+    "game": {
+      "name": "El Çabukluğu",
+      "description": [
+        "Silahsız verdiğin hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "SLICE_AND_DICE": {
+    "game": {
+      "name": "Kes Biç",
+      "description": [
+        "Hançer ile Kritik Vuruş yaptıktan sonra {{gameValue1}} saniye içinde yaptığın Yay saldırılarının taban hasarı <b>{{gameValue2}}</b> artar."
+      ]
+    }
+  },
+  "SNAKE_EATER": {
+    "game": {
+      "name": "Yılan Yiyen",
+      "description": [
+        "<b>Zehir Direnci</b>'ni <b>{{gameValue1}}</b> artırarak alınan <b>Zehir</b> hasarı miktarını azaltır.",
+        "<b>Zehir</b> hasarı zırhı yok sayar ve yalnızca <b>Zehir Direnci</b> ile azaltılabilir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Direnç"
+    }
+  },
+  "SNAP": {
+    "game": {
+      "name": "Öfke Parlaması",
+      "description": [
+        "Bir <b>Acımasız Saldırı</b> tetiklemek <b>{{gameValue1}}</b> Mana yeniler."
+      ]
+    }
+  },
+  "SNEAK_ATTACK": {
+    "game": {
+      "name": "Gizli Saldırı",
+      "description": [
+        "Habersiz bir düşmana gizlice yaklaşıp <b>{{gameValue1}}</b> ile bir <b>Gizli Saldırı</b> gerçekleştir.",
+        "<b>Gizli Saldırı</b> <b>+%900</b> fazladan hasar verir.",
+        "Değnekler, Asalar ve Yaylar Gizli Saldırı gerçekleştirmek için kullanılamaz."
+      ]
+    }
+  },
+  "SNIPER": {
+    "game": {
+      "name": "Keskin Nişancı",
+      "description": [
+        "Yaylarla Kritik Vuruş yapma ihtimali <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Kritik Vuruş ihtimali"
+    }
+  },
+  "SOAKED_DOG": {
+    "game": {
+      "name": "Islak Köpek",
+      "description": [
+        "<b>Islak</b> ve <b>Sırılsıklam</b> Zayıflatmalarının etkilerini azaltır.",
+        "Enerji ve Enerji Yenileme, <b>%20</b> yerine <b>%10</b> azalır.",
+        "<b>Islak</b> <br/><b>15</b> dakikalığına Enerji ve Enerji Yenilemesini <b>%30</b> azaltır. Sıcaklık, kalan süreyi azaltır.",
+        "<b>Sırılsıklam</b> <br/><b>30</b> saniyeliğine Enerji ve Enerji Yenilemesini <b>%30</b> azaltır. Ayrıca <b>Buz ve Şok Direnci</b>'ni <b>%30</b> azaltır ama <b>Ateş Direnci</b>'ni <b>%30</b> artırır.<br/><b>Sırılsıklam</b> etkisi düşmanlara uygulanabilir.<br/>Sıcaklık, <b>Sırılsıklam</b> etkisinin süresini azaltmaz ve etki sona erdiğinde <b>Islak</b> zayıflatmasına dönüşür."
+      ]
+    }
+  },
+  "SOUL_LEECH": {
+    "game": {
+      "name": "Ruh Sömürme",
+      "description": [
+        "Bir düşmanı bir Yakın Dövüş silahıyla öldürdüğünde hedefin <b>{{gameValue1}}</b> metre yakınındaki tüm oyuncular <b>{{gameValue2}}</b> Mana kazanır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> metre menzil ve <b>{{gamePerLevelValue2}}</b> Mana"
+    }
+  },
+  "SPELLSLINGER": {
+    "game": {
+      "name": "Büyütutan",
+      "description": [
+        "Asa hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "SPLASH_DASH": {
+    "game": {
+      "name": "Su Altı Hücum",
+      "description": [
+        "Yüzerken veya dalış yaparken bir kaçınma hamlesi yapmanı sağlar.",
+        "<b>Maliyet:</b> {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "STEADFAST": {
+    "game": {
+      "name": "Sarsılmaz",
+      "description": [
+        "Bir Yakın Dövüş silahıyla bir düşmanı alt etmek, silahın dayanıklılığını <b>{{gameValue1}}</b> yeniler."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> dayanıklılık"
+    }
+  },
+  "STING": {
+    "game": {
+      "name": "Izdırap",
+      "description": [
+        "Değnekle art arda verdiğin hasar <b>{{gameValue1}}</b> artar."
+      ]
+    }
+  },
+  "STRATEGIC_MANEUVER": {
+    "game": {
+      "name": "Stratejik Manevra",
+      "description": [
+        "Kaçış Yuvarlanması Yeteneğini düşmana kilitliyken yana doğru bir Kaçış Yuvarlanması ile değiştirir.",
+        "Bunu düşmanların etrafında dönmek için kullan, böylece onlara yandan yaklaşmak veya arkadan vurmak daha kolay hâle gelir.",
+        "Sıçrama, Stratejik Manevra yeteneğinin yana doğru Kaçış Yuvarlanması hamlesinin yerine geçer.",
+        "<b>Maliyet:</b> {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "Hayatta Kalma İçgüdüsü",
+      "description": [
+        "Bir Pus düşmanını bir Yay veya Hançer ile yendikten sonra <b>Pus</b>'ta kalma süren <b>{{gameValue1}}</b> saniye uzar.",
+        "<b>Pus'ta geçirebileceğin süre</b><br/>Bu süre dolarsa Pus seni ele geçirir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> saniye"
+    }
+  },
+  "SWEET_TOOTH": {
+    "game": {
+      "name": "Tatlı Sever",
+      "description": [
+        "Tatlıların Enerji Yenilemesi <b>%50</b> artar."
+      ]
+    }
+  },
+  "SWIFT_BLADES": {
+    "game": {
+      "name": "Çevik Kılıçlar",
+      "description": [
+        "Tüm Tek Elli Yakın Dövüş Silahlarının saldırı hızını <b>{{gameValue1}}</b> miktarında artırır."
+      ]
+    }
+  },
+  "SWIFTSHOT_SUSTENANCE": {
+    "game": {
+      "name": "Daimi Darbeler",
+      "description": [
+        "Bir düşmanı yay kullanarak öldürdüğünde <b>{{gameValue1}}</b> ihtimalle Enerji veren bir Küre düşer.",
+        "Bir Küre toplandığında o kaynağın <b>%10</b>'unu yeniler."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "TERROR": {
+    "game": {
+      "name": "Dehşet",
+      "description": [
+        "Büyüler ile yapılan Kritik Vuruşlar, <b>{{gameValue1}}</b> ihtimalle hedefi <b>2</b> saniyeliğine sersemletir."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal"
+    }
+  },
+  "THICK_SKIN": {
+    "game": {
+      "name": "Kalın Deri",
+      "description": [
+        "Her iki Alev seviyesi için bir Bünye kazanırsın."
+      ]
+    }
+  },
+  "THRUST": {
+    "game": {
+      "name": "Saplama",
+      "description": [
+        "<b>Delici</b> Yakın Dövüş hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "THUNDER": {
+    "game": {
+      "name": "Şimşek",
+      "description": [
+        "Tüm <b>Şok</b> hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "TITAN_EDGE": {
+    "game": {
+      "name": "Titan Ağzı",
+      "description": [
+        "Çift Elli Büyükkılıç hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "Totem Ustalığı",
+      "description": [
+        "Çağırabileceğin azami totem sayısını <b>{{gameValue1}}</b> artırır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> totem"
+    }
+  },
+  "TOWER": {
+    "game": {
+      "name": "Kule",
+      "description": [
+        "<b>20</b> metre yakınında üç veya daha fazla düşman varken <b>Fiziksel Direncin</b> <b>{{gameValue1}}</b> artar."
+      ]
+    }
+  },
+  "TWO_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "Çift Elli Ustalığı",
+      "description": [
+        "Çift Elli Yakın Dövüş silahlarının Özel Yeteneklerini açar. <br/>Yeterli Odak biriktirdikten sonra <b>{{gameValue1}}</b> ile güçlü bir Özel Yetenek kullan.",
+        "<b>Odak</b><br/>Saldırı yaparak Odak doldur. Odak, her türlü silahla doldurulabilir ve silahların Özel Yeteneklerini tetiklemek için kullanılır."
+      ]
+    }
+  },
+  "UNITY": {
+    "game": {
+      "name": "Birlik",
+      "description": [
+        "Düşmanlara Değneklerle hasar verirken <b>{{gameValue1}}</b> ihtimalle azami Mananın <b>{{gameValue2}}</b> kadarını geri kazanırsın."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> ihtimal ve azami Mananın <b>{{gamePerLevelValue2}}</b> kadarı"
+    }
+  },
+  "UPDRAFT": {
+    "game": {
+      "name": "Tırmanış",
+      "description": [
+        "Süzülürken {{gameValue1}} tuşuna basarak zıplamak seni yukarı kaldırır. Her uçuşta bir kez kullanılabilir.",
+        "<b>Yük</b><br/>Tırmanış, etkinleştirilmeden önce dolarken kaldırma miktarı da artar. Tamamen doldurulduğunda ek bir kaldırma sağlar. Üssündeyken şarjı daha hızlı dolar.",
+        "<b>Maliyet:</b> {{gameValue2}} Mana"
+      ]
+    }
+  },
+  "UPWARDS_SLASH_ATTACK": {
+    "game": {
+      "name": "Yukarı Doğru Kesme Saldırısı",
+      "description": [
+        "Bir Yakın Dövüş silahı kullanırken zıpladığın anda yukarı doğru güçlü bir saldırı yap.",
+        "Bu saldırıyı kullanarak <b>uçan</b> düşmanlarla arandaki mesafeyi hızlıca kapatabilirsin.",
+        "<b>Maliyet:</b> {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "VEILED_VIGOR": {
+    "game": {
+      "name": "Örtülü Dinçlik",
+      "description": [
+        "Azami Can, Beceriklilik niteliğinin <b>{{gameValue1}}</b> katı kadar artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> kez"
+    }
+  },
+  "VETERAN": {
+    "game": {
+      "name": "Kıdemli",
+      "description": [
+        "Tek veya Çift Elli Baltalar, Sopalar, Çekiçler, Kılıçlar, Büyükkılıçlar ve Hançerlerle Kritik Vuruş yapma ihtimali <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Kritik Vuruş ihtimali"
+    }
+  },
+  "VIGOROUS_DEFLECTION": {
+    "game": {
+      "name": "Savıp Savuşturma",
+      "description": [
+        "Bir düşmanın saldırısını başarıyla savuşturmak <b>{{gameValue1}}</b> Enerji yeniler.",
+        "<b>Savuşturma</b><br/>Herhangi bir Yakın Dövüş silahı veya Kalkan kuşandığında savuşturma yapabilirsin. İyi zamanlanmış bir engelleme, saldırıyı <b>savuşturur</b> ve düşmanın <i>Sersemletme Çubuğu</i>'nu doldurur.<br/>Savuşturma yapmak için düşmanın veya fırlatılan cismin üzerinde bir <b>parlama</b> görmeyi bekle."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Enerji"
+    }
+  },
+  "VILE_CONCOCTION": {
+    "game": {
+      "name": "Beter İksir",
+      "description": [
+        "Fırlatılabilirlerin verdiği hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "VITALITY_SURGE": {
+    "game": {
+      "name": "Anlık Zindelik",
+      "description": [
+        "Yaylar, Hançerler ve Fırlatılabilirlerle yapılan Kritik Vuruşlar <b>{{gameValue1}}</b> Enerji yeniler."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Enerji"
+    }
+  },
+  "VUKAH_CULTURE": {
+    "game": {
+      "name": "Vukah Kültürü",
+      "description": [
+        "Bir saldırının hedefi olduğunda <b>50</b> metre yakınındaki tüm <b>Vukah</b>'lar, düşmana saldırır."
+      ]
+    }
+  },
+  "VUKAH_LANGUAGE": {
+    "game": {
+      "name": "Vukah Dili",
+      "description": [
+        "<b>50</b> metre yakınındaki <b>Vukah</b>'lar artık kışkırtılmadıkları sürece sana saldırmazlar."
+      ]
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "Değnek Kaçış Saldırısı",
+      "description": [
+        "Elinde bir Değnek varken kaçış sırasında <b>{{gameValue1}}</b> ile bir Değnek Kaçış Saldırısı yapabilirsin.<br/>Bu saldırı, düşmanları delen bir büyü diski ateşleyip <b>%50</b> ilave silah hasarı vermeni sağlar.",
+        "<b>Maliyet:</b> {{gameValue2}} Enerji"
+      ]
+    }
+  },
+  "WAND_MASTERY": {
+    "game": {
+      "name": "Değnek Ustalığı",
+      "description": [
+        "Değnek hasarı <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "WAND_SPECIALIZATION": {
+    "game": {
+      "name": "Değnek Ustalığı",
+      "description": [
+        "Değneklerin Özel Yeteneklerini açar. <br/>Yeterli Odak biriktirdikten sonra <b>{{gameValue1}}</b> ile güçlü bir Özel Yetenek kullan.",
+        "<b>Odak</b><br/>Saldırı yaparak Odak doldur. Odak, her türlü silahla doldurulabilir ve silahların Özel Yeteneklerini tetiklemek için kullanılır."
+      ]
+    }
+  },
+  "WANDERLUST": {
+    "game": {
+      "name": "Seyahat Arzusu",
+      "description": [
+        "<b>Toprak yollarda depar atmanın</b> enerji maliyeti <b>%90'dan %80'e</b> iner.",
+        "<b>Taş yollarda depar atmanın</b> enerji maliyeti <b>%75'ten %50'ye</b> iner."
+      ]
+    }
+  },
+  "WARDEN": {
+    "game": {
+      "name": "Gardiyan",
+      "description": [
+        "<b>20</b> metre yakınında üç veya daha fazla düşman varken <b>Büyü Direncin</b> <b>{{gameValue1}}</b> artar."
+      ]
+    }
+  },
+  "WARRIOR_PATH": {
+    "game": {
+      "name": "Savaşçının Yolu",
+      "description": [
+        "Tek Elli Baltalar, Sopalar ve Kılıçlarla verilen hasar <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> hasar"
+    }
+  },
+  "WATER_AURA": {
+    "game": {
+      "name": "Su Aurası",
+      "description": [
+        "Seni ve <b>{{gameValue1}}</b> metre içindeki tüm yaralı müttefikleri iyileştiren bir aura yayarsın.",
+        "İyileştirme oranı Zekâ niteliğinle doğru orantılı olarak artar ve her <b>2</b> Zekâ puanı başına <b>1</b> Can yeniler."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> metre menzil"
+    }
+  },
+  "WATERS_OF_LIFE": {
+    "game": {
+      "name": "Hayat Suyu",
+      "description": [
+        "<b>Su Aurası</b> iyileştirmesini her <b>2</b> Zekâ puanı başına <b>2</b> Can'a yükseltir."
+      ]
+    }
+  },
+  "WELL_RESTED": {
+    "game": {
+      "name": "İyi Dinlenmiş",
+      "description": [
+        "Dinlenmiş güçlendirmesinin temel süresi <b>{{gameValue1}}</b> dakika artar.",
+        "<b>Dinlenmiş</b><br/>Dinlenmiş güçlendirmesi, Azami Enerjini ve Enerji Yenilenmesini büyük miktarda artırır.",
+        "<b>Barınman, oturman veya uyuman,</b> aynı zamanda bir ısı kaynağı sayesinde <b>ısınman</b> gerekir.",
+        "Güçlendirme <b>her yerde</b> yenilenebilir.",
+        "Etrafındaki konforlu eşyalar, güçlendirme süresini daha da artırır."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> dakika"
+    }
+  },
+  "WET_DOG": {
+    "game": {
+      "name": "Islak Köpek",
+      "description": [
+        "<b>Islak</b> ve <b>Sırılsıklam</b> Zayıflatmalarının etkilerini azaltır.",
+        "Enerji ve Enerji Yenileme, <b>%30</b> yerine <b>%20</b> azalır.",
+        "<b>Islak</b> <br/><b>15</b> dakikalığına Enerji ve Enerji Yenilemesini <b>%30</b> azaltır. Sıcaklık, kalan süreyi azaltır.",
+        "<b>Sırılsıklam</b> <br/><b>30</b> saniyeliğine Enerji ve Enerji Yenilemesini <b>%30</b> azaltır. Ayrıca <b>Buz ve Şok Direnci</b>'ni <b>%30</b> azaltır ama <b>Ateş Direnci</b>'ni <b>%30</b> artırır.<br/><b>Sırılsıklam</b> etkisi düşmanlara uygulanabilir.<br/>Sıcaklık, <b>Sırılsıklam</b> etkisinin süresini azaltmaz ve etki sona erdiğinde <b>Islak</b> zayıflatmasına dönüşür."
+      ]
+    }
+  },
+  "WHIRLWIND_CRESCENDO": {
+    "game": {
+      "name": "Kasırgalı Kreşendo",
+      "description": [
+        "Çift Elli bir silah kuşanılmışken saldırı zincirinin sonunda bir dönüş saldırısı yap.",
+        "<b>Maliyet:</b> {{gameValue1}} Enerji"
+      ]
+    }
+  },
+  "WIZARD": {
+    "game": {
+      "name": "Büyücü",
+      "description": [
+        "Değnekler ve Asalarla Kritik Vuruş yapma ihtimali <b>{{gameValue1}}</b> artar."
+      ],
+      "perLevelLabel": "Seviye başına <b>{{gamePerLevelValue1}}</b> Kritik Vuruş ihtimali"
+    }
+  }
+}

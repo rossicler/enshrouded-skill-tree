@@ -4,7 +4,8 @@
 //   has a name and description, every {{placeholder}} has a value at every
 //   level, and the per-level line is in the locale's language. The tooltip,
 //   search, toasts and the ?focus= search all read these records.
-// - tree.json (packages/core): a tree label text for every TREE_LABELS entry.
+// - tree.json (packages/core): a tree label text for every TREE_LABELS entry
+//   (English; other locales may add their own).
 // - common.json (the site): every locale has the same keys and placeholders
 //   as the default locale, every key the code references exists, and keys
 //   built at runtime exist for every value.
@@ -90,7 +91,9 @@ function collectProblems({
         if (!parsed.success) {
             for (const issue of parsed.error.issues) report(file, `[${issue.path.join('.')}] ${issue.message}`);
         }
-        for (const type of presentationTypes) {
+        // Types outside the tree only need the default locale's text (a fallback).
+        const needed = lang === defaultLocale ? presentationTypes : presentationTypes.filter((type) => tree.types[type]);
+        for (const type of needed) {
             if (!nodes[type]) report(file, `${type} is missing (every type authored in LegacyNodes.ts needs an entry)`);
         }
 
@@ -137,7 +140,9 @@ function collectProblems({
     }
 
     if (treeLabels) {
+        // Other locales may leave tree.json out: the labels drawn on the tree are English.
         for (const [lang, { tree }] of Object.entries(locales)) {
+            if (lang !== defaultLocale && !tree) continue;
             for (const nameKey of treeLabels) {
                 if (!tree?.treeLabels?.[nameKey]) report(`${lang}/tree.json`, `treeLabels.${nameKey} is missing (one per TREE_LABELS entry)`);
             }
@@ -289,7 +294,8 @@ function main() {
     // Every site locale needs the core package's text too.
     const locales = Object.fromEntries(i18n.locales.map((lang) => [lang, {
         nodes: readJson(coreLocalesDir, lang, 'nodes'),
-        tree: readJson(coreLocalesDir, lang, 'tree'),
+        tree: lang === i18n.defaultLocale || fs.existsSync(path.join(coreLocalesDir, lang, 'tree.json'))
+            ? readJson(coreLocalesDir, lang, 'tree') : undefined,
         common: readJson(localesDir, lang, 'common'),
         ui: readJson(reactLocalesDir, '.', lang),
     }]));

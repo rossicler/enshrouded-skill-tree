@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "Рівень {{current}} / {{max}}",
+    "unlock": "Відкрити",
+    "outOfRange": "Поза досяжністю",
+    "share": "Поділитися посиланням на цю навичку",
+    "refund": "Повернути",
+    "levelUp": "Підвищити рівень",
+    "refundOne": "Повернути 1",
+    "refundAll": "Повернути все",
+    "skillPointIcon": "Значок очка навички",
+    "close": "Закрити"
+  },
+  "card": {
+    "label": "Дерево навичок",
+    "zoomIn": "Наблизити",
+    "zoomOut": "Віддалити",
+    "fit": "Показати все дерево",
+    "expand": "Розгорнути",
+    "fullscreen": "На весь екран",
+    "exitFullscreen": "Вийти з повноекранного режиму",
+    "close": "Закрити"
+  },
+  "kit": {
+    "close": "Закрити",
+    "copy": "Копіювати"
+  },
+  "points": {
+    "skillPoints": "Очки навичок",
+    "flameLevel": "Рівень полум'я",
+    "skillPointIcon": "Значок очка навички",
+    "flameIcon": "Значок полум'я",
+    "flameDown": "Знизити рівень полум'я",
+    "flameUp": "Підвищити рівень полум'я"
+  },
+  "budget": {
+    "title": "Очки за біомами",
+    "playerLevel": "Рівень гравця",
+    "total": "Усього очок навичок",
+    "reset": "Відкрити все"
+  },
+  "biomes": {
+    "springlands": "Спрінгленд",
+    "revelwood": "Ревелвуд",
+    "nomad_highlands": "Нагір'я кочівників",
+    "kindlewastes": "Палаюча пустка",
+    "albaneve_summits": "Альбанівські вершини",
+    "veilwater_basin": "Сира земля",
+    "cinders_cradle": "Попільна Колиска"
+  },
+  "stats": {
+    "button": "Характеристики",
+    "title": "Зведення характеристик",
+    "basic": "Базові",
+    "close": "Закрити",
+    "names": {
+      "constitution": "Комплекція",
+      "strength": "Сила",
+      "endurance": "Стійкість",
+      "dexterity": "Спритність",
+      "spirit": "Дух",
+      "intelligence": "Інтелект"
+    }
+  },
+  "search": {
+    "placeholder": "Пошук",
+    "moreMatches": "+{{count}} збігів підсвічено на дереві",
+    "clear": "Очистити пошук"
+  }
+}

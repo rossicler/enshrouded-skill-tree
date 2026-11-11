@@ -1,0 +1,1617 @@
+{
+  "ABSORB": {
+    "game": {
+      "name": "Absorção",
+      "description": [
+        "Quando receber dano <b>Mágico</b>, você terá <b>{{gameValue1}}</b> de chance de restaurar <b>1</b> de Mana por ponto de Saúde perdido."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "Necromancia Avançada",
+      "description": [
+        "Aumenta o número máximo de aliados Extinguidos invocados por feitiços em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de aliados Extinguidos por nível"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "Ataque Aéreo de Varinha",
+      "description": [
+        "Quando usar uma Varinha, você pode realizar um ataque especial segurando <b>{{gameValue1}}</b> durante um pulo.",
+        "Isso dispara um projétil mágico que causa <b>50%</b> de dano de arma adicional em uma pequena área de explosão.",
+        "<b>Custo:</b> {{gameValue2}} de Vigor"
+      ]
+    }
+  },
+  "AIRBORNE": {
+    "game": {
+      "name": "Aéreo",
+      "description": [
+        "Planadores consomem <b>{{gameValue1}}</b> menos Vigor."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de redução de custo por nível"
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "Arquiteto Aéreo",
+      "description": [
+        "Transforma-se em uma faísca dentro da base para se mover livremente pelo ar, em primeira pessoa, durante as construções. Para alternar esse modo, segure {{gameValue1}}."
+      ]
+    }
+  },
+  "ARACHNOID": {
+    "game": {
+      "name": "Aracnoide",
+      "description": [
+        "O custo de Vigor ao escalar é reduzido em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de redução de custo por nível"
+    }
+  },
+  "ARCANE_CONCENTRATION": {
+    "game": {
+      "name": "Concentração Arcana",
+      "description": [
+        "Ganhe um ponto de Espírito a cada dois níveis da Chama."
+      ]
+    }
+  },
+  "ARCANE_DEFLECTION": {
+    "game": {
+      "name": "Deflexão Arcana",
+      "description": [
+        "Aparar um ataque inimigo com sucesso restaura <b>{{gameValue1}}</b> de Mana.",
+        "<b>Aparada</b><br/>Você pode bloquear com qualquer arma corpo a corpo, protetor ou escudo. Bloquear no momento certo <b>aparará</b> o ataque e preencherá a <i>barra de atordoamento</i> do inimigo.<br/>Espere até perceber um <b>clarão</b> no inimigo projétil para aparar."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Mana por nível"
+    }
+  },
+  "ARCANE_PROLIFERATION": {
+    "game": {
+      "name": "Proliferação Arcana",
+      "description": [
+        "Ataques com Varinha têm <b>30%</b> de chance de invocar o dobro de projéteis. Os projéteis adicionais invocados causam <b>50%</b> menos dano."
+      ]
+    }
+  },
+  "ARSONIST": {
+    "game": {
+      "name": "Incêndio",
+      "description": [
+        "Todo dano de <b>Fogo</b> é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "ATHLETE": {
+    "game": {
+      "name": "Atleta",
+      "description": [
+        "Aumenta sua Saúde máxima em <b>{{gameValue1}}</b> vezes o seu atributo Força."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> vezes por nível"
+    }
+  },
+  "ATTR_CONS": {
+    "game": {
+      "name": "Constituição",
+      "description": [
+        "Aumenta o atributo Constituição em 1.",
+        "Aumenta a saúde em {{gameValue1}} por ponto de atributo."
+      ]
+    }
+  },
+  "ATTR_DEX": {
+    "game": {
+      "name": "Destreza",
+      "description": [
+        "Aumenta o seu Destreza atributo por 1.",
+        "Aumenta o dano do arco e da adaga em 5% por ponto de atributo."
+      ]
+    }
+  },
+  "ATTR_ENDURANCE": {
+    "game": {
+      "name": "Resistência",
+      "description": [
+        "Aumenta o atributo Resistência em 1.",
+        "Aumenta o Vigor em {{gameValue1}} por ponto de atributo."
+      ]
+    }
+  },
+  "ATTR_INT": {
+    "game": {
+      "name": "Inteligência",
+      "description": [
+        "Aumenta o seu Inteligência atributo por 1.",
+        "Aumenta o dano mágico em 5% por ponto de atributo."
+      ]
+    }
+  },
+  "ATTR_SPIRIT": {
+    "game": {
+      "name": "Espírito",
+      "description": [
+        "Aumenta o atributo Espírito em 1.",
+        "Aumenta a Mana em {{gameValue1}} por ponto de atributo."
+      ]
+    }
+  },
+  "ATTR_STR": {
+    "game": {
+      "name": "Força",
+      "description": [
+        "Aumenta o seu Força atributo por 1.",
+        "Aumenta o dano de Corpo a Corpo em 5% por Ponto de Atributo."
+      ]
+    }
+  },
+  "BACKSTAB_MASTERY": {
+    "game": {
+      "name": "Golpe nas costas magistral",
+      "description": [
+        "O dano de <b>Ataque Oportuno</b> é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "BARBARIAN": {
+    "game": {
+      "name": "Barbárie",
+      "description": [
+        "Ganhe um ponto de Força a cada dois níveis da Chama."
+      ]
+    }
+  },
+  "BARBARIAN_PATH": {
+    "game": {
+      "name": "Caminho do Bárbaro",
+      "description": [
+        "O dano com Clavas, Espadas e Machados de Duas Mãos é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "Saraivada",
+      "description": [
+        "Causar dano com Arcos tem <b>{{gameValue1}}</b> de chance de restaurar <b>1</b> de durabilidade da arma."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "BASH": {
+    "game": {
+      "name": "Contra-ataque",
+      "description": [
+        "Aparar ataques dos inimigos causa <b>{{gameValue1}} de dano de Impacto</b> a eles. O dano do contra-ataque é aumentado de acordo com seu atributo Força.",
+        "<b>Aparada</b><br/>Você pode bloquear com qualquer arma corpo a corpo, protetor ou escudo. Bloquear no momento certo <b>aparará</b> o ataque e preencherá a <i>barra de atordoamento</i> do inimigo.<br/>Espere até perceber um <b>clarão</b> no inimigo projétil para aparar."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}} de dano de Impacto </b> por nível"
+    }
+  },
+  "BATTLE_HEAL": {
+    "game": {
+      "name": "Cura de batalha",
+      "description": [
+        "Golpes críticos com Armas Corpo a Corpo curam você em <b>{{gameValue1}}</b> da sua Saúde máxima."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Saúde máxima por nível"
+    }
+  },
+  "BEAST_MASTER": {
+    "game": {
+      "name": "Maestria Selvagem",
+      "description": [
+        "Quando você for alvo de um ataque, <b>Animais Selvagens</b> em um raio de <b>50</b> metros atacarão o inimigo."
+      ]
+    }
+  },
+  "BEE_STING": {
+    "game": {
+      "name": "Picada de Abelha",
+      "description": [
+        "Disparar ou mirar seu Arco enquanto estiver no ar reduz a velocidade da sua queda brevemente. Cada disparo levanta você um pouco, proporcionando mais tempo no ar.",
+        "<b>Custo:</b> {{gameValue1}} de Vigor por segundo"
+      ]
+    }
+  },
+  "BEGONE": {
+    "game": {
+      "name": "Afaste-se!",
+      "description": [
+        "Um soco com poder mágico que empurra e atordoa os inimigos.",
+        "Substitui seus ataques desarmados, desde que você tenha o Mana necessário disponível.",
+        "<b>Custo:</b> {{gameValue1}} de Mana"
+      ]
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "Conjuração Explosiva",
+      "description": [
+        "Após um Golpe Crítico com uma Varinha, o dano base do seu próximo ataque com Cajado dentro de {{gameValue1}} segundos aumentará em <b>{{gameValue2}}</b>."
+      ]
+    }
+  },
+  "BLESSED_ARROWS": {
+    "game": {
+      "name": "Flechas Abençoadas",
+      "description": [
+        "Golpes Críticos com Arcos restauram <b>{{gameValue1}}</b> de Mana."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Mana por nível"
+    }
+  },
+  "BLINK": {
+    "game": {
+      "name": "Lampejo",
+      "description": [
+        "Substitui a habilidade Rolamento por um teletransporte de curto alcance.",
+        "O Lampejo também substitui o Rolamento lateral da habilidade Manobra Estratégica.",
+        "<b>Custo:</b> {{gameValue1}} de Vigor"
+      ]
+    }
+  },
+  "BLINK_ATTACK": {
+    "game": {
+      "name": "Ataque Lampejante",
+      "description": [
+        "Lampejar até um inimigo ativa uma explosão que causa dano de <b>Fogo</b> em uma pequena área.",
+        "O Dano e o custo de Mana são dimensionados com o atributo Inteligência."
+      ]
+    }
+  },
+  "BLOOD_MAGIC": {
+    "game": {
+      "name": "Magia de Sangue",
+      "description": [
+        "Quando seu Mana ficar abaixo de <b>20%</b>, você restaura até <b>35%</b> do seu Mana máximo pelo custo de <b>1</b> de Saúde por Mana restaurado.",
+        "Este efeito é interrompido quando chegar a <b>1</b> de Saúde.",
+        "<b>Recarga:</b> 2 minutos"
+      ]
+    }
+  },
+  "BLOOD_RAGE": {
+    "game": {
+      "name": "Fúria Sangrenta",
+      "description": [
+        "Quando um inimigo dentro de <b>{{gameValue1}}</b> metros é morto por uma Arma Corpo a Corpo, você entra em <b>Fúria Sangrenta</b>.",
+        "<b>Fúria Sangrenta</b><br/>Aumenta o dano com Armas Corpo a Corpo em <b>{{gameValue2}}</b> por <b>10</b> segundos."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> metros de alcance por nível"
+    }
+  },
+  "BLOOD_WARRIOR": {
+    "game": {
+      "name": "Guerreiro de Sangue",
+      "description": [
+        "Derrotar um inimigo com um <b>Ataque Sorrateiro</b> ou <b>Ataque Impiedoso</b> faz um orbe de Saúde aparecer.",
+        "Coletar um Orbe restaura <b>10%</b> do recurso respectivo."
+      ]
+    }
+  },
+  "BLOODLETTING": {
+    "game": {
+      "name": "Sangria",
+      "description": [
+        "Golpes Críticos com feitiços têm <b>{{gameValue1}}</b> de chance de gerar dois Orbes de Saúde, Mana e/ou Vigor.",
+        "Pegar um Orbe restaura <b>10%</b> do recurso correspondente."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "BONE_TO_ASH": {
+    "game": {
+      "name": "Ossos a Cinzas",
+      "description": [
+        "O dano contra Oco é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "BOUNTY_BONANZA": {
+    "game": {
+      "name": "Recompensa de bônus",
+      "description": [
+        "Após derrotar um inimigo do tipo <b>Caído</b> com um <b>Tiro de Habilidade</b>, seu grupo ganha mais <b>{{gameValue1}}</b> de Pontos de Experiência.",
+        "<b>Tiro de Habilidade</b><br/>Acertar os pontos fracos de um inimigo, como a cabeça, com Arcos é considerado um Tiro de Habilidade.",
+        "Os Tiros de Habilidade causam 100% a mais de dano base contra inimigos sem capacetes e 50% contra inimigos com capacetes. <br/>É possível aumentar a potência conforme o atributo de dano de Tiro de Habilidade."
+      ]
+    }
+  },
+  "BOW_SPECIALIZATION": {
+    "game": {
+      "name": "Especialização em Arco",
+      "description": [
+        "Desbloqueia Habilidades Especiais dos Arcos. <br/>Pressione <b>{{gameValue1}}</b> para liberar uma Habilidade Especial poderosa depois de gerar Foco suficiente.",
+        "<b>Foco</b><br/>Gere Foco ao atacar. O Foco pode ser gerado com qualquer tipo de arma e é usado para ativar as Habilidades Especiais das armas."
+      ]
+    }
+  },
+  "BREACH": {
+    "game": {
+      "name": "Rompimento",
+      "description": [
+        "Inimigos <b>Dominados</b> recebem mais <b>{{gameValue1}}</b> de Dano Físico Corpo a Corpo por <b>3</b> segundos.",
+        "<b>Dominação</b> <br/>Atacar inimigos que estiverem bloqueando ou aparar seus ataques enche a <i>Barra de Atordoamento</i> deles até que sejam <b>dominados</b>. Inimigos <br/><b>Dominados</b> ficam vulneráveis a Ataques Impiedosos."
+      ]
+    }
+  },
+  "BRUTE": {
+    "game": {
+      "name": "Brutamontes",
+      "description": [
+        "O dano de <b>Impacto</b> Corpo a Corpo é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "CALM_SPIRIT": {
+    "game": {
+      "name": "Espírito Calmo",
+      "description": [
+        "<b>Animais Selvagens</b> dentro de <b>50</b> metros não atacarão mais você, a menos que provocados.",
+        "Não afeta animais corrompidos pela Mortalha."
+      ]
+    }
+  },
+  "CHAIN_HIT": {
+    "game": {
+      "name": "Acerto em Cadeia",
+      "description": [
+        "Golpes Críticos com Armas Mágicas acertarão automaticamente um inimigo aleatório dentro de <b>15</b> metros com <b>5</b> de dano de Eletricidade por Inteligência. <br/>O primeiro alvo pode ser atingido duas vezes em vez de encadear com outro inimigo."
+      ]
+    }
+  },
+  "CHAIN_REACTION": {
+    "game": {
+      "name": "Explosivos Ecoantes",
+      "description": [
+        "Cada inimigo atingido por uma <b>Flecha Impactante</b> tem <b>40%</b> de chance de desencadear uma explosão secundária que causa <b>50%</b> do dano em uma pequena área."
+      ]
+    }
+  },
+  "COUNTER_BATTERY": {
+    "game": {
+      "name": "Contrabateria",
+      "description": [
+        "O dano contra imigos em <b>longa distância</b> aumenta em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "COUNTERSTRIKE": {
+    "game": {
+      "name": "Contra-Ataque",
+      "description": [
+        "Depois de receber o dano, há <b>{{gameValue1}}</b> de chance de refletir <b>{{gameValue2}}</b> do dano para o agressor como dano de <b>Fogo</b>.",
+        "Este ataque mágico pode desencadear outras habilidades."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance e <b>{{gamePerLevelValue2}}</b> de dano refletido por nível"
+    }
+  },
+  "CRASH_DOWN_ATTACK": {
+    "game": {
+      "name": "Ataque de Colapso",
+      "description": [
+        "Quando tiver uma arma Corpo a Corpo equipada, você poderá realizar um ataque especial segurando <b>{{gameValue1}}</b> durante um pulo.",
+        "Colapso causa 50% a mais de dano de arma em uma pequena área de explosão, e o custo de Vigor é proporcional ao tipo de arma usado.",
+        "<b>Custo:</b> de {{gameValue2}} a {{gameValue3}} de Vigor",
+        "<b>Fura Bloqueio</b> <br/>Este ataque especial enche o dobro da <i>Barra de Atordoamento</i> quando acertar um inimigo que estiver bloqueando."
+      ]
+    }
+  },
+  "CRASH_DOWN_FORCE": {
+    "game": {
+      "name": "Colapso: Força",
+      "description": [
+        "Quando atacar a partir de um pulo duplo, <b>Colapso</b> causa <b>20%</b> mais dano da arma."
+      ]
+    }
+  },
+  "CULL_THE_HERD": {
+    "game": {
+      "name": "Seleção Natural",
+      "description": [
+        "O dano contra a Vida Selvagem é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "CUTTHROAT": {
+    "game": {
+      "name": "Degolador",
+      "description": [
+        "O dano de Ataque Sorrateiro é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "DAGGER_MASTERY": {
+    "game": {
+      "name": "Domínio de Adagas",
+      "description": [
+        "O dano de Adaga é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "DAGGER_SPECIALIZATION": {
+    "game": {
+      "name": "Especialização em Adaga",
+      "description": [
+        "Desbloqueia Habilidades Especiais das Adagas. <br/>Pressione <b>{{gameValue1}}</b> para liberar uma Habilidade Especial poderosa depois de gerar Foco suficiente.",
+        "<b>Foco</b><br/>Gere Foco ao atacar. O Foco pode ser gerado com qualquer tipo de arma e é usado para ativar as Habilidades Especiais das armas."
+      ]
+    }
+  },
+  "DARK_ARTS": {
+    "game": {
+      "name": "Artes Sombrias",
+      "description": [
+        "Todo dano de <b>Mortalha</b> é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "DESSERT_STOMACH": {
+    "game": {
+      "name": "Segundo Estômago",
+      "description": [
+        "Você ganha mais um espaço de Alimento."
+      ]
+    }
+  },
+  "DIVINE_SURGE": {
+    "game": {
+      "name": "Surto Divino",
+      "description": [
+        "Feitiços de cura podem causar Acertos Críticos de acordo com seu dano de Golpe Crítico."
+      ]
+    }
+  },
+  "DOUBLE_JUMP": {
+    "game": {
+      "name": "Pulo Duplo",
+      "description": [
+        "Permitirá um segundo pulo enquanto estiver no ar.",
+        "<b>Custo:</b> {{gameValue1}} de Vigor"
+      ]
+    }
+  },
+  "EAGLE_EYE": {
+    "game": {
+      "name": "Olho de Águia",
+      "description": [
+        "Aumenta bastante a ampliação enquanto mirar com Arcos.",
+        "Para mirar, segure {{gameValue1}} enquanto o Arco estiver selecionado na barra de Ação.<br/>(Alternativamente, segure {{gameValue2}} para mirar com seu Arco equipado.)"
+      ]
+    }
+  },
+  "EAGLES_BANE": {
+    "game": {
+      "name": "Ruína da Águia",
+      "description": [
+        "O dano contra inimigos <b>voadores</b> é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "EARTH_AURA": {
+    "game": {
+      "name": "Aura da Terra",
+      "description": [
+        "Você emite uma aura protetora que aumenta as Resistências Física e Mágica em <b>{{gameValue1}}</b> para você e todos os aliados em <b>{{gameValue2}}</b> metros."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> metros de alcance por nível"
+    }
+  },
+  "EMERGENCY_BLINK": {
+    "game": {
+      "name": "Lampejo de Emergência",
+      "description": [
+        "Você pode lampejar enquanto estiver com atordoamento. Isso interromperá a condição de atordoamento."
+      ]
+    }
+  },
+  "ENDURANCE_OF_THE_FLAME": {
+    "game": {
+      "name": "Resistência do Chama",
+      "description": [
+        "Ganhe um ponto de Resistência para cada dois níveis da Chama."
+      ]
+    }
+  },
+  "ETERNAL_SPARK": {
+    "game": {
+      "name": "Fagulha Eterna",
+      "description": [
+        "Causar dano com projéteis de Varinha tem <b>{{gameValue1}}</b> de chance de restaurar <b>1</b> de durabilidade da arma."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "EVASION_ATTACK": {
+    "game": {
+      "name": "Ataque Evasivo",
+      "description": [
+        "Quando usar uma Arma Corpo a Corpo, você pode pressionar <b>{{gameValue1}}</b> para executar um Ataque Evasivo.<br/>Ele lança você em direção ao inimigo e causa <b>50%</b> de dano de arma adicional.",
+        "<b>Custo:</b> {{gameValue2}} de Vigor",
+        "<b>Fura Bloqueio</b> <br/>Este ataque especial enche o dobro da <i>Barra de Atordoamento</i> quando acertar um inimigo que estiver bloqueando."
+      ]
+    }
+  },
+  "EXALTED": {
+    "game": {
+      "name": "Exaltação",
+      "description": [
+        "Você ganhará um de inteligência para cada dois níveis da Chama."
+      ]
+    }
+  },
+  "EXPOSE_WEAKNESS": {
+    "game": {
+      "name": "Expor Ponto Fraco",
+      "description": [
+        "Golpes Críticos com Adagas quebram a armadura dos inimigos, aplicando uma <b>desvantagem</b> que faz com que sofram <b>{{gameValue1}}</b> de dano físico aumentado por <b>{{gameValue2}}</b> segundos."
+      ]
+    }
+  },
+  "FATAL_PRECISION": {
+    "game": {
+      "name": "Precisão Fatal",
+      "description": [
+        "A Chance de Golpe Crítico é aumentada em <b>{{gameValue1}}</b>.<br/>O dano de Golpe Crítico é aumentado em <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance de Golpe Crítico e <b>{{gamePerLevelValue2}}</b> de dano de Golpe Crítico por nível"
+    }
+  },
+  "FELLING_AXE_SPECIALIZATION": {
+    "game": {
+      "name": "Especialização em Machado de Lenharia",
+      "description": [
+        "Desbloqueia Habilidades Especiais dos Machados de Lenharia. <br/>Pressione <b>{{gameValue1}}</b> para liberar uma Habilidade Especial poderosa depois de gerar Foco suficiente.",
+        "<b>Foco</b><br/>Gere Foco ao atacar. O Foco pode ser gerado com qualquer tipo de arma e é usado para ativar as Habilidades Especiais das armas."
+      ]
+    }
+  },
+  "FINESSE": {
+    "game": {
+      "name": "Sofisticação",
+      "description": [
+        "Causar dano com Espadas de Uma Mão, Machados de Uma Mão, Clavas de Uma Mão e Adagas tem <b>{{gameValue1}}</b> de chance de restaurar <b>1</b> de durabilidade da arma."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "FIRE_RESISTANCE": {
+    "game": {
+      "name": "Resistência ao fogo",
+      "description": [
+        "Aumenta sua <b>Resistência a Fogo</b> em <b>{{gameValue1}}</b>, reduzindo o dano de <b>Fogo</b> recebido."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Resistência por nível"
+    }
+  },
+  "FISHERMANS_RESOLVE": {
+    "game": {
+      "name": "Determinação de Pescador",
+      "description": [
+        "Aumenta sua Resistência de Pesca em <b>{{gameValue1}}</b>.",
+        "Permite disputas prolongadas com peixes fisgados."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Resistência de Pesca por nível"
+    }
+  },
+  "FROST": {
+    "game": {
+      "name": "Geada",
+      "description": [
+        "Quando receber dano corpo a corpo, o agressor ficará lento por <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> por nível"
+    }
+  },
+  "GIANT_SLAYER_HOOK": {
+    "game": {
+      "name": "Gancho Matador de Gigantes",
+      "description": [
+        "Use seu <b>Arpéu</b> para se impulsionar em direção a inimigos grandes durante o combate.",
+        "O custo da habilidade aumenta com base no nível do inimigo. Quanto mais alto o nível do inimigo, maior o custo.",
+        "<b>Custo Base:</b> {{gameValue1}} de Vigor"
+      ]
+    }
+  },
+  "GOOD_METABOLISM": {
+    "game": {
+      "name": "Bom Metabolismo",
+      "description": [
+        "Orbes de Saúde, Mana e Vigor restauram <b>30%</b> em vez de <b>10%</b> do seu respectivo recurso.",
+        "Poções de Mana e Saúde restauram <b>20%</b> mais recursos."
+      ]
+    }
+  },
+  "GRACEFUL_STRIDE": {
+    "game": {
+      "name": "Passo Gracioso",
+      "description": [
+        "Ganhe um ponto de Destreza para cada dois níveis da Chama."
+      ]
+    }
+  },
+  "GROUNDING_HOOK": {
+    "game": {
+      "name": "Arpéu de Aterrissagem",
+      "description": [
+        "Use seu <b>Arpéu</b> para se impulsionar em direção a inimigos <b>voadores</b> durante o combate.",
+        "O custo da habilidade aumenta com base no nível do inimigo. Quanto mais alto o nível do inimigo, maior o custo.",
+        "<b>Custo Base:</b> {{gameValue1}} de Vigor"
+      ]
+    }
+  },
+  "HEALER": {
+    "game": {
+      "name": "Curandeiro",
+      "description": [
+        "A Saúde recebida de feitiços e habilidades de Aura da Água é aumentada em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Cura por nível"
+    }
+  },
+  "HEALER_REVIVE": {
+    "game": {
+      "name": "Reviver Curativo",
+      "description": [
+        "Revive jogadores com <b>{{gameValue1}}</b> de Saúde a mais.",
+        "A Saúde padrão de jogadores revividos é de <b>10%</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Saúde por nível"
+    }
+  },
+  "HEAVY_HANDED": {
+    "game": {
+      "name": "Mão Pesada",
+      "description": [
+        "O preenchimento das <i>Barras de Atordoamento</i> dos inimigos é aumentado em <b>{{gameValue1}}</b> ao atacar inimigos que estão bloqueando com Armas Corpo a Corpo.",
+        "<b>Dominação</b> <br/>Atacar inimigos que estiverem bloqueando ou aparar seus ataques enche a <i>Barra de Atordoamento</i> deles até que sejam <b>dominados</b>. Inimigos <br/><b>Dominados</b> ficam vulneráveis a Ataques Impiedosos."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de efeito por nível"
+    }
+  },
+  "HEAVY_PLATES": {
+    "game": {
+      "name": "Placas Pesadas",
+      "description": [
+        "Os Pontos de Armadura Física de itens equipados são aumentados em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de aumento de Armadura Física por nível"
+    }
+  },
+  "HEAVY_SPECIALIZATION": {
+    "game": {
+      "name": "Golpes Pesados",
+      "description": [
+        "Aumenta a velocidade de ataque de todas as armas Corpo a Corpo de Duas Mãos em <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "ICE_RESISTANCE": {
+    "game": {
+      "name": "Resistência ao gelo",
+      "description": [
+        "Aumenta sua <b>Resistência a Gelo</b> em <b>{{gameValue1}}</b>, reduzindo o dano de <b>Gelo</b> recebido."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Resistência por nível"
+    }
+  },
+  "ICEMAN": {
+    "game": {
+      "name": "Homem de Gelo",
+      "description": [
+        "Todo dano de <b>Gelo</b> é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "INNER_FIRES": {
+    "game": {
+      "name": "Fogos Internos",
+      "description": [
+        "<b>O tempo na Mortalha</b> aumenta em <b>{{gameValue1}}</b>, permitindo que você explore mais.",
+        "<b>Tempo na Mortalha</b><br/>Caso o tempo acabe, a Mortalha consumirá você."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> por nível"
+    }
+  },
+  "KICK": {
+    "game": {
+      "name": "Chute",
+      "description": [
+        "Quando equipar uma Arma Corpo a Corpo, poderá executar um Chute atacando enquanto bloqueia.",
+        "O Chute causa pouco dano, mas acerta o inimigo com uma força enorme e o empurra, enchendo a <i>Barra de Atordoamento</i> dele. O aumento da",
+        "<i>Barra de Atordoamento</i> é dimensionado com a Destreza.<br/>O tempo de atordoamento depende do tamanho do inimigo.",
+        "<b>Dominação</b> <br/>Atacar inimigos que estiverem bloqueando ou aparar seus ataques enche a <i>Barra de Atordoamento</i> deles até que sejam <b>dominados</b>. Inimigos <br/><b>Dominados</b> ficam vulneráveis a Ataques Impiedosos."
+      ]
+    }
+  },
+  "LAST_MEAL": {
+    "game": {
+      "name": "Última Refeição",
+      "description": [
+        "Suas Vantagens de Comida persistem após a morte, mas a duração delas cai pela metade."
+      ]
+    }
+  },
+  "LIFE_BURST": {
+    "game": {
+      "name": "Explosão Vital",
+      "description": [
+        "Derrotar um inimigo com uma Arma Mágica restaura um valor igual a <b>{{gameValue1}}</b> vezes a sua Inteligência como Saúde para todos os jogadores a <b>15</b> metros do alvo."
+      ]
+    }
+  },
+  "LIFE_ESSENCES": {
+    "game": {
+      "name": "Essências da Vida",
+      "description": [
+        "Aumenta sua Saúde máxima em <b>{{gameValue1}}</b> vezes o seu atributo Inteligência."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> vezes por nível"
+    }
+  },
+  "LUMBERJACK": {
+    "game": {
+      "name": "Lenharia",
+      "description": [
+        "Ferramentas causam <b>{{gameValue1}}</b> de dano aumentado contra madeira.<br/>Isso inclui árvores e terreno de madeira."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "MAGE_APPRENTICE": {
+    "game": {
+      "name": "Aprendiz de Mago",
+      "description": [
+        "O dano com Varinhas e Cajados é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "MANA_CURRENTS": {
+    "game": {
+      "name": "Fluxo de Mana",
+      "description": [
+        "A Regeneração de Mana base é aumentada em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Regeneração de Mana por nível"
+    }
+  },
+  "MARKSMAN": {
+    "game": {
+      "name": "Mira Precisa",
+      "description": [
+        "O dano com Arcos é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "MARTYR": {
+    "game": {
+      "name": "Martírio",
+      "description": [
+        "Quando um inimigo matar você, todos os aliados em <b>30</b> metros são curados em <b>50%</b> da saúde máxima.",
+        "Eles também recebem a vantagem <b>Bênção Final</b>, aumentando a saúde máxima em <b>100</b> pontos por <b>15</b> minutos."
+      ]
+    }
+  },
+  "MASON": {
+    "game": {
+      "name": "Alvenaria",
+      "description": [
+        "Ferramentas causam <b>{{gameValue1}}</b> de dano aumentado contra pedra.<br/>Isso inclui terreno de pedra e veios de pedras preciosas."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "MASS_DESTRUCTION": {
+    "game": {
+      "name": "Destruição em Massa",
+      "description": [
+        "Golpes Críticos com Armas Mágicas causam <b>2 de Dano de Eletricidade</b> por ponto de Inteligência a todos os inimigos dentro de <b>{{gameValue1}}</b> metros do alvo."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> metros de alcance por nível"
+    }
+  },
+  "MERCILESS_ATTACK": {
+    "game": {
+      "name": "Ataque Impiedoso",
+      "description": [
+        "Realize um <b>Ataque Impiedoso</b> pressionando <b>{{gameValue1}}</b> para causar <b>{{gameValue2}}</b> de dano a um inimigo <b>dominado</b>.",
+        "<b>Dominação</b> <br/>Atacar inimigos que estiverem bloqueando ou aparar seus ataques enche a <i>Barra de Atordoamento</i> deles até que sejam <b>dominados</b>. Inimigos <br/><b>Dominados</b> ficam vulneráveis a Ataques Impiedosos.",
+        "Varinhas, Cajados e Arcos não conseguem realizar um Ataque Impiedoso."
+      ]
+    }
+  },
+  "MINER": {
+    "game": {
+      "name": "Mineração",
+      "description": [
+        "Recursos de mineração têm <b>10%</b> de chance de conceder um recurso adicional."
+      ]
+    }
+  },
+  "MITHRIDATIST": {
+    "game": {
+      "name": "Mitridatismo",
+      "description": [
+        "Ganha <b>25%</b> de chance de evitar sofrer envenenamento."
+      ]
+    }
+  },
+  "MULTI_SHOT": {
+    "game": {
+      "name": "Multi Tiro",
+      "description": [
+        "Disparar <i>Flechas Comuns</i> tem <b>20%</b> de chance de invocar uma <b>Lufada de Flechas</b> que se espalham moderadamente.",
+        "<i>Flechas Comuns</i> disparadas dessa forma consumirão sua munição.",
+        "<b>Lufada de Flechas</b> não é ativada com <i>Flechas Especiais</i>."
+      ]
+    }
+  },
+  "MULTI_SHOT_SPREAD": {
+    "game": {
+      "name": "Propagação Multitiro",
+      "description": [
+        "Adiciona <b>25%</b> de chance de invocar mais uma <i>Flecha Comum</i> com sua <b>Lufada de Flechas</b> da habilidade <b>Multi Tiro</b>.",
+        "Essa <i>Flecha Comum</i> adicional não consumirá sua munição."
+      ]
+    }
+  },
+  "MULTI_SHOT_TRIGGER": {
+    "game": {
+      "name": "Gatilho Multitiro",
+      "description": [
+        "Disparar <i>Flechas Especiais</i> agora ativará uma <b>Lufada de Flechas</b> da habilidade <b>Multi Tiro</b>.",
+        "<i>Flechas Especiais</i> disparadas desta forma consumirão sua munição."
+      ]
+    }
+  },
+  "NECROMANCER": {
+    "game": {
+      "name": "Necromancia",
+      "description": [
+        "Ao matar um inimigo com uma Arma Mágica, você terá <b>{{gameValue1}}</b> de chance de invocar uma <b>Caveira Companheira</b> amistosa."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "NEMESIS": {
+    "game": {
+      "name": "Nêmesis",
+      "description": [
+        "Aumenta a atenção que você atrai dos inimigos em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de atenção atraída por nível"
+    }
+  },
+  "ONE_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "Especialização em Arma de Uma Mão",
+      "description": [
+        "Desbloqueia Habilidades Especiais das Armas Corpo a Corpo de Uma Mão. <br/>Pressione <b>{{gameValue1}}</b> para liberar uma Habilidade Especial poderosa depois de gerar Foco suficiente.",
+        "<b>Foco</b><br/>Gere Foco ao atacar. O Foco pode ser gerado com qualquer tipo de arma e é usado para ativar as Habilidades Especiais das armas."
+      ]
+    }
+  },
+  "OPPORTUNITY": {
+    "game": {
+      "name": "Oportunidade",
+      "description": [
+        "Aumenta o multiplicador de dano de <b>Ataque Impiedoso</b> em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "PICKAXE_SPECIALIZATION": {
+    "game": {
+      "name": "Especialização em Picareta",
+      "description": [
+        "Desbloqueia Habilidades Especiais das Picaretas. <br/>Pressione <b>{{gameValue1}}</b> para liberar uma Habilidade Especial poderosa depois de gerar Foco suficiente.",
+        "<b>Foco</b><br/>Gere Foco ao atacar. O Foco pode ser gerado com qualquer tipo de arma e é usado para ativar as Habilidades Especiais das armas."
+      ]
+    }
+  },
+  "POISON_MASTERY": {
+    "game": {
+      "name": "Domínio da peçonha",
+      "description": [
+        "Aumenta o dano causado com o benefício de Adaga <b>Lâminas Peçonhentas</b> em <b>100%</b>."
+      ]
+    }
+  },
+  "POISONED_BLADES": {
+    "game": {
+      "name": "Lâminas Peçonhentas",
+      "description": [
+        "Aumenta a chance de envenenar inimigos para <b>30%</b> ao usar Adagas com o benefício <b>Lâminas Peçonhentas</b>."
+      ]
+    }
+  },
+  "POWER_PARRY": {
+    "game": {
+      "name": "Aparada Poderosa",
+      "description": [
+        "Seu Poder de Aparo é aumentado em <b>{{gameValue1}}</b>.",
+        "<b>Aparada</b><br/>Você pode bloquear com qualquer arma corpo a corpo, protetor ou escudo. Bloquear no momento certo <b>aparará</b> o ataque e preencherá a <i>barra de atordoamento</i> do inimigo.<br/>Espere até perceber um <b>clarão</b> no inimigo projétil para aparar.",
+        "<b>Dominação</b> <br/>Atacar inimigos que estiverem bloqueando ou aparar seus ataques enche a <i>Barra de Atordoamento</i> deles até que sejam <b>dominados</b>. Inimigos <br/><b>Dominados</b> ficam vulneráveis a Ataques Impiedosos."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Poder de Aparo por nível"
+    }
+  },
+  "PRIMAL_FORCE": {
+    "game": {
+      "name": "Força Primitiva",
+      "description": [
+        "O dano contra Vukah é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "PROSPECTOR": {
+    "game": {
+      "name": "Prospecção",
+      "description": [
+        "Ferramentas causam <b>{{gameValue1}}</b> de dano aumentado contra metal.<br/>Isso inclui veios de minério de metal."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "Punção",
+      "description": [
+        "O dano de <b>Perfuração</b> de longo alcance é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "PURIFICATION": {
+    "game": {
+      "name": "Purificação",
+      "description": [
+        "Derrotar um inimigo infestado pela Mortalha com uma Espada Grande, Clava, Martelo, Espada ou Machado de Uma ou Duas Mãos restaura <b>{{gameValue1}}</b> segundos de <b>Tempo na Mortalha</b>.",
+        "<b>Tempo na Mortalha</b><br/>Caso o tempo acabe, a Mortalha consumirá você."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> segundos por nível"
+    }
+  },
+  "QUALITY_GEAR": {
+    "game": {
+      "name": "Equipamento de Qualidade",
+      "description": [
+        "As ferramentas têm <b>{{gameValue1}}</b> de chance de restaurar <b>1</b> de durabilidade ao acertar."
+      ]
+    }
+  },
+  "QUICK_CHARGE": {
+    "game": {
+      "name": "Carga Rápida",
+      "description": [
+        "Tempo de Carga de feitiços reduzido em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Tempo de Carga por nível"
+    }
+  },
+  "QUICK_REFLEX_BLOCK": {
+    "game": {
+      "name": "Bloqueio de Reflexo Rápido",
+      "description": [
+        "Aumenta brevemente seu valor de bloqueio quando bloquear com adagas. Conseguir um aparo de última hora reduz um mínimo de vigor."
+      ]
+    }
+  },
+  "RADIANT_AURA": {
+    "game": {
+      "name": "Aura Radiante",
+      "description": [
+        "Todos os inimigos do tipo <b>Caído</b> dentro de <b>{{gameValue1}}</b> metros recebem <b>{{gameValue2}} de dano de Fogo</b> por segundo para cada ponto de Inteligência."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> metros de alcance e <b>{{gamePerLevelValue2}} de dano de Fogo </b> por nível de Inteligência"
+    }
+  },
+  "RANGER": {
+    "game": {
+      "name": "Defensor",
+      "description": [
+        "Aumenta seus atributos Destreza e Resistência em <b>{{gameValue1}}</b>.",
+        "A Regeneração de Vigor Base é aumentada em <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> Destreza e Resistência por nível.<br/><b>{{gamePerLevelValue2}}</b> de Regeneração de Vigor por nível"
+    }
+  },
+  "REBOUND": {
+    "game": {
+      "name": "Repercussão",
+      "description": [
+        "A Regeneração de Vigor base é aumentada em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Regeneração de Vigor por nível"
+    }
+  },
+  "RELENTLESS": {
+    "game": {
+      "name": "Implacável",
+      "description": [
+        "Golpes Críticos com Armas de Duas Mãos aumentam sua Chance de Golpe Crítico em <b>{{gameValue1}}</b> para o próximo acerto."
+      ]
+    }
+  },
+  "RICOCHETS": {
+    "game": {
+      "name": "Explosão de Estilhaços",
+      "description": [
+        "Para cada alvo atingido com uma <b>Flecha Impactante</b>, aumenta o dano dela em em <b>10%</b>."
+      ]
+    }
+  },
+  "RIGHTEOUS_FIRE": {
+    "game": {
+      "name": "Fogo Íntegro",
+      "description": [
+        "Curar qualquer alvo com um feitiço ativa uma explosão de fogo que causa dano igual a <b>{{gameValue1}}</b> da cura como dano de <b>Fogo</b> a inimigos <b>Caídos</b> próximos."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}} de dano de Fogo</b> por nível"
+    }
+  },
+  "RUNNER": {
+    "game": {
+      "name": "Corrida",
+      "description": [
+        "A Velocidade da Corrida aumenta em <b>{{gameValue1}}</b> e o custo de Vigor ao correr é reduzido em <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de velocidade e <b>{{gamePerLevelValue2}}</b> de redução de custo por nível"
+    }
+  },
+  "SAVIOUR": {
+    "game": {
+      "name": "Salvação",
+      "description": [
+        "O tempo para reviver aliados é reduzido em <b>{{gameValue1}}</b> segundos.",
+        "O tempo padrão para reviver é de <b>6</b> segundos."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> segundo por nível"
+    }
+  },
+  "SHELL_SHOCK": {
+    "game": {
+      "name": "Abalo",
+      "description": [
+        "Infunde seus <b>Explosivos de Longo Alcance</b> com Mana. Agora eles atordoam os inimigos por <b>2</b> segundos.",
+        "<b>Custo:</b> {{gameValue1}} de Mana por inimigo atordoado"
+      ]
+    }
+  },
+  "SHINY_PLATES": {
+    "game": {
+      "name": "Placas Brilhantes",
+      "description": [
+        "Os Pontos de Armadura Mágica de itens equipados são aumentados em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de aumento de Armadura Mágica por nível"
+    }
+  },
+  "SHOCK_RESISTANCE": {
+    "game": {
+      "name": "Resistência a choques",
+      "description": [
+        "Aumenta sua <b>Resistência a Eletricidade</b> em <b>{{gameValue1}}</b>, reduzindo o dano de <b>Eletricidade</b> recebido."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Resistência por nível"
+    }
+  },
+  "SHOCKWAVE": {
+    "game": {
+      "name": "Onda de Choque",
+      "description": [
+        "Ative uma onda de choque quando aparar um ataque ou <b>dominar</b> um inimigo.",
+        "A onda de choque empurra inimigos próximos e enche a <i>Barra de Atordoamento</i> deles, dimensionando com seu atributo Força.",
+        "<b>Aparada</b><br/>Você pode bloquear com qualquer arma corpo a corpo, protetor ou escudo. Bloquear no momento certo <b>aparará</b> o ataque e preencherá a <i>barra de atordoamento</i> do inimigo.<br/>Espere até perceber um <b>clarão</b> no inimigo projétil para aparar.",
+        "<b>Dominação</b> <br/>Atacar inimigos que estiverem bloqueando ou aparar seus ataques enche a <i>Barra de Atordoamento</i> deles até que sejam <b>dominados</b>. Inimigos <br/><b>Dominados</b> ficam vulneráveis a Ataques Impiedosos."
+      ]
+    }
+  },
+  "SHROUD_FILTER": {
+    "game": {
+      "name": "Mitigação de Mortalha",
+      "description": [
+        "Causar dano com uma Arma Mágica tem <b>{{gameValue1}}</b> de chance de causar uma pequena explosão de fogo que restaura <b>{{gameValue2}}</b> segundos de <b>Tempo na Mortalha</b> para você e seus aliados dentro de <b>{{gameValue3}}</b> metros.",
+        "<b>Tempo na Mortalha</b><br/>Caso o tempo acabe, a Mortalha consumirá você."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "SHROUD_MISTERY": {
+    "game": {
+      "name": "Miséria Compartida",
+      "description": [
+        "Quando você receber dano da <b>Mortalha</b>, todos os jogadores dentro de <b>{{gameValue1}}</b> metros receberão <b>{{gameValue2}}</b> de aumento de <b>Resistência contra a Mortalha</b> por <b>30</b> segundos."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> metros de alcance por nível"
+    }
+  },
+  "SHROUD_RESISTANCE": {
+    "game": {
+      "name": "Resistência a Mortalha ",
+      "description": [
+        "Aumenta sua <b>Resistência contra a Mortalha</b> em <b>{{gameValue1}}</b>, reduzindo o dano de <b>Mortalha</b> recebido."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Resistência por nível"
+    }
+  },
+  "SILENT_STRIDE": {
+    "game": {
+      "name": "Passeio silencioso",
+      "description": [
+        "Aumenta sua velocidade de movimento quando estiver se <b>esgueirando</b> em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de velocidade de movimento por nível"
+    }
+  },
+  "SKILL_SHOT": {
+    "game": {
+      "name": "Tiro preciso",
+      "description": [
+        "O dano de <b>Tiro de Habilidade</b> é aumentado em <b>{{gameValue1}}</b>.",
+        "<b>Tiro de Habilidade</b><br/>Acertar os pontos fracos de um inimigo, como a cabeça, com Arcos é considerado um Tiro de Habilidade.",
+        "Os Tiros de Habilidade causam 100% a mais de dano base contra inimigos sem capacetes e 50% contra inimigos com capacetes. <br/>É possível aumentar a potência conforme o atributo de dano de Tiro de Habilidade."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "SLASHER": {
+    "game": {
+      "name": "Corta-Tudo",
+      "description": [
+        "O dano de <b>Corte</b> Corpo a Corpo é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "SLEIGHT_OF_HAND": {
+    "game": {
+      "name": "Destreza Manual",
+      "description": [
+        "O dano Desarmado é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "SLICE_AND_DICE": {
+    "game": {
+      "name": "Despedaçar",
+      "description": [
+        "Após um Golpe Crítico com uma Adaga, o dano base do seu próximo ataque com Arco dentro de {{gameValue1}} segundos aumentará em <b>{{gameValue2}}</b>."
+      ]
+    }
+  },
+  "SNAKE_EATER": {
+    "game": {
+      "name": "Come-Cobra",
+      "description": [
+        "Aumenta sua <b>Resistência a Veneno</b> em <b>{{gameValue1}}</b>, reduzindo o dano de <b>Veneno</b> recebido.",
+        "O dano de <b>Veneno</b> ignora armadura e só pode ser reduzido por <b>Resistência a Veneno</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Resistência por nível"
+    }
+  },
+  "SNAP": {
+    "game": {
+      "name": "Surto",
+      "description": [
+        "Ativar um <b>Ataque Impiedoso</b> restaura <b>{{gameValue1}}</b> de Mana."
+      ]
+    }
+  },
+  "SNEAK_ATTACK": {
+    "game": {
+      "name": "Ataque Sorrateiro",
+      "description": [
+        "Realize um <b>Ataque Sorrateiro</b> se esgueirando até um inimigo distraído e pressionando <b>{{gameValue1}}</b>.",
+        "<b>Ataque Sorrateiro</b> causa dano aumentado em <b>+900%</b>.",
+        "Varinhas, Cajados e Arcos não conseguem realizar um Ataque Sorrateiro."
+      ]
+    }
+  },
+  "SNIPER": {
+    "game": {
+      "name": "Disparo Longo",
+      "description": [
+        "A chance de Golpe Crítico com Arcos é aumentada em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance de Golpe Crítico por nível"
+    }
+  },
+  "SOAKED_DOG": {
+    "game": {
+      "name": "Cachorro Encharcado",
+      "description": [
+        "Enfraquece o efeito das desvantagens <b>Molhado</b> e <b>Encharcado</b>.",
+        "O Vigor e a Regeneração de Vigor são reduzidos em <b>10%</b>, em vez de <b>20%</b>.",
+        "<b>Molhado</b> <br/>reduz o Vigor e a Regeneração de Vigor em <b>30%</b> por <b>15</b> minutos. Calor reduz o restante da duração.",
+        "<b>Encharcado</b> <br/>reduz o Vigor e a Regeneração de Vigor em <b>30%</b> por <b>30</b> segundos. Também reduz as <b>Resistências a Gelo e Eletricidade</b> em <b>30%</b>, mas aumenta a <b>Resistência a Fogo</b> em <b>30%</b>. É possível aplicar <br/><b>Encharcado</b> a inimigos. A duração de <br/><b>Encharcado</b> não pode ser reduzida por calor, e a condição muda para a desvantagem <b>Molhado</b> quando terminar."
+      ]
+    }
+  },
+  "SOUL_LEECH": {
+    "game": {
+      "name": "Drenagem de Alma",
+      "description": [
+        "Quando matar um inimigo com uma Arma Corpo a Corpo, todos os jogadores dentro de <b>{{gameValue1}}</b> metros do alvo recuperam <b>{{gameValue2}}</b> de Mana."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> metros de alcance e <b>{{gamePerLevelValue2}}</b> de Mana por nível"
+    }
+  },
+  "SPELLSLINGER": {
+    "game": {
+      "name": "Disparo de Feitiços",
+      "description": [
+        "O dano de Cajados é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "SPLASH_DASH": {
+    "game": {
+      "name": "Corrida Respingante",
+      "description": [
+        "Permite realizar uma corrida evasiva ao nadar ou mergulhar.",
+        "<b>Custo</b>: {{gameValue1}} de Vigor"
+      ]
+    }
+  },
+  "STEADFAST": {
+    "game": {
+      "name": "Constância",
+      "description": [
+        "Derrotar um inimigo com uma Arma Corpo a Corpo restaura <b>{{gameValue1}}</b> de durabilidade da arma."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de durabilidade por nível"
+    }
+  },
+  "STING": {
+    "game": {
+      "name": "Picada",
+      "description": [
+        "O Dano de Varinha repetido é aumentado em <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "STRATEGIC_MANEUVER": {
+    "game": {
+      "name": "Manobra Estratégica",
+      "description": [
+        "Substitui a habilidade Rolamento por um Rolamento lateral enquanto um alvo inimigo estiver travado.",
+        "Use para rolar ao redor dos inimigos, ficando mais fácil de flanqueá-los ou realizar ataques oportunos.",
+        "O Lampejo substitui o Rolamento lateral da habilidade Manobra Estratégica.",
+        "<b>Custo:</b> {{gameValue1}} de Vigor"
+      ]
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "Instinto de Sobrevivência",
+      "description": [
+        "Derrotar um inimigo infestado pela Mortalha com um Arco ou Adaga restaura <b>{{gameValue1}}</b> segundos de <b>Tempo na Mortalha</b>.",
+        "<b>Tempo na Mortalha</b><br/>Caso o tempo acabe, a Mortalha consumirá você."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> segundos por nível"
+    }
+  },
+  "SWEET_TOOTH": {
+    "game": {
+      "name": "Fome de Doce",
+      "description": [
+        "Regeneração de Vigor dos doces aumentada em <b>50%</b>."
+      ]
+    }
+  },
+  "SWIFT_BLADES": {
+    "game": {
+      "name": "Lâminas Velozes",
+      "description": [
+        "Aumenta a velocidade de ataque de todas as armas Corpo a Corpo de Uma Mão em <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "SWIFTSHOT_SUSTENANCE": {
+    "game": {
+      "name": "Flechada de Sustentação",
+      "description": [
+        "Derrotar um inimigo com um Arco tem <b>{{gameValue1}}</b> de chance de gerar um Orbe de Vigor.",
+        "Pegar um Orbe restaura <b>10%</b> do recurso correspondente."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "TERROR": {
+    "game": {
+      "name": "Terror",
+      "description": [
+        "Golpes Críticos com feitiços têm <b>{{gameValue1}}</b> de chance de atordoar o alvo por <b>2</b> segundos."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance por nível"
+    }
+  },
+  "THICK_SKIN": {
+    "game": {
+      "name": "Pele Grossa",
+      "description": [
+        "Ganhe um ponto de Constituição a cada dois níveis da Chama."
+      ]
+    }
+  },
+  "THRUST": {
+    "game": {
+      "name": "Ímpeto",
+      "description": [
+        "O dano de <b>Perfuração</b> Corpo a Corpo é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "THUNDER": {
+    "game": {
+      "name": "Trovão",
+      "description": [
+        "Todo dano de <b>Eletricidade</b> é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "TITAN_EDGE": {
+    "game": {
+      "name": "Gume de Titã",
+      "description": [
+        "O dano da Espada Grande de Duas Mãos é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "Domínio de Totem",
+      "description": [
+        "Aumenta o número máximo de totens invocados em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de totens por nível"
+    }
+  },
+  "TOWER": {
+    "game": {
+      "name": "Torre",
+      "description": [
+        "Quando houver três ou mais inimigos dentro de <b>20</b> metros, você receberá <b>{{gameValue1}}</b> de aumento de <b>Resistência Física</b>."
+      ]
+    }
+  },
+  "TWO_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "Especialização em Arma de Duas Mãos",
+      "description": [
+        "Desbloqueia Habilidades Especiais das Armas Corpo a Corpo de Duas Mãos. <br/>Pressione <b>{{gameValue1}}</b> para liberar uma Habilidade Especial poderosa depois de gerar Foco suficiente.",
+        "<b>Foco</b><br/>Gere Foco ao atacar. O Foco pode ser gerado com qualquer tipo de arma e é usado para ativar as Habilidades Especiais das armas."
+      ]
+    }
+  },
+  "UNITY": {
+    "game": {
+      "name": "Unidade",
+      "description": [
+        "Causar dano a inimigos usando Varinhas tem <b>{{gameValue1}}</b> de chance de restaurar <b>{{gameValue2}}</b> do seu Mana máximo."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance e <b>{{gamePerLevelValue2}}</b> de Mana máximo por nível"
+    }
+  },
+  "UPDRAFT": {
+    "game": {
+      "name": "Corrente Ascendente",
+      "description": [
+        "Pular com {{gameValue1}} enquanto plana, impulsiona você para cima. Pode ser usado uma vez por voo.",
+        "<b>Carga</b><br/>Quando você carrega a Corrente Ascendente antes de ativar, a elevação de altitude é aumentada. Uma carga completa concede um impulso adicional. A carga é acelerada dentro da sua base.",
+        "<b>Custo:</b> {{gameValue2}} de Mana"
+      ]
+    }
+  },
+  "UPWARDS_SLASH_ATTACK": {
+    "game": {
+      "name": "Ataque de Corte Ascendente",
+      "description": [
+        "Quando equipar uma Arma Corpo a Corpo, execute um potente ataque para cima durante a subida do seu pulo.",
+        "Use esta habilidade para se aproximar rapidamente de inimigos <b>voadores</b>.",
+        "<b>Custo:</b> {{gameValue1}} de Vigor"
+      ]
+    }
+  },
+  "VEILED_VIGOR": {
+    "game": {
+      "name": "Vigor Velado",
+      "description": [
+        "Aumenta sua Saúde máxima em <b>{{gameValue1}}</b> vezes o seu atributo Destreza."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> vezes por nível"
+    }
+  },
+  "VETERAN": {
+    "game": {
+      "name": "Veterano",
+      "description": [
+        "A chance de Golpe Crítico com Adagas, Espadas Grandes, Clavas, Martelos, Espadas e Machados de Uma ou Duas Mãos é aumentada em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance de Golpe Crítico por nível"
+    }
+  },
+  "VIGOROUS_DEFLECTION": {
+    "game": {
+      "name": "Deflexão vigorosa",
+      "description": [
+        "Aparar um ataque inimigo com sucesso restaura <b>{{gameValue1}}</b> de Vigor.",
+        "<b>Aparada</b><br/>Você pode bloquear com qualquer arma corpo a corpo, protetor ou escudo. Bloquear no momento certo <b>aparará</b> o ataque e preencherá a <i>barra de atordoamento</i> do inimigo.<br/>Espere até perceber um <b>clarão</b> no inimigo projétil para aparar."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Vigor por nível"
+    }
+  },
+  "VILE_CONCOCTION": {
+    "game": {
+      "name": "Mistura Vil",
+      "description": [
+        "O dano de Arremessáveis é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "VITALITY_SURGE": {
+    "game": {
+      "name": "Onda de Vitalidade",
+      "description": [
+        "Golpes Críticos com Arcos, Adagas e Arremessáveis restauram <b>{{gameValue1}}</b> de Vigor."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de Vigor por nível"
+    }
+  },
+  "VUKAH_CULTURE": {
+    "game": {
+      "name": "Cultura Vukah",
+      "description": [
+        "Quando você for alvo de um ataque, os <b>Vukah</b> dentro de <b>50</b> metros atacarão o inimigo."
+      ]
+    }
+  },
+  "VUKAH_LANGUAGE": {
+    "game": {
+      "name": "Idioma Vukah",
+      "description": [
+        "Qualquer <b>Vukah</b> dentro de <b>50</b> metros não atacará mais você, a menos que provocado."
+      ]
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "Ataque Evasivo de Varinha",
+      "description": [
+        "Quando usar uma Varinha, você pode pressionar <b>{{gameValue1}}</b> para executar um Ataque Evasivo de Varinha.<br/>Ele dispara um disco mágico que perfura os inimigos e causa <b>50%</b> de dano de arma adicional.",
+        "<b>Custo:</b> {{gameValue2}} de Mana"
+      ]
+    }
+  },
+  "WAND_MASTERY": {
+    "game": {
+      "name": "Domínio de Varinha",
+      "description": [
+        "O dano de Varinhas é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "WAND_SPECIALIZATION": {
+    "game": {
+      "name": "Especialização em Varinha",
+      "description": [
+        "Desbloqueia Habilidades Especiais das Varinhas. <br/>Pressione <b>{{gameValue1}}</b> para liberar uma Habilidade Especial poderosa depois de gerar Foco suficiente.",
+        "<b>Foco</b><br/>Gere Foco ao atacar. O Foco pode ser gerado com qualquer tipo de arma e é usado para ativar as Habilidades Especiais das armas."
+      ]
+    }
+  },
+  "WANDERLUST": {
+    "game": {
+      "name": "Espírito Aventureiro",
+      "description": [
+        "O custo de Vigor para <b>correr em estradas de terra</b> é reduzido de <b>90% para 80%</b>.",
+        "O custo de Vigor para <b>correr em estradas de pedra</b> é reduzido de <b>75% para 50%</b>."
+      ]
+    }
+  },
+  "WARDEN": {
+    "game": {
+      "name": "Protetor",
+      "description": [
+        "Quando houver três ou mais inimigos dentro de <b>20</b> metros, você receberá <b>{{gameValue1}}</b> de aumento de <b>Resistência Mágica</b>."
+      ]
+    }
+  },
+  "WARRIOR_PATH": {
+    "game": {
+      "name": "O Caminho do Guerreiro",
+      "description": [
+        "O dano com Clavas, Espadas e Machados de Uma Mão é aumentado em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de dano por nível"
+    }
+  },
+  "WATER_AURA": {
+    "game": {
+      "name": "Aura da Água",
+      "description": [
+        "Você emite uma aura curativa que cura você e todos os aliados feridos dentro de <b>{{gameValue1}}</b> metros.",
+        "A cura aumenta de acordo com seu atributo Inteligência e restaura <b>1</b> de Saúde para cada <b>2</b> pontos de Inteligência."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> metros de alcance por nível"
+    }
+  },
+  "WATERS_OF_LIFE": {
+    "game": {
+      "name": "Águas da Vida",
+      "description": [
+        "Aumenta a cura da <b>Aura da Água</b> para <b>2</b> de Saúde a cada <b>2</b> pontos de Inteligência."
+      ]
+    }
+  },
+  "WELL_RESTED": {
+    "game": {
+      "name": "Bom Descanso",
+      "description": [
+        "A duração base da vantagem Descanso aumenta em <b>{{gameValue1}}</b> minutos.",
+        "<b>Descanso</b><br/>A vantagem Descanso aumenta seu Vigor Máximo e sua Regeneração de Vigor consideravelmente.",
+        "É necessário estar em um <b>abrigo e se sentar ou dormir</b>, além do <b>aquecimento</b> de uma fonte de calor.",
+        "A vantagem pode ser renovada <b>em qualquer lugar</b>",
+        ". Itens de conforto ao redor aumentam ainda mais a duração."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> minutos por nível"
+    }
+  },
+  "WET_DOG": {
+    "game": {
+      "name": "Cão Molhado",
+      "description": [
+        "Enfraquece o efeito das desvantagens <b>Molhado</b> e <b>Encharcado</b>.",
+        "O Vigor e a Regeneração de Vigor são reduzidos em <b>20%</b>, em vez de <b>30%</b>.",
+        "<b>Molhado</b> <br/>reduz o Vigor e a Regeneração de Vigor em <b>30%</b> por <b>15</b> minutos. Calor reduz o restante da duração.",
+        "<b>Encharcado</b> <br/>reduz o Vigor e a Regeneração de Vigor em <b>30%</b> por <b>30</b> segundos. Também reduz as <b>Resistências a Gelo e Eletricidade</b> em <b>30%</b>, mas aumenta a <b>Resistência a Fogo</b> em <b>30%</b>. É possível aplicar <br/><b>Encharcado</b> a inimigos. A duração de <br/><b>Encharcado</b> não pode ser reduzida por calor, e a condição muda para a desvantagem <b>Molhado</b> quando terminar."
+      ]
+    }
+  },
+  "WHIRLWIND_CRESCENDO": {
+    "game": {
+      "name": "Crescendo em Redemoinho",
+      "description": [
+        "Quando equipar uma arma de duas mãos, é ativado um ataque giratório no final de uma sequência de ataque.",
+        "<b>Custo:</b> {{gameValue1}} de Vigor"
+      ]
+    }
+  },
+  "WIZARD": {
+    "game": {
+      "name": "Bruxaria",
+      "description": [
+        "A chance de Golpe Crítico com Varinhas e Cajados é aumentada em <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> de chance de Golpe Crítico por nível"
+    }
+  }
+}

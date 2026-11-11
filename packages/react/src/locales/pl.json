@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "Poziom {{current}} / {{max}}",
+    "unlock": "Odblokuj",
+    "outOfRange": "Poza zasięgiem",
+    "share": "Udostępnij link do tej umiejętności",
+    "refund": "Zwróć",
+    "levelUp": "Podnieś poziom",
+    "refundOne": "Zwróć 1",
+    "refundAll": "Zwróć wszystko",
+    "skillPointIcon": "Ikona punktu umiejętności",
+    "close": "Zamknij"
+  },
+  "card": {
+    "label": "Drzewko umiejętności",
+    "zoomIn": "Przybliż",
+    "zoomOut": "Oddal",
+    "fit": "Pokaż całe drzewko",
+    "expand": "Rozwiń",
+    "fullscreen": "Pełny ekran",
+    "exitFullscreen": "Zamknij pełny ekran",
+    "close": "Zamknij"
+  },
+  "kit": {
+    "close": "Zamknij",
+    "copy": "Kopiuj"
+  },
+  "points": {
+    "skillPoints": "Punkty umiejętności",
+    "flameLevel": "Poziom płomienia",
+    "skillPointIcon": "Ikona punktu umiejętności",
+    "flameIcon": "Ikona płomienia",
+    "flameDown": "Obniż poziom płomienia",
+    "flameUp": "Podnieś poziom płomienia"
+  },
+  "budget": {
+    "title": "Punkty z biomów",
+    "playerLevel": "Poziom gracza",
+    "total": "Łącznie punktów umiejętności",
+    "reset": "Odblokuj wszystko"
+  },
+  "biomes": {
+    "springlands": "Kraina Wiosny",
+    "revelwood": "Biesiadna Knieja",
+    "nomad_highlands": "Wyżyny Koczowników",
+    "kindlewastes": "Gorejące Pustkowia",
+    "albaneve_summits": "Góry Albaneve",
+    "veilwater_basin": "Niecka Wodnego Całunu",
+    "cinders_cradle": "Kolebka Żaru"
+  },
+  "stats": {
+    "button": "Statystyki",
+    "title": "Podsumowanie statystyk",
+    "basic": "Podstawowe",
+    "close": "Zamknij",
+    "names": {
+      "constitution": "Krzepa",
+      "strength": "Siła",
+      "endurance": "Kondycja",
+      "dexterity": "Zręczność",
+      "spirit": "Dusza",
+      "intelligence": "Inteligencja"
+    }
+  },
+  "search": {
+    "placeholder": "Szukaj",
+    "moreMatches": "+{{count}} więcej wyników zaznaczonych na drzewku",
+    "clear": "Wyczyść wyszukiwanie"
+  }
+}

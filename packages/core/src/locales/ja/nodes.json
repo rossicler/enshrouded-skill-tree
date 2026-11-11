@@ -1,0 +1,1617 @@
+{
+  "ABSORB": {
+    "game": {
+      "name": "吸収",
+      "description": [
+        "<b>魔法</b>ダメージを受けると、<b>{{gameValue1}}</b>の確率で1HP失うごとに<b>1マナ</b>回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "高度な死霊術",
+      "description": [
+        "呪文で召喚できるホローの最大数が<b>{{gameValue1}}</b>増える。"
+      ],
+      "perLevelLabel": "レベルごとにホロー<b>{{gamePerLevelValue1}}</b>体"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "空中杖攻撃",
+      "description": [
+        "魔法の杖を装備している場合、ジャンプ中に<b>{{gameValue1}}</b>長押しで特別攻撃を行うことができる。",
+        "小さな範囲内に追加で<b>50%</b>の武器ダメージを与える魔法の発射体を放つ。",
+        "<b>コスト：</b>{{gameValue2}}スタミナ。"
+      ]
+    }
+  },
+  "AIRBORNE": {
+    "game": {
+      "name": "空挺",
+      "description": [
+        "グライダーの消費スタミナが<b>{{gameValue1}}</b>減少する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>のコスト減少"
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "空挺建築家",
+      "description": [
+        "拠点内で火の粉に変身し、建築中に一人称視点で空中を動き回れるようになる。{{gameValue1}}長押しでこのモードを切り替える。"
+      ]
+    }
+  },
+  "ARACHNOID": {
+    "game": {
+      "name": "アラクノイド",
+      "description": [
+        "クライミング中のスタミナ消費が<b>{{gameValue1}}</b>減少する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>のコスト減少"
+    }
+  },
+  "ARCANE_CONCENTRATION": {
+    "game": {
+      "name": "アルカネ収束",
+      "description": [
+        "焔のレベルが2上がるごとに気力を1獲得する。"
+      ]
+    }
+  },
+  "ARCANE_DEFLECTION": {
+    "game": {
+      "name": "アーケイン・ディフレクション",
+      "description": [
+        "敵の攻撃をパリィするとスタミナが<b>{{gameValue1}}</b>回復する。",
+        "<b>パリィ</b><br/>近接武器、結界、盾を装備しているとブロックできる。タイミングよくブロックすれば<b>パリィ</b>となり、敵の<i>スタンメーター</i>を貯める事ができる。<br/>パリィを行う時は、敵や投射物に<b>光</b>が見えるのを待とう。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>マナ"
+    }
+  },
+  "ARCANE_PROLIFERATION": {
+    "game": {
+      "name": "秘儀の拡散",
+      "description": [
+        "魔法の杖は<b>30%</b>の確率で倍の発射体を撃ち出す。追加の発射体は<b>50%</b>少ないダメージを与える。"
+      ]
+    }
+  },
+  "ARSONIST": {
+    "game": {
+      "name": "放火犯",
+      "description": [
+        "全ての<b>火</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "ATHLETE": {
+    "game": {
+      "name": "アスリート",
+      "description": [
+        "筋力特性の<b>{{gameValue1}}</b>倍、最大HPが増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>回"
+    }
+  },
+  "ATTR_CONS": {
+    "game": {
+      "name": "体質",
+      "description": [
+        "体質 属性を1増加させる。",
+        "属性1ポイントにつきヘルスを{{gameValue1}}増加させる。"
+      ]
+    }
+  },
+  "ATTR_DEX": {
+    "game": {
+      "name": "器用さ",
+      "description": [
+        "自身の器用さ特性を1増加する。",
+        "弓と短剣のダメージが属性1ポイントにつき5%増加する。"
+      ]
+    }
+  },
+  "ATTR_ENDURANCE": {
+    "game": {
+      "name": "忍耐",
+      "description": [
+        "忍耐 特性を1増加させる。",
+        "特性ポイントごとにスタミナを{{gameValue1}}増加させる。"
+      ]
+    }
+  },
+  "ATTR_INT": {
+    "game": {
+      "name": "知力",
+      "description": [
+        "自身の知力特性を1増加する。",
+        "属性ポイント1つにつき魔法ダメージが5%増加する。"
+      ]
+    }
+  },
+  "ATTR_SPIRIT": {
+    "game": {
+      "name": "気力",
+      "description": [
+        "気力 特性を1増加させる。",
+        "特性1点につきマナを{{gameValue1}}増加させる。"
+      ]
+    }
+  },
+  "ATTR_STR": {
+    "game": {
+      "name": "筋力",
+      "description": [
+        "自身の筋力特性を1増加する。",
+        "1特性ポイントにつき、近接ダメージが5%増加する。"
+      ]
+    }
+  },
+  "BACKSTAB_MASTERY": {
+    "game": {
+      "name": "見事な裏切り",
+      "description": [
+        "<b>バックスタブ</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "BARBARIAN": {
+    "game": {
+      "name": "バーバリアン",
+      "description": [
+        "焔のレベルが2上がるごとに筋力を1獲得する。"
+      ]
+    }
+  },
+  "BARBARIAN_PATH": {
+    "game": {
+      "name": "バーバリアンの道",
+      "description": [
+        "両手の斧、こん棒、ハンマーで与えるダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "一斉射撃",
+      "description": [
+        "弓でダメージを与えると、<b>{{gameValue1}}</b>の確率でその武器の耐久力を<b>1</b>回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "BASH": {
+    "game": {
+      "name": "バッシュ",
+      "description": [
+        "敵をパリィするとバッシュ攻撃で<b>{{gameValue1}}打撃</b>ダメージを与える。バッシュダメージは筋力特性によって増加する。",
+        "<b>パリィ</b><br/>近接武器、結界、盾を装備しているとブロックできる。タイミングよくブロックすれば<b>パリィ</b>となり、敵の<i>スタンメーター</i>を貯める事ができる。<br/>パリィを行う時は、敵や投射物に<b>光</b>が見えるのを待とう。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}打撃</b>ダメージ"
+    }
+  },
+  "BATTLE_HEAL": {
+    "game": {
+      "name": "戦闘回復",
+      "description": [
+        "近接武器でのクリティカルストライクでHP最大値の<b>{{gameValue1}}</b>を回復する。"
+      ],
+      "perLevelLabel": "レベルごとに最大HPの<b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "BEAST_MASTER": {
+    "game": {
+      "name": "獣使い",
+      "description": [
+        "自分が攻撃のターゲットになると、<b>50</b>メートル以内にいる<b>野生動物</b>がその敵を攻撃する。"
+      ]
+    }
+  },
+  "BEE_STING": {
+    "game": {
+      "name": "ハチの刺突",
+      "description": [
+        "空中で矢を放ったり、弓で狙うと、一時的に落下速度が遅くなる。撃つたびに少し上昇し、滞空時間が長くなる。",
+        "<b>コスト：</b>毎秒{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "BEGONE": {
+    "game": {
+      "name": "去れ！",
+      "description": [
+        "敵を押し返し、スタンさせる魔法のパンチ。",
+        "使用可能なマナがある限り、非武装攻撃の代わりとなる。",
+        "<b>コスト：</b>{{gameValue1}}マナ"
+      ]
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "詠唱と衝撃波",
+      "description": [
+        "魔法の杖でクリティカルストライクを与えると、{{gameValue1}}秒以内に行う次のステッキ攻撃の基本ダメージが<b>{{gameValue2}}</b>増加する。"
+      ]
+    }
+  },
+  "BLESSED_ARROWS": {
+    "game": {
+      "name": "恩寵の矢",
+      "description": [
+        "弓によるクリティカルストライクは<b>{{gameValue1}}</b>マナ回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>マナ"
+    }
+  },
+  "BLINK": {
+    "game": {
+      "name": "ブリンク",
+      "description": [
+        "前転回避の能力を近距離テレポートに置き換える。",
+        "ブリンクは戦略的行動の横前転回避も置き換える。",
+        "<b>コスト：</b>{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "BLINK_ATTACK": {
+    "game": {
+      "name": "ブリンク攻撃",
+      "description": [
+        "敵にブリンクすると、小さい半径で<b>火</b>ダメージを与える爆発が起きる。",
+        "ダメージとマナ消費は知力の特性に依存する。"
+      ]
+    }
+  },
+  "BLOOD_MAGIC": {
+    "game": {
+      "name": "鮮血魔法",
+      "description": [
+        "マナが<b>20%</b>以下になると、1マナにつき<b>1</b>HPを消費して最大マナの<b>35%</b>まで回復する。",
+        "この効果はHPが<b>1</b>になるまで続く。",
+        "<b>クールダウン：</b>2分"
+      ]
+    }
+  },
+  "BLOOD_RAGE": {
+    "game": {
+      "name": "ブラッド・レイジ",
+      "description": [
+        "<b>{{gameValue1}}</b>メートル以内の敵が近接武器によって倒れると、<b>ブラッドレイジ</b>が発動する。",
+        "<b>ブラッドレイジ</b><br/>近接武器のダメージを<b>10</b>秒間<b>{{gameValue2}}</b>増加させる。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>メートルの距離"
+    }
+  },
+  "BLOOD_WARRIOR": {
+    "game": {
+      "name": "ブラッド・ウォリアー",
+      "description": [
+        "<b>奇襲</b>または<b>不意打ち</b>で敵を倒すと、HPオーブが出現する。",
+        "オーブを集めることで、各資源が<b>10％</b>回復する。"
+      ]
+    }
+  },
+  "BLOODLETTING": {
+    "game": {
+      "name": "放血",
+      "description": [
+        "呪文のクリティカルストライクは<b>{{gameValue1}}</b>の確率でHP、マナ、スタミナオーブのいずれかを2つ生成する。",
+        "オーブを集めると、オーブの種類に応じたリソースを<b>10%</b>回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "BONE_TO_ASH": {
+    "game": {
+      "name": "骨を灰に",
+      "description": [
+        "虚ろに対するダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "BOUNTY_BONANZA": {
+    "game": {
+      "name": "バウンティ・ボナンザ",
+      "description": [
+        "<b>フェル</b>の敵を<b>スキルショット</b>で倒すと、同じグループ内の味方はさらに経験値を<b>{{gameValue1}}</b>獲得する。",
+        "<b>スキルショット</b><br/>頭部などの敵の弱点に矢をヒットさせるとスキルショットになる。",
+        "スキルショットは、ヘルメットを装備していない敵に対して基本ダメージが100%増加し、ヘルメットを装備している敵に対しては50%増加する。<br/>さらに、スキルショットダメージの特性値によってさらに増加する。"
+      ]
+    }
+  },
+  "BOW_SPECIALIZATION": {
+    "game": {
+      "name": "弓特化",
+      "description": [
+        "弓の特殊能力をアンロックする。<br/>集中が十分に溜まってから<b>{{gameValue1}}</b>を押すと強力な特殊能力を放つ。",
+        "<b>集中</b><br/>攻撃することで集中を溜めることができる。集中はどの武器種でも蓄積可能で、武器の特殊能力を発動するのに使う。"
+      ]
+    }
+  },
+  "BREACH": {
+    "game": {
+      "name": "突破",
+      "description": [
+        "<b>オーバーパワー</b>された敵は<b>3</b>秒間、近接攻撃から受けるダメージが<b>{{gameValue1}}</b>増加する。",
+        "<b>オーバーパワー</b> <br/>ブロックしている敵を攻撃したり、敵の攻撃をパリィすると<i>スタンメーター</i>が溜まり、満タンになると敵は<b>オーバーパワー状態</b>になる。<br/><b>オーバーパワー状態</b>の敵には不意打ちを仕掛けることができる。"
+      ]
+    }
+  },
+  "BRUTE": {
+    "game": {
+      "name": "残虐",
+      "description": [
+        "近接<b>打撃</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "CALM_SPIRIT": {
+    "game": {
+      "name": "穏やかな精霊",
+      "description": [
+        "<b>50</b>メートル以内にいる<b>野生動物</b>が、攻撃されない限りプレイヤーを攻撃しないようになる。",
+        "シュラウドに侵された動物に効果はない。"
+      ]
+    }
+  },
+  "CHAIN_HIT": {
+    "game": {
+      "name": "連鎖攻撃",
+      "description": [
+        "魔法武器でクリティカルストライクが出ると、<b>15</b>メートル以内にいるランダムな対象1体に対し、知力1につき<b>5雷</b>ダメージを与える。<br/>他の敵に連鎖せず、最初の敵が2回攻撃を受けることもある。"
+      ]
+    }
+  },
+  "CHAIN_REACTION": {
+    "game": {
+      "name": "反響する爆薬",
+      "description": [
+        "<b>爆発矢</b>が命中した敵は<b>40%</b>の確率で二次爆発を起こし、小範囲に<b>50%</b>のダメージを与える。"
+      ]
+    }
+  },
+  "COUNTER_BATTERY": {
+    "game": {
+      "name": "整列カウンター",
+      "description": [
+        "<b>遠距離系</b>の敵に対するダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "COUNTERSTRIKE": {
+    "game": {
+      "name": "カウンター",
+      "description": [
+        "ダメージを受けた後、<b>{{gameValue1}}</b>の確率でダメージの<b>{{gameValue2}}</b>を<b>火ダメージ</b>として攻撃者に反射する。",
+        "この魔法攻撃は他のスキルを発動することができる。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率と<b>{{gamePerLevelValue2}}</b>の反射ダメージ"
+    }
+  },
+  "CRASH_DOWN_ATTACK": {
+    "game": {
+      "name": "クラッシュダウン攻撃",
+      "description": [
+        "近接武器を装備している場合、ジャンプ中に<b>{{gameValue1}}</b>長押しで特別攻撃を行うことができる。",
+        "クラッシュダウンは小さな範囲内に追加で50%武器ダメージを与え、武器の種類に応じたスタミナを消費する。",
+        "<b>コスト：</b>{{gameValue2}}〜{{gameValue3}}スタミナ",
+        "<b>ブロックブレイカー</b> <br/>この特殊攻撃がヒットすると、敵の<i>スタンメーター</i>が通常の2倍増える。。"
+      ]
+    }
+  },
+  "CRASH_DOWN_FORCE": {
+    "game": {
+      "name": "クラッシュダウン：フォース",
+      "description": [
+        "ダブルジャンプから<b>クラッシュダウン</b>で攻撃すると、武器ダメージが<b>20%</b>増加する。"
+      ]
+    }
+  },
+  "CULL_THE_HERD": {
+    "game": {
+      "name": "弱者を淘汰",
+      "description": [
+        "野生生物に対するダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "CUTTHROAT": {
+    "game": {
+      "name": "残忍",
+      "description": [
+        "奇襲ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "DAGGER_MASTERY": {
+    "game": {
+      "name": "短剣マスター",
+      "description": [
+        "短剣ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "DAGGER_SPECIALIZATION": {
+    "game": {
+      "name": "短剣特化",
+      "description": [
+        "短剣の特殊能力をアンロックする。<br/>集中が十分に溜まってから<b>{{gameValue1}}</b>を押すと強力な特殊能力を放つ。",
+        "<b>集中</b><br/>攻撃することで集中を溜めることができる。集中はどの武器種でも蓄積可能で、武器の特殊能力を発動するのに使う。"
+      ]
+    }
+  },
+  "DARK_ARTS": {
+    "game": {
+      "name": "黒魔術",
+      "description": [
+        "全ての<b>シュラウド</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "DESSERT_STOMACH": {
+    "game": {
+      "name": "別腹",
+      "description": [
+        "追加の食料スロットを1獲得する。"
+      ]
+    }
+  },
+  "DIVINE_SURGE": {
+    "game": {
+      "name": "ディヴァイン・サージ",
+      "description": [
+        "回復呪文はクリティカルストライクすることができる。回復量はクリティカルストライクダメージに応じて増加する。"
+      ]
+    }
+  },
+  "DOUBLE_JUMP": {
+    "game": {
+      "name": "二段ジャンプ",
+      "description": [
+        "空中で2段ジャンプできる。",
+        "<b>コスト：</b>{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "EAGLE_EYE": {
+    "game": {
+      "name": "鷹の目",
+      "description": [
+        "弓で狙いを定めているときのズームを大幅に拡大。",
+        "狙うには、アクションバーで弓を選択中に{{gameValue1}}を長押しする。<br/>（または、{{gameValue2}}を長押しで装備中の弓で狙う。）"
+      ]
+    }
+  },
+  "EAGLES_BANE": {
+    "game": {
+      "name": "イーグルズ・ベイン",
+      "description": [
+        "<b>飛行</b>している敵に対するダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "EARTH_AURA": {
+    "game": {
+      "name": "地のオーラ",
+      "description": [
+        "自分と<b>{{gameValue1}}</b>メートル以内の味方の物理と魔法耐性が<b>{{gameValue2}}</b>増加するオーラを放出する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>メートルの距離"
+    }
+  },
+  "EMERGENCY_BLINK": {
+    "game": {
+      "name": "緊急回避",
+      "description": [
+        "スタン中にブリンクを実行できるようになり、ブリンクするとスタン状態が解除される。"
+      ]
+    }
+  },
+  "ENDURANCE_OF_THE_FLAME": {
+    "game": {
+      "name": "焔の忍耐",
+      "description": [
+        "焔のレベルが2上がるごとに持久力を1獲得する。"
+      ]
+    }
+  },
+  "ETERNAL_SPARK": {
+    "game": {
+      "name": "永遠の火花",
+      "description": [
+        "魔法の杖の発射体でダメージを与えると、<b>{{gameValue1}}</b>の確率でその武器の耐久力を<b>1</b>回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "EVASION_ATTACK": {
+    "game": {
+      "name": "回避攻撃",
+      "description": [
+        "近接武器を装備した状態で、回避中に<b>{{gameValue1}}</b>を押スト回避攻撃を実行できる。<br/>敵に向かってダッシュして、<b>50%</b>の武器ダメージを追加で与える。",
+        "<b>コスト：</b>{{gameValue2}}スタミナ",
+        "<b>ブロックブレイカー</b> <br/>この特殊攻撃がヒットすると、敵の<i>スタンメーター</i>が通常の2倍増える。"
+      ]
+    }
+  },
+  "EXALTED": {
+    "game": {
+      "name": "崇高",
+      "description": [
+        "焔のレベルが2上がるごとに1知力を獲得する。"
+      ]
+    }
+  },
+  "EXPOSE_WEAKNESS": {
+    "game": {
+      "name": "弱点を見抜く",
+      "description": [
+        "短剣でクリティカルヒットが発生すると、敵の防具を破壊し、<b>{{gameValue2}}</b>の間、<b>敵が受ける物理ダメージを<b>{{gameValue1}}</b>増加させる</b>デバフを付与する。"
+      ]
+    }
+  },
+  "FATAL_PRECISION": {
+    "game": {
+      "name": "殺しの精度",
+      "description": [
+        "クリティカルストライク率が<b>{{gameValue2}}</b>増加する。<br/>クリティカルストライクダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>クリティカルストライク率と<b>{{gamePerLevelValue2}}</b>クリティカルストライクダメージ"
+    }
+  },
+  "FELLING_AXE_SPECIALIZATION": {
+    "game": {
+      "name": "伐採斧特化",
+      "description": [
+        "伐採斧の特殊能力をアンロックする。<br/>集中が十分に溜まってから<b>{{gameValue1}}</b>を押すと強力な特殊能力を放つ。",
+        "<b>集中</b><br/>攻撃することで集中を溜めることができる。集中はどの武器種でも蓄積可能で、武器の特殊能力を発動するのに使う。"
+      ]
+    }
+  },
+  "FINESSE": {
+    "game": {
+      "name": "技巧",
+      "description": [
+        "片手片手剣、片手斧、片手こん棒、短剣でダメージを与えると、<b>{{gameValue1}}</b>の確率でその武器の耐久力を<b>1</b>回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "FIRE_RESISTANCE": {
+    "game": {
+      "name": "火耐性",
+      "description": [
+        "<b>火耐性</b>が<b>{{gameValue1}}</b>増加し、受ける<b>火</b>ダメージが減少する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>耐性"
+    }
+  },
+  "FISHERMANS_RESOLVE": {
+    "game": {
+      "name": "漁師の決意",
+      "description": [
+        "釣りの持久力が<b>{{gameValue1}}</b>増加する。",
+        "フックにかかった魚との長時間のバトルが可能となる。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>釣り持久力"
+    }
+  },
+  "FROST": {
+    "game": {
+      "name": "フロスト",
+      "description": [
+        "近接ダメージを受けると、攻撃者が<b>{{gameValue1}}</b>速度低下する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "GIANT_SLAYER_HOOK": {
+    "game": {
+      "name": "巨人スレイヤーのフック",
+      "description": [
+        "戦闘中に<b>引っ掛けフック</b>を使うと大型の敵に近づくことができる。",
+        "このスキルのコストは敵のレベルによって変化する。敵のレベルが高くなるにつれて、コストも高くなる。",
+        "<b>基礎コスト：</b>{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "GOOD_METABOLISM": {
+    "game": {
+      "name": "高代謝",
+      "description": [
+        "体力、マナ、スタミナオーブは、それぞれの<b>10%</b>ではなく<b>30%</b>を回復する。",
+        "マナとHPポーションの回復量が<b>20%</b>増加する。"
+      ]
+    }
+  },
+  "GRACEFUL_STRIDE": {
+    "game": {
+      "name": "優雅な歩き",
+      "description": [
+        "焔のレベルが2上がるごとに器用さを1獲得する。"
+      ]
+    }
+  },
+  "GROUNDING_HOOK": {
+    "game": {
+      "name": "グラウンドフック",
+      "description": [
+        "戦闘中に<b>引っ掛けフック</b>を使って<b>飛行中</b>の敵を引き寄せよう。",
+        "このスキルのコストは敵のレベルによって変化する。敵のレベルが高くなるにつれて、コストも高くなる。",
+        "<b>基礎コスト: </b>{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "HEALER": {
+    "game": {
+      "name": "ヒーラー",
+      "description": [
+        "回復呪文と水のオーラのHP回復量が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>回復"
+    }
+  },
+  "HEALER_REVIVE": {
+    "game": {
+      "name": "蘇生回復",
+      "description": [
+        "プレイヤーを復活させる際のHPが<b>{{gameValue1}}</b>増加する。",
+        "復活されたプレイヤーのデフォルトHPは<b>10%</b>。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>HP"
+    }
+  },
+  "HEAVY_HANDED": {
+    "game": {
+      "name": "力押し",
+      "description": [
+        "ブロックしている敵への近接武器攻撃による<i>スタンメーター</i>の増加量が<b>{{gameValue1}}</b>上昇する。",
+        "<b>オーバーパワー</b> <br/>ブロックしている敵を攻撃したり、敵の攻撃をパリィすると<i>スタンメーター</i>が溜まり、満タンになると敵は<b>オーバーパワー状態</b>になる。<br/><b>オーバーパワー状態</b>の敵には不意打ちを仕掛けることができる。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>効果"
+    }
+  },
+  "HEAVY_PLATES": {
+    "game": {
+      "name": "重装鎧",
+      "description": [
+        "装備中のアイテムから得られる物理防具ポイントが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>物理防具値"
+    }
+  },
+  "HEAVY_SPECIALIZATION": {
+    "game": {
+      "name": "ヘビーヒッター",
+      "description": [
+        "すべての両手近接武器の攻撃速度が<b>{{gameValue1}}</b>増加する。"
+      ]
+    }
+  },
+  "ICE_RESISTANCE": {
+    "game": {
+      "name": "氷耐性",
+      "description": [
+        "<b>氷耐性</b>が<b>{{gameValue1}}</b>増加し、受ける<b>氷</b>ダメージが減少する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>耐性"
+    }
+  },
+  "ICEMAN": {
+    "game": {
+      "name": "アイスマン",
+      "description": [
+        "すべての<b>氷</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "INNER_FIRES": {
+    "game": {
+      "name": "内なる焔",
+      "description": [
+        "<b>シュラウド</b>内の滞在時間が<b>{{gameValue1}}</b>増加し、より長い探索が可能。",
+        "<b>シュラウド内の滞在時間</b><br/>この時間が切れると、シュラウドに蝕まれていきます。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "KICK": {
+    "game": {
+      "name": "蹴り",
+      "description": [
+        "近接武器を装備中にブロックしながら攻撃すると、蹴りを繰り出す。",
+        "蹴りはダメージが低いが、敵の<i>スタンメーター</i>を大幅に増やし、押し返す。",
+        "<i>スタンメーター</i>の増加率は器用さに応じて上昇する。<br/>スタン時間は敵の大きさによって異なる。",
+        "<b>オーバーパワー</b> <br/>ブロックしている敵を攻撃したり、敵の攻撃をパリィすると<i>スタンメーター</i>が溜まり、満タンになると敵は<b>オーバーパワー状態</b>になる。<br/><b>オーバーパワー状態</b>の敵には不意打ちを仕掛けることができる。"
+      ]
+    }
+  },
+  "LAST_MEAL": {
+    "game": {
+      "name": "最後の食事",
+      "description": [
+        "食事バフは死んでも持続するが、持続時間が半分になる。"
+      ]
+    }
+  },
+  "LIFE_BURST": {
+    "game": {
+      "name": "ライフバースト",
+      "description": [
+        "魔法武器で敵を倒すと、対象の<b>15</b>メートル以内にいるプレイヤー全員のHPが回復する。回復量は自分の知力の<b>{{gameValue1}}</b>倍に相当する。"
+      ]
+    }
+  },
+  "LIFE_ESSENCES": {
+    "game": {
+      "name": "命のエッセンス",
+      "description": [
+        "知力特性の<b>{{gameValue1}}</b>倍、最大HPが増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>回"
+    }
+  },
+  "LUMBERJACK": {
+    "game": {
+      "name": "木こり",
+      "description": [
+        "ツールが木材に対して<b>{{gameValue1}}</b>の追加ダメージを与える。<br/>木や木の地形も含む。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "MAGE_APPRENTICE": {
+    "game": {
+      "name": "魔術師見習い",
+      "description": [
+        "魔法の杖とステッキで与えるダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "MANA_CURRENTS": {
+    "game": {
+      "name": "マナの流動",
+      "description": [
+        "マナの基本回復量が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>のマナ回復"
+    }
+  },
+  "MARKSMAN": {
+    "game": {
+      "name": "マークスマン",
+      "description": [
+        "弓ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "MARTYR": {
+    "game": {
+      "name": "マーター",
+      "description": [
+        "敵にキルされると、<b>30</b>メートル以内の味方が最大HPの<b>50%</b>を回復する。",
+        "さらに、味方は最大HPが<b>100</b>増加する<b>最後の祝福</b>バフを<b>15</b>分間受ける。"
+      ]
+    }
+  },
+  "MASON": {
+    "game": {
+      "name": "石工",
+      "description": [
+        "ツールが石に対して<b>{{gameValue1}}</b>の追加ダメージを与える。<br/>石の地形や宝石鉱脈も対象に含む。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "MASS_DESTRUCTION": {
+    "game": {
+      "name": "大量破壊",
+      "description": [
+        "魔法武器によるクリティカルストライクは、対象から<b>{{gameValue1}}</b>以内にいる全ての敵に、知力1つにつき<b>2雷</b>ダメージを与える。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>メートルの距離"
+    }
+  },
+  "MERCILESS_ATTACK": {
+    "game": {
+      "name": "不意打ち",
+      "description": [
+        "<b>オーバーパワー</b>された敵に<b>{{gameValue1}}</b>を押すと<b>不意打ち</b>を実行し、<b>{{gameValue2}}</b>のダメージを与える。",
+        "<b>オーバーパワー</b> <br/>ブロックしている敵を攻撃したり、敵の攻撃をパリィすると<i>スタンメーター</i>が溜まり、満タンになると敵は<b>オーバーパワー状態</b>になる。<br/><b>オーバーパワー状態</b>の敵には不意打ちを仕掛けることができる。",
+        "魔法の杖、ステッキ、弓で不意打ちを行うことはできない。"
+      ]
+    }
+  },
+  "MINER": {
+    "game": {
+      "name": "鉱夫",
+      "description": [
+        "採掘資源から<b>10%</b>の確率で追加の資源を1つ入手できる。"
+      ]
+    }
+  },
+  "MITHRIDATIST": {
+    "game": {
+      "name": "毒耐性",
+      "description": [
+        "<b>25%</b>の確率で毒状態になるのを防ぐ。"
+      ]
+    }
+  },
+  "MULTI_SHOT": {
+    "game": {
+      "name": "マルチ・ショット",
+      "description": [
+        "<i>通常の矢</i>を使うと、少し拡散する<b>矢の束</b>を<b>20%</b>の確率で撃ち出す。",
+        "この形で<i>通常の矢</i>を撃つと矢を消費する。",
+        "<b>矢の束</b>は<i>特別な矢</i>では発動しない。"
+      ]
+    }
+  },
+  "MULTI_SHOT_SPREAD": {
+    "game": {
+      "name": "拡散マルチショット",
+      "description": [
+        "スキル<b> 「マルチショット 」</b>の<b>矢の束</b>が<b>25%</b>の確率で追加の<i>通常の矢</i>を発射する。",
+        "この追加の<i>通常の矢</i>は、所持している矢を消費しない。"
+      ]
+    }
+  },
+  "MULTI_SHOT_TRIGGER": {
+    "game": {
+      "name": "マルチショットトリガー",
+      "description": [
+        "<i>特殊な矢</i>を撃つと、スキル<b>「マルチショット」</b>の<b>矢の束</b>が発動する。",
+        "この方法で撃たれた<i>特殊な矢</i>は所持している矢を消費する。"
+      ]
+    }
+  },
+  "NECROMANCER": {
+    "game": {
+      "name": "ネクロマンサー",
+      "description": [
+        "魔法武器で敵をキルすると、<b>{{gameValue1}}</b>の確率で<b>味方の頭蓋骨</b>を召喚する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "NEMESIS": {
+    "game": {
+      "name": "ネメシス",
+      "description": [
+        "敵から引き付ける注意が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の注意を引きつける強さ"
+    }
+  },
+  "ONE_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "片手持ち特化",
+      "description": [
+        "片手近接武器の特殊能力をアンロックする。<br/>集中が十分に溜まってから<b>{{gameValue1}}</b>を押すと強力な特殊能力を放つ。",
+        "<b>集中</b><br/>攻撃することで集中を溜めることができる。集中はどの武器種でも蓄積可能で、武器の特殊能力を発動するのに使う。"
+      ]
+    }
+  },
+  "OPPORTUNITY": {
+    "game": {
+      "name": "機会",
+      "description": [
+        "<b>不意打ち</b>のダメージ倍率が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "PICKAXE_SPECIALIZATION": {
+    "game": {
+      "name": "つるはしの杖特化",
+      "description": [
+        "つるはしの特殊能力をアンロックする。<br/>集中が十分に溜まってから<b>{{gameValue1}}</b>を押すと強力な特殊能力を放つ。",
+        "<b>集中</b><br/>攻撃することで集中を溜めることができる。集中はどの武器種でも蓄積可能で、武器の特殊能力を発動するのに使う。"
+      ]
+    }
+  },
+  "POISON_MASTERY": {
+    "game": {
+      "name": "毒の達人",
+      "description": [
+        "<b>「猛毒の刃」</b>パークで与えるダメージが<b>100%</b>増加する。"
+      ]
+    }
+  },
+  "POISONED_BLADES": {
+    "game": {
+      "name": "猛毒の刃",
+      "description": [
+        "<b>「猛毒の刃」</b>特典を持った短剣で敵を毒状態にする確率が<b>30%</b>増加する。"
+      ]
+    }
+  },
+  "POWER_PARRY": {
+    "game": {
+      "name": "パワー・パリィ",
+      "description": [
+        "受け流し力が<b>{{gameValue1}}</b>増加する。",
+        "<b>パリィ</b><br/>近接武器、結界、盾を装備しているとブロックできる。タイミングよくブロックすれば<b>パリィ</b>となり、敵の<i>スタンメーター</i>を貯める事ができる。<br/>パリィを行う時は、敵や投射物に<b>光</b>が見えるのを待とう。",
+        "<b>オーバーパワー</b> <br/>ブロックしている敵を攻撃したり、敵の攻撃をパリィすると<i>スタンメーター</i>が溜まり、満タンになると敵は<b>オーバーパワー状態</b>になる。<br/><b>オーバーパワー状態</b>の敵には不意打ちを仕掛けることができる。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>パリィ力"
+    }
+  },
+  "PRIMAL_FORCE": {
+    "game": {
+      "name": "原始の力",
+      "description": [
+        "ヴークに対するダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "PROSPECTOR": {
+    "game": {
+      "name": "プロスペクター",
+      "description": [
+        "ツールが金属に対して<b>{{gameValue1}}</b>の追加ダメージを与える。<br/>金属鉱脈も含む。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "貫通",
+      "description": [
+        "すべての遠隔<b>貫通</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "PURIFICATION": {
+    "game": {
+      "name": "浄化",
+      "description": [
+        "片手、または両手の斧、こん棒、ハンマー、剣、大剣でシュラウドに浸食された敵を倒すと、<b>シュラウド</b>内の滞在時間を<b>{{gameValue1}}</b>秒回復する。",
+        "<b>シュラウド内の滞在時間</b><br/>この時間が切れると、シュラウドに蝕まれていきます。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>秒"
+    }
+  },
+  "QUALITY_GEAR": {
+    "game": {
+      "name": "上等装備",
+      "description": [
+        "ツールは<b>{{gameValue1}}</b>の確率でヒット時に耐久力を1回復する。"
+      ]
+    }
+  },
+  "QUICK_CHARGE": {
+    "game": {
+      "name": "クイック・チャージ",
+      "description": [
+        "呪文のチャージ時間が<b>{{gameValue1}}</b>短縮される。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>のチャージ時間"
+    }
+  },
+  "QUICK_REFLEX_BLOCK": {
+    "game": {
+      "name": "クイック反射ブロック",
+      "description": [
+        "短剣でブロックする際にブロック値をわずかの間強化し、ギリギリの受け流しでスタミナの減少を最小限に抑える。"
+      ]
+    }
+  },
+  "RADIANT_AURA": {
+    "game": {
+      "name": "光のオーラ",
+      "description": [
+        "<b>{{gameValue1}}</b>メートル以内のすべての<b>フェル</b>の敵は秒ごとに知力1につき<b>{{gameValue2}}の火</b>ダメージを受ける。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>メートルの距離と知力1につき<b>{{gamePerLevelValue2}}の火</b>ダメージ"
+    }
+  },
+  "RANGER": {
+    "game": {
+      "name": "レンジャー",
+      "description": [
+        "器用さと忍耐の特性が<b>{{gameValue1}}</b>増加する。",
+        "スタミナの基本回復量が<b>{{gameValue2}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b> 器用さと忍耐。<br/>レベルごとに<b>{{gamePerLevelValue2}}</b>のスタミナ回復。"
+    }
+  },
+  "REBOUND": {
+    "game": {
+      "name": "リバウンド",
+      "description": [
+        "スタミナの基本回復量が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>のスタミナ回復"
+    }
+  },
+  "RELENTLESS": {
+    "game": {
+      "name": "無慈悲",
+      "description": [
+        "両手武器でクリティカルダメージを与えると、次のヒットのクリティカル率が<b>{{gameValue1}}</b>増加する。"
+      ]
+    }
+  },
+  "RICOCHETS": {
+    "game": {
+      "name": "散弾爆発",
+      "description": [
+        "<b>爆発矢</b>で命中したターゲット1体につき、ダメージが<b>10%</b>増加する。"
+      ]
+    }
+  },
+  "RIGHTEOUS_FIRE": {
+    "game": {
+      "name": "正義の炎",
+      "description": [
+        "いずれかのターゲットを呪文で回復すると炎が放たれ、回復量の<b>{{gameValue1}}</b>を<b>火</b>ダメージとして周囲の<b>フェル</b>に与える。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}火</b>ダメージ"
+    }
+  },
+  "RUNNER": {
+    "game": {
+      "name": "ランナー",
+      "description": [
+        "ダッシュ速度が<b>{{gameValue1}}</b>増加し、ダッシュ中のスタミナ消費が<b>{{gameValue2}}</b>減少する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>のスピードと<b>{{gamePerLevelValue2}}</b>のコスト減少"
+    }
+  },
+  "SAVIOUR": {
+    "game": {
+      "name": "救世主",
+      "description": [
+        "仲間を復活するのに必要な時間が<b>{{gameValue1}}</b>秒短縮する。",
+        "デフォルトの復活時間は<b>6</b>秒。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>秒"
+    }
+  },
+  "SHELL_SHOCK": {
+    "game": {
+      "name": "ストレス障害",
+      "description": [
+        "<b>遠隔爆発物</b> にマナを注入する。<b>2</b>秒間、敵をスタンさせる。",
+        "<b>コスト</b>：スタンされた敵につき{{gameValue1}}マナ"
+      ]
+    }
+  },
+  "SHINY_PLATES": {
+    "game": {
+      "name": "輝きの鎧",
+      "description": [
+        "装備中のアイテムから得られる魔法防具ポイントが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>魔法防具値"
+    }
+  },
+  "SHOCK_RESISTANCE": {
+    "game": {
+      "name": "雷耐性",
+      "description": [
+        "<b>雷耐性</b>が<b>{{gameValue1}}</b>増加し、受ける<b>雷</b>ダメージが減少する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>耐性"
+    }
+  },
+  "SHOCKWAVE": {
+    "game": {
+      "name": "衝撃波",
+      "description": [
+        "攻撃をパリィするか敵を<b>オーバーパワー</b>すると、衝撃波を起こす。",
+        "衝撃波は近くの敵の<i>スタンメーター</i>を増やして押し戻す。",
+        "<b>パリィ</b><br/>近接武器、結界、盾を装備しているとブロックできる。タイミングよくブロックすれば<b>パリィ</b>となり、敵の<i>スタンメーター</i>を貯める事ができる。<br/>パリィを行う時は、敵や投射物に<b>光</b>が見えるのを待とう。",
+        "<b>オーバーパワー</b> <br/>ブロックしている敵を攻撃したり、敵の攻撃をパリィすると<i>スタンメーター</i>が溜まり、満タンになると敵は<b>オーバーパワー状態</b>になる。<br/><b>オーバーパワー状態</b>の敵には不意打ちを仕掛けることができる。"
+      ]
+    }
+  },
+  "SHROUD_FILTER": {
+    "game": {
+      "name": "シュラウド緩和",
+      "description": [
+        "魔法武器でダメージを与えると、自分と<b>{{gameValue3}}</b>メートル以内の味方の<b>シュラウド内の滞在時間</b>が<b>{{gameValue2}}</b>秒回復する、小さい炎の爆発が<b>{{gameValue1}}</b>の確率で発生する。",
+        "<b>シュラウド内の滞在時間</b><br/>この時間が切れると、シュラウドに蝕まれていきます。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "SHROUD_MISTERY": {
+    "game": {
+      "name": "不幸の共有",
+      "description": [
+        "<b>シュラウド</b>ダメージを受けると、<b>{{gameValue1}}</b>メートル内の全プレイヤーは<b>30</b>秒間、<b>シュラウド耐性</b>が<b>{{gameValue2}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>メートルの距離"
+    }
+  },
+  "SHROUD_RESISTANCE": {
+    "game": {
+      "name": "シュラウド耐性",
+      "description": [
+        "<b>シュラウド耐性</b>が<b>{{gameValue1}}</b>増加し、受ける<b>シュラウド</b>ダメージが減少する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>耐性"
+    }
+  },
+  "SILENT_STRIDE": {
+    "game": {
+      "name": "サイレント・ストライド",
+      "description": [
+        "<b>忍び足</b>での移動速度が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の移動速度"
+    }
+  },
+  "SKILL_SHOT": {
+    "game": {
+      "name": "正確なショット",
+      "description": [
+        "全ての<b>スキルショット</b>ダメージが<b>{{gameValue1}}</b>増加する。",
+        "<b>スキルショット</b><br/>頭部などの敵の弱点に矢をヒットさせるとスキルショットになる。",
+        "スキルショットは、ヘルメットを装備していない敵に対して基本ダメージが100%増加し、ヘルメットを装備している敵に対しては50%増加する。<br/>さらに、スキルショットダメージの特性値によってさらに増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "SLASHER": {
+    "game": {
+      "name": "スラッシャー",
+      "description": [
+        "すべての近接<b>切断</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "SLEIGHT_OF_HAND": {
+    "game": {
+      "name": "早わざ",
+      "description": [
+        "素手ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "SLICE_AND_DICE": {
+    "game": {
+      "name": "切り刻み",
+      "description": [
+        "短剣でクリティカルストライクを与えると、{{gameValue1}}秒以内に行う次の弓攻撃の基本ダメージが<b>{{gameValue2}}</b>増加する。"
+      ]
+    }
+  },
+  "SNAKE_EATER": {
+    "game": {
+      "name": "蛇喰らい",
+      "description": [
+        "<b>毒耐性</b>が<b>{{gameValue1}}</b>増加し、受ける<b>毒</b>ダメージが減少する。",
+        "<b>毒</b>ダメージは防具を貫通し、<b>毒耐性</b>でしか軽減できない。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>耐性"
+    }
+  },
+  "SNAP": {
+    "game": {
+      "name": "スナップ",
+      "description": [
+        "<b>不意打ち</b>を発動するとマナを<b>{{gameValue1}}</b>回復する。"
+      ]
+    }
+  },
+  "SNEAK_ATTACK": {
+    "game": {
+      "name": "奇襲",
+      "description": [
+        "気付かれていない敵に忍び寄って<b>{{gameValue1}}</b>を押すことによって<b>奇襲</b>を実行する。",
+        "<b>奇襲</b>はダメージが<b>+900%</b>増加する。",
+        "魔法の杖、ステッキ、弓で奇襲を行うことはできない。"
+      ]
+    }
+  },
+  "SNIPER": {
+    "game": {
+      "name": "スナイパー",
+      "description": [
+        "弓のクリティカルストライク率が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>クリティカルストライク率"
+    }
+  },
+  "SOAKED_DOG": {
+    "game": {
+      "name": "ずぶ濡れの犬",
+      "description": [
+        "<b>濡れ</b>と<b>ずぶ濡れ</b>デバフの効果が減少する。",
+        "スタミナとスタミナ回復の減少率が<b>20%</b>から<b>10%</b>に軽減される。",
+        "<b>濡れ</b> <br/>スタミナとスタミナ回復速度を、<b>15</b>分間<b>30%</b>減少させる。「暖」により、残りの持続時間を短縮できる。",
+        "<b>びしょ濡れ</b> <br/>スタミナとスタミナ回復速度を、<b>30</b>秒間<b>30%</b>減少させる。さらに<b>氷および衝撃耐性</b>を<b>30%</b>減少させるが、<b>炎耐性</b>を<b>30%</b>増加させる。<br/><b>びしょ濡れ</b>は敵に付与することができる。<br/><b>びしょ濡れ</b>の持続時間は、暖による短縮はできず、持続時間が終了すると、<b>濡れ</b>のデバフに変化する。"
+      ]
+    }
+  },
+  "SOUL_LEECH": {
+    "game": {
+      "name": "ソウル吸収",
+      "description": [
+        "近接武器で敵をキルすると、ターゲットの<b>{{gameValue1}}</b>メートル以内のプレイヤー全員が<b>{{gameValue2}}</b>マナを獲得する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>メートルの距離と<b>{{gamePerLevelValue2}}</b>マナ"
+    }
+  },
+  "SPELLSLINGER": {
+    "game": {
+      "name": "スペルスリンガー",
+      "description": [
+        "魔法のステッキダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "SPLASH_DASH": {
+    "game": {
+      "name": "スプラッシュダッシュ",
+      "description": [
+        "泳いだり潜ったりしている間に、回避ダッシュを実行できる。",
+        "<b>コスト</b>：{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "STEADFAST": {
+    "game": {
+      "name": "不動",
+      "description": [
+        "近接武器で敵を倒すと、その武器の耐久力が<b>{{gameValue1}}</b>回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>耐久力"
+    }
+  },
+  "STING": {
+    "game": {
+      "name": "スティンガー",
+      "description": [
+        "魔法の杖の繰り返しダメージが<b>{{gameValue1}}</b>増加する。"
+      ]
+    }
+  },
+  "STRATEGIC_MANEUVER": {
+    "game": {
+      "name": "戦略的行動",
+      "description": [
+        "敵をロック中に前転回避の能力を横前転回避に置き換える。",
+        "敵の後ろに回り込み、バックスタブ攻撃が行いやすくなる。",
+        "ブリンクは戦略的行動の横前転回避を置き換える。",
+        "<b>コスト：</b>{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "生存本能",
+      "description": [
+        "弓または短剣でシュラウドに浸食された敵を倒すと、<b>シュラウド</b>内の滞在時間を<b>{{gameValue1}}</b>秒回復する。",
+        "<b>シュラウド内の滞在時間</b><br/>この時間が切れると、シュラウドに蝕まれていきます。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>秒"
+    }
+  },
+  "SWEET_TOOTH": {
+    "game": {
+      "name": "甘党",
+      "description": [
+        "お菓子のスタミナ回復量が<b>50%</b>増加する"
+      ]
+    }
+  },
+  "SWIFT_BLADES": {
+    "game": {
+      "name": "スウィフト・ブレード",
+      "description": [
+        "すべての片手近接武器の攻撃速度が<b>{{gameValue1}}</b>増加する。"
+      ]
+    }
+  },
+  "SWIFTSHOT_SUSTENANCE": {
+    "game": {
+      "name": "リカバリーショット",
+      "description": [
+        "弓で敵を倒した時、<b>{{gameValue1}}</b>の確率でスタミナオーブを生成する。",
+        "オーブを集めると、オーブの種類に応じたリソースを<b>10%</b>回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "TERROR": {
+    "game": {
+      "name": "恐怖",
+      "description": [
+        "呪文によるクリティカルストライクは<b>{{gameValue1}}</b>の確率でターゲットを<b>2</b>秒間スタンする。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率"
+    }
+  },
+  "THICK_SKIN": {
+    "game": {
+      "name": "分厚い皮膚",
+      "description": [
+        "焔のレベルが2上がるごとに体質を1獲得する。"
+      ]
+    }
+  },
+  "THRUST": {
+    "game": {
+      "name": "突き刺し",
+      "description": [
+        "すべての近接<b>貫通</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "THUNDER": {
+    "game": {
+      "name": "雷鳴",
+      "description": [
+        "全ての<b>雷</b>ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "TITAN_EDGE": {
+    "game": {
+      "name": "タイタンエッジ",
+      "description": [
+        "両手持ちの大剣ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "トーテムマスタリー",
+      "description": [
+        "召喚できるトーテムの最大数が<b>{{gameValue1}}</b>増える。"
+      ],
+      "perLevelLabel": "レベルごとにトーテム<b>{{gamePerLevelValue1}}</b>個"
+    }
+  },
+  "TOWER": {
+    "game": {
+      "name": "タワー",
+      "description": [
+        "<b>20</b>メートル以内に3体以上の敵がいる場合、<b>物理耐性</b>が<b>{{gameValue1}}</b>増加する。"
+      ]
+    }
+  },
+  "TWO_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "両手持ち特化",
+      "description": [
+        "両手近接武器の特殊能力をアンロックする。<br/>集中が十分に溜まってから<b>{{gameValue1}}</b>を押すと強力な特殊能力を放つ。",
+        "<b>集中</b><br/>攻撃することで集中を溜めることができる。集中はどの武器種でも蓄積可能で、武器の特殊能力を発動するのに使う。"
+      ]
+    }
+  },
+  "UNITY": {
+    "game": {
+      "name": "ユニティ",
+      "description": [
+        "魔法の杖で敵にダメージを与えると、<b>{{gameValue1}}</b>の確率で最大マナの<b>{{gameValue2}}</b>を回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>の確率と最大マナの<b>{{gamePerLevelValue2}}</b>"
+    }
+  },
+  "UPDRAFT": {
+    "game": {
+      "name": "上昇気流",
+      "description": [
+        "{{gameValue1}}で滑空中にジャンプすると、高度が少し上がる。1飛行につき1回使用できる。",
+        "<b>チャージ</b><br/>上流気流を発動する前にチャージすると、高度が上がる。フルチャージで使うと、さらに高度が上がる。",
+        "<b>コスト：</b>{{gameValue2}}マナ"
+      ]
+    }
+  },
+  "UPWARDS_SLASH_ATTACK": {
+    "game": {
+      "name": "上段斬り攻撃",
+      "description": [
+        "近接武器を装備している場合、ジャンプの上昇中に強力な上段攻撃を繰り出す。",
+        "<b>飛んでいる</b>敵との距離を詰めるのに有効。",
+        "<b>コスト：</b>{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "VEILED_VIGOR": {
+    "game": {
+      "name": "隠された活力",
+      "description": [
+        "器用さ特性の<b>{{gameValue1}}</b>倍、最大HPが増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>回"
+    }
+  },
+  "VETERAN": {
+    "game": {
+      "name": "ベテラン",
+      "description": [
+        "片手、または両手の斧、こん棒、ハンマー、剣、大剣、短剣のクリティカルストライク率が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>クリティカルストライク率"
+    }
+  },
+  "VIGOROUS_DEFLECTION": {
+    "game": {
+      "name": "精力的な偏向",
+      "description": [
+        "敵の攻撃をパリィするとスタミナが<b>{{gameValue1}}</b>回復する。",
+        "<b>パリィ</b><br/>近接武器、結界、盾を装備しているとブロックできる。タイミングよくブロックすれば<b>パリィ</b>となり、敵の<i>スタンメーター</i>を貯める事ができる。<br/>パリィを行う時は、敵や投射物に<b>光</b>が見えるのを待とう。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>スタミナ"
+    }
+  },
+  "VILE_CONCOCTION": {
+    "game": {
+      "name": "卑劣な調合薬",
+      "description": [
+        "投擲ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "VITALITY_SURGE": {
+    "game": {
+      "name": "バイタリティ・サージ",
+      "description": [
+        "弓、短剣、投擲アイテムによるクリティカルストライクはスタミナを<b>{{gameValue1}}</b>回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>スタミナ"
+    }
+  },
+  "VUKAH_CULTURE": {
+    "game": {
+      "name": "ヴーク文化",
+      "description": [
+        "攻撃の対象となったときに、<b>50</b>メートル範囲内の<b>ヴーク</b>が敵を攻撃する。"
+      ]
+    }
+  },
+  "VUKAH_LANGUAGE": {
+    "game": {
+      "name": "ヴーク語",
+      "description": [
+        "<b>50</b>メートル以内にいる<b>ヴーク</b>が、攻撃されない限りプレイヤーを攻撃しないようになる。"
+      ]
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "魔法の杖の回避攻撃",
+      "description": [
+        "魔法の杖を装備した状態で、回避中に<b>{{gameValue1}}</b>を押すと魔法の杖の回避攻撃を実行できる。<br/>敵を貫通する魔法の円盤を放ち、<b>50%</b>の武器ダメージを追加で与える。",
+        "<b>コスト：</b>{{gameValue2}}スタミナ"
+      ]
+    }
+  },
+  "WAND_MASTERY": {
+    "game": {
+      "name": "ウォンドマスター",
+      "description": [
+        "魔法の杖ダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "WAND_SPECIALIZATION": {
+    "game": {
+      "name": "魔法の杖特化",
+      "description": [
+        "魔法の杖の特殊能力をアンロックする。<br/>集中が十分に溜まってから<b>{{gameValue1}}</b>を押すと強力な特殊能力を放つ。",
+        "<b>集中</b><br/>攻撃することで集中を溜めることができる。集中はどの武器種でも蓄積可能で、武器の特殊能力を発動するのに使う。"
+      ]
+    }
+  },
+  "WANDERLUST": {
+    "game": {
+      "name": "ワンダーラスト",
+      "description": [
+        "<b>土の道でのダッシュ</b>におけるスタミナ消費が<b>90%から80%</b>に減少する。",
+        "<b>石の道でのダッシュ</b>におけるスタミナ消費が<b>75%から50%</b>に減少する。"
+      ]
+    }
+  },
+  "WARDEN": {
+    "game": {
+      "name": "典獄",
+      "description": [
+        "<b>20</b>メートル以内に3体以上の敵がいる場合、<b>魔法耐性</b>が<b>{{gameValue1}}</b>増加する。"
+      ]
+    }
+  },
+  "WARRIOR_PATH": {
+    "game": {
+      "name": "戦士の道",
+      "description": [
+        "片手の斧、こん棒、剣で与えるダメージが<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>ダメージ"
+    }
+  },
+  "WATER_AURA": {
+    "game": {
+      "name": "水のオーラ",
+      "description": [
+        "自分と<b>{{gameValue1}}</b>メートル以内の負傷した仲間を回復するオーラを放出する。",
+        "回復量は知力の特性に応じて増加し、知力<b>2</b>ポイントにつき<b>1</b>HP回復する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>メートルの距離"
+    }
+  },
+  "WATERS_OF_LIFE": {
+    "game": {
+      "name": "命の水",
+      "description": [
+        "<b>水のオーラ</b>による回復を知力<b>2</b>ポイントにつき<b>2</b>HPに増加する。"
+      ]
+    }
+  },
+  "WELL_RESTED": {
+    "game": {
+      "name": "よく休んだ",
+      "description": [
+        "休んだバフの基本持続時間が<b>{{gameValue1}}</b>分増加する。",
+        "<b>休んだ</b><br/>休んだバフは最大スタミナとスタミナ回復速度を大幅に増加する。",
+        "<b>シェルター、座っている状態または睡眠</b>に加えて熱源による<b>暖</b>が必要となる。",
+        "バフは<b>どこでも</b>更新することができる。",
+        "周囲に快適度を与えるアイテムがあると、持続時間が更に増える。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>分"
+    }
+  },
+  "WET_DOG": {
+    "game": {
+      "name": "濡れた犬",
+      "description": [
+        "<b>濡れ</b>と<b>ずぶ濡れ</b>デバフの効果が減少する。",
+        "スタミナとスタミナ回復の減少率が<b>30%</b>から<b>20%</b>に軽減される。",
+        "<b>濡れ</b> <br/>スタミナとスタミナ回復速度を、<b>15</b>分間<b>30%</b>減少させる。「暖」により、残りの持続時間を短縮できる。",
+        "<b>びしょ濡れ</b> <br/>スタミナとスタミナ回復速度を、<b>30</b>秒間<b>30%</b>減少させる。さらに<b>氷および衝撃耐性</b>を<b>30%</b>減少させるが、<b>炎耐性</b>を<b>30%</b>増加させる。<br/><b>びしょ濡れ</b>は敵に付与することができる。<br/><b>びしょ濡れ</b>の持続時間は、暖による短縮はできず、持続時間が終了すると、<b>濡れ</b>のデバフに変化する。"
+      ]
+    }
+  },
+  "WHIRLWIND_CRESCENDO": {
+    "game": {
+      "name": "旋風のクレシェンド",
+      "description": [
+        "両手武器を装備している場合、攻撃チェーンの終わりに旋風攻撃が発動する。",
+        "<b>コスト：</b>{{gameValue1}}スタミナ"
+      ]
+    }
+  },
+  "WIZARD": {
+    "game": {
+      "name": "ウィザード",
+      "description": [
+        "魔法の杖とステッキのクリティカルストライク率が<b>{{gameValue1}}</b>増加する。"
+      ],
+      "perLevelLabel": "レベルごとに<b>{{gamePerLevelValue1}}</b>クリティカルストライク率"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Planer umiejętności Enshrouded",
+    "description": "Planer drzewka umiejętności do gry Enshrouded."
+  },
+  "hud": {
+    "import": "Importuj",
+    "export": "Eksportuj",
+    "clear": "Wyczyść",
+    "discord": "Discord",
+    "about": "Informacje"
+  },
+  "dialogs": {
+    "advancedSharing": "Zaawansowane udostępnianie",
+    "about": {
+      "title": "Informacje",
+      "description1": "To narzędzie powstało wyłącznie po to, by ułatwić graczom Enshrouded udostępnianie drzewek umiejętności i buildów. Nie jestem powiązany z Keen Games i nie posiadam żadnych praw do gry Enshrouded.",
+      "description2": "To narzędzie jest open source i każdy może pomóc w jego rozwoju. Jeśli chcesz pomóc, odwiedź <githubLink>repozytorium GitHub</githubLink> lub dołącz do naszego <discordLink>serwera Discord</discordLink>.",
+      "description3": "Specjalne podziękowania dla <glitchizLink>@Glitchiz</glitchizLink> za udostępnienie części zasobów używanych w tym narzędziu.",
+      "close": "Zamknij"
+    },
+    "export": {
+      "title": "Udostępnij swój build",
+      "shortUrl": "Link do udostępnienia",
+      "generating": "Generowanie linku...",
+      "noSkills": "Odblokuj umiejętności w drzewku, aby wygenerować link.",
+      "dbUnavailable": "Linki do udostępniania są obecnie niedostępne. Użyj eksportu JSON, aby udostępnić build.",
+      "exportJson": "Eksportuj JSON",
+      "exportJsonTitle": "Eksportuj jako JSON",
+      "buildName": "Nazwa buildu",
+      "download": "Pobierz",
+      "close": "Zamknij"
+    },
+    "import": {
+      "title": "Importuj umiejętności",
+      "urlLabel": "Importuj z adresu URL",
+      "import": "Importuj URL",
+      "importJson": "Importuj JSON",
+      "warning": "Importuj buildy tylko z zaufanych źródeł."
+    },
+    "settings": {
+      "title": "Ustawienia",
+      "treeVersion": "Drzewko umiejętności",
+      "gameUpdate": "Aktualizacja",
+      "gameBuild": "build",
+      "appVersion": "Aplikacja",
+      "sounds": "Efekty dźwiękowe",
+      "language": "Język",
+      "hardcap": "Twardy limit punktów umiejętności",
+      "audioBlocked": "Przeglądarka zablokowała dźwięk. Zezwól na dźwięk dla tej strony w ustawieniach przeglądarki i spróbuj ponownie."
+    },
+    "refundConfirm": {
+      "title": "Zwróć umiejętności",
+      "message": "Zwrócone zostaną też połączone umiejętności: {{count}}. Kontynuować?",
+      "confirm": "Potwierdź",
+      "cancel": "Anuluj"
+    },
+    "resetConfirm": {
+      "title": "Zresetuj drzewko umiejętności",
+      "message": "Wszystkie wybrane umiejętności zostaną usunięte. Na pewno?",
+      "confirm": "Resetuj",
+      "cancel": "Anuluj"
+    },
+    "skillCap": {
+      "title": "Osiągnięto limit punktów umiejętności",
+      "message": "Osiągnięto maksymalną liczbę punktów umiejętności. Zwróć część umiejętności, zanim odblokujesz nowe.",
+      "ok": "OK",
+      "hardcapHint": "Ten limit można wyłączyć w Ustawieniach."
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "Skopiowano link",
+    "buildImported": "Zaimportowano build „{{name}}”",
+    "differentTreeVersion": "Ten build powstał dla innej wersji drzewka umiejętności. Sprawdź jego umiejętności po imporcie.",
+    "noSkillsAllocated": "Nie przydzielono umiejętności!",
+    "invalidUrl": "Nieprawidłowy adres URL!",
+    "invalidCode": "Nieprawidłowy kod",
+    "skillsRemoved": "Usunięto umiejętności, których nie ma już w tym drzewku: {{names}}",
+    "skillsDisconnected": "Usunięto umiejętności niepołączone już z drzewkiem: {{names}}",
+    "skillLevelsLowered": "Obniżono poziomy umiejętności do obecnego maksimum: {{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "Tło z fioletowego dymu"
+  },
+  "errors": {
+    "serverError": "Błąd serwera",
+    "notFound": "Nie znaleziono strony"
+  }
+}

@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useMemo, useRef, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import {
+  DEFAULT_SKILL_TEXT_LOCALE,
+  addSkillText,
+  isSkillTextLoaded,
+  loadSkillText,
+  resolveSkillTextLocale,
+  type SkillTextResources,
+} from "@enshrouded/core";
 
 import { assetUrl } from "./art";
 
@@ -14,8 +22,14 @@ export type SkillTreeNotice =
   | { type: "link-copied"; nodeId: string; url: string };
 
 export type SkillTreeProviderProps = {
-  // Language of skill text and the tooltip ("en" or "fr"; others fall back to English).
+  // Language of skill text and the tooltip: any language in core's
+  // SKILL_TEXT_LOCALES, or a regional code of one ("fr-CA"). Others show English.
   locale?: string;
+  // The locale's skill text, already loaded (core's loadSkillText, e.g. on
+  // the server, passed down as props), so the first render is in that
+  // language. Without it a non-English locale loads after mounting and the
+  // tree shows English until then.
+  skillText?: SkillTextResources;
   // URL where the host serves this package's assets/ folder (see scripts/sync-assets.mjs).
   assetBaseUrl?: string;
   // true plays the bundled sounds, a function plays them the host's way, false is silent.
@@ -27,6 +41,7 @@ export type SkillTreeProviderProps = {
 };
 
 export type SkillTreeSettings = {
+  // The locale whose text renders: `locale` once its skill text is loaded, English until then.
   locale: string;
   assetBaseUrl: string;
   hardCap?: number;
@@ -49,7 +64,8 @@ const SkillTreeContext = createContext<SkillTreeSettings | null>(null);
 // Settings shared by every skill tree component below it. Components work
 // without it, with English text, assets at /skill-tree, no sound and no cap.
 export const SkillTreeProvider = ({
-  locale = "en",
+  locale: requested = DEFAULT_SKILL_TEXT_LOCALE,
+  skillText,
   assetBaseUrl = DEFAULT_ASSET_BASE_URL,
   sound = false,
   hardCap,
@@ -72,12 +88,40 @@ export const SkillTreeProvider = ({
     [assetBaseUrl]
   );
   const notify = useCallback((notice: SkillTreeNotice) => noticeRef.current?.(notice), []);
+  const locale = useSkillTextLocale(requested, skillText);
 
   const value = useMemo(
     () => ({ locale, assetBaseUrl, hardCap, playSound, notify }),
     [locale, assetBaseUrl, hardCap, playSound, notify]
   );
   return <SkillTreeContext.Provider value={value}>{children}</SkillTreeContext.Provider>;
+};
+
+// The locale to render text in. The first render (on the server and while
+// hydrating) depends only on the props, never on what this process loaded
+// before, so server and client agree; after mounting, a locale shows as soon
+// as its text is loaded.
+const useSkillTextLocale = (requested: string, preloaded?: SkillTextResources): string => {
+  const code = resolveSkillTextLocale(requested);
+  // Text for another locale (e.g. stale props during a language switch) is ignored.
+  const matching = preloaded?.locale === code ? preloaded : undefined;
+  if (matching) addSkillText(matching);
+  const [mounted, setMounted] = useState(false);
+  const [, setLoaded] = useState<string | null>(null);
+  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    if (isSkillTextLoaded(code)) return;
+    let current = true;
+    loadSkillText(code).then(
+      () => current && setLoaded(code),
+      () => {}
+    );
+    return () => {
+      current = false;
+    };
+  }, [code]);
+  const ready = code === DEFAULT_SKILL_TEXT_LOCALE || Boolean(matching) || (mounted && isSkillTextLoaded(code));
+  return ready ? requested : DEFAULT_SKILL_TEXT_LOCALE;
 };
 
 const fallback: SkillTreeSettings = {

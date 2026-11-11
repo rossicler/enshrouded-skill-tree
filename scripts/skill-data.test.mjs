@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import i18next from "i18next";
 import { formatValue, renderText, buildTextTemplate, resolveArgument, loadAuthoredPresentation, runImport, treeContentHash, candidateContentHash,
+  appliedCandidate, nextContentHash,
   alignText, localeFormat, GAME_LOCALES } from "./skill-data.mjs";
 import { getGameInterpolationValues, getGamePerLevelValues } from "../packages/core/src/utils/skillInterpolation";
 import { isDifferentTreeVersion, SKILL_TREE_CONTENT_HASH, SKILL_TREE_GAME_BUILD, SKILL_TREE_UPDATE } from "../packages/core/src/constants/skillTreeVersion";
@@ -156,16 +157,28 @@ describe("committed import compatibility", () => {
     }
     expect(Object.keys(runtime.retired)).toEqual(Object.keys(mapping.retired));
   });
-  it("hashes the committed nodes, edges, types and every locale's game text", () => {
-    const types = Object.fromEntries(Object.entries(runtime.types).map(([type, metadata]) => {
-      const { name, description, ...rest } = metadata;
-      return [type, rest];
-    }));
-    const locales = { en: locale, fr: frLocale };
-    const text = Object.fromEntries(Object.entries(locales).map(([lang, nodes]) => [lang, Object.fromEntries(Object.keys(runtime.types)
-      .filter((type) => runtime.types[type].gameTextLocales?.includes(lang)).map((type) => [type, nodes[type].game]))]));
-    expect(candidateContentHash({ nodes: runtime.nodes, edges: runtime.edges, types, text }))
-      .toBe(runtime.treeVersion.contentHash);
+  it("keeps the committed hash when the same tree is imported again", () => {
+    const applied = appliedCandidate(runtime, locale);
+    expect(nextContentHash(applied, runtime, locale)).toBe(runtime.treeVersion.contentHash);
+  });
+  it("hashes what a build depends on, not its translations", () => {
+    const applied = appliedCandidate(runtime, locale);
+    const hash = candidateContentHash(applied);
+    const [type] = Object.keys(applied.types);
+    // Another language, its game text and its number formats: same hash.
+    const translated = structuredClone(applied);
+    translated.text.xx = { [type]: { name: "X", description: ["X"] } };
+    translated.types[type].gameTextLocales = [...(translated.types[type].gameTextLocales ?? []), "xx"];
+    translated.types[type].gameLocaleValues = { xx: { gameValues: { gameValue1: "1,5" } } };
+    expect(candidateContentHash(translated)).toBe(hash);
+    // English text or a cost: a new hash.
+    const renamed = structuredClone(applied);
+    renamed.text.en[type] = { ...renamed.text.en[type], name: "Renamed" };
+    expect(candidateContentHash(renamed)).not.toBe(hash);
+    const costlier = structuredClone(applied);
+    costlier.types[type].cost += 1;
+    expect(candidateContentHash(costlier)).not.toBe(hash);
+    expect(nextContentHash(costlier, runtime, locale)).toBe(candidateContentHash(costlier));
   });
   it("generates finite Cartesian centers and an anchor for every base node", () => {
     expect(Object.values(runtime.nodes).some((entry) => entry.base)).toBe(true);

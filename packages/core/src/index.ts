@@ -87,7 +87,14 @@ export type { StatTotals } from "./utils/stats";
 export {
   SKILL_TEXT_LOCALES,
   DEFAULT_SKILL_TEXT_LOCALE,
-  skillTextResources,
+  resolveSkillTextLocale,
+} from "./locales";
+export type { SkillTextLocaleInfo, SkillTextResources } from "./locales";
+export {
+  isSkillTextLoaded,
+  addSkillText,
+  loadSkillText,
+  skillTextLocale,
   getSkillName,
   getSkillDescription,
   getSkillPerLevelLabel,
@@ -95,7 +102,7 @@ export {
   getNodeName,
   getTreeLabelName,
 } from "./text";
-export type { SkillText, SkillTextLocale } from "./text";
+export type { SkillText } from "./text";
 export { baseLanguage, usesGameText, skillTextPrefix } from "./utils/skillText";
 export {
   getSkillInterpolationValues,
@@ -107,7 +114,7 @@ export { humanizeKey } from "./utils/humanizeKey";
 // Search
 export { buildSearchCorpus } from "./utils/searchCorpus";
 export type { SearchEntry } from "./utils/searchCorpus";
-export { SEARCH_MIN_QUERY_LENGTH, getSearchCorpus, searchSkills, getNodesOfType } from "./search";
+export { SEARCH_MIN_QUERY_LENGTH, SEARCH_MIN_QUERY_LENGTH_CJK, isSearchableQuery, getSearchCorpus, searchSkills, getNodesOfType } from "./search";
 export type { SkillSearchResult, SkillSearchOptions } from "./search";
 export {
   SNIPPET_CONTEXT_BEFORE,

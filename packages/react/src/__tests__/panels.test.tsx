@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
 import { useState } from "react";
 import { act, cleanup, fireEvent, render, renderHook } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
-import { BIOMES, MAX_FLAME_LEVEL, MAX_SKILL_POINTS_ABSOLUTE, type SkillSelection } from "@enshrouded/core";
+import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
+import { BIOMES, MAX_FLAME_LEVEL, MAX_SKILL_POINTS_ABSOLUTE, loadSkillText, type SkillSelection } from "@enshrouded/core";
 
 import { usePoints, useSkillSearch, useStats } from "../hooks";
 import { PointsPanel } from "../PointsPanel";
@@ -10,6 +10,9 @@ import { SkillSearch } from "../SkillSearch";
 import { StatsList } from "../StatsPanel";
 import { SkillTreeProvider } from "../SkillTreeProvider";
 import { GameButton } from "../kit/GameButton";
+
+// The provider shows a locale once its skill text is loaded.
+beforeAll(() => loadSkillText("fr"));
 
 afterEach(cleanup);
 

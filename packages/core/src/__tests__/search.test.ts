@@ -1,7 +1,13 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 
 import SkillNodes from "../constants/Nodes";
-import { getNodesOfType, getSearchCorpus, searchSkills, SEARCH_MIN_QUERY_LENGTH } from "../search";
+import { getNodesOfType, getSearchCorpus, isSearchableQuery, searchSkills, SEARCH_MIN_QUERY_LENGTH } from "../search";
+import { getSkillName, loadSkillText } from "../text";
+
+beforeAll(async () => {
+  await loadSkillText("fr");
+  await loadSkillText("ja");
+});
 import { getTotalStats } from "../utils/stats";
 import { MAX_FLAME_LEVEL } from "../constants/Biomes";
 
@@ -9,6 +15,7 @@ describe("searchSkills", () => {
   it("needs a few letters", () => {
     expect(SEARCH_MIN_QUERY_LENGTH).toBe(3);
     expect(searchSkills("do", "en")).toEqual([]);
+    expect(isSearchableQuery("dou")).toBe(true);
     expect(searchSkills("", "en")).toEqual([]);
   });
 
@@ -53,5 +60,14 @@ describe("getTotalStats", () => {
     const perLevel = SkillNodes.types.ATTR_STR.stats!.STR!;
     expect(getTotalStats({ [strNode]: 1 }, 2).STR).toBe(perLevel + 1);
     expect(getTotalStats([strNode]).STR).toBe(perLevel);
+  });
+});
+
+describe("searching Chinese, Japanese and Korean", () => {
+  it("needs only two characters", () => {
+    expect(isSearchableQuery("二")).toBe(false);
+    expect(isSearchableQuery("二段")).toBe(true);
+    const name = getSkillName("DOUBLE_JUMP", "ja");
+    expect(searchSkills(name.slice(0, 2), "ja").map((result) => result.key)).toContain("DOUBLE_JUMP");
   });
 });

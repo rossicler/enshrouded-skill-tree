@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "Nivel {{current}} / {{max}}",
+    "unlock": "Desbloquear",
+    "outOfRange": "Fuera de alcance",
+    "share": "Compartir el enlace a esta habilidad",
+    "refund": "Reembolsar",
+    "levelUp": "Subir de nivel",
+    "refundOne": "Reembolsar 1",
+    "refundAll": "Reembolsar todo",
+    "skillPointIcon": "Icono de punto de habilidad",
+    "close": "Cerrar"
+  },
+  "card": {
+    "label": "Árbol de habilidades",
+    "zoomIn": "Acercar",
+    "zoomOut": "Alejar",
+    "fit": "Mostrar todo el árbol",
+    "expand": "Ampliar",
+    "fullscreen": "Pantalla completa",
+    "exitFullscreen": "Salir de pantalla completa",
+    "close": "Cerrar"
+  },
+  "kit": {
+    "close": "Cerrar",
+    "copy": "Copiar"
+  },
+  "points": {
+    "skillPoints": "Puntos de habilidad",
+    "flameLevel": "Nivel de llama",
+    "skillPointIcon": "Icono de punto de habilidad",
+    "flameIcon": "Icono de llama",
+    "flameDown": "Bajar el nivel de llama",
+    "flameUp": "Subir el nivel de llama"
+  },
+  "budget": {
+    "title": "Puntos por bioma",
+    "playerLevel": "Nivel del jugador",
+    "total": "Puntos de habilidad totales",
+    "reset": "Desbloquear todo"
+  },
+  "biomes": {
+    "springlands": "Tierras Primaverales",
+    "revelwood": "Bosque del Deleite",
+    "nomad_highlands": "Altiplano de los Nómadas",
+    "kindlewastes": "Desechos de Luz",
+    "albaneve_summits": "Cumbres del Albaneve",
+    "veilwater_basin": "Cuenca de Aguas del Velo",
+    "cinders_cradle": "Cuna cenicienta"
+  },
+  "stats": {
+    "button": "Estadísticas",
+    "title": "Resumen de estadísticas",
+    "basic": "Básico",
+    "close": "Cerrar",
+    "names": {
+      "constitution": "Constitución",
+      "strength": "Fuerza",
+      "endurance": "Resistencia",
+      "dexterity": "Destreza",
+      "spirit": "Espíritu",
+      "intelligence": "Inteligencia"
+    }
+  },
+  "search": {
+    "placeholder": "Buscar",
+    "moreMatches": "+{{count}} coincidencias más resaltadas en el árbol",
+    "clear": "Borrar la búsqueda"
+  }
+}

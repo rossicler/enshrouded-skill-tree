@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Pianificatore di abilità di Enshrouded",
+    "description": "Un pianificatore dell'albero delle abilità per il gioco Enshrouded."
+  },
+  "hud": {
+    "import": "Importa",
+    "export": "Esporta",
+    "clear": "Svuota",
+    "discord": "Discord",
+    "about": "Info"
+  },
+  "dialogs": {
+    "advancedSharing": "Condivisione avanzata",
+    "about": {
+      "title": "Info",
+      "description1": "Questo strumento è stato creato solo per aiutare i giocatori di Enshrouded a condividere comodamente alberi delle abilità e build. Non sono affiliato a Keen Games e non detengo alcun diritto sul gioco Enshrouded.",
+      "description2": "Questo strumento è open source e aperto a chiunque voglia contribuire. Se vuoi contribuire, visita il <githubLink>repository GitHub</githubLink> o unisciti al nostro <discordLink>server Discord</discordLink>.",
+      "description3": "Un ringraziamento speciale a <glitchizLink>@Glitchiz</glitchizLink> per avermi fornito alcune delle risorse usate in questo strumento.",
+      "close": "Chiudi"
+    },
+    "export": {
+      "title": "Condividi la tua build",
+      "shortUrl": "URL di condivisione",
+      "generating": "Generazione dell'URL di condivisione...",
+      "noSkills": "Sblocca abilità nell'albero per generare un link di condivisione.",
+      "dbUnavailable": "I link di condivisione non sono al momento disponibili. Usa l'esportazione JSON per condividere la tua build.",
+      "exportJson": "Esporta JSON",
+      "exportJsonTitle": "Esporta come JSON",
+      "buildName": "Nome della build",
+      "download": "Scarica",
+      "close": "Chiudi"
+    },
+    "import": {
+      "title": "Importa abilità",
+      "urlLabel": "Importa da URL",
+      "import": "Importa URL",
+      "importJson": "Importa JSON",
+      "warning": "Importa build solo da fonti di cui ti fidi."
+    },
+    "settings": {
+      "title": "Impostazioni",
+      "treeVersion": "Albero delle abilità",
+      "gameUpdate": "Aggiornamento",
+      "gameBuild": "build",
+      "appVersion": "App",
+      "sounds": "Effetti sonori",
+      "language": "Lingua",
+      "hardcap": "Limite massimo dei punti abilità",
+      "audioBlocked": "L'audio è stato bloccato dal browser. Consenti l'audio per questo sito nelle impostazioni del browser e riprova."
+    },
+    "refundConfirm": {
+      "title": "Rimborsa abilità",
+      "message": "Verranno rimborsate anche {{count}} abilità collegate. Continuare?",
+      "confirm": "Conferma",
+      "cancel": "Annulla"
+    },
+    "resetConfirm": {
+      "title": "Reimposta l'albero delle abilità",
+      "message": "Verranno rimosse tutte le abilità selezionate. Sei sicuro?",
+      "confirm": "Reimposta",
+      "cancel": "Annulla"
+    },
+    "skillCap": {
+      "title": "Limite di punti abilità raggiunto",
+      "message": "Hai raggiunto il numero massimo di punti abilità. Rimborsa alcune abilità prima di sbloccarne di nuove.",
+      "ok": "OK",
+      "hardcapHint": "Puoi disattivare questo limite nelle Impostazioni."
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "URL di condivisione copiato",
+    "buildImported": "Build \"{{name}}\" importata",
+    "differentTreeVersion": "Questa build è stata creata per una versione diversa dell'albero delle abilità. Controlla le sue abilità dopo l'importazione.",
+    "noSkillsAllocated": "Nessuna abilità assegnata!",
+    "invalidUrl": "URL non valido!",
+    "invalidCode": "Codice non valido",
+    "skillsRemoved": "Rimosse abilità che non sono più in questo albero: {{names}}",
+    "skillsDisconnected": "Rimosse abilità non più collegate all'albero: {{names}}",
+    "skillLevelsLowered": "Livelli delle abilità ridotti al massimo attuale: {{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "Sfondo di fumo viola"
+  },
+  "errors": {
+    "serverError": "Errore del server",
+    "notFound": "Pagina non trovata"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Enshrouded 技能規劃器",
+    "description": "遊戲《霧鎖王國》（Enshrouded）的技能樹規劃工具。"
+  },
+  "hud": {
+    "import": "匯入",
+    "export": "匯出",
+    "clear": "清除",
+    "discord": "Discord",
+    "about": "關於"
+  },
+  "dialogs": {
+    "advancedSharing": "進階分享",
+    "about": {
+      "title": "關於",
+      "description1": "本工具僅為方便 Enshrouded 玩家分享技能樹與配置而製作。我與 Keen Games 無關，也不擁有 Enshrouded 遊戲的任何權利。",
+      "description2": "本工具為開源專案，歡迎任何人參與貢獻。如果你想參與，可以前往 <githubLink>GitHub 儲存庫</githubLink>，或加入我們的 <discordLink>Discord 伺服器</discordLink>。",
+      "description3": "特別感謝 <glitchizLink>@Glitchiz</glitchizLink> 提供本工具使用的部分素材。",
+      "close": "關閉"
+    },
+    "export": {
+      "title": "分享你的配置",
+      "shortUrl": "分享網址",
+      "generating": "正在產生分享網址...",
+      "noSkills": "在技能樹中解鎖技能後即可產生分享連結。",
+      "dbUnavailable": "分享連結目前無法使用。請使用 JSON 匯出來分享你的配置。",
+      "exportJson": "匯出 JSON",
+      "exportJsonTitle": "匯出為 JSON",
+      "buildName": "配置名稱",
+      "download": "下載",
+      "close": "關閉"
+    },
+    "import": {
+      "title": "匯入技能",
+      "urlLabel": "從網址匯入",
+      "import": "匯入網址",
+      "importJson": "匯入 JSON",
+      "warning": "請只匯入來自可信來源的配置。"
+    },
+    "settings": {
+      "title": "設定",
+      "treeVersion": "技能樹",
+      "gameUpdate": "更新",
+      "gameBuild": "組建",
+      "appVersion": "應用程式",
+      "sounds": "音效",
+      "language": "語言",
+      "hardcap": "技能點上限",
+      "audioBlocked": "瀏覽器封鎖了音訊。請在瀏覽器設定中允許此網站播放音訊，然後再試一次。"
+    },
+    "refundConfirm": {
+      "title": "退還技能",
+      "message": "這也會退還 {{count}} 個相連的技能。要繼續嗎？",
+      "confirm": "確認",
+      "cancel": "取消"
+    },
+    "resetConfirm": {
+      "title": "重設技能樹",
+      "message": "這會移除所有已選技能。確定嗎？",
+      "confirm": "重設",
+      "cancel": "取消"
+    },
+    "skillCap": {
+      "title": "已達技能點上限",
+      "message": "你已達到技能點上限。請先退還部分技能，再解鎖新技能。",
+      "ok": "確定",
+      "hardcapHint": "你可以在設定中關閉此限制。"
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "已複製分享網址",
+    "buildImported": "已匯入配置「{{name}}」",
+    "differentTreeVersion": "此配置是為其他版本的技能樹製作的。匯入後請檢查其技能。",
+    "noSkillsAllocated": "尚未分配技能！",
+    "invalidUrl": "網址無效！",
+    "invalidCode": "代碼無效",
+    "skillsRemoved": "已移除不再屬於此技能樹的技能：{{names}}",
+    "skillsDisconnected": "已移除不再與技能樹相連的技能：{{names}}",
+    "skillLevelsLowered": "已將技能等級降至目前上限：{{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "紫色煙霧背景"
+  },
+  "errors": {
+    "serverError": "伺服器錯誤",
+    "notFound": "找不到頁面"
+  }
+}

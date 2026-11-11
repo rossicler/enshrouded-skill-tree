@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Enshrouded スキルプランナー",
+    "description": "ゲーム「Enshrouded」のスキルツリープランナーです。"
+  },
+  "hud": {
+    "import": "インポート",
+    "export": "エクスポート",
+    "clear": "クリア",
+    "discord": "Discord",
+    "about": "概要"
+  },
+  "dialogs": {
+    "advancedSharing": "詳細な共有",
+    "about": {
+      "title": "概要",
+      "description1": "このツールは、Enshrouded のプレイヤーがスキルツリーやビルドを手軽に共有できるようにするためだけに作られました。Keen Games とは無関係であり、Enshrouded に関するいかなる権利も所有していません。",
+      "description2": "このツールはオープンソースで、誰でも開発に参加できます。参加したい方は <githubLink>GitHub リポジトリ</githubLink> をご覧いただくか、<discordLink>Discord サーバー</discordLink> に参加してください。",
+      "description3": "このツールで使用している素材の一部を提供してくれた <glitchizLink>@Glitchiz</glitchizLink> に感謝します。",
+      "close": "閉じる"
+    },
+    "export": {
+      "title": "ビルドを共有",
+      "shortUrl": "共有URL",
+      "generating": "共有URLを生成中...",
+      "noSkills": "共有リンクを作成するには、ツリーでスキルを解除してください。",
+      "dbUnavailable": "共有リンクは現在利用できません。JSON エクスポートでビルドを共有してください。",
+      "exportJson": "JSON をエクスポート",
+      "exportJsonTitle": "JSON としてエクスポート",
+      "buildName": "ビルド名",
+      "download": "ダウンロード",
+      "close": "閉じる"
+    },
+    "import": {
+      "title": "スキルをインポート",
+      "urlLabel": "URL からインポート",
+      "import": "URL をインポート",
+      "importJson": "JSON をインポート",
+      "warning": "信頼できる提供元のビルドのみインポートしてください。"
+    },
+    "settings": {
+      "title": "設定",
+      "treeVersion": "スキルツリー",
+      "gameUpdate": "アップデート",
+      "gameBuild": "ビルド",
+      "appVersion": "アプリ",
+      "sounds": "効果音",
+      "language": "言語",
+      "hardcap": "スキルポイントの上限",
+      "audioBlocked": "ブラウザによって音声がブロックされました。ブラウザの設定でこのサイトの音声を許可してから、もう一度お試しください。"
+    },
+    "refundConfirm": {
+      "title": "スキルを返還",
+      "message": "接続されている {{count}} 個のスキルも返還されます。続行しますか？",
+      "confirm": "確認",
+      "cancel": "キャンセル"
+    },
+    "resetConfirm": {
+      "title": "スキルツリーをリセット",
+      "message": "選択したスキルがすべて削除されます。よろしいですか？",
+      "confirm": "リセット",
+      "cancel": "キャンセル"
+    },
+    "skillCap": {
+      "title": "スキルポイントの上限に達しました",
+      "message": "スキルポイントが上限に達しました。新しいスキルを解除する前に、いくつかのスキルを返還してください。",
+      "ok": "OK",
+      "hardcapHint": "この上限は設定で無効にできます。"
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "共有URLをコピーしました",
+    "buildImported": "ビルド「{{name}}」をインポートしました",
+    "differentTreeVersion": "このビルドは別のバージョンのスキルツリー用に作成されました。インポート後にスキルを確認してください。",
+    "noSkillsAllocated": "スキルが割り振られていません！",
+    "invalidUrl": "無効なURLです！",
+    "invalidCode": "無効なコードです",
+    "skillsRemoved": "このスキルツリーに存在しなくなったスキルを削除しました: {{names}}",
+    "skillsDisconnected": "ツリーとつながらなくなったスキルを削除しました: {{names}}",
+    "skillLevelsLowered": "スキルレベルを現在の上限まで下げました: {{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "紫色の煙の背景"
+  },
+  "errors": {
+    "serverError": "サーバーエラー",
+    "notFound": "ページが見つかりません"
+  }
+}

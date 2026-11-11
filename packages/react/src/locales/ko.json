@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "레벨 {{current}} / {{max}}",
+    "unlock": "잠금 해제",
+    "outOfRange": "범위 밖",
+    "share": "이 스킬 링크 공유",
+    "refund": "환급",
+    "levelUp": "레벨 업",
+    "refundOne": "1 환급",
+    "refundAll": "모두 환급",
+    "skillPointIcon": "스킬 포인트 아이콘",
+    "close": "닫기"
+  },
+  "card": {
+    "label": "스킬 트리",
+    "zoomIn": "확대",
+    "zoomOut": "축소",
+    "fit": "트리 전체 보기",
+    "expand": "펼치기",
+    "fullscreen": "전체 화면",
+    "exitFullscreen": "전체 화면 종료",
+    "close": "닫기"
+  },
+  "kit": {
+    "close": "닫기",
+    "copy": "복사"
+  },
+  "points": {
+    "skillPoints": "스킬 포인트",
+    "flameLevel": "불꽃 레벨",
+    "skillPointIcon": "스킬 포인트 아이콘",
+    "flameIcon": "불꽃 아이콘",
+    "flameDown": "불꽃 레벨 낮추기",
+    "flameUp": "불꽃 레벨 높이기"
+  },
+  "budget": {
+    "title": "바이옴별 포인트",
+    "playerLevel": "플레이어 레벨",
+    "total": "총 스킬 포인트",
+    "reset": "모두 잠금 해제"
+  },
+  "biomes": {
+    "springlands": "스프링랜드",
+    "revelwood": "레벨우드",
+    "nomad_highlands": "유목민 고지대",
+    "kindlewastes": "킨들웨이스트",
+    "albaneve_summits": "알바네브 봉우리",
+    "veilwater_basin": "베일워터 유역",
+    "cinders_cradle": "재의 요람"
+  },
+  "stats": {
+    "button": "능력치",
+    "title": "능력치 요약",
+    "basic": "기본",
+    "close": "닫기",
+    "names": {
+      "constitution": "체질",
+      "strength": "힘",
+      "endurance": "인내력",
+      "dexterity": "민첩",
+      "spirit": "정신",
+      "intelligence": "지능"
+    }
+  },
+  "search": {
+    "placeholder": "검색",
+    "moreMatches": "트리에서 {{count}}개 결과 더 강조됨",
+    "clear": "검색 지우기"
+  }
+}

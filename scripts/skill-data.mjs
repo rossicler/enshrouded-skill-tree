@@ -45,13 +45,45 @@ export function treeContentHash(content) {
   return createHash("sha256").update(JSON.stringify(canonical(content))).digest("hex");
 }
 
-export const candidateContentHash = ({ nodes, edges, types, text }) =>
-  treeContentHash({ nodes, edges, types, text });
+// Per-locale fields of a type: which locales have game text, and the values
+// that a locale formats differently.
+const TRANSLATION_FIELDS = ["gameTextLocales", "gameLocaleValues"];
 
-// App locale -> game locale whose text the import writes to that locale's
-// nodes.json `game` section. The default locale's text is also the metadata
-// fallback. App locales missing here keep only their own translations.
-export const GAME_LOCALES = { en: "En_Us", fr: "Fr_Fr" };
+// What a saved build depends on: nodes, links, costs, levels and values, and
+// the default locale's text. Translations are left out, so adding or updating
+// a language never marks saved builds as made for another tree version.
+export const candidateContentHash = ({ nodes, edges, types, text }) =>
+  treeContentHash({
+    nodes,
+    edges,
+    types: Object.fromEntries(Object.entries(types).map(([type, metadata]) => [type,
+      Object.fromEntries(Object.entries(metadata).filter(([key]) => !TRANSLATION_FIELDS.includes(key)))])),
+    text: { [DEFAULT_LOCALE]: text[DEFAULT_LOCALE] },
+  });
+
+// The applied tree in candidate form (runtime types carry the default text as
+// name/description; the default locale's game text is in its nodes.json).
+export const appliedCandidate = (runtime, defaultNodes) => ({
+  nodes: runtime.nodes,
+  edges: runtime.edges,
+  types: Object.fromEntries(Object.entries(runtime.types).map(([type, { name, description, ...metadata }]) => [type, metadata])),
+  text: { [DEFAULT_LOCALE]: Object.fromEntries(Object.keys(runtime.types)
+    .filter((type) => defaultNodes[type]?.game).map((type) => [type, defaultNodes[type].game])) },
+});
+
+// The candidate keeps the applied tree's hash when only translations changed
+// (also when the applied hash was computed by an older definition of it).
+export const nextContentHash = (candidate, runtime, defaultNodes) => {
+  const hash = candidateContentHash(candidate);
+  const applied = runtime?.treeVersion?.contentHash;
+  return applied && candidateContentHash(appliedCandidate(runtime, defaultNodes)) === hash ? applied : hash;
+};
+
+// The app's languages (packages/core/src/locales/locales.json): app locale ->
+// game locale whose text the import writes to that locale's nodes.json `game`
+// section. The default locale's text is also the metadata fallback.
+export const APP_LOCALES = JSON.parse(fs.readFileSync(path.join(root, CORE_PATHS.locales, "locales.json"), "utf8"));
+export const GAME_LOCALES = Object.fromEntries(APP_LOCALES.map(({ code, gameLocale }) => [code, gameLocale]));
 export const DEFAULT_LOCALE = "en";
 
 // The checked identity file. Version 1 was a bare { gameId: { appId, type } } map.
@@ -592,6 +624,7 @@ export function runImport({ data, mapping, previous, presentation, locales, inpu
   const languages = [DEFAULT_LOCALE, ...Object.keys(locales).filter((lang) => lang !== DEFAULT_LOCALE && GAME_LOCALES[lang])];
   const formats = Object.fromEntries(languages.map((lang) => [lang, localeFormat(data, GAME_LOCALES[lang], inputs)]));
   const { candidate, textReport } = buildCandidate(data, plan.parsed, plan.nextMapping, previous, presentation, formats);
+  candidate.treeVersion = { contentHash: nextContentHash(candidate, previous, locales[DEFAULT_LOCALE] ?? {}) };
   // Which game action each Input label shows, for review.
   const actionNames = Object.fromEntries((data.raw.inputActions ?? []).map((action) => [action.id, action.name]));
   plan.report.inputLabels = Object.entries(inputs).map(([id, key]) => ({ id, action: actionNames[id] ?? null, labelKey: key,
@@ -665,10 +698,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     changes: option("changes") ?? path.join(output, "changes.json"),
   };
   const data = readJson(input);
-  // Every locale the core package has skill text for (scripts/validate-translations.js
-  // checks that it covers every locale of the site).
-  const locales = Object.fromEntries(fs.readdirSync(path.join(root, CORE_PATHS.locales)).sort()
-    .map((lang) => [lang, readJson(paths.locale(lang))]));
+  // Every app locale; a new one starts without a nodes.json and gets the game's text.
+  const locales = Object.fromEntries(APP_LOCALES.map(({ code }) => [code,
+    fs.existsSync(paths.locale(code)) ? readJson(paths.locale(code)) : {}]));
   const locale = locales[DEFAULT_LOCALE];
   const presentation = loadAuthoredPresentation();
   const previous = readJson(paths.runtime);
@@ -698,7 +730,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     }
     const applied = applyImport(result.candidate, locales);
     fs.writeFileSync(paths.runtime, JSON.stringify(applied.runtime, null, 2) + "\n");
-    for (const [lang, nodes] of Object.entries(applied.locales)) fs.writeFileSync(paths.locale(lang), JSON.stringify(nodes, null, 2) + "\n");
+    for (const [lang, nodes] of Object.entries(applied.locales)) {
+      fs.mkdirSync(path.dirname(paths.locale(lang)), { recursive: true });
+      fs.writeFileSync(paths.locale(lang), JSON.stringify(nodes, null, 2) + "\n");
+    }
     fs.writeFileSync(paths.mapping, JSON.stringify(result.nextMapping, null, 2) + "\n");
     // Approvals are single-use: keep a record, but never re-apply them.
     if (changes) fs.renameSync(paths.changes, path.join(path.dirname(paths.changes), "changes.applied.json"));

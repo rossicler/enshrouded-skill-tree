@@ -1,0 +1,1617 @@
+{
+  "ABSORB": {
+    "game": {
+      "name": "吸取",
+      "description": [
+        "受到<b>法術</b>傷害時，每損失一點生命值就有 <b>{{gameValue1}}</b> 機率恢復 <b>1</b> 點法力。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "進階死靈術",
+      "description": [
+        "法術可召喚的空洞盟友最大數量提高 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 個窟髏盟友"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "空中魔杖攻擊",
+      "description": [
+        "裝備魔杖時，，在跳躍過程中按住 <b>{{gameValue1}}</b> 可施展特殊攻擊。",
+        "此攻擊會發射一顆魔法投射物，在小範圍爆炸內造成 <b>50%</b> 額外武器傷害。",
+        "<b>消耗：</b>{{gameValue2}} 體力"
+      ]
+    }
+  },
+  "AIRBORNE": {
+    "game": {
+      "name": "滯空",
+      "description": [
+        "滑翔翼消耗的體力減少 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級減少 <b>{{gamePerLevelValue1}}</b> 消耗"
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "滯空建築師",
+      "description": [
+        "進行建造時會變成火花，以第一人稱視角在基地內恣意遊蕩。若想切換此模式，請按住 {{gameValue1}}。"
+      ]
+    }
+  },
+  "ARACHNOID": {
+    "game": {
+      "name": "蜘蛛網膜",
+      "description": [
+        "攀爬時消耗的體力減少 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級減少 <b>{{gamePerLevelValue1}}</b> 消耗"
+    }
+  },
+  "ARCANE_CONCENTRATION": {
+    "game": {
+      "name": "奧術集中",
+      "description": [
+        "烈焰每升兩級，即可獲得一點靈力。"
+      ]
+    }
+  },
+  "ARCANE_DEFLECTION": {
+    "game": {
+      "name": "奧術偏轉",
+      "description": [
+        "成功格擋敵人的攻擊可恢復 <b>{{gameValue1}}</b> 點法力。",
+        "<b>招架</b><br/>裝備任何近戰武器、結界或盾牌時，你可以進行格擋。抓準時機格擋可以<b>招架</b>攻擊並填滿敵人的<i>暈眩值條</i>。<br/>等待看到敵人或投射物上出現<b>閃光</b>時即可進行招架。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 法力"
+    }
+  },
+  "ARCANE_PROLIFERATION": {
+    "game": {
+      "name": "奧術擴散",
+      "description": [
+        "魔杖攻擊有 <b>30%</b> 的機率產生雙倍的投射物。額外產生的投射物造成的傷害減少 <b>50%</b>。"
+      ]
+    }
+  },
+  "ARSONIST": {
+    "game": {
+      "name": "放火者",
+      "description": [
+        "所有<b>火焰</b>傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "ATHLETE": {
+    "game": {
+      "name": "運動員",
+      "description": [
+        "根據你的力量屬性增加 <b>{{gameValue1}}</b> 倍最大生命值。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 次"
+    }
+  },
+  "ATTR_CONS": {
+    "game": {
+      "name": "體質",
+      "description": [
+        "可讓你的體質屬性提升 1 點。",
+        "每有一點屬性，就能讓生命值提升 {{gameValue1}}。"
+      ]
+    }
+  },
+  "ATTR_DEX": {
+    "game": {
+      "name": "敏捷",
+      "description": [
+        "你的 敏捷 屬性增加 1。",
+        "每屬性點增加弓箭和匕首傷害5%。"
+      ]
+    }
+  },
+  "ATTR_ENDURANCE": {
+    "game": {
+      "name": "耐力",
+      "description": [
+        "可讓你的耐力屬性提升 1 點。",
+        "每有一點屬性，就能讓體力提升 {{gameValue1}} 點。"
+      ]
+    }
+  },
+  "ATTR_INT": {
+    "game": {
+      "name": "智力",
+      "description": [
+        "你的 智力 屬性增加 1。",
+        "每獲得一點屬性點數，魔法傷害就能提升 5%。"
+      ]
+    }
+  },
+  "ATTR_SPIRIT": {
+    "game": {
+      "name": "靈力",
+      "description": [
+        "可讓你的靈力屬性提升 1 點。",
+        "每有一點屬性，就能讓法力提升 {{gameValue1}} 點。"
+      ]
+    }
+  },
+  "ATTR_STR": {
+    "game": {
+      "name": "力量",
+      "description": [
+        "你的 力量 屬性增加 1。",
+        "每點屬性點數提升 5% 近戰傷害。"
+      ]
+    }
+  },
+  "BACKSTAB_MASTERY": {
+    "game": {
+      "name": "背刺精通",
+      "description": [
+        "<b>背刺</b>傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "BARBARIAN": {
+    "game": {
+      "name": "野蠻人",
+      "description": [
+        "烈焰每升兩級，即可獲得一點力量。"
+      ]
+    }
+  },
+  "BARBARIAN_PATH": {
+    "game": {
+      "name": "野蠻人之道",
+      "description": [
+        "使用雙手斧、棍與鎚造成的傷害提高 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "轟炸",
+      "description": [
+        "使用弓造成傷害時，有 <b>{{gameValue1}}</b> 機率恢復該武器 <b>1</b> 點耐久度。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "BASH": {
+    "game": {
+      "name": "猛擊",
+      "description": [
+        "格擋敵人攻擊時會對其造成 <b>{{gameValue1}} 點鈍擊</b>傷害。砸擊傷害隨你的力量屬性提升。",
+        "<b>招架</b><br/>裝備任何近戰武器、結界或盾牌時，你可以進行格擋。抓準時機格擋可以<b>招架</b>攻擊並填滿敵人的<i>暈眩值條</i>。<br/>等待看到敵人或投射物上出現<b>閃光</b>時即可進行招架。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}} 點鈍擊</b> 傷害"
+    }
+  },
+  "BATTLE_HEAL": {
+    "game": {
+      "name": "戰鬥治療",
+      "description": [
+        "以近戰武器造成暴擊時，恢復相當於你最大生命值<b>{{gameValue1}}</b>的生命值。"
+      ],
+      "perLevelLabel": "每級最大生命值的 <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "BEAST_MASTER": {
+    "game": {
+      "name": "獸王",
+      "description": [
+        "當你被攻擊鎖定時，<b>50</b> 公尺內的<b>野生動物</b>會攻擊敵人。"
+      ]
+    }
+  },
+  "BEE_STING": {
+    "game": {
+      "name": "蜂螫",
+      "description": [
+        "滯空時拉弓或瞄準可短暫減緩墜落速度。每次射擊都會讓你微幅上升，延長滯空時間。",
+        "<b>消耗：</b>每秒 {{gameValue1}} 體力"
+      ]
+    }
+  },
+  "BEGONE": {
+    "game": {
+      "name": "退散！",
+      "description": [
+        "一道蘊含法力的拳擊，可擊退並擊暈敵人。",
+        "只要法力充足，便會取代空手攻擊。",
+        "<b>消耗：</b>{{gameValue1}} 法力"
+      ]
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "施法爆裂",
+      "description": [
+        "使用魔杖造成暴擊後，在 {{gameValue1}} 秒內下一次法杖攻擊的基礎傷害提高 <b>{{gameValue2}}</b>。"
+      ]
+    }
+  },
+  "BLESSED_ARROWS": {
+    "game": {
+      "name": "祝福箭",
+      "description": [
+        "以弓箭造成暴擊會恢復 <b>{{gameValue1}}</b> 點法力。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 法力"
+    }
+  },
+  "BLINK": {
+    "game": {
+      "name": "閃現",
+      "description": [
+        "將 翻滾閃避 技能替換為短程傳送。",
+        "「閃現」同時也會替換「戰術行動」技能中的側向 翻滾閃避。",
+        "<b>消耗：</b>{{gameValue1}} 體力"
+      ]
+    }
+  },
+  "BLINK_ATTACK": {
+    "game": {
+      "name": "閃現攻擊",
+      "description": [
+        "閃現至敵人面前並觸發爆炸，造成小範圍<b>火焰</b>傷害。",
+        "傷害和法力消耗取決於智力屬性。"
+      ]
+    }
+  },
+  "BLOOD_MAGIC": {
+    "game": {
+      "name": "血法術",
+      "description": [
+        "法力降至 <b>20%</b> 以下時，以每點法力消耗 <b>1</b> 點生命值的代價恢復高達 <b>35%</b> 的最大法力。",
+        "效果在生命值為 <b>1</b> 時停止。",
+        "<b>冷卻時間：</b>2 分鐘"
+      ]
+    }
+  },
+  "BLOOD_RAGE": {
+    "game": {
+      "name": "血怒",
+      "description": [
+        "當 <b>{{gameValue1}}</b> 公尺內的敵人被近戰武器擊殺時，你會陷入<b>血怒</b>。",
+        "<b>血怒</b><br/>近戰武器傷害增加 <b>{{gameValue2}}</b>，持續<b>10</b> 秒。"
+      ],
+      "perLevelLabel": "每級<b>{{gamePerLevelValue1}}</b> 公尺範圍"
+    }
+  },
+  "BLOOD_WARRIOR": {
+    "game": {
+      "name": "浴血戰士",
+      "description": [
+        "使用<b>潛行攻擊</b>或<b>無情攻擊</b>擊敗敵人後，會產生一顆生命寶珠。",
+        "採集寶珠可恢復<b>10%</b>的對應資源。"
+      ]
+    }
+  },
+  "BLOODLETTING": {
+    "game": {
+      "name": "放血",
+      "description": [
+        "以法術造成暴擊時，有 <b>{{gameValue1}}</b> 機率產生兩個生命值、法力及／或體力寶珠。",
+        "收集寶珠可恢復 <b>10%</b> 的對應資源。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "BONE_TO_ASH": {
+    "game": {
+      "name": "骨灰",
+      "description": [
+        "對 窟髏 造成的傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "BOUNTY_BONANZA": {
+    "game": {
+      "name": "致富之道",
+      "description": [
+        "透過<b>精巧射擊</b>擊敗<b>霧鎖族</b>敵人後，團隊額外獲得 <b>{{gameValue1}}</b> 點經驗值。",
+        "<b>精巧射擊</b><br/>以箭矢命中敵人頭部等弱點，即視為精巧射擊。",
+        "精巧射擊可對無頭盔的敵人造成額外 100% 的基礎傷害，而對佩戴頭盔的敵人則造成額外 50% 的基礎傷害。<br/>可透過精巧射擊傷害屬性來持續提升傷害。"
+      ]
+    }
+  },
+  "BOW_SPECIALIZATION": {
+    "game": {
+      "name": "弓箭專精",
+      "description": [
+        "解鎖弓箭的特殊技能。<br/>在產生足夠的專注後，按下 <b>{{gameValue1}}</b> 以釋放強大的特殊技能。",
+        "<b>專注</b><br/>透過攻擊獲得專注。專注可以透過任何武器類型累積，並用於觸發武器的特殊技能。"
+      ]
+    }
+  },
+  "BREACH": {
+    "game": {
+      "name": "突破",
+      "description": [
+        "<b>被壓制</b>的敵人受到的近戰物理傷害增加 <b>{{gameValue1}}</b>，持續 <b>3</b> 秒。",
+        "<b>壓制</b><br/>攻擊格擋中的敵人或完美格擋其攻擊，會累積他們的<i>暈眩值條</i>，直到他們<b>遭到壓制</b>為止。<br/><b>遭到壓制</b>的敵人將門戶大開，可對其發動無情攻擊。"
+      ]
+    }
+  },
+  "BRUTE": {
+    "game": {
+      "name": "野蠻",
+      "description": [
+        "近戰<b>鈍擊</b>傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "CALM_SPIRIT": {
+    "game": {
+      "name": "平靜之靈",
+      "description": [
+        "除非被激怒，否則 <b>50</b> 公尺內的<b>野生動物</b>不會再攻擊你。",
+        "此效果不影響受霧幕腐化的動物。"
+      ]
+    }
+  },
+  "CHAIN_HIT": {
+    "game": {
+      "name": "連鎖打擊",
+      "description": [
+        "使用法術武器造成暴擊時，會額外命中 <b>15</b> 公尺內的一名隨機目標，每點智力造成 <b>5 點電擊</b>傷害。<br/>可命中初始目標兩次，而非連鎖反應至另一個目標。"
+      ]
+    }
+  },
+  "CHAIN_REACTION": {
+    "game": {
+      "name": "回音爆裂物",
+      "description": [
+        "每次敵人被<b>爆炸箭矢</b>擊中都有 <b>40%</b> 的機率觸發次要爆炸，在小範圍內造成 <b>50%</b> 傷害。"
+      ]
+    }
+  },
+  "COUNTER_BATTERY": {
+    "game": {
+      "name": "蓄能反擊",
+      "description": [
+        "對<b>遠距</b>敵人造成的傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "COUNTERSTRIKE": {
+    "game": {
+      "name": "反擊",
+      "description": [
+        "受到傷害後，有 <b>{{gameValue1}}</b> 機率將<b>{{gameValue2}}</b>的傷害作為<b>火焰</b>傷害反彈給攻擊者。",
+        "這種法術攻擊可以觸發其他技能。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率和<b>{{gamePerLevelValue2}}</b> 反射傷害"
+    }
+  },
+  "CRASH_DOWN_ATTACK": {
+    "game": {
+      "name": "墜地攻擊",
+      "description": [
+        "裝備近戰武器時，在跳躍過程中按住 <b>{{gameValue1}}</b> 可發動特殊攻擊。",
+        "飛身叩擊會在小範圍爆炸半徑內額外造成 50% 武器傷害，並根據所使用的武器類型消耗體力。",
+        "<b>消耗：</b>{{gameValue2}} - {{gameValue3}} 體力",
+        "<b>破擋者</b><br/>此特殊攻擊命中格擋中的敵人時，累積其<i>暈眩值條</i>的效果加倍。。"
+      ]
+    }
+  },
+  "CRASH_DOWN_FORCE": {
+    "game": {
+      "name": "墜地：力道",
+      "description": [
+        "施展二段跳攻擊時，<b>飛身叩擊</b>造成的武器傷害提高 <b>20%</b>。"
+      ]
+    }
+  },
+  "CULL_THE_HERD": {
+    "game": {
+      "name": "找出群體弱點",
+      "description": [
+        "對野生動物造成的傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "CUTTHROAT": {
+    "game": {
+      "name": "割喉者",
+      "description": [
+        "潛行攻擊傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "DAGGER_MASTERY": {
+    "game": {
+      "name": "匕首專精",
+      "description": [
+        "匕首傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "DAGGER_SPECIALIZATION": {
+    "game": {
+      "name": "匕首專精",
+      "description": [
+        "解鎖匕首的特殊技能。<br/>在產生足夠的專注後，按下 <b>{{gameValue1}}</b> 以釋放強大的特殊技能。",
+        "<b>專注</b><br/>透過攻擊獲得專注。專注可以透過任何武器類型累積，並用於觸發武器的特殊技能。"
+      ]
+    }
+  },
+  "DARK_ARTS": {
+    "game": {
+      "name": "黑魔法",
+      "description": [
+        "所有<b>霧幕</b>傷害提升 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "DESSERT_STOMACH": {
+    "game": {
+      "name": "大胃王",
+      "description": [
+        "額外獲得一個食物欄位。"
+      ]
+    }
+  },
+  "DIVINE_SURGE": {
+    "game": {
+      "name": "神聖湧動",
+      "description": [
+        "治療法術可造成暴擊，效果取決於你的暴擊傷害。"
+      ]
+    }
+  },
+  "DOUBLE_JUMP": {
+    "game": {
+      "name": "二段跳",
+      "description": [
+        "滯空時可再次跳躍。",
+        "<b>消耗：</b>{{gameValue1}} 體力"
+      ]
+    }
+  },
+  "EAGLE_EYE": {
+    "game": {
+      "name": "鷹眼",
+      "description": [
+        "大幅提升以弓瞄準時的縮放倍率。",
+        "若要在快捷列選取弓，按住{{gameValue1}}即可瞄準。<br/>（或者，按住{{gameValue2}}即可瞄準你裝備的弓。）"
+      ]
+    }
+  },
+  "EAGLES_BANE": {
+    "game": {
+      "name": "飛鷹之災",
+      "description": [
+        "對<b>飛行</b>敵人造成的傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "EARTH_AURA": {
+    "game": {
+      "name": "土之光環",
+      "description": [
+        "散發保護光環，使自身與 <b>{{gameValue2}}</b> 公尺內的所有盟友增加 <b>{{gameValue1}}</b> 物理與法術抗性。"
+      ],
+      "perLevelLabel": "每級<b>{{gamePerLevelValue1}}</b> 公尺範圍"
+    }
+  },
+  "EMERGENCY_BLINK": {
+    "game": {
+      "name": "緊急閃現",
+      "description": [
+        "陷入暈眩狀態時可發動閃現，此舉將破除暈眩狀態。"
+      ]
+    }
+  },
+  "ENDURANCE_OF_THE_FLAME": {
+    "game": {
+      "name": "烈焰耐久性",
+      "description": [
+        "烈焰每升兩級，即可獲得一點耐力。"
+      ]
+    }
+  },
+  "ETERNAL_SPARK": {
+    "game": {
+      "name": "永恆火花",
+      "description": [
+        "魔杖投射物造成傷害時，有<b>{{gameValue1}}</b> 的機率恢復該武器 <b>1</b> 點耐久度。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "EVASION_ATTACK": {
+    "game": {
+      "name": "迴避攻擊",
+      "description": [
+        "裝備近戰武器，在閃避時按下 <b>{{gameValue1}}</b> 可施展閃避攻擊。<br/>此攻擊會衝向敵人並以造成 <b>50%</b> 額外武器傷害。",
+        "<b>消耗：</b>{{gameValue2}} 體力",
+        "<b>破擋者</b><br/>此特殊攻擊命中格擋中的敵人時，累積其<i>暈眩值條</i>的效果加倍。"
+      ]
+    }
+  },
+  "EXALTED": {
+    "game": {
+      "name": "昇華",
+      "description": [
+        "烈焰每提升兩級可獲得一點智力。"
+      ]
+    }
+  },
+  "EXPOSE_WEAKNESS": {
+    "game": {
+      "name": "暴露弱點",
+      "description": [
+        "使用匕首造成暴擊可破壞敵人護甲，施加<b>減益效果</b>，使他們在 <b>{{gameValue2}}</b> 秒內受到更高的<b>{{gameValue1}}</b>物理傷害。"
+      ]
+    }
+  },
+  "FATAL_PRECISION": {
+    "game": {
+      "name": "致命精準",
+      "description": [
+        "暴擊率增加 <b>{{gameValue1}}</b>。<br/>暴擊傷害增加 <b>{{gameValue2}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 暴擊率和<b>{{gamePerLevelValue2}}</b> 暴擊傷害"
+    }
+  },
+  "FELLING_AXE_SPECIALIZATION": {
+    "game": {
+      "name": "伐木斧專精",
+      "description": [
+        "解鎖伐木斧的特殊技能。<br/>在產生足夠的專注後，按下 <b>{{gameValue1}}</b> 以釋放強大的特殊技能。",
+        "<b>專注</b><br/>透過攻擊獲得專注。專注可以透過任何武器類型累積，並用於觸發武器的特殊技能。"
+      ]
+    }
+  },
+  "FINESSE": {
+    "game": {
+      "name": "機智",
+      "description": [
+        "單手劍、單手斧、單手棍與匕首造成傷害時，有 <b>{{gameValue1}}</b> 機率為該武器恢復 <b>1</b> 點耐久度。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "FIRE_RESISTANCE": {
+    "game": {
+      "name": "火焰抗性",
+      "description": [
+        "增加你的<b>火焰抗性</b><b>{{gameValue1}}</b>，這能減少受到的<b>火焰</b>傷害。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 抗性"
+    }
+  },
+  "FISHERMANS_RESOLVE": {
+    "game": {
+      "name": "漁夫的決心",
+      "description": [
+        "增加你的釣魚耐力 <b>{{gameValue1}}</b>。",
+        "讓你與上鉤的魚進行更持久的搏鬥。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 釣魚耐力"
+    }
+  },
+  "FROST": {
+    "game": {
+      "name": "霜凍",
+      "description": [
+        "受到近戰傷害時，會使攻擊者緩速 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "GIANT_SLAYER_HOOK": {
+    "game": {
+      "name": "巨人屠戮鉤",
+      "description": [
+        "戰鬥中，使用<b>抓鉤</b>將自己拉向大型敵人。",
+        "此技能消耗依敵人等級而定，敵人等級越高，消耗越大。",
+        "<b>基礎消耗：</b>{{gameValue1}} 體力"
+      ]
+    }
+  },
+  "GOOD_METABOLISM": {
+    "game": {
+      "name": "優良代謝",
+      "description": [
+        "生命值、法力與體力寶珠恢復其對應資源的<b>30%</b>，而非<b>10%</b>。",
+        "生命值與法力藥水可恢復額外<b>20%</b>的資源。"
+      ]
+    }
+  },
+  "GRACEFUL_STRIDE": {
+    "game": {
+      "name": "優雅進擊",
+      "description": [
+        "烈焰每升兩級，即可獲得一點敏捷。"
+      ]
+    }
+  },
+  "GROUNDING_HOOK": {
+    "game": {
+      "name": "接地鉤",
+      "description": [
+        "戰鬥中，使用<b>抓鉤</b>將<b>飛行</b>的敵人拉向自己。",
+        "此技能消耗依敵人等級而定，敵人等級越高，消耗越大。",
+        "<b>基礎消耗：</b>{{gameValue1}} 體力"
+      ]
+    }
+  },
+  "HEALER": {
+    "game": {
+      "name": "治療者",
+      "description": [
+        "治療法術與水之光環的生命恢復量提升 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 治療量"
+    }
+  },
+  "HEALER_REVIVE": {
+    "game": {
+      "name": "妙手回春",
+      "description": [
+        "復活玩家時其生命值增加 <b>{{gameValue1}}</b>。",
+        "復活玩家的預設生命值為 <b>10%</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 生命值"
+    }
+  },
+  "HEAVY_HANDED": {
+    "game": {
+      "name": "重擊",
+      "description": [
+        "使用近戰武器攻擊格擋中的敵人時，累積其<i>暈眩值</i>的速度提高 <b>{{gameValue1}}</b>。",
+        "<b>壓制</b><br/>攻擊格擋中的敵人或完美格擋其攻擊，會累積他們的<i>暈眩值條</i>，直到他們<b>遭到壓制</b>為止。<br/><b>遭到壓制</b>的敵人將門戶大開，可對其發動無情攻擊。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 效果"
+    }
+  },
+  "HEAVY_PLATES": {
+    "game": {
+      "name": "重甲",
+      "description": [
+        "已裝備物品的物理護甲值提升 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級物理防禦增加 <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "HEAVY_SPECIALIZATION": {
+    "game": {
+      "name": "重擊者",
+      "description": [
+        "雙手近戰武器的攻擊速度提升 <b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "ICE_RESISTANCE": {
+    "game": {
+      "name": "冰霜抗性",
+      "description": [
+        "增加你的<b>冰霜抗性</b><b>{{gameValue1}}</b>，這能減少受到的<b>冰霜</b>傷害。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 抗性"
+    }
+  },
+  "ICEMAN": {
+    "game": {
+      "name": "冰人",
+      "description": [
+        "所有<b>冰霜</b>傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "INNER_FIRES": {
+    "game": {
+      "name": "內心之火",
+      "description": [
+        "<b>在霧幕</b>的停留時間增加 <b>{{gameValue1}}</b>，讓您可以探索更久。",
+        "<b>霧幕內的停留時間</b><br/>如果這個時間耗盡，霧幕將會吞噬你。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "KICK": {
+    "game": {
+      "name": "踢擊",
+      "description": [
+        "裝備近戰武器時，可在格擋時攻擊以使出踢擊。",
+        "踢擊傷害雖低，但力道強勁，可命中目標、累積敵人<i>暈眩值條</i>並將其擊退。",
+        "<i>暈眩值條</i>的累積效果取決於敏捷。<br/>暈眩時間取決於敵人的體型。",
+        "<b>壓制</b><br/>攻擊格擋中的敵人或完美格擋其攻擊，會累積他們的<i>暈眩值條</i>，直到他們<b>遭到壓制</b>為止。<br/><b>遭到壓制</b>的敵人將門戶大開，可對其發動無情攻擊。"
+      ]
+    }
+  },
+  "LAST_MEAL": {
+    "game": {
+      "name": "最後一餐",
+      "description": [
+        "食物的增益在死亡後依然存在，但持續時間減半。"
+      ]
+    }
+  },
+  "LIFE_BURST": {
+    "game": {
+      "name": "生命爆發",
+      "description": [
+        "以法術武器擊敗敵人時，將為目標 <b>15</b> 公尺內的所有玩家，恢復相當於你智力屬性 <b>{{gameValue1}}</b> 倍的生命值。"
+      ]
+    }
+  },
+  "LIFE_ESSENCES": {
+    "game": {
+      "name": "生命精華",
+      "description": [
+        "你的最大生命值增加，數值為智力屬性的 <b>{{gameValue1}}</b> 倍。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 次"
+    }
+  },
+  "LUMBERJACK": {
+    "game": {
+      "name": "伐木工",
+      "description": [
+        "工具對木頭造成的傷害提升 <b>{{gameValue1}}</b>。<br/>這包括樹木與木質地形。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "MAGE_APPRENTICE": {
+    "game": {
+      "name": "魔法師學徒",
+      "description": [
+        "魔杖與法杖造成的傷害提高 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "MANA_CURRENTS": {
+    "game": {
+      "name": "法力洋流",
+      "description": [
+        "基礎法力再生增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 法力再生"
+    }
+  },
+  "MARKSMAN": {
+    "game": {
+      "name": "射手",
+      "description": [
+        "弓箭傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "MARTYR": {
+    "game": {
+      "name": "烈士",
+      "description": [
+        "當你陣亡時，<b>30</b> 公尺內的所有盟友將恢復 <b>50%</b> 的最大生命值。",
+        "他們還會獲得<b>最終祝福</b>增益，最大生命值提高 <b>100</b> 點，持續 <b>15</b> 分鐘。"
+      ]
+    }
+  },
+  "MASON": {
+    "game": {
+      "name": "石匠",
+      "description": [
+        "工具對石頭造成的傷害提升 <b>{{gameValue1}}</b>。<br/>這包括石頭地形與寶石礦脈。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "MASS_DESTRUCTION": {
+    "game": {
+      "name": "大肆破壞",
+      "description": [
+        "使用法術武器造成暴擊時，對目標 <b>{{gameValue1}}</b> 公尺內的所有敵人造成每點智力 <b>2</b> 點電擊傷害。"
+      ],
+      "perLevelLabel": "每級<b>{{gamePerLevelValue1}}</b> 公尺範圍"
+    }
+  },
+  "MERCILESS_ATTACK": {
+    "game": {
+      "name": "無情攻擊",
+      "description": [
+        "對<b>制伏</b>的敵人按下 <b>{{gameValue1}}</b> 以施展<b>無情攻擊</b>，造成 <b>{{gameValue2}}</b> 傷害。",
+        "<b>壓制</b><br/>攻擊格擋中的敵人或完美格擋其攻擊，會累積他們的<i>暈眩值條</i>，直到他們<b>遭到壓制</b>為止。<br/><b>遭到壓制</b>的敵人將門戶大開，可對其發動無情攻擊。",
+        "魔杖、法杖與弓無法施展 無情攻擊。"
+      ]
+    }
+  },
+  "MINER": {
+    "game": {
+      "name": "礦工",
+      "description": [
+        "採集資源時，有 <b>10%</b> 的機率額外獲得一份資源。"
+      ]
+    }
+  },
+  "MITHRIDATIST": {
+    "game": {
+      "name": "百毒不侵",
+      "description": [
+        "獲得 <b>25%</b> 機率避免中毒。"
+      ]
+    }
+  },
+  "MULTI_SHOT": {
+    "game": {
+      "name": "多重射擊",
+      "description": [
+        "射擊<i>普通箭矢</i>時，有<b>20%</b>的機率觸發<b>箭雨</b>，箭矢會小範圍擴散。",
+        "以此方式射出的<i>普通箭矢</i>將會消耗彈藥。",
+        "<b>箭雨</b>無法由<i>特殊箭矢</i>觸發。"
+      ]
+    }
+  },
+  "MULTI_SHOT_SPREAD": {
+    "game": {
+      "name": "多重射擊擴散",
+      "description": [
+        "透過<b>多重射擊</b>技能觸發<b>箭雨</b>時，有 <b>25%</b> 機率額外產生一枝<i>普通箭矢</i>。",
+        "此額外的<i>普通箭矢</i>不會消耗彈藥。"
+      ]
+    }
+  },
+  "MULTI_SHOT_TRIGGER": {
+    "game": {
+      "name": "多重射擊觸發",
+      "description": [
+        "射擊<i>特殊箭矢</i>時，現在會觸發<b>多重射擊</b>技能的<b>箭雨</b>。",
+        "以此方式射出的<i>特殊箭矢</i>將會消耗彈藥。"
+      ]
+    }
+  },
+  "NECROMANCER": {
+    "game": {
+      "name": "死靈術士",
+      "description": [
+        "使用法術武器擊殺敵人時，你有 <b>{{gameValue1}}</b> 機率召喚一名友好的<b>骷髏同伴</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "NEMESIS": {
+    "game": {
+      "name": "強敵",
+      "description": [
+        "增加你從敵人那裡吸引的注意力 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 吸引注意力"
+    }
+  },
+  "ONE_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "單手專精",
+      "description": [
+        "解鎖單手近戰武器的特殊技能。<br/>在產生足夠的專注後，按下 <b>{{gameValue1}}</b> 以釋放強大的特殊技能。",
+        "<b>專注</b><br/>透過攻擊獲得專注。專注可以透過任何武器類型累積，並用於觸發武器的特殊技能。"
+      ]
+    }
+  },
+  "OPPORTUNITY": {
+    "game": {
+      "name": "契機",
+      "description": [
+        "將<b>無情攻擊</b>的傷害倍率增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "PICKAXE_SPECIALIZATION": {
+    "game": {
+      "name": "十字鎬專精",
+      "description": [
+        "解鎖十字鎬的特殊技能。<br/>在產生足夠的專注後，按下 <b>{{gameValue1}}</b> 以釋放強大的特殊技能。",
+        "<b>專注</b><br/>透過攻擊獲得專注。專注可以透過任何武器類型累積，並用於觸發武器的特殊技能。"
+      ]
+    }
+  },
+  "POISON_MASTERY": {
+    "game": {
+      "name": "劇毒專精",
+      "description": [
+        "<b>劇毒之刃</b>匕首特性的傷害提升 <b>100%</b>。"
+      ]
+    }
+  },
+  "POISONED_BLADES": {
+    "game": {
+      "name": "劇毒之刃",
+      "description": [
+        "使用帶有<b>劇毒之刃</b>特性的匕首時，使敵人中毒的機率提升至 <b>30%</b>。"
+      ]
+    }
+  },
+  "POWER_PARRY": {
+    "game": {
+      "name": "強力格擋",
+      "description": [
+        "你的格擋力增加 <b>{{gameValue1}}</b>。",
+        "<b>招架</b><br/>裝備任何近戰武器、結界或盾牌時，你可以進行格擋。抓準時機格擋可以<b>招架</b>攻擊並填滿敵人的<i>暈眩值條</i>。<br/>等待看到敵人或投射物上出現<b>閃光</b>時即可進行招架。",
+        "<b>壓制</b><br/>攻擊格擋中的敵人或完美格擋其攻擊，會累積他們的<i>暈眩值條</i>，直到他們<b>遭到壓制</b>為止。<br/><b>遭到壓制</b>的敵人將門戶大開，可對其發動無情攻擊。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 格擋力量"
+    }
+  },
+  "PRIMAL_FORCE": {
+    "game": {
+      "name": "原始之力",
+      "description": [
+        "對 沃卡 造成的傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "PROSPECTOR": {
+    "game": {
+      "name": "探勘者",
+      "description": [
+        "工具對金屬造成的傷害提升 <b>{{gameValue1}}</b>。<br/>這包括金屬礦脈。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "穿刺",
+      "description": [
+        "遠距<b>穿刺</b>傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "PURIFICATION": {
+    "game": {
+      "name": "淨化",
+      "description": [
+        "使用單手或雙手斧、棍、鎚、劍或巨劍擊敗一個受霧幕感染的敵人，可恢復 <b>{{gameValue1}}</b> 秒的 <b>在 霧幕 內的可停留時間</b>。",
+        "<b>霧幕內的停留時間</b><br/>如果這個時間耗盡，霧幕將會吞噬你。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 秒"
+    }
+  },
+  "QUALITY_GEAR": {
+    "game": {
+      "name": "事半功倍",
+      "description": [
+        "工具在擊中時有 <b>{{gameValue1}}</b> 的機率恢復 <b>1</b> 點耐久度。"
+      ]
+    }
+  },
+  "QUICK_CHARGE": {
+    "game": {
+      "name": "快速充能",
+      "description": [
+        "法術充能時間減少 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 充能時間"
+    }
+  },
+  "QUICK_REFLEX_BLOCK": {
+    "game": {
+      "name": "快速反射磚塊",
+      "description": [
+        "以匕首格擋時，短暫提升你的格擋值，確保一次差點失誤的格擋只會消耗最少的體力。"
+      ]
+    }
+  },
+  "RADIANT_AURA": {
+    "game": {
+      "name": "光輝光環",
+      "description": [
+        "<b>{{gameValue1}}</b> 公尺內的所有<b>霧鎖族</b>敵人每秒受到每點智力 <b>{{gameValue2}} 點火焰</b>傷害。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 公尺範圍與每點智力 <b>{{gamePerLevelValue2}} 火焰</b> 傷害"
+    }
+  },
+  "RANGER": {
+    "game": {
+      "name": "遊俠",
+      "description": [
+        "使你的 敏捷 和 耐力 屬性增加 <b>{{gameValue1}}</b>。",
+        "基礎體力再生增加 <b>{{gameValue2}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 敏捷 和 耐力。<br/>每級 <b>{{gamePerLevelValue2}}</b> 體力再生。"
+    }
+  },
+  "REBOUND": {
+    "game": {
+      "name": "反彈",
+      "description": [
+        "基礎體力再生增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 體力再生"
+    }
+  },
+  "RELENTLESS": {
+    "game": {
+      "name": "無情",
+      "description": [
+        "使用雙手武器造成暴擊時，下一擊的暴擊率提升 <b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "RICOCHETS": {
+    "game": {
+      "name": "破片爆裂",
+      "description": [
+        "每次被<b>爆炸箭矢</b>命中，使其造成的傷害提高 <b>10%</b>。"
+      ]
+    }
+  },
+  "RIGHTEOUS_FIRE": {
+    "game": {
+      "name": "正義之火",
+      "description": [
+        "以法術治療任何目標時會觸發火焰爆發，對周圍的<b>霧鎖族</b>敵人造成相當於治療量 <b>{{gameValue1}}</b> 的<b>火焰</b>傷害。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}} 點火焰</b> 傷害"
+    }
+  },
+  "RUNNER": {
+    "game": {
+      "name": "跑者",
+      "description": [
+        "衝刺速度增加 <b>{{gameValue1}}</b>，且衝刺時的體力消耗減少 <b>{{gameValue2}}</b>。"
+      ],
+      "perLevelLabel": "每級速度增加 <b>{{gamePerLevelValue1}}</b> 且消耗減少 <b>{{gamePerLevelValue2}}</b>"
+    }
+  },
+  "SAVIOUR": {
+    "game": {
+      "name": "救世主",
+      "description": [
+        "復活盟友的時間減少 <b>{{gameValue1}}</b> 秒。",
+        "預設復活時間為 <b>6</b> 秒。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 秒"
+    }
+  },
+  "SHELL_SHOCK": {
+    "game": {
+      "name": "彈震",
+      "description": [
+        "將你的<b>遠距爆裂物</b>注入法力。它們現在會使敵人暈眩 <b>2</b> 秒。",
+        "<b>消耗：</b>每個受暈眩敵人 {{gameValue1}} 法力"
+      ]
+    }
+  },
+  "SHINY_PLATES": {
+    "game": {
+      "name": "閃甲",
+      "description": [
+        "已裝備物品的法術護甲值提升 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級法術防禦增加 <b>{{gamePerLevelValue1}}</b>"
+    }
+  },
+  "SHOCK_RESISTANCE": {
+    "game": {
+      "name": "電擊抗性",
+      "description": [
+        "增加你的<b>電擊抗性</b><b>{{gameValue1}}</b>，這能減少受到的<b>電擊</b>傷害。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 抗性"
+    }
+  },
+  "SHOCKWAVE": {
+    "game": {
+      "name": "震盪波",
+      "description": [
+        "格擋攻擊或<b>制伏</b>敵人來觸發震盪波。",
+        "震盪波會擊退附近敵人並填充<i>暈眩值條</i>，數值依據力量屬性提升。",
+        "<b>招架</b><br/>裝備任何近戰武器、結界或盾牌時，你可以進行格擋。抓準時機格擋可以<b>招架</b>攻擊並填滿敵人的<i>暈眩值條</i>。<br/>等待看到敵人或投射物上出現<b>閃光</b>時即可進行招架。",
+        "<b>壓制</b><br/>攻擊格擋中的敵人或完美格擋其攻擊，會累積他們的<i>暈眩值條</i>，直到他們<b>遭到壓制</b>為止。<br/><b>遭到壓制</b>的敵人將門戶大開，可對其發動無情攻擊。"
+      ]
+    }
+  },
+  "SHROUD_FILTER": {
+    "game": {
+      "name": "霧幕減免",
+      "description": [
+        "以法術武器造成傷害時，有 <b>{{gameValue1}}</b> 機率觸發小規模火焰爆發，為你與 <b>{{gameValue3}}</b> 公尺內的盟友恢復 <b>{{gameValue2}}</b> 秒<b>霧幕停留時間</b>。",
+        "<b>霧幕內的停留時間</b><br/>如果這個時間耗盡，霧幕將會吞噬你。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "SHROUD_MISTERY": {
+    "game": {
+      "name": "苦痛共享",
+      "description": [
+        "受到<b>霧幕</b>傷害時，<b>{{gameValue1}}</b> 公尺內的所有玩家獲得 <b>{{gameValue2}}</b> <b>霧幕抗性</b>加成，持續 <b>30</b> 秒。"
+      ],
+      "perLevelLabel": "每級<b>{{gamePerLevelValue1}}</b> 公尺範圍"
+    }
+  },
+  "SHROUD_RESISTANCE": {
+    "game": {
+      "name": "霧幕抗性",
+      "description": [
+        "增加你的<b>霧幕抗性</b><b>{{gameValue1}}</b>，這能減少受到的<b>霧幕</b>傷害。"
+      ],
+      "perLevelLabel": "每級提升 <b>{{gamePerLevelValue1}}</b> 抗性"
+    }
+  },
+  "SILENT_STRIDE": {
+    "game": {
+      "name": "無聲進擊",
+      "description": [
+        "提升<b>潛行</b>時的移動速度 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 移動速度"
+    }
+  },
+  "SKILL_SHOT": {
+    "game": {
+      "name": "精巧射擊",
+      "description": [
+        "<b>精巧射擊</b>傷害增加 <b>{{gameValue1}}</b>。",
+        "<b>精巧射擊</b><br/>以箭矢命中敵人頭部等弱點，即視為精巧射擊。",
+        "精巧射擊可對無頭盔的敵人造成額外 100% 的基礎傷害，而對佩戴頭盔的敵人則造成額外 50% 的基礎傷害。<br/>可透過精巧射擊傷害屬性來持續提升傷害。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "SLASHER": {
+    "game": {
+      "name": "砍殺者",
+      "description": [
+        "近戰<b>劈砍</b>傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "SLEIGHT_OF_HAND": {
+    "game": {
+      "name": "手法俐落",
+      "description": [
+        "赤手空拳傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "SLICE_AND_DICE": {
+    "game": {
+      "name": "劈斬",
+      "description": [
+        "使用匕首造成暴擊後，你在 {{gameValue1}} 秒內下一次弓箭攻擊的基礎傷害提升 <b>{{gameValue2}}</b>。"
+      ]
+    }
+  },
+  "SNAKE_EATER": {
+    "game": {
+      "name": "噬蛇者",
+      "description": [
+        "提升你的<b>毒素抗性</b> <b>{{gameValue1}}</b>，這能減少受到的<b>毒素</b>傷害。",
+        "<b>毒素</b>傷害會無視護甲，僅能透過<b>毒素抗性</b>來減免。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 抗性"
+    }
+  },
+  "SNAP": {
+    "game": {
+      "name": "力破",
+      "description": [
+        "觸發<b>無情攻擊</b>可恢復 <b>{{gameValue1}}</b> 法力。"
+      ]
+    }
+  },
+  "SNEAK_ATTACK": {
+    "game": {
+      "name": "潛行攻擊",
+      "description": [
+        "潛行接近非警戒敵人並按下 <b>{{gameValue1}}</b> 施展<b>潛行攻擊</b>。",
+        "<b>潛行攻擊</b>可造成 <b>+900%</b> 傷害加成。",
+        "魔杖、法杖與弓無法施展潛行攻擊。"
+      ]
+    }
+  },
+  "SNIPER": {
+    "game": {
+      "name": "狙擊手",
+      "description": [
+        "使用弓時的暴擊率提高 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 暴擊率"
+    }
+  },
+  "SOAKED_DOG": {
+    "game": {
+      "name": "濕透的狗",
+      "description": [
+        "削弱<b>濕透</b>與<b>浸濕</b>減益的效果。",
+        "體力與體力再生效果降低 <b>10%</b>，而非 <b>20%</b>。",
+        "<b>濕透</b><br/>體力與體力恢復速度降低 <b>30%</b>，持續 <b>15</b> 分鐘。溫暖可縮短剩餘持續時間。",
+        "<b>浸濕</b><br/>體力與體力恢復速度降低 <b>30%</b>，持續 <b>30</b> 秒。同時<b>冰霜與電擊抗性</b>降低 <b>30%</b>，但<b>火焰抗性</b>提升 <b>30%</b>。<br/><b>浸濕</b>可施加於敵人。<br/><b>浸濕</b>的持續時間無法被溫暖縮短，並在結束後轉為<b>濕透</b>減益效果。"
+      ]
+    }
+  },
+  "SOUL_LEECH": {
+    "game": {
+      "name": "靈魂汲取",
+      "description": [
+        "使用近戰武器擊殺敵人時，目標 <b>{{gameValue1}}</b> 公尺內的所有玩家可恢復 <b>{{gameValue2}}</b> 法力。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 公尺範圍和 <b>{{gamePerLevelValue2}}</b> 法力"
+    }
+  },
+  "SPELLSLINGER": {
+    "game": {
+      "name": "咒語射手",
+      "description": [
+        "法杖傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "SPLASH_DASH": {
+    "game": {
+      "name": "浪花衝刺",
+      "description": [
+        "讓你能在游泳或潛水時進行閃避衝刺。",
+        "<b>消耗</b>：{{gameValue1}} 體力"
+      ]
+    }
+  },
+  "STEADFAST": {
+    "game": {
+      "name": "堅毅",
+      "description": [
+        "使用近戰武器擊敗敵人會為該武器恢復 <b>{{gameValue1}}</b> 點耐久度。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 耐久度"
+    }
+  },
+  "STING": {
+    "game": {
+      "name": "突刺",
+      "description": [
+        "連續魔杖傷害增加 <b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "STRATEGIC_MANEUVER": {
+    "game": {
+      "name": "戰術行動",
+      "description": [
+        "鎖定敵人目標時，將 翻滾閃避 技能替換為側向 翻滾閃避。",
+        "使用它繞著敵人翻滾，能更輕易地進行側襲或背刺。",
+        "「閃現」會替換「戰術行動」技能中的側向 翻滾閃避。",
+        "<b>消耗：</b>{{gameValue1}} 體力"
+      ]
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "生存本能",
+      "description": [
+        "使用弓或匕首擊敗一個受霧幕感染的敵人，可恢復 <b>{{gameValue1}}</b> 秒的<b>霧幕持續時間</b>。",
+        "<b>霧幕內的停留時間</b><br/>如果這個時間耗盡，霧幕將會吞噬你。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 秒"
+    }
+  },
+  "SWEET_TOOTH": {
+    "game": {
+      "name": "嗜甜如命",
+      "description": [
+        "甜品的體力恢復速度提升 <b>50%</b>。"
+      ]
+    }
+  },
+  "SWIFT_BLADES": {
+    "game": {
+      "name": "手起刀落",
+      "description": [
+        "單手近戰武器的攻擊速度提升 <b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "SWIFTSHOT_SUSTENANCE": {
+    "game": {
+      "name": "快攻支援",
+      "description": [
+        "使用弓箭擊敗敵人時，有 <b>{{gameValue1}}</b> 機率產生一個體力 寶珠。",
+        "收集寶珠可恢復 <b>10%</b> 的對應資源。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "TERROR": {
+    "game": {
+      "name": "恐懼",
+      "description": [
+        "以法術造成暴擊時有 <b>{{gameValue1}}</b> 的機率擊暈目標 <b>2</b> 秒。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率"
+    }
+  },
+  "THICK_SKIN": {
+    "game": {
+      "name": "皮粗肉厚",
+      "description": [
+        "烈焰每提升兩級可獲得一點體質。"
+      ]
+    }
+  },
+  "THRUST": {
+    "game": {
+      "name": "猛進",
+      "description": [
+        "近戰<b>穿刺</b>傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "THUNDER": {
+    "game": {
+      "name": "轟雷",
+      "description": [
+        "所有<b>電擊</b>傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "TITAN_EDGE": {
+    "game": {
+      "name": "泰坦之鋒",
+      "description": [
+        "雙手巨劍傷害提升 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "圖騰精通",
+      "description": [
+        "可召喚的圖騰最大數量提升 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 個圖騰"
+    }
+  },
+  "TOWER": {
+    "game": {
+      "name": "高塔",
+      "description": [
+        "當 <b>20</b> 公尺內有三名或更多敵人時，你的<b>物理抗性</b>增加 <b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "TWO_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "雙手專精",
+      "description": [
+        "解鎖雙手近戰武器的特殊技能。<br/>在產生足夠的專注後，按下 <b>{{gameValue1}}</b> 以釋放強大的特殊技能。",
+        "<b>專注</b><br/>透過攻擊獲得專注。專注可以透過任何武器類型累積，並用於觸發武器的特殊技能。"
+      ]
+    }
+  },
+  "UNITY": {
+    "game": {
+      "name": "化為己用",
+      "description": [
+        "使用魔杖傷害敵人時，有 <b>{{gameValue1}}</b> 機率恢復 <b>{{gameValue2}}</b> 的最大法力。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 機率和最大法力的 <b>{{gamePerLevelValue2}}</b>"
+    }
+  },
+  "UPDRAFT": {
+    "game": {
+      "name": "上升氣流",
+      "description": [
+        "在滑翔時使用 {{gameValue1}} 跳躍會使你向上攀升。每次飛行可使用一次。",
+        "<b>充能</b><br/>啟動前，隨著上升氣流為其充能可使攀升量提升。完全充能可提供額外衝刺。基地內的充能速度將提升。",
+        "<b>消耗：</b>{{gameValue2}} 法力"
+      ]
+    }
+  },
+  "UPWARDS_SLASH_ATTACK": {
+    "game": {
+      "name": "上劈斬",
+      "description": [
+        "裝備近戰武器時，在跳躍上升期間發動強力的上劈攻擊。",
+        "利用此技能可迅速拉近與<b>飛行</b>敵人的距離。",
+        "<b>消耗：</b>{{gameValue1}} 體力"
+      ]
+    }
+  },
+  "VEILED_VIGOR": {
+    "game": {
+      "name": "隱匿活力",
+      "description": [
+        "根據你的熟練度屬性增加 <b>{{gameValue1}}</b> 倍最大生命值。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 次"
+    }
+  },
+  "VETERAN": {
+    "game": {
+      "name": "沙場老將",
+      "description": [
+        "使用單手或雙手斧、棍、鎚、劍、巨劍與匕首時的暴擊率提高 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 暴擊率"
+    }
+  },
+  "VIGOROUS_DEFLECTION": {
+    "game": {
+      "name": "卸力偏轉",
+      "description": [
+        "成功格擋敵人的攻擊可恢復 <b>{{gameValue1}}</b> 點體力。",
+        "<b>招架</b><br/>裝備任何近戰武器、結界或盾牌時，你可以進行格擋。抓準時機格擋可以<b>招架</b>攻擊並填滿敵人的<i>暈眩值條</i>。<br/>等待看到敵人或投射物上出現<b>閃光</b>時即可進行招架。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 體力"
+    }
+  },
+  "VILE_CONCOCTION": {
+    "game": {
+      "name": "邪惡混合物",
+      "description": [
+        "投擲物傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "VITALITY_SURGE": {
+    "game": {
+      "name": "活力湧現",
+      "description": [
+        "使用弓、匕首與投擲物造成暴擊時，可恢復 <b>{{gameValue1}}</b> 體力。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 體力"
+    }
+  },
+  "VUKAH_CULTURE": {
+    "game": {
+      "name": "沃卡文化",
+      "description": [
+        "當你被攻擊鎖定時，<b>50</b> 公尺內的<b>沃卡</b>會攻擊敵人。"
+      ]
+    }
+  },
+  "VUKAH_LANGUAGE": {
+    "game": {
+      "name": "沃卡語",
+      "description": [
+        "除非被激怒，否則 <b>50</b> 公尺內的<b>沃卡</b>不會再攻擊你。"
+      ]
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "魔杖閃避攻擊",
+      "description": [
+        "裝備魔杖，在閃避時按下 <b>{{gameValue1}}</b> 可施展魔杖閃避攻擊。<br/>發射一枚可穿透敵人的魔法飛盤，並造成 <b>50%</b> 額外武器傷害。",
+        "<b>消耗：</b>{{gameValue2}} 體力"
+      ]
+    }
+  },
+  "WAND_MASTERY": {
+    "game": {
+      "name": "魔杖專精",
+      "description": [
+        "魔杖傷害增加 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "WAND_SPECIALIZATION": {
+    "game": {
+      "name": "魔杖專精",
+      "description": [
+        "解鎖魔杖的特殊技能。<br/>在產生足夠的專注後，按下 <b>{{gameValue1}}</b> 以釋放強大的特殊技能。",
+        "<b>專注</b><br/>透過攻擊獲得專注。專注可以透過任何武器類型累積，並用於觸發武器的特殊技能。"
+      ]
+    }
+  },
+  "WANDERLUST": {
+    "game": {
+      "name": "旅遊熱",
+      "description": [
+        "在<b>泥土路上衝刺</b>的體力消耗從 <b>90% 減少至 80%</b>。",
+        "在<b>石板路上衝刺</b>的體力消耗從 <b>75% 減少至 50%</b>。"
+      ]
+    }
+  },
+  "WARDEN": {
+    "game": {
+      "name": "典獄長",
+      "description": [
+        "當 <b>20</b> 公尺內有三名或更多敵人時，你的<b>法術抗性</b>增加 <b>{{gameValue1}}</b>。"
+      ]
+    }
+  },
+  "WARRIOR_PATH": {
+    "game": {
+      "name": "戰士之道",
+      "description": [
+        "使用單手斧、棍與劍造成的傷害提高 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 傷害"
+    }
+  },
+  "WATER_AURA": {
+    "game": {
+      "name": "水之光環",
+      "description": [
+        "你散發出治癒光環，可治療 <b>{{gameValue1}}</b> 公尺內的所有受傷盟友。",
+        "治療效果隨你的智力屬性提升，每 <b>2</b> 點智力可恢復 <b>1</b> 點生命值。"
+      ],
+      "perLevelLabel": "每級<b>{{gamePerLevelValue1}}</b> 公尺範圍"
+    }
+  },
+  "WATERS_OF_LIFE": {
+    "game": {
+      "name": "生命之水",
+      "description": [
+        "將<b>水之光環</b>的治療效果提升至每 <b>2</b> 點智力恢復 <b>2</b> 點生命值。"
+      ]
+    }
+  },
+  "WELL_RESTED": {
+    "game": {
+      "name": "精力旺盛",
+      "description": [
+        "精力充沛 增益的基礎持續時間增加<b>{{gameValue1}}</b> 分鐘。",
+        "<b>精力充沛</b><br/>精力充沛 增益會大幅增加你的最大體力與體力再生。",
+        "這需要<b>庇護所、坐下或睡眠</b>，以及來自熱源的<b>溫暖</b>。",
+        "該增益可以在<b>任何地方</b>刷新。",
+        "周圍的舒適物品會進一步增加其持續時間。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 分鐘"
+    }
+  },
+  "WET_DOG": {
+    "game": {
+      "name": "涉水健將",
+      "description": [
+        "削弱<b>濕透</b>與<b>浸濕</b>減益的效果。",
+        "體力與體力再生效果降低 <b>20%</b>，而非 <b>30%</b>。",
+        "<b>濕透</b><br/>體力與體力恢復速度降低 <b>30%</b>，持續 <b>15</b> 分鐘。溫暖可縮短剩餘持續時間。",
+        "<b>浸濕</b><br/>體力與體力恢復速度降低 <b>30%</b>，持續 <b>30</b> 秒。同時<b>冰霜與電擊抗性</b>降低 <b>30%</b>，但<b>火焰抗性</b>提升 <b>30%</b>。<br/><b>浸濕</b>可施加於敵人。<br/><b>浸濕</b>的持續時間無法被溫暖縮短，並在結束後轉為<b>濕透</b>減益效果。"
+      ]
+    }
+  },
+  "WHIRLWIND_CRESCENDO": {
+    "game": {
+      "name": "旋風漸強",
+      "description": [
+        "裝備雙手武器時，可在連續攻擊的最後觸發旋風攻擊。",
+        "<b>消耗：</b>{{gameValue1}} 體力"
+      ]
+    }
+  },
+  "WIZARD": {
+    "game": {
+      "name": "巫術師",
+      "description": [
+        "使用魔杖與法杖時的暴擊率提高 <b>{{gameValue1}}</b>。"
+      ],
+      "perLevelLabel": "每級 <b>{{gamePerLevelValue1}}</b> 暴擊率"
+    }
+  }
+}

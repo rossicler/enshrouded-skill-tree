@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import { useTranslation } from "next-i18next/pages";
+import { addSkillText, loadSkillText, type SkillTextResources } from "@enshrouded/core";
 
 import { classNames } from "@/utils/utils";
 import { SKILL_TREE_ASSETS } from "@/constants/assets";
@@ -24,9 +25,13 @@ type PropsType = {
   focusNodeId?: string;
   clusterStillProvisioning?: boolean;
   dbAvailable?: boolean;
+  // The locale's skill text (absent for English, which is bundled).
+  skillText?: SkillTextResources;
 };
 
-export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAvailable = false }: PropsType) {
+export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAvailable = false, skillText }: PropsType) {
+  // Before anything below renders a skill name (the HUD, toasts, ?focus=).
+  if (skillText) addSkillText(skillText);
   const dispatch = useAppDispatch();
   const { t } = useTranslation("common");
 
@@ -55,7 +60,7 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div>
-          <SkillPlanner dbAvailable={dbAvailable} focusNodeId={focusNodeId} />
+          <SkillPlanner dbAvailable={dbAvailable} focusNodeId={focusNodeId} skillText={skillText} />
           <InitSkills sharedCode={code} />
         </div>
       </main>
@@ -66,6 +71,9 @@ export default function Home({ code, focusNodeId, clusterStillProvisioning, dbAv
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const locale = context.locale ?? "en";
   const translations = await serverSideTranslations(locale, ["common"]);
+  // Skill text in the page's language, so the first render is already in it.
+  const loadedText = await loadSkillText(locale);
+  const skillText = loadedText.locale === "en" ? {} : { skillText: loadedText };
   const { shortCode, code: rawCode = "", focus } = context.query as Query;
   const focusNodeId = Array.isArray(focus) ? focus[0] : focus;
 
@@ -83,6 +91,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         return {
           props: {
             ...translations,
+            ...skillText,
             clusterStillProvisioning: true,
             ...(focusNodeId ? { focusNodeId } : {}),
           },
@@ -104,6 +113,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       ...translations,
+      ...skillText,
       dbAvailable,
       ...(code ? { code } : {}),
       ...(focusNodeId ? { focusNodeId } : {}),

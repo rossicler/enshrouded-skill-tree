@@ -108,13 +108,23 @@ describe("validate-translations", () => {
     expect(messages(input)).toEqual([]);
   });
 
-  it("requires an entry for every authored type", () => {
+  it("requires an entry for every authored type (outside the tree, only in the default locale)", () => {
     const input = fixture();
     input.presentationTypes.push("UNUSED");
+    delete input.locales.fr.nodes.GAME;
     expect(messages(input)).toEqual([
       "en/nodes.json: UNUSED is missing (every type authored in LegacyNodes.ts needs an entry)",
-      "fr/nodes.json: UNUSED is missing (every type authored in LegacyNodes.ts needs an entry)",
+      "fr/nodes.json: GAME is missing (every type authored in LegacyNodes.ts needs an entry)",
     ]);
+  });
+
+  it("lets a locale leave out tree.json, which falls back to the English labels", () => {
+    const input = fixture();
+    input.treeLabels = ["wizard"];
+    input.locales.en.tree = { treeLabels: { wizard: "Wizard" } };
+    expect(messages(input)).toEqual([]);
+    input.locales.fr.tree = { treeLabels: {} };
+    expect(messages(input)).toEqual(["fr/tree.json: treeLabels.wizard is missing (one per TREE_LABELS entry)"]);
   });
 
   it("matches common.json keys and placeholders against the default locale", () => {

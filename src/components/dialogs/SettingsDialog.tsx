@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { APP_VERSION } from "@/constants/version";
-import { SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@enshrouded/core";
+import { SKILL_TEXT_LOCALES, SKILL_TREE_GAME_BUILD, SKILL_TREE_REVISION, SKILL_TREE_UPDATE } from "@enshrouded/core";
 import { DialogTitle } from "@headlessui/react";
+import { ChevronDown } from "lucide-react";
 import { useTranslation } from "next-i18next/pages";
 import { useRouter } from "next/router";
 import { classNames } from "@/utils/utils";
@@ -109,26 +110,30 @@ const SettingsDialog = ({ open, onClose }: PropsType) => {
               </p>
             )}
             <div className="flex items-center justify-between">
-              <span className="text-sm text-[#c0b89a]">
+              <label htmlFor="settings-language" className="text-sm text-[#c0b89a]">
                 {t("dialogs.settings.language")}
-              </span>
-              <div className="flex rounded-sm overflow-hidden border border-[#5a5a60]">
-                {["en", "fr"].map((locale) => (
-                  <button
-                    key={locale}
-                    data-locale={locale}
-                    onClick={() => switchLocale(locale)}
-                    onMouseEnter={() => playSound("node-hover", 0.3)}
-                    className={classNames(
-                      "px-3 py-1 text-sm font-semibold uppercase transition-colors",
-                      router.locale === locale
-                        ? "bg-[#C8B169] text-black"
-                        : "bg-[#35353a] text-[#c0b89a] hover:bg-[#4a4a50]"
-                    )}
-                  >
-                    {locale}
-                  </button>
-                ))}
+              </label>
+              {/* Every language the game has, each named in itself. The
+                  browser's own arrow sits on the border, so it is replaced. */}
+              <div className="relative">
+                <select
+                  id="settings-language"
+                  data-setting="language"
+                  value={router.locale}
+                  onChange={(event) => switchLocale(event.target.value)}
+                  onMouseEnter={() => playSound("node-hover", 0.3)}
+                  className="appearance-none rounded-sm border border-[#5a5a60] bg-[#35353a] py-1 pl-3 pr-8 text-sm font-semibold text-[#c0b89a] hover:bg-[#4a4a50] focus:outline-none focus:ring-1 focus:ring-[#C8B169]"
+                >
+                  {SKILL_TEXT_LOCALES.map(({ code, name }) => (
+                    <option key={code} value={code} lang={code}>
+                      {name}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown
+                  aria-hidden="true"
+                  className="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#c0b89a]"
+                />
               </div>
             </div>
           </div>

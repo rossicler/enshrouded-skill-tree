@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0.0",
   "provenance": {
-    "exportedAtUtc": "2026-10-15T23:23:31.2909651Z",
+    "exportedAtUtc": "2026-10-16T04:45:27.3363848Z",
     "sourceFileSha256": {
       "enshrouded.exe": "4D6D43EA4A91E71C82D60B045DDE932179C99E32E40657EFE374688B2933589A",
       "enshrouded.kfc": "13CA8DACE2DDC52E6F83800F6BBD70EF1B1ECC052ED2954EF147EEDE2B655EC9",
       "enshrouded.kfc_resources": "790F0E312506ED8289C057A1DCDA82A5F883D6C43C221E20F680A991975F8FC4"
     },
     "parserRevision": "f201f7667ddd5d0d78f0a27368f2e7481b870618",
-    "parserSha256": "C1AEE11CFCFC4B4B3E9B08C3C81E69A3D1D3FE4DD43DACD7F0067D80743E52CC",
+    "parserSha256": "131979A6B9BB4D6BE4DC7E97F2DD9DD5B16DBF283060A96A4B9178C28F2B017B",
     "gameBuild": "1267041|^/game38/branches/release_1.0|2026-10-15T17:07:04.598331Z"
   },
   "transform": {
@@ -3387,7 +3387,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Absorb",
       "description": [
@@ -3409,7 +3422,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Advanced Necromancy",
       "description": [
@@ -3425,12 +3451,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Gegenstand verwenden]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Utiliser un objet]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Usa oggetto]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Usar objeto]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Использовать]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Użyj przedmiotu]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[アイテム使用]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[아이템 사용]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Usar item]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ใช้ไอเทม]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Eşyayı kullan]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[使用物品]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[使用物品]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Використати предмет]"
           }
         }
       },
@@ -3456,7 +3560,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Airborne",
       "description": [
@@ -3471,12 +3588,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Flugmodus]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Mode de vol]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Modalità volo]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Modo vuelo]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Режим полета]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Tryb latania]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[飛行モード]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[비행 모드]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Modo de Voo]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[โหมดบิน]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Uçuş Modu]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[飞行模式]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[飛行模式]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Режим польоту]"
           }
         }
       },
@@ -3500,7 +3695,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Arachnoid",
       "description": [
@@ -3512,7 +3720,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Arcane Concentration",
       "description": [
@@ -3534,7 +3755,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Arcane Deflection",
       "description": [
@@ -3547,7 +3781,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Arcane Proliferation",
       "description": [
@@ -3569,7 +3816,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Arsonist",
       "description": [
@@ -3591,7 +3851,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Athlete",
       "description": [
@@ -3609,7 +3882,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Constitution",
       "description": [
@@ -3625,7 +3911,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Dexterity",
       "description": [
@@ -3644,7 +3943,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Endurance",
       "description": [
@@ -3660,7 +3972,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Intelligence",
       "description": [
@@ -3679,7 +4004,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Spirit",
       "description": [
@@ -3695,7 +4033,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Strength",
       "description": [
@@ -3718,7 +4069,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Backstab Mastery",
       "description": [
@@ -3730,7 +4094,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Barbarian",
       "description": [
@@ -3752,7 +4129,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Barbarian's Path",
       "description": [
@@ -3774,7 +4164,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Barrage",
       "description": [
@@ -3796,7 +4199,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Bash",
       "description": [
@@ -3819,7 +4235,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Battle Heal",
       "description": [
@@ -3831,7 +4260,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Beast Master",
       "description": [
@@ -3846,7 +4288,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Bee Sting",
       "description": [
@@ -3862,7 +4317,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Begone!",
       "description": [
@@ -3880,7 +4348,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Blast and Cast",
       "description": [
@@ -3902,7 +4383,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Blessed Arrows",
       "description": [
@@ -3917,7 +4411,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Blink",
       "description": [
@@ -3931,7 +4438,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Blink Attack",
       "description": [
@@ -3944,7 +4464,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Blood Magic",
       "description": [
@@ -3971,7 +4504,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Blood Rage",
       "description": [
@@ -3984,7 +4530,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Blood Warrior",
       "description": [
@@ -4007,7 +4566,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Bloodletting",
       "description": [
@@ -4030,7 +4602,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Bone to Ash",
       "description": [
@@ -4045,7 +4630,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Bounty Bonanza",
       "description": [
@@ -4062,12 +4660,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Spezialfähigkeit]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Capacité spéciale]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Abilità speciale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Habilidad especial]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Особая способность]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Umiejętność specjalna]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[특수 능력]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Habilidade Especial]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ความสามารถพิเศษ]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Özel Yetenek]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[特殊技能]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Особлива здібність]"
           }
         }
       },
@@ -4085,7 +4761,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Breach",
       "description": [
@@ -4108,7 +4797,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Brute",
       "description": [
@@ -4120,7 +4822,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Calm Spirit",
       "description": [
@@ -4133,7 +4848,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Chain Hit",
       "description": [
@@ -4145,7 +4873,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Echoing Explosives",
       "description": [
@@ -4167,7 +4908,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Counter Battery",
       "description": [
@@ -4195,7 +4949,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Counterstrike",
       "description": [
@@ -4213,12 +4980,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Gegenstand verwenden]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Utiliser un objet]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Usa oggetto]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Usar objeto]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Использовать]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Użyj przedmiotu]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[アイテム使用]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[아이템 사용]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Usar item]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ใช้ไอเทม]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Eşyayı kullan]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[使用物品]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[使用物品]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Використати предмет]"
           }
         }
       },
@@ -4235,7 +5080,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Crash Down: Force",
       "description": [
@@ -4257,7 +5115,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Cull the Herd",
       "description": [
@@ -4279,7 +5150,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Cutthroat",
       "description": [
@@ -4301,7 +5185,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Dagger Mastery",
       "description": [
@@ -4316,12 +5213,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Spezialfähigkeit]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Capacité spéciale]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Abilità speciale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Habilidad especial]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Особая способность]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Umiejętność specjalna]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[특수 능력]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Habilidade Especial]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ความสามารถพิเศษ]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Özel Yetenek]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[特殊技能]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Особлива здібність]"
           }
         }
       },
@@ -4346,7 +5321,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Dark Arts",
       "description": [
@@ -4358,7 +5346,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Dessert Stomach",
       "description": [
@@ -4370,7 +5371,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Divine Surge",
       "description": [
@@ -4385,7 +5399,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Double Jump",
       "description": [
@@ -4402,13 +5429,104 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Blocken und Parieren]",
+            "gameValue2": "[Fernkampfwaffe bereitmachen]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Bloquer et parer]",
             "gameValue2": "[Préparez une arme à distance]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Bloccare e parare]",
+            "gameValue2": "[Prepara arma a distanza]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Bloquear y parar]",
+            "gameValue2": "[Preparar arma a distancia]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Блок и парирование]",
+            "gameValue2": "[Подготовить оружие дальнего боя]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Blokowanie i parowanie]",
+            "gameValue2": "[Przygotuj broń dystansową]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[ブロック＆パリィ]",
+            "gameValue2": "[遠距離武器を構える]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[블록 및 패리]",
+            "gameValue2": "[원거리 무기 준비]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Bloquear e defender]",
+            "gameValue2": "[Preparar arma de longo alcance]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ป้องกันและป้องปัด]",
+            "gameValue2": "[ง้างอาวุธระยะไกล]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Engelleme ve Savuşturma]",
+            "gameValue2": "[Menzilli Silahı hazırla]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[格挡与招架]",
+            "gameValue2": "[准备远程武器]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[抵擋與格擋]",
+            "gameValue2": "[準備遠距武器]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Блок та парирування]",
+            "gameValue2": "[Зброя дальнього бою: підготовка]"
           }
         }
       },
@@ -4433,7 +5551,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Eagle's Bane",
       "description": [
@@ -4458,7 +5589,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Earth Aura",
       "description": [
@@ -4470,7 +5614,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Emergency Blink",
       "description": [
@@ -4482,7 +5639,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Endurance of the Flame",
       "description": [
@@ -4504,7 +5674,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Eternal Spark",
       "description": [
@@ -4520,12 +5703,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Gegenstand verwenden]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Utiliser un objet]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Usa oggetto]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Usar objeto]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Использовать]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Użyj przedmiotu]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[アイテム使用]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[아이템 사용]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Usar item]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ใช้ไอเทม]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Eşyayı kullan]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[使用物品]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[使用物品]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Використати предмет]"
           }
         }
       },
@@ -4541,7 +5802,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Exalted",
       "description": [
@@ -4557,7 +5831,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Expose Weakness",
       "description": [
@@ -4585,7 +5872,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Fatal Precision",
       "description": [
@@ -4600,12 +5900,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Spezialfähigkeit]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Capacité spéciale]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Abilità speciale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Habilidad especial]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Особая способность]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Umiejętność specjalna]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[특수 능력]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Habilidade Especial]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ความสามารถพิเศษ]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Özel Yetenek]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[特殊技能]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Особлива здібність]"
           }
         }
       },
@@ -4630,7 +6008,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Finesse",
       "description": [
@@ -4652,7 +6043,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Fire Resistance",
       "description": [
@@ -4674,7 +6078,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Fisherman’s Resolve",
       "description": [
@@ -4697,8 +6114,119 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
+      "gameLocaleValues": {
+        "ru": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "3 секунды",
+              "6 секунды",
+              "9 секунды"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "3 секунды"
+          }
+        },
+        "ja": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "3 秒",
+              "6 秒",
+              "9 秒"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "3 秒"
+          }
+        },
+        "ko": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "3 초",
+              "6 초",
+              "9 초"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "3 초"
+          }
+        },
+        "th": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "3 วิ.",
+              "6 วิ.",
+              "9 วิ."
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "3 วิ."
+          }
+        },
+        "tr": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "3 saniyeler",
+              "6 saniyeler",
+              "9 saniyeler"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "3 saniyeler"
+          }
+        },
+        "zh-CN": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "3 秒",
+              "6 秒",
+              "9 秒"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "3 秒"
+          }
+        },
+        "zh-TW": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "3 秒",
+              "6 秒",
+              "9 秒"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "3 秒"
+          }
+        },
+        "uk": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "3 секунди",
+              "6 секунди",
+              "9 секунди"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "3 секунди"
+          }
+        }
+      },
       "name": "Frost",
       "description": [
         "When receiving Melee damage, the attacker will be slowed down for <b>{{gameValue1}}</b>."
@@ -4712,7 +6240,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Giant Slayer Hook",
       "description": [
@@ -4726,7 +6267,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Good Metabolism",
       "description": [
@@ -4739,7 +6293,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Graceful Stride",
       "description": [
@@ -4754,7 +6321,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Grounding Hook",
       "description": [
@@ -4778,7 +6358,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Healer",
       "description": [
@@ -4800,7 +6393,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Healing Revive",
       "description": [
@@ -4823,7 +6429,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Heavy Handed",
       "description": [
@@ -4846,7 +6465,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Heavy Plates",
       "description": [
@@ -4861,7 +6493,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Heavy Hitter",
       "description": [
@@ -4883,7 +6528,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Ice Resistance",
       "description": [
@@ -4905,7 +6563,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Iceman",
       "description": [
@@ -4927,8 +6598,119 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
+      "gameLocaleValues": {
+        "ru": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "60 секунды",
+              "120 секунды",
+              "180 секунды"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "60 секунды"
+          }
+        },
+        "ja": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "60 秒",
+              "120 秒",
+              "180 秒"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "60 秒"
+          }
+        },
+        "ko": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "60 초",
+              "120 초",
+              "180 초"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "60 초"
+          }
+        },
+        "th": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "60 วิ.",
+              "120 วิ.",
+              "180 วิ."
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "60 วิ."
+          }
+        },
+        "tr": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "60 saniyeler",
+              "120 saniyeler",
+              "180 saniyeler"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "60 saniyeler"
+          }
+        },
+        "zh-CN": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "60 秒",
+              "120 秒",
+              "180 秒"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "60 秒"
+          }
+        },
+        "zh-TW": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "60 秒",
+              "120 秒",
+              "180 秒"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "60 秒"
+          }
+        },
+        "uk": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "60 секунди",
+              "120 секунди",
+              "180 секунди"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "60 секунди"
+          }
+        }
+      },
       "name": "Inner Fires",
       "description": [
         "<b>Time in the Shroud</b> is increased by <b>{{gameValue1}}</b>, allowing you to explore for longer.",
@@ -4940,7 +6722,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Kick",
       "description": [
@@ -4955,7 +6750,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Last Meal",
       "description": [
@@ -4970,7 +6778,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Life Burst",
       "description": [
@@ -4992,7 +6813,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Life Essences",
       "description": [
@@ -5014,7 +6848,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Lumberjack",
       "description": [
@@ -5036,7 +6883,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Mage Apprentice",
       "description": [
@@ -5058,7 +6918,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Mana Currents",
       "description": [
@@ -5080,7 +6953,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Marksman",
       "description": [
@@ -5092,7 +6978,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Martyr",
       "description": [
@@ -5115,7 +7014,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Mason",
       "description": [
@@ -5133,7 +7045,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Mass Destruction",
       "description": [
@@ -5149,12 +7074,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Kontextsensitive Aktion]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Action contextuelle]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Azione contestuale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Acción contextual]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Контекстное действие]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Akcja kontekstowa]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[関連アクション]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[상황별 행동]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Ação de Contexto]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[การกระทำตามสถานการณ์]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Bağlamsal Eylem]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[关联动作]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[情境動作]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Контекстуальна дія]"
           }
         }
       },
@@ -5170,7 +7173,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Miner",
       "description": [
@@ -5182,7 +7198,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Mithridatist",
       "description": [
@@ -5194,7 +7223,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Multi Shot",
       "description": [
@@ -5208,7 +7250,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Multi Shot Spread",
       "description": [
@@ -5221,7 +7276,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Multi Shot Trigger",
       "description": [
@@ -5244,7 +7312,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Necromancer",
       "description": [
@@ -5266,7 +7347,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Nemesis",
       "description": [
@@ -5281,12 +7375,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Spezialfähigkeit]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Capacité spéciale]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Abilità speciale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Habilidad especial]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Особая способность]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Umiejętność specjalna]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[특수 능력]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Habilidade Especial]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ความสามารถพิเศษ]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Özel Yetenek]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[特殊技能]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Особлива здібність]"
           }
         }
       },
@@ -5311,7 +7483,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Opportunity",
       "description": [
@@ -5326,12 +7511,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Spezialfähigkeit]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Capacité spéciale]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Abilità speciale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Habilidad especial]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Особая способность]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Umiejętność specjalna]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[특수 능력]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Habilidade Especial]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ความสามารถพิเศษ]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Özel Yetenek]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[特殊技能]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Особлива здібність]"
           }
         }
       },
@@ -5346,7 +7609,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Venom Mastery",
       "description": [
@@ -5358,7 +7634,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Venomous Blades",
       "description": [
@@ -5380,7 +7669,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Power Parry",
       "description": [
@@ -5404,7 +7706,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Primal Force",
       "description": [
@@ -5426,7 +7741,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Prospector",
       "description": [
@@ -5448,7 +7776,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Puncture",
       "description": [
@@ -5470,7 +7811,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Purification",
       "description": [
@@ -5486,7 +7840,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Quality Gear",
       "description": [
@@ -5508,7 +7875,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Quick Charge",
       "description": [
@@ -5520,7 +7900,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Quick Reflex Block",
       "description": [
@@ -5548,8 +7941,47 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
+      "gameLocaleValues": {
+        "ru": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "2,1",
+              "4,1",
+              "6,1"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "2,1"
+          }
+        },
+        "pl": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "2,1",
+              "4,1",
+              "6,1"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "2,1"
+          }
+        }
+      },
       "name": "Radiant Aura",
       "description": [
         "All <b>Fell</b> enemies within <b>{{gameValue1}}</b> meters take <b>{{gameValue2}} Fire</b> damage per Intelligence per second."
@@ -5576,7 +8008,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Ranger",
       "description": [
@@ -5599,7 +8044,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Rebound",
       "description": [
@@ -5614,7 +8072,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Relentless",
       "description": [
@@ -5626,7 +8097,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Shrapnel Blast",
       "description": [
@@ -5648,7 +8132,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Righteous Fire",
       "description": [
@@ -5676,7 +8173,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Runner",
       "description": [
@@ -5698,7 +8208,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Saviour",
       "description": [
@@ -5714,7 +8237,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Shell Shock",
       "description": [
@@ -5737,7 +8273,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Shiny Plates",
       "description": [
@@ -5759,7 +8308,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Shock Resistance",
       "description": [
@@ -5771,7 +8333,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Shockwave",
       "description": [
@@ -5800,7 +8375,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Shroud Mitigation",
       "description": [
@@ -5826,7 +8414,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Shared Misery",
       "description": [
@@ -5848,7 +8449,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Shroud Resistance",
       "description": [
@@ -5870,7 +8484,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Silent Stride",
       "description": [
@@ -5892,7 +8519,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Skill Shot",
       "description": [
@@ -5916,7 +8556,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Slasher",
       "description": [
@@ -5938,7 +8591,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Sleight of Hand",
       "description": [
@@ -5954,7 +8620,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Slice And Dice",
       "description": [
@@ -5976,7 +8655,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Snake Eater",
       "description": [
@@ -5992,7 +8684,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Snap",
       "description": [
@@ -6007,12 +8712,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Kontextsensitive Aktion]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Action contextuelle]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Azione contestuale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Acción contextual]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Контекстное действие]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Akcja kontekstowa]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[関連アクション]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[상황별 행동]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Ação de Contexto]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[การกระทำตามสถานการณ์]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Bağlamsal Eylem]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[关联动作]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[情境動作]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Контекстуальна дія]"
           }
         }
       },
@@ -6038,7 +8821,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Sniper",
       "description": [
@@ -6050,7 +8846,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Soaked Dog",
       "description": [
@@ -6081,7 +8890,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Soul Leech",
       "description": [
@@ -6103,7 +8925,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Spellslinger",
       "description": [
@@ -6118,7 +8953,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Splash Dash",
       "description": [
@@ -6141,7 +8989,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Steadfast",
       "description": [
@@ -6156,7 +9017,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Sting",
       "description": [
@@ -6171,7 +9045,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Strategic Maneuver",
       "description": [
@@ -6196,7 +9083,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Survival Instinct",
       "description": [
@@ -6209,7 +9109,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Sweet Tooth",
       "description": [
@@ -6224,7 +9137,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Swift Blades",
       "description": [
@@ -6246,7 +9172,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Swiftshot Sustenance",
       "description": [
@@ -6269,7 +9208,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Terror",
       "description": [
@@ -6281,7 +9233,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Thick Skin",
       "description": [
@@ -6303,7 +9268,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Thrust",
       "description": [
@@ -6325,7 +9303,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Thunder",
       "description": [
@@ -6347,7 +9338,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Titan Edge",
       "description": [
@@ -6369,7 +9373,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Totem Mastery",
       "description": [
@@ -6384,7 +9401,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Tower",
       "description": [
@@ -6399,12 +9429,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Spezialfähigkeit]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Capacité spéciale]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Abilità speciale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Habilidad especial]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Особая способность]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Umiejętność specjalna]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[특수 능력]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Habilidade Especial]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ความสามารถพิเศษ]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Özel Yetenek]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[特殊技能]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Особлива здібність]"
           }
         }
       },
@@ -6435,7 +9543,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Unity",
       "description": [
@@ -6451,12 +9572,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Springen]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Sauter]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Salta]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Saltar]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Прыгнуть]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Skok]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[ジャンプ]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[점프]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Pular]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[กระโดด]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Zıpla]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[跳跃]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[跳躍]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Стрибнути]"
           }
         }
       },
@@ -6475,7 +9674,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Upwards Slash Attack",
       "description": [
@@ -6499,7 +9711,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Veiled Vigor",
       "description": [
@@ -6521,7 +9746,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Veteran",
       "description": [
@@ -6543,7 +9781,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Vigorous Deflection",
       "description": [
@@ -6566,7 +9817,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Vile Concoction",
       "description": [
@@ -6588,7 +9852,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Vitality Surge",
       "description": [
@@ -6600,7 +9877,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Vukah Culture",
       "description": [
@@ -6612,7 +9902,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Vukah Language",
       "description": [
@@ -6628,12 +9931,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Gegenstand verwenden]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Utiliser un objet]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Usa oggetto]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Usar objeto]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Использовать]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Użyj przedmiotu]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[アイテム使用]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[아이템 사용]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Usar item]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ใช้ไอเทม]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Eşyayı kullan]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[使用物品]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[使用物品]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Використати предмет]"
           }
         }
       },
@@ -6658,7 +10039,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Wand Mastery",
       "description": [
@@ -6673,12 +10067,90 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "gameLocaleValues": {
+        "de": {
+          "gameValues": {
+            "gameValue1": "[Spezialfähigkeit]"
+          }
+        },
         "fr": {
           "gameValues": {
             "gameValue1": "[Capacité spéciale]"
+          }
+        },
+        "it": {
+          "gameValues": {
+            "gameValue1": "[Abilità speciale]"
+          }
+        },
+        "es": {
+          "gameValues": {
+            "gameValue1": "[Habilidad especial]"
+          }
+        },
+        "ru": {
+          "gameValues": {
+            "gameValue1": "[Особая способность]"
+          }
+        },
+        "pl": {
+          "gameValues": {
+            "gameValue1": "[Umiejętność specjalna]"
+          }
+        },
+        "ja": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "ko": {
+          "gameValues": {
+            "gameValue1": "[특수 능력]"
+          }
+        },
+        "pt-BR": {
+          "gameValues": {
+            "gameValue1": "[Habilidade Especial]"
+          }
+        },
+        "th": {
+          "gameValues": {
+            "gameValue1": "[ความสามารถพิเศษ]"
+          }
+        },
+        "tr": {
+          "gameValues": {
+            "gameValue1": "[Özel Yetenek]"
+          }
+        },
+        "zh-CN": {
+          "gameValues": {
+            "gameValue1": "[特殊能力]"
+          }
+        },
+        "zh-TW": {
+          "gameValues": {
+            "gameValue1": "[特殊技能]"
+          }
+        },
+        "uk": {
+          "gameValues": {
+            "gameValue1": "[Особлива здібність]"
           }
         }
       },
@@ -6693,7 +10165,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Wanderlust",
       "description": [
@@ -6709,7 +10194,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Warden",
       "description": [
@@ -6731,7 +10229,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Warrior's Path",
       "description": [
@@ -6753,8 +10264,47 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
+      "gameLocaleValues": {
+        "ru": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "5,1",
+              "10,1",
+              "15,1"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "5,1"
+          }
+        },
+        "pl": {
+          "gameLevelValues": {
+            "gameValue1": [
+              "5,1",
+              "10,1",
+              "15,1"
+            ]
+          },
+          "gamePerLevelValues": {
+            "gamePerLevelValue1": "5,1"
+          }
+        }
+      },
       "name": "Water Aura",
       "description": [
         "You emit a healing aura that heals you and all injured allies within <b>{{gameValue1}}</b> meters.",
@@ -6766,7 +10316,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Waters Of Life",
       "description": [
@@ -6788,7 +10351,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Well Rested",
       "description": [
@@ -6804,7 +10380,20 @@
       "maxLevel": 1,
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Wet Dog",
       "description": [
@@ -6822,7 +10411,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Whirlwind Crescendo",
       "description": [
@@ -6845,7 +10447,20 @@
       },
       "gameTextLocales": [
         "en",
-        "fr"
+        "de",
+        "fr",
+        "it",
+        "es",
+        "ru",
+        "pl",
+        "ja",
+        "ko",
+        "pt-BR",
+        "th",
+        "tr",
+        "zh-CN",
+        "zh-TW",
+        "uk"
       ],
       "name": "Wizard",
       "description": [

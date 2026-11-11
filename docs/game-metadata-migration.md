@@ -74,8 +74,12 @@ mean radius to 198 app units. The transform and original game provenance are
 retained in generated JSON.
 
 The same import writes the game's text to the `game` section of each locale
-record whose app locale maps to a game locale (`GAME_LOCALES` in
-`scripts/skill-data.mjs`: `en` -> `En_Us`, `fr` -> `Fr_Fr`). Type metadata
+record whose app locale maps to a game locale. The app's languages are listed
+once, in `packages/core/src/locales/locales.json` (app code, game language ID,
+own name); `GAME_LOCALES` in `scripts/skill-data.mjs` reads it. Every one of the
+game's 15 languages is listed (`en` -> `En_Us`, `de` -> `De_De`, `fr` ->
+`Fr_Fr`, ... `zh-TW` -> `Zh_Tw`), and the import creates a listed locale's
+`nodes.json` when it has none. Type metadata
 lists those locales in `gameTextLocales`; `usesGameText`/`skillTextPrefix`
 (`packages/core/src/utils/skillText.ts`) show a locale's `game` text whenever it is listed
 there, and `validate-translations.js` checks the same record. Other locales
@@ -94,7 +98,7 @@ a separate template, so old interpolation cannot overwrite imported values.
 Imported text still passes through DOMPurify.
 
 Formatting comes from the game per locale: its decimal separator (`.` in
-English and French) and its seconds abbreviation for Duration values
+most languages, `,` in Russian and Polish) and its seconds abbreviation for Duration values
 (`120 s`). `Input` arguments show the game's controls-menu label for the
 action in brackets (`[Special Ability]`, `[Capacité spéciale]`), chosen per
 input ID by `scripts/skill-data-inputs.json` (ID -> label key in the export's
@@ -257,6 +261,30 @@ types), removals and retired IDs, re-IDs, returning IDs, renames, shared-type
 conflicts, edge and base-link changes, and two-way edges. It uses a synthetic
 export rebuilt from the committed data (`scripts/fixtures/synthetic-export.mjs`),
 including French texts and the UI strings formatting needs.
+
+The tree's content hash (`treeVersion.contentHash`, which saved builds carry)
+covers nodes, edges, type metadata and English text, but not other languages:
+their text, `gameTextLocales` and `gameLocaleValues` are left out
+(`candidateContentHash`). An import that changes only translations keeps the
+applied hash, also one computed by an older definition (`nextContentHash`),
+so adding a language never shows "made for a different tree version".
+
+### Adding a language
+
+When the game adds a language (the export's `locales` lists them):
+
+1. Add it to `packages/core/src/locales/locales.json` (app code in BCP 47, the
+   game's language ID, the language's own name; `aliases` for other codes it
+   should answer to).
+2. Add its loader to `skillTextLoaders` in `packages/core/src/locales.ts`.
+3. Add `packages/react/src/locales/<code>.json` and its import in
+   `packages/react/src/text.ts`, and `public/locales/<code>/common.json`
+   (UI text: same keys as English; take biome and attribute names from the
+   game's strings).
+4. Run the import with `--apply`; it writes `locales/<code>/nodes.json`.
+5. `yarn validate-translations` and `yarn test` (`scripts/locales.test.mjs`
+   checks that every list matches the registry). The site's routes and
+   language picker come from the registry.
 
 ## Agentic update skill
 

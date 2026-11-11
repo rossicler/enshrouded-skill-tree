@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Enshrouded Yetenek Planlayıcı",
+    "description": "Enshrouded oyunu için bir yetenek ağacı planlayıcısı."
+  },
+  "hud": {
+    "import": "İçe aktar",
+    "export": "Dışa aktar",
+    "clear": "Temizle",
+    "discord": "Discord",
+    "about": "Hakkında"
+  },
+  "dialogs": {
+    "advancedSharing": "Gelişmiş paylaşım",
+    "about": {
+      "title": "Hakkında",
+      "description1": "Bu araç yalnızca Enshrouded oyuncularının yetenek ağaçlarını ve buildlerini kolayca paylaşmasına yardımcı olmak için yapıldı. Keen Games ile bir bağlantım yoktur ve Enshrouded oyunu üzerinde hiçbir hakka sahip değilim.",
+      "description2": "Bu araç açık kaynaklıdır ve katkıda bulunmak isteyen herkese açıktır. Katkıda bulunmak istersen <githubLink>GitHub deposuna</githubLink> gidebilir veya <discordLink>Discord sunucumuza</discordLink> katılabilirsin.",
+      "description3": "Bu araçta kullanılan bazı görselleri sağladığı için <glitchizLink>@Glitchiz</glitchizLink>'e özel teşekkürler.",
+      "close": "Kapat"
+    },
+    "export": {
+      "title": "Buildini paylaş",
+      "shortUrl": "Paylaşım URL'si",
+      "generating": "Paylaşım URL'si oluşturuluyor...",
+      "noSkills": "Paylaşım bağlantısı oluşturmak için ağaçta yeteneklerin kilidini aç.",
+      "dbUnavailable": "Paylaşım bağlantıları şu anda kullanılamıyor. Buildini paylaşmak için JSON dışa aktarımını kullan.",
+      "exportJson": "JSON dışa aktar",
+      "exportJsonTitle": "JSON olarak dışa aktar",
+      "buildName": "Build adı",
+      "download": "İndir",
+      "close": "Kapat"
+    },
+    "import": {
+      "title": "Yetenekleri içe aktar",
+      "urlLabel": "URL'den içe aktar",
+      "import": "URL'yi içe aktar",
+      "importJson": "JSON içe aktar",
+      "warning": "Yalnızca güvendiğin kaynaklardan build içe aktar."
+    },
+    "settings": {
+      "title": "Ayarlar",
+      "treeVersion": "Yetenek ağacı",
+      "gameUpdate": "Güncelleme",
+      "gameBuild": "build",
+      "appVersion": "Uygulama",
+      "sounds": "Ses efektleri",
+      "language": "Dil",
+      "hardcap": "Yetenek puanı üst sınırı",
+      "audioBlocked": "Ses tarayıcın tarafından engellendi. Tarayıcı ayarlarından bu site için sese izin ver ve tekrar dene."
+    },
+    "refundConfirm": {
+      "title": "Yetenekleri iade et",
+      "message": "Bağlı {{count}} yetenek de iade edilecek. Devam edilsin mi?",
+      "confirm": "Onayla",
+      "cancel": "İptal"
+    },
+    "resetConfirm": {
+      "title": "Yetenek ağacını sıfırla",
+      "message": "Seçili tüm yetenekler kaldırılacak. Emin misin?",
+      "confirm": "Sıfırla",
+      "cancel": "İptal"
+    },
+    "skillCap": {
+      "title": "Yetenek puanı sınırına ulaşıldı",
+      "message": "Azami yetenek puanı sayısına ulaştın. Yeni yeteneklerin kilidini açmadan önce bazı yetenekleri iade et.",
+      "ok": "Tamam",
+      "hardcapHint": "Bu sınırı Ayarlar'dan kapatabilirsin."
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "Paylaşım URL'si kopyalandı",
+    "buildImported": "\"{{name}}\" buildi içe aktarıldı",
+    "differentTreeVersion": "Bu build, yetenek ağacının farklı bir sürümü için yapıldı. İçe aktardıktan sonra yeteneklerini kontrol et.",
+    "noSkillsAllocated": "Hiç yetenek dağıtılmadı!",
+    "invalidUrl": "Geçersiz URL!",
+    "invalidCode": "Geçersiz kod",
+    "skillsRemoved": "Artık bu ağaçta olmayan yetenekler kaldırıldı: {{names}}",
+    "skillsDisconnected": "Artık ağaca bağlı olmayan yetenekler kaldırıldı: {{names}}",
+    "skillLevelsLowered": "Yetenek seviyeleri mevcut azami seviyeye düşürüldü: {{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "Mor duman arka planı"
+  },
+  "errors": {
+    "serverError": "Sunucu hatası",
+    "notFound": "Sayfa bulunamadı"
+  }
+}

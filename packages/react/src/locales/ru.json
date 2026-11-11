@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "Уровень {{current}} / {{max}}",
+    "unlock": "Открыть",
+    "outOfRange": "Вне досягаемости",
+    "share": "Поделиться ссылкой на этот навык",
+    "refund": "Вернуть",
+    "levelUp": "Повысить уровень",
+    "refundOne": "Вернуть 1",
+    "refundAll": "Вернуть все",
+    "skillPointIcon": "Значок очка навыка",
+    "close": "Закрыть"
+  },
+  "card": {
+    "label": "Древо навыков",
+    "zoomIn": "Приблизить",
+    "zoomOut": "Отдалить",
+    "fit": "Показать всё древо",
+    "expand": "Развернуть",
+    "fullscreen": "Во весь экран",
+    "exitFullscreen": "Выйти из полноэкранного режима",
+    "close": "Закрыть"
+  },
+  "kit": {
+    "close": "Закрыть",
+    "copy": "Копировать"
+  },
+  "points": {
+    "skillPoints": "Очки навыков",
+    "flameLevel": "Уровень пламени",
+    "skillPointIcon": "Значок очка навыка",
+    "flameIcon": "Значок пламени",
+    "flameDown": "Понизить уровень пламени",
+    "flameUp": "Повысить уровень пламени"
+  },
+  "budget": {
+    "title": "Очки по биомам",
+    "playerLevel": "Уровень игрока",
+    "total": "Всего очков навыков",
+    "reset": "Открыть все"
+  },
+  "biomes": {
+    "springlands": "Земли источников",
+    "revelwood": "Разгульный лес",
+    "nomad_highlands": "Нагорья кочевников",
+    "kindlewastes": "Хворостовые пустоши",
+    "albaneve_summits": "Альбаневские вершины",
+    "veilwater_basin": "Бухта дымчатых вод",
+    "cinders_cradle": "Колыбель Пламени"
+  },
+  "stats": {
+    "button": "Характеристики",
+    "title": "Сводка характеристик",
+    "basic": "Базовые",
+    "close": "Закрыть",
+    "names": {
+      "constitution": "Телосложение",
+      "strength": "Сила",
+      "endurance": "Стойкость",
+      "dexterity": "Ловкость",
+      "spirit": "Дух",
+      "intelligence": "Интеллект"
+    }
+  },
+  "search": {
+    "placeholder": "Поиск",
+    "moreMatches": "+{{count}} совпад. подсвечено на древе",
+    "clear": "Очистить поиск"
+  }
+}

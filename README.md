@@ -15,7 +15,7 @@ Access the live version [here](https://enshrouded-skill-tree.com/)
 - 🔥 Skill point and flame level tracking
 - 📨 Build sharing via short URLs and JSON import/export
 - 🎥 Interactive skill tree with zoom, pan and node selection
-- 🗣️ Localization (English, French)
+- 🗣️ Localization in all 15 of the game's languages, with the game's own skill text
 
 ## Getting Started
 

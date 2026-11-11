@@ -1,0 +1,70 @@
+{
+  "tooltip": {
+    "levelHeader": "レベル {{current}} / {{max}}",
+    "unlock": "解除",
+    "outOfRange": "範囲外",
+    "share": "このスキルへのリンクを共有",
+    "refund": "返還",
+    "levelUp": "レベルアップ",
+    "refundOne": "1つ返還",
+    "refundAll": "すべて返還",
+    "skillPointIcon": "スキルポイントのアイコン",
+    "close": "閉じる"
+  },
+  "card": {
+    "label": "スキルツリー",
+    "zoomIn": "拡大",
+    "zoomOut": "縮小",
+    "fit": "ツリー全体を表示",
+    "expand": "展開",
+    "fullscreen": "全画面表示",
+    "exitFullscreen": "全画面表示を終了",
+    "close": "閉じる"
+  },
+  "kit": {
+    "close": "閉じる",
+    "copy": "コピー"
+  },
+  "points": {
+    "skillPoints": "スキルポイント",
+    "flameLevel": "炎のレベル",
+    "skillPointIcon": "スキルポイントのアイコン",
+    "flameIcon": "炎のアイコン",
+    "flameDown": "炎のレベルを下げる",
+    "flameUp": "炎のレベルを上げる"
+  },
+  "budget": {
+    "title": "バイオーム別ポイント",
+    "playerLevel": "プレイヤーレベル",
+    "total": "スキルポイント合計",
+    "reset": "すべて解除"
+  },
+  "biomes": {
+    "springlands": "スプリングランド",
+    "revelwood": "レベルウッド",
+    "nomad_highlands": "ノマド高地",
+    "kindlewastes": "キンドルウェイスト",
+    "albaneve_summits": "アルバネヴ山頂",
+    "veilwater_basin": "ヴェイルウォーター盆地",
+    "cinders_cradle": "灰の揺りかご"
+  },
+  "stats": {
+    "button": "ステータス",
+    "title": "ステータス概要",
+    "basic": "基本",
+    "close": "閉じる",
+    "names": {
+      "constitution": "体質",
+      "strength": "筋力",
+      "endurance": "忍耐",
+      "dexterity": "器用さ",
+      "spirit": "気力",
+      "intelligence": "知力"
+    }
+  },
+  "search": {
+    "placeholder": "検索",
+    "moreMatches": "ツリー上でさらに{{count}}件をハイライト中",
+    "clear": "検索をクリア"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Planejador de Habilidades de Enshrouded",
+    "description": "Um planejador da árvore de habilidades para o jogo Enshrouded."
+  },
+  "hud": {
+    "import": "Importar",
+    "export": "Exportar",
+    "clear": "Limpar",
+    "discord": "Discord",
+    "about": "Sobre"
+  },
+  "dialogs": {
+    "advancedSharing": "Compartilhamento avançado",
+    "about": {
+      "title": "Sobre",
+      "description1": "Esta ferramenta foi criada apenas para ajudar os jogadores de Enshrouded a compartilhar árvores de habilidades e builds com facilidade. Não tenho vínculo com a Keen Games e não detenho nenhum direito sobre o jogo Enshrouded.",
+      "description2": "Esta ferramenta é de código aberto e está disponível para qualquer pessoa que queira contribuir. Se quiser contribuir, acesse o <githubLink>repositório no GitHub</githubLink> ou entre no nosso <discordLink>servidor do Discord</discordLink>.",
+      "description3": "Agradecimento especial a <glitchizLink>@Glitchiz</glitchizLink> por me ceder alguns dos recursos usados nesta ferramenta.",
+      "close": "Fechar"
+    },
+    "export": {
+      "title": "Compartilhe sua build",
+      "shortUrl": "URL de compartilhamento",
+      "generating": "Gerando a URL de compartilhamento...",
+      "noSkills": "Desbloqueie habilidades na árvore para gerar um link de compartilhamento.",
+      "dbUnavailable": "Os links de compartilhamento estão indisponíveis no momento. Use a exportação em JSON para compartilhar sua build.",
+      "exportJson": "Exportar JSON",
+      "exportJsonTitle": "Exportar como JSON",
+      "buildName": "Nome da build",
+      "download": "Baixar",
+      "close": "Fechar"
+    },
+    "import": {
+      "title": "Importar habilidades",
+      "urlLabel": "Importar de URL",
+      "import": "Importar URL",
+      "importJson": "Importar JSON",
+      "warning": "Importe builds apenas de fontes confiáveis."
+    },
+    "settings": {
+      "title": "Configurações",
+      "treeVersion": "Árvore de habilidades",
+      "gameUpdate": "Atualização",
+      "gameBuild": "build",
+      "appVersion": "App",
+      "sounds": "Efeitos sonoros",
+      "language": "Idioma",
+      "hardcap": "Limite máximo de pontos de habilidade",
+      "audioBlocked": "O áudio foi bloqueado pelo navegador. Permita o áudio para este site nas configurações do navegador e tente novamente."
+    },
+    "refundConfirm": {
+      "title": "Reembolsar habilidades",
+      "message": "Isso também vai reembolsar {{count}} habilidade(s) conectada(s). Continuar?",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    },
+    "resetConfirm": {
+      "title": "Redefinir a árvore de habilidades",
+      "message": "Isso vai remover todas as habilidades selecionadas. Tem certeza?",
+      "confirm": "Redefinir",
+      "cancel": "Cancelar"
+    },
+    "skillCap": {
+      "title": "Limite de pontos de habilidade atingido",
+      "message": "Você atingiu o número máximo de pontos de habilidade. Reembolse algumas habilidades antes de desbloquear novas.",
+      "ok": "OK",
+      "hardcapHint": "Você pode desativar este limite nas Configurações."
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "URL de compartilhamento copiada",
+    "buildImported": "Build \"{{name}}\" importada",
+    "differentTreeVersion": "Esta build foi feita para outra versão da árvore de habilidades. Confira as habilidades dela depois de importar.",
+    "noSkillsAllocated": "Nenhuma habilidade distribuída!",
+    "invalidUrl": "URL inválida!",
+    "invalidCode": "Código inválido",
+    "skillsRemoved": "Habilidades removidas que não estão mais nesta árvore: {{names}}",
+    "skillsDisconnected": "Habilidades removidas que não estão mais conectadas à árvore: {{names}}",
+    "skillLevelsLowered": "Níveis de habilidade reduzidos ao máximo atual: {{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "Fundo de fumaça roxa"
+  },
+  "errors": {
+    "serverError": "Erro no servidor",
+    "notFound": "Página não encontrada"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Enshrouded Skill-Planer",
+    "description": "Ein Skilltree-Planer für das Spiel Enshrouded."
+  },
+  "hud": {
+    "import": "Importieren",
+    "export": "Exportieren",
+    "clear": "Leeren",
+    "discord": "Discord",
+    "about": "Über"
+  },
+  "dialogs": {
+    "advancedSharing": "Erweiterte Freigabe",
+    "about": {
+      "title": "Über",
+      "description1": "Dieses Tool entstand einzig, um Enshrouded-Spielern das Teilen von Skilltrees und Builds zu erleichtern. Ich bin nicht mit Keen Games verbunden und halte keine Rechte am Spiel Enshrouded.",
+      "description2": "Dieses Tool ist Open Source und für alle verfügbar, die mitmachen möchten. Wenn du beitragen willst, geh zum <githubLink>GitHub-Repository</githubLink> oder tritt unserem <discordLink>Discord-Server</discordLink> bei.",
+      "description3": "Besonderer Dank gilt <glitchizLink>@Glitchiz</glitchizLink> für die Bereitstellung einiger Assets, die in diesem Tool verwendet werden.",
+      "close": "Schließen"
+    },
+    "export": {
+      "title": "Teile deinen Build",
+      "shortUrl": "Freigabe-URL",
+      "generating": "Freigabe-URL wird erzeugt ...",
+      "noSkills": "Schalte Fähigkeiten im Baum frei, um einen Freigabe-Link zu erzeugen.",
+      "dbUnavailable": "Freigabe-Links sind derzeit nicht verfügbar. Nutze den JSON-Export, um deinen Build zu teilen.",
+      "exportJson": "JSON exportieren",
+      "exportJsonTitle": "Als JSON exportieren",
+      "buildName": "Build-Name",
+      "download": "Herunterladen",
+      "close": "Schließen"
+    },
+    "import": {
+      "title": "Fähigkeiten importieren",
+      "urlLabel": "Aus URL importieren",
+      "import": "URL importieren",
+      "importJson": "JSON importieren",
+      "warning": "Importiere Builds nur aus Quellen, denen du vertraust."
+    },
+    "settings": {
+      "title": "Einstellungen",
+      "treeVersion": "Skilltree",
+      "gameUpdate": "Update",
+      "gameBuild": "Build",
+      "appVersion": "App",
+      "sounds": "Soundeffekte",
+      "language": "Sprache",
+      "hardcap": "Harte Obergrenze der Fähigkeitspunkte",
+      "audioBlocked": "Audio wurde von deinem Browser blockiert. Erlaube Audio für diese Seite in den Browsereinstellungen und versuche es erneut."
+    },
+    "refundConfirm": {
+      "title": "Fähigkeiten zurückerstatten",
+      "message": "Dadurch werden auch {{count}} verbundene Fähigkeit(en) zurückerstattet. Fortfahren?",
+      "confirm": "Bestätigen",
+      "cancel": "Abbrechen"
+    },
+    "resetConfirm": {
+      "title": "Skilltree zurücksetzen",
+      "message": "Dadurch werden alle gewählten Fähigkeiten entfernt. Bist du sicher?",
+      "confirm": "Zurücksetzen",
+      "cancel": "Abbrechen"
+    },
+    "skillCap": {
+      "title": "Obergrenze der Fähigkeitspunkte erreicht",
+      "message": "Du hast die maximale Anzahl an Fähigkeitspunkten erreicht. Erstatte einige Fähigkeiten zurück, bevor du neue freischaltest.",
+      "ok": "OK",
+      "hardcapHint": "Du kannst dieses Limit in den Einstellungen deaktivieren."
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "Freigabe-URL erfolgreich kopiert",
+    "buildImported": "Build \"{{name}}\" erfolgreich importiert",
+    "differentTreeVersion": "Dieser Build wurde für eine andere Version des Skilltrees erstellt. Prüfe seine Fähigkeiten nach dem Import.",
+    "noSkillsAllocated": "Keine Fähigkeiten verteilt!",
+    "invalidUrl": "Ungültige URL!",
+    "invalidCode": "Ungültiger Code",
+    "skillsRemoved": "Fähigkeiten entfernt, die nicht mehr in diesem Skilltree sind: {{names}}",
+    "skillsDisconnected": "Fähigkeiten entfernt, die nicht mehr mit dem Baum verbunden sind: {{names}}",
+    "skillLevelsLowered": "Fähigkeitsstufen auf das aktuelle Maximum gesenkt: {{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "Lila Rauch im Hintergrund"
+  },
+  "errors": {
+    "serverError": "Serverfehler",
+    "notFound": "Seite nicht gefunden"
+  }
+}

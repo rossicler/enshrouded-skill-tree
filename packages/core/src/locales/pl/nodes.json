@@ -1,0 +1,1617 @@
+{
+  "ABSORB": {
+    "game": {
+      "name": "Wchłonięcie",
+      "description": [
+        "Kiedy otrzymasz obrażenia <b>magiczne</b>, masz <b>{{gameValue1}}</b> szansy na zyskanie <b>1</b> punktu many za każdy punkt utraconego zdrowia."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "ADVANCED_NECROMANCY": {
+    "game": {
+      "name": "Zaawansowana nekromancja",
+      "description": [
+        "Zwiększa maksymalną liczbę przyzywanych zaklęciami upadłych sojuszników o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> upadły sojusznik na poziom"
+    }
+  },
+  "AERIAL_WAND_ATTACK": {
+    "game": {
+      "name": "Atak różdżką z powietrza",
+      "description": [
+        "Gdy masz na wyposażeniu różdżkę, możesz wykonać specjalny atak, przytrzymując <b>{{gameValue1}}</b> podczas skoku.",
+        "Powoduje on wystrzelenie magicznego pocisku zadającego <b>50%</b> dodatkowych obrażeń od broni na niewielkim obszarze.",
+        "<b>Koszt:</b> {{gameValue2}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "AIRBORNE": {
+    "game": {
+      "name": "W locie",
+      "description": [
+        "Lotnie zużywają o <b>{{gameValue1}}</b> mniej wytrzymałości."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> redukcji kosztu na poziom"
+    }
+  },
+  "AIRBORNE_ARCHITECT": {
+    "game": {
+      "name": "Powietrzny architekt",
+      "description": [
+        "Zmień się w iskrę na terenie bazy, by swobodnie poruszać się w powietrzu, oglądając świat z perspektywy pierwszej osoby podczas budowania. By włączyć ten tryb, przytrzymaj {{gameValue1}}."
+      ]
+    }
+  },
+  "ARACHNOID": {
+    "game": {
+      "name": "Pajęczak",
+      "description": [
+        "Wspinaczka kosztuje cię o <b>{{gameValue1}}</b> mniej wytrzymałości."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> redukcji kosztu na poziom"
+    }
+  },
+  "ARCANE_CONCENTRATION": {
+    "game": {
+      "name": "Mistyczne skupienie",
+      "description": [
+        "Zyskaj punkt duszy za każde dwa poziomy Płomienia."
+      ]
+    }
+  },
+  "ARCANE_DEFLECTION": {
+    "game": {
+      "name": "Tajemne odbicie",
+      "description": [
+        "Pomyślne sparowanie ataku przeciwnika przywraca ci <b>{{gameValue1}}</b> pkt. many.",
+        "<b>Parowanie</b><br/>Możesz blokować, mając na wyposażeniu broń do walki w zwarciu, magiczną barierę lub tarczę. Wykonanie bloku w odpowiednim czasie spowoduje <b>sparowanie</b> ataku i zwiększy stopień napełnienia <i>paska ogłuszenia</i> wroga.<br/>Wypatruj <b>błysku</b> na wrogu lub pocisku, by sparować atak."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. many na poziom"
+    }
+  },
+  "ARCANE_PROLIFERATION": {
+    "game": {
+      "name": "Mistyczne rozmnożenie",
+      "description": [
+        "Atakując różdżką, masz <b>30%</b> szansy na przywołanie dwukrotnej ilości pocisków. Dodatkowe pociski zadają o <b>50%</b> mniej obrażeń."
+      ]
+    }
+  },
+  "ARSONIST": {
+    "game": {
+      "name": "Podpalacz",
+      "description": [
+        "Obrażenia od <b>ognia</b> są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "ATHLETE": {
+    "game": {
+      "name": "Mięśniak",
+      "description": [
+        "Twoje maksymalne zdrowie zostaje zwiększone o iloczyn twojej siły i <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> razy na poziom"
+    }
+  },
+  "ATTR_CONS": {
+    "game": {
+      "name": "Krzepa",
+      "description": [
+        "Zwiększa twój atrybut krzepy o 1.",
+        "Zwiększa zdrowie o {{gameValue1}} pkt. za każdy punkt atrybutu."
+      ]
+    }
+  },
+  "ATTR_DEX": {
+    "game": {
+      "name": "Zręczność",
+      "description": [
+        "Zwiększa twoją zręczność o 1.",
+        "Zwiększa obrażenia zadawane przez łuk i sztylet o 5% za każdy punkt atrybutu."
+      ]
+    }
+  },
+  "ATTR_ENDURANCE": {
+    "game": {
+      "name": "Kondycja",
+      "description": [
+        "Zwiększa twój atrybut kondycji o 1.",
+        "Zwiększa wytrzymałość o {{gameValue1}} za każdy punkt atrybutu."
+      ]
+    }
+  },
+  "ATTR_INT": {
+    "game": {
+      "name": "Inteligencja",
+      "description": [
+        "Zwiększa twoją inteligencję o 1.",
+        "Zwiększa obrażenia magiczne o 5% za każdy punkt atrybutu."
+      ]
+    }
+  },
+  "ATTR_SPIRIT": {
+    "game": {
+      "name": "Dusza",
+      "description": [
+        "Zwiększa twój atrybut duszy o 1.",
+        "Zwiększa manę o {{gameValue1}} za każdy punkt atrybutu."
+      ]
+    }
+  },
+  "ATTR_STR": {
+    "game": {
+      "name": "Siła",
+      "description": [
+        "Zwiększa twoją siłę o 1.",
+        "Zwiększa obrażenia w walce wręcz o 5% za każdy punkt atrybutu."
+      ]
+    }
+  },
+  "BACKSTAB_MASTERY": {
+    "game": {
+      "name": "Mistrzowski cios w plecy",
+      "description": [
+        "Obrażenia <b>ciosu w plecy</b> są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "BARBARIAN": {
+    "game": {
+      "name": "Barbarzyńca",
+      "description": [
+        "Zyskaj punkt siły za każde dwa poziomy Płomienia."
+      ]
+    }
+  },
+  "BARBARIAN_PATH": {
+    "game": {
+      "name": "Ścieżka barbarzyńcy",
+      "description": [
+        "Obrażenia zadawane dwuręcznymi toporami, pałkami i młotami są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "BARRAGE": {
+    "game": {
+      "name": "Salwa",
+      "description": [
+        "Zadając obrażenia łukiem, masz <b>{{gameValue1}}</b> szansy na przywrócenie tej broni <b>1</b> pkt. trwałości."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "BASH": {
+    "game": {
+      "name": "Riposta",
+      "description": [
+        "Parowanie ataków wrogów zadaje im <b>{{gameValue1}} obrażeń obuchowych</b>. Wartość obrażeń od riposty zwiększa się zgodnie z twoim poziomem siły.",
+        "<b>Parowanie</b><br/>Możesz blokować, mając na wyposażeniu broń do walki w zwarciu, magiczną barierę lub tarczę. Wykonanie bloku w odpowiednim czasie spowoduje <b>sparowanie</b> ataku i zwiększy stopień napełnienia <i>paska ogłuszenia</i> wroga.<br/>Wypatruj <b>błysku</b> na wrogu lub pocisku, by sparować atak."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}} pkt. obrażeń obuchowych</b> na poziom"
+    }
+  },
+  "BATTLE_HEAL": {
+    "game": {
+      "name": "Bitewne leczenie",
+      "description": [
+        "Trafienia krytyczne bronią do walki w zwarciu przywracają ci <b>{{gameValue1}}</b> maksymalnego zdrowia."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. maksymalnego zdrowia na poziom"
+    }
+  },
+  "BEAST_MASTER": {
+    "game": {
+      "name": "Władca bestii",
+      "description": [
+        "Kiedy jakiś wróg weźmie cię na cel, <b>dzikie zwierzęta</b> w zasięgu <b>50</b> metrów zaatakują go."
+      ]
+    }
+  },
+  "BEE_STING": {
+    "game": {
+      "name": "Żądło pszczoły",
+      "description": [
+        "Gdy strzelasz lub celujesz z łuku, przebywając w powietrzu, twoje opadanie chwilowo zwalnia. Każdy strzał nieznacznie cię unosi, zapewniając dłuższy czas w powietrzu.",
+        "<b>Koszt:</b> {{gameValue1}} pkt. wytrzymałości na sekundę"
+      ]
+    }
+  },
+  "BEGONE": {
+    "game": {
+      "name": "Precz!",
+      "description": [
+        "Wzmocniony magią cios, który odpycha wrogów i ogłusza ich.",
+        "Zastępuje atak bez broni, o ile masz dostępną konieczną ilość many.",
+        "<b>Koszt:</b> {{gameValue1}} pkt. many"
+      ]
+    }
+  },
+  "BLAST_AND_CAST": {
+    "game": {
+      "name": "Wybuchowa magia",
+      "description": [
+        "Jeśli trafisz krytycznie różdżką, bazowe obrażenia twojego następnego ataku kosturem w ciągu {{gameValue1}} s zostaną zwiększone o <b>{{gameValue2}}</b>."
+      ]
+    }
+  },
+  "BLESSED_ARROWS": {
+    "game": {
+      "name": "Szczęśliwe strzały",
+      "description": [
+        "Trafienia krytyczne łukami przywracają <b>{{gameValue1}}</b> pkt. many."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. many na poziom"
+    }
+  },
+  "BLINK": {
+    "game": {
+      "name": "Mignięcie",
+      "description": [
+        "Zastępuje umiejętność przewrotu teleportem krótkiego zasięgu.",
+        "Mignięcie zastępuje również przewrót w bok, który pozwala wykonywać umiejętność Strategiczny manewr.",
+        "<b>Koszt:</b> {{gameValue1}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "BLINK_ATTACK": {
+    "game": {
+      "name": "Mignięcie z atakiem",
+      "description": [
+        "Mignięcie we wroga wywołuje wybuch, który zadaje obrażenia od <b>ognia</b> na małym obszarze.",
+        "Wartość obrażeń i koszt many zależą od inteligencji."
+      ]
+    }
+  },
+  "BLOOD_MAGIC": {
+    "game": {
+      "name": "Magia krwi",
+      "description": [
+        "Kiedy twoja mana spadnie poniżej <b>20%</b>, odzyskasz do <b>35%</b> maksymalnej many kosztem <b>1</b> punktu zdrowia za każdy jej przywrócony punkt.",
+        "Efekt zatrzyma się, gdy pozostanie ci <b>1</b> punkt zdrowia.",
+        "<b>Czas odnowienia:</b> 2 minuty"
+      ]
+    }
+  },
+  "BLOOD_RAGE": {
+    "game": {
+      "name": "Krwawy szał",
+      "description": [
+        "Gdy wróg w zasięgu <b>{{gameValue1}}</b> m zginie od broni do walki w zwarciu, wpadasz w <b>krwawy szał</b>.",
+        "<b>Krwawy szał</b><br/>Zwiększa obrażenia broni do walki w zwarciu o <b>{{gameValue2}}</b> na <b>10</b> sekund."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> m zasięgu na poziom"
+    }
+  },
+  "BLOOD_WARRIOR": {
+    "game": {
+      "name": "Wojownik krwi",
+      "description": [
+        "Pokonanie wroga <b>atakiem z ukrycia</b> lub <b>bezlitosnym atakiem</b> tworzy kulę zdrowia.",
+        "Zebranie kuli przywraca <b>10%</b> powiązanego z nią zasobu."
+      ]
+    }
+  },
+  "BLOODLETTING": {
+    "game": {
+      "name": "Upuszczanie krwi",
+      "description": [
+        "Trafienia krytyczne zaklęciami mają <b>{{gameValue1}}</b> szansy na stworzenie dwóch kul zdrowia, many lub wytrzymałości (w dowolnej kombinacji).",
+        "Zebranie kuli przywraca <b>10%</b> danego zasobu."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "BONE_TO_ASH": {
+    "game": {
+      "name": "Miażdżenie kości",
+      "description": [
+        "Obrażenia zadawane upadłym są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "BOUNTY_BONANZA": {
+    "game": {
+      "name": "Premia za głowę",
+      "description": [
+        "Gdy pokonasz <b>splugawionego</b> wroga <b>umiejętnym strzałem</b>, twoja grupa zyskuje <b>{{gameValue1}}</b> dodatkowych punktów doświadczenia.",
+        "<b>Umiejętny strzał</b><br/>Trafienie strzałą w słaby punkt wroga, na przykład głowę, uznaje się za umiejętny strzał.",
+        "Umiejętne strzały zadają o 100% więcej obrażeń wrogom nienoszącym hełmu i 50% więcej obrażeń wrogom w hełmach. <br/>Obrażenia te można jeszcze bardziej zwiększyć poprzez atrybut umiejętnego strzału."
+      ]
+    }
+  },
+  "BOW_SPECIALIZATION": {
+    "game": {
+      "name": "Specjalizacja w łukach",
+      "description": [
+        "Odblokowuje specjalne umiejętności łuków. <br/>Naciśnij <b>{{gameValue1}}</b>, by użyć potężnej umiejętności specjalnej po zgromadzeniu dostatecznej ilości skupienia.",
+        "<b>Skupienie</b><br/>Zwiększaj skupienie, atakując dowolnym typem broni. Służy ono do używania specjalnych umiejętności broni."
+      ]
+    }
+  },
+  "BREACH": {
+    "game": {
+      "name": "Wyłom",
+      "description": [
+        "<b>Obezwładnieni</b> wrogowie otrzymują o <b>{{gameValue1}}</b> więcej obrażeń przez <b>3</b> sekundy.",
+        "<b>Obezwładnianie</b><br/>Atakowanie blokujących wrogów lub parowanie ich ataków napełnia ich <i>pasek ogłuszenia</i>, aż zostaną <b>obezwładnieni</b>.<br/><b>Obezwładnieni</b> wrogowie są podatni na bezlitosne ataki."
+      ]
+    }
+  },
+  "BRUTE": {
+    "game": {
+      "name": "Osiłek",
+      "description": [
+        "Obrażenia <b>obuchowe</b> zadawane w zwarciu są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "CALM_SPIRIT": {
+    "game": {
+      "name": "Spokojna dusza",
+      "description": [
+        "<b>Dzikie zwierzęta</b> w zasięgu <b>50</b> metrów nie będą już atakować graczy, chyba że zostaną sprowokowane.",
+        "Nie wpływa na zwierzęta splugawione przez Mgłę."
+      ]
+    }
+  },
+  "CHAIN_HIT": {
+    "game": {
+      "name": "Seryjne trafienie",
+      "description": [
+        "Trafienia krytyczne magiczną bronią uderzają w dodatkowy losowy cel w zasięgu <b>15</b> metrów i zadają <b>5 pkt. obrażeń od porażenia</b> za każdy punkt twojej inteligencji. <br/>Dodatkowe uderzenie może również trafić w główny cel."
+      ]
+    }
+  },
+  "CHAIN_REACTION": {
+    "game": {
+      "name": "Powtarzalne ładunki wybuchowe",
+      "description": [
+        "Przy trafieniu wroga <b>wybuchającą strzałą</b> istnieje <b>40%</b> szans na wywołanie dodatkowej eksplozji o niewielkim zasięgu zadającej <b>50%</b> obrażeń."
+      ]
+    }
+  },
+  "COUNTER_BATTERY": {
+    "game": {
+      "name": "Kontrnatarcie",
+      "description": [
+        "Obrażenia przeciwko wrogom <b>walczącym z dystansu</b> są większe o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "COUNTERSTRIKE": {
+    "game": {
+      "name": "Kontra",
+      "description": [
+        "Po otrzymaniu obrażeń masz <b>{{gameValue1}}</b> szansy na odbicie <b>{{gameValue2}}</b> obrażeń w atakującego wroga w postaci obrażeń od <b>ognia</b>.",
+        "Ten atak magiczny może aktywować inne umiejętności."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy i <b>{{gamePerLevelValue2}}</b> pkt. odbitych obrażeń na poziom"
+    }
+  },
+  "CRASH_DOWN_ATTACK": {
+    "game": {
+      "name": "Atak z wyskoku",
+      "description": [
+        "Gdy masz na wyposażeniu broń do walki w zwarciu, możesz wykonać specjalny atak, przytrzymując <b>{{gameValue1}}</b> podczas skoku.",
+        "Atak z wyskoku zadaje 50% więcej obrażeń od broni w niewielkim zasięgu, a jego koszt wytrzymałości zależy od typu używanej broni.",
+        "<b>Koszt:</b> {{gameValue2}} - {{gameValue3}} pkt. wytrzymałości",
+        "<b>Przełamanie bloku</b><br/>Ten specjalny atak zapełnia <i>pasek ogłuszenia</i> wroga dwukrotnie skuteczniej.."
+      ]
+    }
+  },
+  "CRASH_DOWN_FORCE": {
+    "game": {
+      "name": "Miażdżąca moc",
+      "description": [
+        "Gdy atakujesz po wykonaniu podwójnego skoku, <b>atak z wyskoku</b> zadaje o <b>20%</b> więcej obrażeń od broni."
+      ]
+    }
+  },
+  "CULL_THE_HERD": {
+    "game": {
+      "name": "Ubój stada",
+      "description": [
+        "Obrażenia zadawane dzikim zwierzętom są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "CUTTHROAT": {
+    "game": {
+      "name": "Bezwzględność",
+      "description": [
+        "Obrażenia ataku z ukrycia są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "DAGGER_MASTERY": {
+    "game": {
+      "name": "Mistrzostwo sztyletów",
+      "description": [
+        "Obrażenia zadawane sztyletami są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "DAGGER_SPECIALIZATION": {
+    "game": {
+      "name": "Specjalizacja w sztyletach",
+      "description": [
+        "Odblokowuje specjalne umiejętności sztyletów. <br/>Naciśnij <b>{{gameValue1}}</b>, by użyć potężnej umiejętności specjalnej po zgromadzeniu dostatecznej ilości skupienia.",
+        "<b>Skupienie</b><br/>Zwiększaj skupienie, atakując dowolnym typem broni. Służy ono do używania specjalnych umiejętności broni."
+      ]
+    }
+  },
+  "DARK_ARTS": {
+    "game": {
+      "name": "Mroczne sztuki",
+      "description": [
+        "Wszelkie obrażenia od <b>Mgły</b> są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "DESSERT_STOMACH": {
+    "game": {
+      "name": "Miejsce na deser",
+      "description": [
+        "Otrzymujesz dodatkowe miejsce na jedzenie."
+      ]
+    }
+  },
+  "DIVINE_SURGE": {
+    "game": {
+      "name": "Przypływ boskości",
+      "description": [
+        "Zaklęcia leczące mogą trafić krytycznie. Wartość takiego trafienia zależy od twoich obrażeń trafień krytycznych."
+      ]
+    }
+  },
+  "DOUBLE_JUMP": {
+    "game": {
+      "name": "Podwójny skok",
+      "description": [
+        "Umożliwia ci wykonanie drugiego skoku, gdy przebywasz w powietrzu.",
+        "<b>Koszt:</b> {{gameValue1}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "EAGLE_EYE": {
+    "game": {
+      "name": "Sokole oko",
+      "description": [
+        "Znacznie zwiększa przybliżenie podczas celowania z łuku.",
+        "Aby wycelować, wybierz łuk na pasku akcji i przytrzymaj {{gameValue1}}.<br/>(Możesz też przytrzymać {{gameValue2}}, by wycelować łukiem znajdującym się na wyposażeniu)."
+      ]
+    }
+  },
+  "EAGLES_BANE": {
+    "game": {
+      "name": "Zmora orła",
+      "description": [
+        "Obrażenia zadawane <b>latającym</b> wrogom zostają zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "EARTH_AURA": {
+    "game": {
+      "name": "Aura ziemi",
+      "description": [
+        "Wyzwalasz ochronną aurę, która zwiększa odporność fizyczną i odporność na magię o <b>{{gameValue1}}</b> dla ciebie i wszystkich sojuszników w zasięgu <b>{{gameValue2}}</b> m."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> m zasięgu na poziom"
+    }
+  },
+  "EMERGENCY_BLINK": {
+    "game": {
+      "name": "Awaryjne mignięcie",
+      "description": [
+        "Będąc pod wpływem ogłuszenia, możesz użyć mignięcia, by przerwać ten stan."
+      ]
+    }
+  },
+  "ENDURANCE_OF_THE_FLAME": {
+    "game": {
+      "name": "Wytrzymały Płomień",
+      "description": [
+        "Zyskaj punkt kondycji za każde dwa poziomy Płomienia."
+      ]
+    }
+  },
+  "ETERNAL_SPARK": {
+    "game": {
+      "name": "Wieczna iskra",
+      "description": [
+        "Zadając obrażenia różdżką masz <b>{{gameValue1}}</b> szansy na przywrócenie tej broni <b>1</b> pkt. trwałości."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "EVASION_ATTACK": {
+    "game": {
+      "name": "Atak unikający",
+      "description": [
+        "Gdy masz na wyposażeniu broń do walki w zwarciu, możesz wykonać atak unikający, naciskając <b>{{gameValue1}}</b> w trakcie uchylania się. <br/>Dzięki temu doskoczysz do wroga i zadasz mu <b>50%</b> więcej obrażeń bronią.",
+        "<b>Koszt:</b> {{gameValue2}} pkt. wytrzymałości",
+        "<b>Przełamanie bloku</b><br/>Ten specjalny atak zapełnia <i>pasek ogłuszenia</i> wroga dwukrotnie skuteczniej."
+      ]
+    }
+  },
+  "EXALTED": {
+    "game": {
+      "name": "Egzaltacja",
+      "description": [
+        "Otrzymasz jeden punkt inteligencji za każde dwa poziomy Płomienia."
+      ]
+    }
+  },
+  "EXPOSE_WEAKNESS": {
+    "game": {
+      "name": "Odsłonięcie słabości",
+      "description": [
+        "Krytyczne trafienia sztyletami niszczą pancerz wrogów, nakładając na nich <b>osłabienie</b>, przez które otrzymują o <b>{{gameValue1}}</b> więcej fizycznych obrażeń przez <b>{{gameValue2}}</b> s."
+      ]
+    }
+  },
+  "FATAL_PRECISION": {
+    "game": {
+      "name": "Zabójcza precyzja",
+      "description": [
+        "Szansa na trafienie krytyczne jest zwiększona o <b>{{gameValue1}}</b>.<br/>Obrażenia krytyczne są zwiększone o <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na trafienie krytyczne i <b>{{gamePerLevelValue2}}</b> pkt. obrażeń krytycznych na poziom"
+    }
+  },
+  "FELLING_AXE_SPECIALIZATION": {
+    "game": {
+      "name": "Specjalizacja w siekierach",
+      "description": [
+        "Odblokowuje specjalne umiejętności siekier. <br/>Naciśnij <b>{{gameValue1}}</b>, by użyć potężnej umiejętności specjalnej po zgromadzeniu dostatecznej ilości skupienia.",
+        "<b>Skupienie</b><br/>Zwiększaj skupienie, atakując dowolnym typem broni. Służy ono do używania specjalnych umiejętności broni."
+      ]
+    }
+  },
+  "FINESSE": {
+    "game": {
+      "name": "Finezja",
+      "description": [
+        "Zadając obrażenia jednoręcznym mieczem, toporem, pałką lub sztyletem w zwarciu, masz <b>{{gameValue1}}</b> szansy na przywrócenie danej broni <b>1</b> pkt. trwałości."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "FIRE_RESISTANCE": {
+    "game": {
+      "name": "Odporność na ogień",
+      "description": [
+        "Zwiększa twoją <b>odporność na ogień</b> o <b>{{gameValue1}}</b>, co zmniejsza otrzymywane obrażenia od <b>ognia</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. odporności na poziom"
+    }
+  },
+  "FISHERMANS_RESOLVE": {
+    "game": {
+      "name": "Rybacka determinacja",
+      "description": [
+        "Zwiększa twoją kondycję przy łowieniu o <b>{{gameValue1}}</b>.",
+        "Dzięki temu możesz dłużej zmagać się ze złapanymi na haczyk rybami."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> kondycji przy łowieniu na poziom"
+    }
+  },
+  "FROST": {
+    "game": {
+      "name": "Mróz",
+      "description": [
+        "Kiedy otrzymasz obrażenia w walce wręcz, napastnik zostanie spowolniony na <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> na poziom"
+    }
+  },
+  "GIANT_SLAYER_HOOK": {
+    "game": {
+      "name": "Hak zabójcy gigantów",
+      "description": [
+        "Użyj swojego <b>haka z liną</b>, aby przyciągnąć się do dużych przeciwników w walce.",
+        "Koszt umiejętności jest tym większy, im wyższy jest poziom wroga.",
+        "<b>Bazowy koszt:</b> {{gameValue1}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "GOOD_METABOLISM": {
+    "game": {
+      "name": "Dobry metabolizm",
+      "description": [
+        "Kule zdrowia, many i wytrzymałości przywracają <b>30%</b> zamiast <b>10%</b> atrybutów.",
+        "Mikstury many i zdrowia przywracają ich o <b>20%</b> więcej."
+      ]
+    }
+  },
+  "GRACEFUL_STRIDE": {
+    "game": {
+      "name": "Wdzięczny krok",
+      "description": [
+        "Zyskaj punkt zręczności za każde dwa poziomy Płomienia."
+      ]
+    }
+  },
+  "GROUNDING_HOOK": {
+    "game": {
+      "name": "Hak uziemiający",
+      "description": [
+        "Użyj <b>haka z liną</b>, aby przyciągać do siebie <b>latających</b> wrogów w walce.",
+        "Koszt umiejętności jest tym większy, im wyższy poziom wroga.",
+        "<b>Bazowy koszt:</b> {{gameValue1}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "HEALER": {
+    "game": {
+      "name": "Uzdrowiciel",
+      "description": [
+        "Zdrowie zyskiwane za sprawą zaklęć leczących i Aury wody jest zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. leczenia na poziom"
+    }
+  },
+  "HEALER_REVIVE": {
+    "game": {
+      "name": "Lecznicze odrodzenie",
+      "description": [
+        "Gracze, których wskrzeszasz, wracają do życia ze zdrowiem zwiększonym o <b>{{gameValue1}}</b>.",
+        "Domyślny poziom zdrowia wskrzeszanych graczy wynosi <b>10%</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. zdrowia na poziom"
+    }
+  },
+  "HEAVY_HANDED": {
+    "game": {
+      "name": "Brutalność",
+      "description": [
+        "Napełnianie <i>pasków ogłuszenia</i> blokujących wrogów za pomocą ataków w zwarciu jest skuteczniejsze o <b>{{gameValue1}}</b>.",
+        "<b>Obezwładnianie</b><br/>Atakowanie blokujących wrogów lub parowanie ich ataków napełnia ich <i>pasek ogłuszenia</i>, aż zostaną <b>obezwładnieni</b>.<br/><b>Obezwładnieni</b> wrogowie są podatni na bezlitosne ataki."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> efektu na poziom"
+    }
+  },
+  "HEAVY_PLATES": {
+    "game": {
+      "name": "Ciężka zbroja",
+      "description": [
+        "Punkty fizycznego pancerza z wyposażonych przedmiotów są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. dodatkowego fizycznego pancerza na poziom"
+    }
+  },
+  "HEAVY_SPECIALIZATION": {
+    "game": {
+      "name": "Druzgocące ciosy",
+      "description": [
+        "Zwiększa prędkość atakowania bronią dwuręczną do walki w zwarciu o <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "ICE_RESISTANCE": {
+    "game": {
+      "name": "Odporność na lód",
+      "description": [
+        "Zwiększa twoją <b>odporność na lód</b> o <b>{{gameValue1}}</b>, co zmniejsza otrzymywane obrażenia od <b>lodu</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. odporności na poziom"
+    }
+  },
+  "ICEMAN": {
+    "game": {
+      "name": "Wcielenie lodu",
+      "description": [
+        "Obrażenia od <b>lodu</b> są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "INNER_FIRES": {
+    "game": {
+      "name": "Wewnętrzny ogień",
+      "description": [
+        "<b>Czas przebywania we Mgle</b> został zwiększony o <b>{{gameValue1}}</b>, dzięki czemu możesz dłużej eksplorować.",
+        "<b>Czas przebywania we Mgle</b><br/>Jeśli się skończy, Mgła cię pochłonie."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> na poziom"
+    }
+  },
+  "KICK": {
+    "game": {
+      "name": "Kopnięcie",
+      "description": [
+        "Gdy masz na wyposażeniu broń do walki w zwarciu, możesz wykonać kopnięcie, atakując podczas blokowania.",
+        "Kopnięcie zadaje niewielkie obrażenia, ale jego siła pozwala napełnić <i>pasek ogłuszenia</i> wroga i odepchnąć go.",
+        "Stopień napełnienia <i>paska ogłuszenia</i> zależy od twojej zręczności.<br/>Czas ogłuszenia zależy od rozmiaru wroga.",
+        "<b>Obezwładnianie</b><br/>Atakowanie blokujących wrogów lub parowanie ich ataków napełnia ich <i>pasek ogłuszenia</i>, aż zostaną <b>obezwładnieni</b>.<br/><b>Obezwładnieni</b> wrogowie są podatni na bezlitosne ataki."
+      ]
+    }
+  },
+  "LAST_MEAL": {
+    "game": {
+      "name": "Ostatni posiłek",
+      "description": [
+        "Twoje wzmocnienia od pożywienia utrzymują się po śmierci, ale trwają o połowę krócej."
+      ]
+    }
+  },
+  "LIFE_BURST": {
+    "game": {
+      "name": "Przypływ żywotności",
+      "description": [
+        "Gdy pokonasz wroga magiczną bronią, wszyscy gracze w zasięgu <b>15</b> metrów od celu odzyskają zdrowie równe twojej inteligencji pomnożonej przez <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "LIFE_ESSENCES": {
+    "game": {
+      "name": "Esencje życia",
+      "description": [
+        "Twoje maksymalne zdrowie zostaje zwiększone o iloczyn twojej inteligencji i <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> razy na poziom"
+    }
+  },
+  "LUMBERJACK": {
+    "game": {
+      "name": "Drwal",
+      "description": [
+        "Narzędzia zadają o <b>{{gameValue1}}</b> więcej obrażeń drewnianym obiektom.<br/>Dotyczy to też drzew i drewnianego terenu."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "MAGE_APPRENTICE": {
+    "game": {
+      "name": "Praktykowanie magii",
+      "description": [
+        "Obrażenia zadawane różdżkami i kosturami są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "MANA_CURRENTS": {
+    "game": {
+      "name": "Prądy many",
+      "description": [
+        "Podstawowe odzyskiwanie many jest większe o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> odzyskiwania many na poziom"
+    }
+  },
+  "MARKSMAN": {
+    "game": {
+      "name": "Strzelec",
+      "description": [
+        "Obrażenia zadawane łukami są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "MARTYR": {
+    "game": {
+      "name": "Męczennik",
+      "description": [
+        "Kiedy wróg cię zabije, wszyscy sojusznicy w zasięgu <b>30 metrów</b> odzyskają <b>50%</b> maksymalnego zdrowia.",
+        "Dodatkowo zyskają wzmocnienie <b>Ostateczne błogosławieństwo</b>, które zwiększa ich maksymalne zdrowie o <b>100</b> pkt. na <b>15</b> minut."
+      ]
+    }
+  },
+  "MASON": {
+    "game": {
+      "name": "Kamieniarz",
+      "description": [
+        "Narzędzia zadają o <b>{{gameValue1}}</b> więcej obrażeń kamiennym obiektom.<br/>Dotyczy to też kamiennego terenu i złóż klejnotów."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "MASS_DESTRUCTION": {
+    "game": {
+      "name": "Masowe zniszczenie",
+      "description": [
+        "Ataki krytyczne bronią magiczną zadają <b>2 pkt. obrażeń od porażenia</b> za każdy punkt twojej inteligencji wszystkim wrogom w zasięgu <b>{{gameValue1}}</b> m od celu."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> m zasięgu na poziom"
+    }
+  },
+  "MERCILESS_ATTACK": {
+    "game": {
+      "name": "Bezlitosny atak",
+      "description": [
+        "Wykonaj <b>bezlitosny atak</b>, naciskając <b>{{gameValue1}}</b>, by zadać <b>{{gameValue2}}</b> obrażeń <b>obezwładnionemu</b> wrogowi.",
+        "<b>Obezwładnianie</b><br/>Atakowanie blokujących wrogów lub parowanie ich ataków napełnia ich <i>pasek ogłuszenia</i>, aż zostaną <b>obezwładnieni</b>.<br/><b>Obezwładnieni</b> wrogowie są podatni na bezlitosne ataki.",
+        "Bezlitosnego ataku nie można wykonać różdżką, kosturem ani łukiem."
+      ]
+    }
+  },
+  "MINER": {
+    "game": {
+      "name": "Górnik",
+      "description": [
+        "Wydobywając surowiec, masz <b>10%</b> szansy na zyskanie dodatkowej sztuki."
+      ]
+    }
+  },
+  "MITHRIDATIST": {
+    "game": {
+      "name": "Mitrydatyzm",
+      "description": [
+        "Zyskujesz <b>25%</b> szans na uniknięcie zatrucia."
+      ]
+    }
+  },
+  "MULTI_SHOT": {
+    "game": {
+      "name": "Wielokrotny strzał",
+      "description": [
+        "Przy wypuszczeniu <i>zwykłej strzały</i> masz <b>20%</b> szansy na wywołanie lekko rozchodzącej się <b>salwy strzał</b>.",
+        "<i>Zwykłe strzały</i> użyte w ten sposób zostaną odjęte od twojej amunicji.",
+        "<b>Salwa strzał</b> nie aktywuje się przy użyciu <i>specjalnych strzał</i>."
+      ]
+    }
+  },
+  "MULTI_SHOT_SPREAD": {
+    "game": {
+      "name": "Rozrzut wielokrotnego strzału",
+      "description": [
+        "Dodaje <b>25%</b> szansy na wystrzelenie dodatkowej <i>zwykłej strzały</i> poprzez twoją <b>salwę strzał</b> z umiejętności <b>wielokrotny strzał</b>.",
+        "Ta dodatkowa <i>zwykła strzała</i> nie kosztuje cię amunicji."
+      ]
+    }
+  },
+  "MULTI_SHOT_TRIGGER": {
+    "game": {
+      "name": "Wyzwolenie wielokrotnego strzału",
+      "description": [
+        "Wystrzelenie <i>specjalnej strzały</i> od teraz aktywuje <b>salwę strzał</b> z umiejętności <b>wielokrotny strzał</b>.",
+        "<i>Specjalne strzały</i> wystrzelone w ten sposób zostaną odjęte od twojej amunicji."
+      ]
+    }
+  },
+  "NECROMANCER": {
+    "game": {
+      "name": "Nekromanta",
+      "description": [
+        "Gdy zabijesz wroga za pomocą magicznej broni, masz <b>{{gameValue1}}</b> szansy na przywołanie przyjaznej <b>czaszki-towarzysza</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "NEMESIS": {
+    "game": {
+      "name": "Nemezis",
+      "description": [
+        "Zwiększa uwagę wrogów którą przyciągasz o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> przyciąganej uwagi na poziom"
+    }
+  },
+  "ONE_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "Specjalizacja w jednoręczności",
+      "description": [
+        "Odblokowuje specjalne umiejętności jednoręcznych broni do walki w zwarciu. <br/>Naciśnij <b>{{gameValue1}}</b>, by użyć potężnej umiejętności specjalnej po zgromadzeniu dostatecznej ilości skupienia.",
+        "<b>Skupienie</b><br/>Zwiększaj skupienie, atakując dowolnym typem broni. Służy ono do używania specjalnych umiejętności broni."
+      ]
+    }
+  },
+  "OPPORTUNITY": {
+    "game": {
+      "name": "Sposobność",
+      "description": [
+        "Zwiększa mnożnik obrażeń <b>bezlitosnych ataków</b> o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "PICKAXE_SPECIALIZATION": {
+    "game": {
+      "name": "Specjalizacja w kilofach",
+      "description": [
+        "Odblokowuje specjalne umiejętności kilofów. <br/>Naciśnij <b>{{gameValue1}}</b>, by użyć potężnej umiejętności specjalnej po zgromadzeniu dostatecznej ilości skupienia.",
+        "<b>Skupienie</b><br/>Zwiększaj skupienie, atakując dowolnym typem broni. Służy ono do używania specjalnych umiejętności broni."
+      ]
+    }
+  },
+  "POISON_MASTERY": {
+    "game": {
+      "name": "Mistrzostwo jadu",
+      "description": [
+        "Zwiększa o <b>100%</b> obrażenia zadawane przez cechę sztyletu <b>jadowite ostrza</b>."
+      ]
+    }
+  },
+  "POISONED_BLADES": {
+    "game": {
+      "name": "Jadowite ostrza",
+      "description": [
+        "O <b>30%</b> większa szansa na zatrucie wroga podczas używania sztyletu z cechą <b>jadowite ostrza</b>."
+      ]
+    }
+  },
+  "POWER_PARRY": {
+    "game": {
+      "name": "Mocne parowanie",
+      "description": [
+        "Twoja siła parowania jest zwiększona o <b>{{gameValue1}}</b>.",
+        "<b>Parowanie</b><br/>Możesz blokować, mając na wyposażeniu broń do walki w zwarciu, magiczną barierę lub tarczę. Wykonanie bloku w odpowiednim czasie spowoduje <b>sparowanie</b> ataku i zwiększy stopień napełnienia <i>paska ogłuszenia</i> wroga.<br/>Wypatruj <b>błysku</b> na wrogu lub pocisku, by sparować atak.",
+        "<b>Obezwładnianie</b><br/>Atakowanie blokujących wrogów lub parowanie ich ataków napełnia ich <i>pasek ogłuszenia</i>, aż zostaną <b>obezwładnieni</b>.<br/><b>Obezwładnieni</b> wrogowie są podatni na bezlitosne ataki."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> siły parowania na poziom"
+    }
+  },
+  "PRIMAL_FORCE": {
+    "game": {
+      "name": "Pierwotna siła",
+      "description": [
+        "Obrażenia zadawane Vukah są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "PROSPECTOR": {
+    "game": {
+      "name": "Poszukiwacz",
+      "description": [
+        "Narzędzia zadają o <b>{{gameValue1}}</b> więcej obrażeń metalowym obiektom.<br/>Dotyczy to też złóż metali."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "PUNCTURE": {
+    "game": {
+      "name": "Przekłucie",
+      "description": [
+        "Obrażenia <b>kłute</b> zadawane na bronią dystansową są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "PURIFICATION": {
+    "game": {
+      "name": "Oczyszczenie",
+      "description": [
+        "Po pokonaniu wroga spaczonego Mgłą jedno- lub dwuręcznym toporem, pałką, młotem, mieczem lub wielkim mieczem odzyskujesz <b>{{gameValue1}}</b> s <b>czasu we Mgle</b>.",
+        "<b>Czas przebywania we Mgle</b><br/>Jeśli się skończy, Mgła cię pochłonie."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> s na poziom"
+    }
+  },
+  "QUALITY_GEAR": {
+    "game": {
+      "name": "Niezły sprzęt",
+      "description": [
+        "Narzędzia mają <b>{{gameValue1}}</b> szansy na odzyskanie <b>1</b> pkt. trwałości przy trafieniu."
+      ]
+    }
+  },
+  "QUICK_CHARGE": {
+    "game": {
+      "name": "Szybkie ładowanie",
+      "description": [
+        "Czas ładowania zaklęć jest zmniejszony o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> czasu ładowania na poziom"
+    }
+  },
+  "QUICK_REFLEX_BLOCK": {
+    "game": {
+      "name": "Nagły blok",
+      "description": [
+        "Nieznacznie zwiększa wartość bloku podczas blokowania sztyletami, gwarantując minimalną redukcję wytrzymałości podczas nieudanego bloku."
+      ]
+    }
+  },
+  "RADIANT_AURA": {
+    "game": {
+      "name": "Aura blasku",
+      "description": [
+        "Wszyscy <b>splugawieni</b> wrogowie w zasięgu <b>{{gameValue1}}</b> m otrzymują <b>{{gameValue2}} pkt. obrażeń od ognia</b> na sekundę za każdy punkt twojej inteligencji."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> m zasięgu i <b>{{gamePerLevelValue2}} pkt. obrażeń od ognia</b> na poziom"
+    }
+  },
+  "RANGER": {
+    "game": {
+      "name": "Obieżyświat",
+      "description": [
+        "Zwiększa twoją zręczność i kondycję o <b>{{gameValue1}}</b>.",
+        "Podstawowe odzyskiwanie wytrzymałości jest większe o <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. zręczności i Kondycja pkt. kondycji na poziom.<br/><b>{{gamePerLevelValue2}}</b> odzyskiwania wytrzymałości na poziom."
+    }
+  },
+  "REBOUND": {
+    "game": {
+      "name": "Nawrót",
+      "description": [
+        "Podstawowe odzyskiwanie wytrzymałości jest większe o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> odzyskiwania wytrzymałości na poziom"
+    }
+  },
+  "RELENTLESS": {
+    "game": {
+      "name": "Nieustępliwość",
+      "description": [
+        "Trafienia krytyczne bronią dwuręczną zwiększają twoją szansę na trafienie krytyczne następnym ciosem o <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "RICOCHETS": {
+    "game": {
+      "name": "Wybuch odłamków",
+      "description": [
+        "<b>Wybuchająca strzała</b> zadaje o <b>10%</b> więcej obrażeń za każdy cel, który trafi."
+      ]
+    }
+  },
+  "RIGHTEOUS_FIRE": {
+    "game": {
+      "name": "Ogień prawości",
+      "description": [
+        "Leczenie zaklęciem dowolnego celu wyzwala wybuch, który zadaje obrażenia od <b>ognia</b> równe <b>{{gameValue1}}</b> wartości leczenia pobliskim <b>splugawionym</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}} pkt. obrażeń od ognia</b> na poziom"
+    }
+  },
+  "RUNNER": {
+    "game": {
+      "name": "Biegacz",
+      "description": [
+        "Prędkość biegu jest zwiększona o <b>{{gameValue1}}</b>, a koszt biegu w wytrzymałości zmniejszony o <b>{{gameValue2}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> prędkości i <b>{{gamePerLevelValue2}}</b> redukcji kosztu na poziom"
+    }
+  },
+  "SAVIOUR": {
+    "game": {
+      "name": "Zbawca",
+      "description": [
+        "Czas wskrzeszania sojusznika jest skrócony o <b>{{gameValue1}}</b> s.",
+        "Domyślny czas wskrzeszania to <b>6</b> sekund."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> s na poziom"
+    }
+  },
+  "SHELL_SHOCK": {
+    "game": {
+      "name": "Groza wojny",
+      "description": [
+        "Nasyć swoje <b>dystansowe ładunki wybuchowe</b> maną, by ogłuszały wrogów na maksymalnie <b>2</b> sekundy.",
+        "<b>Koszt:</b>{{gameValue1}} pkt. many za każdego ogłuszonego przeciwnika"
+      ]
+    }
+  },
+  "SHINY_PLATES": {
+    "game": {
+      "name": "Lśniący pancerz",
+      "description": [
+        "Punkty magicznego pancerza z wyposażonych przedmiotów są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. dodatkowego magicznego pancerza na poziom"
+    }
+  },
+  "SHOCK_RESISTANCE": {
+    "game": {
+      "name": "Odporność na porażenie",
+      "description": [
+        "Zwiększa twoją <b>odporność na porażenie</b> o <b>{{gameValue1}}</b>, co zmniejsza otrzymywane obrażenia od <b>porażenia</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. odporności na poziom"
+    }
+  },
+  "SHOCKWAVE": {
+    "game": {
+      "name": "Fala wstrząsowa",
+      "description": [
+        "Wywołaj falę uderzeniową po sparowaniu ataku wroga lub <b>obezwładnieniu</b> go.",
+        "Fala odpycha pobliskich wrogów i zapełnia ich <i>paski ogłuszenia</i> w stopniu zależnym od twojej siły.",
+        "<b>Parowanie</b><br/>Możesz blokować, mając na wyposażeniu broń do walki w zwarciu, magiczną barierę lub tarczę. Wykonanie bloku w odpowiednim czasie spowoduje <b>sparowanie</b> ataku i zwiększy stopień napełnienia <i>paska ogłuszenia</i> wroga.<br/>Wypatruj <b>błysku</b> na wrogu lub pocisku, by sparować atak.",
+        "<b>Obezwładnianie</b><br/>Atakowanie blokujących wrogów lub parowanie ich ataków napełnia ich <i>pasek ogłuszenia</i>, aż zostaną <b>obezwładnieni</b>.<br/><b>Obezwładnieni</b> wrogowie są podatni na bezlitosne ataki."
+      ]
+    }
+  },
+  "SHROUD_FILTER": {
+    "game": {
+      "name": "Ochrona przed Mgłą",
+      "description": [
+        "Zadając obrażenia magiczną bronią, masz <b>{{gameValue1}}</b> szansy na wywołanie małego wybuchu płomieni, który przywraca <b>{{gameValue2}}</b> s <b>czasu we Mgle </b>tobie i twoim sojusznikom w zasięgu <b>{{gameValue3}}</b> m.",
+        "<b>Czas przebywania we Mgle</b><br/>Jeśli się skończy, Mgła cię pochłonie."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "SHROUD_MISTERY": {
+    "game": {
+      "name": "Wspólna udręka",
+      "description": [
+        "Gdy otrzymujesz obrażenia od <b>Mgły</b>, <b>odporność na Mgłę</b> wszystkich graczy w zasięgu <b>{{gameValue1}}</b> m zwiększa się o <b>{{gameValue2}}</b> na <b>30</b> sekund."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> m zasięgu na poziom"
+    }
+  },
+  "SHROUD_RESISTANCE": {
+    "game": {
+      "name": "Odporność na Mgłę",
+      "description": [
+        "Zwiększa twoją <b>odporność na Mgłę</b> o <b>{{gameValue1}}</b>, co zmniejsza otrzymywane obrażenia od <b>Mgły</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. odporności na poziom"
+    }
+  },
+  "SILENT_STRIDE": {
+    "game": {
+      "name": "Cichy krok",
+      "description": [
+        "Zwiększa twoją prędkość ruchu podczas <b>skradania się</b> o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> prędkości ruchu na poziom"
+    }
+  },
+  "SKILL_SHOT": {
+    "game": {
+      "name": "Umiejętny Strzał",
+      "description": [
+        "Obrażenia <b>umiejętnego strzału</b> są zwiększone o <b>{{gameValue1}}</b>.",
+        "<b>Umiejętny strzał</b><br/>Trafienie strzałą w słaby punkt wroga, na przykład głowę, uznaje się za umiejętny strzał.",
+        "Umiejętne strzały zadają o 100% więcej obrażeń wrogom nienoszącym hełmu i 50% więcej obrażeń wrogom w hełmach. <br/>Obrażenia te można jeszcze bardziej zwiększyć poprzez atrybut umiejętnego strzału."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "SLASHER": {
+    "game": {
+      "name": "Rębacz",
+      "description": [
+        "Obrażenia <b>sieczne</b> zadawane w zwarciu są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "SLEIGHT_OF_HAND": {
+    "game": {
+      "name": "Zręczne dłonie",
+      "description": [
+        "Obrażenia zadawane bez broni są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "SLICE_AND_DICE": {
+    "game": {
+      "name": "Na plasterki",
+      "description": [
+        "Jeśli trafisz krytycznie sztyletem, bazowe obrażenia twojego następnego strzału z łuku w ciągu {{gameValue1}} s zostaną zwiększone o <b>{{gameValue2}}</b>."
+      ]
+    }
+  },
+  "SNAKE_EATER": {
+    "game": {
+      "name": "Wężojad",
+      "description": [
+        "Zwiększa twoją <b>odporność na truciznę</b> o <b>{{gameValue1}}</b>, co zmniejsza otrzymywane obrażenia od <b>trucizny</b>.",
+        "Obrażenia od <b>trucizny</b> omijają pancerz i zmniejsza je tylko <b>odporność na truciznę</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. odporności na poziom"
+    }
+  },
+  "SNAP": {
+    "game": {
+      "name": "Trzaśnięcie",
+      "description": [
+        "Gdy wykonasz <b>bezlitosny atak</b>, odzyskasz <b>{{gameValue1}}</b> many."
+      ]
+    }
+  },
+  "SNEAK_ATTACK": {
+    "game": {
+      "name": "Atak z ukrycia",
+      "description": [
+        "Wykonaj <b>atak z ukrycia</b>, podkradając się do nieświadomego wroga i naciskając <b>{{gameValue1}}</b>.",
+        "<b>Atak z ukrycia</b> zadaje o <b>900%</b> więcej obrażeń.",
+        "Ataku z ukrycia nie można wykonać różdżką, kosturem ani łukiem."
+      ]
+    }
+  },
+  "SNIPER": {
+    "game": {
+      "name": "Snajper",
+      "description": [
+        "Szansa na trafienie krytyczne łukami jest zwiększona o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na trafienie krytyczne na poziom"
+    }
+  },
+  "SOAKED_DOG": {
+    "game": {
+      "name": "Psie schnięcie",
+      "description": [
+        "Zmniejsza efekty osłabienia z powodu <b>zmoczenia</b> i <b>przemoknięcia</b>.",
+        "Wytrzymałość i jej odzyskiwanie są zmniejszone o <b>10%</b> zamiast <b>20%</b>.",
+        "<b>Zmoczenie</b> <br/>Zmniejsza wytrzymałość i jej odzyskiwanie o <b>30%</b> na <b>15 minut</b>. Przebywanie w pobliżu źródeł ciepła skraca pozostały czas jego trwania.",
+        "<b>Przemoknięcie</b> <br/>Zmniejsza wytrzymałość i jej odzyskiwanie o <b>30%</b> na <b>30</b> sekund. Zmniejsza też <b>odporność na lód i porażenie</b> o <b>30%</b>, lecz zwiększa <b>odporność na ogień</b> o <b>30%</b>.<br/><b>Przemoknięcie</b> można nałożyć na wrogów.<br/>Czasu trwania <b> przemoknięcia</b> nie można skrócić za pomocą ciepła, a gdy dobiegnie on końca, osłabienie zmieni się w <b>zmoczenie</b>."
+      ]
+    }
+  },
+  "SOUL_LEECH": {
+    "game": {
+      "name": "Wyssanie duszy",
+      "description": [
+        "Kiedy zabijesz wroga bronią do walki wręcz, wszyscy gracze w zasięgu <b>{{gameValue1}}</b> m od celu odzyskają <b>{{gameValue2}}</b> pkt. many."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> m zasięgu i <b>{{gamePerLevelValue2}}</b> pkt. many na poziom"
+    }
+  },
+  "SPELLSLINGER": {
+    "game": {
+      "name": "Grad zaklęć",
+      "description": [
+        "Obrażenia zadawane kosturami są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "SPLASH_DASH": {
+    "game": {
+      "name": "Pluskający unik",
+      "description": [
+        "Pozwala ci wykonać unik podczas płynięcia lub nurkowania.",
+        "<b>Koszt:</b> {{gameValue1}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "STEADFAST": {
+    "game": {
+      "name": "Niezłomność",
+      "description": [
+        "Pokonanie wroga bronią do walki w zwarciu przywraca jej <b>{{gameValue1}}</b> pkt. trwałości."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. trwałości na poziom"
+    }
+  },
+  "STING": {
+    "game": {
+      "name": "Żądło",
+      "description": [
+        "Gdy nieprzerwanie atakujesz różdżką, każdy kolejny atak zadaje o <b>{{gameValue1}}</b> więcej obrażeń."
+      ]
+    }
+  },
+  "STRATEGIC_MANEUVER": {
+    "game": {
+      "name": "Strategiczny manewr",
+      "description": [
+        "Zastępuje umiejętność przewrotu przewrotem w bok, jeśli wrogi cel jest namierzony.",
+        "Użyj go, by okrążać wrogów, co ułatwia zachodzenie ich od flanki i wykonywanie ciosów w plecy.",
+        "Mignięcie zastępuje przewrót w bok, który pozwala wykonywać umiejętność Strategiczny manewr.",
+        "<b>Koszt:</b> {{gameValue1}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "SURVIVAL_INSTINCT": {
+    "game": {
+      "name": "Instynkt przetrwania",
+      "description": [
+        "Po pokonaniu wroga spaczonego Mgłą łukiem lub sztyletem odzyskujesz <b>{{gameValue1}}</b> s <b>czasu we Mgle</b>.",
+        "<b>Czas przebywania we Mgle</b><br/>Jeśli się skończy, Mgła cię pochłonie."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> s na poziom"
+    }
+  },
+  "SWEET_TOOTH": {
+    "game": {
+      "name": "Łasuch",
+      "description": [
+        "Słodycze przywracają o <b>50%</b> więcej wytrzymałości."
+      ]
+    }
+  },
+  "SWIFT_BLADES": {
+    "game": {
+      "name": "Szybkie ostrza",
+      "description": [
+        "Zwiększa prędkość atakowania bronią jednoręczną do walki w zwarciu o <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "SWIFTSHOT_SUSTENANCE": {
+    "game": {
+      "name": "Zastrzyk sił",
+      "description": [
+        "Po pokonaniu wroga łukiem masz <b>{{gameValue1}}</b> szansy na pojawienie się kuli wytrzymałości.",
+        "Zebranie kuli przywraca <b>10%</b> danego zasobu."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "TERROR": {
+    "game": {
+      "name": "Groza",
+      "description": [
+        "Trafienia krytyczne zaklęciami mają <b>{{gameValue1}}</b> szansy na ogłuszenie celu na <b>2</b> sekundy."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na poziom"
+    }
+  },
+  "THICK_SKIN": {
+    "game": {
+      "name": "Gruba skóra",
+      "description": [
+        "Zyskaj punkt krzepy za każde dwa poziomy Płomienia."
+      ]
+    }
+  },
+  "THRUST": {
+    "game": {
+      "name": "Pchnięcie",
+      "description": [
+        "Obrażenia <b>kłute</b> zadawane w zwarciu są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "THUNDER": {
+    "game": {
+      "name": "Grzmot",
+      "description": [
+        "Obrażenia od <b>porażenia</b> są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "TITAN_EDGE": {
+    "game": {
+      "name": "Ostrze tytana",
+      "description": [
+        "Obrażenia zadawane dwuręcznymi wielkimi mieczami są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "TOTEM_MASTERY": {
+    "game": {
+      "name": "Mistrzostwo totemów",
+      "description": [
+        "Zwiększa maksymalną liczbę przyzywanych totemów o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> totem na poziom"
+    }
+  },
+  "TOWER": {
+    "game": {
+      "name": "Wieża",
+      "description": [
+        "Jeśli w zasięgu <b>20</b> metrów od ciebie znajduje się troje lub więcej wrogów, twoja <b>odporność fizyczna</b> zwiększa się o <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "TWO_HANDED_SPECIALIZATION": {
+    "game": {
+      "name": "Specjalizacja w dwuręczności",
+      "description": [
+        "Odblokowuje specjalne umiejętności dwuręcznych broni do walki w zwarciu. <br/>Naciśnij <b>{{gameValue1}}</b>, by użyć potężnej umiejętności specjalnej po zgromadzeniu dostatecznej ilości skupienia.",
+        "<b>Skupienie</b><br/>Zwiększaj skupienie, atakując dowolnym typem broni. Służy ono do używania specjalnych umiejętności broni."
+      ]
+    }
+  },
+  "UNITY": {
+    "game": {
+      "name": "Jedność",
+      "description": [
+        "Zadając wrogom obrażenia różdżkami, masz <b>{{gameValue1}}</b> szansy na odzyskanie <b>{{gameValue2}}</b> swojej maksymalnej many."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy i <b>{{gamePerLevelValue2}}</b> pkt. maksymalnej many na poziom"
+    }
+  },
+  "UPDRAFT": {
+    "game": {
+      "name": "Prąd wstępujący",
+      "description": [
+        "Wykonanie skoku za pomocą {{gameValue1}} podczas szybowania pozwala ci nabrać wysokości.",
+        "<b>Ładowanie</b><br/>Ładunek prądu wstępującego wzrasta przed aktywacją, dzięki czemu siła wznoszenia zwiększa się. Pełny ładunek zapewnia dodatkowe wzmocnienie. Ładowanie jest szybsze, gdy znajdujesz się w swojej bazie.",
+        "<b>Koszt:</b> {{gameValue2}} pkt. many"
+      ]
+    }
+  },
+  "UPWARDS_SLASH_ATTACK": {
+    "game": {
+      "name": "Cięcie do góry",
+      "description": [
+        "Gdy masz na wyposażeniu broń do walki w zwarciu, wyprowadź potężne cięcie do góry podczas wznoszenia się przy skoku.",
+        "Użyj tej umiejętności, by szybko zbliżyć się do <b>latających</b> wrogów.",
+        "<b>Koszt:</b> {{gameValue1}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "VEILED_VIGOR": {
+    "game": {
+      "name": "Skryty wigor",
+      "description": [
+        "Twoje maksymalne zdrowie zostaje zwiększone o iloczyn twojej zręczności i <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> razy na poziom"
+    }
+  },
+  "VETERAN": {
+    "game": {
+      "name": "Weteran",
+      "description": [
+        "Szansa na trafienie krytyczne jedno- i dwuręcznymi toporami, pałkami, mieczami, wielkimi mieczami lub sztyletami jest zwiększona o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na trafienie krytyczne na poziom"
+    }
+  },
+  "VIGOROUS_DEFLECTION": {
+    "game": {
+      "name": "Zamaszyste odbicie",
+      "description": [
+        "Pomyślne sparowanie ataku przeciwnika przywraca ci <b>{{gameValue1}}</b> pkt. wytrzymałości.",
+        "<b>Parowanie</b><br/>Możesz blokować, mając na wyposażeniu broń do walki w zwarciu, magiczną barierę lub tarczę. Wykonanie bloku w odpowiednim czasie spowoduje <b>sparowanie</b> ataku i zwiększy stopień napełnienia <i>paska ogłuszenia</i> wroga.<br/>Wypatruj <b>błysku</b> na wrogu lub pocisku, by sparować atak."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. wytrzymałości na poziom"
+    }
+  },
+  "VILE_CONCOCTION": {
+    "game": {
+      "name": "Podła mikstura",
+      "description": [
+        "Obrażenia zadawane przedmiotami do rzucania są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "VITALITY_SURGE": {
+    "game": {
+      "name": "Przypływ witalności",
+      "description": [
+        "Trafienia krytyczne łukami, sztyletami i bronią miotaną przywracają <b>{{gameValue1}}</b> pkt. wytrzymałości."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. wytrzymałości na poziom"
+    }
+  },
+  "VUKAH_CULTURE": {
+    "game": {
+      "name": "Kultura Vukah",
+      "description": [
+        "Kiedy staniesz się celem ataku, <b>Vukah</b> w zasięgu <b>50</b> metrów zaatakują namierzającego cię wroga."
+      ]
+    }
+  },
+  "VUKAH_LANGUAGE": {
+    "game": {
+      "name": "Język Vukah",
+      "description": [
+        "<b>Vukah</b> w zasięgu <b>50</b> metrów nie będą już atakować graczy, chyba że zostaną sprowokowani."
+      ]
+    }
+  },
+  "WAND_EVASION_ATTACK": {
+    "game": {
+      "name": "Atak różdżką po uniku",
+      "description": [
+        "Gdy masz na wyposażeniu różdżkę, możesz wykonać nią atak unikający, naciskając <b>{{gameValue1}}</b> w jego trakcie.<br/>Wystrzelisz wtedy magiczny dysk przeszywający wrogów i zadający <b>50%</b> więcej obrażeń od broni.",
+        "<b>Koszt:</b> {{gameValue2}} pkt. many"
+      ]
+    }
+  },
+  "WAND_MASTERY": {
+    "game": {
+      "name": "Mistrzostwo różdżek",
+      "description": [
+        "Obrażenia zadawane różdżkami są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "WAND_SPECIALIZATION": {
+    "game": {
+      "name": "Specjalizacja w różdżkach",
+      "description": [
+        "Odblokowuje specjalne umiejętności różdżek. <br/>Naciśnij <b>{{gameValue1}}</b>, by użyć potężnej umiejętności specjalnej po zgromadzeniu dostatecznej ilości skupienia.",
+        "<b>Skupienie</b><br/>Zwiększaj skupienie, atakując dowolnym typem broni. Służy ono do używania specjalnych umiejętności broni."
+      ]
+    }
+  },
+  "WANDERLUST": {
+    "game": {
+      "name": "Zew wędrówki",
+      "description": [
+        "Koszt wytrzymałości podczas <b>biegu po polnych drogach</b> jest zmniejszony z <b>90% do 80%</b>.",
+        "Koszt wytrzymałości podczas <b>biegu po kamiennych drogach</b> jest zmniejszony z <b>75% do 50%</b>."
+      ]
+    }
+  },
+  "WARDEN": {
+    "game": {
+      "name": "Strażnik",
+      "description": [
+        "Jeśli w zasięgu <b>20</b> metrów od ciebie znajduje się troje lub więcej wrogów, twoja <b>odporność na magię</b> zwiększa się o <b>{{gameValue1}}</b>."
+      ]
+    }
+  },
+  "WARRIOR_PATH": {
+    "game": {
+      "name": "Ścieżka wojownika",
+      "description": [
+        "Obrażenia zadawane jednoręcznymi toporami, pałkami i mieczami są zwiększone o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> pkt. obrażeń na poziom"
+    }
+  },
+  "WATER_AURA": {
+    "game": {
+      "name": "Aura wody",
+      "description": [
+        "Emanujesz aurą leczenia, która przywraca zdrowie tobie i rannym sojusznikom w zasięgu <b>{{gameValue1}}</b> m.",
+        "Wartość leczenia zależy od twojej inteligencji i wynosi <b>1</b> pkt. zdrowia za każde <b>2</b> punkty tego atrybutu."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> m zasięgu na poziom"
+    }
+  },
+  "WATERS_OF_LIFE": {
+    "game": {
+      "name": "Woda życia",
+      "description": [
+        "Zwiększa leczenie <b>aury wody</b> do <b>2</b> punktów zdrowia na <b>2</b> każde punkty inteligencji."
+      ]
+    }
+  },
+  "WELL_RESTED": {
+    "game": {
+      "name": "Słuszny wypoczynek",
+      "description": [
+        "Podstawowy czas trwania wzmocnienia „wypoczynek” jest zwiększony o <b>{{gameValue1}}</b> min.",
+        "<b>Wypoczynek</b><br/>Wzmocnienie „wypoczynek” znacznie zwiększa twoją maksymalną wytrzymałość i jej regenerację.",
+        "By je zyskać, musisz <b>usiąść lub położyć się w bezpiecznym miejscu</b> obok <b>źródła ciepła</b>.",
+        "Wzmocnienie to można odnowić <b>w dowolnym miejscu</b>.",
+        "Komfortowe otoczenie jeszcze bardziej wydłuża jego czas trwania."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> min na poziom"
+    }
+  },
+  "WET_DOG": {
+    "game": {
+      "name": "Psie schnięcie",
+      "description": [
+        "Zmniejsza efekty osłabienia z powodu <b>zmoczenia</b> i <b>przemoknięcia</b>.",
+        "Wytrzymałość i jej odzyskiwanie są zmniejszone o <b>20%</b> zamiast <b>30%</b>.",
+        "<b>Zmoczenie</b> <br/>Zmniejsza wytrzymałość i jej odzyskiwanie o <b>30%</b> na <b>15 minut</b>. Przebywanie w pobliżu źródeł ciepła skraca pozostały czas jego trwania.",
+        "<b>Przemoknięcie</b> <br/>Zmniejsza wytrzymałość i jej odzyskiwanie o <b>30%</b> na <b>30</b> sekund. Zmniejsza też <b>odporność na lód i porażenie</b> o <b>30%</b>, lecz zwiększa <b>odporność na ogień</b> o <b>30%</b>.<br/><b>Przemoknięcie</b> można nałożyć na wrogów.<br/>Czasu trwania <b> przemoknięcia</b> nie można skrócić za pomocą ciepła, a gdy dobiegnie on końca, osłabienie zmieni się w <b>zmoczenie</b>."
+      ]
+    }
+  },
+  "WHIRLWIND_CRESCENDO": {
+    "game": {
+      "name": "Wirująca kulminacja",
+      "description": [
+        "Gdy masz na wyposażeniu broń dwuręczną, wykonaj wirujący atak na koniec sekwencji ciosów.",
+        "<b>Koszt:</b> {{gameValue1}} pkt. wytrzymałości"
+      ]
+    }
+  },
+  "WIZARD": {
+    "game": {
+      "name": "Mag",
+      "description": [
+        "Szansa na trafienie krytyczne różdżkami i kosturami jest zwiększona o <b>{{gameValue1}}</b>."
+      ],
+      "perLevelLabel": "<b>{{gamePerLevelValue1}}</b> szansy na trafienie krytyczne na poziom"
+    }
+  }
+}

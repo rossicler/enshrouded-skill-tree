@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "ตัววางแผนสกิล Enshrouded",
+    "description": "ตัววางแผนแผนผังสกิลสำหรับเกม Enshrouded"
+  },
+  "hud": {
+    "import": "นำเข้า",
+    "export": "ส่งออก",
+    "clear": "ล้าง",
+    "discord": "Discord",
+    "about": "เกี่ยวกับ"
+  },
+  "dialogs": {
+    "advancedSharing": "การแชร์ขั้นสูง",
+    "about": {
+      "title": "เกี่ยวกับ",
+      "description1": "เครื่องมือนี้สร้างขึ้นเพื่อช่วยให้ผู้เล่น Enshrouded แชร์แผนผังสกิลและบิลด์ได้สะดวกเท่านั้น ผู้สร้างไม่มีส่วนเกี่ยวข้องกับ Keen Games และไม่ได้ถือสิทธิ์ใด ๆ ในเกม Enshrouded",
+      "description2": "เครื่องมือนี้เป็นโอเพนซอร์ส ใครก็ร่วมพัฒนาได้ หากต้องการร่วมพัฒนา ไปที่ <githubLink>คลัง GitHub</githubLink> หรือเข้าร่วม <discordLink>เซิร์ฟเวอร์ Discord</discordLink> ของเรา",
+      "description3": "ขอขอบคุณ <glitchizLink>@Glitchiz</glitchizLink> เป็นพิเศษที่มอบแอสเซ็ตบางส่วนที่ใช้ในเครื่องมือนี้",
+      "close": "ปิด"
+    },
+    "export": {
+      "title": "แชร์บิลด์ของคุณ",
+      "shortUrl": "URL สำหรับแชร์",
+      "generating": "กำลังสร้าง URL สำหรับแชร์...",
+      "noSkills": "ปลดล็อกสกิลในแผนผังเพื่อสร้างลิงก์สำหรับแชร์",
+      "dbUnavailable": "ขณะนี้ไม่สามารถใช้ลิงก์สำหรับแชร์ได้ ใช้การส่งออก JSON เพื่อแชร์บิลด์ของคุณ",
+      "exportJson": "ส่งออก JSON",
+      "exportJsonTitle": "ส่งออกเป็น JSON",
+      "buildName": "ชื่อบิลด์",
+      "download": "ดาวน์โหลด",
+      "close": "ปิด"
+    },
+    "import": {
+      "title": "นำเข้าสกิล",
+      "urlLabel": "นำเข้าจาก URL",
+      "import": "นำเข้า URL",
+      "importJson": "นำเข้า JSON",
+      "warning": "นำเข้าบิลด์จากแหล่งที่คุณไว้ใจเท่านั้น"
+    },
+    "settings": {
+      "title": "การตั้งค่า",
+      "treeVersion": "แผนผังสกิล",
+      "gameUpdate": "อัปเดต",
+      "gameBuild": "บิลด์",
+      "appVersion": "แอป",
+      "sounds": "เอฟเฟกต์เสียง",
+      "language": "ภาษา",
+      "hardcap": "ขีดจำกัดแต้มสกิล",
+      "audioBlocked": "เบราว์เซอร์บล็อกเสียง อนุญาตเสียงสำหรับเว็บไซต์นี้ในการตั้งค่าเบราว์เซอร์แล้วลองอีกครั้ง"
+    },
+    "refundConfirm": {
+      "title": "คืนแต้มสกิล",
+      "message": "สกิลที่เชื่อมต่ออยู่ {{count}} สกิลจะถูกคืนแต้มด้วย ดำเนินการต่อหรือไม่",
+      "confirm": "ยืนยัน",
+      "cancel": "ยกเลิก"
+    },
+    "resetConfirm": {
+      "title": "รีเซ็ตแผนผังสกิล",
+      "message": "สกิลที่เลือกทั้งหมดจะถูกลบ แน่ใจหรือไม่",
+      "confirm": "รีเซ็ต",
+      "cancel": "ยกเลิก"
+    },
+    "skillCap": {
+      "title": "แต้มสกิลถึงขีดจำกัดแล้ว",
+      "message": "คุณใช้แต้มสกิลถึงจำนวนสูงสุดแล้ว คืนแต้มสกิลบางส่วนก่อนปลดล็อกสกิลใหม่",
+      "ok": "ตกลง",
+      "hardcapHint": "คุณปิดขีดจำกัดนี้ได้ในการตั้งค่า"
+    }
+  },
+  "toasts": {
+    "shareUrlCopied": "คัดลอก URL สำหรับแชร์แล้ว",
+    "buildImported": "นำเข้าบิลด์ \"{{name}}\" แล้ว",
+    "differentTreeVersion": "บิลด์นี้สร้างขึ้นสำหรับแผนผังสกิลเวอร์ชันอื่น ตรวจสอบสกิลหลังนำเข้า",
+    "noSkillsAllocated": "ยังไม่ได้ลงแต้มสกิล!",
+    "invalidUrl": "URL ไม่ถูกต้อง!",
+    "invalidCode": "โค้ดไม่ถูกต้อง",
+    "skillsRemoved": "ลบสกิลที่ไม่มีในแผนผังนี้แล้ว: {{names}}",
+    "skillsDisconnected": "ลบสกิลที่ไม่ได้เชื่อมต่อกับแผนผังแล้ว: {{names}}",
+    "skillLevelsLowered": "ลดเลเวลสกิลลงเป็นค่าสูงสุดปัจจุบัน: {{names}}"
+  },
+  "accessibility": {
+    "backgroundAlt": "พื้นหลังควันสีม่วง"
+  },
+  "errors": {
+    "serverError": "เซิร์ฟเวอร์ผิดพลาด",
+    "notFound": "ไม่พบหน้านี้"
+  }
+}

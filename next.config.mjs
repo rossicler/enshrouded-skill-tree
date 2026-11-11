@@ -12,8 +12,14 @@ const nextConfig = {
   // serverSideTranslations reads its config and the locale files from disk at
   // request time. Next 16 no longer traces them, so hosts that deploy only
   // traced files (Amplify) answered every server-rendered page with a 500.
+  // next-i18next.config.js reads its locales from core's language registry,
+  // so that file has to ship too.
   outputFileTracingIncludes: {
-    "/*": ["./next-i18next.config.js", "./public/locales/**/*.json"],
+    "/*": [
+      "./next-i18next.config.js",
+      "./packages/core/src/locales/locales.json",
+      "./public/locales/**/*.json",
+    ],
   },
   // `next dev` would otherwise write an AGENTS.md; agent guidance lives in CLAUDE.md.
   agentRules: false,

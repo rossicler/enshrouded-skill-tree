@@ -35,8 +35,50 @@ test("one wheel tick zooms a little, not to the limit", async ({ page }) => {
   await page.mouse.wheel(0, -100);
   await waitForStableLayout(page);
   const ratio = (await nodeDistance(page, A, B)) / start;
-  expect(ratio).toBeGreaterThan(1.02);
-  expect(ratio).toBeLessThan(1.15);
+  expect(ratio).toBeGreaterThan(1.1);
+  expect(ratio).toBeLessThan(1.25);
+});
+
+test("six wheel ticks zoom from the initial scale to the max", async ({ page }) => {
+  const viewport = page.viewportSize()!;
+  const start = await nodeDistance(page, A, B);
+  await page.mouse.move(viewport.width / 2, viewport.height / 2);
+  // 17% per tick: five ticks stay below the max (2 × 1.17^5 = 4.38), and the
+  // sixth passes the max of 5, so the distance grows 2.5×.
+  for (let i = 0; i < 5; i++) await page.mouse.wheel(0, -100);
+  await waitForStableLayout(page);
+  expect((await nodeDistance(page, A, B)) / start).toBeCloseTo(1.17 ** 5, 1);
+  await page.mouse.wheel(0, -100);
+  await waitForStableLayout(page);
+  expect((await nodeDistance(page, A, B)) / start).toBeCloseTo(2.5, 1);
+});
+
+test("a fast wheel spin zooms at most two ticks at once", async ({ page }) => {
+  const viewport = page.viewportSize()!;
+  const start = await nodeDistance(page, A, B);
+  await page.mouse.move(viewport.width / 2, viewport.height / 2);
+  // Ten notches in one event count as two: 1.17^2, not the max.
+  await page.mouse.wheel(0, -1000);
+  await waitForStableLayout(page);
+  expect((await nodeDistance(page, A, B)) / start).toBeCloseTo(1.17 ** 2, 1);
+});
+
+test("a trackpad pinch follows the fingers, and Ctrl + wheel zooms like the wheel", async ({ page }) => {
+  const viewport = page.viewportSize()!;
+  const start = await nodeDistance(page, A, B);
+  await page.mouse.move(viewport.width / 2, viewport.height / 2);
+  // Chrome sends a pinch as Ctrl + wheel events of deltaY = 100 × ln(finger
+  // scale). Fingers spreading 2× over ten events double the scale.
+  await page.keyboard.down("Control");
+  for (let i = 0; i < 10; i++) await page.mouse.wheel(0, (-100 * Math.LN2) / 10);
+  await waitForStableLayout(page);
+  const pinched = await nodeDistance(page, A, B);
+  expect(pinched / start).toBeCloseTo(2, 1);
+  // One whole notch with Ctrl held is a mouse wheel, not a pinch.
+  await page.mouse.wheel(0, 100);
+  await page.keyboard.up("Control");
+  await waitForStableLayout(page);
+  expect(pinched / (await nodeDistance(page, A, B))).toBeCloseTo(1.17, 1);
 });
 
 test("the tree does not zoom out past the initial scale", async ({ page }) => {
